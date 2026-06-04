@@ -242,29 +242,109 @@
 
     /* ── Ingredients ── */
     #ingredients { background: #fff; }
-    .ing-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
-      margin-top: 56px;
+
+    /* 의사 선택 이유 배너 */
+    .ing-why {
+      display: flex; align-items: flex-start; gap: 20px;
+      background: var(--gray); border-radius: 20px;
+      padding: 28px 32px; margin-top: 48px;
+      border-left: 4px solid var(--gold2);
     }
-    .ing-card {
-      border-radius: 20px; padding: 32px 22px;
+    .ing-why-avatar {
+      width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--navy), var(--teal));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+    }
+    .ing-why-text { flex: 1; }
+    .ing-why-text strong {
+      display: block; font-size: 15px; font-weight: 800;
+      color: var(--navy); margin-bottom: 6px;
+    }
+    .ing-why-text p {
+      font-size: 15px; color: var(--muted); line-height: 1.8; margin: 0;
+    }
+    .ing-why-text em { color: var(--teal); font-style: normal; font-weight: 700; }
+
+    /* 성분 2종 카드 */
+    .ing-duo {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 28px;
+      margin-top: 32px;
+    }
+    .ing-main-card {
+      border-radius: 24px; overflow: hidden;
       border: 1.5px solid var(--gray2);
-      text-align: center;
-      transition: all 0.25s;
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .ing-main-card:hover {
+      box-shadow: 0 16px 48px rgba(13,37,69,0.10);
+      transform: translateY(-4px);
+    }
+    .ing-main-header {
+      padding: 32px 32px 24px;
       position: relative; overflow: hidden;
     }
-    .ing-card::before {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(135deg, transparent 60%, rgba(26,122,110,0.05) 100%);
+    .ing-main-header::after {
+      content: ''; position: absolute;
+      right: -20px; bottom: -20px;
+      width: 120px; height: 120px; border-radius: 50%;
+      background: rgba(255,255,255,0.08);
     }
-    .ing-card:hover { border-color: var(--teal2); box-shadow: 0 8px 32px rgba(26,122,110,0.12); }
-    .ing-emoji { font-size: 36px; margin-bottom: 16px; }
-    .ing-card h3 { font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
-    .ing-card p { font-size: 13px; color: var(--muted); line-height: 1.65; }
-    .ing-amount {
-      display: inline-block; margin-top: 14px;
-      background: var(--teal2); color: #fff;
-      font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 50px;
+    .ing-main-num {
+      font-size: 11px; font-weight: 800; letter-spacing: 3px;
+      text-transform: uppercase; color: rgba(255,255,255,0.6);
+      margin-bottom: 10px;
+    }
+    .ing-main-name {
+      font-size: 28px; font-weight: 900; color: #fff;
+      line-height: 1.2; margin-bottom: 6px;
+    }
+    .ing-main-sub {
+      font-size: 13px; color: rgba(255,255,255,0.65); font-weight: 500;
+    }
+    .ing-main-icon {
+      position: absolute; right: 28px; top: 24px;
+      font-size: 52px; opacity: 0.85;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2));
+    }
+    .ing-main-body { padding: 28px 32px 32px; background: #fff; }
+    .ing-origin {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--gray); border-radius: 50px;
+      font-size: 12px; font-weight: 700; color: var(--navy);
+      padding: 5px 14px; margin-bottom: 18px;
+    }
+    .ing-origin::before { content: '🌿'; font-size: 13px; }
+    .ing-patent {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(184,146,42,0.1); border: 1px solid rgba(184,146,42,0.25);
+      border-radius: 50px;
+      font-size: 12px; font-weight: 700; color: var(--gold);
+      padding: 5px 14px; margin-bottom: 18px;
+    }
+    .ing-patent::before { content: '®'; font-weight: 900; }
+    .ing-main-desc {
+      font-size: 15px; color: var(--text); line-height: 1.85;
+      margin-bottom: 22px;
+    }
+    .ing-points {
+      display: flex; flex-direction: column; gap: 10px;
+      padding-top: 20px; border-top: 1px solid var(--gray2);
+    }
+    .ing-point {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 14px; color: var(--muted); line-height: 1.6;
+    }
+    .ing-point-dot {
+      width: 20px; height: 20px; border-radius: 50%;
+      flex-shrink: 0; margin-top: 1px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 10px; font-weight: 900; color: #fff;
+    }
+
+    @media (max-width: 780px) {
+      .ing-duo { grid-template-columns: 1fr; }
+      .ing-why { flex-direction: column; gap: 14px; }
     }
 
     /* ── Doctor Section ── */
@@ -778,11 +858,11 @@
       }
       .hero-visual { display: none; }
       .pain-grid, .reviews-grid, .products-grid, .blog-grid { grid-template-columns: 1fr 1fr; }
-      .ing-grid { grid-template-columns: 1fr 1fr; }
+      .ing-duo { grid-template-columns: 1fr; }
       .nav-links { display: none; }
     }
     @media (max-width: 600px) {
-      .pain-grid, .reviews-grid, .products-grid, .ing-grid, .blog-grid { grid-template-columns: 1fr; }
+      .pain-grid, .reviews-grid, .products-grid, .ing-duo, .blog-grid { grid-template-columns: 1fr; }
       .section { padding: 64px 0; }
       .modal-header { height: 160px; padding: 20px 24px; }
       .modal-body, .modal-meta { padding-left: 24px; padding-right: 24px; }
@@ -984,57 +1064,92 @@
 <section id="ingredients" class="section">
   <div class="container">
     <div class="section-label">핵심 성분</div>
-    <h2 class="section-title">신경과 전문의가<br>직접 선별한 8가지 성분</h2>
-    <p class="section-sub">유행 성분이 아닌, 신경과학 논문이 뒷받침하는 성분만 담았습니다.</p>
-    <div class="ing-grid">
-      <div class="ing-card">
-        <div class="ing-emoji">💊</div>
-        <h3>메코발라민</h3>
-        <p>활성형 비타민 B12. 신경세포 미엘린 합성의 핵심 코팩터로 신경 재생을 직접 촉진합니다.</p>
-        <span class="ing-amount">1,500 μg</span>
+    <h2 class="section-title">신경과 전문의가<br>직접 선별한 2가지 성분</h2>
+    <p class="section-sub">수십 가지 성분 중 신경 건강을 위한 근거가 가장 명확한 두 가지에 집중했습니다.</p>
+
+    <!-- 의사 선택 이유 -->
+    <div class="ing-why">
+      <div class="ing-why-avatar">👨‍⚕️</div>
+      <div class="ing-why-text">
+        <strong>왜 이 두 가지 성분인가요? — 김재원 신경과 전문의</strong>
+        <p>
+          신경 건강을 위한 영양 관리에서 가장 중요한 것은 <em>신경 주변의 염증 환경을 균형 있게 유지하는 것</em>입니다.
+          커큐민과 애플라핀은 서로 다른 경로로 이 균형을 지원하며,
+          두 성분의 시너지가 단독 사용보다 신경 세포 환경 유지에 더 효과적이라는 연구 결과가 있습니다.
+          복잡하게 많은 성분을 넣는 대신, 가장 근거가 명확한 두 성분의 함량을 충분히 담는 것이 제 선택 기준이었습니다.
+        </p>
       </div>
-      <div class="ing-card">
-        <div class="ing-emoji">⚡</div>
-        <h3>R-알파리포산</h3>
-        <p>강력한 항산화제. 신경세포 미토콘드리아를 보호하고 신경 건강 분야에서 임상 근거가 축적된 성분입니다.</p>
-        <span class="ing-amount">600 mg</span>
+    </div>
+
+    <!-- 성분 2종 -->
+    <div class="ing-duo">
+
+      <!-- 커큐민 -->
+      <div class="ing-main-card">
+        <div class="ing-main-header" style="background: linear-gradient(135deg, #7c4f00 0%, #b8922a 100%);">
+          <div class="ing-main-num">핵심 성분 01</div>
+          <div class="ing-main-name">커큐민</div>
+          <div class="ing-main-sub">Curcumin — 강황 추출 표준화 성분</div>
+          <div class="ing-main-icon">🌿</div>
+        </div>
+        <div class="ing-main-body">
+          <div class="ing-origin">강황(Curcuma longa) 뿌리줄기 추출</div>
+          <p class="ing-main-desc">
+            수천 년간 전통 의학에서 활용되어 온 강황의 핵심 폴리페놀 성분입니다.
+            현대 신경과학 연구에서 커큐민은 신경세포 주변의 <strong>NF-κB 경로를 통한 염증 매개 물질 생성</strong>에 영향을 주는 것으로 알려져 있으며,
+            혈뇌장벽을 통과할 수 있는 지용성 특성으로 신경계 건강 연구에서 주목받고 있습니다.
+            NervLock에는 흡수율을 높인 인지질 복합체 형태를 사용했습니다.
+          </p>
+          <div class="ing-points">
+            <div class="ing-point">
+              <div class="ing-point-dot" style="background: var(--gold);">1</div>
+              <span>강황 유래 폴리페놀 성분으로 <strong>세포 수준의 항산화 환경 유지</strong>를 지원합니다</span>
+            </div>
+            <div class="ing-point">
+              <div class="ing-point-dot" style="background: var(--gold);">2</div>
+              <span>인지질 복합체(Phytosome) 기술로 <strong>일반 커큐민 대비 흡수율 향상</strong></span>
+            </div>
+            <div class="ing-point">
+              <div class="ing-point-dot" style="background: var(--gold);">3</div>
+              <span>신경계 건강 관련 연구에서 <strong>광범위한 임상 데이터 축적</strong></span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="ing-card">
-        <div class="ing-emoji">🌿</div>
-        <h3>PEA (팔미토일에탄올아미드)</h3>
-        <p>체내 자연 항염 물질. 신경 주변 면역세포의 균형을 지원해 정상적인 신경 건강 유지에 도움을 줍니다.</p>
-        <span class="ing-amount">600 mg</span>
+
+      <!-- 애플라핀 -->
+      <div class="ing-main-card">
+        <div class="ing-main-header" style="background: linear-gradient(135deg, #0d2545 0%, #1a7a6e 100%);">
+          <div class="ing-main-num">핵심 성분 02</div>
+          <div class="ing-main-name">애플라핀<span style="font-size:16px;font-weight:500;vertical-align:super;">®</span></div>
+          <div class="ing-main-sub">Aflapin® — 보스웰리아 특허 추출물</div>
+          <div class="ing-main-icon">🌳</div>
+        </div>
+        <div class="ing-main-body">
+          <div class="ing-patent">Laila Nutraceuticals 특허 성분 (Aflapin®)</div>
+          <p class="ing-main-desc">
+            인도 유향나무(Boswellia serrata)에서 추출한 특허 성분으로,
+            일반 보스웰리아 추출물과 달리 <strong>신경 건강에 유익한 AKBA(아세틸-11-케토-β-보스웰산)를 고함량</strong>으로 표준화했습니다.
+            AKBA는 5-LOX 효소 경로를 통한 류코트리엔 생성에 선택적으로 영향을 주어
+            신경 주변 조직의 균형 잡힌 환경 유지를 지원하는 것으로 연구되고 있습니다.
+          </p>
+          <div class="ing-points">
+            <div class="ing-point">
+              <div class="ing-point-dot" style="background: var(--teal2);">1</div>
+              <span>AKBA 고함량 표준화로 <strong>일반 보스웰리아 대비 성분 균일성 확보</strong></span>
+            </div>
+            <div class="ing-point">
+              <div class="ing-point-dot" style="background: var(--teal2);">2</div>
+              <span>5-LOX 경로에 선택적으로 작용해 <strong>신경 주변 환경의 균형 유지</strong>를 지원</span>
+            </div>
+            <div class="ing-point">
+              <div class="ing-point-dot" style="background: var(--teal2);">3</div>
+              <span>커큐민과의 <strong>상호 보완적 작용</strong>으로 신경 건강 지원 시너지</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="ing-card">
-        <div class="ing-emoji">🔶</div>
-        <h3>커큐민 인지질 복합체</h3>
-        <p>흡수율 29배 향상 커큐민. 강력한 항산화·항염 작용으로 신경 건강을 위한 세포 환경 유지를 지원합니다.</p>
-        <span class="ing-amount">500 mg</span>
-      </div>
-      <div class="ing-card">
-        <div class="ing-emoji">🐟</div>
-        <h3>오메가-3 (EPA+DHA)</h3>
-        <p>신경세포막 구성 성분. DHA는 신경 가소성을 높이고 EPA는 신경 염증 해소를 돕습니다.</p>
-        <span class="ing-amount">1,000 mg</span>
-      </div>
-      <div class="ing-card">
-        <div class="ing-emoji">🟡</div>
-        <h3>코엔자임 Q10</h3>
-        <p>미토콘드리아 에너지 생산 핵심 성분. 신경세포가 에너지를 효율적으로 생산하고 정상 기능을 유지하도록 지원합니다.</p>
-        <span class="ing-amount">200 mg</span>
-      </div>
-      <div class="ing-card">
-        <div class="ing-emoji">🌸</div>
-        <h3>마그네슘 비스글리시네이트</h3>
-        <p>신경계 정상 기능 유지에 필요한 필수 미네랄. 근육 이완과 수면의 질 유지에 도움을 줄 수 있습니다.</p>
-        <span class="ing-amount">300 mg</span>
-      </div>
-      <div class="ing-card">
-        <div class="ing-emoji">🌰</div>
-        <h3>비타민 D3 + K2</h3>
-        <p>신경 면역 조절 핵심 비타민. 신경 보호 단백질(NGF) 발현을 증가시키고 염증 조절에 기여합니다.</p>
-        <span class="ing-amount">2,000 IU / 90 μg</span>
-      </div>
+
     </div>
   </div>
 </section>
