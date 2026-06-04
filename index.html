@@ -342,9 +342,52 @@
       font-size: 10px; font-weight: 900; color: #fff;
     }
 
+    /* 보조 성분 서포트 영역 */
+    .ing-support {
+      margin-top: 48px;
+    }
+    .ing-support-label {
+      display: flex; align-items: center; gap: 14px;
+      margin-bottom: 20px;
+    }
+    .ing-support-label-text {
+      font-size: 12px; font-weight: 800; letter-spacing: 2.5px;
+      text-transform: uppercase; color: var(--muted);
+      white-space: nowrap;
+    }
+    .ing-support-label-line {
+      flex: 1; height: 1px; background: var(--gray2);
+    }
+    .ing-support-grid {
+      display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px;
+    }
+    .ing-sup-card {
+      background: var(--gray); border-radius: 16px;
+      padding: 18px 14px; text-align: center;
+      border: 1px solid var(--gray2);
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .ing-sup-card:hover {
+      border-color: var(--teal2); background: #fff;
+    }
+    .ing-sup-emoji { font-size: 24px; margin-bottom: 10px; }
+    .ing-sup-name {
+      font-size: 13px; font-weight: 800; color: var(--navy);
+      margin-bottom: 4px; line-height: 1.3;
+    }
+    .ing-sup-desc {
+      font-size: 11px; color: var(--muted); line-height: 1.5;
+    }
+
+    @media (max-width: 900px) {
+      .ing-support-grid { grid-template-columns: repeat(3, 1fr); }
+    }
     @media (max-width: 780px) {
       .ing-duo { grid-template-columns: 1fr; }
       .ing-why { flex-direction: column; gap: 14px; }
+    }
+    @media (max-width: 480px) {
+      .ing-support-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     /* ── Doctor Section ── */
@@ -1064,8 +1107,8 @@
 <section id="ingredients" class="section">
   <div class="container">
     <div class="section-label">핵심 성분</div>
-    <h2 class="section-title">신경과 전문의가<br>직접 선별한 2가지 성분</h2>
-    <p class="section-sub">수십 가지 성분 중 신경 건강을 위한 근거가 가장 명확한 두 가지에 집중했습니다.</p>
+    <h2 class="section-title">핵심 2종 + 서포트 6종,<br>총 8가지 성분 설계</h2>
+    <p class="section-sub">가장 근거가 명확한 두 성분을 중심으로, 신경 건강 전반을 지원하는 6가지 서포트 성분을 함께 담았습니다.</p>
 
     <!-- 의사 선택 이유 -->
     <div class="ing-why">
@@ -1151,6 +1194,47 @@
       </div>
 
     </div>
+
+    <!-- 보조 성분 -->
+    <div class="ing-support">
+      <div class="ing-support-label">
+        <span class="ing-support-label-text">서포트 성분</span>
+        <div class="ing-support-label-line"></div>
+      </div>
+      <div class="ing-support-grid">
+        <div class="ing-sup-card">
+          <div class="ing-sup-emoji">💊</div>
+          <div class="ing-sup-name">메코발라민</div>
+          <div class="ing-sup-desc">활성형 비타민 B12</div>
+        </div>
+        <div class="ing-sup-card">
+          <div class="ing-sup-emoji">⚡</div>
+          <div class="ing-sup-name">R-알파리포산</div>
+          <div class="ing-sup-desc">지용성·수용성 항산화제</div>
+        </div>
+        <div class="ing-sup-card">
+          <div class="ing-sup-emoji">🟡</div>
+          <div class="ing-sup-name">코엔자임 Q10</div>
+          <div class="ing-sup-desc">미토콘드리아 영양소</div>
+        </div>
+        <div class="ing-sup-card">
+          <div class="ing-sup-emoji">🐟</div>
+          <div class="ing-sup-name">오메가-3</div>
+          <div class="ing-sup-desc">EPA + DHA 복합</div>
+        </div>
+        <div class="ing-sup-card">
+          <div class="ing-sup-emoji">🌸</div>
+          <div class="ing-sup-name">마그네슘</div>
+          <div class="ing-sup-desc">비스글리시네이트 형태</div>
+        </div>
+        <div class="ing-sup-card">
+          <div class="ing-sup-emoji">☀️</div>
+          <div class="ing-sup-name">비타민 D3 + K2</div>
+          <div class="ing-sup-desc">지용성 비타민 복합</div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
