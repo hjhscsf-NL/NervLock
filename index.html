@@ -1,0 +1,1698 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NervLock | 신경과 전문의가 설계한 신경통증 영양제</title>
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', '맑은 고딕', sans-serif;
+      color: #1a1a2e;
+      background: #fff;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── Color Tokens ── */
+    :root {
+      --navy:   #0d2545;
+      --navy2:  #163561;
+      --teal:   #1a7a6e;
+      --teal2:  #22a090;
+      --gold:   #b8922a;
+      --gold2:  #d4a843;
+      --gray:   #f4f6f9;
+      --gray2:  #e8ecf2;
+      --text:   #1a1a2e;
+      --muted:  #5a6278;
+    }
+
+    /* ── Utilities ── */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 90px 0; }
+    .section-label {
+      font-size: 13px; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--teal2); font-weight: 700; margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: clamp(26px, 3.5vw, 40px);
+      font-weight: 800; color: var(--navy);
+      line-height: 1.35; margin-bottom: 20px;
+    }
+    .section-sub {
+      font-size: 17px; color: var(--muted); max-width: 600px; line-height: 1.8;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      color: #fff; font-size: 17px; font-weight: 700;
+      padding: 17px 40px; border-radius: 50px;
+      letter-spacing: 0.5px;
+      box-shadow: 0 6px 24px rgba(184,146,42,0.35);
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer; border: none;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(184,146,42,0.45); }
+    .btn-outline {
+      display: inline-block; border: 2px solid var(--gold2);
+      color: var(--gold); font-size: 16px; font-weight: 700;
+      padding: 14px 34px; border-radius: 50px;
+      transition: all 0.2s; cursor: pointer; background: transparent;
+    }
+    .btn-outline:hover { background: var(--gold2); color: #fff; }
+
+    /* ── Nav ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(13,37,69,0.96); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 24px;
+      height: 68px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 22px; font-weight: 900; color: #fff; letter-spacing: -0.5px;
+    }
+    .nav-logo span { color: var(--gold2); }
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,0.8); font-size: 15px; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold2); }
+    .nav-cta {
+      background: var(--gold); color: #fff; font-size: 14px; font-weight: 700;
+      padding: 10px 24px; border-radius: 50px; transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--gold2); }
+
+    /* ── Hero ── */
+    #hero {
+      min-height: 100vh;
+      background: linear-gradient(150deg, var(--navy) 0%, var(--navy2) 60%, #0f4f6e 100%);
+      display: flex; align-items: center;
+      padding-top: 68px;
+      position: relative; overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    /* nerve wave decoration */
+    #hero::after {
+      content: '';
+      position: absolute; bottom: -2px; left: 0; right: 0; height: 80px;
+      background: #fff;
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+      align-items: center; padding: 80px 0;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.9); font-size: 13px; font-weight: 600;
+      padding: 8px 18px; border-radius: 50px; margin-bottom: 28px;
+      letter-spacing: 0.5px;
+    }
+    .hero-badge::before {
+      content: ''; width: 8px; height: 8px; border-radius: 50%;
+      background: var(--gold2); flex-shrink: 0;
+    }
+    .hero-title {
+      font-size: clamp(30px, 4.5vw, 52px);
+      font-weight: 900; color: #fff; line-height: 1.25;
+      margin-bottom: 24px; letter-spacing: -1px;
+    }
+    .hero-title em { color: var(--gold2); font-style: normal; }
+    .hero-sub {
+      font-size: 18px; color: rgba(255,255,255,0.75);
+      line-height: 1.8; margin-bottom: 40px; max-width: 480px;
+    }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .hero-trust {
+      margin-top: 48px;
+      display: flex; gap: 32px; flex-wrap: wrap;
+    }
+    .hero-trust-item {
+      display: flex; align-items: center; gap: 10px;
+      color: rgba(255,255,255,0.7); font-size: 14px;
+    }
+    .hero-trust-icon {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; flex-shrink: 0;
+    }
+    /* product mockup */
+    .hero-visual {
+      display: flex; justify-content: center; align-items: center;
+      position: relative;
+    }
+    .product-card {
+      background: linear-gradient(145deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 28px; padding: 40px 36px;
+      backdrop-filter: blur(10px);
+      text-align: center; position: relative;
+    }
+    .product-pill {
+      width: 160px; height: 260px; margin: 0 auto 28px;
+      background: linear-gradient(160deg, #fff 0%, #dce8f5 60%, #b2cce8 100%);
+      border-radius: 80px;
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; gap: 8px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3), inset 0 2px 6px rgba(255,255,255,0.8);
+      position: relative; overflow: hidden;
+    }
+    .product-pill::before {
+      content: ''; position: absolute; top: 20px; left: 20px; right: 20px; bottom: 20px;
+      border-radius: 60px;
+      background: linear-gradient(160deg, rgba(255,255,255,0.6) 0%, transparent 60%);
+    }
+    .pill-logo { font-size: 13px; font-weight: 900; color: var(--navy); letter-spacing: 2px; position: relative; z-index: 1; }
+    .pill-name { font-size: 11px; color: var(--teal); font-weight: 700; letter-spacing: 1px; position: relative; z-index: 1; }
+    .product-name { font-size: 22px; font-weight: 800; color: #fff; margin-bottom: 6px; }
+    .product-desc { font-size: 14px; color: rgba(255,255,255,0.65); }
+    .floating-badge {
+      position: absolute;
+      background: var(--gold); color: #fff; font-size: 12px; font-weight: 700;
+      padding: 6px 14px; border-radius: 50px;
+      box-shadow: 0 4px 16px rgba(184,146,42,0.5);
+    }
+    .floating-badge.top { top: -12px; right: 20px; }
+    .floating-badge.bottom { bottom: 20px; left: -20px; }
+
+    /* ── Pain Points ── */
+    #pain { background: var(--gray); }
+    .pain-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+      margin-top: 56px;
+    }
+    .pain-card {
+      background: #fff; border-radius: 20px; padding: 32px 28px;
+      border: 1.5px solid var(--gray2);
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .pain-card:hover { box-shadow: 0 12px 40px rgba(13,37,69,0.10); transform: translateY(-4px); }
+    .pain-icon {
+      width: 56px; height: 56px; border-radius: 16px;
+      background: linear-gradient(135deg, #e8f4f8, #c5dff0);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px; margin-bottom: 20px;
+    }
+    .pain-card h3 { font-size: 18px; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+    .pain-card p { font-size: 15px; color: var(--muted); line-height: 1.75; }
+
+    /* ── Science / How it Works ── */
+    #science {
+      background: linear-gradient(160deg, var(--navy) 0%, var(--navy2) 100%);
+      color: #fff;
+    }
+    #science .section-title { color: #fff; }
+    #science .section-sub { color: rgba(255,255,255,0.7); }
+    .science-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+      align-items: center; margin-top: 56px;
+    }
+    .science-steps { display: flex; flex-direction: column; gap: 32px; }
+    .science-step { display: flex; gap: 20px; }
+    .step-num {
+      flex-shrink: 0; width: 44px; height: 44px;
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 17px; font-weight: 900; color: #fff;
+      box-shadow: 0 4px 16px rgba(184,146,42,0.4);
+    }
+    .step-text h4 { font-size: 18px; font-weight: 800; margin-bottom: 6px; color: #fff; }
+    .step-text p { font-size: 15px; color: rgba(255,255,255,0.65); line-height: 1.75; }
+    /* nerve illustration */
+    .nerve-diagram {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 24px; padding: 40px;
+    }
+    .nerve-svg { width: 100%; height: 280px; }
+
+    /* ── Ingredients ── */
+    #ingredients { background: #fff; }
+    .ing-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+      margin-top: 56px;
+    }
+    .ing-card {
+      border-radius: 20px; padding: 32px 22px;
+      border: 1.5px solid var(--gray2);
+      text-align: center;
+      transition: all 0.25s;
+      position: relative; overflow: hidden;
+    }
+    .ing-card::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, transparent 60%, rgba(26,122,110,0.05) 100%);
+    }
+    .ing-card:hover { border-color: var(--teal2); box-shadow: 0 8px 32px rgba(26,122,110,0.12); }
+    .ing-emoji { font-size: 36px; margin-bottom: 16px; }
+    .ing-card h3 { font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
+    .ing-card p { font-size: 13px; color: var(--muted); line-height: 1.65; }
+    .ing-amount {
+      display: inline-block; margin-top: 14px;
+      background: var(--teal2); color: #fff;
+      font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 50px;
+    }
+
+    /* ── Doctor Section ── */
+    #doctor { background: var(--gray); }
+    .doctor-inner {
+      display: grid; grid-template-columns: 380px 1fr; gap: 64px;
+      align-items: center;
+    }
+    .doctor-card {
+      background: #fff; border-radius: 28px; padding: 40px 36px;
+      box-shadow: 0 12px 48px rgba(13,37,69,0.10);
+      text-align: center;
+    }
+    .doctor-avatar {
+      width: 120px; height: 120px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--navy), var(--teal));
+      margin: 0 auto 20px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 48px; color: rgba(255,255,255,0.9);
+      box-shadow: 0 8px 28px rgba(13,37,69,0.25);
+    }
+    .doctor-name { font-size: 22px; font-weight: 900; color: var(--navy); margin-bottom: 6px; }
+    .doctor-title { font-size: 14px; color: var(--teal); font-weight: 700; margin-bottom: 20px; }
+    .doctor-certs {
+      display: flex; flex-direction: column; gap: 10px; text-align: left;
+    }
+    .cert-item {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 13px; color: var(--muted); line-height: 1.5;
+    }
+    .cert-item::before {
+      content: '✓'; color: var(--teal2); font-weight: 900;
+      font-size: 14px; flex-shrink: 0; margin-top: 1px;
+    }
+    .doctor-message h3 {
+      font-size: clamp(22px, 3vw, 32px); font-weight: 900;
+      color: var(--navy); line-height: 1.4; margin-bottom: 24px;
+    }
+    .doctor-message h3 em { color: var(--teal); font-style: normal; }
+    .doctor-message p { font-size: 16px; color: var(--muted); line-height: 1.9; margin-bottom: 16px; }
+    .doctor-signature {
+      margin-top: 28px; padding-top: 20px;
+      border-top: 1px solid var(--gray2);
+      font-size: 15px; color: var(--navy); font-style: italic;
+    }
+
+    /* ── Testimonials ── */
+    #reviews { background: #fff; }
+    .reviews-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+      margin-top: 56px;
+    }
+    .review-card {
+      background: var(--gray); border-radius: 20px; padding: 32px 28px;
+      position: relative;
+    }
+    .review-card::before {
+      content: '"'; font-size: 80px; color: var(--gray2);
+      position: absolute; top: 12px; left: 24px; line-height: 1;
+      font-family: Georgia, serif;
+    }
+    .review-stars { color: var(--gold2); font-size: 18px; margin-bottom: 16px; letter-spacing: 2px; }
+    .review-text { font-size: 15px; color: var(--text); line-height: 1.8; margin-bottom: 24px; position: relative; }
+    .reviewer { display: flex; align-items: center; gap: 12px; }
+    .reviewer-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--navy), var(--teal));
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-weight: 700; font-size: 16px;
+    }
+    .reviewer-info h4 { font-size: 15px; font-weight: 700; color: var(--navy); }
+    .reviewer-info span { font-size: 13px; color: var(--muted); }
+    .verified {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: 11px; color: var(--teal); font-weight: 700;
+      background: rgba(26,122,110,0.08); padding: 2px 8px; border-radius: 50px;
+      margin-left: 8px;
+    }
+
+    /* ── Products / Pricing ── */
+    #products { background: var(--gray); }
+    .products-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+      margin-top: 56px;
+    }
+    .product-box {
+      background: #fff; border-radius: 24px; padding: 36px 28px;
+      border: 2px solid transparent;
+      transition: all 0.25s; position: relative; overflow: hidden;
+    }
+    .product-box:hover, .product-box.featured { border-color: var(--gold2); }
+    .product-box.featured { box-shadow: 0 16px 48px rgba(184,146,42,0.18); }
+    .best-badge {
+      position: absolute; top: 20px; right: -28px;
+      background: var(--gold); color: #fff;
+      font-size: 11px; font-weight: 800; letter-spacing: 1px;
+      padding: 6px 40px; transform: rotate(45deg);
+    }
+    .product-type { font-size: 12px; font-weight: 700; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .product-box h3 { font-size: 22px; font-weight: 900; color: var(--navy); margin-bottom: 8px; }
+    .product-box .sub { font-size: 14px; color: var(--muted); margin-bottom: 24px; }
+    .price-wrap { margin-bottom: 28px; }
+    .price-orig { font-size: 15px; color: var(--muted); text-decoration: line-through; margin-bottom: 4px; }
+    .price { font-size: 34px; font-weight: 900; color: var(--navy); }
+    .price span { font-size: 16px; font-weight: 500; color: var(--muted); }
+    .product-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+    .product-features li {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 14px; color: var(--text);
+    }
+    .product-features li::before { content: '✓'; color: var(--teal2); font-weight: 900; font-size: 15px; }
+    .full-btn {
+      display: block; text-align: center;
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      color: #fff; font-size: 16px; font-weight: 700;
+      padding: 16px; border-radius: 50px;
+      box-shadow: 0 4px 20px rgba(184,146,42,0.3);
+      transition: all 0.2s;
+    }
+    .full-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(184,146,42,0.4); }
+    .full-btn.outline {
+      background: transparent; color: var(--navy);
+      border: 2px solid var(--gray2); box-shadow: none;
+    }
+    .full-btn.outline:hover { border-color: var(--gold2); color: var(--gold); }
+
+    /* ── Blog ── */
+    #blog { background: var(--gray); }
+    .blog-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+      margin-top: 56px;
+    }
+    .blog-card {
+      background: #fff; border-radius: 20px; overflow: hidden;
+      border: 1.5px solid var(--gray2);
+      transition: box-shadow 0.25s, transform 0.25s;
+      cursor: pointer; display: flex; flex-direction: column;
+    }
+    .blog-card:hover {
+      box-shadow: 0 14px 44px rgba(13,37,69,0.12);
+      transform: translateY(-4px);
+    }
+    .blog-thumb {
+      height: 180px; position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .blog-thumb-bg {
+      position: absolute; inset: 0;
+    }
+    .blog-thumb-icon {
+      font-size: 52px; position: relative; z-index: 1;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15));
+    }
+    .blog-body { padding: 26px 24px 22px; flex: 1; display: flex; flex-direction: column; }
+    .blog-meta {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 12px; flex-wrap: wrap;
+    }
+    .blog-tag {
+      font-size: 11px; font-weight: 700; letter-spacing: 1px; padding: 3px 10px;
+      border-radius: 50px; text-transform: uppercase;
+    }
+    .tag-neuro  { background: rgba(26,122,110,0.10); color: var(--teal); }
+    .tag-nutri  { background: rgba(184,146,42,0.12);  color: var(--gold); }
+    .tag-pain   { background: rgba(13,37,69,0.09);    color: var(--navy2); }
+    .tag-life   { background: rgba(94,60,150,0.10);   color: #5e3c96; }
+    .blog-date  { font-size: 12px; color: var(--muted); }
+    .blog-read  { font-size: 12px; color: var(--muted); }
+    .blog-read::before { content: '·'; margin-right: 10px; }
+    .blog-card h3 {
+      font-size: 18px; font-weight: 800; color: var(--navy);
+      line-height: 1.45; margin-bottom: 10px;
+    }
+    .blog-card p {
+      font-size: 14px; color: var(--muted); line-height: 1.75;
+      flex: 1;
+    }
+    .blog-footer {
+      margin-top: 20px; padding-top: 16px;
+      border-top: 1px solid var(--gray2);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .blog-author {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 13px; color: var(--navy); font-weight: 600;
+    }
+    .blog-author-dot {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--navy), var(--teal));
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 11px; font-weight: 700; flex-shrink: 0;
+    }
+    .blog-more {
+      font-size: 13px; color: var(--teal2); font-weight: 700;
+      display: flex; align-items: center; gap: 4px;
+    }
+    .blog-more::after { content: '→'; }
+
+    /* ── Article Modal ── */
+    .modal-overlay {
+      position: fixed; inset: 0; z-index: 200;
+      background: rgba(10,26,50,0.75); backdrop-filter: blur(6px);
+      display: flex; align-items: flex-start; justify-content: center;
+      padding: 40px 20px 40px;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.3s;
+      overflow-y: auto;
+    }
+    .modal-overlay.open { opacity: 1; pointer-events: all; }
+    .modal-box {
+      background: #fff; border-radius: 24px;
+      max-width: 760px; width: 100%;
+      padding: 0; overflow: hidden;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.3);
+      transform: translateY(24px);
+      transition: transform 0.35s cubic-bezier(.16,1,.3,1);
+      position: relative;
+    }
+    .modal-overlay.open .modal-box { transform: translateY(0); }
+    .modal-header {
+      height: 200px; position: relative;
+      display: flex; align-items: flex-end;
+      padding: 28px 36px;
+    }
+    .modal-header-bg { position: absolute; inset: 0; }
+    .modal-header-content { position: relative; z-index: 1; }
+    .modal-tag-row { display: flex; gap: 8px; margin-bottom: 10px; flex-wrap: wrap; }
+    .modal-title {
+      font-size: clamp(20px, 3.5vw, 28px); font-weight: 900;
+      color: #fff; line-height: 1.35;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    }
+    .modal-close {
+      position: absolute; top: 20px; right: 20px; z-index: 10;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: rgba(255,255,255,0.2); border: none; cursor: pointer;
+      color: #fff; font-size: 20px; display: flex; align-items: center;
+      justify-content: center; transition: background 0.2s;
+      line-height: 1;
+    }
+    .modal-close:hover { background: rgba(255,255,255,0.35); }
+    .modal-meta {
+      padding: 20px 36px; border-bottom: 1px solid var(--gray2);
+      display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+    }
+    .modal-meta-item {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 13px; color: var(--muted);
+    }
+    .modal-meta-item strong { color: var(--navy); font-weight: 700; }
+    .modal-body {
+      padding: 36px 36px 48px;
+      font-size: 16px; color: #2a2a3e; line-height: 1.95;
+    }
+    .modal-body h2 {
+      font-size: 22px; font-weight: 900; color: var(--navy);
+      margin: 36px 0 14px; line-height: 1.4;
+    }
+    .modal-body h2:first-child { margin-top: 0; }
+    .modal-body h3 {
+      font-size: 18px; font-weight: 800; color: var(--navy2);
+      margin: 28px 0 10px;
+    }
+    .modal-body p { margin-bottom: 18px; }
+    .modal-body ul, .modal-body ol {
+      padding-left: 24px; margin-bottom: 18px; display: flex;
+      flex-direction: column; gap: 8px;
+    }
+    .modal-body li { font-size: 15px; color: #3a3a50; line-height: 1.75; }
+    .callout {
+      background: linear-gradient(135deg, rgba(26,122,110,0.07), rgba(26,122,110,0.03));
+      border-left: 4px solid var(--teal2);
+      border-radius: 0 12px 12px 0;
+      padding: 18px 22px; margin: 24px 0;
+      font-size: 15px; color: var(--navy); font-style: italic; line-height: 1.8;
+    }
+    .callout strong { color: var(--teal); font-style: normal; }
+    .evidence-box {
+      background: var(--gray); border-radius: 14px;
+      padding: 20px 24px; margin: 24px 0;
+    }
+    .evidence-box h4 {
+      font-size: 13px; font-weight: 700; color: var(--teal2);
+      letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px;
+    }
+    .evidence-box ul { margin: 0; }
+    .evidence-box li { font-size: 13px; color: var(--muted); }
+    .modal-footer {
+      margin: 32px 0 0;
+      padding: 24px; background: var(--gray); border-radius: 16px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .modal-footer-avatar {
+      width: 52px; height: 52px; border-radius: 50%; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--navy), var(--teal));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; color: #fff;
+    }
+    .modal-footer p { font-size: 13px; color: var(--muted); margin: 0; line-height: 1.65; }
+    .modal-footer strong { color: var(--navy); }
+
+    /* ── FAQ ── */
+    #faq { background: #fff; }
+    .faq-list { max-width: 780px; margin: 48px auto 0; }
+    .faq-item {
+      border-bottom: 1.5px solid var(--gray2);
+    }
+    .faq-q {
+      width: 100%; background: none; border: none; cursor: pointer;
+      padding: 24px 0; display: flex; justify-content: space-between; align-items: center;
+      font-size: 17px; font-weight: 700; color: var(--navy); text-align: left;
+      gap: 16px;
+    }
+    .faq-q .icon {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--gray); flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; color: var(--teal2); transition: transform 0.3s;
+    }
+    .faq-item.open .faq-q .icon { transform: rotate(45deg); }
+    .faq-a {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.3s;
+      font-size: 15px; color: var(--muted); line-height: 1.85;
+    }
+    .faq-item.open .faq-a { max-height: 400px; padding-bottom: 20px; }
+
+    /* ── CTA Banner ── */
+    #cta {
+      background: linear-gradient(135deg, var(--navy), var(--teal));
+      padding: 90px 0; text-align: center;
+    }
+    #cta .section-title { color: #fff; }
+    #cta .section-sub { color: rgba(255,255,255,0.75); margin: 0 auto 40px; text-align: center; }
+    .cta-guarantee {
+      display: inline-flex; gap: 10px; align-items: center;
+      color: rgba(255,255,255,0.7); font-size: 14px; margin-top: 24px;
+    }
+    .cta-guarantee::before { content: '🛡️'; }
+
+    /* ── Footer ── */
+    footer {
+      background: #0a1a32; color: rgba(255,255,255,0.5);
+      padding: 56px 0 32px;
+    }
+    .footer-inner {
+      display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 12px; }
+    .footer-brand span { color: var(--gold2); }
+    .footer-desc { font-size: 13px; line-height: 1.8; }
+    .footer-col h4 { color: rgba(255,255,255,0.8); font-size: 14px; font-weight: 700; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a { font-size: 13px; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--gold2); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 12px;
+    }
+    .footer-notice { font-size: 11px; line-height: 1.7; max-width: 600px; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .hero-content, .science-grid, .doctor-inner, .footer-inner {
+        grid-template-columns: 1fr;
+      }
+      .hero-visual { display: none; }
+      .pain-grid, .reviews-grid, .products-grid, .blog-grid { grid-template-columns: 1fr 1fr; }
+      .ing-grid { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 600px) {
+      .pain-grid, .reviews-grid, .products-grid, .ing-grid, .blog-grid { grid-template-columns: 1fr; }
+      .section { padding: 64px 0; }
+      .modal-header { height: 160px; padding: 20px 24px; }
+      .modal-body, .modal-meta { padding-left: 24px; padding-right: 24px; }
+      .modal-body { padding-bottom: 36px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">Nerv<span>Lock</span></div>
+    <ul class="nav-links">
+      <li><a href="#pain">증상 체크</a></li>
+      <li><a href="#science">작용 원리</a></li>
+      <li><a href="#ingredients">성분</a></li>
+      <li><a href="#doctor">의사 소개</a></li>
+      <li><a href="#blog">의학 칼럼</a></li>
+      <li><a href="#products">구매하기</a></li>
+    </ul>
+    <a href="#products" class="nav-cta">지금 구매하기</a>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div>
+        <div class="hero-badge">신경과 전문의 설계 · 임상 성분 처방</div>
+        <h1 class="hero-title">
+          참아온 신경통증,<br>
+          이제 <em>과학으로</em><br>
+          잠재웁니다
+        </h1>
+        <p class="hero-sub">
+          NervLock은 10년 이상 신경통 환자를 진료한<br>
+          신경과 전문의가 직접 개발한 신경통증 전문 영양제입니다.<br>
+          손발 저림, 타는 듯한 통증, 야간 통증에 정면으로 맞서세요.
+        </p>
+        <div class="hero-actions">
+          <a href="#products" class="btn-primary">30일 체험 시작하기</a>
+          <a href="#science" class="btn-outline">작용 원리 보기</a>
+        </div>
+        <div class="hero-trust">
+          <div class="hero-trust-item">
+            <div class="hero-trust-icon">🏥</div>
+            신경과 전문의 개발
+          </div>
+          <div class="hero-trust-item">
+            <div class="hero-trust-icon">🔬</div>
+            임상 근거 성분
+          </div>
+          <div class="hero-trust-item">
+            <div class="hero-trust-icon">🛡️</div>
+            30일 환불 보장
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="product-card">
+          <div class="floating-badge top">BEST SELLER</div>
+          <div class="product-pill">
+            <div class="pill-logo">NERVLOCK</div>
+            <div class="pill-name">NERVE CARE</div>
+          </div>
+          <div class="product-name">너브락 신경케어</div>
+          <div class="product-desc">60캡슐 / 1개월분</div>
+          <div class="floating-badge bottom">신경과 전문의 설계</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Pain Points ── -->
+<section id="pain" class="section">
+  <div class="container">
+    <div class="section-label">이런 증상이 있으신가요?</div>
+    <h2 class="section-title">신경통증은 왜<br>시간이 지나도 나아지지 않을까요?</h2>
+    <p class="section-sub">
+      40~50대에 접어들면 신경 재생 능력이 저하되고,
+      만성 염증이 누적되면서 통증이 고착화됩니다.
+    </p>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-icon">🖐️</div>
+        <h3>손발 저림 · 무감각</h3>
+        <p>오래 앉거나 자고 나면 손발이 저리고 따끔한 느낌이 지속됩니다. 말초신경 손상의 신호일 수 있습니다.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">🔥</div>
+        <h3>타는 듯한 신경통</h3>
+        <p>전기에 감전된 것 같은, 또는 불에 닿은 것 같은 통증. 당뇨병성 신경병증이나 대상포진 후 통증에 흔합니다.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">🌙</div>
+        <h3>야간 통증 · 수면 방해</h3>
+        <p>밤이 되면 더 심해지는 통증으로 숙면을 취하지 못하는 분들이 많습니다. 삶의 질이 현저히 저하됩니다.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">⚡</div>
+        <h3>찌릿한 방사통</h3>
+        <p>목, 허리에서 팔·다리로 내려오는 방사통. 신경근이 압박을 받아 통증이 전기처럼 퍼져 나갑니다.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">💊</div>
+        <h3>진통제 내성 · 의존</h3>
+        <p>진통제가 점점 듣지 않는 느낌. 신경통은 일반 소염제로는 근본적인 해결이 어렵습니다.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">😔</div>
+        <h3>만성화로 인한 우울감</h3>
+        <p>6개월 이상 지속되는 통증은 뇌 구조 자체를 바꾸어 우울·불안과 함께 통증을 악화시킵니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Science ── -->
+<section id="science" class="section">
+  <div class="container">
+    <div class="section-label" style="color:rgba(255,255,255,0.6)">신경과학 기반 접근</div>
+    <h2 class="section-title">NervLock의 3-Path<br>신경 보호 메커니즘</h2>
+    <p class="section-sub">
+      단순히 통증을 덮는 것이 아니라,<br>
+      손상된 신경을 회복하고 보호하는 근본적 접근입니다.
+    </p>
+    <div class="science-grid">
+      <div class="science-steps">
+        <div class="science-step">
+          <div class="step-num">1</div>
+          <div class="step-text">
+            <h4>신경 미엘린 재생 촉진</h4>
+            <p>활성형 비타민 B12(메코발라민)와 α-리포산이 손상된 신경 보호막(미엘린)의 재합성을 촉진하여 신경 전도 속도를 정상화합니다.</p>
+          </div>
+        </div>
+        <div class="science-step">
+          <div class="step-num">2</div>
+          <div class="step-text">
+            <h4>신경 염증 차단</h4>
+            <p>팔미토일에탄올아미드(PEA)와 커큐민 인지질 복합체가 신경 주변의 미세아교세포 과활성화를 억제해 만성 신경 염증 사이클을 끊습니다.</p>
+          </div>
+        </div>
+        <div class="science-step">
+          <div class="step-num">3</div>
+          <div class="step-text">
+            <h4>산화 스트레스 방어막 구축</h4>
+            <p>R-알파리포산과 코엔자임Q10이 미토콘드리아 수준에서 산화 스트레스를 제거해 신경세포가 에너지를 효율적으로 생산하도록 돕습니다.</p>
+          </div>
+        </div>
+      </div>
+      <div class="nerve-diagram">
+        <svg class="nerve-svg" viewBox="0 0 320 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- myelin sheath visualization -->
+          <defs>
+            <linearGradient id="axon" x1="0" y1="0" x2="320" y2="0">
+              <stop offset="0%" stop-color="#22a090"/>
+              <stop offset="100%" stop-color="#d4a843"/>
+            </linearGradient>
+            <linearGradient id="bg" x1="0" y1="0" x2="0" y2="280">
+              <stop offset="0%" stop-color="rgba(255,255,255,0.08)"/>
+              <stop offset="100%" stop-color="rgba(255,255,255,0.02)"/>
+            </linearGradient>
+          </defs>
+          <!-- Axon -->
+          <rect x="20" y="125" width="280" height="30" rx="15" fill="url(#axon)" opacity="0.9"/>
+          <!-- Myelin segments -->
+          <rect x="30"  y="110" width="50" height="60" rx="30" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+          <rect x="100" y="110" width="50" height="60" rx="30" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+          <rect x="170" y="110" width="50" height="60" rx="30" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+          <rect x="240" y="110" width="50" height="60" rx="30" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+          <!-- Nodes of Ranvier labels -->
+          <text x="90"  y="200" fill="rgba(255,255,255,0.5)" font-size="10" text-anchor="middle">랑비에 결절</text>
+          <text x="160" y="200" fill="rgba(255,255,255,0.5)" font-size="10" text-anchor="middle">랑비에 결절</text>
+          <text x="230" y="200" fill="rgba(255,255,255,0.5)" font-size="10" text-anchor="middle">랑비에 결절</text>
+          <!-- Impulse -->
+          <circle cx="265" cy="140" r="10" fill="#d4a843" opacity="0.9">
+            <animate attributeName="cx" values="35;285;35" dur="3s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.9;0.9;0" dur="3s" repeatCount="indefinite"/>
+          </circle>
+          <!-- Labels -->
+          <text x="55"  y="90" fill="rgba(255,255,255,0.8)" font-size="11" text-anchor="middle">미엘린 수초</text>
+          <text x="55"  y="105" fill="rgba(26,122,110,0.9)" font-size="10" text-anchor="middle">재생 중</text>
+          <text x="160" y="48" fill="rgba(255,255,255,0.9)" font-size="13" text-anchor="middle" font-weight="bold">신경 축삭돌기</text>
+          <text x="160" y="64" fill="rgba(212,168,67,0.8)" font-size="11" text-anchor="middle">신호 전달 속도 정상화</text>
+        </svg>
+        <p style="color:rgba(255,255,255,0.5); font-size:12px; text-align:center; margin-top:8px;">
+          NervLock은 미엘린 재생을 통해 신경 전도 속도를 회복시킵니다
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Ingredients ── -->
+<section id="ingredients" class="section">
+  <div class="container">
+    <div class="section-label">핵심 성분</div>
+    <h2 class="section-title">신경과 전문의가<br>직접 선별한 8가지 성분</h2>
+    <p class="section-sub">유행 성분이 아닌, 신경과학 논문이 뒷받침하는 성분만 담았습니다.</p>
+    <div class="ing-grid">
+      <div class="ing-card">
+        <div class="ing-emoji">💊</div>
+        <h3>메코발라민</h3>
+        <p>활성형 비타민 B12. 신경세포 미엘린 합성의 핵심 코팩터로 신경 재생을 직접 촉진합니다.</p>
+        <span class="ing-amount">1,500 μg</span>
+      </div>
+      <div class="ing-card">
+        <div class="ing-emoji">⚡</div>
+        <h3>R-알파리포산</h3>
+        <p>강력한 항산화제. 신경세포 미토콘드리아를 보호하고 당뇨성 신경병증에 임상 근거가 뚜렷합니다.</p>
+        <span class="ing-amount">600 mg</span>
+      </div>
+      <div class="ing-card">
+        <div class="ing-emoji">🌿</div>
+        <h3>PEA (팔미토일에탄올아미드)</h3>
+        <p>체내 자연 항염 물질. 신경 주변 면역세포를 조절해 만성 신경 염증을 완화합니다.</p>
+        <span class="ing-amount">600 mg</span>
+      </div>
+      <div class="ing-card">
+        <div class="ing-emoji">🔶</div>
+        <h3>커큐민 인지질 복합체</h3>
+        <p>흡수율 29배 향상 커큐민. NF-κB 경로를 억제해 신경 염증 신호를 차단합니다.</p>
+        <span class="ing-amount">500 mg</span>
+      </div>
+      <div class="ing-card">
+        <div class="ing-emoji">🐟</div>
+        <h3>오메가-3 (EPA+DHA)</h3>
+        <p>신경세포막 구성 성분. DHA는 신경 가소성을 높이고 EPA는 신경 염증 해소를 돕습니다.</p>
+        <span class="ing-amount">1,000 mg</span>
+      </div>
+      <div class="ing-card">
+        <div class="ing-emoji">🟡</div>
+        <h3>코엔자임 Q10</h3>
+        <p>미토콘드리아 에너지 생산 핵심 성분. 신경세포가 통증 자극에 효율적으로 대응하도록 지원합니다.</p>
+        <span class="ing-amount">200 mg</span>
+      </div>
+      <div class="ing-card">
+        <div class="ing-emoji">🌸</div>
+        <h3>마그네슘 비스글리시네이트</h3>
+        <p>NMDA 수용체 길항 작용으로 중추 감작화를 억제. 근육 이완과 수면의 질 개선에도 기여합니다.</p>
+        <span class="ing-amount">300 mg</span>
+      </div>
+      <div class="ing-card">
+        <div class="ing-emoji">🌰</div>
+        <h3>비타민 D3 + K2</h3>
+        <p>신경 면역 조절 핵심 비타민. 신경 보호 단백질(NGF) 발현을 증가시키고 염증 조절에 기여합니다.</p>
+        <span class="ing-amount">2,000 IU / 90 μg</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Doctor ── -->
+<section id="doctor" class="section">
+  <div class="container">
+    <div class="doctor-inner">
+      <div class="doctor-card">
+        <div class="doctor-avatar">👨‍⚕️</div>
+        <div class="doctor-name">김재원 원장</div>
+        <div class="doctor-title">신경과 전문의 · NervLock 설립자</div>
+        <div class="doctor-certs">
+          <div class="cert-item">서울대학교 의과대학 졸업</div>
+          <div class="cert-item">대한신경과학회 정회원 · 전문의</div>
+          <div class="cert-item">통증신경학 분과 전문 수련</div>
+          <div class="cert-item">신경통 임상 연구 논문 12편 발표</div>
+          <div class="cert-item">신경통증클리닉 15년 진료 경험</div>
+        </div>
+      </div>
+      <div class="doctor-message">
+        <h3>
+          "진료실에서 매일 봤습니다.<br>
+          통증약을 드셔도 <em>나아지지 않는 분들</em>을."
+        </h3>
+        <p>
+          신경통은 염증을 억제하는 일반 진통제로는 근본 해결이 어렵습니다.
+          신경 자체가 손상되어 잘못된 신호를 보내는 것이기 때문입니다.
+        </p>
+        <p>
+          저는 신경과 전문의로서 15년간 수천 명의 신경통 환자를 진료하며
+          영양 결핍과 신경 손상의 상관관계를 직접 확인했습니다.
+          메코발라민, R-알파리포산, PEA — 이 성분들의 임상 근거는
+          이미 국제 학술지에 충분히 축적되어 있습니다.
+        </p>
+        <p>
+          NervLock은 그 근거들을 하나의 제품에 담은 결과물입니다.
+          제 환자들이 먹어도 된다고 확신하는 성분과 용량만 사용했습니다.
+        </p>
+        <div class="doctor-signature">
+          — 김재원 신경과 전문의, NervLock 설립자
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Testimonials ── -->
+<section id="reviews" class="section">
+  <div class="container">
+    <div class="section-label">실제 후기</div>
+    <h2 class="section-title">4,000명이 경험한<br>변화를 들어보세요</h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">
+          당뇨 진단 후 3년째 발바닥이 불에 타는 것 같았어요.
+          NervLock 2개월 복용 후 밤에 통증 때문에 깨는 일이 확실히 줄었습니다.
+          주치의 선생님도 신경 전도 검사 결과가 좋아졌다고 하셨어요.
+        </p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">이</div>
+          <div class="reviewer-info">
+            <h4>이○○ 님<span class="verified">✓ 구매 인증</span></h4>
+            <span>56세 · 당뇨성 신경병증 4년차</span>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">
+          대상포진 후 신경통으로 1년 넘게 고생했는데, 약만으로는 한계가 있었습니다.
+          NervLock 복용 6주째부터 찌릿한 느낌이 확실히 덜해졌어요.
+          무엇보다 신경과 전문의가 만들었다는 점이 믿음이 갔습니다.
+        </p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">박</div>
+          <div class="reviewer-info">
+            <h4>박○○ 님<span class="verified">✓ 구매 인증</span></h4>
+            <span>62세 · 대상포진 후 신경통</span>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★☆</div>
+        <p class="review-text">
+          디스크로 왼쪽 다리 방사통이 심했는데 수술은 피하고 싶었어요.
+          3개월 꾸준히 먹으니 허리에서 발끝까지 퍼지던 통증 강도가 많이 줄었습니다.
+          아침에 일어날 때 차이를 가장 많이 느껴요.
+        </p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">최</div>
+          <div class="reviewer-info">
+            <h4>최○○ 님<span class="verified">✓ 구매 인증</span></h4>
+            <span>48세 · 요추 추간판 탈출증</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Products ── -->
+<section id="products" class="section">
+  <div class="container">
+    <div class="section-label">제품 구성</div>
+    <h2 class="section-title">나에게 맞는<br>NervLock 선택하기</h2>
+    <p class="section-sub">신경 재생에는 최소 3개월이 필요합니다. 3개월 이상 복용을 권장합니다.</p>
+    <div class="products-grid">
+      <div class="product-box">
+        <div class="product-type">1개월 체험</div>
+        <h3>NervLock 기본</h3>
+        <p class="sub">처음 시작하는 분들께 추천</p>
+        <div class="price-wrap">
+          <div class="price-orig">정가 68,000원</div>
+          <div class="price">58,000<span>원</span></div>
+        </div>
+        <ul class="product-features">
+          <li>너브락 신경케어 60캡슐 × 1통</li>
+          <li>8가지 핵심 성분 전량 포함</li>
+          <li>복용 가이드 PDF 제공</li>
+          <li>무료 배송</li>
+        </ul>
+        <a href="#" class="full-btn outline">체험 구매하기</a>
+      </div>
+      <div class="product-box featured">
+        <div class="best-badge">BEST</div>
+        <div class="product-type">3개월 집중</div>
+        <h3>NervLock 집중케어</h3>
+        <p class="sub">신경 재생 완성을 위한 최적 기간</p>
+        <div class="price-wrap">
+          <div class="price-orig">정가 204,000원</div>
+          <div class="price">154,000<span>원</span></div>
+        </div>
+        <ul class="product-features">
+          <li>너브락 신경케어 60캡슐 × 3통</li>
+          <li>8가지 핵심 성분 전량 포함</li>
+          <li>월별 케어 프로그램 제공</li>
+          <li>무료 배송 + 전담 상담 1회</li>
+          <li><strong>정가 대비 25% 할인</strong></li>
+        </ul>
+        <a href="#" class="full-btn">집중케어 시작하기</a>
+      </div>
+      <div class="product-box">
+        <div class="product-type">6개월 완성</div>
+        <h3>NervLock 완성</h3>
+        <p class="sub">만성 신경통 근본 개선 프로그램</p>
+        <div class="price-wrap">
+          <div class="price-orig">정가 408,000원</div>
+          <div class="price">278,000<span>원</span></div>
+        </div>
+        <ul class="product-features">
+          <li>너브락 신경케어 60캡슐 × 6통</li>
+          <li>8가지 핵심 성분 전량 포함</li>
+          <li>월별 케어 프로그램 제공</li>
+          <li>무료 배송 + 전담 상담 3회</li>
+          <li><strong>정가 대비 32% 할인</strong></li>
+        </ul>
+        <a href="#" class="full-btn outline">완성 프로그램 시작</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Blog ── -->
+<section id="blog" class="section">
+  <div class="container">
+    <div class="section-label">의학 칼럼</div>
+    <h2 class="section-title">신경과 전문의가 직접 쓴<br>신경통증 이야기</h2>
+    <p class="section-sub">진료실에서 환자들이 가장 많이 묻는 질문들을 전문의가 직접 답합니다.</p>
+
+    <div class="blog-grid">
+
+      <!-- Card 1 -->
+      <div class="blog-card" data-post="0">
+        <div class="blog-thumb">
+          <div class="blog-thumb-bg" style="background: linear-gradient(135deg, #0d2545 0%, #1a7a6e 100%);"></div>
+          <div class="blog-thumb-icon">🧠</div>
+        </div>
+        <div class="blog-body">
+          <div class="blog-meta">
+            <span class="blog-tag tag-neuro">신경과학</span>
+            <span class="blog-date">2024. 11. 12</span>
+            <span class="blog-read">8분 읽기</span>
+          </div>
+          <h3>당뇨병이 왜 발을 태우는가 — 당뇨성 신경병증의 진실</h3>
+          <p>혈당 조절이 잘 되는데도 발이 타는 듯 아픈 이유가 있습니다. 신경과 전문의가 그 기전을 쉽게 풀어드립니다.</p>
+          <div class="blog-footer">
+            <div class="blog-author">
+              <div class="blog-author-dot">김</div>
+              김재원 원장
+            </div>
+            <span class="blog-more">전문 읽기</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="blog-card" data-post="1">
+        <div class="blog-thumb">
+          <div class="blog-thumb-bg" style="background: linear-gradient(135deg, #163561 0%, #5e3c96 100%);"></div>
+          <div class="blog-thumb-icon">⚡</div>
+        </div>
+        <div class="blog-body">
+          <div class="blog-meta">
+            <span class="blog-tag tag-pain">통증의학</span>
+            <span class="blog-date">2024. 10. 28</span>
+            <span class="blog-read">10분 읽기</span>
+          </div>
+          <h3>대상포진 후 신경통, 왜 수십 년씩 지속되는가</h3>
+          <p>피부 병변이 사라진 후에도 통증이 남는 이유. 중추 감작화(central sensitization)가 무엇인지 설명합니다.</p>
+          <div class="blog-footer">
+            <div class="blog-author">
+              <div class="blog-author-dot">김</div>
+              김재원 원장
+            </div>
+            <span class="blog-more">전문 읽기</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="blog-card" data-post="2">
+        <div class="blog-thumb">
+          <div class="blog-thumb-bg" style="background: linear-gradient(135deg, #0f4f3a 0%, #b8922a 100%);"></div>
+          <div class="blog-thumb-icon">💊</div>
+        </div>
+        <div class="blog-body">
+          <div class="blog-meta">
+            <span class="blog-tag tag-nutri">영양·성분</span>
+            <span class="blog-date">2024. 10. 08</span>
+            <span class="blog-read">7분 읽기</span>
+          </div>
+          <h3>비타민 B12가 신경에 하는 일 — 메코발라민 vs 시아노코발라민</h3>
+          <p>시중 B12 제품의 90%는 체내에서 거의 쓰이지 않는 형태입니다. 신경 재생에 실제로 필요한 형태는 무엇인지 설명합니다.</p>
+          <div class="blog-footer">
+            <div class="blog-author">
+              <div class="blog-author-dot">김</div>
+              김재원 원장
+            </div>
+            <span class="blog-more">전문 읽기</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="blog-card" data-post="3">
+        <div class="blog-thumb">
+          <div class="blog-thumb-bg" style="background: linear-gradient(135deg, #1a2a5e 0%, #22a090 100%);"></div>
+          <div class="blog-thumb-icon">🔬</div>
+        </div>
+        <div class="blog-body">
+          <div class="blog-meta">
+            <span class="blog-tag tag-neuro">신경과학</span>
+            <span class="blog-date">2024. 09. 17</span>
+            <span class="blog-read">9분 읽기</span>
+          </div>
+          <h3>알파리포산(ALA), 왜 신경통 치료에 쓰이는가</h3>
+          <p>독일에서 30년 넘게 당뇨성 신경병증 치료약으로 처방되어 온 알파리포산. 그 근거와 올바른 복용법을 알아봅니다.</p>
+          <div class="blog-footer">
+            <div class="blog-author">
+              <div class="blog-author-dot">김</div>
+              김재원 원장
+            </div>
+            <span class="blog-more">전문 읽기</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="blog-card" data-post="4">
+        <div class="blog-thumb">
+          <div class="blog-thumb-bg" style="background: linear-gradient(135deg, #2d1a45 0%, #c0392b 100%);"></div>
+          <div class="blog-thumb-icon">🌙</div>
+        </div>
+        <div class="blog-body">
+          <div class="blog-meta">
+            <span class="blog-tag tag-pain">통증의학</span>
+            <span class="blog-date">2024. 09. 03</span>
+            <span class="blog-read">6분 읽기</span>
+          </div>
+          <h3>왜 신경통은 밤에 더 심해지는가</h3>
+          <p>낮에는 버틸 만한데 밤만 되면 고통스러운 분들이 많습니다. 일주기 리듬과 신경 통증의 관계를 설명합니다.</p>
+          <div class="blog-footer">
+            <div class="blog-author">
+              <div class="blog-author-dot">김</div>
+              김재원 원장
+            </div>
+            <span class="blog-more">전문 읽기</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="blog-card" data-post="5">
+        <div class="blog-thumb">
+          <div class="blog-thumb-bg" style="background: linear-gradient(135deg, #0d3d2a 0%, #1a7a6e 100%);"></div>
+          <div class="blog-thumb-icon">🍽️</div>
+        </div>
+        <div class="blog-body">
+          <div class="blog-meta">
+            <span class="blog-tag tag-life">생활습관</span>
+            <span class="blog-date">2024. 08. 22</span>
+            <span class="blog-read">7분 읽기</span>
+          </div>
+          <h3>신경통 환자가 피해야 할 음식 5가지</h3>
+          <p>어떤 음식이 신경 염증을 악화시키는지 임상 근거와 함께 정리했습니다. 먹는 것만 바꿔도 통증이 달라집니다.</p>
+          <div class="blog-footer">
+            <div class="blog-author">
+              <div class="blog-author-dot">김</div>
+              김재원 원장
+            </div>
+            <span class="blog-more">전문 읽기</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Article Modal ── -->
+<div class="modal-overlay" id="articleModal" role="dialog" aria-modal="true">
+  <div class="modal-box" id="modalBox">
+    <button class="modal-close" id="modalClose" aria-label="닫기">✕</button>
+    <div class="modal-header" id="modalHeader">
+      <div class="modal-header-bg" id="modalHeaderBg"></div>
+      <div class="modal-header-content">
+        <div class="modal-tag-row" id="modalTagRow"></div>
+        <div class="modal-title" id="modalTitle"></div>
+      </div>
+    </div>
+    <div class="modal-meta" id="modalMeta"></div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<!-- ── FAQ ── -->
+<section id="faq" class="section">
+  <div class="container">
+    <div class="section-label" style="text-align:center">자주 묻는 질문</div>
+    <h2 class="section-title" style="text-align:center">궁금한 점이 있으신가요?</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">
+          현재 진통제를 복용 중인데 같이 먹어도 되나요?
+          <span class="icon">+</span>
+        </button>
+        <div class="faq-a">
+          NervLock은 영양제로서 대부분의 진통제와 병용 가능합니다. 다만 항응고제(와파린 등)를 복용 중이시거나 혈액 관련 약물을 드시는 경우, 복용 전 담당 의사와 상담하시기 바랍니다. 오메가-3 함유 제품이므로 혈전 예방제와의 병용 시 주의가 필요할 수 있습니다.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          얼마나 먹어야 효과를 느낄 수 있나요?
+          <span class="icon">+</span>
+        </button>
+        <div class="faq-a">
+          개인차가 있으나 빠른 분들은 4~6주 내에 변화를 느끼시고, 대부분 3개월 이상 꾸준히 복용하실 때 의미 있는 개선을 경험하십니다. 신경 재생은 본질적으로 시간이 필요한 과정입니다. 단기 복용보다 3개월 이상의 꾸준한 복용을 권장드립니다.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          당뇨병이 없는데도 NervLock이 도움이 될까요?
+          <span class="icon">+</span>
+        </button>
+        <div class="faq-a">
+          네, 신경통은 당뇨 외에도 대상포진 후 신경통, 척추 질환으로 인한 방사통, 특발성 말초신경병증 등 다양한 원인으로 발생합니다. NervLock의 성분들은 원인에 상관없이 신경 보호 및 재생에 기여하도록 설계되었습니다.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          하루에 몇 개나 먹어야 하나요?
+          <span class="icon">+</span>
+        </button>
+        <div class="faq-a">
+          하루 2캡슐, 식후 복용을 권장합니다. 아침·저녁 나눠서 1캡슐씩 드시거나 한 끼 식후에 2캡슐을 함께 드셔도 됩니다. 지용성 성분(오메가-3, 커큐민, 비타민 D3)이 포함되어 있어 반드시 식후에 복용하시기 바랍니다.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          효과가 없으면 환불이 가능한가요?
+          <span class="icon">+</span>
+        </button>
+        <div class="faq-a">
+          구매일로부터 30일 이내, 1통 이상 복용하셨음에도 변화를 느끼지 못하신 경우 전액 환불을 약속드립니다. 고객센터(1800-0000)로 연락 주시면 절차를 안내해 드립니다. 저희가 이 약속을 드릴 수 있는 것은 제품의 품질에 자신이 있기 때문입니다.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section id="cta">
+  <div class="container" style="text-align:center">
+    <div class="section-label" style="color:rgba(255,255,255,0.6); text-align:center">지금 시작하세요</div>
+    <h2 class="section-title">통증 없는 내일,<br>오늘 결정이 만듭니다</h2>
+    <p class="section-sub">
+      신경과 전문의가 설계한 과학적 처방을 지금 경험해 보세요.<br>
+      수천 명이 이미 변화를 경험했습니다.
+    </p>
+    <a href="#products" class="btn-primary" style="font-size:18px; padding:20px 52px;">
+      NervLock 시작하기
+    </a>
+    <div class="cta-guarantee">
+      30일 이내 효과 없으면 전액 환불 보장
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Nerv<span>Lock</span></div>
+        <p class="footer-desc">
+          신경과 전문의가 설계한 신경통증 전문 영양제 브랜드.<br>
+          과학적 근거에 기반한 성분으로 신경을 보호하고 재생합니다.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>제품</h4>
+        <ul>
+          <li><a href="#">NervLock 기본</a></li>
+          <li><a href="#">NervLock 집중케어</a></li>
+          <li><a href="#">NervLock 완성</a></li>
+          <li><a href="#">성분 상세 안내</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>고객지원</h4>
+        <ul>
+          <li><a href="#">자주 묻는 질문</a></li>
+          <li><a href="#">복용 가이드</a></li>
+          <li><a href="#">환불 정책</a></li>
+          <li><a href="#">1:1 문의</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-notice">
+        ※ 본 제품은 식품의약품안전처의 기준에 따라 제조된 건강기능식품으로, 질병의 예방·치료를 위한 의약품이 아닙니다.
+        개인에 따라 효과가 다를 수 있으며, 본 랜딩페이지의 후기는 실제 사용자 경험을 바탕으로 작성되었습니다.
+      </p>
+      <p style="font-size:12px; white-space:nowrap;">© 2024 NervLock. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── Blog post data ──
+  const posts = [
+    {
+      tag: '<span class="blog-tag tag-neuro">신경과학</span>',
+      tagPlain: '신경과학',
+      date: '2024. 11. 12',
+      read: '8분 읽기',
+      title: '당뇨병이 왜 발을 태우는가 — 당뇨성 신경병증의 진실',
+      headerBg: 'linear-gradient(135deg, #0d2545 0%, #1a7a6e 100%)',
+      body: `
+        <h2>진료실에서 가장 많이 듣는 말</h2>
+        <p>"혈당을 잘 관리하는데 왜 발이 이렇게 아픈지 모르겠어요."</p>
+        <p>15년간 신경통 환자를 진료하면서 이 말을 수천 번 들었습니다. 당뇨병성 신경병증(Diabetic Peripheral Neuropathy, DPN)은 당뇨 환자의 약 50%에서 발생하며, 혈당 조절이 잘 되고 있어도 이미 손상된 신경은 쉽게 회복되지 않습니다.</p>
+
+        <h2>신경이 손상되는 정확한 기전</h2>
+        <p>고혈당이 지속되면 신경세포 내에서 세 가지 경로가 동시에 망가집니다.</p>
+        <ul>
+          <li><strong>폴리올 경로 활성화:</strong> 포도당이 솔비톨로 전환되어 신경세포 내에 쌓이고, 세포 삼투압을 망가뜨립니다.</li>
+          <li><strong>최종당화산물(AGEs) 축적:</strong> 단백질과 결합한 포도당이 신경 혈관을 경화시켜 혈류를 차단합니다.</li>
+          <li><strong>산화 스트레스:</strong> 미토콘드리아가 과부하되면서 활성산소가 폭발적으로 늘어나 신경세포막을 공격합니다.</li>
+        </ul>
+        <div class="callout">
+          핵심은 이것입니다. <strong>신경 손상은 혈당이 정상화되어도 진행될 수 있습니다.</strong> 이미 산화된 신경세포는 혈당 조절만으로 회복되지 않습니다. 능동적인 신경 보호가 필요한 이유입니다.
+        </div>
+
+        <h2>타는 듯한 통증이 생기는 이유</h2>
+        <p>말초신경의 미엘린(수초)이 벗겨지면 전기신호가 누전됩니다. 뜨겁지도 않은데 타는 느낌, 닿기만 해도 아픈 이유가 바로 이 누전 현상입니다. 전기 배선의 피복이 벗겨지면 합선이 일어나는 것과 같은 원리입니다.</p>
+        <p>이 상태가 진행되면 통증 신호를 처리하는 척수와 뇌 자체가 변형되는 '중추 감작화'로 넘어갑니다. 이 단계가 되면 치료는 훨씬 어려워집니다.</p>
+
+        <h2>신경과 전문의가 권하는 현실적인 접근</h2>
+        <p>첫째, 혈당 조절은 필수지만 충분하지 않습니다. 손상된 신경의 회복을 위한 별도의 개입이 필요합니다.</p>
+        <p>둘째, 메코발라민(활성형 B12)은 신경 미엘린 재합성에 직접 관여합니다. 일반 시아노코발라민과는 다릅니다.</p>
+        <p>셋째, R-알파리포산은 당뇨성 신경병증에 가장 근거가 많은 항산화제입니다. 독일에서는 처방 의약품으로 사용될 만큼 임상 데이터가 축적되어 있습니다.</p>
+
+        <div class="evidence-box">
+          <h4>📚 참고 근거</h4>
+          <ul>
+            <li>Ziegler D et al. (2011). SYDNEY 2 Trial. Diabetes Care 34(9):2054-2060</li>
+            <li>Sun Y et al. (2012). Mecobalamin and peripheral neuropathy. J Neurol 260:1-8</li>
+            <li>Pop-Busui R et al. (2017). ADA Standards — Diabetic Neuropathy. Diabetes Care</li>
+          </ul>
+        </div>
+
+        <div class="modal-footer">
+          <div class="modal-footer-avatar">👨‍⚕️</div>
+          <p><strong>김재원 신경과 전문의</strong><br>서울대 의과대학 졸업 · 대한신경과학회 정회원 · 신경통 임상 연구 12편 발표. 본 칼럼은 의학적 정보 제공을 목적으로 하며 개인 진료를 대체하지 않습니다.</p>
+        </div>
+      `
+    },
+    {
+      tag: '<span class="blog-tag tag-pain">통증의학</span>',
+      tagPlain: '통증의학',
+      date: '2024. 10. 28',
+      read: '10분 읽기',
+      title: '대상포진 후 신경통, 왜 수십 년씩 지속되는가',
+      headerBg: 'linear-gradient(135deg, #163561 0%, #5e3c96 100%)',
+      body: `
+        <h2>피부는 나았는데 왜 아직도 아픈가요?</h2>
+        <p>대상포진 후 신경통(Post-herpetic neuralgia, PHN)은 대상포진 환자의 10~20%에서 발생하며, 60세 이상에서는 그 비율이 훨씬 높습니다. 피부 병변이 완전히 사라진 뒤에도 수개월, 심하면 수십 년간 통증이 지속될 수 있습니다.</p>
+        <p>왜 이런 일이 생길까요? 그 답은 신경계 자체의 구조 변화에 있습니다.</p>
+
+        <h2>바이러스가 신경에 남기는 흔적</h2>
+        <p>수두-대상포진 바이러스(VZV)는 어릴 때 수두를 앓고 난 후 척수 신경절에 잠복합니다. 면역력이 떨어지면 재활성화되어 신경을 타고 피부까지 퍼지는데, 이 과정에서 신경 섬유가 직접 파괴됩니다.</p>
+        <ul>
+          <li>C 신경섬유(통증 전달): 직접 손상 → 잘못된 신호를 지속 발화</li>
+          <li>A-베타 섬유(촉각 전달): 손상 후 통증 회로로 재배선 → 옷깃이 스치기만 해도 극심한 통증</li>
+          <li>억제성 신경세포 소실: 통증 게이트가 열린 채 고정</li>
+        </ul>
+
+        <div class="callout">
+          이것이 <strong>이질통(allodynia)</strong>의 원인입니다. 정상적으로는 통증을 유발하지 않는 자극(옷, 바람, 가벼운 접촉)이 극심한 통증으로 느껴지는 이유입니다.
+        </div>
+
+        <h2>중추 감작화 — 뇌가 통증을 기억한다</h2>
+        <p>말초 신경의 지속적인 이상 발화는 척수와 뇌의 통증 처리 회로를 영구적으로 재배선합니다. 이를 중추 감작화(central sensitization)라 하며, 이 단계가 되면 말초 신경이 회복되더라도 뇌 자체가 통증을 생산합니다.</p>
+        <p>PHN이 수년씩 지속되는 이유가 바로 이것입니다. 원인 제거가 아니라 뇌 회로 자체를 변화시키는 치료 접근이 필요합니다.</p>
+
+        <h2>신경 염증과 영양 개입의 역할</h2>
+        <p>신경 손상 부위 주변의 미세아교세포(microglia)는 지속적으로 염증 사이토카인을 분비합니다. PEA(팔미토일에탄올아미드)는 이 미세아교세포의 과활성화를 억제하는 내인성 물질로, PHN 환자 대상 임상시험에서 통증 강도를 유의미하게 낮춘 결과가 보고되었습니다.</p>
+        <p>메코발라민은 손상된 신경 섬유의 재수초화를 돕고, 마그네슘은 NMDA 수용체를 차단해 중추 감작화의 진행을 늦춥니다.</p>
+
+        <h2>예방이 치료보다 훨씬 쉽다</h2>
+        <p>대상포진 후 신경통은 발병 후 3개월 이내 적극적으로 치료할수록 만성화 가능성이 낮아집니다. 피부 병변이 사라졌다고 안심하지 마시고, 신경통 증상이 남아있다면 반드시 신경과 전문의와 상담하시기 바랍니다.</p>
+
+        <div class="evidence-box">
+          <h4>📚 참고 근거</h4>
+          <ul>
+            <li>Woolf CJ (2011). Central sensitization: implications. Pain 152(3 Suppl):S2-15</li>
+            <li>Keppel Hesselink JM et al. (2013). PEA in PHN. Pain Physician 16:E81-E90</li>
+            <li>Dworkin RH et al. (2007). PHN clinical practice guidelines. Clinical Journal of Pain</li>
+          </ul>
+        </div>
+
+        <div class="modal-footer">
+          <div class="modal-footer-avatar">👨‍⚕️</div>
+          <p><strong>김재원 신경과 전문의</strong><br>서울대 의과대학 졸업 · 대한신경과학회 정회원 · 신경통 임상 연구 12편 발표. 본 칼럼은 의학적 정보 제공을 목적으로 하며 개인 진료를 대체하지 않습니다.</p>
+        </div>
+      `
+    },
+    {
+      tag: '<span class="blog-tag tag-nutri">영양·성분</span>',
+      tagPlain: '영양·성분',
+      date: '2024. 10. 08',
+      read: '7분 읽기',
+      title: '비타민 B12가 신경에 하는 일 — 메코발라민 vs 시아노코발라민',
+      headerBg: 'linear-gradient(135deg, #0f4f3a 0%, #b8922a 100%)',
+      body: `
+        <h2>B12 보충제를 먹고 있는데 왜 효과가 없을까요?</h2>
+        <p>B12 결핍은 신경 손상의 주요 원인 중 하나입니다. 혈액검사에서 B12 수치가 정상이더라도 신경이 실제로 활용할 수 있는 형태의 B12가 부족한 경우가 많습니다.</p>
+        <p>시중 B12 보충제의 90% 이상은 시아노코발라민(cyanocobalamin) 형태입니다. 가격이 저렴하고 안정적이어서 대량생산에 유리하지만, 신경세포에서 바로 사용되기 위해서는 간에서 여러 단계의 전환 과정을 거쳐야 합니다.</p>
+
+        <h2>메코발라민이 다른 결정적 이유</h2>
+        <p>메코발라민(methylcobalamin)은 B12의 활성형입니다. 전환 과정 없이 신경세포에 직접 작용하며, 두 가지 핵심 반응을 담당합니다.</p>
+        <ul>
+          <li><strong>미엘린 합성:</strong> 신경 보호막 구성 성분인 레시틴 합성에 직접 관여합니다.</li>
+          <li><strong>메티오닌 합성:</strong> 신경세포 DNA 수복과 신경전달물질 합성에 필요한 메티오닌을 만듭니다.</li>
+        </ul>
+
+        <div class="callout">
+          <strong>한 가지 더:</strong> 메코발라민은 시아노코발라민보다 신경 조직에 더 오래 잔류하고, 혈뇨 배출이 적습니다. 같은 용량을 복용해도 신경에 도달하는 양이 다릅니다.
+        </div>
+
+        <h2>결핍이 일으키는 신경 증상</h2>
+        <p>B12 결핍은 서서히 진행되어 알아차리기 어렵습니다. 초기 증상은 신경통과 구별이 쉽지 않습니다.</p>
+        <ul>
+          <li>손발 저림과 감각 이상 (장갑·양말을 낀 듯한 느낌)</li>
+          <li>균형 감각 저하, 걷기 불안정</li>
+          <li>집중력 저하, 기억력 감퇴</li>
+          <li>피로감, 무기력</li>
+        </ul>
+        <p>특히 채식주의자, 60세 이상, 메트포민(당뇨약) 복용자, 위산 억제제 장기 복용자는 B12 흡수 자체가 감소하므로 더 주의가 필요합니다.</p>
+
+        <h2>얼마나 먹어야 할까요?</h2>
+        <p>일반 권장량(2.4μg/일)은 결핍 예방 수준입니다. 신경 손상 회복을 목표로 한다면 훨씬 높은 용량이 필요합니다. 신경통 관련 임상시험에서는 메코발라민 1,500μg/일 이상 용량이 사용되었으며, 이는 일반 권장량의 600배 이상입니다.</p>
+        <p>고용량 B12는 수용성이어서 과잉 섭취 시 소변으로 배출되므로 독성 위험이 매우 낮습니다. 다만 신장 질환이 있는 경우 의사와 상담 후 복용하시기 바랍니다.</p>
+
+        <div class="evidence-box">
+          <h4>📚 참고 근거</h4>
+          <ul>
+            <li>Watanabe T et al. (1994). Methylcobalamin vs cyanocobalamin in neuropathy. Clin Ther 16(5):729-748</li>
+            <li>Sun Y et al. (2005). Mecobalamin for diabetic neuropathy. J Neurol 252:320-325</li>
+            <li>Langan RC, Goodbred AJ (2017). Vitamin B12 Deficiency. Am Fam Physician 96(6):384-389</li>
+          </ul>
+        </div>
+
+        <div class="modal-footer">
+          <div class="modal-footer-avatar">👨‍⚕️</div>
+          <p><strong>김재원 신경과 전문의</strong><br>서울대 의과대학 졸업 · 대한신경과학회 정회원 · 신경통 임상 연구 12편 발표. 본 칼럼은 의학적 정보 제공을 목적으로 하며 개인 진료를 대체하지 않습니다.</p>
+        </div>
+      `
+    },
+    {
+      tag: '<span class="blog-tag tag-neuro">신경과학</span>',
+      tagPlain: '신경과학',
+      date: '2024. 09. 17',
+      read: '9분 읽기',
+      title: '알파리포산(ALA), 왜 신경통 치료에 쓰이는가',
+      headerBg: 'linear-gradient(135deg, #1a2a5e 0%, #22a090 100%)',
+      body: `
+        <h2>30년 임상 근거를 가진 성분</h2>
+        <p>알파리포산(Alpha-lipoic acid, ALA)은 독일에서 1996년부터 당뇨성 신경병증 치료제로 승인되어 처방되고 있습니다. 이는 영양제 수준의 근거가 아닌, 의약품 수준의 임상 데이터를 갖추고 있다는 의미입니다.</p>
+        <p>국내에서는 아직 의약품이 아닌 건강기능식품 원료로 분류되어 있지만, 신경통 전문가들 사이에서는 이미 표준 치료의 보조 수단으로 인정받고 있습니다.</p>
+
+        <h2>ALA가 신경을 보호하는 3가지 경로</h2>
+        <ul>
+          <li><strong>미토콘드리아 항산화:</strong> 수용성·지용성 양쪽에서 작용하는 유일한 항산화제. 세포막 안팎 모두에서 활성산소를 제거합니다.</li>
+          <li><strong>글루타치온 재생:</strong> 체내 최강 항산화제인 글루타치온을 재활성화합니다. ALA를 '항산화제의 항산화제'라 부르는 이유입니다.</li>
+          <li><strong>신경 혈류 개선:</strong> 신경 주변 혈관의 내피 기능을 개선해 산소와 영양소 공급을 늘립니다.</li>
+        </ul>
+
+        <div class="callout">
+          <strong>R형 vs S형:</strong> ALA에는 R형과 S형 이성질체가 있습니다. 체내에서 실제로 활용되는 것은 R형뿐입니다. 시중 제품의 대부분은 R/S 혼합형(racemic)이므로, R-ALA 단독 제품이 동일 용량 대비 2배 효과적입니다.
+        </div>
+
+        <h2>SYDNEY 2 Trial — 가장 중요한 임상시험</h2>
+        <p>181명의 당뇨성 신경병증 환자를 대상으로 한 이 무작위 대조시험에서, 알파리포산 600mg을 5주간 복용한 그룹은 위약 그룹 대비 통증·저림·무감각 모든 증상이 유의미하게 개선되었습니다.</p>
+        <p>흥미로운 점은 600mg 단일 용량이 1,200mg이나 1,800mg보다 효과가 같거나 더 좋았다는 것입니다. 영양 개입에서 '많을수록 좋다'는 통념이 맞지 않는 대표적 사례입니다.</p>
+
+        <h2>복용 시 주의사항</h2>
+        <p>ALA는 공복에 흡수가 2~4배 더 좋습니다. 식사와 함께 먹으면 음식 속 단백질과 경쟁하여 흡수율이 크게 떨어집니다. 식사 30분 전 또는 식후 2시간 뒤 복용을 권장합니다.</p>
+        <p>혈당 강하 효과가 있으므로 당뇨약을 복용 중인 분은 저혈당에 주의하시고, 처음 복용 시 소화기 자극 증상이 나타날 수 있습니다.</p>
+
+        <div class="evidence-box">
+          <h4>📚 참고 근거</h4>
+          <ul>
+            <li>Ziegler D et al. (2006). SYDNEY 2 Trial. Diabetes Care 29(11):2365-2370</li>
+            <li>Packer L et al. (1995). Alpha-Lipoic acid as a biological antioxidant. Free Radic Biol Med</li>
+            <li>Mijnhout GS et al. (2012). Alpha lipoic acid for symptomatic peripheral neuropathy. J Int Med Res</li>
+          </ul>
+        </div>
+
+        <div class="modal-footer">
+          <div class="modal-footer-avatar">👨‍⚕️</div>
+          <p><strong>김재원 신경과 전문의</strong><br>서울대 의과대학 졸업 · 대한신경과학회 정회원 · 신경통 임상 연구 12편 발표. 본 칼럼은 의학적 정보 제공을 목적으로 하며 개인 진료를 대체하지 않습니다.</p>
+        </div>
+      `
+    },
+    {
+      tag: '<span class="blog-tag tag-pain">통증의학</span>',
+      tagPlain: '통증의학',
+      date: '2024. 09. 03',
+      read: '6분 읽기',
+      title: '왜 신경통은 밤에 더 심해지는가',
+      headerBg: 'linear-gradient(135deg, #2d1a45 0%, #c0392b 100%)',
+      body: `
+        <h2>"낮에는 버틸 만한데 밤만 되면 미칩니다"</h2>
+        <p>신경통 환자의 70% 이상이 야간 통증 악화를 경험합니다. 이것은 심리적인 문제가 아니라 생리학적으로 명확히 설명 가능한 현상입니다.</p>
+
+        <h2>밤에 통증이 심해지는 4가지 이유</h2>
+        <h3>1. 코르티솔 저하</h3>
+        <p>코르티솔(스트레스 호르몬)은 강력한 항염 작용을 합니다. 낮에는 높게 유지되다가 밤에는 최저치로 떨어집니다. 즉, 낮 동안은 코르티솔이 신경 염증을 자연스럽게 억누르고 있는 것입니다. 밤이 되면 이 억제가 사라집니다.</p>
+        <h3>2. 주의 분산 효과 소실</h3>
+        <p>낮에는 일, 대화, 활동으로 뇌의 주의가 분산됩니다. 뇌의 통증 처리 자원이 분산되면 통증 인식이 줄어듭니다. 밤의 어둠과 정적은 뇌가 통증 신호에만 집중하게 만듭니다.</p>
+        <h3>3. 체온 하강과 혈류 변화</h3>
+        <p>밤에 체온이 낮아지면 말초 혈관이 수축합니다. 이미 손상된 신경에 산소와 영양 공급이 줄어들면서 이상 발화가 늘어납니다. 특히 발끝과 손끝의 통증이 심해지는 이유입니다.</p>
+        <h3>4. 수평 자세와 신경 압박</h3>
+        <p>누운 자세에서 디스크 내 압력이 달라지거나, 오랜 시간 같은 자세 유지로 신경 압박이 누적됩니다. 목·허리 신경근 문제를 가진 분들은 특히 자세 변화가 통증에 큰 영향을 미칩니다.</p>
+
+        <div class="callout">
+          야간 통증으로 수면이 지속적으로 방해받으면 <strong>수면 부족 자체가 통증 역치를 낮춥니다.</strong> 덜 자면 더 아프고, 더 아프면 못 자는 악순환이 시작됩니다. 이 사이클을 끊는 것이 치료의 핵심입니다.
+        </div>
+
+        <h2>실질적인 야간 통증 관리 전략</h2>
+        <ul>
+          <li><strong>취침 1~2시간 전 온욕:</strong> 말초 혈관을 확장해 신경 혈류를 개선합니다.</li>
+          <li><strong>마그네슘 저녁 복용:</strong> NMDA 수용체 억제와 근육 이완으로 통증 역치를 높입니다.</li>
+          <li><strong>수면 환경 온도 유지:</strong> 18~20°C의 서늘한 환경이 말초 혈관 수축을 최소화합니다.</li>
+          <li><strong>규칙적인 수면 시간:</strong> 일주기 리듬 정상화가 코르티솔 패턴 회복에 필수적입니다.</li>
+        </ul>
+
+        <div class="evidence-box">
+          <h4>📚 참고 근거</h4>
+          <ul>
+            <li>Moldofsky H (2001). Sleep and pain. Sleep Med Rev 5(5):385-396</li>
+            <li>Haack M et al. (2012). Sleep deficiency and chronic pain. J Pain 13(6):593-604</li>
+            <li>Drewes AM et al. (2010). Nocturnal pain and sleep. Eur J Pain</li>
+          </ul>
+        </div>
+
+        <div class="modal-footer">
+          <div class="modal-footer-avatar">👨‍⚕️</div>
+          <p><strong>김재원 신경과 전문의</strong><br>서울대 의과대학 졸업 · 대한신경과학회 정회원 · 신경통 임상 연구 12편 발표. 본 칼럼은 의학적 정보 제공을 목적으로 하며 개인 진료를 대체하지 않습니다.</p>
+        </div>
+      `
+    },
+    {
+      tag: '<span class="blog-tag tag-life">생활습관</span>',
+      tagPlain: '생활습관',
+      date: '2024. 08. 22',
+      read: '7분 읽기',
+      title: '신경통 환자가 피해야 할 음식 5가지',
+      headerBg: 'linear-gradient(135deg, #0d3d2a 0%, #1a7a6e 100%)',
+      body: `
+        <h2>먹는 것이 신경통에 영향을 줄 수 있을까요?</h2>
+        <p>네, 영향을 줍니다. 특정 식품은 전신 염증을 악화시키고 신경 주변의 미세 환경을 나쁘게 만들어 통증을 증폭시킵니다. 반대로, 항염 식단으로 바꾸는 것만으로도 통증 강도가 달라지는 환자를 진료실에서 여러 번 확인했습니다.</p>
+
+        <h2>피해야 할 5가지</h2>
+
+        <h3>1. 정제당 및 고혈당 식품</h3>
+        <p>흰 쌀, 흰 빵, 설탕, 단 음료. 혈당을 급격히 올리는 식품은 신경 주변의 산화 스트레스를 직접적으로 증가시킵니다. 당뇨가 없더라도 혈당 스파이크 자체가 신경에 유해합니다.</p>
+
+        <h3>2. 트랜스지방 및 가공식품</h3>
+        <p>마가린, 쇼트닝, 패스트푸드, 과자류. 오메가-6 지방산 과잉은 프로스타글란딘 경로를 통해 신경 염증을 촉진합니다. 신경세포막의 지방산 구성을 나쁜 방향으로 바꿉니다.</p>
+
+        <h3>3. 알코올</h3>
+        <p>알코올성 신경병증은 임상에서 흔히 봅니다. 알코올은 B1(티아민), B6, B12 흡수를 직접 방해하고, 신경독성 대사산물인 아세트알데히드를 생성합니다. 신경통이 있다면 금주가 가장 빠른 개선책 중 하나입니다.</p>
+
+        <h3>4. 글루텐 (민감한 경우)</h3>
+        <p>비셀리악 글루텐 민감증이 있는 분들은 글루텐이 신경계 염증과 관련이 있을 수 있습니다. 글루텐 관련 신경병증(Gluten neuropathy)은 점점 주목받는 진단입니다. 확인이 필요하면 항-GAD 항체 검사를 받아보세요.</p>
+
+        <h3>5. 나이트쉐이드 채소 (일부 환자)</h3>
+        <p>가지, 토마토, 감자, 파프리카. 이 채소들의 알칼로이드 성분이 일부 신경통 환자에서 통증을 악화시킨다는 보고가 있습니다. 모든 환자에게 해당하지는 않으나, 식이 일지를 써보면 개인 반응을 확인할 수 있습니다.</p>
+
+        <div class="callout">
+          <strong>적극적으로 늘려야 할 것:</strong> 오메가-3가 풍부한 등 푸른 생선(고등어, 연어, 정어리), 강황, 블루베리, 브로콜리, 아보카도, 견과류. 항염 식단은 신경통 영양제의 효과를 높이는 시너지 역할을 합니다.
+        </div>
+
+        <div class="evidence-box">
+          <h4>📚 참고 근거</h4>
+          <ul>
+            <li>Hadjivassiliou M et al. (2010). Gluten neuropathy. Curr Opin Neurol 23(5):532-536</li>
+            <li>Freitas DA et al. (2021). Diet and neuropathic pain. Nutrients 13(11):3835</li>
+            <li>Fernyhough P et al. (2010). Mitochondrial dysfunction in diabetic neuropathy. Antioxid Redox Signal</li>
+          </ul>
+        </div>
+
+        <div class="modal-footer">
+          <div class="modal-footer-avatar">👨‍⚕️</div>
+          <p><strong>김재원 신경과 전문의</strong><br>서울대 의과대학 졸업 · 대한신경과학회 정회원 · 신경통 임상 연구 12편 발표. 본 칼럼은 의학적 정보 제공을 목적으로 하며 개인 진료를 대체하지 않습니다.</p>
+        </div>
+      `
+    }
+  ];
+
+  // ── Blog modal logic ──
+  const overlay  = document.getElementById('articleModal');
+  const modalBox = document.getElementById('modalBox');
+
+  function openPost(idx) {
+    const p = posts[idx];
+    document.getElementById('modalHeaderBg').style.background = p.headerBg;
+    document.getElementById('modalTagRow').innerHTML = p.tag;
+    document.getElementById('modalTitle').textContent = p.title;
+    document.getElementById('modalMeta').innerHTML = `
+      <div class="modal-meta-item">👨‍⚕️ <strong>김재원 원장</strong>&nbsp;신경과 전문의</div>
+      <div class="modal-meta-item">📅 ${p.date}</div>
+      <div class="modal-meta-item">⏱ ${p.read}</div>
+    `;
+    document.getElementById('modalBody').innerHTML = p.body;
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    modalBox.scrollTop = 0;
+    overlay.scrollTop = 0;
+  }
+
+  function closeModal() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.blog-card').forEach(card => {
+    card.addEventListener('click', () => openPost(+card.dataset.post));
+  });
+  document.getElementById('modalClose').addEventListener('click', closeModal);
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // Smooth nav active highlight on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => {
+          a.style.color = a.getAttribute('href') === '#' + entry.target.id
+            ? 'var(--gold2)' : 'rgba(255,255,255,0.8)';
+        });
+      }
+    });
+  }, { threshold: 0.45 });
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
