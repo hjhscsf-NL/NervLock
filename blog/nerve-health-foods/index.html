@@ -1,176 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Diet and Neural Health: 5 Foods to Limit | NervLock</title>
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
-body{font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif;color:#1a1a2e;background:#fff;font-size:17px;line-height:1.7}
-a{text-decoration:none;color:inherit}
-:root{--navy:#0d2545;--navy2:#163561;--teal:#1a7a6e;--teal2:#22a090;--gold:#b8922a;--gold2:#d4a843;--gray:#f4f6f9;--gray2:#e8ecf2;--muted:#5a6278}
-nav{position:sticky;top:0;z-index:100;background:rgba(13,37,69,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
-.nav-inner{max-width:900px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.nav-logo{font-size:20px;font-weight:900;color:#fff;white-space:nowrap}.nav-logo span{color:var(--gold2)}
-.nav-back{font-size:14px;color:rgba(255,255,255,.7);transition:color .2s}.nav-back:hover{color:var(--gold2)}
-.lang-toggle{display:flex;border:1px solid rgba(255,255,255,.22);border-radius:8px;overflow:hidden;flex-shrink:0}
-.lang-btn{padding:5px 12px;font-size:12px;font-weight:800;letter-spacing:.5px;color:rgba(255,255,255,.5);transition:all .18s}
-.lang-btn+.lang-btn{border-left:1px solid rgba(255,255,255,.22)}.lang-btn.active{background:rgba(255,255,255,.18);color:#fff}
-.article-wrap{max-width:760px;margin:0 auto;padding:60px 24px 100px}
-.article-hero{background:linear-gradient(135deg,#0d3d2a 0%,#1a7a6e 100%);border-radius:24px;padding:52px 48px;margin-bottom:48px;position:relative;overflow:hidden}
-.article-hero::before{content:'🍽️';position:absolute;right:32px;top:32px;font-size:80px;opacity:.15}
-.article-tag{display:inline-flex;background:rgba(26,122,110,.3);border:1px solid rgba(26,122,110,.5);border-radius:50px;font-size:12px;font-weight:700;color:#6ee7da;padding:4px 14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px}
-.article-title{font-size:clamp(22px,3.5vw,34px);font-weight:900;color:#fff;line-height:1.3;margin-bottom:20px}
-.article-meta{display:flex;flex-wrap:wrap;gap:20px}
-.article-meta-item{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.65)}
-.article-meta-item strong{color:rgba(255,255,255,.9);font-weight:700}
-.lang-switch-banner{background:var(--gray);border:1px solid var(--gray2);border-radius:14px;padding:14px 20px;margin-bottom:40px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.lang-switch-banner span{font-size:14px;color:var(--muted)}
-.lang-switch-link{font-size:13px;font-weight:700;color:var(--teal2);border:1px solid var(--teal2);border-radius:50px;padding:6px 16px;transition:all .2s;white-space:nowrap}
-.lang-switch-link:hover{background:var(--teal2);color:#fff}
-.abstract{background:linear-gradient(135deg,rgba(26,122,110,.06),rgba(26,122,110,.02));border-left:4px solid var(--teal2);border-radius:0 16px 16px 0;padding:24px 28px;margin-bottom:48px}
-.abstract-label{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--teal2);margin-bottom:10px}
-.abstract p{font-size:15px;color:#2a3a4a;line-height:1.85;margin:0;font-style:italic}
-.article-body h2{font-size:24px;font-weight:900;color:var(--navy);margin:52px 0 16px;padding-bottom:12px;border-bottom:2px solid var(--gray2)}
-.article-body h2:first-child{margin-top:0}
-.article-body h3{font-size:19px;font-weight:800;color:var(--navy2);margin:36px 0 12px}
-.article-body p{font-size:16px;color:#2a2a3e;line-height:1.95;margin-bottom:20px}
-.article-body ul{padding-left:24px;margin-bottom:20px;display:flex;flex-direction:column;gap:10px}
-.article-body li{font-size:15px;color:#3a3a50;line-height:1.75}
-.article-body strong{color:var(--navy)}
-.callout{background:linear-gradient(135deg,rgba(26,122,110,.07),rgba(26,122,110,.02));border-left:4px solid var(--teal2);border-radius:0 12px 12px 0;padding:20px 24px;margin:28px 0;font-size:15px;color:var(--navy);font-style:italic;line-height:1.85}
-.callout strong{color:var(--teal);font-style:normal}
-.food-card{background:var(--gray);border-radius:16px;padding:22px 24px;margin:20px 0;border-left:4px solid #e74c3c;display:flex;gap:16px;align-items:flex-start}
-.food-num{width:32px;height:32px;border-radius:50%;background:#e74c3c;color:#fff;font-size:14px;font-weight:900;flex-shrink:0;display:flex;align-items:center;justify-content:center}
-.food-content h4{font-size:16px;font-weight:800;color:var(--navy);margin-bottom:6px}
-.food-content p{font-size:14px;color:var(--muted);line-height:1.7;margin:0}
-.evidence-box{background:var(--gray);border-radius:14px;padding:20px 24px;margin:28px 0}
-.evidence-box h4{font-size:12px;font-weight:800;color:var(--teal2);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
-.evidence-box ul{margin:0}.evidence-box li{font-size:13px;color:var(--muted)}
-.good-foods{background:linear-gradient(135deg,rgba(26,122,110,.08),rgba(26,122,110,.03));border-radius:16px;padding:24px 28px;margin:28px 0}
-.good-foods h4{font-size:16px;font-weight:800;color:var(--teal);margin-bottom:14px}
-.good-foods ul{padding-left:0;list-style:none;display:flex;flex-direction:column;gap:8px}
-.good-foods li{font-size:14px;color:#2a3a4a;line-height:1.7;padding-left:24px;position:relative}
-.good-foods li::before{content:'✓';position:absolute;left:0;color:var(--teal2);font-weight:900}
-.author-card{background:var(--gray);border-radius:20px;padding:28px 32px;margin-top:64px;display:flex;align-items:flex-start;gap:20px}
-.author-avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--teal));flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:28px}
-.author-info h4{font-size:17px;font-weight:900;color:var(--navy);margin-bottom:4px}
-.author-info .creds{font-size:13px;color:var(--teal);font-weight:600;margin-bottom:10px}
-.author-info p{font-size:13px;color:var(--muted);line-height:1.65;margin:0}
-.cta-banner{background:linear-gradient(135deg,var(--navy),#0f4f6e);border-radius:20px;padding:40px 36px;margin-top:48px;text-align:center}
-.cta-banner h3{font-size:22px;font-weight:900;color:#fff;margin-bottom:10px}
-.cta-banner p{font-size:15px;color:rgba(255,255,255,.7);margin-bottom:24px;line-height:1.7}
-.cta-btn{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#fff;font-size:16px;font-weight:800;padding:14px 36px;border-radius:50px;box-shadow:0 6px 20px rgba(184,146,42,.4);transition:transform .2s}
-.cta-btn:hover{transform:translateY(-2px)}
-.related{margin-top:64px}.related h3{font-size:20px;font-weight:900;color:var(--navy);margin-bottom:20px}
-.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.related-card{background:var(--gray);border-radius:16px;padding:20px;border:1px solid var(--gray2)}
-.related-card .tag{font-size:11px;font-weight:700;color:var(--teal);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
-.related-card h4{font-size:15px;font-weight:800;color:var(--navy);line-height:1.4}
-footer{background:#0a1a32;color:rgba(255,255,255,.5);padding:32px 0}
-.footer-bottom{max-width:900px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:12px}
-@media(max-width:600px){.article-hero{padding:36px 28px}.related-grid{grid-template-columns:1fr}.author-card{flex-direction:column}}
-</style>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Diet and Neural Health: 5 Foods That Harm Your Nerves | NervLock</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; color: #1a1a2e; background: #fff; font-size: 17px; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    :root {
+      --navy: #0d2545; --navy2: #163561;
+      --teal: #1a7a6e; --teal2: #22a090;
+      --gold: #b8922a; --gold2: #d4a843;
+      --gray: #f4f6f9; --gray2: #e8ecf2;
+      --muted: #5a6278;
+    }
+
+    /* Nav */
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(13,37,69,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-logo { font-size: 20px; font-weight: 900; color: #fff; white-space: nowrap; }
+    .nav-logo span { color: var(--gold2); }
+    .nav-back { font-size: 14px; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold2); }
+    .lang-toggle { display: flex; border: 1px solid rgba(255,255,255,0.22); border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+    .lang-btn { padding: 5px 12px; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); transition: all 0.18s; }
+    .lang-btn + .lang-btn { border-left: 1px solid rgba(255,255,255,0.22); }
+    .lang-btn.active { background: rgba(255,255,255,0.18); color: #fff; }
+
+    /* Article layout */
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 60px 24px 100px; }
+
+    /* Hero header */
+    .article-hero { background: linear-gradient(135deg, #0d3d2a 0%, #1a7a6e 100%); border-radius: 24px; padding: 52px 48px; margin-bottom: 48px; position: relative; overflow: hidden; }
+    .article-hero::before { content: '🍽️'; position: absolute; right: 32px; top: 32px; font-size: 80px; opacity: 0.15; }
+    .article-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(26,122,110,0.3); border: 1px solid rgba(26,122,110,0.5); border-radius: 50px; font-size: 12px; font-weight: 700; color: #6ee7da; padding: 4px 14px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+    .article-title { font-size: clamp(22px, 3.5vw, 34px); font-weight: 900; color: #fff; line-height: 1.3; margin-bottom: 20px; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 20px; }
+    .article-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.65); }
+    .article-meta-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+
+    /* Lang switch banner */
+    .lang-switch-banner { background: var(--gray); border: 1px solid var(--gray2); border-radius: 14px; padding: 14px 20px; margin-bottom: 40px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .lang-switch-banner span { font-size: 14px; color: var(--muted); }
+    .lang-switch-link { font-size: 13px; font-weight: 700; color: var(--teal2); border: 1px solid var(--teal2); border-radius: 50px; padding: 6px 16px; transition: all 0.2s; white-space: nowrap; }
+    .lang-switch-link:hover { background: var(--teal2); color: #fff; }
+
+    /* Abstract box */
+    .abstract { background: linear-gradient(135deg, rgba(26,122,110,0.06), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 16px 16px 0; padding: 24px 28px; margin-bottom: 48px; }
+    .abstract-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--teal2); margin-bottom: 10px; }
+    .abstract p { font-size: 15px; color: #2a3a4a; line-height: 1.85; margin: 0; font-style: italic; }
+
+    /* Article body */
+    .article-body h2 { font-size: 24px; font-weight: 900; color: var(--navy); margin: 52px 0 16px; line-height: 1.35; padding-bottom: 12px; border-bottom: 2px solid var(--gray2); }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-size: 19px; font-weight: 800; color: var(--navy2); margin: 36px 0 12px; }
+    .article-body p { font-size: 16px; color: #2a2a3e; line-height: 1.95; margin-bottom: 20px; }
+    .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .article-body li { font-size: 15px; color: #3a3a50; line-height: 1.75; }
+    .article-body strong { color: var(--navy); }
+
+    /* Callout */
+    .callout { background: linear-gradient(135deg, rgba(26,122,110,0.07), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: var(--navy); font-style: italic; line-height: 1.85; }
+    .callout strong { color: var(--teal); font-style: normal; }
+
+    /* Food cards — harmful */
+    .food-card { background: var(--gray); border-radius: 16px; padding: 22px 24px; margin: 20px 0; border-left: 4px solid #c0392b; display: flex; gap: 20px; align-items: flex-start; }
+    .food-num { width: 36px; height: 36px; border-radius: 50%; background: #c0392b; color: #fff; font-size: 16px; font-weight: 900; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+    .food-content h4 { font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
+    .food-content p { font-size: 14px; color: var(--muted); line-height: 1.75; margin: 0; }
+    .food-mechanism { font-size: 12px; font-weight: 700; color: #c0392b; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px; }
+
+    /* Good foods box */
+    .good-foods { background: linear-gradient(135deg, rgba(26,122,110,0.08), rgba(26,122,110,0.03)); border-radius: 16px; padding: 24px 28px; margin: 28px 0; border: 1px solid rgba(26,122,110,0.15); }
+    .good-foods h4 { font-size: 16px; font-weight: 800; color: var(--teal); margin-bottom: 16px; }
+    .good-foods ul { padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; margin: 0; }
+    .good-foods li { font-size: 14px; color: #2a3a4a; line-height: 1.75; padding-left: 28px; position: relative; }
+    .good-foods li::before { content: '✓'; position: absolute; left: 0; color: var(--teal2); font-weight: 900; font-size: 15px; }
+
+    /* Evidence box */
+    .evidence-box { background: var(--gray); border-radius: 14px; padding: 20px 24px; margin: 28px 0; }
+    .evidence-box h4 { font-size: 12px; font-weight: 800; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .evidence-box ul { margin: 0; }
+    .evidence-box li { font-size: 13px; color: var(--muted); }
+
+    /* Author footer */
+    .author-card { background: var(--gray); border-radius: 20px; padding: 28px 32px; margin-top: 64px; display: flex; align-items: flex-start; gap: 20px; }
+    .author-avatar { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--navy), var(--teal)); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+    .author-info h4 { font-size: 17px; font-weight: 900; color: var(--navy); margin-bottom: 4px; }
+    .author-info .creds { font-size: 13px; color: var(--teal); font-weight: 600; margin-bottom: 10px; }
+    .author-info p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+
+    /* CTA banner */
+    .cta-banner { background: linear-gradient(135deg, var(--navy), #0f4f6e); border-radius: 20px; padding: 40px 36px; margin-top: 48px; text-align: center; }
+    .cta-banner h3 { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 10px; }
+    .cta-banner p { font-size: 15px; color: rgba(255,255,255,0.7); margin-bottom: 24px; line-height: 1.7; }
+    .cta-btn { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold2)); color: #fff; font-size: 16px; font-weight: 800; padding: 14px 36px; border-radius: 50px; box-shadow: 0 6px 20px rgba(184,146,42,0.4); transition: transform 0.2s; }
+    .cta-btn:hover { transform: translateY(-2px); }
+
+    /* Related */
+    .related { margin-top: 64px; }
+    .related h3 { font-size: 20px; font-weight: 900; color: var(--navy); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .related-card { background: var(--gray); border-radius: 16px; padding: 20px; border: 1px solid var(--gray2); }
+    .related-card .tag { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .related-card h4 { font-size: 15px; font-weight: 800; color: var(--navy); line-height: 1.4; }
+
+    footer { background: #0a1a32; color: rgba(255,255,255,0.5); padding: 32px 0; margin-top: 0; }
+    .footer-bottom { max-width: 900px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 12px; }
+
+    @media (max-width: 600px) {
+      .article-hero { padding: 36px 28px; }
+      .food-card { flex-direction: column; }
+      .related-grid { grid-template-columns: 1fr; }
+      .author-card { flex-direction: column; }
+    }
+  </style>
 </head>
 <body>
-<nav><div class="nav-inner">
-  <a href="/en/" class="nav-logo">Nerv<span>Lock</span></a>
-  <a href="/en/#blog" class="nav-back">← Medical Blog</a>
-  <div class="lang-toggle">
-    <a href="/blog/신경-건강-음식/" class="lang-btn">KR</a>
-    <a href="/blog/nerve-health-foods/" class="lang-btn active">EN</a>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/en/" class="nav-logo">Nerv<span>Lock</span></a>
+    <a href="/en/#blog" class="nav-back">← Medical Blog</a>
+    <div class="lang-toggle">
+      <a href="/blog/신경-건강-음식/" class="lang-btn">KR</a>
+      <a href="/blog/nerve-health-foods/" class="lang-btn active">EN</a>
+    </div>
   </div>
-</div></nav>
+</nav>
+
 <div class="article-wrap">
+
   <div class="article-hero">
     <div class="article-tag">Lifestyle</div>
-    <h1 class="article-title">Diet and Neural Health:<br>5 Foods to Limit</h1>
+    <h1 class="article-title">Diet and Neural Health:<br>5 Foods That Harm Your Nerves</h1>
     <div class="article-meta">
-      <div class="article-meta-item">👨‍⚕️ <strong>Dr.H</strong> — Neurologist · NervLock Founder</div>
+      <div class="article-meta-item">👨‍⚕️ <strong>Dr.H</strong> — Neurologist, NervLock Founder</div>
       <div class="article-meta-item">📅 August 22, 2024</div>
       <div class="article-meta-item">⏱ 7 min read</div>
     </div>
   </div>
+
   <div class="lang-switch-banner">
     <span>🇰🇷 이 글의 한국어 버전을 보시겠습니까?</span>
     <a href="/blog/신경-건강-음식/" class="lang-switch-link">한국어로 읽기 →</a>
   </div>
+
   <div class="abstract">
     <div class="abstract-label">Abstract</div>
-    <p>Dietary patterns exert measurable effects on systemic inflammatory tone, oxidative stress burden, and the nutritional microenvironment of peripheral nerves. Specific dietary components can exacerbate neuroinflammation, impair nerve microvascular function, and deplete key neural nutritional cofactors. This article identifies five dietary categories of particular relevance to peripheral neural health, and outlines the anti-inflammatory foods that provide a supportive nutritional foundation.</p>
+    <p>Dietary patterns exert measurable and mechanistically understood effects on systemic inflammatory tone, oxidative stress burden, nerve microvascular function, and the nutritional microenvironment of peripheral nerves. Specific dietary components can exacerbate neuroinflammation, impair endoneurial perfusion, deplete key B-vitamin neural cofactors, and directly generate neurotoxic metabolites. This article identifies five dietary categories of particular relevance to peripheral neural health, explains the mechanisms by which each causes harm, and outlines the anti-inflammatory dietary foundation that supports long-term nerve health.</p>
   </div>
+
   <div class="article-body">
 
-    <h2>1. The Diet-Neural Health Interface</h2>
-    <p>The concept that diet influences neural health outcomes is no longer speculative — it is supported by a growing body of mechanistic and epidemiological evidence. Peripheral neurons are metabolically demanding cells with high vulnerability to oxidative stress and ischemia. The dietary patterns that generate systemic oxidative stress and pro-inflammatory signaling do not spare neural tissue.</p>
-    <p>Dietary modification does not replace medical management but acts as a modifiable environmental factor that can meaningfully influence the neural inflammatory microenvironment. For patients supplementing with neural health nutrients, dietary optimization enhances the efficacy of those interventions by reducing the background neuroinflammatory load they are working against.</p>
+    <h2>1. The Diet–Neural Health Interface: Mechanistic Overview</h2>
+    <p>The relationship between diet and peripheral nerve health is no longer speculative — it is supported by a substantial and growing body of mechanistic, epidemiological, and clinical evidence. Peripheral neurons are among the most metabolically demanding and oxidatively vulnerable cells in the body. Their long axonal projections create extraordinarily high surface-area-to-volume ratios, placing enormous demands on mitochondrial ATP production and antioxidant defense. They are, consequently, highly sensitive to the metabolic and inflammatory environment created by dietary patterns.</p>
+    <p>The mechanism operates through several interconnected pathways:</p>
+    <ul>
+      <li><strong>Oxidative stress generation:</strong> Dietary components that drive reactive oxygen species production — refined carbohydrates, trans fats, alcohol — overwhelm the antioxidant defenses of peripheral neurons faster than they do most other cell types</li>
+      <li><strong>Pro-inflammatory signaling:</strong> Foods that shift the eicosanoid balance toward pro-inflammatory mediators (high omega-6 to omega-3 ratios, trans fats) elevate neuroinflammatory cytokine production around peripheral nerve fibers</li>
+      <li><strong>Microvascular impairment:</strong> Dietary patterns that damage endothelial function — glycemic spikes, excess saturated fat — reduce endoneurial blood flow and create the ischemic nerve environment that accelerates neuropathy</li>
+      <li><strong>Nutrient cofactor depletion:</strong> Alcohol and dietary patterns lacking adequate B vitamins directly deplete the methylcobalamin, thiamine, and pyridoxine needed for myelin synthesis and axonal maintenance</li>
+    </ul>
+
+    <div class="callout">
+      <strong>Practical framing:</strong> Nutritional supplements for neural health work against a background noise of dietary neuroinflammation. A patient consuming curcumin and B12 while eating a diet high in refined carbohydrates and alcohol is attempting to fill a bucket while the tap is open. Dietary modification reduces the load that nutritional interventions must work against.
+    </div>
 
     <h2>2. Five Dietary Categories to Limit</h2>
 
     <div class="food-card">
       <div class="food-num">1</div>
       <div class="food-content">
+        <div class="food-mechanism">Mechanism: Polyol pathway activation · AGE formation · Mitochondrial ROS</div>
         <h4>Refined Carbohydrates and High-Glycemic Foods</h4>
-        <p>White rice, white bread, sugar, sweetened beverages. Rapid postprandial glucose excursions — glycemic spikes — activate the polyol pathway, generate advanced glycation end-products (AGEs), and drive mitochondrial superoxide production in nerve fibers. Even in non-diabetic individuals, recurrent glycemic spikes impose cumulative oxidative stress on metabolically vulnerable neural tissue.</p>
+        <p>White rice, white bread, sugar, corn syrup, sweetened beverages, and ultra-processed snacks produce rapid postprandial glucose surges — glycemic spikes. Even in non-diabetic individuals, these spikes trigger the polyol pathway, converting excess glucose to sorbitol via aldose reductase and generating oxidative byproducts. Simultaneously, glucose reacts non-enzymatically with structural proteins to form advanced glycation end-products (AGEs), which cross-link nerve structural proteins, impair axonal transport, and damage endoneurial microvasculature. Repeated glycemic excursions impose cumulative oxidative stress on metabolically active neural tissue independently of fasting glucose status.</p>
       </div>
     </div>
 
     <div class="food-card">
       <div class="food-num">2</div>
       <div class="food-content">
-        <h4>Trans Fats and Ultra-Processed Foods</h4>
-        <p>Margarine, shortening, fast food, commercial pastries. These foods deliver high loads of omega-6 fatty acids (primarily linoleic acid), which are metabolized to arachidonic acid — the substrate for prostaglandin and leukotriene synthesis. A high omega-6 to omega-3 ratio shifts the eicosanoid balance toward pro-inflammatory mediators and alters neuronal membrane fatty acid composition unfavorably.</p>
+        <div class="food-mechanism">Mechanism: Omega-6/omega-3 imbalance · Arachidonic acid cascade · Neuronal membrane disruption</div>
+        <h4>Trans Fats and Omega-6-Dominant Processed Foods</h4>
+        <p>Margarine, shortening, fast food, commercial baked goods, and seed oil-heavy ultra-processed foods deliver high omega-6 fatty acid loads (primarily linoleic acid), which are metabolized to arachidonic acid — the substrate for prostaglandin and leukotriene synthesis via COX and 5-LOX pathways respectively. A high omega-6 to omega-3 ratio (typical Western diets exceed 15:1; optimal for neural health is closer to 4:1) chronically shifts the eicosanoid balance toward pro-inflammatory mediators. Additionally, trans fats incorporate into neuronal cell membranes, displacing the cis-unsaturated fatty acids that normally maintain membrane fluidity and ion channel function.</p>
       </div>
     </div>
 
     <div class="food-card">
       <div class="food-num">3</div>
       <div class="food-content">
+        <div class="food-mechanism">Mechanism: Direct neurotoxicity · B vitamin depletion · Axonal transport disruption</div>
         <h4>Alcohol</h4>
-        <p>Alcohol is directly neurotoxic through multiple mechanisms: acetaldehyde (its primary metabolite) forms protein adducts that disrupt axonal transport; ethanol impairs intestinal absorption of thiamine (B1), pyridoxine (B6), and cobalamin (B12) — the three B vitamins most critical for peripheral nerve function. Alcoholic peripheral neuropathy is one of the most common preventable neuropathic conditions. Abstinence or significant reduction is perhaps the single highest-yield dietary intervention for neural health.</p>
+        <p>Alcohol is directly neurotoxic through mechanisms that are multiple and cumulative. Its primary metabolite, acetaldehyde, forms protein adducts that disrupt axonal transport — the anterograde and retrograde movement of organelles, neurotrophic factors, and repair machinery along nerve fibers. Ethanol also impairs intestinal absorption of thiamine (B1), pyridoxine (B6), and methylcobalamin (B12) — the three B vitamins most critical for peripheral nerve myelin synthesis and maintenance. Alcoholic peripheral neuropathy is a separate and common neuropathic condition directly attributable to these combined mechanisms. Even in the absence of clinical alcoholic neuropathy, regular moderate-to-heavy drinking depletes neural B-vitamin reserves and generates ongoing neuroinflammatory activation.</p>
       </div>
     </div>
 
     <div class="food-card">
       <div class="food-num">4</div>
       <div class="food-content">
+        <div class="food-mechanism">Mechanism: Immune-mediated neural antibody activation · Anti-GAD antibody production</div>
         <h4>Gluten (in Sensitized Individuals)</h4>
-        <p>Gluten neuropathy — an immune-mediated neuropathy triggered by gluten in non-celiac individuals — is increasingly recognized as a clinically significant entity. Anti-GAD65 antibodies (detectable in serum) may provide a biomarker for identification. Not all patients with peripheral neuropathy are gluten-sensitive, but the diagnostic evaluation of unexplained neuropathy should include serological gluten sensitivity screening.</p>
+        <p>Gluten neuropathy — an immune-mediated peripheral neuropathy triggered by gluten exposure in sensitized non-celiac individuals — is increasingly recognized as a clinically significant entity that often goes undiagnosed. The mechanism involves production of antibodies against gliadin that cross-react with neural tissue, including anti-GAD65 antibodies that target the GABA-synthesizing enzyme glutamic acid decarboxylase, present in peripheral and central neural tissue. This is not a universal dietary recommendation — most individuals tolerate gluten without neural consequences — but gluten sensitivity should be evaluated in patients with otherwise unexplained or poorly responding peripheral neuropathy. Serological screening (anti-gliadin, anti-transglutaminase antibodies, anti-GAD65) is available and minimally invasive.</p>
       </div>
     </div>
 
     <div class="food-card">
       <div class="food-num">5</div>
       <div class="food-content">
-        <h4>Nightshade Vegetables (Individually Variable)</h4>
-        <p>Tomatoes, eggplant, potatoes, peppers. The solanine and other glycoalkaloids in nightshade vegetables may exacerbate neuroinflammatory symptoms in a subset of sensitive individuals through mechanisms that remain incompletely characterized. This is not a universal recommendation — many individuals tolerate nightshades without neural health consequences — but dietary journaling can identify personal reactivity patterns.</p>
+        <div class="food-mechanism">Mechanism: Glycoalkaloid-mediated neuroinflammation (subset-specific)</div>
+        <h4>Excess Processed Sodium and Preserved Foods</h4>
+        <p>High dietary sodium intake — primarily through processed meats, canned foods, instant foods, and salty snacks — drives systemic hypertension that directly impairs endoneurial microvascular perfusion. Chronic endoneurial hypoperfusion is a central pathogenic mechanism in metabolic peripheral neuropathy: when the microvasculature supplying nerve fibers cannot maintain adequate oxygen and nutrient delivery, metabolically active neural tissue transitions to an anaerobic stress state with progressive function loss. Beyond vascular mechanisms, high sodium intake activates inflammatory pathways independent of blood pressure effects, including TNF-α and IL-17 upregulation in immune cell populations resident in peripheral nerve tissue.</p>
       </div>
     </div>
 
     <h2>3. Anti-Inflammatory Foods to Prioritize</h2>
+    <p>Reducing neuroinflammatory dietary inputs is most effective when combined with deliberately increasing anti-inflammatory dietary inputs that directly support peripheral neural health. The following foods are prioritized based on mechanistic rationale and epidemiological support:</p>
+
     <div class="good-foods">
       <h4>✦ Evidence-Supported Neural Health Foods</h4>
       <ul>
-        <li><strong>Oily fish</strong> (mackerel, salmon, sardines) — EPA and DHA omega-3s, incorporate into neuronal membranes and generate pro-resolving lipid mediators (resolvins, protectins)</li>
-        <li><strong>Turmeric (curcumin)</strong> — NF-κB modulation, neuroprotective polyphenol</li>
-        <li><strong>Dark berries</strong> (blueberries, blackberries) — anthocyanins with antioxidant and anti-inflammatory properties relevant to neural tissue</li>
-        <li><strong>Broccoli and cruciferous vegetables</strong> — sulforaphane, Nrf2 pathway activation, endogenous antioxidant upregulation</li>
-        <li><strong>Avocado</strong> — monounsaturated fatty acids, vitamin E, glutathione precursor</li>
-        <li><strong>Walnuts and almonds</strong> — plant omega-3 (ALA), vitamin E, magnesium</li>
-        <li><strong>Eggs</strong> — choline (myelin precursor), vitamin B12, phosphatidylcholine</li>
+        <li><strong>Oily fish</strong> (mackerel, salmon, sardines, herring) — EPA and DHA omega-3s that incorporate into neuronal membranes, improve endoneurial blood flow, and generate pro-resolving lipid mediators (resolvins, protectins) that actively terminate neuroinflammation</li>
+        <li><strong>Turmeric</strong> — curcumin inhibits NF-κB transcription of pro-inflammatory cytokines; its lipophilicity enables direct penetration to peripheral nerve tissue. Bioavailability enhanced significantly by black pepper (piperine) or phospholipid complex preparation</li>
+        <li><strong>Dark berries</strong> (blueberries, blackberries, bilberries) — anthocyanins with antioxidant activity and demonstrated anti-inflammatory effects in neural tissue; also support microvascular endothelial function relevant to endoneurial perfusion</li>
+        <li><strong>Cruciferous vegetables</strong> (broccoli, Brussels sprouts, kale) — sulforaphane activates the Nrf2 transcription factor, upregulating endogenous antioxidant enzyme production (HO-1, NQO1, glutathione S-transferase) in neural and vascular tissue</li>
+        <li><strong>Eggs</strong> — provide choline (phosphatidylcholine myelin precursor), methylcobalamin (active B12), and phospholipids directly relevant to myelin synthesis and maintenance</li>
+        <li><strong>Walnuts and almonds</strong> — plant-based ALA omega-3, vitamin E (α-tocopherol), magnesium, and B vitamins; walnuts specifically contain the highest plant omega-3 content of common nuts</li>
+        <li><strong>Avocado</strong> — monounsaturated fatty acids, vitamin E, and glutathione precursors; also provides the B6 cofactor needed for homocysteine metabolism in the methionine cycle</li>
+        <li><strong>Leafy green vegetables</strong> (spinach, Swiss chard) — folate (B9) for homocysteine conversion to methionine, magnesium for NMDA receptor modulation, and antioxidant polyphenols</li>
       </ul>
     </div>
 
+    <h2>4. Practical Implementation: A Neurologist's Perspective</h2>
+    <p>Dietary change is among the most difficult behavioral modifications to implement and sustain. In clinical practice, I observe that patients who attempt comprehensive dietary overhauls typically revert within weeks — the behavioral burden is too high. A more effective approach is incremental modification of highest-impact dietary targets:</p>
+    <ol>
+      <li><strong>Alcohol reduction or elimination</strong> — yields the highest neural health benefit per unit of dietary change; even significant reduction (not necessarily complete abstinence) meaningfully reduces neurotoxic exposure and B-vitamin depletion</li>
+      <li><strong>Replacing refined carbohydrates with lower-glycemic alternatives</strong> — swapping white rice for brown rice or cauliflower rice, white bread for whole grain, eliminates the glycemic spike mechanism without requiring complete dietary reorganization</li>
+      <li><strong>Adding oily fish twice weekly</strong> — shifts the omega-6 to omega-3 ratio meaningfully and provides DHA and EPA directly to neuronal membranes</li>
+      <li><strong>Replacing cooking oils with olive oil</strong> — reduces omega-6 load from linoleic acid-dominant seed oils and replaces with oleocanthal-containing olive oil with its own anti-inflammatory activity</li>
+    </ol>
+
     <div class="callout">
-      <strong>Practical perspective:</strong> Dietary change does not require perfection. A clinically meaningful improvement in neural inflammatory load can be achieved by modifying one or two meals per day. Consistent incremental change is more sustainable and ultimately more effective than radical short-term restriction.
+      <strong>Clinical perspective:</strong> Perfect dietary adherence is not required — and pursuing it often leads to failure and dietary fatigue. A sustained 70% improvement in neural health dietary quality, maintained over months and years, is immeasurably more valuable than a perfect 3-week intervention followed by full reversion. Consistency across time matters more than perfection at any given moment.
     </div>
+
+    <h2>5. Summary</h2>
+    <p>The peripheral nervous system is not isolated from dietary influences — it is continuously exposed to the metabolic, inflammatory, and nutritional consequences of what we eat. The five dietary categories identified here — refined carbohydrates, trans fats and omega-6-dominant processed foods, alcohol, gluten in sensitized individuals, and excess processed sodium — each act through specific and well-characterized mechanisms to impair peripheral neural health.</p>
+    <p>Dietary modification does not replace medical management of neuropathic conditions. But it reduces the neuroinflammatory background against which medical and nutritional interventions must work, and for a condition as prevalent and as profoundly quality-of-life-impairing as peripheral neuropathy, every modifiable factor deserves attention.</p>
 
     <div class="evidence-box">
       <h4>📚 Key References</h4>
       <ul>
-        <li>Hadjivassiliou M et al. (2010). Gluten neuropathy. Curr Opin Neurol 23(5):532-536</li>
-        <li>Freitas DA et al. (2021). Diet and neuropathic pain. Nutrients 13(11):3835</li>
-        <li>Fernyhough P et al. (2010). Mitochondrial dysfunction in diabetic neuropathy. Antioxid Redox Signal 12(12):1573-1588</li>
-        <li>Bjorling DE, Wang Z (2020). Omega-3 fatty acids and neuropathic pain. J Pain Res 13:3281-3286</li>
+        <li>Hadjivassiliou M et al. (2010). Gluten neuropathy: importance of anti-neuronal antibodies. <em>Curr Opin Neurol</em> 23(5):532–536</li>
+        <li>Fernyhough P et al. (2010). Mitochondrial dysfunction in diabetic peripheral neuropathy. <em>Antioxid Redox Signal</em> 12(12):1573–1588</li>
+        <li>Bjorling DE, Wang Z (2020). Omega-3 fatty acids and neuropathic pain. <em>J Pain Res</em> 13:3281–3286</li>
+        <li>Bhatt DL et al. (2019). Cardiovascular risk reduction with icosapentaenoic acid. <em>N Engl J Med</em> 380(1):11–22</li>
+        <li>Dahl WJ, Stewart ML (2015). Dietary fiber and neural health. <em>J Acad Nutr Diet</em> 115(11):1861–1870</li>
       </ul>
     </div>
 
@@ -178,24 +265,40 @@ footer{background:#0a1a32;color:rgba(255,255,255,.5);padding:32px 0}
       <div class="author-avatar">👨‍⚕️</div>
       <div class="author-info">
         <h4>Dr.H</h4>
-        <div class="creds">Neurologist · Yonsei Severance Hospital · Brain, Pain & Functional Medicine · NervLock Founder</div>
-        <p>Korean Neurological Association · Korean Movement Disorder Society · Korean Society of Functional Medicine. For informational purposes only; does not constitute medical advice.</p>
+        <div class="creds">Neurologist · Yonsei University Severance Hospital · Brain, Pain & Functional Medicine · NervLock Founder</div>
+        <p>Member, Korean Neurological Association · Member, Korean Movement Disorder Society · Member, Korean Society of Functional Medicine. This article is for informational purposes only and does not constitute medical advice or replace professional consultation.</p>
       </div>
     </div>
+
     <div class="cta-banner">
-      <h3>Support Neural Health with NervLock Nerve Care</h3>
-      <p>Omega-3 in the support formula. Core ingredients: curcumin + Aflapin® dual-pathway design.</p>
+      <h3>Support Your Neural Health with NervLock Nerve Care</h3>
+      <p>Formulated by a neurologist with curcumin + Aflapin® — dual NF-κB and 5-LOX pathway coverage for neural inflammatory balance.<br>NervLock's first product is launching soon.</p>
       <a href="/en/#coming-soon" class="cta-btn">Get Launch Notification</a>
     </div>
+
     <div class="related">
       <h3>Related Articles</h3>
       <div class="related-grid">
-        <div class="related-card"><div class="tag">Pain Medicine</div><h4><a href="/blog/nocturnal-nerve-discomfort/">Why Does Neural Discomfort Worsen at Night?</a></h4></div>
-        <div class="related-card"><div class="tag">Nutrition Science</div><h4><a href="/blog/alpha-lipoic-acid/">Alpha-Lipoic Acid and Neural Health: The Evidence</a></h4></div>
+        <div class="related-card">
+          <div class="tag">Pain Medicine</div>
+          <h4><a href="/blog/nocturnal-nerve-discomfort/">Why Does Neural Discomfort Worsen at Night? Circadian Biology Explained</a></h4>
+        </div>
+        <div class="related-card">
+          <div class="tag">Nutrition Science</div>
+          <h4><a href="/blog/alpha-lipoic-acid/">Alpha-Lipoic Acid and Neural Health: The Evidence</a></h4>
+        </div>
       </div>
     </div>
+
   </div>
 </div>
-<footer><div class="footer-bottom"><p>© 2024 NervLock. All rights reserved.</p><p>For informational purposes only; does not constitute medical advice.</p></div></footer>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2024 NervLock. All rights reserved.</p>
+    <p>This article is for informational purposes only and does not constitute medical advice.</p>
+  </div>
+</footer>
+
 </body>
 </html>

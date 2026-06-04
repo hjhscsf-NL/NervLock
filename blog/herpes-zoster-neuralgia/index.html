@@ -1,150 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Post-Herpetic Neuralgia: Why It Persists for Years | NervLock</title>
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
-body{font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif;color:#1a1a2e;background:#fff;font-size:17px;line-height:1.7}
-a{text-decoration:none;color:inherit}
-:root{--navy:#0d2545;--navy2:#163561;--teal:#1a7a6e;--teal2:#22a090;--gold:#b8922a;--gold2:#d4a843;--gray:#f4f6f9;--gray2:#e8ecf2;--muted:#5a6278}
-nav{position:sticky;top:0;z-index:100;background:rgba(13,37,69,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
-.nav-inner{max-width:900px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.nav-logo{font-size:20px;font-weight:900;color:#fff;white-space:nowrap}.nav-logo span{color:var(--gold2)}
-.nav-back{font-size:14px;color:rgba(255,255,255,.7);transition:color .2s}.nav-back:hover{color:var(--gold2)}
-.lang-toggle{display:flex;border:1px solid rgba(255,255,255,.22);border-radius:8px;overflow:hidden;flex-shrink:0}
-.lang-btn{padding:5px 12px;font-size:12px;font-weight:800;letter-spacing:.5px;color:rgba(255,255,255,.5);transition:all .18s}
-.lang-btn+.lang-btn{border-left:1px solid rgba(255,255,255,.22)}.lang-btn.active{background:rgba(255,255,255,.18);color:#fff}
-.article-wrap{max-width:760px;margin:0 auto;padding:60px 24px 100px}
-.article-hero{background:linear-gradient(135deg,#2d1a45 0%,#5e3c96 100%);border-radius:24px;padding:52px 48px;margin-bottom:48px;position:relative;overflow:hidden}
-.article-hero::before{content:'⚡';position:absolute;right:32px;top:32px;font-size:80px;opacity:.15}
-.article-tag{display:inline-flex;background:rgba(94,60,150,.3);border:1px solid rgba(94,60,150,.5);border-radius:50px;font-size:12px;font-weight:700;color:#c9a8f5;padding:4px 14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px}
-.article-title{font-size:clamp(22px,3.5vw,34px);font-weight:900;color:#fff;line-height:1.3;margin-bottom:20px}
-.article-meta{display:flex;flex-wrap:wrap;gap:20px}
-.article-meta-item{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.65)}
-.article-meta-item strong{color:rgba(255,255,255,.9);font-weight:700}
-.lang-switch-banner{background:var(--gray);border:1px solid var(--gray2);border-radius:14px;padding:14px 20px;margin-bottom:40px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.lang-switch-banner span{font-size:14px;color:var(--muted)}
-.lang-switch-link{font-size:13px;font-weight:700;color:var(--teal2);border:1px solid var(--teal2);border-radius:50px;padding:6px 16px;transition:all .2s;white-space:nowrap}
-.lang-switch-link:hover{background:var(--teal2);color:#fff}
-.abstract{background:linear-gradient(135deg,rgba(26,122,110,.06),rgba(26,122,110,.02));border-left:4px solid var(--teal2);border-radius:0 16px 16px 0;padding:24px 28px;margin-bottom:48px}
-.abstract-label{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--teal2);margin-bottom:10px}
-.abstract p{font-size:15px;color:#2a3a4a;line-height:1.85;margin:0;font-style:italic}
-.article-body h2{font-size:24px;font-weight:900;color:var(--navy);margin:52px 0 16px;padding-bottom:12px;border-bottom:2px solid var(--gray2)}
-.article-body h2:first-child{margin-top:0}
-.article-body h3{font-size:19px;font-weight:800;color:var(--navy2);margin:36px 0 12px}
-.article-body p{font-size:16px;color:#2a2a3e;line-height:1.95;margin-bottom:20px}
-.article-body ul{padding-left:24px;margin-bottom:20px;display:flex;flex-direction:column;gap:10px}
-.article-body li{font-size:15px;color:#3a3a50;line-height:1.75}
-.article-body strong{color:var(--navy)}
-.callout{background:linear-gradient(135deg,rgba(26,122,110,.07),rgba(26,122,110,.02));border-left:4px solid var(--teal2);border-radius:0 12px 12px 0;padding:20px 24px;margin:28px 0;font-size:15px;color:var(--navy);font-style:italic;line-height:1.85}
-.callout strong{color:var(--teal);font-style:normal}
-.evidence-box{background:var(--gray);border-radius:14px;padding:20px 24px;margin:28px 0}
-.evidence-box h4{font-size:12px;font-weight:800;color:var(--teal2);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
-.evidence-box ul{margin:0}.evidence-box li{font-size:13px;color:var(--muted)}
-.author-card{background:var(--gray);border-radius:20px;padding:28px 32px;margin-top:64px;display:flex;align-items:flex-start;gap:20px}
-.author-avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--teal));flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:28px}
-.author-info h4{font-size:17px;font-weight:900;color:var(--navy);margin-bottom:4px}
-.author-info .creds{font-size:13px;color:var(--teal);font-weight:600;margin-bottom:10px}
-.author-info p{font-size:13px;color:var(--muted);line-height:1.65;margin:0}
-.cta-banner{background:linear-gradient(135deg,var(--navy),#0f4f6e);border-radius:20px;padding:40px 36px;margin-top:48px;text-align:center}
-.cta-banner h3{font-size:22px;font-weight:900;color:#fff;margin-bottom:10px}
-.cta-banner p{font-size:15px;color:rgba(255,255,255,.7);margin-bottom:24px;line-height:1.7}
-.cta-btn{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#fff;font-size:16px;font-weight:800;padding:14px 36px;border-radius:50px;box-shadow:0 6px 20px rgba(184,146,42,.4);transition:transform .2s}
-.cta-btn:hover{transform:translateY(-2px)}
-.related{margin-top:64px}.related h3{font-size:20px;font-weight:900;color:var(--navy);margin-bottom:20px}
-.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.related-card{background:var(--gray);border-radius:16px;padding:20px;border:1px solid var(--gray2)}
-.related-card .tag{font-size:11px;font-weight:700;color:var(--teal);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
-.related-card h4{font-size:15px;font-weight:800;color:var(--navy);line-height:1.4}
-footer{background:#0a1a32;color:rgba(255,255,255,.5);padding:32px 0}
-.footer-bottom{max-width:900px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:12px}
-@media(max-width:600px){.article-hero{padding:36px 28px}.related-grid{grid-template-columns:1fr}.author-card{flex-direction:column}}
-</style>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Post-Herpetic Neuralgia: Why Pain Persists After Shingles | NervLock</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; color: #1a1a2e; background: #fff; font-size: 17px; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    :root {
+      --navy: #0d2545; --navy2: #163561;
+      --teal: #1a7a6e; --teal2: #22a090;
+      --gold: #b8922a; --gold2: #d4a843;
+      --gray: #f4f6f9; --gray2: #e8ecf2;
+      --muted: #5a6278;
+    }
+
+    /* Nav */
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(13,37,69,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-logo { font-size: 20px; font-weight: 900; color: #fff; white-space: nowrap; }
+    .nav-logo span { color: var(--gold2); }
+    .nav-back { font-size: 14px; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold2); }
+    .lang-toggle { display: flex; border: 1px solid rgba(255,255,255,0.22); border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+    .lang-btn { padding: 5px 12px; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); transition: all 0.18s; }
+    .lang-btn + .lang-btn { border-left: 1px solid rgba(255,255,255,0.22); }
+    .lang-btn.active { background: rgba(255,255,255,0.18); color: #fff; }
+
+    /* Article layout */
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 60px 24px 100px; }
+
+    /* Hero header */
+    .article-hero { background: linear-gradient(135deg, #2d1a45 0%, #5e3c96 100%); border-radius: 24px; padding: 52px 48px; margin-bottom: 48px; position: relative; overflow: hidden; }
+    .article-hero::before { content: '⚡'; position: absolute; right: 32px; top: 32px; font-size: 80px; opacity: 0.15; }
+    .article-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(94,60,150,0.3); border: 1px solid rgba(94,60,150,0.5); border-radius: 50px; font-size: 12px; font-weight: 700; color: #c9a8f5; padding: 4px 14px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+    .article-title { font-size: clamp(22px, 3.5vw, 34px); font-weight: 900; color: #fff; line-height: 1.3; margin-bottom: 20px; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 20px; }
+    .article-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.65); }
+    .article-meta-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+
+    /* Lang switch banner */
+    .lang-switch-banner { background: var(--gray); border: 1px solid var(--gray2); border-radius: 14px; padding: 14px 20px; margin-bottom: 40px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .lang-switch-banner span { font-size: 14px; color: var(--muted); }
+    .lang-switch-link { font-size: 13px; font-weight: 700; color: var(--teal2); border: 1px solid var(--teal2); border-radius: 50px; padding: 6px 16px; transition: all 0.2s; white-space: nowrap; }
+    .lang-switch-link:hover { background: var(--teal2); color: #fff; }
+
+    /* Abstract box */
+    .abstract { background: linear-gradient(135deg, rgba(26,122,110,0.06), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 16px 16px 0; padding: 24px 28px; margin-bottom: 48px; }
+    .abstract-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--teal2); margin-bottom: 10px; }
+    .abstract p { font-size: 15px; color: #2a3a4a; line-height: 1.85; margin: 0; font-style: italic; }
+
+    /* Article body */
+    .article-body h2 { font-size: 24px; font-weight: 900; color: var(--navy); margin: 52px 0 16px; line-height: 1.35; padding-bottom: 12px; border-bottom: 2px solid var(--gray2); }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-size: 19px; font-weight: 800; color: var(--navy2); margin: 36px 0 12px; }
+    .article-body p { font-size: 16px; color: #2a2a3e; line-height: 1.95; margin-bottom: 20px; }
+    .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .article-body li { font-size: 15px; color: #3a3a50; line-height: 1.75; }
+    .article-body strong { color: var(--navy); }
+
+    /* Callout */
+    .callout { background: linear-gradient(135deg, rgba(26,122,110,0.07), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: var(--navy); font-style: italic; line-height: 1.85; }
+    .callout strong { color: var(--teal); font-style: normal; }
+
+    /* Fiber type grid */
+    .fiber-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin: 24px 0; }
+    .fiber-card { background: var(--gray); border-radius: 14px; padding: 18px 20px; border: 1px solid var(--gray2); }
+    .fiber-card h4 { font-size: 14px; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+    .fiber-card p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+
+    /* Evidence box */
+    .evidence-box { background: var(--gray); border-radius: 14px; padding: 20px 24px; margin: 28px 0; }
+    .evidence-box h4 { font-size: 12px; font-weight: 800; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .evidence-box ul { margin: 0; }
+    .evidence-box li { font-size: 13px; color: var(--muted); }
+
+    /* Author footer */
+    .author-card { background: var(--gray); border-radius: 20px; padding: 28px 32px; margin-top: 64px; display: flex; align-items: flex-start; gap: 20px; }
+    .author-avatar { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--navy), var(--teal)); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+    .author-info h4 { font-size: 17px; font-weight: 900; color: var(--navy); margin-bottom: 4px; }
+    .author-info .creds { font-size: 13px; color: var(--teal); font-weight: 600; margin-bottom: 10px; }
+    .author-info p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+
+    /* CTA banner */
+    .cta-banner { background: linear-gradient(135deg, var(--navy), #0f4f6e); border-radius: 20px; padding: 40px 36px; margin-top: 48px; text-align: center; }
+    .cta-banner h3 { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 10px; }
+    .cta-banner p { font-size: 15px; color: rgba(255,255,255,0.7); margin-bottom: 24px; line-height: 1.7; }
+    .cta-btn { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold2)); color: #fff; font-size: 16px; font-weight: 800; padding: 14px 36px; border-radius: 50px; box-shadow: 0 6px 20px rgba(184,146,42,0.4); transition: transform 0.2s; }
+    .cta-btn:hover { transform: translateY(-2px); }
+
+    /* Related */
+    .related { margin-top: 64px; }
+    .related h3 { font-size: 20px; font-weight: 900; color: var(--navy); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .related-card { background: var(--gray); border-radius: 16px; padding: 20px; border: 1px solid var(--gray2); }
+    .related-card .tag { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .related-card h4 { font-size: 15px; font-weight: 800; color: var(--navy); line-height: 1.4; }
+
+    footer { background: #0a1a32; color: rgba(255,255,255,0.5); padding: 32px 0; margin-top: 0; }
+    .footer-bottom { max-width: 900px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 12px; }
+
+    @media (max-width: 600px) {
+      .article-hero { padding: 36px 28px; }
+      .fiber-grid { grid-template-columns: 1fr; }
+      .related-grid { grid-template-columns: 1fr; }
+      .author-card { flex-direction: column; }
+    }
+  </style>
 </head>
 <body>
-<nav><div class="nav-inner">
-  <a href="/en/" class="nav-logo">Nerv<span>Lock</span></a>
-  <a href="/en/#blog" class="nav-back">← Medical Blog</a>
-  <div class="lang-toggle">
-    <a href="/blog/대상포진-신경통/" class="lang-btn">KR</a>
-    <a href="/blog/herpes-zoster-neuralgia/" class="lang-btn active">EN</a>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/en/" class="nav-logo">Nerv<span>Lock</span></a>
+    <a href="/en/#blog" class="nav-back">← Medical Blog</a>
+    <div class="lang-toggle">
+      <a href="/blog/대상포진-신경통/" class="lang-btn">KR</a>
+      <a href="/blog/herpes-zoster-neuralgia/" class="lang-btn active">EN</a>
+    </div>
   </div>
-</div></nav>
+</nav>
+
 <div class="article-wrap">
+
   <div class="article-hero">
     <div class="article-tag">Pain Medicine</div>
-    <h1 class="article-title">Post-Herpetic Neuralgia:<br>Why It Persists for Years</h1>
+    <h1 class="article-title">Post-Herpetic Neuralgia:<br>Why Pain Persists After Shingles</h1>
     <div class="article-meta">
-      <div class="article-meta-item">👨‍⚕️ <strong>Dr.H</strong> — Neurologist · NervLock Founder</div>
+      <div class="article-meta-item">👨‍⚕️ <strong>Dr.H</strong> — Neurologist, NervLock Founder</div>
       <div class="article-meta-item">📅 October 28, 2024</div>
       <div class="article-meta-item">⏱ 10 min read</div>
     </div>
   </div>
+
   <div class="lang-switch-banner">
     <span>🇰🇷 이 글의 한국어 버전을 보시겠습니까?</span>
     <a href="/blog/대상포진-신경통/" class="lang-switch-link">한국어로 읽기 →</a>
   </div>
+
   <div class="abstract">
     <div class="abstract-label">Abstract</div>
-    <p>Post-herpetic neuralgia (PHN) is a chronic neuropathic pain syndrome persisting beyond the resolution of herpes zoster (shingles) dermatomal eruption. The persistence of PHN is attributable not to ongoing viral activity but to structural and functional reorganization of the peripheral and central nervous systems. This article reviews the pathophysiology of PHN, the mechanisms of central sensitization, and evidence-based nutritional strategies for supporting neural health in the post-herpetic context.</p>
+    <p>Post-herpetic neuralgia (PHN) is a chronic neuropathic pain syndrome that persists beyond the resolution of the herpes zoster rash, affecting 10–20% of shingles patients and exceeding 50% in those over age 70. Unlike the acute phase, PHN does not involve active viral replication — it reflects enduring structural and functional reorganization of both peripheral and central neural circuits. This article reviews the pathophysiology of viral nerve injury, the mechanisms of central sensitization, neuroinflammatory perpetuation, and evidence-based nutritional support strategies for post-herpetic neural health.</p>
   </div>
+
   <div class="article-body">
 
-    <h2>1. Introduction: The Paradox of Resolved Skin Disease</h2>
-    <p>Post-herpetic neuralgia (PHN) affects 10–20% of individuals who develop herpes zoster (shingles), with incidence rising steeply with age — exceeding 30–50% in those over 70. Paradoxically, the severity and duration of PHN do not strictly correlate with the extent of the acute zoster rash. Patients may experience profound, incapacitating neuropathic discomfort for months or years after the skin has completely healed.</p>
-    <p>Understanding why this occurs requires an appreciation of how varicella-zoster virus (VZV) reactivation affects not only peripheral nerve fibers but the entire neural axis.</p>
+    <h2>1. Introduction: The Paradox of Pain Without Active Infection</h2>
+    <p>Among patients who develop herpes zoster (shingles), a subset continues to experience significant neuropathic discomfort long after the rash has completely resolved and viral replication has ceased. This condition — post-herpetic neuralgia (PHN) — represents one of the most clinically challenging neuropathic pain syndromes in neurological practice, precisely because its persistence cannot be explained by ongoing infection.</p>
+    <p>The epidemiological burden is substantial: PHN affects approximately 10–20% of all herpes zoster patients, rising to 30–50% in individuals over 60 and exceeding 50% in those over 70 years of age. Duration is equally variable — while some patients resolve within months, a significant minority experience persistent symptoms for years, and a subset never fully remits.</p>
 
-    <h2>2. Viral Mechanisms of Neural Injury</h2>
-    <p>VZV establishes latency in dorsal root ganglia following primary varicella infection. Upon reactivation — typically precipitated by immunosenescence, immunosuppression, or physiological stress — the virus undergoes anterograde transport along the axon toward the skin, causing intense inflammation and direct injury to nerve fibers en route.</p>
-    <p>The pattern of nerve fiber injury is characteristic and predictable:</p>
+    <div class="callout">
+      <strong>Key principle:</strong> PHN is not caused by ongoing viral activity but by permanent changes to the nervous system induced during the acute phase. Understanding this distinction is fundamental to rational management — it explains why antiviral treatment alone does not reliably prevent or resolve PHN.
+    </div>
+
+    <h2>2. Varicella-Zoster Virus and Neural Tropism</h2>
+    <p>To understand PHN, one must first understand the unique relationship between varicella-zoster virus (VZV) and the nervous system. Following primary varicella infection (chickenpox), VZV does not undergo complete immune clearance. Instead, it establishes <strong>latency in dorsal root ganglia</strong> — the clusters of sensory neuron cell bodies adjacent to the spinal cord — where it persists indefinitely in an immunologically quiescent state.</p>
+    <p>Decades later, when immune surveillance weakens — through immunosenescence (age-related immune decline), immunosuppressive therapy, physiological stress, or intercurrent illness — VZV can reactivate. Unlike many viruses that replicate and disseminate systemically, reactivating VZV travels along sensory nerve axons in an <strong>anterograde direction</strong> — from the dorsal root ganglion toward the skin. This anterograde axonal transport is the mechanism responsible for the characteristic dermatomal distribution of the shingles rash.</p>
+    <p>During this transit, the virus causes intense inflammatory injury not only at the skin surface but along the entire length of the nerve fiber it traverses — from ganglion to skin.</p>
+
+    <h2>3. Patterns of Nerve Fiber Injury in Acute Zoster</h2>
+    <p>The spectrum of nerve fiber damage in acute herpes zoster determines the clinical phenotype of subsequent PHN. Different fiber types sustain injury through different mechanisms and with different consequences:</p>
+
+    <div class="fiber-grid">
+      <div class="fiber-card">
+        <h4>C Fibers (Nociceptive)</h4>
+        <p>Unmyelinated slow-pain fibers. Direct viral destruction → persistent ectopic discharge from damaged axons and sensitized nociceptors even after viral clearance.</p>
+      </div>
+      <div class="fiber-card">
+        <h4>Aδ Fibers (Acute Pain)</h4>
+        <p>Lightly myelinated fast-pain fibers. Demyelination reduces conduction velocity, generating aberrant firing patterns that contribute to the burning and stabbing quality of PHN.</p>
+      </div>
+      <div class="fiber-card">
+        <h4>Aβ Fibers (Tactile)</h4>
+        <p>Large myelinated touch fibers. Rewiring into nociceptive circuits in the dorsal horn → allodynia: light touch, clothing contact, or airflow becomes acutely painful.</p>
+      </div>
+    </div>
+
+    <p>The hallmark symptom of PHN — <strong>allodynia</strong> — is a direct consequence of Aβ fiber rewiring. In a healthy nervous system, these fibers transmit only tactile information. After zoster-induced demyelination and synaptic reorganization in the dorsal horn, Aβ input is routed through nociceptive circuits, causing normally innocuous stimuli to produce severe neuropathic discomfort.</p>
+
+    <h2>4. Central Sensitization: The Brain Learns Discomfort</h2>
+    <p>Sustained peripheral nociceptive barrage from injured nerve fibers does not remain contained to the peripheral nervous system. Persistent ectopic discharge drives <strong>central sensitization</strong> — a state of enhanced excitability in dorsal horn neurons and supraspinal pain-processing circuits that can become self-sustaining independent of continued peripheral input.</p>
+    <p>The mechanisms underlying central sensitization in PHN include:</p>
     <ul>
-      <li><strong>C-fibers (nociceptive):</strong> Direct destruction → persistent ectopic discharge, paradoxical sensitization</li>
-      <li><strong>Aβ-fibers (tactile):</strong> Demyelination and rewiring into nociceptive circuits → allodynia (painful response to normally innocuous stimuli)</li>
-      <li><strong>Inhibitory interneurons:</strong> Loss of GABAergic inhibition in dorsal horn → disinhibition of nociceptive circuits</li>
+      <li><strong>NMDA receptor upregulation:</strong> Repetitive nociceptive input drives progressive NMDA receptor sensitization in dorsal horn neurons, lowering the threshold for action potential generation — the neurophysiological correlate of "wind-up"</li>
+      <li><strong>Loss of GABAergic inhibitory interneurons:</strong> Zoster-induced destruction of spinal inhibitory interneurons removes the normal gating mechanism that regulates nociceptive transmission, producing a state of disinhibited pain signaling</li>
+      <li><strong>Expanded receptive fields:</strong> Sensitized dorsal horn neurons respond to input from areas beyond the original affected dermatome, explaining why PHN discomfort often extends beyond the initial rash territory</li>
+      <li><strong>Microglial activation in the spinal cord:</strong> Activated microglia release pro-inflammatory cytokines that maintain central sensitization even after peripheral inputs have diminished</li>
     </ul>
 
     <div class="callout">
-      <strong>Allodynia</strong> — the hallmark of PHN — arises from aberrant Aβ-fiber input into nociceptive circuits. Light touch, clothing contact, or airflow across the skin triggers severe neuropathic discomfort because what was once a purely tactile signal is now routed through pain-processing pathways.
+      <strong>Clinical implication:</strong> Once central sensitization is established, effective management requires addressing both peripheral neuroinflammation and central sensitization simultaneously. Treatments targeting only the periphery provide incomplete relief because the central component perpetuates discomfort independently.
     </div>
 
-    <h2>3. Central Sensitization: The Brain Learns Discomfort</h2>
-    <p>Sustained peripheral ectopic discharge from injured nerves drives <strong>central sensitization</strong> — a state of enhanced excitability in dorsal horn neurons and supraspinal pain-processing circuits. The cardinal features of central sensitization include:</p>
-    <ul>
-      <li><strong>Wind-up:</strong> Progressive amplification of the nociceptive response to repetitive stimuli</li>
-      <li><strong>Expanded receptive fields:</strong> Neuropathic discomfort extends beyond the original dermatome</li>
-      <li><strong>Reduced activation thresholds:</strong> Stimuli that normally would not activate nociceptors now produce substantial central responses</li>
-      <li><strong>Loss of descending inhibition:</strong> Brainstem inhibitory systems are progressively dysregulated</li>
-    </ul>
-    <p>The clinical implication of central sensitization is profound: once established, it can be maintained independently of ongoing peripheral input. This explains why effective peripheral interventions alone do not reliably resolve PHN.</p>
+    <h2>5. Neuroinflammatory Perpetuation</h2>
+    <p>Beyond the circuitry changes, PHN is sustained by a persistent pro-inflammatory microenvironment at sites of nerve injury. Even after VZV is no longer detectable, activated Schwann cells, resident macrophages, and infiltrating immune cells maintain a chronic low-grade neuroinflammatory state characterized by elevated TNF-α, IL-1β, IL-6, and prostaglandin E2.</p>
 
-    <h2>4. Neuroinflammatory Perpetuation</h2>
-    <p>Beyond the neural circuitry changes, PHN is sustained by persistent neuroinflammation at the site of nerve injury. Activated microglia, Schwann cells, and macrophages maintain a pro-inflammatory milieu characterized by elevated TNF-α, IL-1β, and prostaglandin E2.</p>
-    <h3>4.1 The NF-κB Pathway</h3>
-    <p>Nuclear factor-κB (NF-κB) is the master transcriptional regulator of the pro-inflammatory cytokine response. In PHN, NF-κB remains constitutively activated at sites of zoster nerve injury, perpetuating cytokine-mediated nociceptive sensitization.</p>
-    <h3>4.2 The 5-LOX Pathway</h3>
-    <p>5-lipoxygenase (5-LOX) catalyzes the conversion of arachidonic acid to leukotrienes, potent lipid mediators that amplify neuroinflammatory signaling and contribute to peripheral sensitization. Selective 5-LOX inhibition represents a mechanistically distinct anti-inflammatory target complementary to NF-κB modulation.</p>
+    <h3>5.1 The NF-κB Pathway</h3>
+    <p>Nuclear factor-κB (NF-κB) functions as the master transcriptional regulator of the pro-inflammatory cytokine response. In PHN-affected tissue, NF-κB remains constitutively activated long after viral clearance, driving continuous transcription of TNF-α, IL-1β, and COX-2. This self-perpetuating inflammatory loop sustains peripheral sensitization and provides ongoing input to central sensitization mechanisms.</p>
 
-    <h2>5. Nutritional Support for Neural Health in PHN</h2>
-    <p>While pharmacological management remains the primary therapeutic approach, the nutritional microenvironment of injured neural tissue is a modifiable factor that can support neural health recovery. Evidence-based nutritional agents targeting the neuroinflammatory environment include:</p>
-    <h3>5.1 Palmitoylethanolamide (PEA)</h3>
-    <p>PEA is an endogenous fatty acid amide that modulates microglial activation through PPAR-α agonism. Clinical studies in neuropathic conditions, including post-herpetic contexts, have reported favorable effects on neural discomfort indices with an excellent safety profile.</p>
-    <h3>5.2 Curcumin and Aflapin®</h3>
-    <p>Curcumin (NF-κB modulation) and Aflapin® (selective 5-LOX inhibition) address the two primary neuroinflammatory pathways implicated in PHN perpetuation through complementary mechanisms. Their co-administration provides dual-pathway coverage that neither agent achieves alone.</p>
-    <h3>5.3 Methylcobalamin</h3>
-    <p>Methylcobalamin provides the active form of B12 required for myelin synthesis and nerve fiber repair. Its superior CNS penetration and neural tissue retention compared to cyanocobalamin make it the preferred form for neural health applications.</p>
+    <h3>5.2 The 5-LOX Pathway</h3>
+    <p>5-lipoxygenase (5-LOX) catalyzes the conversion of arachidonic acid to leukotrienes — potent lipid mediators that amplify neuroinflammatory signaling, increase nociceptor sensitivity, and contribute to the recruitment of additional immune cells to sites of nerve injury. The 5-LOX pathway operates in parallel with and independently of the NF-κB pathway, providing a second, complementary axis of neuroinflammatory amplification.</p>
 
-    <h2>6. The Importance of Early Intervention</h2>
-    <p>The probability of PHN development and its severity are substantially reduced by early initiation of antiviral therapy (within 72 hours of rash onset) and prompt neurological evaluation. Once central sensitization is established, the therapeutic window narrows significantly.</p>
-    <p>Early nutritional support for neural health — initiated at the acute zoster stage — may help limit the neuroinflammatory cascade before it becomes self-sustaining. Patients who develop persistent neuropathic discomfort after shingles resolution should seek neurological evaluation promptly.</p>
+    <h2>6. Nutritional Support for Post-Herpetic Neural Health</h2>
+    <p>Pharmacological management of PHN — including anticonvulsants, tricyclic antidepressants, and topical agents — addresses symptom burden but does not directly target the underlying neuroinflammatory environment that perpetuates the condition. Nutritional interventions targeting the two principal inflammatory pathways represent a rational complement to standard medical care.</p>
+
+    <h3>6.1 Curcumin: NF-κB Pathway Modulation</h3>
+    <p>Curcumin (diferuloylmethane), the principal bioactive polyphenol of <em>Curcuma longa</em>, inhibits the NF-κB signaling cascade at multiple points — including IKK kinase activation, IκB phosphorylation, and direct NF-κB DNA binding. In neuropathic pain models, curcumin has demonstrated reductions in TNF-α, IL-1β, and COX-2 in neural tissue. Its lipophilicity enables penetration of the blood-nerve barrier, making it available directly at sites of peripheral nerve inflammation. Phospholipid complex (phytosome) formulations substantially enhance oral bioavailability.</p>
+
+    <h3>6.2 Aflapin®: Selective 5-LOX Inhibition</h3>
+    <p>Aflapin® is a proprietary Boswellia serrata extract concentrated in acetyl-11-keto-β-boswellic acid (AKBA), which selectively inhibits 5-lipoxygenase without the gastrointestinal effects associated with non-selective anti-inflammatory agents. Unlike NSAIDs, which inhibit both COX-1 and COX-2 pathways, AKBA specifically reduces leukotriene biosynthesis — the 5-LOX-driven arm of neuroinflammatory amplification in PHN.</p>
+    <p>The dual-pathway approach — curcumin targeting NF-κB and Aflapin® targeting 5-LOX — provides complementary coverage of the two principal inflammatory cascades implicated in PHN perpetuation. This mechanistic complementarity is the rationale for their co-formulation.</p>
+
+    <h3>6.3 Methylcobalamin: Nerve Fiber Repair Support</h3>
+    <p>The peripheral nerve has a genuine — if slow — regenerative capacity. Axonal regeneration proceeds at approximately 1–4 mm per day under favorable conditions and requires an adequate supply of methyl groups for myelin phospholipid synthesis. Methylcobalamin (active B12) is the obligate cofactor for this process. Zoster-induced demyelination creates an increased demand for methylcobalamin that may not be met by dietary intake alone, particularly in older adults in whom B12 absorption is often reduced.</p>
+
+    <h2>7. The Prevention Window: Why Timing Matters</h2>
+    <p>The probability of PHN developing — and its severity if it does — is substantially influenced by interventions during the acute zoster phase. Early antiviral therapy (within 72 hours of rash onset) reduces viral replication and limits the extent of nerve fiber injury, thereby reducing the substrate for subsequent central sensitization. Vaccination against VZV represents the most effective prevention strategy, with high-dose recombinant subunit vaccine (Shingrix) demonstrating over 90% efficacy against both zoster and PHN in adults over 50.</p>
+    <p>Once PHN is established, neurological evaluation is strongly recommended. A neurologist can characterize the type and distribution of fiber injury, guide appropriate pharmacological management, and identify modifiable contributing factors including nutritional deficiencies and inflammatory load.</p>
+
+    <h2>8. Summary</h2>
+    <p>Post-herpetic neuralgia exemplifies the principle that in neuropathic pain conditions, the origin of discomfort often lies not in ongoing tissue damage but in the neural changes induced by that damage — changes that persist and self-perpetuate independently of the original insult. PHN is sustained by three interlocking mechanisms: peripheral ectopic discharge from damaged nerve fibers, central sensitization of dorsal horn and supraspinal circuits, and chronic neuroinflammation driven by the NF-κB and 5-LOX pathways.</p>
+    <p>Evidence-based management requires addressing all three components. Early intervention during acute zoster limits injury severity. For established PHN, nutritional strategies targeting neuroinflammatory pathways complement pharmacological symptom management and support the neural repair environment necessary for long-term improvement.</p>
 
     <div class="evidence-box">
       <h4>📚 Key References</h4>
       <ul>
-        <li>Woolf CJ (2011). Central sensitization: implications for the diagnosis and treatment of pain. Pain 152(3 Suppl):S2-15</li>
-        <li>Keppel Hesselink JM et al. (2013). Palmitoylethanolamide in post-herpetic neuralgia. Pain Physician 16:E81-E90</li>
-        <li>Dworkin RH et al. (2007). Recommendations for the management of herpes zoster. Clin J Pain 23(1 Suppl):S21-49</li>
-        <li>Baron R et al. (2010). Neuropathic pain: diagnosis, pathophysiological mechanisms, and treatment. Lancet Neurol 9(8):807-819</li>
+        <li>Dworkin RH et al. (2007). Recommendations for the management of herpes zoster. <em>Clin J Pain</em> 23(1 Suppl):S21–49</li>
+        <li>Woolf CJ (2011). Central sensitization: implications for the diagnosis and treatment of pain. <em>Pain</em> 152(3 Suppl):S2–15</li>
+        <li>Johnson RW, Rice AS (2014). Post-herpetic neuralgia. <em>N Engl J Med</em> 371(16):1526–1533</li>
+        <li>Baron R et al. (2010). Neuropathic pain: diagnosis, pathophysiological mechanisms, and treatment. <em>Lancet Neurol</em> 9(8):807–819</li>
+        <li>Anand P et al. (2008). Biological activities of curcumin and its analogues. <em>Biochemical Pharmacology</em> 76(11):1590–1611</li>
+        <li>Sengupta K et al. (2010). Comparative efficacy and tolerability of Aflapin vs 5-Loxin. <em>Int J Med Sci</em> 7(6):366–377</li>
       </ul>
     </div>
 
@@ -152,24 +240,40 @@ footer{background:#0a1a32;color:rgba(255,255,255,.5);padding:32px 0}
       <div class="author-avatar">👨‍⚕️</div>
       <div class="author-info">
         <h4>Dr.H</h4>
-        <div class="creds">Neurologist · Yonsei Severance Hospital · Brain, Pain & Functional Medicine · NervLock Founder</div>
-        <p>Korean Neurological Association · Korean Movement Disorder Society · Korean Society of Functional Medicine. This article is for informational purposes only and does not constitute medical advice.</p>
+        <div class="creds">Neurologist · Yonsei University Severance Hospital · Brain, Pain & Functional Medicine · NervLock Founder</div>
+        <p>Member, Korean Neurological Association · Member, Korean Movement Disorder Society · Member, Korean Society of Functional Medicine. This article is for informational purposes only and does not constitute medical advice or replace professional consultation.</p>
       </div>
     </div>
+
     <div class="cta-banner">
-      <h3>Support Neural Health with NervLock Nerve Care</h3>
-      <p>Curcumin + Aflapin® dual-pathway formulation — NervLock's first product, launching soon.</p>
+      <h3>Support Your Neural Health with NervLock Nerve Care</h3>
+      <p>Formulated by a neurologist with curcumin + Aflapin® — dual NF-κB and 5-LOX pathway coverage for neural inflammatory balance.<br>NervLock's first product is launching soon.</p>
       <a href="/en/#coming-soon" class="cta-btn">Get Launch Notification</a>
     </div>
+
     <div class="related">
       <h3>Related Articles</h3>
       <div class="related-grid">
-        <div class="related-card"><div class="tag">Neuroscience</div><h4><a href="/blog/peripheral-neuropathy/">What is Peripheral Neuropathy? Symptoms, Causes & Neurologist's Perspective</a></h4></div>
-        <div class="related-card"><div class="tag">Pain Medicine</div><h4><a href="/blog/nocturnal-nerve-discomfort/">Why Does Neural Discomfort Worsen at Night?</a></h4></div>
+        <div class="related-card">
+          <div class="tag">Neuroscience</div>
+          <h4><a href="/blog/peripheral-neuropathy/">What is Peripheral Neuropathy? Symptoms, Causes & Neurologist's Perspective</a></h4>
+        </div>
+        <div class="related-card">
+          <div class="tag">Pain Medicine</div>
+          <h4><a href="/blog/nocturnal-nerve-discomfort/">Why Does Neural Discomfort Worsen at Night? Circadian Biology Explained</a></h4>
+        </div>
       </div>
     </div>
+
   </div>
 </div>
-<footer><div class="footer-bottom"><p>© 2024 NervLock. All rights reserved.</p><p>This article is for informational purposes only and does not constitute medical advice.</p></div></footer>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2024 NervLock. All rights reserved.</p>
+    <p>This article is for informational purposes only and does not constitute medical advice.</p>
+  </div>
+</footer>
+
 </body>
 </html>

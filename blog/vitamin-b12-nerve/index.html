@@ -1,158 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Methylcobalamin vs Cyanocobalamin: What Your Nerves Actually Need | NervLock</title>
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
-body{font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif;color:#1a1a2e;background:#fff;font-size:17px;line-height:1.7}
-a{text-decoration:none;color:inherit}
-:root{--navy:#0d2545;--navy2:#163561;--teal:#1a7a6e;--teal2:#22a090;--gold:#b8922a;--gold2:#d4a843;--gray:#f4f6f9;--gray2:#e8ecf2;--muted:#5a6278}
-nav{position:sticky;top:0;z-index:100;background:rgba(13,37,69,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
-.nav-inner{max-width:900px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.nav-logo{font-size:20px;font-weight:900;color:#fff;white-space:nowrap}.nav-logo span{color:var(--gold2)}
-.nav-back{font-size:14px;color:rgba(255,255,255,.7);transition:color .2s}.nav-back:hover{color:var(--gold2)}
-.lang-toggle{display:flex;border:1px solid rgba(255,255,255,.22);border-radius:8px;overflow:hidden;flex-shrink:0}
-.lang-btn{padding:5px 12px;font-size:12px;font-weight:800;letter-spacing:.5px;color:rgba(255,255,255,.5);transition:all .18s}
-.lang-btn+.lang-btn{border-left:1px solid rgba(255,255,255,.22)}.lang-btn.active{background:rgba(255,255,255,.18);color:#fff}
-.article-wrap{max-width:760px;margin:0 auto;padding:60px 24px 100px}
-.article-hero{background:linear-gradient(135deg,#0f4f3a 0%,#b8922a 100%);border-radius:24px;padding:52px 48px;margin-bottom:48px;position:relative;overflow:hidden}
-.article-hero::before{content:'💊';position:absolute;right:32px;top:32px;font-size:80px;opacity:.15}
-.article-tag{display:inline-flex;background:rgba(184,146,42,.2);border:1px solid rgba(184,146,42,.4);border-radius:50px;font-size:12px;font-weight:700;color:#f5d78a;padding:4px 14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px}
-.article-title{font-size:clamp(22px,3.5vw,34px);font-weight:900;color:#fff;line-height:1.3;margin-bottom:20px}
-.article-meta{display:flex;flex-wrap:wrap;gap:20px}
-.article-meta-item{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.65)}
-.article-meta-item strong{color:rgba(255,255,255,.9);font-weight:700}
-.lang-switch-banner{background:var(--gray);border:1px solid var(--gray2);border-radius:14px;padding:14px 20px;margin-bottom:40px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.lang-switch-banner span{font-size:14px;color:var(--muted)}
-.lang-switch-link{font-size:13px;font-weight:700;color:var(--teal2);border:1px solid var(--teal2);border-radius:50px;padding:6px 16px;transition:all .2s;white-space:nowrap}
-.lang-switch-link:hover{background:var(--teal2);color:#fff}
-.abstract{background:linear-gradient(135deg,rgba(26,122,110,.06),rgba(26,122,110,.02));border-left:4px solid var(--teal2);border-radius:0 16px 16px 0;padding:24px 28px;margin-bottom:48px}
-.abstract-label{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--teal2);margin-bottom:10px}
-.abstract p{font-size:15px;color:#2a3a4a;line-height:1.85;margin:0;font-style:italic}
-.article-body h2{font-size:24px;font-weight:900;color:var(--navy);margin:52px 0 16px;padding-bottom:12px;border-bottom:2px solid var(--gray2)}
-.article-body h2:first-child{margin-top:0}
-.article-body h3{font-size:19px;font-weight:800;color:var(--navy2);margin:36px 0 12px}
-.article-body p{font-size:16px;color:#2a2a3e;line-height:1.95;margin-bottom:20px}
-.article-body ul{padding-left:24px;margin-bottom:20px;display:flex;flex-direction:column;gap:10px}
-.article-body li{font-size:15px;color:#3a3a50;line-height:1.75}
-.article-body strong{color:var(--navy)}
-.callout{background:linear-gradient(135deg,rgba(26,122,110,.07),rgba(26,122,110,.02));border-left:4px solid var(--teal2);border-radius:0 12px 12px 0;padding:20px 24px;margin:28px 0;font-size:15px;color:var(--navy);font-style:italic;line-height:1.85}
-.callout strong{color:var(--teal);font-style:normal}
-.compare-table{width:100%;border-collapse:collapse;margin:24px 0;border-radius:14px;overflow:hidden;font-size:14px}
-.compare-table th{background:var(--navy);color:#fff;padding:14px 16px;text-align:left;font-weight:700}
-.compare-table td{padding:12px 16px;border-bottom:1px solid var(--gray2)}
-.compare-table tr:last-child td{border-bottom:none}
-.compare-table tr:nth-child(even) td{background:var(--gray)}
-.evidence-box{background:var(--gray);border-radius:14px;padding:20px 24px;margin:28px 0}
-.evidence-box h4{font-size:12px;font-weight:800;color:var(--teal2);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
-.evidence-box ul{margin:0}.evidence-box li{font-size:13px;color:var(--muted)}
-.author-card{background:var(--gray);border-radius:20px;padding:28px 32px;margin-top:64px;display:flex;align-items:flex-start;gap:20px}
-.author-avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--teal));flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:28px}
-.author-info h4{font-size:17px;font-weight:900;color:var(--navy);margin-bottom:4px}
-.author-info .creds{font-size:13px;color:var(--teal);font-weight:600;margin-bottom:10px}
-.author-info p{font-size:13px;color:var(--muted);line-height:1.65;margin:0}
-.cta-banner{background:linear-gradient(135deg,var(--navy),#0f4f6e);border-radius:20px;padding:40px 36px;margin-top:48px;text-align:center}
-.cta-banner h3{font-size:22px;font-weight:900;color:#fff;margin-bottom:10px}
-.cta-banner p{font-size:15px;color:rgba(255,255,255,.7);margin-bottom:24px;line-height:1.7}
-.cta-btn{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#fff;font-size:16px;font-weight:800;padding:14px 36px;border-radius:50px;box-shadow:0 6px 20px rgba(184,146,42,.4);transition:transform .2s}
-.cta-btn:hover{transform:translateY(-2px)}
-.related{margin-top:64px}.related h3{font-size:20px;font-weight:900;color:var(--navy);margin-bottom:20px}
-.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.related-card{background:var(--gray);border-radius:16px;padding:20px;border:1px solid var(--gray2)}
-.related-card .tag{font-size:11px;font-weight:700;color:var(--teal);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
-.related-card h4{font-size:15px;font-weight:800;color:var(--navy);line-height:1.4}
-footer{background:#0a1a32;color:rgba(255,255,255,.5);padding:32px 0}
-.footer-bottom{max-width:900px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:12px}
-@media(max-width:600px){.article-hero{padding:36px 28px}.related-grid{grid-template-columns:1fr}.author-card{flex-direction:column}}
-</style>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Methylcobalamin vs. Cyanocobalamin: What Your Nerves Actually Need | NervLock</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; color: #1a1a2e; background: #fff; font-size: 17px; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    :root {
+      --navy: #0d2545; --navy2: #163561;
+      --teal: #1a7a6e; --teal2: #22a090;
+      --gold: #b8922a; --gold2: #d4a843;
+      --gray: #f4f6f9; --gray2: #e8ecf2;
+      --muted: #5a6278;
+    }
+
+    /* Nav */
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(13,37,69,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-logo { font-size: 20px; font-weight: 900; color: #fff; white-space: nowrap; }
+    .nav-logo span { color: var(--gold2); }
+    .nav-back { font-size: 14px; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold2); }
+    .lang-toggle { display: flex; border: 1px solid rgba(255,255,255,0.22); border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+    .lang-btn { padding: 5px 12px; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); transition: all 0.18s; }
+    .lang-btn + .lang-btn { border-left: 1px solid rgba(255,255,255,0.22); }
+    .lang-btn.active { background: rgba(255,255,255,0.18); color: #fff; }
+
+    /* Article layout */
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 60px 24px 100px; }
+
+    /* Hero header */
+    .article-hero { background: linear-gradient(135deg, #0f4f3a 0%, #b8922a 100%); border-radius: 24px; padding: 52px 48px; margin-bottom: 48px; position: relative; overflow: hidden; }
+    .article-hero::before { content: '💊'; position: absolute; right: 32px; top: 32px; font-size: 80px; opacity: 0.15; }
+    .article-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(184,146,42,0.25); border: 1px solid rgba(184,146,42,0.45); border-radius: 50px; font-size: 12px; font-weight: 700; color: #f5d78a; padding: 4px 14px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+    .article-title { font-size: clamp(22px, 3.5vw, 34px); font-weight: 900; color: #fff; line-height: 1.3; margin-bottom: 20px; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 20px; }
+    .article-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.65); }
+    .article-meta-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+
+    /* Lang switch banner */
+    .lang-switch-banner { background: var(--gray); border: 1px solid var(--gray2); border-radius: 14px; padding: 14px 20px; margin-bottom: 40px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .lang-switch-banner span { font-size: 14px; color: var(--muted); }
+    .lang-switch-link { font-size: 13px; font-weight: 700; color: var(--teal2); border: 1px solid var(--teal2); border-radius: 50px; padding: 6px 16px; transition: all 0.2s; white-space: nowrap; }
+    .lang-switch-link:hover { background: var(--teal2); color: #fff; }
+
+    /* Abstract box */
+    .abstract { background: linear-gradient(135deg, rgba(26,122,110,0.06), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 16px 16px 0; padding: 24px 28px; margin-bottom: 48px; }
+    .abstract-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--teal2); margin-bottom: 10px; }
+    .abstract p { font-size: 15px; color: #2a3a4a; line-height: 1.85; margin: 0; font-style: italic; }
+
+    /* Article body */
+    .article-body h2 { font-size: 24px; font-weight: 900; color: var(--navy); margin: 52px 0 16px; line-height: 1.35; padding-bottom: 12px; border-bottom: 2px solid var(--gray2); }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-size: 19px; font-weight: 800; color: var(--navy2); margin: 36px 0 12px; }
+    .article-body p { font-size: 16px; color: #2a2a3e; line-height: 1.95; margin-bottom: 20px; }
+    .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .article-body li { font-size: 15px; color: #3a3a50; line-height: 1.75; }
+    .article-body strong { color: var(--navy); }
+
+    /* Callout */
+    .callout { background: linear-gradient(135deg, rgba(26,122,110,0.07), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: var(--navy); font-style: italic; line-height: 1.85; }
+    .callout strong { color: var(--teal); font-style: normal; }
+
+    /* Comparison table */
+    .compare-table { width: 100%; border-collapse: collapse; margin: 24px 0; border-radius: 14px; overflow: hidden; font-size: 14px; }
+    .compare-table th { background: var(--navy); color: #fff; padding: 14px 16px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 12px 16px; border-bottom: 1px solid var(--gray2); }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: var(--gray); }
+
+    /* Risk population cards */
+    .risk-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+    .risk-card { background: var(--gray); border-radius: 14px; padding: 18px 20px; border: 1px solid var(--gray2); border-left: 4px solid var(--gold2); }
+    .risk-card h4 { font-size: 14px; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+    .risk-card p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+
+    /* Evidence box */
+    .evidence-box { background: var(--gray); border-radius: 14px; padding: 20px 24px; margin: 28px 0; }
+    .evidence-box h4 { font-size: 12px; font-weight: 800; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .evidence-box ul { margin: 0; }
+    .evidence-box li { font-size: 13px; color: var(--muted); }
+
+    /* Author footer */
+    .author-card { background: var(--gray); border-radius: 20px; padding: 28px 32px; margin-top: 64px; display: flex; align-items: flex-start; gap: 20px; }
+    .author-avatar { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--navy), var(--teal)); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+    .author-info h4 { font-size: 17px; font-weight: 900; color: var(--navy); margin-bottom: 4px; }
+    .author-info .creds { font-size: 13px; color: var(--teal); font-weight: 600; margin-bottom: 10px; }
+    .author-info p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+
+    /* CTA banner */
+    .cta-banner { background: linear-gradient(135deg, var(--navy), #0f4f6e); border-radius: 20px; padding: 40px 36px; margin-top: 48px; text-align: center; }
+    .cta-banner h3 { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 10px; }
+    .cta-banner p { font-size: 15px; color: rgba(255,255,255,0.7); margin-bottom: 24px; line-height: 1.7; }
+    .cta-btn { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold2)); color: #fff; font-size: 16px; font-weight: 800; padding: 14px 36px; border-radius: 50px; box-shadow: 0 6px 20px rgba(184,146,42,0.4); transition: transform 0.2s; }
+    .cta-btn:hover { transform: translateY(-2px); }
+
+    /* Related */
+    .related { margin-top: 64px; }
+    .related h3 { font-size: 20px; font-weight: 900; color: var(--navy); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .related-card { background: var(--gray); border-radius: 16px; padding: 20px; border: 1px solid var(--gray2); }
+    .related-card .tag { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .related-card h4 { font-size: 15px; font-weight: 800; color: var(--navy); line-height: 1.4; }
+
+    footer { background: #0a1a32; color: rgba(255,255,255,0.5); padding: 32px 0; margin-top: 0; }
+    .footer-bottom { max-width: 900px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 12px; }
+
+    @media (max-width: 600px) {
+      .article-hero { padding: 36px 28px; }
+      .risk-grid { grid-template-columns: 1fr; }
+      .related-grid { grid-template-columns: 1fr; }
+      .author-card { flex-direction: column; }
+    }
+  </style>
 </head>
 <body>
-<nav><div class="nav-inner">
-  <a href="/en/" class="nav-logo">Nerv<span>Lock</span></a>
-  <a href="/en/#blog" class="nav-back">← Medical Blog</a>
-  <div class="lang-toggle">
-    <a href="/blog/비타민B12-신경/" class="lang-btn">KR</a>
-    <a href="/blog/vitamin-b12-nerve/" class="lang-btn active">EN</a>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/en/" class="nav-logo">Nerv<span>Lock</span></a>
+    <a href="/en/#blog" class="nav-back">← Medical Blog</a>
+    <div class="lang-toggle">
+      <a href="/blog/비타민B12-신경/" class="lang-btn">KR</a>
+      <a href="/blog/vitamin-b12-nerve/" class="lang-btn active">EN</a>
+    </div>
   </div>
-</div></nav>
+</nav>
+
 <div class="article-wrap">
+
   <div class="article-hero">
     <div class="article-tag">Nutrition Science</div>
     <h1 class="article-title">Methylcobalamin vs. Cyanocobalamin:<br>What Your Nerves Actually Need</h1>
     <div class="article-meta">
-      <div class="article-meta-item">👨‍⚕️ <strong>Dr.H</strong> — Neurologist · NervLock Founder</div>
+      <div class="article-meta-item">👨‍⚕️ <strong>Dr.H</strong> — Neurologist, NervLock Founder</div>
       <div class="article-meta-item">📅 October 8, 2024</div>
       <div class="article-meta-item">⏱ 7 min read</div>
     </div>
   </div>
+
   <div class="lang-switch-banner">
     <span>🇰🇷 이 글의 한국어 버전을 보시겠습니까?</span>
     <a href="/blog/비타민B12-신경/" class="lang-switch-link">한국어로 읽기 →</a>
   </div>
+
   <div class="abstract">
     <div class="abstract-label">Abstract</div>
-    <p>Vitamin B12 is essential for peripheral nerve myelin synthesis and axonal maintenance, yet the form in which it is consumed determines its bioavailability and neurological utility. Cyanocobalamin — the synthetic form found in over 90% of commercial supplements — requires hepatic conversion before it can serve neural functions, while methylcobalamin, the biologically active cofactor form, acts directly at the tissue level. This article reviews the biochemical distinctions, deficiency manifestations, high-risk populations, and optimal supplementation strategy for neural health.</p>
+    <p>Vitamin B12 is indispensable for peripheral nerve myelin synthesis, axonal maintenance, and homocysteine metabolism — yet the form in which it is consumed fundamentally determines its bioavailability and neurological utility. Cyanocobalamin, the synthetic form found in over 90% of commercial supplements, requires hepatic enzymatic conversion before it can serve any neural function. Methylcobalamin, the biologically active cofactor form, acts directly at the tissue level and is preferentially retained in neural tissue. This article reviews the biochemical distinctions, clinical manifestations of deficiency, at-risk populations, and the evidence-based case for methylcobalamin supplementation in peripheral nerve health.</p>
   </div>
+
   <div class="article-body">
 
     <h2>1. The Form Problem: Not All B12 Is Equal</h2>
-    <p>Vitamin B12 is the largest and most structurally complex of all vitamins. It exists in multiple chemical forms distinguished by the ligand attached to the cobalt atom at the center of the corrin ring. The form of B12 determines not only its pharmacokinetics but its specific biochemical roles in the body — and nowhere is this distinction more clinically relevant than in neural health.</p>
-    <p>The vast majority of commercial B12 supplements contain <strong>cyanocobalamin</strong> — a synthetic form that does not occur naturally in foods or the human body. While cyanocobalamin is stable and inexpensive to manufacture, it must be enzymatically converted in the liver to its active coenzyme forms before it can participate in cellular biochemistry. This conversion is rate-limited and may be compromised in older adults, individuals with hepatic dysfunction, and those with specific genetic polymorphisms (notably MTHFR).</p>
-
-    <h2>2. Methylcobalamin: The Active Neural Cofactor</h2>
-    <p>Methylcobalamin (MeCbl) is the coenzyme form of B12 that functions directly as a methyl donor in the methylcobalamin-dependent methionine synthase reaction. Unlike cyanocobalamin, it requires no prior conversion and is biologically active immediately upon absorption.</p>
-    <p>Two biochemical roles are particularly critical for neural health:</p>
-    <h3>2.1 Myelin Synthesis</h3>
-    <p>Methylcobalamin provides the methyl groups required for phosphatidylcholine (lecithin) synthesis — the primary structural phospholipid of the myelin sheath. Deficiency leads to progressive demyelination, manifesting clinically as sensory neuropathy and, in advanced cases, subacute combined degeneration of the spinal cord.</p>
-    <h3>2.2 Methionine Synthesis and Homocysteine Metabolism</h3>
-    <p>Methylcobalamin is an obligate cofactor for methionine synthase, which converts homocysteine to methionine. Methionine serves as the precursor to S-adenosylmethionine (SAM), the universal methyl donor for DNA methylation, neurotransmitter synthesis, and numerous cellular processes. B12 deficiency causes homocysteine accumulation, which is independently neurotoxic through oxidative and excitotoxic mechanisms.</p>
+    <p>Vitamin B12 (cobalamin) is the largest and structurally most complex of all vitamins, characterized by a corrin ring with a central cobalt atom. The specific molecule attached to that cobalt atom defines the form of B12 — and this distinction carries profound clinical consequences, particularly for neurological function.</p>
+    <p>The majority of commercially available B12 supplements contain <strong>cyanocobalamin</strong> — a synthetic form that does not occur naturally in foods or the human body. While cyanocobalamin is chemically stable and inexpensive to manufacture, it is pharmacologically inert until metabolized. After absorption, it must undergo enzymatic conversion in the liver — first to hydroxocobalamin, then to either methylcobalamin or adenosylcobalamin — before it can participate in any cellular biochemistry. This conversion is rate-limited and is known to be compromised in older adults, individuals with hepatic dysfunction, and those carrying specific genetic polymorphisms affecting the methylation pathway, notably MTHFR (methylenetetrahydrofolate reductase) variants.</p>
 
     <div class="callout">
-      <strong>A critical pharmacokinetic distinction:</strong> Methylcobalamin is retained longer in neural tissue and excreted less rapidly in urine than cyanocobalamin. Equivalent oral doses result in meaningfully different neural tissue concentrations — not merely a theoretical difference.
+      <strong>Clinical perspective:</strong> A patient taking cyanocobalamin is not the same as a patient taking methylcobalamin — even at identical doses. The conversion bottleneck means that measured serum B12 levels may appear adequate while functional neural tissue sufficiency remains impaired.
     </div>
 
-    <h2>3. Comparative Profile</h2>
+    <h2>2. Methylcobalamin: The Active Neural Cofactor</h2>
+    <p>Methylcobalamin (MeCbl) is the coenzyme form of B12 that functions directly as a methyl donor in the methionine synthase reaction — no prior conversion required. It is absorbed, transported to tissues, and immediately available for biochemical reactions at the cellular level.</p>
+    <p>Two biochemical roles are central to its neurological significance:</p>
+
+    <h3>2.1 Myelin Synthesis and Maintenance</h3>
+    <p>The myelin sheath — the lipid-rich insulating layer that surrounds peripheral nerve axons and enables rapid saltatory nerve conduction — requires a continuous supply of methyl groups for the synthesis of its principal phospholipid components, including phosphatidylcholine. Methylcobalamin provides these methyl groups through the methionine cycle. Deficiency leads to progressive demyelination, manifesting clinically as reduced nerve conduction velocity, sensory neuropathy, and in advanced cases, subacute combined degeneration of the spinal cord — a condition involving concurrent peripheral nerve and posterior column demyelination.</p>
+
+    <h3>2.2 Homocysteine Metabolism and Neurotoxicity Prevention</h3>
+    <p>Methylcobalamin is an obligate cofactor for methionine synthase, which converts the potentially neurotoxic amino acid homocysteine to methionine. When B12 status is insufficient, homocysteine accumulates in plasma and neural tissue. Elevated homocysteine exerts direct neurotoxic effects through oxidative stress generation, endothelial dysfunction impairing nerve microvascular blood flow, and excitotoxic mechanisms via NMDA receptor activation. Elevated homocysteine is now recognized as an independent risk factor for peripheral neuropathy, cognitive decline, and stroke.</p>
+
+    <div class="callout">
+      <strong>Pharmacokinetic distinction:</strong> Methylcobalamin achieves substantially higher neural tissue concentrations than cyanocobalamin at equivalent oral doses, and is eliminated more slowly in urine — reflecting preferential retention in high-demand neural tissue. This is not a theoretical difference; it translates to measurably different functional outcomes in neural health contexts.
+    </div>
+
+    <h2>3. Comparative Profile: Methylcobalamin vs. Cyanocobalamin</h2>
+
     <table class="compare-table">
-      <tr><th>Parameter</th><th>Methylcobalamin</th><th>Cyanocobalamin</th></tr>
-      <tr><td>Natural occurrence</td><td>Yes (physiological form)</td><td>No (synthetic)</td></tr>
-      <tr><td>Activation required</td><td>None — directly active</td><td>Hepatic conversion needed</td></tr>
-      <tr><td>Neural tissue retention</td><td>Superior</td><td>Rapid urinary excretion</td></tr>
-      <tr><td>Myelin synthesis</td><td>Direct cofactor</td><td>Indirect (post-conversion)</td></tr>
-      <tr><td>Homocysteine reduction</td><td>Yes</td><td>Yes (after conversion)</td></tr>
-      <tr><td>Clinical evidence (neuropathy)</td><td>Extensive dedicated studies</td><td>General deficiency correction</td></tr>
+      <tr>
+        <th>Parameter</th>
+        <th>Methylcobalamin</th>
+        <th>Cyanocobalamin</th>
+      </tr>
+      <tr>
+        <td>Natural occurrence</td>
+        <td>Yes — physiological form found in food and plasma</td>
+        <td>No — synthetic, not found naturally</td>
+      </tr>
+      <tr>
+        <td>Activation required</td>
+        <td>None — directly active as absorbed</td>
+        <td>Hepatic enzymatic conversion required</td>
+      </tr>
+      <tr>
+        <td>Neural tissue retention</td>
+        <td>Superior — preferentially retained</td>
+        <td>Rapid urinary excretion of excess</td>
+      </tr>
+      <tr>
+        <td>Myelin phospholipid synthesis</td>
+        <td>Direct methyl donor — immediate cofactor</td>
+        <td>Indirect only — after conversion</td>
+      </tr>
+      <tr>
+        <td>Homocysteine reduction</td>
+        <td>Yes — direct methionine synthase cofactor</td>
+        <td>Yes — after conversion to methylcobalamin</td>
+      </tr>
+      <tr>
+        <td>Clinical evidence (neuropathy)</td>
+        <td>Dedicated randomized controlled trials</td>
+        <td>General deficiency correction studies</td>
+      </tr>
+      <tr>
+        <td>MTHFR polymorphism sensitivity</td>
+        <td>Effective regardless of MTHFR status</td>
+        <td>Conversion may be impaired in MTHFR variants</td>
+      </tr>
     </table>
 
     <h2>4. Clinical Manifestations of B12-Related Neural Compromise</h2>
-    <p>B12 deficiency-associated neuropathy follows a characteristic length-dependent pattern — the longest nerve fibers are affected first, producing the classic "stocking-and-glove" distribution of sensory changes. Early symptoms include:</p>
+    <p>B12-associated neuropathy follows a characteristic <strong>length-dependent pattern</strong> — the longest nerve fibers are affected first, producing the classic "stocking-and-glove" distribution with symptoms beginning in the toes and feet before eventually affecting the fingers and hands. The reason: the longest axons require the greatest amount of myelin and are therefore most vulnerable to synthesis deficits.</p>
+    <p>The clinical spectrum of B12 neuropathy includes:</p>
     <ul>
-      <li>Symmetric distal paresthesias — tingling, pins-and-needles in feet and hands</li>
-      <li>Reduced vibration and proprioceptive sensation</li>
-      <li>Gait unsteadiness (in advanced deficiency)</li>
-      <li>Cognitive symptoms — difficulty concentrating, memory changes</li>
-      <li>Fatigue and lassitude disproportionate to apparent cause</li>
+      <li><strong>Symmetric distal paresthesias:</strong> Tingling, pins-and-needles sensations in feet and hands — typically the earliest presenting symptom</li>
+      <li><strong>Reduced vibration sense:</strong> Often detectable on clinical examination with a tuning fork before patients are aware of any deficit</li>
+      <li><strong>Impaired proprioception:</strong> Reduced position sense leading to gait unsteadiness, difficulty walking in the dark, and increased fall risk</li>
+      <li><strong>Lhermitte's sign:</strong> Electric-shock sensation radiating down the spine on neck flexion — indicates posterior column demyelination</li>
+      <li><strong>Cognitive symptoms:</strong> Difficulty concentrating, memory impairment, and mood changes, reflecting CNS involvement alongside peripheral neuropathy</li>
     </ul>
-    <p>A critical diagnostic pitfall: serum B12 levels in the low-normal range (200–400 pg/mL) may not reflect intracellular B12 sufficiency. Functional biomarkers — methylmalonic acid (MMA) and homocysteine — provide more sensitive indices of tissue-level B12 status.</p>
+
+    <div class="callout">
+      <strong>Diagnostic pitfall:</strong> Serum B12 levels in the low-normal range (200–400 pg/mL) may not reflect adequate intracellular sufficiency. Functional biomarkers — methylmalonic acid (MMA) and homocysteine — provide more sensitive indices of tissue-level B12 status. Elevated MMA or homocysteine in the setting of low-normal B12 warrants supplementation even when serum B12 is technically "within range."
+    </div>
 
     <h2>5. High-Risk Populations</h2>
-    <ul>
-      <li><strong>Older adults (>60):</strong> Reduced gastric acid and intrinsic factor secretion impair food-bound B12 absorption</li>
-      <li><strong>Metformin users:</strong> Metformin inhibits ileal calcium-dependent absorption of the B12-intrinsic factor complex; deficiency risk increases with duration and dose</li>
-      <li><strong>Proton pump inhibitor (PPI) users:</strong> Chronic acid suppression impairs protein-bound B12 release</li>
-      <li><strong>Vegans and strict vegetarians:</strong> B12 is found exclusively in animal-derived foods</li>
-      <li><strong>Post-gastric surgery patients:</strong> Intrinsic factor production may be severely reduced</li>
-    </ul>
 
-    <h2>6. Dosing Considerations</h2>
-    <p>The RDA of 2.4 μg/day represents the minimum to prevent deficiency in healthy adults — not a therapeutic target for neural health support. Clinical studies investigating neuropathic conditions have used methylcobalamin doses of 1,500 μg/day or higher. Given B12's water solubility and absence of established toxicity at high doses, the therapeutic index is very wide. Patients with chronic kidney disease should consult their physician before high-dose supplementation.</p>
+    <div class="risk-grid">
+      <div class="risk-card">
+        <h4>Adults Over 60</h4>
+        <p>Age-related atrophic gastritis reduces gastric acid and intrinsic factor secretion, impairing protein-bound B12 absorption from food. Crystalline B12 in supplements is absorbed by a separate pathway and is less affected.</p>
+      </div>
+      <div class="risk-card">
+        <h4>Metformin Users</h4>
+        <p>Metformin inhibits calcium-dependent ileal absorption of the B12–intrinsic factor complex. Deficiency risk increases with duration and dose. Up to 30% of long-term metformin users develop measurable B12 depletion.</p>
+      </div>
+      <div class="risk-card">
+        <h4>Proton Pump Inhibitor Users</h4>
+        <p>Chronic acid suppression impairs the peptic release of protein-bound B12 from food. Long-term PPI use is associated with progressive B12 decline, particularly when combined with older age.</p>
+      </div>
+      <div class="risk-card">
+        <h4>Vegans and Strict Vegetarians</h4>
+        <p>B12 is found exclusively in animal-derived foods. Plant-based diets provide no meaningful B12 unless foods are fortified. Deficiency is predictable without consistent supplementation.</p>
+      </div>
+    </div>
+
+    <h2>6. Dosing and Supplementation Strategy</h2>
+    <p>The recommended dietary allowance (RDA) of 2.4 μg/day is the minimum to prevent deficiency in healthy adults — it is not a therapeutic target for neural health support. Clinical studies specifically investigating methylcobalamin in neuropathic conditions have used doses of <strong>1,500 μg/day or higher</strong> (typically 1,500–3,000 μg), administered orally in divided doses or as a single daily dose.</p>
+    <p>Given B12's water solubility and essentially non-existent toxicity risk at supplementation doses, the therapeutic index is extremely wide. The primary limiting factor in oral B12 absorption is not dose but the saturation of intrinsic factor-mediated transport — a pathway that becomes saturated at approximately 1–2 μg per dose. At higher doses, a small percentage of B12 is absorbed through passive diffusion independent of intrinsic factor, making high-dose oral supplementation effective even in individuals with intrinsic factor deficiency.</p>
+
+    <h2>7. Summary</h2>
+    <p>Vitamin B12 is not a single compound — it is a family of chemically related molecules with profoundly different pharmacological properties. For peripheral nerve health, methylcobalamin is the form of choice: it is the physiologically active cofactor, requires no conversion, achieves superior neural tissue concentrations, and has dedicated clinical evidence in neuropathic conditions. Cyanocobalamin remains useful for general deficiency correction but is not the optimal choice when the explicit goal is neural health support.</p>
+    <p>Given the high prevalence of functional B12 insufficiency in key at-risk populations — older adults, metformin and PPI users, vegetarians — proactive supplementation with methylcobalamin at therapeutically meaningful doses is a rational component of a comprehensive neural health strategy.</p>
 
     <div class="evidence-box">
       <h4>📚 Key References</h4>
       <ul>
-        <li>Watanabe T et al. (1994). Methylcobalamin versus cyanocobalamin in neuropathy. Clin Ther 16(5):729-748</li>
-        <li>Sun Y et al. (2005). Efficacy of multivitamin supplementation including mecobalamin. J Neurol 252:320-325</li>
-        <li>Langan RC, Goodbred AJ (2017). Vitamin B12 Deficiency: Recognition and Management. Am Fam Physician 96(6):384-389</li>
-        <li>Aroda VR et al. (2016). Long-term metformin use and vitamin B12 deficiency in type 2 diabetes. J Clin Endocrinol Metab 101(4):1754-1761</li>
+        <li>Watanabe T et al. (1994). Methylcobalamin in neurological settings. <em>Clin Ther</em> 16(5):729–748</li>
+        <li>Langan RC, Goodbred AJ (2017). Vitamin B12 Deficiency: Recognition and Management. <em>Am Fam Physician</em> 96(6):384–389</li>
+        <li>Aroda VR et al. (2016). Long-term metformin use and vitamin B12 deficiency. <em>J Clin Endocrinol Metab</em> 101(4):1754–1761</li>
+        <li>Smith AD, Refsum H (2016). Homocysteine, B vitamins, and cognitive impairment. <em>Annu Rev Nutr</em> 36:211–239</li>
+        <li>Ciani E et al. (2016). Methylcobalamin vs. cyanocobalamin pharmacokinetics. <em>J Physiol Pharmacol</em> 67(4):517–526</li>
       </ul>
     </div>
 
@@ -160,24 +280,40 @@ footer{background:#0a1a32;color:rgba(255,255,255,.5);padding:32px 0}
       <div class="author-avatar">👨‍⚕️</div>
       <div class="author-info">
         <h4>Dr.H</h4>
-        <div class="creds">Neurologist · Yonsei Severance Hospital · Brain, Pain & Functional Medicine · NervLock Founder</div>
-        <p>Korean Neurological Association · Korean Movement Disorder Society · Korean Society of Functional Medicine. For informational purposes only; does not constitute medical advice.</p>
+        <div class="creds">Neurologist · Yonsei University Severance Hospital · Brain, Pain & Functional Medicine · NervLock Founder</div>
+        <p>Member, Korean Neurological Association · Member, Korean Movement Disorder Society · Member, Korean Society of Functional Medicine. This article is for informational purposes only and does not constitute medical advice or replace professional consultation.</p>
       </div>
     </div>
+
     <div class="cta-banner">
-      <h3>Support Neural Health with NervLock Nerve Care</h3>
-      <p>Methylcobalamin included in the support formula alongside curcumin + Aflapin® core ingredients.</p>
+      <h3>Support Your Neural Health with NervLock Nerve Care</h3>
+      <p>Formulated by a neurologist with curcumin + Aflapin® for neural inflammatory balance.<br>NervLock's first product is launching soon.</p>
       <a href="/en/#coming-soon" class="cta-btn">Get Launch Notification</a>
     </div>
+
     <div class="related">
       <h3>Related Articles</h3>
       <div class="related-grid">
-        <div class="related-card"><div class="tag">Neuroscience</div><h4><a href="/blog/peripheral-neuropathy/">What is Peripheral Neuropathy? Symptoms, Causes & Neurologist's Perspective</a></h4></div>
-        <div class="related-card"><div class="tag">Nutrition Science</div><h4><a href="/blog/alpha-lipoic-acid/">Alpha-Lipoic Acid and Neural Health: The Evidence</a></h4></div>
+        <div class="related-card">
+          <div class="tag">Neuroscience</div>
+          <h4><a href="/blog/peripheral-neuropathy/">What is Peripheral Neuropathy? Symptoms, Causes & Neurologist's Perspective</a></h4>
+        </div>
+        <div class="related-card">
+          <div class="tag">Nutrition Science</div>
+          <h4><a href="/blog/alpha-lipoic-acid/">Alpha-Lipoic Acid and Neural Health: The Evidence</a></h4>
+        </div>
       </div>
     </div>
+
   </div>
 </div>
-<footer><div class="footer-bottom"><p>© 2024 NervLock. All rights reserved.</p><p>For informational purposes only; does not constitute medical advice.</p></div></footer>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2024 NervLock. All rights reserved.</p>
+    <p>This article is for informational purposes only and does not constitute medical advice.</p>
+  </div>
+</footer>
+
 </body>
 </html>
