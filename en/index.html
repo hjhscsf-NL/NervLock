@@ -33,22 +33,38 @@
 
     /* Nav */
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(13,37,69,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
-    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; height: 68px; display: flex; align-items: center; justify-content: space-between; }
-    .nav-logo { font-size: 22px; font-weight: 900; color: #fff; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; gap: 16px; }
+    .nav-logo { font-size: 20px; font-weight: 900; color: #fff; white-space: nowrap; flex-shrink: 0; }
     .nav-logo span { color: var(--gold2); }
-    .nav-links { display: flex; gap: 32px; list-style: none; }
-    .nav-links a { color: rgba(255,255,255,0.8); font-size: 15px; font-weight: 500; transition: color 0.2s; }
+    .nav-links { display: flex; gap: 2px; list-style: none; flex: 1; justify-content: center; }
+    .nav-links a { color: rgba(255,255,255,0.75); font-size: 13px; font-weight: 500; padding: 6px 10px; border-radius: 6px; white-space: nowrap; transition: color 0.2s; }
     .nav-links a:hover { color: var(--gold2); }
-    .nav-cta { background: var(--gold); color: #fff; font-size: 14px; font-weight: 700; padding: 10px 24px; border-radius: 50px; transition: background 0.2s; }
+    .nav-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .nav-cta { background: var(--gold); color: #fff; font-size: 12px; font-weight: 700; padding: 8px 16px; border-radius: 50px; white-space: nowrap; transition: background 0.2s; }
     .nav-cta:hover { background: var(--gold2); }
     .lang-toggle { display: flex; border: 1px solid rgba(255,255,255,0.22); border-radius: 8px; overflow: hidden; flex-shrink: 0; }
-    .lang-btn { padding: 6px 13px; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); transition: all 0.18s; }
+    .lang-btn { padding: 5px 11px; font-size: 11px; font-weight: 800; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); transition: all 0.18s; }
     .lang-btn + .lang-btn { border-left: 1px solid rgba(255,255,255,0.22); }
     .lang-btn:hover { color: #fff; background: rgba(255,255,255,0.08); }
     .lang-btn.active { background: rgba(255,255,255,0.18); color: #fff; }
+    /* Hamburger */
+    .nav-hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; cursor: pointer; background: none; border: none; padding: 8px; flex-shrink: 0; margin-left: auto; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: rgba(255,255,255,0.85); border-radius: 2px; transition: all 0.25s; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    /* Mobile nav drawer */
+    .nav-mobile { display: none; position: fixed; top: 64px; left: 0; right: 0; z-index: 99; background: rgba(9,26,54,0.98); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .nav-mobile.open { display: block; }
+    .nav-mobile ul { list-style: none; }
+    .nav-mobile ul li a { display: block; padding: 15px 28px; font-size: 15px; font-weight: 600; color: rgba(255,255,255,0.8); border-bottom: 1px solid rgba(255,255,255,0.06); transition: color 0.2s, background 0.2s; }
+    .nav-mobile ul li a:hover { color: var(--gold2); background: rgba(255,255,255,0.04); }
+    .nav-mobile-footer { display: flex; align-items: center; justify-content: space-between; padding: 18px 28px; }
+    .nav-cta-mobile { background: var(--gold); color: #fff; font-size: 14px; font-weight: 700; padding: 11px 24px; border-radius: 50px; transition: background 0.2s; }
+    .nav-cta-mobile:hover { background: var(--gold2); }
 
     /* Hero */
-    #hero { min-height: 100vh; background: linear-gradient(150deg, var(--navy) 0%, var(--navy2) 60%, #0f4f6e 100%); display: flex; align-items: center; padding-top: 68px; position: relative; overflow: hidden; }
+    #hero { min-height: 100vh; background: linear-gradient(150deg, var(--navy) 0%, var(--navy2) 60%, #0f4f6e 100%); display: flex; align-items: center; padding-top: 64px; position: relative; overflow: hidden; }
     #hero::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 80px; background: #fff; clip-path: ellipse(55% 100% at 50% 100%); }
     .hero-content { position: relative; z-index: 2; max-width: 700px; padding: 80px 0; }
     .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.9); font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 50px; margin-bottom: 28px; letter-spacing: 0.5px; }
@@ -258,7 +274,8 @@
       .hero-content, .science-grid, .doctor-inner, .footer-inner, .cs-inner { grid-template-columns: 1fr; }
       .pain-grid, .reviews-grid, .products-grid, .blog-grid, .ing-duo { grid-template-columns: 1fr 1fr; }
       .ing-support-grid { grid-template-columns: repeat(3, 1fr); }
-      .nav-links { display: none; }
+      .nav-links, .nav-right { display: none; }
+      .nav-hamburger { display: flex; }
     }
     @media (max-width: 600px) {
       .pain-grid, .reviews-grid, .products-grid, .blog-grid, .ing-duo { grid-template-columns: 1fr; }
@@ -271,23 +288,46 @@
 
 <nav>
   <div class="nav-inner">
-    <div class="nav-logo">Nerv<span>Lock</span></div>
+    <a href="/en/" class="nav-logo">Nerv<span>Lock</span></a>
     <ul class="nav-links">
       <li><a href="#pain">Symptoms</a></li>
       <li><a href="#science">How It Works</a></li>
       <li><a href="#ingredients">Ingredients</a></li>
-      <li><a href="#doctor">Our Neurologist</a></li>
-      <li><a href="#blog">Medical Blog</a></li>
-      <li><a href="#coming-soon">Notify Me</a></li>
+      <li><a href="#doctor">Neurologist</a></li>
+      <li><a href="#blog">Blog</a></li>
       <li><a href="#products">Products</a></li>
     </ul>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <a href="/" class="lang-btn">KR</a>
+        <a href="/en/" class="lang-btn active">EN</a>
+      </div>
+      <a href="#coming-soon" class="nav-cta">Get Launch Alert</a>
+    </div>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile nav -->
+<div class="nav-mobile" id="navMobile">
+  <ul>
+    <li><a href="#pain">Symptoms</a></li>
+    <li><a href="#science">How It Works</a></li>
+    <li><a href="#ingredients">Ingredients</a></li>
+    <li><a href="#doctor">Our Neurologist</a></li>
+    <li><a href="#blog">Medical Blog</a></li>
+    <li><a href="#products">Products</a></li>
+  </ul>
+  <div class="nav-mobile-footer">
     <div class="lang-toggle">
       <a href="/" class="lang-btn">KR</a>
       <a href="/en/" class="lang-btn active">EN</a>
     </div>
-    <a href="#coming-soon" class="nav-cta">Get Launch Alert</a>
+    <a href="#coming-soon" class="nav-cta-mobile">Get Launch Alert</a>
   </div>
-</nav>
+</div>
 
 <!-- Hero -->
 <section id="hero">
@@ -1008,6 +1048,24 @@
       })
         .then(function() { wrap.style.display = 'none'; success.classList.add('show'); })
         .catch(function() { wrap.style.display = 'none'; success.classList.add('show'); });
+    });
+  })();
+
+  // Hamburger menu
+  (function() {
+    var hamburger = document.getElementById('navHamburger');
+    var mobileNav = document.getElementById('navMobile');
+    hamburger.addEventListener('click', function() {
+      hamburger.classList.toggle('open');
+      mobileNav.classList.toggle('open');
+      document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+    });
+    mobileNav.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        hamburger.classList.remove('open');
+        mobileNav.classList.remove('open');
+        document.body.style.overflow = '';
+      });
     });
   })();
 </script>
