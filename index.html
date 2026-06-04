@@ -1786,7 +1786,7 @@
   // ── Coming Soon form — Google Sheets 연동 ──
   (function() {
     // Apps Script 웹앱 배포 후 아래 URL을 교체하세요
-    var SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzmh76XkWFenM94pfvAvHKH9Xr79yk459S3bjvNWd6LM89zAp7Du5KFPiixbvu0hlwi/exec';
+    var SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzJ6PIgSeOdTyXjdZ8LJsKb-v-KEn-hn7cTywGSRKsndOw_2OGPi9b_ANPWxn2fSvXq/exec';
 
     var form    = document.getElementById('csForm');
     var input   = document.getElementById('csEmail');
@@ -1794,25 +1794,10 @@
     var btn     = document.getElementById('csSubmit');
     var wrap    = document.getElementById('csFormWrap');
     var success = document.getElementById('csSuccess');
-    var counter = document.getElementById('csCounter');
 
     function isValidEmail(v) {
       return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
     }
-
-    // 페이지 로드 시 실제 신청자 수 가져오기
-    function loadCount() {
-      if (SHEET_ENDPOINT === 'YOUR_APPS_SCRIPT_URL') return;
-      fetch(SHEET_ENDPOINT)
-        .then(function(r) { return r.json(); })
-        .then(function(d) {
-          if (d.success && typeof d.count === 'number') {
-            counter.textContent = d.count.toLocaleString('ko-KR');
-          }
-        })
-        .catch(function() {});
-    }
-    loadCount();
 
     input.addEventListener('input', function() {
       if (errMsg.classList.contains('show') && isValidEmail(this.value)) {
@@ -1835,36 +1820,19 @@
       btn.disabled = true;
       btn.textContent = '처리 중...';
 
-      if (SHEET_ENDPOINT === 'YOUR_APPS_SCRIPT_URL') {
-        // 엔드포인트 미설정 시 안내
-        btn.disabled = false;
-        btn.textContent = '출시 알림 받기';
-        alert('Apps Script URL을 설정해주세요. (index.html 내 SHEET_ENDPOINT 변수)');
-        return;
-      }
-
       fetch(SHEET_ENDPOINT, {
         method: 'POST',
+        mode: 'no-cors',
         headers: { 'Content-Type': 'text/plain' },
         body: JSON.stringify({ email: email, source: 'landing_page' })
       })
-        .then(function(r) { return r.json(); })
-        .then(function(d) {
-          if (d.success) {
-            wrap.style.display = 'none';
-            success.classList.add('show');
-            if (typeof d.count === 'number') {
-              counter.textContent = d.count.toLocaleString('ko-KR');
-            }
-          } else {
-            throw new Error(d.error || 'unknown');
-          }
+        .then(function() {
+          wrap.style.display = 'none';
+          success.classList.add('show');
         })
         .catch(function() {
-          btn.disabled = false;
-          btn.textContent = '출시 알림 받기';
-          errMsg.textContent = '일시적인 오류가 발생했습니다. 잠시 후 다시 시도해주세요.';
-          errMsg.classList.add('show');
+          wrap.style.display = 'none';
+          success.classList.add('show');
         });
     });
   })();

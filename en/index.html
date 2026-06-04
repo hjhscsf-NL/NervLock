@@ -983,7 +983,7 @@
     });
   });
 
-  var SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzmh76XkWFenM94pfvAvHKH9Xr79yk459S3bjvNWd6LM89zAp7Du5KFPiixbvu0hlwi/exec';
+  var SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzJ6PIgSeOdTyXjdZ8LJsKb-v-KEn-hn7cTywGSRKsndOw_2OGPi9b_ANPWxn2fSvXq/exec';
   (function() {
     var form = document.getElementById('csForm2');
     var input = document.getElementById('csEmail2');
@@ -1000,21 +1000,14 @@
       var email = input.value.trim();
       if (!isValid(email)) { errMsg.classList.add('show'); input.style.borderColor = '#ff7c7c'; input.focus(); return; }
       btn.disabled = true; btn.textContent = 'Processing...';
-      if (SHEET_ENDPOINT === 'YOUR_APPS_SCRIPT_URL') {
-        btn.disabled = false; btn.textContent = 'Get Launch Notification';
-        alert('Please set the Apps Script URL in SHEET_ENDPOINT.'); return;
-      }
-      fetch(SHEET_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify({ email: email, source: 'landing_en' }) })
-        .then(function(r) { return r.json(); })
-        .then(function(d) {
-          if (d.success) { wrap.style.display = 'none'; success.classList.add('show'); }
-          else throw new Error();
-        })
-        .catch(function() {
-          btn.disabled = false; btn.textContent = 'Get Launch Notification';
-          errMsg.textContent = 'A temporary error occurred. Please try again.';
-          errMsg.classList.add('show');
-        });
+      fetch(SHEET_ENDPOINT, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain' },
+        body: JSON.stringify({ email: email, source: 'landing_en' })
+      })
+        .then(function() { wrap.style.display = 'none'; success.classList.add('show'); })
+        .catch(function() { wrap.style.display = 'none'; success.classList.add('show'); });
     });
   })();
 </script>
