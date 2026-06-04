@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>알파리포산(ALA), 왜 신경 건강에 주목받는가 | NervLock</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:'Apple SD Gothic Neo','Noto Sans KR','맑은 고딕',sans-serif;color:#1a1a2e;background:#fff;font-size:17px;line-height:1.7}
+a{text-decoration:none;color:inherit}
+:root{--navy:#0d2545;--navy2:#163561;--teal:#1a7a6e;--teal2:#22a090;--gold:#b8922a;--gold2:#d4a843;--gray:#f4f6f9;--gray2:#e8ecf2;--muted:#5a6278}
+nav{position:sticky;top:0;z-index:100;background:rgba(13,37,69,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav-inner{max-width:900px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.nav-logo{font-size:20px;font-weight:900;color:#fff;white-space:nowrap}.nav-logo span{color:var(--gold2)}
+.nav-back{font-size:14px;color:rgba(255,255,255,.7);transition:color .2s}.nav-back:hover{color:var(--gold2)}
+.lang-toggle{display:flex;border:1px solid rgba(255,255,255,.22);border-radius:8px;overflow:hidden;flex-shrink:0}
+.lang-btn{padding:5px 12px;font-size:12px;font-weight:800;letter-spacing:.5px;color:rgba(255,255,255,.5);transition:all .18s}
+.lang-btn+.lang-btn{border-left:1px solid rgba(255,255,255,.22)}.lang-btn.active{background:rgba(255,255,255,.18);color:#fff}
+.article-wrap{max-width:760px;margin:0 auto;padding:60px 24px 100px}
+.article-hero{background:linear-gradient(135deg,#1a2a5e 0%,#22a090 100%);border-radius:24px;padding:52px 48px;margin-bottom:48px;position:relative;overflow:hidden}
+.article-hero::before{content:'🔬';position:absolute;right:32px;top:32px;font-size:80px;opacity:.15}
+.article-tag{display:inline-flex;align-items:center;background:rgba(26,122,110,.3);border:1px solid rgba(26,122,110,.5);border-radius:50px;font-size:12px;font-weight:700;color:#6ee7da;padding:4px 14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px}
+.article-title{font-size:clamp(22px,3.5vw,34px);font-weight:900;color:#fff;line-height:1.3;margin-bottom:20px}
+.article-meta{display:flex;flex-wrap:wrap;gap:20px}
+.article-meta-item{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.65)}
+.article-meta-item strong{color:rgba(255,255,255,.9);font-weight:700}
+.lang-switch-banner{background:var(--gray);border:1px solid var(--gray2);border-radius:14px;padding:14px 20px;margin-bottom:40px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.lang-switch-banner span{font-size:14px;color:var(--muted)}
+.lang-switch-link{font-size:13px;font-weight:700;color:var(--teal2);border:1px solid var(--teal2);border-radius:50px;padding:6px 16px;transition:all .2s;white-space:nowrap}
+.lang-switch-link:hover{background:var(--teal2);color:#fff}
+.abstract{background:linear-gradient(135deg,rgba(26,122,110,.06),rgba(26,122,110,.02));border-left:4px solid var(--teal2);border-radius:0 16px 16px 0;padding:24px 28px;margin-bottom:48px}
+.abstract-label{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--teal2);margin-bottom:10px}
+.abstract p{font-size:15px;color:#2a3a4a;line-height:1.85;margin:0;font-style:italic}
+.article-body h2{font-size:24px;font-weight:900;color:var(--navy);margin:52px 0 16px;padding-bottom:12px;border-bottom:2px solid var(--gray2)}
+.article-body h2:first-child{margin-top:0}
+.article-body h3{font-size:19px;font-weight:800;color:var(--navy2);margin:36px 0 12px}
+.article-body p{font-size:16px;color:#2a2a3e;line-height:1.95;margin-bottom:20px}
+.article-body ul{padding-left:24px;margin-bottom:20px;display:flex;flex-direction:column;gap:10px}
+.article-body li{font-size:15px;color:#3a3a50;line-height:1.75}
+.article-body strong{color:var(--navy)}
+.callout{background:linear-gradient(135deg,rgba(26,122,110,.07),rgba(26,122,110,.02));border-left:4px solid var(--teal2);border-radius:0 12px 12px 0;padding:20px 24px;margin:28px 0;font-size:15px;color:var(--navy);font-style:italic;line-height:1.85}
+.callout strong{color:var(--teal);font-style:normal}
+.evidence-box{background:var(--gray);border-radius:14px;padding:20px 24px;margin:28px 0}
+.evidence-box h4{font-size:12px;font-weight:800;color:var(--teal2);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+.evidence-box ul{margin:0}.evidence-box li{font-size:13px;color:var(--muted)}
+.author-card{background:var(--gray);border-radius:20px;padding:28px 32px;margin-top:64px;display:flex;align-items:flex-start;gap:20px}
+.author-avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--teal));flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:28px}
+.author-info h4{font-size:17px;font-weight:900;color:var(--navy);margin-bottom:4px}
+.author-info .creds{font-size:13px;color:var(--teal);font-weight:600;margin-bottom:10px}
+.author-info p{font-size:13px;color:var(--muted);line-height:1.65;margin:0}
+.cta-banner{background:linear-gradient(135deg,var(--navy),#0f4f6e);border-radius:20px;padding:40px 36px;margin-top:48px;text-align:center}
+.cta-banner h3{font-size:22px;font-weight:900;color:#fff;margin-bottom:10px}
+.cta-banner p{font-size:15px;color:rgba(255,255,255,.7);margin-bottom:24px;line-height:1.7}
+.cta-btn{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#fff;font-size:16px;font-weight:800;padding:14px 36px;border-radius:50px;box-shadow:0 6px 20px rgba(184,146,42,.4);transition:transform .2s}
+.cta-btn:hover{transform:translateY(-2px)}
+.related{margin-top:64px}.related h3{font-size:20px;font-weight:900;color:var(--navy);margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.related-card{background:var(--gray);border-radius:16px;padding:20px;border:1px solid var(--gray2)}
+.related-card .tag{font-size:11px;font-weight:700;color:var(--teal);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.related-card h4{font-size:15px;font-weight:800;color:var(--navy);line-height:1.4}
+footer{background:#0a1a32;color:rgba(255,255,255,.5);padding:32px 0}
+.footer-bottom{max-width:900px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:12px}
+@media(max-width:600px){.article-hero{padding:36px 28px}.related-grid{grid-template-columns:1fr}.author-card{flex-direction:column}}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner">
+  <a href="/" class="nav-logo">Nerv<span>Lock</span></a>
+  <a href="/#blog" class="nav-back">← 의학 칼럼</a>
+  <div class="lang-toggle">
+    <a href="/blog/알파리포산/" class="lang-btn active">KR</a>
+    <a href="/blog/alpha-lipoic-acid/" class="lang-btn">EN</a>
+  </div>
+</div></nav>
+<div class="article-wrap">
+  <div class="article-hero">
+    <div class="article-tag">신경과학</div>
+    <h1 class="article-title">알파리포산(ALA),<br>왜 신경 건강에 주목받는가</h1>
+    <div class="article-meta">
+      <div class="article-meta-item">👨‍⚕️ <strong>Dr.H</strong> — 신경과 전문의 · NervLock 설립자</div>
+      <div class="article-meta-item">📅 2024. 09. 17</div>
+      <div class="article-meta-item">⏱ 9분 읽기</div>
+    </div>
+  </div>
+  <div class="lang-switch-banner">
+    <span>🇺🇸 Read this article in English?</span>
+    <a href="/blog/alpha-lipoic-acid/" class="lang-switch-link">Read in English →</a>
+  </div>
+  <div class="abstract">
+    <div class="abstract-label">요약</div>
+    <p>알파리포산(ALA)은 신경 건강 분야에서 수십 년간 연구되어 온 항산화 성분으로, 지용성과 수용성 양쪽에서 동시에 작용하는 독특한 특성을 가집니다. 본 글에서는 ALA의 항산화 기전, 신경 건강 연구 현황, R형과 S형의 차이, 그리고 올바른 복용 방법을 다룹니다.</p>
+  </div>
+  <div class="article-body">
+
+    <h2>1. 알파리포산이란 무엇인가</h2>
+    <p>알파리포산(Alpha-lipoic acid, ALA)은 미토콘드리아에서 에너지 대사에 관여하는 황 함유 지방산입니다. 체내에서 소량 합성되지만, 신경 건강을 위한 영양 관리에 충분한 양을 식이로만 얻기는 어렵습니다.</p>
+    <p>ALA가 다른 항산화제와 구별되는 가장 중요한 특징은 <strong>지용성과 수용성 양쪽에서 모두 작용</strong>한다는 것입니다. 대부분의 항산화제는 세포막(지용성)이나 세포 내(수용성) 중 한 곳에서만 작용하지만, ALA는 두 환경 모두에서 활성산소를 제거할 수 있습니다.</p>
+
+    <h2>2. ALA가 신경을 보호하는 3가지 기전</h2>
+    <h3>2.1 미토콘드리아 항산화</h3>
+    <p>신경세포는 높은 에너지 소비로 인해 미토콘드리아 활동이 매우 활발하며, 이에 따라 활성산소 생성도 많습니다. ALA는 미토콘드리아 내막에서 직접 활성산소를 제거하여 신경세포의 에너지 생산 효율을 보호합니다.</p>
+    <h3>2.2 글루타치온 재생</h3>
+    <p>글루타치온은 체내에서 가장 강력한 항산화제이지만, 활성산소와 반응하면 산화되어 기능을 잃습니다. ALA는 산화된 글루타치온을 활성 형태로 재생시키는 독특한 능력을 가지고 있어, 'ALA를 항산화제의 항산화제'라고 부르는 이유입니다.</p>
+    <h3>2.3 신경 혈류 개선</h3>
+    <p>ALA는 신경 주변 혈관의 내피 기능을 개선하여 신경세포에 산소와 영양소가 충분히 공급되도록 돕습니다. 미세혈관 기능 저하는 말초신경병증의 중요한 발병 기전 중 하나입니다.</p>
+
+    <h2>3. R형 vs S형: 어떤 차이가 있는가</h2>
+    <p>ALA에는 R형과 S형 이성질체(거울상 이성질체)가 있습니다. 화학적으로는 동일한 원자 구성이지만 공간적 배열이 다릅니다.</p>
+
+    <div class="callout">
+      <strong>핵심 사실:</strong> 체내에서 미토콘드리아 효소와 결합하여 실제 항산화 기능을 하는 것은 <strong>R형</strong>뿐입니다. 시중 대부분의 ALA 제품은 R형과 S형의 1:1 혼합물(라세믹 혼합물)입니다. R-ALA 단독 제품은 동일 용량 대비 약 2배 효과적이라는 연구가 있습니다.
+    </div>
+
+    <h2>4. SYDNEY 2 Trial: 가장 중요한 임상시험</h2>
+    <p>알파리포산의 신경 건강 연구에서 가장 많이 인용되는 것은 SYDNEY 2 Trial입니다. 181명을 대상으로 한 이 무작위 대조시험에서 알파리포산 600mg을 복용한 그룹이 위약 그룹 대비 신경 건강 관련 주관적 지표에서 긍정적인 결과를 보였습니다.</p>
+    <p>흥미로운 점은 용량-반응 관계에서 600mg 단일 용량이 1,200mg이나 1,800mg보다 효과가 같거나 더 좋았다는 것입니다. '많을수록 좋다'는 통념이 항상 맞지 않음을 보여주는 대표적 사례입니다.</p>
+
+    <h2>5. 복용 시 중요한 주의사항</h2>
+    <p>ALA를 복용할 때 가장 많이 놓치는 것이 복용 타이밍입니다:</p>
+    <ul>
+      <li><strong>공복 복용이 원칙:</strong> 식사와 함께 복용 시 음식의 단백질과 흡수를 놓고 경쟁하여 생체이용률이 2~4배 감소합니다</li>
+      <li><strong>권장 타이밍:</strong> 식사 30분 전 또는 식후 2시간 이후</li>
+      <li><strong>혈당 관련 주의:</strong> 혈당 강하 효과가 있어 당뇨 약제와 병용 시 주의 필요</li>
+      <li><strong>소화기 증상:</strong> 처음 복용 시 소화기 자극이 나타날 수 있으며 시간이 지나면 대부분 해소됩니다</li>
+    </ul>
+
+    <div class="evidence-box">
+      <h4>📚 참고 문헌</h4>
+      <ul>
+        <li>Ziegler D et al. (2006). SYDNEY 2 Trial. Diabetes Care 29(11):2365-2370</li>
+        <li>Packer L et al. (1995). Alpha-lipoic acid as a biological antioxidant. Free Radic Biol Med 19(2):227-250</li>
+        <li>Mijnhout GS et al. (2012). Alpha lipoic acid for symptomatic peripheral neuropathy. J Int Med Res 40(1):295-314</li>
+        <li>Shay KP et al. (2009). Alpha-lipoic acid as a dietary supplement. Biochim Biophys Acta 1790(10):1149-1160</li>
+      </ul>
+    </div>
+
+    <div class="author-card">
+      <div class="author-avatar">👨‍⚕️</div>
+      <div class="author-info">
+        <h4>Dr.H</h4>
+        <div class="creds">신경과 전문의 · 연세대 세브란스 출신 · 뇌·통증·기능의학 · NervLock 설립자</div>
+        <p>대한신경과학회 · 파킨슨병 및 이상운동질환 학회 · 대한기능의학회 정회원. 본 칼럼은 의학적 정보 제공을 목적으로 하며 개인 진료를 대체하지 않습니다.</p>
+      </div>
+    </div>
+    <div class="cta-banner">
+      <h3>NervLock 너브케어로 신경 건강을 지원하세요</h3>
+      <p>R-알파리포산을 포함한 서포트 6종 + 커큐민·애플라핀® 핵심 이중 경로 설계.<br>NervLock 브랜드의 첫 번째 제품이 곧 출시됩니다.</p>
+      <a href="/#coming-soon" class="cta-btn">출시 알림 신청하기</a>
+    </div>
+    <div class="related">
+      <h3>관련 칼럼</h3>
+      <div class="related-grid">
+        <div class="related-card"><div class="tag">영양·성분</div><h4><a href="/blog/비타민B12-신경/">비타민 B12가 신경에 하는 일 — 메코발라민 vs 시아노코발라민</a></h4></div>
+        <div class="related-card"><div class="tag">신경과학</div><h4><a href="/blog/말초신경병증/">말초신경병증이란? 증상, 원인, 신경과 전문의의 시각</a></h4></div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer><div class="footer-bottom"><p>© 2024 NervLock. All rights reserved.</p><p>본 칼럼은 의학적 정보 제공을 목적으로 하며 개인 진료를 대체하지 않습니다.</p></div></footer>
+</body>
+</html>

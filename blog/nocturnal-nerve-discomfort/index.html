@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Why Does Neural Discomfort Worsen at Night? | NervLock</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif;color:#1a1a2e;background:#fff;font-size:17px;line-height:1.7}
+a{text-decoration:none;color:inherit}
+:root{--navy:#0d2545;--navy2:#163561;--teal:#1a7a6e;--teal2:#22a090;--gold:#b8922a;--gold2:#d4a843;--gray:#f4f6f9;--gray2:#e8ecf2;--muted:#5a6278}
+nav{position:sticky;top:0;z-index:100;background:rgba(13,37,69,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav-inner{max-width:900px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.nav-logo{font-size:20px;font-weight:900;color:#fff;white-space:nowrap}.nav-logo span{color:var(--gold2)}
+.nav-back{font-size:14px;color:rgba(255,255,255,.7);transition:color .2s}.nav-back:hover{color:var(--gold2)}
+.lang-toggle{display:flex;border:1px solid rgba(255,255,255,.22);border-radius:8px;overflow:hidden;flex-shrink:0}
+.lang-btn{padding:5px 12px;font-size:12px;font-weight:800;letter-spacing:.5px;color:rgba(255,255,255,.5);transition:all .18s}
+.lang-btn+.lang-btn{border-left:1px solid rgba(255,255,255,.22)}.lang-btn.active{background:rgba(255,255,255,.18);color:#fff}
+.article-wrap{max-width:760px;margin:0 auto;padding:60px 24px 100px}
+.article-hero{background:linear-gradient(135deg,#1a0a2e 0%,#8e1a22 100%);border-radius:24px;padding:52px 48px;margin-bottom:48px;position:relative;overflow:hidden}
+.article-hero::before{content:'🌙';position:absolute;right:32px;top:32px;font-size:80px;opacity:.15}
+.article-tag{display:inline-flex;background:rgba(142,26,34,.3);border:1px solid rgba(142,26,34,.5);border-radius:50px;font-size:12px;font-weight:700;color:#f5b8b0;padding:4px 14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px}
+.article-title{font-size:clamp(22px,3.5vw,34px);font-weight:900;color:#fff;line-height:1.3;margin-bottom:20px}
+.article-meta{display:flex;flex-wrap:wrap;gap:20px}
+.article-meta-item{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.65)}
+.article-meta-item strong{color:rgba(255,255,255,.9);font-weight:700}
+.lang-switch-banner{background:var(--gray);border:1px solid var(--gray2);border-radius:14px;padding:14px 20px;margin-bottom:40px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.lang-switch-banner span{font-size:14px;color:var(--muted)}
+.lang-switch-link{font-size:13px;font-weight:700;color:var(--teal2);border:1px solid var(--teal2);border-radius:50px;padding:6px 16px;transition:all .2s;white-space:nowrap}
+.lang-switch-link:hover{background:var(--teal2);color:#fff}
+.abstract{background:linear-gradient(135deg,rgba(26,122,110,.06),rgba(26,122,110,.02));border-left:4px solid var(--teal2);border-radius:0 16px 16px 0;padding:24px 28px;margin-bottom:48px}
+.abstract-label{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--teal2);margin-bottom:10px}
+.abstract p{font-size:15px;color:#2a3a4a;line-height:1.85;margin:0;font-style:italic}
+.article-body h2{font-size:24px;font-weight:900;color:var(--navy);margin:52px 0 16px;padding-bottom:12px;border-bottom:2px solid var(--gray2)}
+.article-body h2:first-child{margin-top:0}
+.article-body h3{font-size:19px;font-weight:800;color:var(--navy2);margin:36px 0 12px}
+.article-body p{font-size:16px;color:#2a2a3e;line-height:1.95;margin-bottom:20px}
+.article-body ul{padding-left:24px;margin-bottom:20px;display:flex;flex-direction:column;gap:10px}
+.article-body li{font-size:15px;color:#3a3a50;line-height:1.75}
+.article-body strong{color:var(--navy)}
+.callout{background:linear-gradient(135deg,rgba(26,122,110,.07),rgba(26,122,110,.02));border-left:4px solid var(--teal2);border-radius:0 12px 12px 0;padding:20px 24px;margin:28px 0;font-size:15px;color:var(--navy);font-style:italic;line-height:1.85}
+.callout strong{color:var(--teal);font-style:normal}
+.tip-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
+.tip-card{background:var(--gray);border-radius:14px;padding:18px 20px;border:1px solid var(--gray2)}
+.tip-card h4{font-size:14px;font-weight:800;color:var(--navy);margin-bottom:6px}
+.tip-card p{font-size:13px;color:var(--muted);line-height:1.65;margin:0}
+.evidence-box{background:var(--gray);border-radius:14px;padding:20px 24px;margin:28px 0}
+.evidence-box h4{font-size:12px;font-weight:800;color:var(--teal2);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+.evidence-box ul{margin:0}.evidence-box li{font-size:13px;color:var(--muted)}
+.author-card{background:var(--gray);border-radius:20px;padding:28px 32px;margin-top:64px;display:flex;align-items:flex-start;gap:20px}
+.author-avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--teal));flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:28px}
+.author-info h4{font-size:17px;font-weight:900;color:var(--navy);margin-bottom:4px}
+.author-info .creds{font-size:13px;color:var(--teal);font-weight:600;margin-bottom:10px}
+.author-info p{font-size:13px;color:var(--muted);line-height:1.65;margin:0}
+.cta-banner{background:linear-gradient(135deg,var(--navy),#0f4f6e);border-radius:20px;padding:40px 36px;margin-top:48px;text-align:center}
+.cta-banner h3{font-size:22px;font-weight:900;color:#fff;margin-bottom:10px}
+.cta-banner p{font-size:15px;color:rgba(255,255,255,.7);margin-bottom:24px;line-height:1.7}
+.cta-btn{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#fff;font-size:16px;font-weight:800;padding:14px 36px;border-radius:50px;box-shadow:0 6px 20px rgba(184,146,42,.4);transition:transform .2s}
+.cta-btn:hover{transform:translateY(-2px)}
+.related{margin-top:64px}.related h3{font-size:20px;font-weight:900;color:var(--navy);margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.related-card{background:var(--gray);border-radius:16px;padding:20px;border:1px solid var(--gray2)}
+.related-card .tag{font-size:11px;font-weight:700;color:var(--teal);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.related-card h4{font-size:15px;font-weight:800;color:var(--navy);line-height:1.4}
+footer{background:#0a1a32;color:rgba(255,255,255,.5);padding:32px 0}
+.footer-bottom{max-width:900px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:12px}
+@media(max-width:600px){.article-hero{padding:36px 28px}.tip-grid,.related-grid{grid-template-columns:1fr}.author-card{flex-direction:column}}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner">
+  <a href="/en/" class="nav-logo">Nerv<span>Lock</span></a>
+  <a href="/en/#blog" class="nav-back">← Medical Blog</a>
+  <div class="lang-toggle">
+    <a href="/blog/야간-신경-불편감/" class="lang-btn">KR</a>
+    <a href="/blog/nocturnal-nerve-discomfort/" class="lang-btn active">EN</a>
+  </div>
+</div></nav>
+<div class="article-wrap">
+  <div class="article-hero">
+    <div class="article-tag">Pain Medicine</div>
+    <h1 class="article-title">Why Does Neural Discomfort<br>Worsen at Night?</h1>
+    <div class="article-meta">
+      <div class="article-meta-item">👨‍⚕️ <strong>Dr.H</strong> — Neurologist · NervLock Founder</div>
+      <div class="article-meta-item">📅 September 3, 2024</div>
+      <div class="article-meta-item">⏱ 6 min read</div>
+    </div>
+  </div>
+  <div class="lang-switch-banner">
+    <span>🇰🇷 이 글의 한국어 버전을 보시겠습니까?</span>
+    <a href="/blog/야간-신경-불편감/" class="lang-switch-link">한국어로 읽기 →</a>
+  </div>
+  <div class="abstract">
+    <div class="abstract-label">Abstract</div>
+    <p>Nocturnal exacerbation of neuropathic discomfort is one of the most consistent — and clinically significant — features of peripheral neuropathy. This pattern is not a psychosomatic phenomenon but reflects four converging physiological mechanisms: the diurnal cortisol rhythm, loss of attentional distraction, peripheral blood flow changes secondary to temperature decline, and positional nerve compression. This article reviews these mechanisms and evidence-based strategies for nocturnal neural health management.</p>
+  </div>
+  <div class="article-body">
+
+    <h2>1. The Physiology of Nocturnally Amplified Neural Discomfort</h2>
+    <p>Nocturnal exacerbation of neuropathic symptoms is reported by the majority of individuals experiencing peripheral neural discomfort, and represents one of the most disruptive aspects of the condition — directly impairing sleep quality and, through sleep deprivation, perpetuating a vicious cycle of heightened neural sensitivity.</p>
+    <p>The consistency of this pattern across diverse neuropathic etiologies suggests common underlying mechanisms rather than disease-specific processes. Understanding these mechanisms is essential for effective management.</p>
+
+    <h2>2. Four Converging Mechanisms</h2>
+    <h3>Mechanism 1: Diurnal Cortisol Rhythm and Anti-inflammatory Withdrawal</h3>
+    <p>Cortisol, the primary glucocorticoid hormone, exerts potent anti-inflammatory effects through multiple mechanisms, including suppression of NF-κB-mediated cytokine transcription and stabilization of mast cells. Cortisol follows a pronounced circadian rhythm, with peak concentrations in the early morning (6–8 AM) and nadir values in the late evening and early nighttime.</p>
+    <p>During waking hours, the elevated cortisol concentration effectively attenuates neuroinflammatory signaling around peripheral nerve fibers. As evening approaches and cortisol concentrations decline, this endogenous anti-inflammatory suppression is progressively withdrawn — unmasking neuroinflammatory activity that was present but suppressed throughout the day.</p>
+
+    <h3>Mechanism 2: Loss of Descending Inhibition Through Attentional Mechanisms</h3>
+    <p>The perception of neural discomfort is profoundly modulated by top-down cognitive processes. During daytime activity — work, conversation, physical activity — higher cortical centers actively engage in sustained attentional tasks, activating the descending pain inhibitory system (the periaqueductal gray-rostral ventromedial medulla pathway).</p>
+    <p>The quiet darkness of the nocturnal environment eliminates competing sensory and cognitive input. Without attentional competition, the brain's sensory processing resources are directed toward nociceptive signals — amplifying their subjective intensity without any change in peripheral nociceptor firing rate.</p>
+
+    <h3>Mechanism 3: Temperature-Mediated Peripheral Vasoconstriction</h3>
+    <p>Core body temperature declines by approximately 0.5–1°C during the sleep phase. This temperature fall triggers peripheral vasoconstriction as the body conserves heat through cutaneous blood flow reduction. For peripheral nerves already compromised by impaired endoneurial blood flow — a common feature of metabolic and compressive neuropathies — this additional reduction in nutritive perfusion exacerbates ischemic nerve fiber activation.</p>
+    <p>This mechanism is particularly relevant for the characteristic acral distribution of neuropathic symptoms in the toes and fingers — the most distal territories, maximally affected by peripheral vasoconstriction.</p>
+
+    <h3>Mechanism 4: Positional Nerve Compression</h3>
+    <p>Recumbency alters the biomechanical loading of the spinal column and peripheral nerve entrapment sites. Intradiscal pressure changes during supine positioning, combined with prolonged maintenance of constrained postures during sleep, can increase radicular compression at sites of pre-existing neural compromise. This mechanism is particularly prominent in patients with cervical or lumbar radiculopathy and carpal or cubital tunnel syndrome.</p>
+
+    <h2>3. The Sleep-Discomfort Cycle: A Vicious Positive Feedback Loop</h2>
+    <div class="callout">
+      <strong>The critical amplification cascade:</strong> Sleep deprivation secondary to nocturnal neural discomfort activates a self-reinforcing cycle: reduced sleep → elevated pro-inflammatory cytokines (IL-1β, TNF-α) → enhanced central sensitization → lower nociceptive threshold → more discomfort → further sleep disruption. Breaking this cycle requires addressing both the neural discomfort and sleep quality simultaneously.
+    </div>
+    <p>Epidemiological data demonstrate bidirectional relationships between sleep disturbance and neuropathic discomfort: each independently predicts the other. Patients with poor sleep quality report significantly greater neuropathic symptom burden and demonstrate measurably reduced descending inhibitory system function on quantitative sensory testing.</p>
+
+    <h2>4. Evidence-Based Nocturnal Management Strategies</h2>
+    <div class="tip-grid">
+      <div class="tip-card">
+        <h4>🛁 Pre-Sleep Thermal Hydrotherapy</h4>
+        <p>Warm bathing 1–2 hours before bedtime produces vasodilation via thermoregulatory mechanisms, temporarily increasing peripheral nerve blood flow and improving distal extremity perfusion.</p>
+      </div>
+      <div class="tip-card">
+        <h4>💊 Evening Magnesium Supplementation</h4>
+        <p>Magnesium's role as an NMDA receptor co-antagonist and its support for normal nerve function makes it a rational evening supplement. It also supports sleep quality through GABAergic modulation.</p>
+      </div>
+      <div class="tip-card">
+        <h4>🌡️ Sleep Environment Temperature Optimization</h4>
+        <p>Counterintuitively, a cool sleep environment (18–20°C) with warm extremity coverage minimizes thermoregulatory peripheral vasoconstriction while supporting core temperature decline for sleep initiation.</p>
+      </div>
+      <div class="tip-card">
+        <h4>⏰ Circadian Rhythm Stabilization</h4>
+        <p>Consistent sleep-wake timing is essential for restoring normal HPA axis cortisol rhythmicity — the foundation of endogenous diurnal neuroinflammatory modulation.</p>
+      </div>
+    </div>
+
+    <div class="evidence-box">
+      <h4>📚 Key References</h4>
+      <ul>
+        <li>Moldofsky H (2001). Sleep and pain. Sleep Med Rev 5(5):385-396</li>
+        <li>Haack M et al. (2012). Sleep deficiency and chronic pain. J Pain 13(6):593-604</li>
+        <li>Drewes AM et al. (2010). Nocturnal pain. Eur J Pain 14(2):138-141</li>
+        <li>Irwin MR (2019). Sleep and inflammation. Nat Rev Immunol 19(11):702-715</li>
+      </ul>
+    </div>
+
+    <div class="author-card">
+      <div class="author-avatar">👨‍⚕️</div>
+      <div class="author-info">
+        <h4>Dr.H</h4>
+        <div class="creds">Neurologist · Yonsei Severance Hospital · Brain, Pain & Functional Medicine · NervLock Founder</div>
+        <p>Korean Neurological Association · Korean Movement Disorder Society · Korean Society of Functional Medicine. For informational purposes only; does not constitute medical advice.</p>
+      </div>
+    </div>
+    <div class="cta-banner">
+      <h3>Support Neural Health with NervLock Nerve Care</h3>
+      <p>Magnesium in the support formula. Core ingredients: curcumin + Aflapin® dual-pathway design.</p>
+      <a href="/en/#coming-soon" class="cta-btn">Get Launch Notification</a>
+    </div>
+    <div class="related">
+      <h3>Related Articles</h3>
+      <div class="related-grid">
+        <div class="related-card"><div class="tag">Pain Medicine</div><h4><a href="/blog/herpes-zoster-neuralgia/">Post-Herpetic Neuralgia: Why It Persists for Years</a></h4></div>
+        <div class="related-card"><div class="tag">Lifestyle</div><h4><a href="/blog/nerve-health-foods/">Diet and Neural Health: 5 Foods to Limit</a></h4></div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer><div class="footer-bottom"><p>© 2024 NervLock. All rights reserved.</p><p>For informational purposes only; does not constitute medical advice.</p></div></footer>
+</body>
+</html>
