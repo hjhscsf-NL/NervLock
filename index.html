@@ -88,6 +88,17 @@
       padding: 10px 24px; border-radius: 50px; transition: background 0.2s;
     }
     .nav-cta:hover { background: var(--gold2); }
+    .lang-toggle {
+      display: flex; border: 1px solid rgba(255,255,255,0.22); border-radius: 8px;
+      overflow: hidden; flex-shrink: 0;
+    }
+    .lang-btn {
+      padding: 6px 13px; font-size: 12px; font-weight: 800; letter-spacing: 0.5px;
+      color: rgba(255,255,255,0.5); transition: all 0.18s; white-space: nowrap;
+    }
+    .lang-btn + .lang-btn { border-left: 1px solid rgba(255,255,255,0.22); }
+    .lang-btn:hover { color: #fff; background: rgba(255,255,255,0.08); }
+    .lang-btn.active { background: rgba(255,255,255,0.18); color: #fff; }
 
     /* ── Hero ── */
     #hero {
@@ -928,6 +939,10 @@
       <li><a href="#coming-soon">출시 알림</a></li>
       <li><a href="#products">구매하기</a></li>
     </ul>
+    <div class="lang-toggle">
+      <a href="/" class="lang-btn active">KR</a>
+      <a href="/en/" class="lang-btn">EN</a>
+    </div>
     <a href="#products" class="nav-cta">지금 구매하기</a>
   </div>
 </nav>
@@ -1423,14 +1438,14 @@
             <span class="blog-date">2024. 11. 12</span>
             <span class="blog-read">8분 읽기</span>
           </div>
-          <h3>당뇨병이 왜 발을 태우는가 — 당뇨성 신경병증의 진실</h3>
-          <p>혈당 조절이 잘 되는데도 발이 타는 듯 아픈 이유가 있습니다. 신경과 전문의가 그 기전을 쉽게 풀어드립니다.</p>
+          <h3>말초신경병증이란? 증상, 원인, 신경과 전문의의 시각</h3>
+          <p>말초신경병증의 병태생리, 증상 분류, 주요 원인, 그리고 신경 건강을 위한 영양학적 지원에 관한 신경과 전문의의 임상적 시각을 담았습니다.</p>
           <div class="blog-footer">
             <div class="blog-author">
-              <div class="blog-author-dot">김</div>
+              <div class="blog-author-dot">H</div>
               Dr.H
             </div>
-            <span class="blog-more">전문 읽기</span>
+            <a href="/blog/말초신경병증/" class="blog-more">전문 읽기</a>
           </div>
         </div>
       </div>

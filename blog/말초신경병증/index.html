@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>말초신경병증이란? 증상, 원인, 신경과 전문의의 시각 | NervLock</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Apple SD Gothic Neo','Noto Sans KR','맑은 고딕',sans-serif; color: #1a1a2e; background: #fff; font-size: 17px; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    :root {
+      --navy: #0d2545; --navy2: #163561;
+      --teal: #1a7a6e; --teal2: #22a090;
+      --gold: #b8922a; --gold2: #d4a843;
+      --gray: #f4f6f9; --gray2: #e8ecf2;
+      --muted: #5a6278;
+    }
+
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(13,37,69,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-logo { font-size: 20px; font-weight: 900; color: #fff; white-space: nowrap; }
+    .nav-logo span { color: var(--gold2); }
+    .nav-back { font-size: 14px; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold2); }
+    .lang-toggle { display: flex; border: 1px solid rgba(255,255,255,0.22); border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+    .lang-btn { padding: 5px 12px; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); transition: all 0.18s; }
+    .lang-btn + .lang-btn { border-left: 1px solid rgba(255,255,255,0.22); }
+    .lang-btn.active { background: rgba(255,255,255,0.18); color: #fff; }
+
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 60px 24px 100px; }
+
+    .article-hero { background: linear-gradient(135deg, var(--navy) 0%, #0f4f6e 100%); border-radius: 24px; padding: 52px 48px; margin-bottom: 48px; position: relative; overflow: hidden; }
+    .article-hero::before { content: '🧠'; position: absolute; right: 32px; top: 32px; font-size: 80px; opacity: 0.15; }
+    .article-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(26,122,110,0.3); border: 1px solid rgba(26,122,110,0.5); border-radius: 50px; font-size: 12px; font-weight: 700; color: #6ee7da; padding: 4px 14px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+    .article-title { font-size: clamp(22px, 3.5vw, 34px); font-weight: 900; color: #fff; line-height: 1.3; margin-bottom: 20px; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 20px; }
+    .article-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.65); }
+    .article-meta-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+
+    .lang-switch-banner { background: var(--gray); border: 1px solid var(--gray2); border-radius: 14px; padding: 14px 20px; margin-bottom: 40px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .lang-switch-banner span { font-size: 14px; color: var(--muted); }
+    .lang-switch-link { font-size: 13px; font-weight: 700; color: var(--teal2); border: 1px solid var(--teal2); border-radius: 50px; padding: 6px 16px; transition: all 0.2s; white-space: nowrap; }
+    .lang-switch-link:hover { background: var(--teal2); color: #fff; }
+
+    .abstract { background: linear-gradient(135deg, rgba(26,122,110,0.06), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 16px 16px 0; padding: 24px 28px; margin-bottom: 48px; }
+    .abstract-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--teal2); margin-bottom: 10px; }
+    .abstract p { font-size: 15px; color: #2a3a4a; line-height: 1.85; margin: 0; font-style: italic; }
+
+    .article-body h2 { font-size: 24px; font-weight: 900; color: var(--navy); margin: 52px 0 16px; line-height: 1.35; padding-bottom: 12px; border-bottom: 2px solid var(--gray2); }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-size: 19px; font-weight: 800; color: var(--navy2); margin: 36px 0 12px; }
+    .article-body p { font-size: 16px; color: #2a2a3e; line-height: 1.95; margin-bottom: 20px; }
+    .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .article-body li { font-size: 15px; color: #3a3a50; line-height: 1.75; }
+    .article-body strong { color: var(--navy); }
+
+    .callout { background: linear-gradient(135deg, rgba(26,122,110,0.07), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: var(--navy); font-style: italic; line-height: 1.85; }
+    .callout strong { color: var(--teal); font-style: normal; }
+
+    .evidence-box { background: var(--gray); border-radius: 14px; padding: 20px 24px; margin: 28px 0; }
+    .evidence-box h4 { font-size: 12px; font-weight: 800; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .evidence-box ul { margin: 0; }
+    .evidence-box li { font-size: 13px; color: var(--muted); }
+
+    .symptom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+    .symptom-card { background: var(--gray); border-radius: 14px; padding: 18px 20px; border: 1px solid var(--gray2); }
+    .symptom-card h4 { font-size: 14px; font-weight: 800; color: var(--navy); margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+    .symptom-card p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+
+    .author-card { background: var(--gray); border-radius: 20px; padding: 28px 32px; margin-top: 64px; display: flex; align-items: flex-start; gap: 20px; }
+    .author-avatar { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--navy), var(--teal)); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+    .author-info h4 { font-size: 17px; font-weight: 900; color: var(--navy); margin-bottom: 4px; }
+    .author-info .creds { font-size: 13px; color: var(--teal); font-weight: 600; margin-bottom: 10px; }
+    .author-info p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+
+    .cta-banner { background: linear-gradient(135deg, var(--navy), #0f4f6e); border-radius: 20px; padding: 40px 36px; margin-top: 48px; text-align: center; }
+    .cta-banner h3 { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 10px; }
+    .cta-banner p { font-size: 15px; color: rgba(255,255,255,0.7); margin-bottom: 24px; line-height: 1.7; }
+    .cta-btn { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold2)); color: #fff; font-size: 16px; font-weight: 800; padding: 14px 36px; border-radius: 50px; box-shadow: 0 6px 20px rgba(184,146,42,0.4); transition: transform 0.2s; }
+    .cta-btn:hover { transform: translateY(-2px); }
+
+    .related { margin-top: 64px; }
+    .related h3 { font-size: 20px; font-weight: 900; color: var(--navy); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .related-card { background: var(--gray); border-radius: 16px; padding: 20px; border: 1px solid var(--gray2); }
+    .related-card .tag { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .related-card h4 { font-size: 15px; font-weight: 800; color: var(--navy); line-height: 1.4; }
+
+    footer { background: #0a1a32; color: rgba(255,255,255,0.5); padding: 32px 0; }
+    .footer-bottom { max-width: 900px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 12px; }
+
+    @media (max-width: 600px) {
+      .article-hero { padding: 36px 28px; }
+      .symptom-grid, .related-grid { grid-template-columns: 1fr; }
+      .author-card { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Nerv<span>Lock</span></a>
+    <a href="/#blog" class="nav-back">← 의학 칼럼</a>
+    <div class="lang-toggle">
+      <a href="/blog/말초신경병증/" class="lang-btn active">KR</a>
+      <a href="/blog/peripheral-neuropathy/" class="lang-btn">EN</a>
+    </div>
+  </div>
+</nav>
+
+<div class="article-wrap">
+
+  <div class="article-hero">
+    <div class="article-tag">신경과학</div>
+    <h1 class="article-title">말초신경병증이란?<br>증상, 원인, 신경과 전문의의 시각</h1>
+    <div class="article-meta">
+      <div class="article-meta-item">👨‍⚕️ <strong>Dr.H</strong> — 신경과 전문의 · NervLock 설립자</div>
+      <div class="article-meta-item">📅 2024. 11. 12</div>
+      <div class="article-meta-item">⏱ 8분 읽기</div>
+    </div>
+  </div>
+
+  <div class="lang-switch-banner">
+    <span>🇺🇸 Read this article in English?</span>
+    <a href="/blog/peripheral-neuropathy/" class="lang-switch-link">Read in English →</a>
+  </div>
+
+  <div class="abstract">
+    <div class="abstract-label">요약</div>
+    <p>말초신경병증은 뇌와 척수 바깥에 위치한 말초신경계의 손상 또는 기능 이상으로 발생하는 증상 복합체입니다. 본 글에서는 말초신경병증의 병태생리학적 기전, 증상 양상, 주요 원인, 그리고 신경 건강을 위한 영양학적 지원에 관한 신경과 전문의의 임상적 시각을 다룹니다.</p>
+  </div>
+
+  <div class="article-body">
+
+    <h2>1. 말초신경계란 무엇인가</h2>
+    <p>신경계는 크게 두 부분으로 나뉩니다. <strong>중추신경계(CNS)</strong>는 뇌와 척수로 구성되며, <strong>말초신경계(PNS)</strong>는 CNS 이외의 모든 신경 조직 — 즉, 뇌와 척수를 전신의 장기·근육·피부와 연결하는 감각·운동·자율신경 섬유 전체를 포함합니다.</p>
+    <p>말초신경이 손상되거나 기능에 이상이 생기면 <strong>말초신경병증(peripheral neuropathy)</strong>이라는 증상 복합체가 나타납니다. 말초신경병증은 생각보다 훨씬 흔한 상태입니다. 역학 데이터에 따르면 일반 인구의 약 2~3%, 55세 이상에서는 약 8%, 장기간 당뇨를 앓는 환자에서는 50%를 넘는 유병률이 보고됩니다.</p>
+
+    <div class="callout">
+      <strong>핵심 정의:</strong> 말초신경병증은 단일 질환이 아니라 다양한 원인이 말초신경 기능 이상이라는 공통적인 경로로 수렴되는 <em>증상 복합체</em>입니다. 정확한 원인 파악이 적절한 관리의 핵심입니다.
+    </div>
+
+    <h2>2. 말초신경의 구조: 왜 중요한가</h2>
+    <p>말초신경병증을 이해하려면 먼저 말초신경 섬유의 기능적 해부학을 파악해야 합니다. 각 신경 섬유는 신경세포체에서 뻗어 나온 긴 돌기(축삭, axon)로, <strong>미엘린 수초(myelin sheath)</strong>라는 지질 다층 구조로 둘러싸여 있습니다. 미엘린은 전기 절연체 역할을 하여 랑비에 결절(Nodes of Ranvier) 사이에서 도약 전도(saltatory conduction)를 가능하게 합니다.</p>
+    <p>말초신경 섬유는 직경과 미엘린화 정도에 따라 분류됩니다:</p>
+    <ul>
+      <li><strong>A-베타 섬유(Aβ):</strong> 굵고 두꺼운 미엘린 — 촉각 및 고유감각(위치감각) 전달</li>
+      <li><strong>A-델타 섬유(Aδ):</strong> 중간 굵기, 얇은 미엘린 — 날카롭고 잘 국소화된 감각 전달</li>
+      <li><strong>C 섬유:</strong> 가늘고 미엘린 없음 — 둔하고 확산된 감각 및 자율신경 신호 전달</li>
+    </ul>
+    <p>어떤 신경 섬유 유형이 영향받느냐에 따라 임상 증상이 달라지며, 이것이 말초신경병증 증상의 다양성을 설명합니다.</p>
+
+    <h2>3. 증상 양상</h2>
+    <p>말초신경병증의 임상 양상은 어떤 신경 섬유가 영향받는지, 침범 분포(국소 vs. 광범위), 신경 손상 기전에 따라 결정됩니다. 증상은 크게 <strong>양성 증상</strong>(비정상적 신경 발화로 인한)과 <strong>음성 증상</strong>(신경 기능 소실로 인한)으로 구분됩니다.</p>
+
+    <div class="symptom-grid">
+      <div class="symptom-card">
+        <h4>⚡ 양성 감각 증상</h4>
+        <p>타는 듯한 느낌, 전기 감전 느낌, 찌릿함(이상감각), 바늘로 찌르는 느낌, 이질통(정상 자극에 의한 불편감)</p>
+      </div>
+      <div class="symptom-card">
+        <h4>🔇 음성 감각 증상</h4>
+        <p>무감각, 촉각 또는 온도 감각 저하, 고유감각(위치감각) 장애</p>
+      </div>
+      <div class="symptom-card">
+        <h4>💪 운동 증상</h4>
+        <p>근력 약화, 근육 경련, 근섬유속성수축(fasciculation), 족하수(foot drop), 세밀한 운동 장애</p>
+      </div>
+      <div class="symptom-card">
+        <h4>⚙️ 자율신경 증상</h4>
+        <p>기립성 저혈압, 발한 이상, 위마비(gastroparesis), 방광 기능 장애</p>
+      </div>
+    </div>
+
+    <h3>시간적·분포적 양상</h3>
+    <p>증상의 분포는 중요한 진단적 단서가 됩니다. 가장 흔한 패턴은 <strong>길이 의존성 신경병증(length-dependent neuropathy)</strong>으로, 가장 긴 신경 섬유부터 먼저 영향받아 발가락과 발에서 시작해 손과 하퇴로 진행하는 특징적인 '장갑·양말' 분포를 보입니다.</p>
+    <p>야간 악화는 말초신경병증의 전형적인 특징입니다. 많은 환자들이 밤에 불편감이 심해진다고 호소하는데, 이는 낮 동안 항염 작용을 하는 코르티솔의 일주기적 감소, 주의 분산 효과 소실, 누운 자세에서의 말초 혈류 변화로 설명됩니다.</p>
+
+    <h2>4. 병태생리학: 세포 수준에서 무슨 일이 일어나는가</h2>
+
+    <h3>4.1 산화 스트레스와 미토콘드리아 기능 이상</h3>
+    <p>말초신경세포는 대사 활성도가 매우 높아 산화 손상에 취약합니다. 미토콘드리아 기능이 저하되면 — 혈당 독성, 영양 결핍, 기타 스트레스 인자 등에 의해 — 활성산소(ROS)가 축적되어 축삭 막을 손상시키고, 이온 채널 기능을 교란하며, 염증 연쇄반응을 개시합니다.</p>
+    <p>이 기전은 대사성 신경병증에서 특히 중요합니다. 고혈당은 폴리올 경로(알도오스 환원효소를 통한 포도당의 솔비톨 전환)를 활성화하고, 글루타치온을 고갈시키며, 신경 미세혈관을 손상시키는 최종당화산물(AGEs)을 축적시킵니다.</p>
+
+    <h3>4.2 신경 염증</h3>
+    <p>말초신경 손상은 슈반세포, 대식세포 및 기타 상주 면역세포를 활성화하여 TNF-α, IL-1β, IL-6 등 전염증성 사이토카인 분비를 유발합니다. 중요한 점은 이 신경 염증 상태가 자기 지속적이 될 수 있다는 것입니다. 초기 손상 자극이 해소된 후에도 손상된 신경 섬유 주변의 만성 저급 염증이 지속되어 기능 장애를 영속화합니다.</p>
+    <p>두 가지 핵심 염증 신호 경로가 특히 관련됩니다: 사이토카인 생성의 중심인 <strong>NF-κB 경로</strong>와 류코트리엔 합성을 담당하는 <strong>5-LOX 경로</strong>입니다. 두 경로 모두 영양학적 개입의 합리적인 표적입니다.</p>
+
+    <h3>4.3 미엘린 손상과 재수초화 장애</h3>
+    <p>건강한 미엘린을 유지하려면 인지질 합성을 위한 메틸기의 지속적인 공급이 필요하며, 이 과정은 활성형 비타민 B12인 메코발라민에 결정적으로 의존합니다. 결핍이 지속되면 진행성 탈수초화(demyelination)가 일어나고, 초기에는 신경 전도 속도 저하로, 치료하지 않으면 축삭 변성으로 진행됩니다.</p>
+
+    <div class="callout">
+      <strong>임상적 시각:</strong> 말초신경은 유리한 조건에서 하루 약 1~4mm의 속도로 재생될 수 있는 놀라운 능력을 가지고 있습니다. 그러나 재생에는 적절한 영양 기질이 필요합니다. 이러한 생물학적 가소성이 영양 개입의 근거입니다.
+    </div>
+
+    <h2>5. 원인: 주요 발병 인자</h2>
+    <p>말초신경병증에는 100가지 이상의 원인이 있습니다. 임상적으로 가장 중요한 원인은 다음과 같습니다:</p>
+    <ul>
+      <li><strong>당뇨병성 말초신경병증(DPN):</strong> 전 세계적으로 가장 흔한 원인으로, 당뇨 환자의 최대 50%에서 발생합니다. 고혈당에 의한 산화 스트레스, 폴리올 경로 활성화, AGE 축적이 주요 병인입니다.</li>
+      <li><strong>영양 결핍:</strong> 비타민 B군(특히 B12, B6, B1), 비타민 E, 구리 결핍이 각각 특징적인 신경병증 증후군을 일으킬 수 있습니다. B12 결핍은 식이 변화와 약물 상호작용(특히 메트포민)으로 인해 점점 더 증가하고 있습니다.</li>
+      <li><strong>자가면역 질환:</strong> 길랑-바레 증후군, 만성 염증성 탈수초 다발신경병증(CIDP), 혈관염성 신경병증, 종양수반 신경병증 등.</li>
+      <li><strong>독소 및 약물 노출:</strong> 항암화학요법 유발 말초신경병증(CIPN)은 중요한 임상적 문제이며, 알코올 관련 신경병증은 예방 가능한 주요 원인입니다.</li>
+      <li><strong>유전성 신경병증:</strong> 샤르코-마리-투스병 및 관련 유전성 운동감각신경병증.</li>
+      <li><strong>특발성(원인불명) 신경병증:</strong> 철저한 검사에도 불구하고 약 20~30%의 사례에서 확실한 원인이 밝혀지지 않지만, 이 경우에도 적극적인 관리가 필요합니다.</li>
+    </ul>
+
+    <h2>6. 진단: 신경과 전문의의 접근</h2>
+    <p>말초신경병증 진단은 병력 청취와 신경학적 검진에서 시작하여 목적 지향적 검사로 이어집니다:</p>
+    <ul>
+      <li><strong>신경전도검사(NCS) / 근전도검사(EMG):</strong> 신경병증 유형(축삭형 vs. 탈수초형), 분포, 중증도를 특성화하는 표준 검사</li>
+      <li><strong>혈액 검사:</strong> 공복 혈당, HbA1c, 전혈구계산, 대사패널, B12, 엽산, 갑상선 기능, 염증 지표, 자가면역 패널</li>
+      <li><strong>피부 펀치 생검:</strong> 표피내 신경섬유 밀도 평가 — 특히 NCS에서 놓칠 수 있는 소섬유 신경병증(small fiber neuropathy)에 유용</li>
+      <li><strong>유전자 검사:</strong> 가족력과 임상 양상에서 유전성 신경병증이 의심될 때</li>
+    </ul>
+
+    <h2>7. 영양학적 지원: 신경과 전문의의 시각</h2>
+    <p>신경병증 증상에 대한 약물적 관리는 잘 확립되어 있지만, 말초신경의 <strong>영양학적 미세 환경</strong>이 신경병증의 발병과 경과에 중요한 역할을 한다는 인식이 높아지고 있습니다. 영양 개입은 의학적 관리를 대체하지 않지만 표준 치료에 대한 합리적인 보완 수단입니다.</p>
+    <p>저의 임상 철학은 가장 잘 특성화된 영양 성분으로 두 가지 가장 기전적으로 관련된 경로를 표적으로 삼는 것입니다:</p>
+
+    <h3>7.1 커큐민: NF-κB 조절과 항산화 지원</h3>
+    <p>강황(Curcuma longa)의 주요 폴리페놀인 커큐민은 여러 in vitro 및 in vivo 모델에서 NF-κB 신호 연쇄반응에 대한 조절 작용을 보여주었습니다. NF-κB를 조절함으로써 커큐민은 TNF-α, IL-1β, COX-2를 포함한 전염증성 사이토카인의 전사를 감소시킵니다. 지용성 특성으로 인해 혈뇌장벽을 통과할 수 있어 신경학적 응용에서 특히 주목받고 있습니다.</p>
+    <p>표준 커큐민 제제의 주요 한계는 낮은 구강 생체이용률입니다. 인지질 복합체(파이토솜) 기술이 커큐민 흡수를 상당히 향상시켜 임상 적용에 선호되는 제형이 됩니다.</p>
+
+    <h3>7.2 애플라핀®: 선택적 5-LOX 억제</h3>
+    <p>애플라핀®은 아세틸-11-케토-β-보스웰산(AKBA) 고함량으로 표준화된 보스웰리아 세라타(Boswellia serrata) 특허 추출물입니다. 비선택적 항염증제와 달리 AKBA는 선택적 5-리폭시게나아제(5-LOX) 억제제로 작용하여 NSAIDs와 관련된 프로스타글란딘 경로 교란 없이 류코트리엔 합성을 감소시킵니다.</p>
+    <p>커큐민이 NF-κB를, 애플라핀®이 5-LOX를 표적으로 하는 이중 경로 접근법은 말초 신경 염증에 관여하는 두 가지 주요 전염증성 연쇄반응에 대한 상호 보완적 억제를 제공합니다. 이러한 기전적 시너지가 NervLock 너브케어에서의 복합 처방 근거입니다.</p>
+
+    <div class="evidence-box">
+      <h4>📚 주요 참고 문헌</h4>
+      <ul>
+        <li>Feldman EL et al. (2019). Diabetic neuropathy. <em>Nature Reviews Disease Primers</em> 5(1):41</li>
+        <li>Anand P et al. (2008). Biological activities of curcumin and its analogues. <em>Biochemical Pharmacology</em> 76(11):1590-1611</li>
+        <li>Sengupta K et al. (2010). Comparative efficacy of Aflapin vs 5-Loxin. <em>International Journal of Medical Sciences</em> 7(6):366-377</li>
+        <li>Said G (2007). Diabetic neuropathy: a review. <em>Nature Clinical Practice Neurology</em> 3(6):331-340</li>
+        <li>Stys PK (2005). General mechanisms of axonal damage. <em>Journal of the Neurological Sciences</em> 233(1-2):3-13</li>
+      </ul>
+    </div>
+
+    <h2>8. 요약</h2>
+    <p>말초신경병증은 다양한 원인에서 비롯되지만 공통된 병태생리학적 기전 — 산화 스트레스, 미토콘드리아 기능 이상, 신경 염증, 미엘린 손상 — 으로 수렴되는 이질적인 상태입니다. 근본적인 원인을 파악하고 해결하는 것이 우선이지만, 신경 염증 환경을 표적으로 하는 — 특히 NF-κB와 5-LOX 경로의 이중 조절을 통한 — 근거 기반의 영양학적 지원은 말초신경 건강을 지원하는 합리적인 접근법입니다.</p>
+    <p>조기 인식과 적극적인 관리가 핵심입니다. 지속적인 저림, 무감각 또는 기타 신경학적 증상이 있다면 신경과 전문의와의 상담을 강력히 권장합니다.</p>
+
+    <div class="author-card">
+      <div class="author-avatar">👨‍⚕️</div>
+      <div class="author-info">
+        <h4>Dr.H</h4>
+        <div class="creds">신경과 전문의 · 연세대 세브란스 출신 · 뇌·통증·기능의학 전문 · NervLock 설립자</div>
+        <p>대한신경과학회 정회원 · 파킨슨병 및 이상운동질환 학회 정회원 · 대한기능의학회 정회원. 본 칼럼은 의학적 정보 제공을 목적으로 하며 개인 진료를 대체하지 않습니다.</p>
+      </div>
+    </div>
+
+    <div class="cta-banner">
+      <h3>NervLock 너브케어로 신경 건강을 지원하세요</h3>
+      <p>신경과 전문의가 직접 처방한 커큐민 + 애플라핀® — 신경 염증 균형을 위한 가장 근거 있는 두 가지 성분.<br>NervLock 브랜드의 첫 번째 제품이 곧 출시됩니다.</p>
+      <a href="/#coming-soon" class="cta-btn">출시 알림 신청하기</a>
+    </div>
+
+    <div class="related">
+      <h3>관련 칼럼</h3>
+      <div class="related-grid">
+        <div class="related-card">
+          <div class="tag">통증의학</div>
+          <h4>왜 밤에 신경 불편감이 심해지는가 — 일주기 생물학으로 설명합니다</h4>
+        </div>
+        <div class="related-card">
+          <div class="tag">영양·성분</div>
+          <h4>비타민 B12가 신경에 하는 일 — 메코발라민 vs 시아노코발라민</h4>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2024 NervLock. All rights reserved.</p>
+    <p>본 칼럼은 의학적 정보 제공을 목적으로 하며 개인 진료를 대체하지 않습니다.</p>
+  </div>
+</footer>
+
+</body>
+</html>

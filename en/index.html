@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NervLock | Neural Health Supplement Designed by a Neurologist</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      color: #1a1a2e; background: #fff;
+      font-size: 17px; line-height: 1.7;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    :root {
+      --navy: #0d2545; --navy2: #163561;
+      --teal: #1a7a6e; --teal2: #22a090;
+      --gold: #b8922a; --gold2: #d4a843;
+      --gray: #f4f6f9; --gray2: #e8ecf2;
+      --text: #1a1a2e; --muted: #5a6278;
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 90px 0; }
+    .section-label { font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: var(--teal2); font-weight: 700; margin-bottom: 12px; }
+    .section-title { font-size: clamp(26px, 3.5vw, 40px); font-weight: 800; color: var(--navy); line-height: 1.35; margin-bottom: 20px; }
+    .section-sub { font-size: 17px; color: var(--muted); max-width: 600px; line-height: 1.8; }
+    .btn-primary { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold2)); color: #fff; font-size: 17px; font-weight: 700; padding: 17px 40px; border-radius: 50px; letter-spacing: 0.5px; box-shadow: 0 6px 24px rgba(184,146,42,0.35); transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; border: none; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(184,146,42,0.45); }
+    .btn-outline { display: inline-block; border: 2px solid var(--gold2); color: var(--gold); font-size: 16px; font-weight: 700; padding: 14px 34px; border-radius: 50px; transition: all 0.2s; cursor: pointer; }
+    .btn-outline:hover { background: var(--gold2); color: #fff; }
+
+    /* Nav */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(13,37,69,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; height: 68px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-size: 22px; font-weight: 900; color: #fff; }
+    .nav-logo span { color: var(--gold2); }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,0.8); font-size: 15px; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold2); }
+    .nav-cta { background: var(--gold); color: #fff; font-size: 14px; font-weight: 700; padding: 10px 24px; border-radius: 50px; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--gold2); }
+    .lang-toggle { display: flex; border: 1px solid rgba(255,255,255,0.22); border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+    .lang-btn { padding: 6px 13px; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); transition: all 0.18s; }
+    .lang-btn + .lang-btn { border-left: 1px solid rgba(255,255,255,0.22); }
+    .lang-btn:hover { color: #fff; background: rgba(255,255,255,0.08); }
+    .lang-btn.active { background: rgba(255,255,255,0.18); color: #fff; }
+
+    /* Hero */
+    #hero { min-height: 100vh; background: linear-gradient(150deg, var(--navy) 0%, var(--navy2) 60%, #0f4f6e 100%); display: flex; align-items: center; padding-top: 68px; position: relative; overflow: hidden; }
+    #hero::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 80px; background: #fff; clip-path: ellipse(55% 100% at 50% 100%); }
+    .hero-content { position: relative; z-index: 2; max-width: 700px; padding: 80px 0; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.9); font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 50px; margin-bottom: 28px; letter-spacing: 0.5px; }
+    .hero-badge::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--gold2); flex-shrink: 0; }
+    .hero-title { font-size: clamp(30px, 4.5vw, 54px); font-weight: 900; color: #fff; line-height: 1.2; margin-bottom: 24px; letter-spacing: -1px; }
+    .hero-title em { color: var(--gold2); font-style: normal; }
+    .hero-sub { font-size: 18px; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 40px; max-width: 560px; }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .hero-trust { margin-top: 48px; display: flex; gap: 32px; flex-wrap: wrap; }
+    .hero-trust-item { display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.7); font-size: 14px; }
+    .hero-trust-icon { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; font-size: 16px; }
+
+    /* Pain section */
+    #pain { background: var(--gray); }
+    .pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
+    .pain-card { background: #fff; border-radius: 20px; padding: 32px 28px; border: 1.5px solid var(--gray2); transition: box-shadow 0.25s, transform 0.25s; }
+    .pain-card:hover { box-shadow: 0 12px 40px rgba(13,37,69,0.10); transform: translateY(-4px); }
+    .pain-icon { width: 56px; height: 56px; border-radius: 16px; background: linear-gradient(135deg, #e8f4f8, #c5dff0); display: flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 20px; }
+    .pain-card h3 { font-size: 18px; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+    .pain-card p { font-size: 15px; color: var(--muted); line-height: 1.75; }
+
+    /* Science */
+    #science { background: linear-gradient(160deg, var(--navy) 0%, var(--navy2) 100%); color: #fff; }
+    #science .section-title { color: #fff; }
+    #science .section-sub { color: rgba(255,255,255,0.7); }
+    .science-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; margin-top: 56px; }
+    .science-steps { display: flex; flex-direction: column; gap: 32px; }
+    .science-step { display: flex; gap: 20px; }
+    .step-num { flex-shrink: 0; width: 44px; height: 44px; background: linear-gradient(135deg, var(--gold), var(--gold2)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 17px; font-weight: 900; color: #fff; box-shadow: 0 4px 16px rgba(184,146,42,0.4); }
+    .step-text h4 { font-size: 18px; font-weight: 800; margin-bottom: 6px; color: #fff; }
+    .step-text p { font-size: 15px; color: rgba(255,255,255,0.65); line-height: 1.75; }
+    .nerve-diagram { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 24px; padding: 40px; }
+    .nerve-svg { width: 100%; height: 280px; }
+
+    /* Ingredients */
+    #ingredients { background: #fff; }
+    .ing-why { display: flex; align-items: flex-start; gap: 20px; background: var(--gray); border-radius: 20px; padding: 28px 32px; margin-top: 48px; border-left: 4px solid var(--gold2); }
+    .ing-why-avatar { width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0; background: linear-gradient(135deg, var(--navy), var(--teal)); display: flex; align-items: center; justify-content: center; font-size: 22px; }
+    .ing-why-text strong { display: block; font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+    .ing-why-text p { font-size: 15px; color: var(--muted); line-height: 1.8; margin: 0; }
+    .ing-why-text em { color: var(--teal); font-style: normal; font-weight: 700; }
+    .ing-duo { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 32px; }
+    .ing-main-card { border-radius: 24px; overflow: hidden; border: 1.5px solid var(--gray2); transition: box-shadow 0.25s, transform 0.25s; }
+    .ing-main-card:hover { box-shadow: 0 16px 48px rgba(13,37,69,0.10); transform: translateY(-4px); }
+    .ing-main-header { padding: 32px 32px 24px; position: relative; overflow: hidden; }
+    .ing-main-header::after { content: ''; position: absolute; right: -20px; bottom: -20px; width: 120px; height: 120px; border-radius: 50%; background: rgba(255,255,255,0.08); }
+    .ing-main-num { font-size: 11px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 10px; }
+    .ing-main-name { font-size: 28px; font-weight: 900; color: #fff; line-height: 1.2; margin-bottom: 6px; }
+    .ing-main-sub { font-size: 13px; color: rgba(255,255,255,0.65); }
+    .ing-main-icon { position: absolute; right: 28px; top: 24px; font-size: 52px; opacity: 0.85; }
+    .ing-main-body { padding: 28px 32px 32px; background: #fff; }
+    .ing-badge { display: inline-flex; align-items: center; gap: 6px; border-radius: 50px; font-size: 12px; font-weight: 700; padding: 5px 14px; margin-bottom: 18px; }
+    .ing-origin { background: var(--gray); color: var(--navy); }
+    .ing-patent { background: rgba(184,146,42,0.1); border: 1px solid rgba(184,146,42,0.25); color: var(--gold); }
+    .ing-main-desc { font-size: 15px; color: var(--text); line-height: 1.85; margin-bottom: 22px; }
+    .ing-points { display: flex; flex-direction: column; gap: 10px; padding-top: 20px; border-top: 1px solid var(--gray2); }
+    .ing-point { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--muted); line-height: 1.6; }
+    .ing-point-dot { width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0; margin-top: 1px; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 900; color: #fff; }
+    .ing-support { margin-top: 48px; }
+    .ing-support-label { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+    .ing-support-label-text { font-size: 12px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+    .ing-support-label-line { flex: 1; height: 1px; background: var(--gray2); }
+    .ing-support-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+    .ing-sup-card { background: var(--gray); border-radius: 16px; padding: 18px 14px; text-align: center; border: 1px solid var(--gray2); transition: border-color 0.2s, background 0.2s; }
+    .ing-sup-card:hover { border-color: var(--teal2); background: #fff; }
+    .ing-sup-emoji { font-size: 24px; margin-bottom: 10px; }
+    .ing-sup-name { font-size: 13px; font-weight: 800; color: var(--navy); margin-bottom: 4px; line-height: 1.3; }
+    .ing-sup-desc { font-size: 11px; color: var(--muted); line-height: 1.5; }
+
+    /* Doctor */
+    #doctor { background: var(--gray); }
+    .doctor-inner { display: grid; grid-template-columns: 380px 1fr; gap: 64px; align-items: center; }
+    .doctor-card { background: #fff; border-radius: 28px; padding: 40px 36px; box-shadow: 0 12px 48px rgba(13,37,69,0.10); text-align: center; }
+    .doctor-avatar { width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, var(--navy), var(--teal)); margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 48px; box-shadow: 0 8px 28px rgba(13,37,69,0.25); }
+    .doctor-name { font-size: 22px; font-weight: 900; color: var(--navy); margin-bottom: 6px; }
+    .doctor-title { font-size: 14px; color: var(--teal); font-weight: 700; margin-bottom: 20px; }
+    .doctor-certs { display: flex; flex-direction: column; gap: 10px; text-align: left; }
+    .cert-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: var(--muted); line-height: 1.5; }
+    .cert-item::before { content: '✓'; color: var(--teal2); font-weight: 900; font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+    .doctor-message h3 { font-size: clamp(20px, 2.5vw, 28px); font-weight: 900; color: var(--navy); line-height: 1.4; margin-bottom: 24px; }
+    .doctor-message h3 em { color: var(--teal); font-style: normal; }
+    .doctor-message p { font-size: 16px; color: var(--muted); line-height: 1.9; margin-bottom: 16px; }
+    .doctor-signature { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--gray2); font-size: 15px; color: var(--navy); font-style: italic; }
+
+    /* Reviews */
+    #reviews { background: #fff; }
+    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
+    .review-card { background: var(--gray); border-radius: 20px; padding: 32px 28px; position: relative; }
+    .review-card::before { content: '"'; font-size: 80px; color: var(--gray2); position: absolute; top: 12px; left: 24px; line-height: 1; font-family: Georgia, serif; }
+    .review-stars { color: var(--gold2); font-size: 18px; margin-bottom: 16px; letter-spacing: 2px; }
+    .review-text { font-size: 15px; color: var(--text); line-height: 1.8; margin-bottom: 24px; position: relative; }
+    .reviewer { display: flex; align-items: center; gap: 12px; }
+    .reviewer-avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--navy), var(--teal)); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 16px; }
+    .reviewer-info h4 { font-size: 15px; font-weight: 700; color: var(--navy); }
+    .reviewer-info span { font-size: 13px; color: var(--muted); }
+    .verified { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; color: var(--teal); font-weight: 700; background: rgba(26,122,110,0.08); padding: 2px 8px; border-radius: 50px; margin-left: 8px; }
+
+    /* Products */
+    #products { background: var(--gray); }
+    .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
+    .product-box { background: #fff; border-radius: 24px; padding: 36px 28px; border: 2px solid transparent; transition: all 0.25s; position: relative; overflow: hidden; }
+    .product-box:hover, .product-box.featured { border-color: var(--gold2); }
+    .product-box.featured { box-shadow: 0 16px 48px rgba(184,146,42,0.18); }
+    .best-badge { position: absolute; top: 20px; right: -28px; background: var(--gold); color: #fff; font-size: 11px; font-weight: 800; letter-spacing: 1px; padding: 6px 40px; transform: rotate(45deg); }
+    .product-type { font-size: 12px; font-weight: 700; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .product-box h3 { font-size: 22px; font-weight: 900; color: var(--navy); margin-bottom: 8px; }
+    .product-box .sub { font-size: 14px; color: var(--muted); margin-bottom: 24px; }
+    .price-wrap { margin-bottom: 28px; }
+    .product-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+    .product-features li { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--text); }
+    .product-features li::before { content: '✓'; color: var(--teal2); font-weight: 900; font-size: 15px; }
+    .full-btn { display: block; text-align: center; background: linear-gradient(135deg, var(--gold), var(--gold2)); color: #fff; font-size: 16px; font-weight: 700; padding: 16px; border-radius: 50px; box-shadow: 0 4px 20px rgba(184,146,42,0.3); transition: all 0.2s; }
+    .full-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(184,146,42,0.4); }
+    .full-btn.outline { background: transparent; color: var(--navy); border: 2px solid var(--gray2); box-shadow: none; }
+    .full-btn.outline:hover { border-color: var(--gold2); color: var(--gold); }
+
+    /* Blog */
+    #blog { background: #fff; }
+    .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 56px; }
+    .blog-card { background: var(--gray); border-radius: 20px; overflow: hidden; border: 1.5px solid var(--gray2); transition: box-shadow 0.25s, transform 0.25s; display: flex; flex-direction: column; }
+    .blog-card:hover { box-shadow: 0 14px 44px rgba(13,37,69,0.12); transform: translateY(-4px); }
+    .blog-thumb { height: 180px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+    .blog-thumb-bg { position: absolute; inset: 0; }
+    .blog-thumb-icon { font-size: 52px; position: relative; z-index: 1; }
+    .blog-body { padding: 26px 24px 22px; flex: 1; display: flex; flex-direction: column; background: #fff; }
+    .blog-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+    .blog-tag { font-size: 11px; font-weight: 700; letter-spacing: 1px; padding: 3px 10px; border-radius: 50px; text-transform: uppercase; }
+    .tag-neuro  { background: rgba(26,122,110,0.10); color: var(--teal); }
+    .tag-nutri  { background: rgba(184,146,42,0.12); color: var(--gold); }
+    .tag-pain   { background: rgba(13,37,69,0.09); color: var(--navy2); }
+    .tag-life   { background: rgba(94,60,150,0.10); color: #5e3c96; }
+    .blog-date { font-size: 12px; color: var(--muted); }
+    .blog-read { font-size: 12px; color: var(--muted); }
+    .blog-read::before { content: '·'; margin-right: 10px; }
+    .blog-card h3 { font-size: 17px; font-weight: 800; color: var(--navy); line-height: 1.45; margin-bottom: 10px; }
+    .blog-card p { font-size: 14px; color: var(--muted); line-height: 1.75; flex: 1; }
+    .blog-footer { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--gray2); display: flex; align-items: center; justify-content: space-between; }
+    .blog-author { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--navy); font-weight: 600; }
+    .blog-author-dot { width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, var(--navy), var(--teal)); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 11px; font-weight: 700; flex-shrink: 0; }
+    .blog-more { font-size: 13px; color: var(--teal2); font-weight: 700; display: flex; align-items: center; gap: 4px; }
+    .blog-more::after { content: '→'; }
+
+    /* Coming Soon */
+    #coming-soon { background: var(--navy); padding: 100px 0; position: relative; overflow: hidden; }
+    #coming-soon::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 60% at 10% 50%, rgba(26,122,110,0.18) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 90% 30%, rgba(184,146,42,0.12) 0%, transparent 70%); pointer-events: none; }
+    .cs-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    .cs-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(212,168,67,0.15); border: 1px solid rgba(212,168,67,0.35); color: var(--gold2); font-size: 12px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; padding: 8px 20px; border-radius: 50px; margin-bottom: 28px; }
+    .cs-badge::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--gold2); flex-shrink: 0; animation: cs-pulse 1.8s ease-in-out infinite; }
+    @keyframes cs-pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.7); } }
+    .cs-title { font-size: clamp(28px, 4vw, 46px); font-weight: 900; color: #fff; line-height: 1.25; letter-spacing: -1px; margin-bottom: 20px; }
+    .cs-title em { color: var(--gold2); font-style: normal; }
+    .cs-desc { font-size: 17px; color: rgba(255,255,255,0.65); line-height: 1.85; margin-bottom: 36px; max-width: 480px; }
+    .cs-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; }
+    .cs-pill { display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.75); font-size: 13px; font-weight: 600; padding: 8px 16px; border-radius: 50px; }
+    .cs-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 28px; padding: 44px 40px; backdrop-filter: blur(8px); }
+    .cs-card-title { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 10px; }
+    .cs-card-sub { font-size: 15px; color: rgba(255,255,255,0.55); margin-bottom: 28px; line-height: 1.7; }
+    .cs-form { display: flex; flex-direction: column; gap: 12px; }
+    .cs-input { width: 100%; padding: 16px 20px; background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.15); border-radius: 14px; color: #fff; font-size: 16px; font-family: inherit; outline: none; transition: border-color 0.2s; }
+    .cs-input::placeholder { color: rgba(255,255,255,0.35); }
+    .cs-input:focus { border-color: var(--gold2); background: rgba(255,255,255,0.12); }
+    .cs-submit { width: 100%; padding: 17px; background: linear-gradient(135deg, var(--gold), var(--gold2)); color: #fff; font-size: 17px; font-weight: 800; border: none; border-radius: 14px; cursor: pointer; box-shadow: 0 6px 24px rgba(184,146,42,0.4); transition: transform 0.2s, box-shadow 0.2s; font-family: inherit; }
+    .cs-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(184,146,42,0.5); }
+    .cs-submit:disabled { opacity: 0.65; cursor: default; transform: none; }
+    .cs-notice { font-size: 12px; color: rgba(255,255,255,0.35); text-align: center; line-height: 1.6; }
+    .cs-success { display: none; text-align: center; padding: 8px 0; }
+    .cs-success.show { display: block; }
+    .cs-success-icon { width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--teal), var(--teal2)); display: flex; align-items: center; justify-content: center; font-size: 28px; margin: 0 auto 16px; }
+    .cs-success h4 { font-size: 20px; font-weight: 900; color: #fff; margin-bottom: 8px; }
+    .cs-success p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.65; }
+    .cs-count { margin-top: 28px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; gap: 28px; justify-content: center; flex-wrap: wrap; }
+    .cs-count-item { text-align: center; }
+    .cs-count-num { font-size: 26px; font-weight: 900; color: var(--gold2); line-height: 1; display: block; margin-bottom: 4px; }
+    .cs-count-label { font-size: 12px; color: rgba(255,255,255,0.45); }
+    .cs-error { font-size: 13px; color: #ff7c7c; margin-top: 2px; display: none; padding-left: 4px; }
+    .cs-error.show { display: block; }
+
+    /* FAQ */
+    #faq { background: #fff; }
+    .faq-list { max-width: 780px; margin: 48px auto 0; }
+    .faq-item { border-bottom: 1.5px solid var(--gray2); }
+    .faq-q { width: 100%; background: none; border: none; cursor: pointer; padding: 24px 0; display: flex; justify-content: space-between; align-items: center; font-size: 17px; font-weight: 700; color: var(--navy); text-align: left; gap: 16px; }
+    .faq-q .icon { width: 28px; height: 28px; border-radius: 50%; background: var(--gray); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 18px; color: var(--teal2); transition: transform 0.3s; }
+    .faq-item.open .faq-q .icon { transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.3s; font-size: 15px; color: var(--muted); line-height: 1.85; }
+    .faq-item.open .faq-a { max-height: 400px; padding-bottom: 20px; }
+
+    /* CTA */
+    #cta { background: linear-gradient(135deg, var(--navy), var(--teal)); padding: 90px 0; text-align: center; }
+    #cta .section-title { color: #fff; }
+    #cta .section-sub { color: rgba(255,255,255,0.75); margin: 0 auto 40px; text-align: center; }
+
+    /* Footer */
+    footer { background: #0a1a32; color: rgba(255,255,255,0.5); padding: 56px 0 32px; }
+    .footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+    .footer-brand { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 12px; }
+    .footer-brand span { color: var(--gold2); }
+    .footer-desc { font-size: 13px; line-height: 1.8; }
+    .footer-col h4 { color: rgba(255,255,255,0.8); font-size: 14px; font-weight: 700; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a { font-size: 13px; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--gold2); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .footer-notice { font-size: 11px; line-height: 1.7; max-width: 600px; }
+
+    @media (max-width: 900px) {
+      .hero-content, .science-grid, .doctor-inner, .footer-inner, .cs-inner { grid-template-columns: 1fr; }
+      .pain-grid, .reviews-grid, .products-grid, .blog-grid, .ing-duo { grid-template-columns: 1fr 1fr; }
+      .ing-support-grid { grid-template-columns: repeat(3, 1fr); }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 600px) {
+      .pain-grid, .reviews-grid, .products-grid, .blog-grid, .ing-duo { grid-template-columns: 1fr; }
+      .section { padding: 64px 0; }
+      .ing-support-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">Nerv<span>Lock</span></div>
+    <ul class="nav-links">
+      <li><a href="#pain">Symptoms</a></li>
+      <li><a href="#science">How It Works</a></li>
+      <li><a href="#ingredients">Ingredients</a></li>
+      <li><a href="#doctor">Our Neurologist</a></li>
+      <li><a href="#blog">Medical Blog</a></li>
+      <li><a href="#coming-soon">Notify Me</a></li>
+      <li><a href="#products">Products</a></li>
+    </ul>
+    <div class="lang-toggle">
+      <a href="/" class="lang-btn">KR</a>
+      <a href="/en/" class="lang-btn active">EN</a>
+    </div>
+    <a href="#coming-soon" class="nav-cta">Get Launch Alert</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">Designed by a Neurologist · Evidence-Based Formulation</div>
+      <h1 class="hero-title">
+        Your Neural Health,<br>
+        Managed with <em>Science</em>
+      </h1>
+      <p class="hero-sub">
+        NervLock Nerve Care — the first product of the NervLock brand.
+        Developed directly by a board-certified neurologist specializing in
+        brain health, pain, and functional medicine.
+      </p>
+      <div class="hero-actions">
+        <a href="#coming-soon" class="btn-primary">Get Launch Notification</a>
+        <a href="#science" class="btn-outline">How It Works</a>
+      </div>
+      <div class="hero-trust">
+        <div class="hero-trust-item">
+          <div class="hero-trust-icon">🏥</div>
+          Neurologist-Developed
+        </div>
+        <div class="hero-trust-item">
+          <div class="hero-trust-icon">🔬</div>
+          Evidence-Based Ingredients
+        </div>
+        <div class="hero-trust-item">
+          <div class="hero-trust-icon">📋</div>
+          Quality-Controlled Manufacturing
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Discomfort Section -->
+<section id="pain" class="section">
+  <div class="container">
+    <div class="section-label">Do You Experience This?</div>
+    <h2 class="section-title">Why Neural Health<br>Demands Consistent Care</h2>
+    <p class="section-sub">
+      After age 40, the body's ability to support neural tissue declines,
+      while chronic low-grade inflammation accumulates — making proactive neural health management increasingly important.
+    </p>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-icon">🖐️</div>
+        <h3>Tingling & Numbness</h3>
+        <p>A persistent tingling or prickling sensation in the hands and feet, especially after prolonged sitting or upon waking. May signal a need for neural health attention.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">🔥</div>
+        <h3>Burning Sensation</h3>
+        <p>A burning or electric-shock-like feeling in the extremities. Commonly experienced by individuals with heightened neural sensitivity.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">🌙</div>
+        <h3>Nocturnal Discomfort</h3>
+        <p>Neural discomfort that intensifies at night, disrupting restorative sleep. The impact on quality of life is significant and warrants proactive management.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">⚡</div>
+        <h3>Radiating Sensations</h3>
+        <p>Electric-like sensations radiating from the neck or lower back into the limbs — a sign that neural pathways may benefit from targeted nutritional support.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">⏳</div>
+        <h3>Persistent Discomfort</h3>
+        <p>Long-lasting neural discomfort that does not resolve on its own. Sustained nutritional management of neural health is often the most effective approach.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">😔</div>
+        <h3>Impact on Daily Life</h3>
+        <p>Chronic neural discomfort affects energy, mood, and overall quality of life. Addressing the underlying nutritional environment is key to daily wellbeing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Science -->
+<section id="science" class="section">
+  <div class="container">
+    <div class="section-label" style="color:rgba(255,255,255,0.6)">Neuroscience-Based Approach</div>
+    <h2 class="section-title">NervLock's 3-Path<br>Neural Health Mechanism</h2>
+    <p class="section-sub">
+      Rather than addressing isolated symptoms, NervLock Nerve Care takes a
+      comprehensive, science-driven approach to supporting the neural environment.
+    </p>
+    <div class="science-grid">
+      <div class="science-steps">
+        <div class="science-step">
+          <div class="step-num">1</div>
+          <div class="step-text">
+            <h4>Myelin Sheath Nutritional Support</h4>
+            <p>Active-form Vitamin B12 (methylcobalamin) and α-lipoic acid provide key cofactors involved in myelin synthesis, supporting the structural integrity of nerve fibers.</p>
+          </div>
+        </div>
+        <div class="science-step">
+          <div class="step-num">2</div>
+          <div class="step-text">
+            <h4>Neural Inflammatory Balance</h4>
+            <p>Curcumin and Aflapin® work through complementary pathways — NF-κB and 5-LOX respectively — to support a balanced inflammatory environment around neural tissue.</p>
+          </div>
+        </div>
+        <div class="science-step">
+          <div class="step-num">3</div>
+          <div class="step-text">
+            <h4>Mitochondrial Antioxidant Defense</h4>
+            <p>R-alpha-lipoic acid and CoQ10 work at the mitochondrial level to neutralize oxidative stress, helping neurons maintain optimal energy production and cellular function.</p>
+          </div>
+        </div>
+      </div>
+      <div class="nerve-diagram">
+        <svg class="nerve-svg" viewBox="0 0 320 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="axon2" x1="0" y1="0" x2="320" y2="0">
+              <stop offset="0%" stop-color="#22a090"/>
+              <stop offset="100%" stop-color="#d4a843"/>
+            </linearGradient>
+          </defs>
+          <rect x="20" y="125" width="280" height="30" rx="15" fill="url(#axon2)" opacity="0.9"/>
+          <rect x="30" y="110" width="50" height="60" rx="30" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+          <rect x="100" y="110" width="50" height="60" rx="30" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+          <rect x="170" y="110" width="50" height="60" rx="30" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+          <rect x="240" y="110" width="50" height="60" rx="30" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+          <text x="90" y="200" fill="rgba(255,255,255,0.5)" font-size="10" text-anchor="middle">Node of Ranvier</text>
+          <text x="160" y="200" fill="rgba(255,255,255,0.5)" font-size="10" text-anchor="middle">Node of Ranvier</text>
+          <text x="230" y="200" fill="rgba(255,255,255,0.5)" font-size="10" text-anchor="middle">Node of Ranvier</text>
+          <circle cx="265" cy="140" r="10" fill="#d4a843" opacity="0.9">
+            <animate attributeName="cx" values="35;285;35" dur="3s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.9;0.9;0" dur="3s" repeatCount="indefinite"/>
+          </circle>
+          <text x="55" y="90" fill="rgba(255,255,255,0.8)" font-size="11" text-anchor="middle">Myelin Sheath</text>
+          <text x="55" y="105" fill="rgba(26,122,110,0.9)" font-size="10" text-anchor="middle">Nourished</text>
+          <text x="160" y="48" fill="rgba(255,255,255,0.9)" font-size="13" text-anchor="middle" font-weight="bold">Nerve Axon</text>
+          <text x="160" y="64" fill="rgba(212,168,67,0.8)" font-size="11" text-anchor="middle">Neural Health Supported</text>
+        </svg>
+        <p style="color:rgba(255,255,255,0.5);font-size:12px;text-align:center;margin-top:8px;">
+          NervLock Nerve Care supports the nutritional environment for healthy nerve function
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Ingredients -->
+<section id="ingredients" class="section">
+  <div class="container">
+    <div class="section-label">Formulation</div>
+    <h2 class="section-title">2 Core + 6 Support Ingredients,<br>8-Ingredient Precision Formula</h2>
+    <p class="section-sub">Centered on the two most evidence-backed ingredients, complemented by six supporting nutrients for comprehensive neural health.</p>
+
+    <div class="ing-why">
+      <div class="ing-why-avatar">👨‍⚕️</div>
+      <div class="ing-why-text">
+        <strong>Why these two core ingredients? — Dr.H, Neurologist</strong>
+        <p>
+          In neural health nutrition, what matters most is not the number of ingredients, but the <em>depth of evidence</em>.
+          Curcumin and Aflapin® support the neural inflammatory environment through complementary mechanisms —
+          NF-κB and 5-LOX pathways respectively — with synergistic effects that exceed either ingredient alone.
+          Rather than including many marginally effective ingredients, I chose to include therapeutically meaningful
+          doses of the two most rigorously studied compounds.
+        </p>
+      </div>
+    </div>
+
+    <div class="ing-duo">
+      <div class="ing-main-card">
+        <div class="ing-main-header" style="background: linear-gradient(135deg, #7c4f00 0%, #b8922a 100%);">
+          <div class="ing-main-num">Core Ingredient 01</div>
+          <div class="ing-main-name">Curcumin</div>
+          <div class="ing-main-sub">Standardized Turmeric Extract · Phytosome Complex</div>
+          <div class="ing-main-icon">🌿</div>
+        </div>
+        <div class="ing-main-body">
+          <span class="ing-badge ing-origin">🌿 Curcuma longa rhizome extract</span>
+          <p class="ing-main-desc">
+            The primary polyphenol from turmeric, curcumin has been extensively studied for its role in modulating
+            the NF-κB inflammatory signaling pathway. Its lipophilic nature enables blood-brain barrier penetration,
+            making it a subject of significant interest in neurological research. NervLock Nerve Care uses a phospholipid
+            complex (phytosome) form to substantially enhance bioavailability.
+          </p>
+          <div class="ing-points">
+            <div class="ing-point">
+              <div class="ing-point-dot" style="background:var(--gold);">1</div>
+              <span>Modulates <strong>NF-κB signaling</strong> to support balanced neural inflammatory environment</span>
+            </div>
+            <div class="ing-point">
+              <div class="ing-point-dot" style="background:var(--gold);">2</div>
+              <span>Phytosome technology delivers <strong>significantly enhanced bioavailability</strong> vs. standard curcumin</span>
+            </div>
+            <div class="ing-point">
+              <div class="ing-point-dot" style="background:var(--gold);">3</div>
+              <span>Lipophilic structure allows <strong>blood-brain barrier penetration</strong> — unique among polyphenols</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ing-main-card">
+        <div class="ing-main-header" style="background: linear-gradient(135deg, #0d2545 0%, #1a7a6e 100%);">
+          <div class="ing-main-num">Core Ingredient 02</div>
+          <div class="ing-main-name">Aflapin<span style="font-size:16px;font-weight:500;vertical-align:super;">®</span></div>
+          <div class="ing-main-sub">Patented Boswellia serrata Extract · High-AKBA</div>
+          <div class="ing-main-icon">🌳</div>
+        </div>
+        <div class="ing-main-body">
+          <span class="ing-badge ing-patent">® Laila Nutraceuticals Patented Extract</span>
+          <p class="ing-main-desc">
+            Aflapin® is a next-generation Boswellia serrata extract standardized for high concentrations of
+            AKBA (acetyl-11-keto-β-boswellic acid). Unlike conventional Boswellia extracts, Aflapin®
+            selectively targets the 5-LOX enzyme pathway — a key mediator of leukotriene biosynthesis —
+            supporting a balanced inflammatory microenvironment in neural tissues.
+          </p>
+          <div class="ing-points">
+            <div class="ing-point">
+              <div class="ing-point-dot" style="background:var(--teal2);">1</div>
+              <span>High-AKBA standardization ensures <strong>consistent potency and superior bioactivity</strong></span>
+            </div>
+            <div class="ing-point">
+              <div class="ing-point-dot" style="background:var(--teal2);">2</div>
+              <span>Selective <strong>5-LOX inhibition</strong> complements curcumin's NF-κB action</span>
+            </div>
+            <div class="ing-point">
+              <div class="ing-point-dot" style="background:var(--teal2);">3</div>
+              <span><strong>Dual-pathway synergy</strong> with curcumin for comprehensive neural support</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ing-support">
+      <div class="ing-support-label">
+        <span class="ing-support-label-text">Support Ingredients</span>
+        <div class="ing-support-label-line"></div>
+      </div>
+      <div class="ing-support-grid">
+        <div class="ing-sup-card"><div class="ing-sup-emoji">💊</div><div class="ing-sup-name">Methylcobalamin</div><div class="ing-sup-desc">Active-form Vitamin B12</div></div>
+        <div class="ing-sup-card"><div class="ing-sup-emoji">⚡</div><div class="ing-sup-name">R-Alpha Lipoic Acid</div><div class="ing-sup-desc">Fat &amp; water-soluble antioxidant</div></div>
+        <div class="ing-sup-card"><div class="ing-sup-emoji">🟡</div><div class="ing-sup-name">Coenzyme Q10</div><div class="ing-sup-desc">Mitochondrial nutrient</div></div>
+        <div class="ing-sup-card"><div class="ing-sup-emoji">🐟</div><div class="ing-sup-name">Omega-3</div><div class="ing-sup-desc">EPA + DHA complex</div></div>
+        <div class="ing-sup-card"><div class="ing-sup-emoji">🌸</div><div class="ing-sup-name">Magnesium</div><div class="ing-sup-desc">Bisglycinate form</div></div>
+        <div class="ing-sup-card"><div class="ing-sup-emoji">☀️</div><div class="ing-sup-name">Vitamin D3 + K2</div><div class="ing-sup-desc">Fat-soluble vitamin complex</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Doctor -->
+<section id="doctor" class="section">
+  <div class="container">
+    <div class="doctor-inner">
+      <div class="doctor-card">
+        <div class="doctor-avatar">👨‍⚕️</div>
+        <div class="doctor-name">Dr.H</div>
+        <div class="doctor-title">Neurologist · Founder, NervLock</div>
+        <div class="doctor-certs">
+          <div class="cert-item">Yonsei University Severance Hospital, Neurology</div>
+          <div class="cert-item">Member, Korean Neurological Association</div>
+          <div class="cert-item">Member, Korean Movement Disorder Society (Parkinson's Disease)</div>
+          <div class="cert-item">Member, Korean Society of Functional Medicine</div>
+          <div class="cert-item">Specialist: Brain · Pain · Functional Medicine</div>
+        </div>
+      </div>
+      <div class="doctor-message">
+        <h3>
+          "I focused on the <em>two most evidence-backed ingredients</em><br>
+          for neural health support."
+        </h3>
+        <p>
+          In clinical nutrition for neural health, the quality of evidence matters far more
+          than the quantity of ingredients. After extensive review of the literature,
+          I identified curcumin and Aflapin® as the two compounds with the strongest
+          mechanistic rationale and clinical data for supporting the neural inflammatory environment.
+        </p>
+        <p>
+          Curcumin addresses the NF-κB pathway; Aflapin® addresses the 5-LOX pathway.
+          Together, they provide a comprehensive dual-pathway approach to maintaining
+          a balanced neural microenvironment — something neither achieves as effectively alone.
+        </p>
+        <p>
+          NervLock Nerve Care is the first product of the NervLock brand — built on this
+          evidence-first philosophy. I formulated it to the same standard I would recommend
+          to my own patients and family.
+        </p>
+        <div class="doctor-signature">
+          — Dr.H, Neurologist · Founder, NervLock
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="section">
+  <div class="container">
+    <div class="section-label">User Reviews</div>
+    <h2 class="section-title">Experiences Shared<br>by Real Users</h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">
+          I'd been dealing with that uncomfortable burning sensation in my feet for a long time.
+          After two months with NervLock Nerve Care, the nighttime discomfort that used to wake me
+          has noticeably decreased. The fact that it was developed by a practicing neurologist
+          was what convinced me to try it.
+        </p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">L</div>
+          <div class="reviewer-info">
+            <h4>L. ○○<span class="verified">✓ Verified Purchase</span></h4>
+            <span>56 · Managing neural health</span>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">
+          My nerves became quite sensitive and I was looking for nutritional support.
+          Around week six of taking NervLock Nerve Care, the electric-tingling sensation
+          has felt noticeably better. The neurologist-developed formulation was the
+          deciding factor for me.
+        </p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">P</div>
+          <div class="reviewer-info">
+            <h4>P. ○○<span class="verified">✓ Verified Purchase</span></h4>
+            <span>62 · Managing neural health</span>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★☆</div>
+        <p class="review-text">
+          I had a radiating uncomfortable sensation down my left leg and was looking for
+          nutritional support. After three consistent months, mornings feel noticeably
+          more comfortable. The neurologist-developed formula was the main reason I chose this.
+        </p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">C</div>
+          <div class="reviewer-info">
+            <h4>C. ○○<span class="verified">✓ Verified Purchase</span></h4>
+            <span>48 · Managing neural health</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Products -->
+<section id="products" class="section">
+  <div class="container">
+    <div class="section-label">Product Range</div>
+    <h2 class="section-title">NervLock Nerve Care<br>Choose Your Plan</h2>
+    <p class="section-sub">Consistent supplementation is key to neural health management. We recommend a minimum of 3 months for optimal results.</p>
+    <div style="display:inline-flex;align-items:center;gap:10px;background:rgba(26,122,110,0.07);border:1px solid rgba(26,122,110,0.18);border-radius:50px;padding:8px 18px;margin-top:16px;font-size:13px;color:var(--teal);font-weight:700;">
+      <span>✦</span> NervLock's first product — more product lines are in development
+    </div>
+    <div class="products-grid" style="margin-top:40px;">
+      <div class="product-box">
+        <div class="product-type">1-Month Supply</div>
+        <h3>Nerve Care Basic</h3>
+        <p class="sub">Ideal for first-time users</p>
+        <div class="price-wrap">
+          <div style="font-size:22px;color:var(--muted);font-weight:700;">Price TBA at Launch</div>
+        </div>
+        <ul class="product-features">
+          <li>NervLock Nerve Care 60 caps × 1</li>
+          <li>Curcumin + Aflapin® core ingredients</li>
+          <li>6 support ingredients included</li>
+          <li>Usage guide provided</li>
+        </ul>
+        <a href="#coming-soon" class="full-btn outline">Notify Me at Launch</a>
+      </div>
+      <div class="product-box featured">
+        <div class="best-badge">Best</div>
+        <div class="product-type">3-Month Supply</div>
+        <h3>Nerve Care Intensive</h3>
+        <p class="sub">Optimal duration for neural health focus</p>
+        <div class="price-wrap">
+          <div style="font-size:22px;color:var(--muted);font-weight:700;">Price TBA at Launch</div>
+        </div>
+        <ul class="product-features">
+          <li>NervLock Nerve Care 60 caps × 3</li>
+          <li>Curcumin + Aflapin® core ingredients</li>
+          <li>6 support ingredients included</li>
+          <li>Monthly care guide provided</li>
+          <li>Early-bird benefits available</li>
+        </ul>
+        <a href="#coming-soon" class="full-btn">Notify Me at Launch</a>
+      </div>
+      <div class="product-box">
+        <div class="product-type">6-Month Supply</div>
+        <h3>Nerve Care Complete</h3>
+        <p class="sub">Long-term neural health management</p>
+        <div class="price-wrap">
+          <div style="font-size:22px;color:var(--muted);font-weight:700;">Price TBA at Launch</div>
+        </div>
+        <ul class="product-features">
+          <li>NervLock Nerve Care 60 caps × 6</li>
+          <li>Curcumin + Aflapin® core ingredients</li>
+          <li>6 support ingredients included</li>
+          <li>Monthly care guide provided</li>
+          <li>Early-bird benefits available</li>
+        </ul>
+        <a href="#coming-soon" class="full-btn outline">Notify Me at Launch</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Blog -->
+<section id="blog" class="section">
+  <div class="container">
+    <div class="section-label">Medical Column</div>
+    <h2 class="section-title">Neural Health Insights<br>from a Neurologist</h2>
+    <p class="section-sub">Dr.H explains complex neural health topics in clear, clinically grounded terms.</p>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <div class="blog-thumb">
+          <div class="blog-thumb-bg" style="background:linear-gradient(135deg,#0d2545 0%,#1a7a6e 100%);"></div>
+          <div class="blog-thumb-icon">🧠</div>
+        </div>
+        <div class="blog-body">
+          <div class="blog-meta">
+            <span class="blog-tag tag-neuro">Neuroscience</span>
+            <span class="blog-date">Nov 12, 2024</span>
+            <span class="blog-read">8 min read</span>
+          </div>
+          <h3>What is Peripheral Neuropathy? Symptoms, Causes & Neurologist's Perspective</h3>
+          <p>A comprehensive overview of peripheral neuropathy — how nerves become sensitized, what causes it, and a neurologist's evidence-based perspective on nutritional support.</p>
+          <div class="blog-footer">
+            <div class="blog-author"><div class="blog-author-dot">H</div>Dr.H</div>
+            <a href="/blog/peripheral-neuropathy/" class="blog-more">Read Article</a>
+          </div>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-thumb">
+          <div class="blog-thumb-bg" style="background:linear-gradient(135deg,#163561 0%,#5e3c96 100%);"></div>
+          <div class="blog-thumb-icon">⚡</div>
+        </div>
+        <div class="blog-body">
+          <div class="blog-meta">
+            <span class="blog-tag tag-pain">Pain Medicine</span>
+            <span class="blog-date">Oct 28, 2024</span>
+            <span class="blog-read">10 min read</span>
+          </div>
+          <h3>Why Does Neural Discomfort Worsen at Night?</h3>
+          <p>The circadian biology behind nocturnal neural discomfort — cortisol rhythms, attentional modulation, and peripheral blood flow changes explained.</p>
+          <div class="blog-footer">
+            <div class="blog-author"><div class="blog-author-dot">H</div>Dr.H</div>
+            <span class="blog-more">Coming Soon</span>
+          </div>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-thumb">
+          <div class="blog-thumb-bg" style="background:linear-gradient(135deg,#0f4f3a 0%,#b8922a 100%);"></div>
+          <div class="blog-thumb-icon">💊</div>
+        </div>
+        <div class="blog-body">
+          <div class="blog-meta">
+            <span class="blog-tag tag-nutri">Nutrition Science</span>
+            <span class="blog-date">Oct 8, 2024</span>
+            <span class="blog-read">7 min read</span>
+          </div>
+          <h3>Methylcobalamin vs. Cyanocobalamin: What Your Nerves Actually Need</h3>
+          <p>Why the form of B12 matters profoundly for neural health — the biochemical difference between active methylcobalamin and synthetic cyanocobalamin.</p>
+          <div class="blog-footer">
+            <div class="blog-author"><div class="blog-author-dot">H</div>Dr.H</div>
+            <span class="blog-more">Coming Soon</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Coming Soon -->
+<section id="coming-soon">
+  <div class="container">
+    <div class="cs-inner">
+      <div>
+        <div class="cs-badge">Coming Soon</div>
+        <h2 class="cs-title">NervLock,<br><em>Arriving</em> Soon</h2>
+        <p class="cs-desc">
+          NervLock's first product — <strong style="color:var(--gold2)">NervLock Nerve Care</strong> —
+          developed directly by a board-certified neurologist, is preparing for launch.
+          Be first to receive launch news and exclusive early-bird benefits.
+        </p>
+        <div class="cs-pills">
+          <div class="cs-pill">🏥 Neurologist-Developed</div>
+          <div class="cs-pill">🔬 Evidence-Based</div>
+          <div class="cs-pill">📦 Launch Pending</div>
+          <div class="cs-pill">🎁 Early-Bird Benefits</div>
+        </div>
+      </div>
+      <div class="cs-card">
+        <div id="csFormWrap2">
+          <div class="cs-card-title">Launch Notification</div>
+          <div class="cs-card-sub">
+            Leave your email and we'll send you NervLock Nerve Care's launch announcement
+            and exclusive early-bird benefits first.
+          </div>
+          <form class="cs-form" id="csForm2" novalidate>
+            <div>
+              <input type="email" class="cs-input" id="csEmail2" placeholder="Enter your email address" autocomplete="email"/>
+              <div class="cs-error" id="csEmailError2">Please enter a valid email address.</div>
+            </div>
+            <button type="submit" class="cs-submit" id="csSubmit2">Get Launch Notification</button>
+            <p class="cs-notice">No spam, ever. Unsubscribe at any time.</p>
+          </form>
+          <div class="cs-count">
+            <div class="cs-count-item">
+              <span class="cs-count-num" id="csCounter2">1,247</span>
+              <span class="cs-count-label">Notifications Registered</span>
+            </div>
+            <div class="cs-count-item">
+              <span class="cs-count-num">TBA</span>
+              <span class="cs-count-label">Launch Date</span>
+            </div>
+          </div>
+        </div>
+        <div class="cs-success" id="csSuccess2">
+          <div class="cs-success-icon">✓</div>
+          <h4>You're on the list!</h4>
+          <p>We'll send launch updates and early-bird details to your email.<br><br><span style="color:var(--gold2);font-weight:700;">Thank you 🙏</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="section">
+  <div class="container">
+    <div class="section-label" style="text-align:center">FAQ</div>
+    <h2 class="section-title" style="text-align:center">Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">Can I take NervLock Nerve Care with other medications?<span class="icon">+</span></button>
+        <div class="faq-a">NervLock Nerve Care is a food supplement and is generally compatible with most medications. However, if you are taking anticoagulants (e.g., warfarin) or other blood-related medications, consult your physician before use. As it contains omega-3, caution is advised with antiplatelet agents.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How long before I notice a difference?<span class="icon">+</span></button>
+        <div class="faq-a">Individual responses vary. Many users notice changes within 4–6 weeks of consistent use. Consistent supplementation over 3 months or more is recommended for meaningful neural health support, as the underlying nutritional environment takes time to optimize.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Is NervLock Nerve Care suitable even without specific symptoms?<span class="icon">+</span></button>
+        <div class="faq-a">Yes. NervLock Nerve Care is designed for anyone interested in proactive neural health maintenance. Its ingredients are formulated to provide comprehensive nutritional support for the neural environment regardless of specific symptoms.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What is the recommended dosage?<span class="icon">+</span></button>
+        <div class="faq-a">2 capsules daily, taken with food. The fat-soluble ingredients (omega-3, curcumin, Vitamin D3) require dietary fat for optimal absorption, so post-meal dosing is essential. You may split the dose between morning and evening.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How do I contact customer support?<span class="icon">+</span></button>
+        <div class="faq-a">For purchase and product inquiries, please contact our customer support team at 1800-0000 (weekdays 9am–6pm KST). We are happy to assist you.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="container" style="text-align:center">
+    <div class="section-label" style="color:rgba(255,255,255,0.6);text-align:center">Start Today</div>
+    <h2 class="section-title">A More Comfortable Tomorrow<br>Starts with Today's Decision</h2>
+    <p class="section-sub">Experience the science-backed neural health formulation developed by a board-certified neurologist. Thousands have already begun their neural health journey with NervLock Nerve Care.</p>
+    <a href="#coming-soon" class="btn-primary" style="font-size:18px;padding:20px 52px;">Start NervLock Nerve Care</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Nerv<span>Lock</span></div>
+        <p class="footer-desc">Neural health supplement brand developed directly by a neurologist.<br>Science-backed formulation for comprehensive neural nutritional support.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="#">Nerve Care Basic</a></li>
+          <li><a href="#">Nerve Care Intensive</a></li>
+          <li><a href="#">Nerve Care Complete</a></li>
+          <li><a href="#">Ingredient Details</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Usage Guide</a></li>
+          <li><a href="#">Purchase Info</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-notice">
+        ※ NervLock Nerve Care is a food supplement and is not a medicinal product intended for the diagnosis, treatment, mitigation, or prevention of any disease.
+        Individual results may vary. User testimonials reflect subjective personal experiences.
+      </p>
+      <p style="font-size:12px;white-space:nowrap;">© 2024 NervLock. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var item = btn.closest('.faq-item');
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  var SHEET_ENDPOINT = 'YOUR_APPS_SCRIPT_URL';
+  (function() {
+    var form = document.getElementById('csForm2');
+    var input = document.getElementById('csEmail2');
+    var errMsg = document.getElementById('csEmailError2');
+    var btn = document.getElementById('csSubmit2');
+    var wrap = document.getElementById('csFormWrap2');
+    var success = document.getElementById('csSuccess2');
+    function isValid(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()); }
+    input.addEventListener('input', function() {
+      if (errMsg.classList.contains('show') && isValid(this.value)) { errMsg.classList.remove('show'); input.style.borderColor = ''; }
+    });
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var email = input.value.trim();
+      if (!isValid(email)) { errMsg.classList.add('show'); input.style.borderColor = '#ff7c7c'; input.focus(); return; }
+      btn.disabled = true; btn.textContent = 'Processing...';
+      if (SHEET_ENDPOINT === 'YOUR_APPS_SCRIPT_URL') {
+        btn.disabled = false; btn.textContent = 'Get Launch Notification';
+        alert('Please set the Apps Script URL in SHEET_ENDPOINT.'); return;
+      }
+      fetch(SHEET_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify({ email: email, source: 'landing_en' }) })
+        .then(function(r) { return r.json(); })
+        .then(function(d) {
+          if (d.success) { wrap.style.display = 'none'; success.classList.add('show'); }
+          else throw new Error();
+        })
+        .catch(function() {
+          btn.disabled = false; btn.textContent = 'Get Launch Notification';
+          errMsg.textContent = 'A temporary error occurred. Please try again.';
+          errMsg.classList.add('show');
+        });
+    });
+  })();
+</script>
+</body>
+</html>
