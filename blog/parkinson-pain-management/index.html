@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pain in Parkinson's Disease: Pathophysiology, Classification, and Clinical Management | NervLock</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; color: #1a1a2e; background: #fff; font-size: 17px; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    :root {
+      --navy: #0d2545; --navy2: #163561;
+      --teal: #1a7a6e; --teal2: #22a090;
+      --gold: #b8922a; --gold2: #d4a843;
+      --gray: #f4f6f9; --gray2: #e8ecf2;
+      --muted: #5a6278;
+    }
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(13,37,69,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-logo { font-size: 20px; font-weight: 900; color: #fff; white-space: nowrap; }
+    .nav-logo span { color: var(--gold2); }
+    .nav-back { font-size: 14px; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold2); }
+    .lang-toggle { display: flex; border: 1px solid rgba(255,255,255,0.22); border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+    .lang-btn { padding: 5px 12px; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); transition: all 0.18s; }
+    .lang-btn + .lang-btn { border-left: 1px solid rgba(255,255,255,0.22); }
+    .lang-btn.active { background: rgba(255,255,255,0.18); color: #fff; }
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 60px 24px 100px; }
+    .article-hero { background: linear-gradient(135deg, #2d1a45 0%, #1a4a6e 100%); border-radius: 24px; padding: 52px 48px; margin-bottom: 48px; position: relative; overflow: hidden; }
+    .article-hero::before { content: '⚡'; position: absolute; right: 32px; top: 32px; font-size: 80px; opacity: 0.15; }
+    .article-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(26,122,110,0.3); border: 1px solid rgba(26,122,110,0.5); border-radius: 50px; font-size: 12px; font-weight: 700; color: #6ee7da; padding: 4px 14px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+    .article-title { font-size: clamp(22px, 3.5vw, 34px); font-weight: 900; color: #fff; line-height: 1.3; margin-bottom: 20px; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 20px; }
+    .article-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.65); }
+    .article-meta-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+    .lang-switch-banner { background: var(--gray); border: 1px solid var(--gray2); border-radius: 14px; padding: 14px 20px; margin-bottom: 40px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .lang-switch-banner span { font-size: 14px; color: var(--muted); }
+    .lang-switch-link { font-size: 13px; font-weight: 700; color: var(--teal2); border: 1px solid var(--teal2); border-radius: 50px; padding: 6px 16px; transition: all 0.2s; white-space: nowrap; }
+    .lang-switch-link:hover { background: var(--teal2); color: #fff; }
+    .abstract { background: linear-gradient(135deg, rgba(26,122,110,0.06), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 16px 16px 0; padding: 24px 28px; margin-bottom: 48px; }
+    .abstract-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--teal2); margin-bottom: 10px; }
+    .abstract p { font-size: 15px; color: #2a3a4a; line-height: 1.85; margin: 0; font-style: italic; }
+    .article-body h2 { font-size: 24px; font-weight: 900; color: var(--navy); margin: 52px 0 16px; line-height: 1.35; padding-bottom: 12px; border-bottom: 2px solid var(--gray2); }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-size: 19px; font-weight: 800; color: var(--navy2); margin: 36px 0 12px; }
+    .article-body p { font-size: 16px; color: #2a2a3e; line-height: 1.95; margin-bottom: 20px; }
+    .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .article-body li { font-size: 15px; color: #3a3a50; line-height: 1.75; }
+    .article-body strong { color: var(--navy); }
+    .callout { background: linear-gradient(135deg, rgba(26,122,110,0.07), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: var(--navy); font-style: italic; line-height: 1.85; }
+    .callout strong { color: var(--teal); font-style: normal; }
+    .evidence-box { background: var(--gray); border-radius: 14px; padding: 20px 24px; margin: 28px 0; }
+    .evidence-box h4 { font-size: 12px; font-weight: 800; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .evidence-box ul { margin: 0; }
+    .evidence-box li { font-size: 13px; color: var(--muted); }
+    .symptom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+    .symptom-card { background: var(--gray); border-radius: 14px; padding: 18px 20px; border: 1px solid var(--gray2); }
+    .symptom-card h4 { font-size: 14px; font-weight: 800; color: var(--navy); margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+    .symptom-card p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+    .author-card { background: var(--gray); border-radius: 20px; padding: 28px 32px; margin-top: 64px; display: flex; align-items: flex-start; gap: 20px; }
+    .author-avatar { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--navy), var(--teal)); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+    .author-info h4 { font-size: 17px; font-weight: 900; color: var(--navy); margin-bottom: 4px; }
+    .author-info .creds { font-size: 13px; color: var(--teal); font-weight: 600; margin-bottom: 10px; }
+    .author-info p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+    .cta-banner { background: linear-gradient(135deg, var(--navy), #0f4f6e); border-radius: 20px; padding: 40px 36px; margin-top: 48px; text-align: center; }
+    .cta-banner h3 { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 10px; }
+    .cta-banner p { font-size: 15px; color: rgba(255,255,255,0.7); margin-bottom: 24px; line-height: 1.7; }
+    .cta-btn { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold2)); color: #fff; font-size: 16px; font-weight: 800; padding: 14px 36px; border-radius: 50px; box-shadow: 0 6px 20px rgba(184,146,42,0.4); transition: transform 0.2s; }
+    .cta-btn:hover { transform: translateY(-2px); }
+    .related { margin-top: 64px; }
+    .related h3 { font-size: 20px; font-weight: 900; color: var(--navy); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .related-card { background: var(--gray); border-radius: 16px; padding: 20px; border: 1px solid var(--gray2); }
+    .related-card .tag { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .related-card h4 { font-size: 15px; font-weight: 800; color: var(--navy); line-height: 1.4; }
+    footer { background: #0a1a32; color: rgba(255,255,255,0.5); padding: 32px 0; }
+    .footer-bottom { max-width: 900px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 12px; }
+    @media (max-width: 600px) {
+      .article-hero { padding: 36px 28px; }
+      .symptom-grid, .related-grid { grid-template-columns: 1fr; }
+      .author-card { flex-direction: column; }
+    }
+    .sig-block { border-top: 2px solid var(--gray2); margin-top: 48px; padding-top: 24px; }
+    .sig-main { font-size: 14px; color: var(--navy); font-weight: 700; margin-bottom: 12px; line-height: 1.7; }
+    .sig-creds { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+    .sig-creds li { font-size: 13px; color: var(--muted); padding-left: 14px; position: relative; line-height: 1.6; }
+    .sig-creds li::before { content: "·"; position: absolute; left: 0; color: var(--teal2); font-weight: 900; }
+    .sig-notice { font-size: 12px; color: var(--muted); font-style: italic; line-height: 1.7; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/en/" class="nav-logo">Nerv<span>Lock</span></a>
+    <a href="/en/#blog" class="nav-back">← Medical Blog</a>
+    <div class="lang-toggle">
+      <a href="/blog/파킨슨-통증/" class="lang-btn">KR</a>
+      <a href="/blog/parkinson-pain-management/" class="lang-btn active">EN</a>
+    </div>
+  </div>
+</nav>
+
+<div class="article-wrap">
+
+  <div class="article-hero">
+    <div class="article-tag">Pain Medicine</div>
+    <h1 class="article-title">Pain in Parkinson's Disease:<br>Pathophysiology, Classification, and Clinical Management</h1>
+    <div class="article-meta">
+      <div class="article-meta-item">👨‍⚕️ <strong>Dr. Claire Ham</strong> — Neurologist, NervLock Founder</div>
+      <div class="article-meta-item">📅 March 1, 2026</div>
+      <div class="article-meta-item">⏱ 8 min read</div>
+    </div>
+  </div>
+
+  <div class="lang-switch-banner">
+    <span>🇰🇷 이 글의 한국어 버전을 보시겠습니까?</span>
+    <a href="/blog/파킨슨-통증/" class="lang-switch-link">한국어로 읽기 →</a>
+  </div>
+
+  <div class="abstract">
+    <div class="abstract-label">Abstract</div>
+    <p>Pain affects 40–85% of individuals with Parkinson's disease, yet it remains systematically underrecognized and undertreated relative to motor symptoms. This article examines the neurobiological basis of pain in Parkinson's disease, presents the Ford (2010) clinical classification framework, and reviews evidence-based management strategies encompassing dopaminergic optimization, physiotherapy, pharmacological adjuncts, and interventional approaches.</p>
+  </div>
+
+  <div class="article-body">
+
+    <h2>1. Epidemiology: The Underrecognized Burden</h2>
+    <p>Pain is among the most prevalent non-motor symptoms in Parkinson's disease, affecting <strong>40–85% of patients</strong> across published cohort studies — a strikingly wide range that reflects heterogeneity in pain assessment instruments, disease stage, and patient populations. Despite this prevalence, pain is frequently misattributed to comorbid musculoskeletal conditions, normal aging, or the sedentary lifestyle that often accompanies progressive disability.</p>
+    <p>A landmark survey by Chaudhuri and colleagues found that up to <strong>two-thirds of Parkinson's disease patients</strong> with significant pain had never had that pain systematically addressed in a clinical consultation. This represents a substantial gap in holistic disease management, particularly given that pain ranks among the top three factors cited by patients as most impairing quality of life — often ahead of motor complaints such as tremor.</p>
+
+    <div class="callout">
+      <strong>Clinical Principle:</strong> Pain in Parkinson's disease is not an incidental comorbidity. It is frequently disease-driven, mechanistically distinct from age-related musculoskeletal pain, and responsive to targeted management when correctly classified.
+    </div>
+
+    <h2>2. Pathophysiology: Three Mechanistic Pathways</h2>
+    <p>Understanding the heterogeneous origins of pain in Parkinson's disease requires distinguishing between at least three distinct pathophysiological pathways, which often co-occur within the same patient.</p>
+
+    <h3>2.1 Musculoskeletal Pain: Rigidity and Postural Distortion</h3>
+    <p>The most common pain subtype arises from the biomechanical consequences of rigidity, bradykinesia, and postural instability. As lead-pipe rigidity progressively increases muscle tone, the paravertebral musculature — particularly in the cervical and lumbar regions — is subjected to sustained, asymmetric loading. The characteristic camptocormic posture (truncal flexion) imposes chronic mechanical stress on facet joints, intervertebral discs, and the posterior ligamentous complex.</p>
+    <p>Shoulder pain deserves particular attention: it affects approximately <strong>8–10% of patients as the presenting complaint</strong> of Parkinson's disease, frequently preceding the diagnosis by months to years. It is consistently misattributed to rotator cuff pathology or adhesive capsulitis (frozen shoulder). Clinicians evaluating refractory shoulder pain in middle-aged or older adults should maintain heightened vigilance for subtle extrapyramidal signs.</p>
+    <p>Pelvic asymmetry, arising from unilateral predominance of rigidity, generates a characteristic pattern of lower limb and lumbar pain distinct from primary disc disease. Gait analysis and postural assessment are valuable diagnostic adjuncts in this context.</p>
+
+    <h3>2.2 Central and Dopaminergic Pain: The Descending Modulation Deficit</h3>
+    <p>Beyond the peripheral musculoskeletal consequences of motor dysfunction, Parkinson's disease produces a fundamental disturbance in central pain processing. The dopaminergic system participates critically in descending pain modulation via the mesolimbic and mesostriatal pathways, influencing the periaqueductal grey (PAG), rostral ventromedial medulla (RVM), and dorsal horn inhibitory circuits.</p>
+    <p>Depletion of dopaminergic tone in these pathways — the same deficit responsible for motor symptoms — reduces the efficiency of descending inhibitory control, effectively lowering the pain threshold. This manifests clinically as <strong>central sensitization</strong>: patients report disproportionate pain in response to stimuli that would not be painful in neurologically intact individuals (allodynia) or an exaggerated response to mildly noxious stimuli (hyperalgesia).</p>
+    <p>Functional neuroimaging studies using PET and fMRI have confirmed altered activation patterns in the thalamus, anterior cingulate cortex, and insula in Parkinson's disease patients with central pain, consistent with abnormal pain matrix processing distinct from structural pathology.</p>
+
+    <h3>2.3 Off-Period Pain: Fluctuation-Related Dysautonomia</h3>
+    <p>In patients on long-term levodopa therapy, motor fluctuations produce predictable windows of dopaminergic insufficiency — the "off" state. During off periods, patients frequently experience not only the return of motor symptoms but also <strong>severe, often burning or cramping pain</strong>, predominantly in the lower limbs. This off-period pain can precede recognizable motor deterioration, making it a sensitive clinical indicator of subtherapeutic dopaminergic levels.</p>
+    <p>Dystonic cramps — particularly in the feet and toes — are a particularly distressing manifestation of off-period pain. Early-morning dystonia, occurring prior to the first levodopa dose, is a classic presentation. Recognition is critical because this pain type responds specifically to dopaminergic optimization rather than conventional analgesics.</p>
+
+    <h2>3. Clinical Classification: The Ford (2010) Framework</h2>
+    <p>Ford (2010) proposed a clinically actionable five-subtype classification that remains the most widely referenced framework in the Parkinson's disease pain literature. Each subtype carries distinct mechanistic implications and management priorities.</p>
+
+    <div class="symptom-grid">
+      <div class="symptom-card">
+        <h4>🦴 Type 1: Musculoskeletal</h4>
+        <p>Most prevalent. Aching, cramping pain in axial or limb musculature arising from rigidity, dystonia, or abnormal posture. Responds to physiotherapy and dopaminergic optimization.</p>
+      </div>
+      <div class="symptom-card">
+        <h4>⚡ Type 2: Radicular / Neuropathic</h4>
+        <p>Radiating, burning, or shooting pain following dermatomal patterns. Often difficult to distinguish from co-existing structural disc or root pathology without careful examination.</p>
+      </div>
+      <div class="symptom-card">
+        <h4>🌀 Type 3: Dystonic</h4>
+        <p>Pain directly associated with dystonic muscle contractions. Foot dystonia (toe curling, plantar flexion) is the classic presentation. Strongly correlated with off-state dopamine levels.</p>
+      </div>
+      <div class="symptom-card">
+        <h4>🔥 Type 4: Central / Primary</h4>
+        <p>Poorly localized, often described as burning, electrical, or formication. Reflects central sensitization and disrupted descending inhibition. No structural correlate identifiable on imaging.</p>
+      </div>
+    </div>
+    <div class="symptom-grid" style="grid-template-columns: 1fr;">
+      <div class="symptom-card">
+        <h4>🦵 Type 5: Akathisia-Related</h4>
+        <p>An inner restlessness — an irresistible urge to move — generating a distinctive discomfort that patients often struggle to characterize as pain per se. Closely related to restless legs syndrome and responsive to dopaminergic agents.</p>
+      </div>
+    </div>
+
+    <div class="evidence-box">
+      <h4>Evidence Base</h4>
+      <ul>
+        <li>Ford B. Pain in Parkinson's disease. Mov Disord. 2010;25 Suppl 1:S98-103.</li>
+        <li>Chaudhuri KR et al. The non-declaration of non-motor symptoms of Parkinson's disease to healthcare professionals. Mov Disord. 2010;25(6):704-9.</li>
+        <li>Beiske AG et al. Pain in Parkinson's disease: prevalence and characteristics. Pain. 2009;141(1-2):173-177.</li>
+        <li>Rana AQ et al. Pain in Parkinson's disease: analysis and literature review. Clin Neurol Neurosurg. 2013;115(11):2313-7.</li>
+      </ul>
+    </div>
+
+    <h2>4. Management: A Mechanism-Guided Approach</h2>
+    <p>Effective pain management in Parkinson's disease requires subtype identification prior to treatment selection. Generic analgesic prescribing without mechanistic classification is associated with poor outcomes and unnecessary polypharmacy.</p>
+
+    <h3>4.1 Dopaminergic Optimization</h3>
+    <p>For off-period pain, dystonic pain, and central pain with demonstrated dopaminergic sensitivity, optimizing levodopa pharmacokinetics is the primary intervention. Strategies include:</p>
+    <ul>
+      <li><strong>Dose timing adjustments</strong>: shifting to smaller, more frequent doses to reduce trough periods</li>
+      <li><strong>Controlled-release formulations</strong> (e.g., Rytary, Madopar HBS): particularly useful for overnight and early-morning off-period pain</li>
+      <li><strong>Dopamine agonists</strong>: rotigotine transdermal patch provides continuous 24-hour dopaminergic stimulation, demonstrating efficacy specifically for pain outcomes in the RECOVER study (rotigotine significantly improved nocturnal akinesia and associated pain vs. placebo)</li>
+      <li><strong>MAO-B inhibitors</strong> (rasagiline, selegiline): extend levodopa effect by inhibiting dopamine catabolism</li>
+      <li><strong>Apomorphine</strong>: subcutaneous rescue injection or continuous infusion for severe off-period crises</li>
+    </ul>
+
+    <h3>4.2 Physiotherapy and Rehabilitation</h3>
+    <p>Physiotherapy is the cornerstone of musculoskeletal pain management and complements pharmacological approaches across all pain subtypes. Key modalities with evidence in Parkinson's disease include:</p>
+    <ul>
+      <li><strong>LSVT BIG</strong>: amplitude-focused training that directly addresses rigidity-driven postural dysfunction underlying musculoskeletal pain</li>
+      <li><strong>Stretching and flexibility programs</strong>: targeted at the most affected axial and limb muscle groups</li>
+      <li><strong>Hydrotherapy</strong>: buoyancy reduces gravitational load, facilitating movement in patients with significant rigidity</li>
+      <li><strong>Tango and rhythmic auditory stimulation</strong>: emerging evidence for improvements in balance, gait, and associated pain through rhythmic motor entrainment</li>
+    </ul>
+    <p>A Cochrane review confirmed that physiotherapy produced meaningful short-term improvements in pain scores in Parkinson's disease, though long-term durability data remain limited. The combination of physiotherapy with optimized dopaminergic therapy consistently outperforms either modality alone.</p>
+
+    <h3>4.3 Pharmacological Adjuncts</h3>
+    <p>When dopaminergic optimization and physiotherapy are insufficient, targeted pharmacological adjuncts may be introduced based on pain subtype:</p>
+    <ul>
+      <li><strong>Neuropathic pain</strong> (Types 2, 4): pregabalin, duloxetine, or low-dose tricyclics (amitriptyline with caution given anticholinergic burden)</li>
+      <li><strong>Central sensitization</strong>: duloxetine has the strongest evidence base for centrally mediated pain in movement disorder patients</li>
+      <li><strong>Akathisia / RLS-type pain</strong> (Type 5): dopamine agonists are first-line; clonazepam for refractory nocturnal symptoms</li>
+      <li><strong>Opioid analgesics</strong>: reserved for severe, refractory cases given constipation risk and potential for worsening cognitive function; oxycodone CR showed modest benefit in a controlled trial (Rascol et al.)</li>
+    </ul>
+
+    <div class="callout">
+      <strong>Important Caution:</strong> NSAIDs should be used with particular caution in Parkinson's disease patients given the high prevalence of gastroparesis and the risk of gastrointestinal complications. Proton pump protection should accompany NSAID use if indicated.
+    </div>
+
+    <h3>4.4 Botulinum Toxin Injection</h3>
+    <p>For focal dystonic pain — most commonly plantar flexion dystonia or striatal toe — botulinum toxin A injection into the offending muscle group provides targeted, durable relief without systemic pharmacological burden. The onset of effect typically occurs within 2–4 weeks, with duration of approximately 3 months. Injection should be guided by EMG or ultrasound to ensure accurate muscle targeting. Multiple randomized controlled trials support efficacy in Parkinson's disease-related limb dystonia.</p>
+
+    <h2>5. The Importance of Active Pain Assessment</h2>
+    <p>Given the established tendency for pain to be underreported and underaddressed in Parkinson's disease, proactive and structured pain assessment should be incorporated into every follow-up consultation. The <strong>King's Parkinson's Disease Pain Scale (KPPS)</strong> is the only validated, disease-specific pain scale for this population, assessing seven pain domains with demonstrated reliability across multiple languages and healthcare settings.</p>
+    <p>At minimum, clinicians should routinely ask:</p>
+    <ul>
+      <li>Is any pain consistently worse in the morning or when medication is wearing off?</li>
+      <li>Where is the pain located, and does it have a burning, cramping, or shooting quality?</li>
+      <li>Does movement or physiotherapy improve or worsen the pain?</li>
+      <li>Has the pain been previously investigated — and what was found?</li>
+    </ul>
+    <p>These simple screening questions can differentiate off-period dystonic pain from central sensitization from structural musculoskeletal pathology, directing the clinician toward mechanism-appropriate management rather than generic analgesic prescribing.</p>
+
+    <div class="evidence-box">
+      <h4>Key References</h4>
+      <ul>
+        <li>Trenkwalder C et al. Rotigotine effects on early morning motor function and sleep in Parkinson's disease (RECOVER). Mov Disord. 2011;26(1):90-9.</li>
+        <li>Trenkwalder C et al. Prolonged-release oxycodone-naloxone for treatment of severe pain in patients with Parkinson's disease (PANDA). Lancet Neurol. 2015;14(12):1161-70.</li>
+        <li>Wasner G, Deuschl G. Pains in Parkinson disease — many syndromes under one umbrella. Nat Rev Neurol. 2012;8(5):284-94.</li>
+        <li>Chaudhuri KR et al. King's Parkinson's Disease Pain Scale, the first scale for pain in PD. Mov Disord. 2015;30(12):1589-96.</li>
+      </ul>
+    </div>
+
+    <div class="author-card">
+      <div class="author-avatar">👩‍⚕️</div>
+      <div class="author-info">
+        <h4>Dr. Claire Ham, M.D.</h4>
+        <div class="creds">Neurologist · NervLock Founder</div>
+        <p>Specializing in movement disorders, neuropathic pain, and functional medicine. Trained at Yonsei University Severance Hospital. Member of the Korean Neurological Association, Korean Parkinson's and Movement Disorder Society, and Korean Society of Functional Medicine.</p>
+      </div>
+    </div>
+
+    <div class="sig-block">
+      <p class="sig-main">Written by <strong>Dr. Claire Ham</strong>, Neurologist, M.D.</p>
+      <ul class="sig-creds">
+        <li>Trained at Yonsei University Severance Hospital</li>
+        <li>Member, Korean Neurological Association</li>
+        <li>Member, Korean Parkinson's and Movement Disorder Society</li>
+        <li>Member, Korean Society of Functional Medicine</li>
+      </ul>
+      <p class="sig-notice">※ This content is for informational purposes only and does not constitute medical advice.</p>
+    </div>
+
+    <div class="cta-banner">
+      <h3>Concerned about pain in Parkinson's disease?</h3>
+      <p>Our neurologists provide individualized assessment of Parkinson's-related pain, with evidence-based management tailored to each patient's symptom profile and disease stage.</p>
+      <a href="/en/#contact" class="cta-btn">Book a Consultation</a>
+    </div>
+
+    <div class="related">
+      <h3>Related Articles</h3>
+      <div class="related-grid">
+        <a href="/blog/parkinson-exercise-therapy/" class="related-card">
+          <div class="tag">Exercise Medicine</div>
+          <h4>Exercise as Disease-Modifying Therapy in Parkinson's Disease</h4>
+        </a>
+        <a href="/blog/parkinson-early-signs/" class="related-card">
+          <div class="tag">Neuroscience</div>
+          <h4>Early Signs of Parkinson's Disease: The Prodromal Signals That Precede Motor Symptoms</h4>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <span>© 2026 NervLock. All rights reserved.</span>
+    <span>This content is for informational purposes only.</span>
+  </div>
+</footer>
+
+</body>
+</html>

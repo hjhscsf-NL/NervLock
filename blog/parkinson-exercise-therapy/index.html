@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Exercise as Medicine in Parkinson's Disease: Neurobiological Mechanisms and Clinical Evidence | NervLock</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; color: #1a1a2e; background: #fff; font-size: 17px; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    :root {
+      --navy: #0d2545; --navy2: #163561;
+      --teal: #1a7a6e; --teal2: #22a090;
+      --gold: #b8922a; --gold2: #d4a843;
+      --gray: #f4f6f9; --gray2: #e8ecf2;
+      --muted: #5a6278;
+    }
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(13,37,69,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-logo { font-size: 20px; font-weight: 900; color: #fff; white-space: nowrap; }
+    .nav-logo span { color: var(--gold2); }
+    .nav-back { font-size: 14px; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold2); }
+    .lang-toggle { display: flex; border: 1px solid rgba(255,255,255,0.22); border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+    .lang-btn { padding: 5px 12px; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); transition: all 0.18s; }
+    .lang-btn + .lang-btn { border-left: 1px solid rgba(255,255,255,0.22); }
+    .lang-btn.active { background: rgba(255,255,255,0.18); color: #fff; }
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 60px 24px 100px; }
+    .article-hero { background: linear-gradient(135deg, #0f4f3a 0%, #22a090 100%); border-radius: 24px; padding: 52px 48px; margin-bottom: 48px; position: relative; overflow: hidden; }
+    .article-hero::before { content: '🏃'; position: absolute; right: 32px; top: 32px; font-size: 80px; opacity: 0.15; }
+    .article-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(26,122,110,0.3); border: 1px solid rgba(26,122,110,0.5); border-radius: 50px; font-size: 12px; font-weight: 700; color: #6ee7da; padding: 4px 14px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+    .article-title { font-size: clamp(22px, 3.5vw, 34px); font-weight: 900; color: #fff; line-height: 1.3; margin-bottom: 20px; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 20px; }
+    .article-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.65); }
+    .article-meta-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+    .lang-switch-banner { background: var(--gray); border: 1px solid var(--gray2); border-radius: 14px; padding: 14px 20px; margin-bottom: 40px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .lang-switch-banner span { font-size: 14px; color: var(--muted); }
+    .lang-switch-link { font-size: 13px; font-weight: 700; color: var(--teal2); border: 1px solid var(--teal2); border-radius: 50px; padding: 6px 16px; transition: all 0.2s; white-space: nowrap; }
+    .lang-switch-link:hover { background: var(--teal2); color: #fff; }
+    .abstract { background: linear-gradient(135deg, rgba(26,122,110,0.06), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 16px 16px 0; padding: 24px 28px; margin-bottom: 48px; }
+    .abstract-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--teal2); margin-bottom: 10px; }
+    .abstract p { font-size: 15px; color: #2a3a4a; line-height: 1.85; margin: 0; font-style: italic; }
+    .article-body h2 { font-size: 24px; font-weight: 900; color: var(--navy); margin: 52px 0 16px; line-height: 1.35; padding-bottom: 12px; border-bottom: 2px solid var(--gray2); }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-size: 19px; font-weight: 800; color: var(--navy2); margin: 36px 0 12px; }
+    .article-body p { font-size: 16px; color: #2a2a3e; line-height: 1.95; margin-bottom: 20px; }
+    .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .article-body li { font-size: 15px; color: #3a3a50; line-height: 1.75; }
+    .article-body strong { color: var(--navy); }
+    .callout { background: linear-gradient(135deg, rgba(26,122,110,0.07), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: var(--navy); font-style: italic; line-height: 1.85; }
+    .callout strong { color: var(--teal); font-style: normal; }
+    .evidence-box { background: var(--gray); border-radius: 14px; padding: 20px 24px; margin: 28px 0; }
+    .evidence-box h4 { font-size: 12px; font-weight: 800; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .evidence-box ul { margin: 0; }
+    .evidence-box li { font-size: 13px; color: var(--muted); }
+    .exercise-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+    .exercise-table th { background: var(--navy); color: #fff; padding: 10px 14px; text-align: left; font-weight: 700; }
+    .exercise-table td { padding: 10px 14px; border-bottom: 1px solid var(--gray2); color: #2a2a3e; vertical-align: top; }
+    .exercise-table tr:last-child td { border-bottom: none; }
+    .exercise-table tr:nth-child(even) td { background: var(--gray); }
+    .author-card { background: var(--gray); border-radius: 20px; padding: 28px 32px; margin-top: 64px; display: flex; align-items: flex-start; gap: 20px; }
+    .author-avatar { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--navy), var(--teal)); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+    .author-info h4 { font-size: 17px; font-weight: 900; color: var(--navy); margin-bottom: 4px; }
+    .author-info .creds { font-size: 13px; color: var(--teal); font-weight: 600; margin-bottom: 10px; }
+    .author-info p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+    .cta-banner { background: linear-gradient(135deg, var(--navy), #0f4f6e); border-radius: 20px; padding: 40px 36px; margin-top: 48px; text-align: center; }
+    .cta-banner h3 { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 10px; }
+    .cta-banner p { font-size: 15px; color: rgba(255,255,255,0.7); margin-bottom: 24px; line-height: 1.7; }
+    .cta-btn { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold2)); color: #fff; font-size: 16px; font-weight: 800; padding: 14px 36px; border-radius: 50px; box-shadow: 0 6px 20px rgba(184,146,42,0.4); transition: transform 0.2s; }
+    .cta-btn:hover { transform: translateY(-2px); }
+    .related { margin-top: 64px; }
+    .related h3 { font-size: 20px; font-weight: 900; color: var(--navy); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .related-card { background: var(--gray); border-radius: 16px; padding: 20px; border: 1px solid var(--gray2); }
+    .related-card .tag { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .related-card h4 { font-size: 15px; font-weight: 800; color: var(--navy); line-height: 1.4; }
+    footer { background: #0a1a32; color: rgba(255,255,255,0.5); padding: 32px 0; }
+    .footer-bottom { max-width: 900px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 12px; }
+    @media (max-width: 600px) {
+      .article-hero { padding: 36px 28px; }
+      .related-grid { grid-template-columns: 1fr; }
+      .author-card { flex-direction: column; }
+      .exercise-table { font-size: 13px; }
+    }
+    .sig-block { border-top: 2px solid var(--gray2); margin-top: 48px; padding-top: 24px; }
+    .sig-main { font-size: 14px; color: var(--navy); font-weight: 700; margin-bottom: 12px; line-height: 1.7; }
+    .sig-creds { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+    .sig-creds li { font-size: 13px; color: var(--muted); padding-left: 14px; position: relative; line-height: 1.6; }
+    .sig-creds li::before { content: "·"; position: absolute; left: 0; color: var(--teal2); font-weight: 900; }
+    .sig-notice { font-size: 12px; color: var(--muted); font-style: italic; line-height: 1.7; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/en/" class="nav-logo">Nerv<span>Lock</span></a>
+    <a href="/en/#blog" class="nav-back">← Medical Blog</a>
+    <div class="lang-toggle">
+      <a href="/blog/파킨슨-운동치료/" class="lang-btn">KR</a>
+      <a href="/blog/parkinson-exercise-therapy/" class="lang-btn active">EN</a>
+    </div>
+  </div>
+</nav>
+
+<div class="article-wrap">
+
+  <div class="article-hero">
+    <div class="article-tag">Lifestyle Medicine</div>
+    <h1 class="article-title">Exercise as Medicine in Parkinson's Disease:<br>Neurobiological Mechanisms and Clinical Evidence</h1>
+    <div class="article-meta">
+      <div class="article-meta-item">👨‍⚕️ <strong>Dr.H</strong> — Neurologist, NervLock Founder</div>
+      <div class="article-meta-item">📅 March 8, 2026</div>
+      <div class="article-meta-item">⏱ 10 min read</div>
+    </div>
+  </div>
+
+  <div class="lang-switch-banner">
+    <span>🇰🇷 이 글의 한국어 버전을 보시겠습니까?</span>
+    <a href="/blog/파킨슨-운동치료/" class="lang-switch-link">한국어로 읽기 →</a>
+  </div>
+
+  <div class="abstract">
+    <div class="abstract-label">Abstract</div>
+    <p>Accumulating evidence positions structured exercise not merely as an adjunct wellness activity but as a neurobiologically active intervention in Parkinson's disease. This article reviews the mechanisms through which exercise exerts neuroprotective and symptomatic effects, the evidence base for specific exercise modalities, and practical guidance for exercise prescription in clinical practice.</p>
+  </div>
+
+  <div class="article-body">
+
+    <h2>1. Distinct Mechanisms from Pharmacotherapy</h2>
+    <p>The central rationale for exercise in Parkinson's disease lies in its <strong>mechanistic complementarity to pharmacotherapy</strong>. Levodopa and dopamine agonists compensate for dopaminergic deficit at the receptor level. Exercise, by contrast, acts upstream — influencing the survival, function, and connectivity of residual dopaminergic neurons.</p>
+    <p>The primary mediator of exercise-induced neuroprotection is <strong>brain-derived neurotrophic factor (BDNF)</strong>, a member of the neurotrophin family that promotes neuronal survival, synaptic plasticity, and dopaminergic neuron maintenance. Aerobic exercise robustly upregulates BDNF expression in the hippocampus and striatum through activation of the FNDC5/irisin-BDNF axis. In animal models of Parkinson's disease, exercise-induced BDNF elevation attenuates dopaminergic neuronal loss, reduces alpha-synuclein aggregation, and improves motor performance.</p>
+    <p>Additional mechanisms include enhanced mitochondrial biogenesis, reduced neuroinflammatory cytokine expression, improved cerebrovascular function, and augmentation of compensatory neuroplasticity in residual striatal circuits.</p>
+
+    <div class="callout">
+      <strong>Key Distinction:</strong> Medication supplies dopamine. Exercise protects the dopaminergic system. These are complementary mechanisms — not alternatives. Structured exercise should be framed as a therapeutic prescription, not an optional lifestyle addition.
+    </div>
+
+    <h2>2. Clinical Evidence</h2>
+    <p>The <strong>SPARX trial</strong> (Schenkman et al., <em>JAMA Neurology</em> 2018) remains among the most rigorous investigations of exercise in early Parkinson's disease. Patients randomized to high-intensity treadmill training (80–85% maximum heart rate, three sessions weekly) demonstrated significantly attenuated motor decline at 6 months compared to both moderate-intensity and control groups — an effect size exceeding that of several pharmacological adjuncts.</p>
+    <p>A landmark meta-analysis by Oliveira de Araujo et al. (2020, <em>Neurorehabilitation and Neural Repair</em>) pooling data from 43 randomized controlled trials concluded that exercise significantly improves motor function (UPDRS-III), gait velocity, balance, and quality of life across modalities — with effect sizes larger for high-intensity interventions.</p>
+    <p>For balance specifically, the evidence for <strong>Tai Chi</strong> is particularly robust. Li et al. (<em>NEJM</em> 2012) demonstrated that twice-weekly Tai Chi training over 24 weeks reduced falls, improved stride length, and enhanced functional reach in Parkinson's disease patients, with effects maintained at 3-month follow-up — superior to resistance training and stretching comparators.</p>
+
+    <h2>3. Exercise Modalities and Their Indications</h2>
+
+    <h3>Aerobic Exercise</h3>
+    <p>Brisk walking, cycling, swimming, or treadmill training. Target intensity: 60–80% maximum heart rate (Borg scale 13–15). Frequency: 3–4 sessions per week, 30–40 minutes per session. This modality has the strongest evidence for neuroprotective effect and global motor benefit through BDNF upregulation.</p>
+
+    <h3>Balance and Flexibility Training</h3>
+    <p>Tai Chi, yoga, dance, balance board training. Particularly important given that postural instability and gait dysfunction — the features least responsive to levodopa — represent major determinants of fall risk and functional decline in advanced disease.</p>
+
+    <h3>Resistance Training</h3>
+    <p>Progressive resistance exercise (2–3 sessions weekly) addressing proximal and distal muscle groups. Parkinson's disease produces progressive muscle weakness independent of disuse, and resistance training addresses this through mechanisms partly independent of dopaminergic pathways.</p>
+
+    <h3>Rhythmic Auditory Stimulation (RAS)</h3>
+    <p>Music-synchronized walking and movement training exploit the preserved capacity of Parkinson's disease patients to <strong>entrain movement to external rhythmic cues</strong>, compensating for impaired internal rhythm generation by the basal ganglia. Controlled trials demonstrate that RAS-augmented gait training improves stride length, cadence, and gait symmetry, and reduces freezing of gait episodes.</p>
+
+    <h2>4. Exercise Prescription: Practical Framework</h2>
+
+    <table class="exercise-table">
+      <thead>
+        <tr>
+          <th>Modality</th>
+          <th>Frequency</th>
+          <th>Duration</th>
+          <th>Target Intensity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Aerobic</strong> (brisk walk / cycle)</td>
+          <td>3–4×/week</td>
+          <td>30–40 min</td>
+          <td>60–80% HRmax</td>
+        </tr>
+        <tr>
+          <td><strong>Balance/flexibility</strong> (Tai Chi / yoga)</td>
+          <td>2–3×/week</td>
+          <td>20–30 min</td>
+          <td>Moderate</td>
+        </tr>
+        <tr>
+          <td><strong>Resistance training</strong></td>
+          <td>2–3×/week</td>
+          <td>20–30 min</td>
+          <td>60–70% 1RM</td>
+        </tr>
+        <tr>
+          <td><strong>Rhythmic / dance</strong></td>
+          <td>Daily if tolerated</td>
+          <td>15–20 min</td>
+          <td>Light–moderate</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Timing within the medication cycle is clinically relevant: exercise during the "ON" period (peak levodopa effect, approximately 60–90 minutes post-dose) maximizes motor capacity, facilitates higher intensity, and improves training outcomes. For patients with significant motor fluctuations, freezing, or balance impairment, supervised programs — physiotherapist-directed or Parkinson's-specific group exercise — substantially improve adherence and safety.</p>
+
+    <h2>5. The "Dose-Response" Relationship</h2>
+    <p>Emerging data suggest a dose-response relationship between exercise intensity and neuroprotective benefit. Moderate-intensity activity, while beneficial for general health and symptom management, may be insufficient to drive the neurobiological changes associated with disease modification. High-intensity aerobic exercise — at least 80% maximum heart rate — appears to be the threshold for robust BDNF induction and neuroplasticity effects.</p>
+    <p>This has practical implications: the common recommendation to "walk more" may be inadequate. Structured, progressively intensified aerobic exercise should be framed explicitly as a therapeutic prescription rather than a general lifestyle suggestion.</p>
+
+    <div class="evidence-box">
+      <h4>📚 References</h4>
+      <ul>
+        <li>Schenkman M et al. (2018). Effect of high-intensity treadmill exercise on motor symptoms in patients with de novo Parkinson disease. <em>JAMA Neurology</em> 75(2):219-226</li>
+        <li>Li F et al. (2012). Tai chi and postural stability in patients with Parkinson's disease. <em>NEJM</em> 366(6):511-519</li>
+        <li>Petzinger GM et al. (2013). Exercise-enhanced neuroplasticity targeting motor and cognitive circuitry in Parkinson's disease. <em>Lancet Neurology</em> 12(7):716-726</li>
+        <li>Thacker EL et al. (2008). Recreational physical activity and risk of Parkinson's disease. <em>Movement Disorders</em> 23(1):69-74</li>
+      </ul>
+    </div>
+
+    <div class="author-card">
+      <div class="author-avatar">👨‍⚕️</div>
+      <div class="author-info">
+        <h4>Dr.H</h4>
+        <div class="creds">Neurologist · Yonsei University Severance Hospital · Parkinson, Movement Disorders & Functional Medicine · NervLock Founder</div>
+        <p>Member, Korean Neurological Association · Member, Korean Parkinson's and Movement Disorder Society · Member, Korean Society of Functional Medicine. This article is for informational purposes only and does not constitute medical advice.</p>
+      </div>
+    </div>
+
+    <div class="cta-banner">
+      <h3>Support Your Neural Health with NervLock Nerve Care</h3>
+      <p>Formulated by a neurologist with curcumin + Aflapin® — dual NF-κB and 5-LOX pathway coverage for neural inflammatory balance.<br>NervLock's first product is launching soon.</p>
+      <a href="/en/#coming-soon" class="cta-btn">Get Launch Notification</a>
+    </div>
+
+    <div class="related">
+      <h3>Related Articles</h3>
+      <div class="related-grid">
+        <div class="related-card">
+          <div class="tag">Movement Disorders</div>
+          <h4><a href="/blog/parkinson-medication-management/">Pharmacological Management of Parkinson's Disease: A Neurologist's Evidence-Based Overview</a></h4>
+        </div>
+        <div class="related-card">
+          <div class="tag">Pain Medicine</div>
+          <h4><a href="/blog/parkinson-pain-management/">Pain in Parkinson's Disease: Pathophysiology, Classification, and Clinical Management</a></h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="sig-block">
+      <p class="sig-main">Written by <strong>Dr. Claire Ham</strong>, Neurologist, M.D.</p>
+      <ul class="sig-creds">
+        <li>Trained at Yonsei University Severance Hospital</li>
+        <li>Member, Korean Neurological Association</li>
+        <li>Member, Korean Parkinson's and Movement Disorder Society</li>
+        <li>Member, Korean Society of Functional Medicine</li>
+      </ul>
+      <p class="sig-notice">※ This content is for informational purposes only and does not constitute medical advice.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2026 NervLock. All rights reserved.</p>
+    <p>This article is for informational purposes only and does not constitute medical advice.</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8"/>
@@ -38,6 +38,10 @@
     .article-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.65); }
     .article-meta-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
 
+    .lang-switch-banner { background: var(--gray); border: 1px solid var(--gray2); border-radius: 14px; padding: 14px 20px; margin-bottom: 40px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .lang-switch-banner span { font-size: 14px; color: var(--muted); }
+    .lang-switch-link { font-size: 13px; font-weight: 700; color: var(--teal2); border: 1px solid var(--teal2); border-radius: 50px; padding: 6px 16px; transition: all 0.2s; white-space: nowrap; }
+    .lang-switch-link:hover { background: var(--teal2); color: #fff; }
     .abstract { background: linear-gradient(135deg, rgba(26,122,110,0.06), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 16px 16px 0; padding: 24px 28px; margin-bottom: 48px; }
     .abstract-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--teal2); margin-bottom: 10px; }
     .abstract p { font-size: 15px; color: #2a3a4a; line-height: 1.85; margin: 0; font-style: italic; }
@@ -108,7 +112,7 @@
     <a href="/#blog" class="nav-back">← 의학 칼럼</a>
     <div class="lang-toggle">
       <a href="/blog/파킨슨-운동치료/" class="lang-btn active">KR</a>
-      <span class="lang-btn" style="opacity:0.3;cursor:default;">EN</span>
+      <a href="/blog/parkinson-exercise-therapy/" class="lang-btn">EN</a>
     </div>
   </div>
 </nav>
@@ -123,6 +127,11 @@
       <div class="article-meta-item">📅 2026. 3. 8</div>
       <div class="article-meta-item">⏱ 10분 읽기</div>
     </div>
+  </div>
+
+  <div class="lang-switch-banner">
+    <span>&#127482;&#127480; Read this article in English?</span>
+    <a href="/blog/parkinson-exercise-therapy/" class="lang-switch-link">Read in English &#8594;</a>
   </div>
 
   <div class="abstract">

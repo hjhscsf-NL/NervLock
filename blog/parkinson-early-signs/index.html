@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Early Signs of Parkinson's Disease: The Prodromal Signals That Precede Motor Symptoms | NervLock</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; color: #1a1a2e; background: #fff; font-size: 17px; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    :root {
+      --navy: #0d2545; --navy2: #163561;
+      --teal: #1a7a6e; --teal2: #22a090;
+      --gold: #b8922a; --gold2: #d4a843;
+      --gray: #f4f6f9; --gray2: #e8ecf2;
+      --muted: #5a6278;
+    }
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(13,37,69,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-logo { font-size: 20px; font-weight: 900; color: #fff; white-space: nowrap; }
+    .nav-logo span { color: var(--gold2); }
+    .nav-back { font-size: 14px; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold2); }
+    .lang-toggle { display: flex; border: 1px solid rgba(255,255,255,0.22); border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+    .lang-btn { padding: 5px 12px; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); transition: all 0.18s; }
+    .lang-btn + .lang-btn { border-left: 1px solid rgba(255,255,255,0.22); }
+    .lang-btn.active { background: rgba(255,255,255,0.18); color: #fff; }
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 60px 24px 100px; }
+    .article-hero { background: linear-gradient(135deg, #0d2545 0%, #2a6496 100%); border-radius: 24px; padding: 52px 48px; margin-bottom: 48px; position: relative; overflow: hidden; }
+    .article-hero::before { content: '🧠'; position: absolute; right: 32px; top: 32px; font-size: 80px; opacity: 0.15; }
+    .article-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(26,122,110,0.3); border: 1px solid rgba(26,122,110,0.5); border-radius: 50px; font-size: 12px; font-weight: 700; color: #6ee7da; padding: 4px 14px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+    .article-title { font-size: clamp(22px, 3.5vw, 34px); font-weight: 900; color: #fff; line-height: 1.3; margin-bottom: 20px; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 20px; }
+    .article-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.65); }
+    .article-meta-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+    .lang-switch-banner { background: var(--gray); border: 1px solid var(--gray2); border-radius: 14px; padding: 14px 20px; margin-bottom: 40px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .lang-switch-banner span { font-size: 14px; color: var(--muted); }
+    .lang-switch-link { font-size: 13px; font-weight: 700; color: var(--teal2); border: 1px solid var(--teal2); border-radius: 50px; padding: 6px 16px; transition: all 0.2s; white-space: nowrap; }
+    .lang-switch-link:hover { background: var(--teal2); color: #fff; }
+    .abstract { background: linear-gradient(135deg, rgba(26,122,110,0.06), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 16px 16px 0; padding: 24px 28px; margin-bottom: 48px; }
+    .abstract-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--teal2); margin-bottom: 10px; }
+    .abstract p { font-size: 15px; color: #2a3a4a; line-height: 1.85; margin: 0; font-style: italic; }
+    .article-body h2 { font-size: 24px; font-weight: 900; color: var(--navy); margin: 52px 0 16px; line-height: 1.35; padding-bottom: 12px; border-bottom: 2px solid var(--gray2); }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-size: 19px; font-weight: 800; color: var(--navy2); margin: 36px 0 12px; }
+    .article-body p { font-size: 16px; color: #2a2a3e; line-height: 1.95; margin-bottom: 20px; }
+    .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .article-body li { font-size: 15px; color: #3a3a50; line-height: 1.75; }
+    .article-body strong { color: var(--navy); }
+    .callout { background: linear-gradient(135deg, rgba(26,122,110,0.07), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: var(--navy); font-style: italic; line-height: 1.85; }
+    .callout strong { color: var(--teal); font-style: normal; }
+    .evidence-box { background: var(--gray); border-radius: 14px; padding: 20px 24px; margin: 28px 0; }
+    .evidence-box h4 { font-size: 12px; font-weight: 800; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .evidence-box ul { margin: 0; }
+    .evidence-box li { font-size: 13px; color: var(--muted); }
+    .symptom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+    .symptom-card { background: var(--gray); border-radius: 14px; padding: 18px 20px; border: 1px solid var(--gray2); }
+    .symptom-card h4 { font-size: 14px; font-weight: 800; color: var(--navy); margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+    .symptom-card p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+    .author-card { background: var(--gray); border-radius: 20px; padding: 28px 32px; margin-top: 64px; display: flex; align-items: flex-start; gap: 20px; }
+    .author-avatar { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--navy), var(--teal)); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+    .author-info h4 { font-size: 17px; font-weight: 900; color: var(--navy); margin-bottom: 4px; }
+    .author-info .creds { font-size: 13px; color: var(--teal); font-weight: 600; margin-bottom: 10px; }
+    .author-info p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+    .cta-banner { background: linear-gradient(135deg, var(--navy), #0f4f6e); border-radius: 20px; padding: 40px 36px; margin-top: 48px; text-align: center; }
+    .cta-banner h3 { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 10px; }
+    .cta-banner p { font-size: 15px; color: rgba(255,255,255,0.7); margin-bottom: 24px; line-height: 1.7; }
+    .cta-btn { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold2)); color: #fff; font-size: 16px; font-weight: 800; padding: 14px 36px; border-radius: 50px; box-shadow: 0 6px 20px rgba(184,146,42,0.4); transition: transform 0.2s; }
+    .cta-btn:hover { transform: translateY(-2px); }
+    .related { margin-top: 64px; }
+    .related h3 { font-size: 20px; font-weight: 900; color: var(--navy); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .related-card { background: var(--gray); border-radius: 16px; padding: 20px; border: 1px solid var(--gray2); }
+    .related-card .tag { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .related-card h4 { font-size: 15px; font-weight: 800; color: var(--navy); line-height: 1.4; }
+    footer { background: #0a1a32; color: rgba(255,255,255,0.5); padding: 32px 0; }
+    .footer-bottom { max-width: 900px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 12px; }
+    @media (max-width: 600px) {
+      .article-hero { padding: 36px 28px; }
+      .symptom-grid, .related-grid { grid-template-columns: 1fr; }
+      .author-card { flex-direction: column; }
+    }
+    .sig-block { border-top: 2px solid var(--gray2); margin-top: 48px; padding-top: 24px; }
+    .sig-main { font-size: 14px; color: var(--navy); font-weight: 700; margin-bottom: 12px; line-height: 1.7; }
+    .sig-creds { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+    .sig-creds li { font-size: 13px; color: var(--muted); padding-left: 14px; position: relative; line-height: 1.6; }
+    .sig-creds li::before { content: "·"; position: absolute; left: 0; color: var(--teal2); font-weight: 900; }
+    .sig-notice { font-size: 12px; color: var(--muted); font-style: italic; line-height: 1.7; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/en/" class="nav-logo">Nerv<span>Lock</span></a>
+    <a href="/en/#blog" class="nav-back">← Medical Blog</a>
+    <div class="lang-toggle">
+      <a href="/blog/파킨슨-초기증상/" class="lang-btn">KR</a>
+      <a href="/blog/parkinson-early-signs/" class="lang-btn active">EN</a>
+    </div>
+  </div>
+</nav>
+
+<div class="article-wrap">
+
+  <div class="article-hero">
+    <div class="article-tag">Neuroscience</div>
+    <h1 class="article-title">Early Signs of Parkinson's Disease:<br>The Prodromal Signals That Precede Motor Symptoms</h1>
+    <div class="article-meta">
+      <div class="article-meta-item">👨‍⚕️ <strong>Dr.H</strong> — Neurologist, NervLock Founder</div>
+      <div class="article-meta-item">📅 February 27, 2026</div>
+      <div class="article-meta-item">⏱ 8 min read</div>
+    </div>
+  </div>
+
+  <div class="lang-switch-banner">
+    <span>🇰🇷 이 글의 한국어 버전을 보시겠습니까?</span>
+    <a href="/blog/파킨슨-초기증상/" class="lang-switch-link">한국어로 읽기 →</a>
+  </div>
+
+  <div class="abstract">
+    <div class="abstract-label">Abstract</div>
+    <p>Parkinson's disease is widely recognized by its cardinal motor features — resting tremor, bradykinesia, and rigidity. However, a constellation of non-motor prodromal symptoms may precede the onset of motor deficits by a decade or more. This article examines five clinically significant early warning signs and the neuropathological basis for their appearance before the classic motor presentation.</p>
+  </div>
+
+  <div class="article-body">
+
+    <h2>1. The Diagnostic Window: Why Early Recognition Matters</h2>
+    <p>By the time resting tremor emerges as the presenting complaint, neuroimaging and post-mortem studies consistently demonstrate that <strong>60–80% of dopaminergic neurons in the substantia nigra pars compacta</strong> have already been lost. This stark reality underscores the importance of identifying prodromal markers — those physiological changes that precede the neurodegenerative cascade sufficient to produce overt motor dysfunction.</p>
+    <p>The concept of a "prodromal phase" in Parkinson's disease is now well-established in the literature. Braak and colleagues proposed a staging hypothesis suggesting that Lewy body pathology begins in the olfactory bulb and dorsal motor nucleus of the vagus before ascending rostrally to affect the substantia nigra and neocortex — explaining why non-motor symptoms often precede motor deficits by years.</p>
+
+    <div class="callout">
+      <strong>Clinical Implication:</strong> The motor symptoms that define a Parkinson's disease diagnosis represent a late-stage manifestation of a neurodegenerative process that has been underway for years, possibly decades. Prodromal recognition is the only viable path to earlier intervention.
+    </div>
+
+    <h2>2. Prodromal Signal 1 — Olfactory Dysfunction</h2>
+    <p>Hyposmia or anosmia affects approximately <strong>70–90% of patients</strong> with Parkinson's disease and, critically, may precede the onset of motor symptoms by a mean of 4–6 years, with some reports citing intervals exceeding a decade. The pathological substrate is early Lewy body deposition in the olfactory bulb and anterior olfactory nucleus — regions affected in Braak stage 1, well before substantia nigra involvement.</p>
+    <p>Standardized olfactory testing (e.g., the University of Pennsylvania Smell Identification Test, UPSIT) can objectively quantify this deficit. The clinical implication is significant: unexplained progressive hyposmia in a middle-aged or older adult, particularly in the absence of sinonasal pathology, warrants longitudinal neurological surveillance.</p>
+
+    <h2>3. Prodromal Signal 2 — REM Sleep Behavior Disorder (RBD)</h2>
+    <p>Idiopathic REM sleep behavior disorder (iRBD) represents perhaps the most powerful known prodromal biomarker for Parkinson's disease and related alpha-synucleinopathies. Longitudinal cohort studies have demonstrated that <strong>80–90% of individuals with polysomnography-confirmed iRBD</strong> will convert to a diagnosed synucleinopathy (Parkinson's disease, dementia with Lewy bodies, or multiple system atrophy) within 10–15 years.</p>
+    <p>During normal REM sleep, brainstem circuits actively suppress motor activity (REM atonia). In RBD, degeneration of these circuits — again consistent with early Braak staging — leads to loss of REM atonia and consequent dream enactment behavior. Bed partners often report the patient shouting, punching, or kicking during sleep. Polysomnographic confirmation is the diagnostic standard. iRBD diagnosis should prompt discussion of neuroprotective strategies and enrolment in monitoring programs.</p>
+
+    <h2>4. Prodromal Signal 3 — Constipation and Enteric Nervous System Involvement</h2>
+    <p>Gastrointestinal dysfunction, particularly chronic constipation, affects <strong>70–80% of Parkinson's disease patients</strong> and may precede motor onset by 15–20 years in some individuals. This early manifestation reflects Lewy body pathology in the enteric nervous system (ENS) and dorsal motor nucleus of the vagus.</p>
+    <p>The "gut-first" hypothesis of Parkinson's disease, gaining traction in the literature, posits that misfolded alpha-synuclein may originate in the enteric nervous system and propagate retrogradely via the vagus nerve to the brainstem. Supporting evidence includes epidemiological data showing reduced Parkinson's disease risk following truncal vagotomy, and experimental demonstrations of alpha-synuclein transmission from gut to brain in animal models.</p>
+
+    <h2>5. Prodromal Signal 4 — Hypomimia (Masked Facies)</h2>
+    <p>Reduced facial expressivity — <strong>hypomimia</strong> or "masked facies" — occurs in approximately 70% of Parkinson's disease patients and may be among the first motor signs to emerge. It results from bradykinesia affecting the facial musculature, producing a characteristic reduction in spontaneous facial movement, blinking frequency, and emotional expressivity.</p>
+    <p>Hypomimia is frequently misattributed to depression or flat affect, leading to psychiatric referrals and delayed neurological evaluation. Clinicians should maintain a low threshold for neurological assessment when family members report unexplained changes in facial expression or emotional presentation.</p>
+
+    <h2>6. Prodromal Signal 5 — Micrographia</h2>
+    <p><strong>Micrographia</strong> — the progressive reduction in handwriting size — affects 50–75% of Parkinson's disease patients and reflects dysfunction of the basal ganglia-thalamocortical motor circuits responsible for scaling voluntary movement amplitude. Characteristically, writing begins at normal size but diminishes progressively over the course of a sentence or paragraph (progressive micrographia). This sign can be elicited by asking the patient to write a standardized sentence and comparing with earlier handwriting samples.</p>
+
+    <div class="symptom-grid">
+      <div class="symptom-card">
+        <h4>👃 Olfactory Dysfunction</h4>
+        <p>Affects 70–90% of PD patients. May precede motor onset by 4–6+ years. Braak stage 1 pathology in the olfactory bulb.</p>
+      </div>
+      <div class="symptom-card">
+        <h4>😴 REM Sleep Behavior Disorder</h4>
+        <p>80–90% conversion rate to synucleinopathy within 10–15 years. Strongest prodromal biomarker known.</p>
+      </div>
+      <div class="symptom-card">
+        <h4>🚽 Constipation / ENS Involvement</h4>
+        <p>Affects 70–80%. May precede motor symptoms by 15–20 years. Consistent with gut-first hypothesis.</p>
+      </div>
+      <div class="symptom-card">
+        <h4>😐 Hypomimia</h4>
+        <p>Reduced facial expressivity in ~70% of patients. Frequently misattributed to depression. Earliest motor sign.</p>
+      </div>
+    </div>
+
+    <h2>7. Clinical Synthesis</h2>
+    <p>No single prodromal feature carries sufficient sensitivity and specificity to function as a standalone diagnostic biomarker. However, the <strong>convergence of two or more prodromal signals</strong> — particularly the combination of hyposmia, iRBD, and constipation — substantially raises pre-test probability and warrants formal neurological evaluation.</p>
+    <p>Ongoing research into fluid and imaging biomarkers — CSF alpha-synuclein seeding amplification assays (SAA), dopamine transporter SPECT (DaTSCAN) — aims to close the diagnostic window further, enabling intervention before irreversible neurodegeneration occurs. The MDS Research Criteria for prodromal Parkinson's disease (Berg et al., 2015) provide a validated framework for systematic prodromal risk stratification.</p>
+
+    <div class="evidence-box">
+      <h4>📚 References</h4>
+      <ul>
+        <li>Braak H et al. (2003). Staging of brain pathology related to sporadic Parkinson's disease. <em>Neurobiology of Aging</em> 24(2):197-211</li>
+        <li>Berg D et al. (2015). MDS research criteria for prodromal Parkinson's disease. <em>Movement Disorders</em> 30(12):1600-1611</li>
+        <li>Postuma RB et al. (2019). Risk and predictors of dementia and parkinsonism in idiopathic REM sleep behaviour disorder. <em>Brain</em> 142(3):744-759</li>
+        <li>Shannon KM et al. (2012). Alpha-synuclein in colonic submucosa in early untreated Parkinson's disease. <em>Movement Disorders</em> 27(6):709-715</li>
+      </ul>
+    </div>
+
+    <div class="author-card">
+      <div class="author-avatar">👨‍⚕️</div>
+      <div class="author-info">
+        <h4>Dr.H</h4>
+        <div class="creds">Neurologist · Yonsei University Severance Hospital · Parkinson, Movement Disorders & Functional Medicine · NervLock Founder</div>
+        <p>Member, Korean Neurological Association · Member, Korean Parkinson's and Movement Disorder Society · Member, Korean Society of Functional Medicine. This article is for informational purposes only and does not constitute medical advice.</p>
+      </div>
+    </div>
+
+    <div class="cta-banner">
+      <h3>Support Your Neural Health with NervLock Nerve Care</h3>
+      <p>Formulated by a neurologist with curcumin + Aflapin® — dual NF-κB and 5-LOX pathway coverage for neural inflammatory balance.<br>NervLock's first product is launching soon.</p>
+      <a href="/en/#coming-soon" class="cta-btn">Get Launch Notification</a>
+    </div>
+
+    <div class="related">
+      <h3>Related Articles</h3>
+      <div class="related-grid">
+        <div class="related-card">
+          <div class="tag">Neuroscience</div>
+          <h4><a href="/blog/parkinson-dopamine-neuroinflammation/">The Pathophysiology of Parkinson's Disease: Dopamine, Alpha-Synuclein, and Neuroinflammation</a></h4>
+        </div>
+        <div class="related-card">
+          <div class="tag">Pain Medicine</div>
+          <h4><a href="/blog/parkinson-pain-management/">Pain in Parkinson's Disease: Pathophysiology, Classification, and Clinical Management</a></h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="sig-block">
+      <p class="sig-main">Written by <strong>Dr. Claire Ham</strong>, Neurologist, M.D.</p>
+      <ul class="sig-creds">
+        <li>Trained at Yonsei University Severance Hospital</li>
+        <li>Member, Korean Neurological Association</li>
+        <li>Member, Korean Parkinson's and Movement Disorder Society</li>
+        <li>Member, Korean Society of Functional Medicine</li>
+      </ul>
+      <p class="sig-notice">※ This content is for informational purposes only and does not constitute medical advice.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2026 NervLock. All rights reserved.</p>
+    <p>This article is for informational purposes only and does not constitute medical advice.</p>
+  </div>
+</footer>
+
+</body>
+</html>

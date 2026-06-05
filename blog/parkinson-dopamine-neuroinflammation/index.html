@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Pathophysiology of Parkinson's Disease: Dopamine, Alpha-Synuclein, and Neuroinflammation | NervLock</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; color: #1a1a2e; background: #fff; font-size: 17px; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    :root {
+      --navy: #0d2545; --navy2: #163561;
+      --teal: #1a7a6e; --teal2: #22a090;
+      --gold: #b8922a; --gold2: #d4a843;
+      --gray: #f4f6f9; --gray2: #e8ecf2;
+      --muted: #5a6278;
+    }
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(13,37,69,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-logo { font-size: 20px; font-weight: 900; color: #fff; white-space: nowrap; }
+    .nav-logo span { color: var(--gold2); }
+    .nav-back { font-size: 14px; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold2); }
+    .lang-toggle { display: flex; border: 1px solid rgba(255,255,255,0.22); border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+    .lang-btn { padding: 5px 12px; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); transition: all 0.18s; }
+    .lang-btn + .lang-btn { border-left: 1px solid rgba(255,255,255,0.22); }
+    .lang-btn.active { background: rgba(255,255,255,0.18); color: #fff; }
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 60px 24px 100px; }
+    .article-hero { background: linear-gradient(135deg, #1a2a5e 0%, #22a090 100%); border-radius: 24px; padding: 52px 48px; margin-bottom: 48px; position: relative; overflow: hidden; }
+    .article-hero::before { content: '🔬'; position: absolute; right: 32px; top: 32px; font-size: 80px; opacity: 0.15; }
+    .article-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(26,122,110,0.3); border: 1px solid rgba(26,122,110,0.5); border-radius: 50px; font-size: 12px; font-weight: 700; color: #6ee7da; padding: 4px 14px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+    .article-title { font-size: clamp(22px, 3.5vw, 34px); font-weight: 900; color: #fff; line-height: 1.3; margin-bottom: 20px; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 20px; }
+    .article-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.65); }
+    .article-meta-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+    .lang-switch-banner { background: var(--gray); border: 1px solid var(--gray2); border-radius: 14px; padding: 14px 20px; margin-bottom: 40px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .lang-switch-banner span { font-size: 14px; color: var(--muted); }
+    .lang-switch-link { font-size: 13px; font-weight: 700; color: var(--teal2); border: 1px solid var(--teal2); border-radius: 50px; padding: 6px 16px; transition: all 0.2s; white-space: nowrap; }
+    .lang-switch-link:hover { background: var(--teal2); color: #fff; }
+    .abstract { background: linear-gradient(135deg, rgba(26,122,110,0.06), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 16px 16px 0; padding: 24px 28px; margin-bottom: 48px; }
+    .abstract-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--teal2); margin-bottom: 10px; }
+    .abstract p { font-size: 15px; color: #2a3a4a; line-height: 1.85; margin: 0; font-style: italic; }
+    .article-body h2 { font-size: 24px; font-weight: 900; color: var(--navy); margin: 52px 0 16px; line-height: 1.35; padding-bottom: 12px; border-bottom: 2px solid var(--gray2); }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-size: 19px; font-weight: 800; color: var(--navy2); margin: 36px 0 12px; }
+    .article-body p { font-size: 16px; color: #2a2a3e; line-height: 1.95; margin-bottom: 20px; }
+    .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .article-body li { font-size: 15px; color: #3a3a50; line-height: 1.75; }
+    .article-body strong { color: var(--navy); }
+    .callout { background: linear-gradient(135deg, rgba(26,122,110,0.07), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: var(--navy); font-style: italic; line-height: 1.85; }
+    .callout strong { color: var(--teal); font-style: normal; }
+    .evidence-box { background: var(--gray); border-radius: 14px; padding: 20px 24px; margin: 28px 0; }
+    .evidence-box h4 { font-size: 12px; font-weight: 800; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .evidence-box ul { margin: 0; }
+    .evidence-box li { font-size: 13px; color: var(--muted); }
+    .author-card { background: var(--gray); border-radius: 20px; padding: 28px 32px; margin-top: 64px; display: flex; align-items: flex-start; gap: 20px; }
+    .author-avatar { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--navy), var(--teal)); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+    .author-info h4 { font-size: 17px; font-weight: 900; color: var(--navy); margin-bottom: 4px; }
+    .author-info .creds { font-size: 13px; color: var(--teal); font-weight: 600; margin-bottom: 10px; }
+    .author-info p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+    .cta-banner { background: linear-gradient(135deg, var(--navy), #0f4f6e); border-radius: 20px; padding: 40px 36px; margin-top: 48px; text-align: center; }
+    .cta-banner h3 { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 10px; }
+    .cta-banner p { font-size: 15px; color: rgba(255,255,255,0.7); margin-bottom: 24px; line-height: 1.7; }
+    .cta-btn { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold2)); color: #fff; font-size: 16px; font-weight: 800; padding: 14px 36px; border-radius: 50px; box-shadow: 0 6px 20px rgba(184,146,42,0.4); transition: transform 0.2s; }
+    .cta-btn:hover { transform: translateY(-2px); }
+    .related { margin-top: 64px; }
+    .related h3 { font-size: 20px; font-weight: 900; color: var(--navy); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .related-card { background: var(--gray); border-radius: 16px; padding: 20px; border: 1px solid var(--gray2); }
+    .related-card .tag { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .related-card h4 { font-size: 15px; font-weight: 800; color: var(--navy); line-height: 1.4; }
+    footer { background: #0a1a32; color: rgba(255,255,255,0.5); padding: 32px 0; }
+    .footer-bottom { max-width: 900px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 12px; }
+    @media (max-width: 600px) {
+      .article-hero { padding: 36px 28px; }
+      .related-grid { grid-template-columns: 1fr; }
+      .author-card { flex-direction: column; }
+    }
+    .sig-block { border-top: 2px solid var(--gray2); margin-top: 48px; padding-top: 24px; }
+    .sig-main { font-size: 14px; color: var(--navy); font-weight: 700; margin-bottom: 12px; line-height: 1.7; }
+    .sig-creds { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+    .sig-creds li { font-size: 13px; color: var(--muted); padding-left: 14px; position: relative; line-height: 1.6; }
+    .sig-creds li::before { content: "·"; position: absolute; left: 0; color: var(--teal2); font-weight: 900; }
+    .sig-notice { font-size: 12px; color: var(--muted); font-style: italic; line-height: 1.7; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/en/" class="nav-logo">Nerv<span>Lock</span></a>
+    <a href="/en/#blog" class="nav-back">← Medical Blog</a>
+    <div class="lang-toggle">
+      <a href="/blog/파킨슨-원인-도파민/" class="lang-btn">KR</a>
+      <a href="/blog/parkinson-dopamine-neuroinflammation/" class="lang-btn active">EN</a>
+    </div>
+  </div>
+</nav>
+
+<div class="article-wrap">
+
+  <div class="article-hero">
+    <div class="article-tag">Neuroscience</div>
+    <h1 class="article-title">The Pathophysiology of Parkinson's Disease:<br>Dopamine, Alpha-Synuclein, and Neuroinflammation</h1>
+    <div class="article-meta">
+      <div class="article-meta-item">👨‍⚕️ <strong>Dr.H</strong> — Neurologist, NervLock Founder</div>
+      <div class="article-meta-item">📅 February 27, 2026</div>
+      <div class="article-meta-item">⏱ 7 min read</div>
+    </div>
+  </div>
+
+  <div class="lang-switch-banner">
+    <span>🇰🇷 이 글의 한국어 버전을 보시겠습니까?</span>
+    <a href="/blog/파킨슨-원인-도파민/" class="lang-switch-link">한국어로 읽기 →</a>
+  </div>
+
+  <div class="abstract">
+    <div class="abstract-label">Abstract</div>
+    <p>Parkinson's disease is characterized by the selective degeneration of dopaminergic neurons in the substantia nigra pars compacta, leading to both motor and non-motor manifestations. This article examines the molecular mechanisms underlying neuronal loss — with particular focus on alpha-synuclein aggregation, Lewy body formation, and the role of neuroinflammation in disease propagation.</p>
+  </div>
+
+  <div class="article-body">
+
+    <h2>1. Dopamine and the Nigrostriatal Pathway</h2>
+    <p>To understand Parkinson's disease pathogenesis, one must first appreciate the functional anatomy of the nigrostriatal dopaminergic system. Dopaminergic neurons originating in the <strong>substantia nigra pars compacta (SNpc)</strong> project via the nigrostriatal tract to the striatum (caudate nucleus and putamen), where dopamine release modulates the activity of the direct and indirect basal ganglia pathways.</p>
+    <p>The net effect of intact nigrostriatal dopamine transmission is facilitation of voluntary movement and suppression of unwanted motor activity. Progressive dopaminergic denervation disrupts this balance, producing the characteristic motor triad of Parkinson's disease. Critically, motor symptoms become clinically evident only after approximately 60–80% of nigral dopamine neurons have been lost — reflecting the considerable reserve capacity of the nigrostriatal system.</p>
+
+    <div class="callout">
+      <strong>Key Concept:</strong> The symptomatic threshold of Parkinson's disease — the point at which motor deficits become clinically manifest — corresponds to the exhaustion of compensatory neuroplasticity in the residual nigrostriatal system. Disease has been progressing silently long before diagnosis.
+    </div>
+
+    <h2>2. Alpha-Synuclein Aggregation and Lewy Body Formation</h2>
+    <p>The molecular hallmark of Parkinson's disease is the aberrant misfolding and aggregation of <strong>alpha-synuclein (α-syn)</strong>, a presynaptic protein normally involved in synaptic vesicle trafficking and neurotransmitter release. Under pathological conditions — influenced by genetic factors, oxidative stress, mitochondrial dysfunction, and environmental exposures — monomeric α-syn undergoes conformational change, forming oligomeric species and ultimately insoluble fibrillar aggregates.</p>
+    <p>These aggregates accumulate intraneuronally as <strong>Lewy bodies</strong> (eosinophilic cytoplasmic inclusions with a dense core and pale halo) and Lewy neurites. Proposed mechanisms of α-syn–mediated neurotoxicity include impairment of the ubiquitin-proteasome system, disruption of mitochondrial function, induction of endoplasmic reticulum stress, and direct membrane permeabilization by oligomeric species.</p>
+
+    <h2>3. Neuroinflammation: Amplifier of Neurodegeneration</h2>
+    <p>An increasingly recognized contributor to Parkinson's disease progression is <strong>neuroinflammation</strong> — specifically, the sustained activation of microglia (the resident immune cells of the CNS). In the healthy brain, microglia perform essential surveillance and neuroprotective functions. However, in the context of α-syn pathology, microglia adopt a pro-inflammatory (M1-like) activation state.</p>
+    <p>Activated microglia release pro-inflammatory cytokines (TNF-α, IL-1β, IL-6), reactive oxygen species, and nitric oxide, creating a hostile microenvironment that accelerates dopaminergic neuronal death. Post-mortem studies of Parkinson's disease brains demonstrate abundant activated microglia in the substantia nigra, and PET imaging using microglial activation tracers shows elevated neuroinflammation correlating with disease severity.</p>
+    <p>Critically, this neuroinflammatory response can become <strong>self-perpetuating</strong>: dying neurons release damage-associated molecular patterns (DAMPs), which further activate microglia in a feedforward loop. This mechanism provides a rationale for anti-neuroinflammatory therapeutic strategies, including nutritional interventions targeting the NF-κB and 5-LOX inflammatory pathways.</p>
+
+    <h2>4. Etiology: A Multifactorial Disease</h2>
+    <p>Parkinson's disease is etiologically heterogeneous. No single cause accounts for the majority of cases:</p>
+    <ul>
+      <li><strong>Genetic factors:</strong> Pathogenic mutations in <em>SNCA</em> (α-synuclein), <em>LRRK2</em>, <em>PRKN</em>, <em>PINK1</em>, <em>DJ-1</em>, and <em>GBA</em> account for approximately 5–10% of cases. GBA mutations, encoding glucocerebrosidase, represent the most common genetic risk factor for sporadic Parkinson's disease, present in up to 10–15% of cases in some populations.</li>
+      <li><strong>Environmental exposures:</strong> Epidemiological data link chronic exposure to pesticides (rotenone, paraquat), herbicides, and heavy metals with increased Parkinson's disease risk, consistent with their known capacity to impair mitochondrial complex I function and induce oxidative stress.</li>
+      <li><strong>Oxidative stress:</strong> Dopamine metabolism itself generates reactive oxygen species through monoamine oxidase-mediated catabolism and auto-oxidation, rendering dopaminergic neurons intrinsically vulnerable to oxidative damage.</li>
+      <li><strong>The gut-brain axis:</strong> Compelling evidence supports a "gut-first" model in which enteric α-syn pathology propagates retrogradely to the brainstem via the vagus nerve — consistent with early gastrointestinal symptoms and the neuropathological staging observations of Braak et al.</li>
+    </ul>
+
+    <h2>5. Implications for Management</h2>
+    <p>Understanding the molecular pathogenesis of Parkinson's disease informs a rational approach to management. While disease-modifying therapies targeting α-syn aggregation (immunotherapies, aggregation inhibitors) remain in clinical development, current evidence supports lifestyle interventions addressing modifiable pathogenic mechanisms: regular aerobic exercise promotes BDNF expression and reduces neuroinflammatory markers; antioxidant-rich nutrition addresses the oxidative vulnerability of dopaminergic neurons; and gut microbiome optimization may modulate the enteric environment implicated in disease initiation.</p>
+
+    <div class="evidence-box">
+      <h4>📚 References</h4>
+      <ul>
+        <li>Spillantini MG &amp; Goedert M (2018). Neurodegeneration and the ordered assembly of α-synuclein. <em>Cell Calcium</em> 69:62-69</li>
+        <li>Hirsch EC &amp; Hunot S (2009). Neuroinflammation in Parkinson's disease: a target for neuroprotection? <em>Lancet Neurology</em> 8(4):382-397</li>
+        <li>Borghammer P &amp; Van Den Berge N (2019). Brain-first versus gut-first Parkinson's disease. <em>Journal of Parkinson's Disease</em> 9(s2):S281-S295</li>
+        <li>Kalia LV &amp; Lang AE (2015). Parkinson's disease. <em>Lancet</em> 386(9996):896-912</li>
+      </ul>
+    </div>
+
+    <div class="author-card">
+      <div class="author-avatar">👨‍⚕️</div>
+      <div class="author-info">
+        <h4>Dr.H</h4>
+        <div class="creds">Neurologist · Yonsei University Severance Hospital · Parkinson, Movement Disorders & Functional Medicine · NervLock Founder</div>
+        <p>Member, Korean Neurological Association · Member, Korean Parkinson's and Movement Disorder Society · Member, Korean Society of Functional Medicine. This article is for informational purposes only and does not constitute medical advice.</p>
+      </div>
+    </div>
+
+    <div class="cta-banner">
+      <h3>Support Your Neural Health with NervLock Nerve Care</h3>
+      <p>Formulated by a neurologist with curcumin + Aflapin® — dual NF-κB and 5-LOX pathway coverage for neural inflammatory balance.<br>NervLock's first product is launching soon.</p>
+      <a href="/en/#coming-soon" class="cta-btn">Get Launch Notification</a>
+    </div>
+
+    <div class="related">
+      <h3>Related Articles</h3>
+      <div class="related-grid">
+        <div class="related-card">
+          <div class="tag">Neuroscience</div>
+          <h4><a href="/blog/parkinson-early-signs/">Early Signs of Parkinson's Disease: The Prodromal Signals That Precede Motor Symptoms</a></h4>
+        </div>
+        <div class="related-card">
+          <div class="tag">Movement Disorders</div>
+          <h4><a href="/blog/parkinson-medication-management/">Pharmacological Management of Parkinson's Disease: A Neurologist's Evidence-Based Overview</a></h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="sig-block">
+      <p class="sig-main">Written by <strong>Dr. Claire Ham</strong>, Neurologist, M.D.</p>
+      <ul class="sig-creds">
+        <li>Trained at Yonsei University Severance Hospital</li>
+        <li>Member, Korean Neurological Association</li>
+        <li>Member, Korean Parkinson's and Movement Disorder Society</li>
+        <li>Member, Korean Society of Functional Medicine</li>
+      </ul>
+      <p class="sig-notice">※ This content is for informational purposes only and does not constitute medical advice.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2026 NervLock. All rights reserved.</p>
+    <p>This article is for informational purposes only and does not constitute medical advice.</p>
+  </div>
+</footer>
+
+</body>
+</html>
