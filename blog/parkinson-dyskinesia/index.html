@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Levodopa-Induced Dyskinesia in Parkinson's Disease | NervLock Lab</title>
+<meta name="description" content="Levodopa-induced dyskinesia (LID) emerges from maladaptive striatal neuroplasticity driven by pulsatile dopaminergic stimulation. Learn its mechanisms, clinical classification, and management from dose fractionation to DBS.">
+<style>
+  :root {
+    --navy: #0a1628; --navy2: #1a2d4a;
+    --teal: #00c9b1; --teal2: #00a896;
+    --gold: #f5c842; --gold2: #e0a800;
+    --gray: #f4f6fa; --gray2: #e0e4ef;
+    --muted: #6b7a99;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI','Helvetica Neue',Arial,sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; }
+  a { color: inherit; text-decoration: none; }
+
+  nav { background: var(--navy); padding: 0 32px; height: 60px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+  .nav-logo { color: var(--teal); font-weight: 800; font-size: 18px; letter-spacing: 1px; }
+  .nav-right { display: flex; align-items: center; gap: 20px; }
+  .nav-back { color: #fff; font-size: 14px; opacity: 0.8; transition: opacity 0.2s; }
+  .nav-back:hover { opacity: 1; }
+  .lang-btn { font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.6); transition: all 0.2s; }
+  .lang-btn.active { background: var(--teal); border-color: var(--teal); color: #fff; }
+  .lang-btn:hover:not(.active) { border-color: rgba(255,255,255,0.7); color: #fff; }
+
+  .hero { background: linear-gradient(135deg, #0d2545 0%, #1a4a8e 100%); padding: 60px 32px 48px; text-align: center; }
+  .hero-icon { font-size: 52px; margin-bottom: 16px; }
+  .hero-category { font-size: 12px; font-weight: 700; color: var(--teal); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(24px,4vw,38px); font-weight: 800; color: #fff; line-height: 1.3; max-width: 700px; margin: 0 auto 20px; }
+  .hero-meta { font-size: 13px; color: rgba(255,255,255,0.55); }
+  .hero-meta span + span::before { content: " · "; }
+
+  .container { max-width: 780px; margin: 0 auto; padding: 48px 24px 80px; }
+
+  .lang-switch-banner { background: var(--gray); border: 1px solid var(--gray2); border-radius: 14px; padding: 14px 20px; margin-bottom: 40px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .lang-switch-banner span { font-size: 14px; color: var(--muted); }
+  .lang-switch-link { font-size: 13px; font-weight: 700; color: var(--teal2); border: 1px solid var(--teal2); border-radius: 50px; padding: 6px 16px; transition: all 0.2s; white-space: nowrap; }
+  .lang-switch-link:hover { background: var(--teal2); color: #fff; }
+
+  .abstract { background: var(--gray); border-left: 4px solid var(--teal); border-radius: 0 12px 12px 0; padding: 20px 24px; margin-bottom: 48px; font-size: 15px; color: #2a2a3e; line-height: 1.75; }
+
+  h2 { font-size: 22px; font-weight: 800; color: var(--navy); margin: 44px 0 16px; padding-bottom: 8px; border-bottom: 2px solid var(--gray2); }
+  h3 { font-size: 17px; font-weight: 700; color: var(--navy2); margin: 28px 0 12px; }
+  p { margin-bottom: 18px; font-size: 15.5px; line-height: 1.8; color: #2a2a3e; }
+  ul, ol { padding-left: 22px; margin-bottom: 18px; }
+  li { font-size: 15.5px; line-height: 1.8; color: #2a2a3e; margin-bottom: 6px; }
+  strong { color: var(--navy); }
+
+  .evidence-box { background: #f0f7ff; border: 1px solid #c5daf5; border-radius: 12px; padding: 20px 24px; margin: 32px 0; }
+  .evidence-box .ev-title { font-size: 12px; font-weight: 700; color: #4a7ab5; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px; }
+  .evidence-box ul { margin: 0; }
+  .evidence-box li { font-size: 14px; color: #2a3a5e; line-height: 1.7; }
+
+  .highlight-box { background: linear-gradient(135deg, #0d2545 0%, #1a4a8e 100%); border-radius: 14px; padding: 24px 28px; margin: 32px 0; color: #fff; }
+  .highlight-box h3 { color: var(--teal); margin-top: 0; font-size: 16px; }
+  .highlight-box p, .highlight-box li { color: rgba(255,255,255,0.88); font-size: 15px; }
+
+  .table-wrap { overflow-x: auto; margin: 24px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th { background: var(--navy); color: #fff; padding: 10px 14px; text-align: left; font-weight: 700; }
+  td { padding: 10px 14px; border-bottom: 1px solid var(--gray2); color: #2a2a3e; }
+  tr:nth-child(even) td { background: var(--gray); }
+
+  .sig-block { margin-top: 56px; padding-top: 28px; border-top: 2px solid var(--gray2); }
+  .sig-main { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 12px; }
+  .sig-creds { padding-left: 18px; margin-bottom: 12px; }
+  .sig-creds li { font-size: 13.5px; color: var(--muted); line-height: 1.7; }
+  .sig-notice { font-size: 12.5px; color: var(--muted); font-style: italic; }
+
+  .related { margin-top: 60px; padding-top: 28px; border-top: 2px solid var(--gray2); }
+  .related h4 { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 20px; }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 16px; }
+  .related-card { background: var(--gray); border-radius: 14px; padding: 18px 20px; transition: transform 0.2s; }
+  .related-card:hover { transform: translateY(-3px); }
+  .related-card .rc-cat { font-size: 11px; font-weight: 700; color: var(--teal2); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
+  .related-card .rc-title { font-size: 14px; font-weight: 700; color: var(--navy); line-height: 1.4; }
+
+  footer { background: var(--navy); padding: 32px; text-align: center; }
+  footer p { color: rgba(255,255,255,0.4); font-size: 13px; }
+
+  @media (max-width: 600px) {
+    nav { padding: 0 16px; }
+    .hero { padding: 40px 16px 36px; }
+    .container { padding: 32px 16px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/en/" class="nav-logo">NervLock Lab</a>
+  <div class="nav-right">
+    <a href="/en/#blog" class="nav-back">← Blog</a>
+    <a href="/blog/파킨슨-이상운동증/" class="lang-btn">KR</a>
+    <a href="/blog/parkinson-dyskinesia/" class="lang-btn active">EN</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-icon">🌊</div>
+  <div class="hero-category">Movement Disorders</div>
+  <h1>Levodopa-Induced Dyskinesia in Parkinson's Disease: Mechanisms, Recognition, and Management</h1>
+  <div class="hero-meta">
+    <span>March 24, 2026</span>
+    <span>9 min read</span>
+    <span>Dr. Claire Ham, M.D.</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lang-switch-banner">
+    <span>🇰🇷 이 글의 한국어 버전을 보시겠습니까?</span>
+    <a href="/blog/파킨슨-이상운동증/" class="lang-switch-link">한국어로 읽기 →</a>
+  </div>
+
+  <div class="abstract">
+    Levodopa-induced dyskinesia (LID) represents one of the most challenging long-term complications of Parkinson's disease pharmacotherapy. Affecting a substantial proportion of patients within 5–10 years of levodopa initiation, LID emerges from maladaptive neuroplasticity in the striatum driven by pulsatile dopaminergic stimulation. This article reviews the pathophysiology of LID, its clinical classification, the wearing-off phenomenon, and evidence-based management strategies — from dose fractionation and amantadine to deep brain stimulation.
+  </div>
+
+  <h2>From Stable Response to Motor Fluctuations: The Natural History</h2>
+  <p>In early Parkinson's disease, the nigrostriatal system retains sufficient presynaptic terminal capacity to buffer oral levodopa doses — storing dopamine and releasing it in a regulated, physiologically appropriate manner. During this period, patients experience a stable, long-duration therapeutic response (LDR) that may persist throughout the day with relatively infrequent dosing.</p>
+  <p>As dopaminergic neurodegeneration advances, presynaptic buffering capacity is progressively lost. The brain becomes entirely dependent on the pharmacokinetic profile of exogenous levodopa — a compound with a plasma half-life of approximately 60–90 minutes. Striatal dopamine concentrations therefore mirror plasma levodopa levels, oscillating between troughs and peaks with each dose cycle. This pulsatile pattern of dopaminergic stimulation — fundamentally different from the tonic physiological dopamine release of the intact nigrostriatal system — initiates the neuroplastic changes underlying both wearing-off and dyskinesia.</p>
+
+  <h2>Pathophysiology: Maladaptive Striatal Plasticity</h2>
+  <p>The development of LID is underpinned by maladaptive striatal plasticity, primarily in the direct (striatonigral) pathway. Repeated pulsatile dopamine receptor stimulation drives abnormal synaptic potentiation in D1 receptor-expressing medium spiny neurons of the striatum — a phenomenon analogous to long-term potentiation. This results in dysregulated activation of the direct pathway and consequent disinhibition of thalamocortical motor circuits, producing the involuntary movements characteristic of dyskinesia.</p>
+  <p>Molecular mediators include aberrant ERK1/2 phosphorylation and FosB/ΔFosB transcription factor accumulation downstream of D1 receptor activation; altered NMDA receptor subunit composition at corticostriatal synapses; and dysregulation of endocannabinoid signaling in the striatum. The serotonergic raphe-striatal projection also contributes: serotonergic terminals can convert levodopa to dopamine and release it non-physiologically, amplifying peak-dose dopamine surges and dyskinesia severity.</p>
+
+  <div class="evidence-box">
+    <div class="ev-title">Key Clinical References</div>
+    <ul>
+      <li><strong>Cenci MA (2014)</strong> — Foundational review of D1/ERK1/2/FosB maladaptive plasticity cascade underlying LID pathogenesis. <em>Trends in Neurosciences</em>.</li>
+      <li><strong>Bhidayasiri &amp; Truong (2008)</strong> — Clinical classification of motor complications; practical ON/OFF framework for clinical documentation. <em>Neurologist</em>.</li>
+      <li><strong>Fox et al. (2018)</strong> — International Parkinson and Movement Disorder Society evidence-based review; Level A evidence for amantadine in LID. <em>Movement Disorders</em>.</li>
+      <li><strong>Olanow et al. (2020)</strong> — Extended-release amantadine (ADS-5102) RCT in LID; first regulatory-approved pharmacotherapy for LID. <em>Lancet Neurology</em>.</li>
+    </ul>
+  </div>
+
+  <h2>Clinical Classification</h2>
+  <p>LID is clinically heterogeneous and must be classified accurately to guide management. The three principal phenotypes differ in timing, character, and responsiveness to intervention:</p>
+
+  <div class="table-wrap">
+    <table>
+      <tr><th>Type</th><th>Timing</th><th>Movement Character</th><th>Mechanism</th></tr>
+      <tr><td>Peak-dose dyskinesia</td><td>At maximum plasma levodopa</td><td>Choreiform (flowing, dance-like)</td><td>D1 receptor hyperstimulation</td></tr>
+      <tr><td>Biphasic dyskinesia</td><td>Rising and falling drug levels</td><td>Often dystonic; more distressing</td><td>Intermediate dopamine concentration range</td></tr>
+      <tr><td>Off-period dystonia</td><td>During dopamine trough (AM)</td><td>Sustained painful co-contraction (foot/ankle)</td><td>Dopamine deficiency, not excess</td></tr>
+    </table>
+  </div>
+
+  <p>Peak-dose dyskinesia is the most common form. Notably, many patients with mild-to-moderate peak-dose choreiform movements are not subjectively distressed — and may actively prefer mild dyskinesia to the severe motor impairment of the "OFF" state. This patient preference must be respected in treatment decisions: not all LID requires aggressive intervention.</p>
+
+  <h2>The ON/OFF Framework: Clinical Communication</h2>
+  <p>Effective management of motor fluctuations requires patients and caregivers to understand and use the ON/OFF framework consistently:</p>
+  <ul>
+    <li><strong>"ON" state:</strong> Levodopa is active; motor function is near-optimal. Dyskinesia, if present, typically occurs during ON.</li>
+    <li><strong>"OFF" state:</strong> Levodopa effect has waned; Parkinson's motor symptoms (rigidity, bradykinesia, tremor) re-emerge.</li>
+  </ul>
+
+  <div class="highlight-box">
+    <h3>The Medication Diary: Your Most Valuable Clinical Tool</h3>
+    <p>Caregivers are uniquely positioned to document the temporal pattern of ON/OFF cycling. A structured diary recording medication times, onset and offset of motor benefit, dyskinesia occurrence (timing, body region, severity), and OFF-period symptoms provides the most actionable data available to the treating neurologist for rational dose optimization — more informative than any clinic observation of a 15-minute visit.</p>
+  </div>
+
+  <h2>Management Strategies</h2>
+
+  <h3>1. Dose Fractionation</h3>
+  <p>Dividing the daily levodopa dose into smaller, more frequent administrations reduces peak plasma concentrations and the magnitude of concentration oscillation, attenuating dyskinesia without sacrificing total dopaminergic effect. For example, switching from 200 mg × 3 daily to 100 mg × 6 daily can meaningfully reduce peak-dose dyskinesia while maintaining acceptable motor control.</p>
+
+  <h3>2. Controlled-Release Formulations</h3>
+  <p>Extended-release levodopa preparations (e.g., Rytary/IPX066, Madopar HBS) produce smoother plasma concentration profiles than standard immediate-release formulations, reducing both peak-dose dyskinesia and wearing-off phenomena. Individual pharmacokinetic variability means these formulations require careful dose titration.</p>
+
+  <h3>3. Dopamine Agonist Co-therapy</h3>
+  <p>Long-acting dopamine agonists (pramipexole, ropinirole, rotigotine patch) provide continuous receptor stimulation that reduces levodopa requirements and smooths out the pulsatile stimulation pattern. Reducing the total levodopa dose through agonist co-therapy is one of the most effective strategies for reducing LID severity, particularly in younger patients where agonist side effects are better tolerated.</p>
+
+  <h3>4. Amantadine: The Evidence-Based LID Suppressor</h3>
+  <p>Amantadine is the only pharmacological agent with Level A evidence specifically for LID suppression. Its primary mechanism of action is NMDA receptor antagonism — blocking the glutamatergic overstimulation of striatal neurons that potentiates and sustains the dyskinetic state. Extended-release amantadine (ADS-5102, brand name Gocovri) has received regulatory approval specifically for LID in patients taking levodopa, based on robust placebo-controlled RCT data demonstrating sustained dyskinesia reduction with maintenance of ON time.</p>
+
+  <h3>5. Deep Brain Stimulation</h3>
+  <p>Bilateral subthalamic nucleus (STN) or globus pallidus interna (GPi) deep brain stimulation is the most effective intervention available for advanced motor complications including LID and wearing-off. By providing continuous, programmable modulation of basal ganglia circuit activity, DBS decouples motor function from the pharmacokinetic variability of oral levodopa. STN-DBS allows meaningful levodopa dose reduction (often 30–60%) with consequent LID reduction; GPi-DBS has a more direct antidyskinetic effect and may preserve motor speed better in certain patient profiles.</p>
+
+  <div class="table-wrap">
+    <table>
+      <tr><th>Intervention</th><th>Primary Target</th><th>Evidence Level</th><th>Best Candidate</th></tr>
+      <tr><td>Dose fractionation</td><td>Peak-dose LID</td><td>B</td><td>Early to moderate LID</td></tr>
+      <tr><td>CR formulations</td><td>LID + wearing-off</td><td>B</td><td>Predictable fluctuators</td></tr>
+      <tr><td>Dopamine agonist</td><td>LID + wearing-off</td><td>A</td><td>Younger patients (&lt;70)</td></tr>
+      <tr><td>Amantadine IR/ER</td><td>Peak-dose LID</td><td>A</td><td>Any LID; ER for sustained effect</td></tr>
+      <tr><td>STN-DBS</td><td>LID + wearing-off</td><td>A</td><td>Advanced, levodopa-responsive</td></tr>
+      <tr><td>GPi-DBS</td><td>Direct antidyskinetic</td><td>A</td><td>LID-predominant; cognitive risk concerns</td></tr>
+    </table>
+  </div>
+
+  <h2>Summary</h2>
+  <p>Levodopa-induced dyskinesia is an expected complication of long-term Parkinson's disease pharmacotherapy in a significant proportion of patients. Its pathophysiology — rooted in pulsatile dopaminergic stimulation and maladaptive striatal plasticity — is well-characterized, and its management has matured from empirical dose manipulation to mechanism-targeted pharmacotherapy and surgical neuromodulation. Early recognition, accurate classification, and systematic documentation by caregivers form the foundation of rational LID management.</p>
+
+  <div class="sig-block">
+    <p class="sig-main">Written by <strong>Dr. Claire Ham</strong>, Neurologist, M.D.</p>
+    <ul class="sig-creds">
+      <li>Trained at Yonsei University Severance Hospital</li>
+      <li>Member, Korean Neurological Association</li>
+      <li>Member, Korean Parkinson's Disease and Movement Disorder Society</li>
+      <li>Member, Korean Society of Functional Medicine</li>
+    </ul>
+    <p class="sig-notice">※ This content is for informational purposes only and does not constitute medical advice.</p>
+  </div>
+
+  <div class="related">
+    <h4>Related Articles</h4>
+    <div class="related-grid">
+      <a href="/blog/parkinson-medication-management/" class="related-card">
+        <div class="rc-cat">Clinical Guidance</div>
+        <div class="rc-title">Parkinson's Medication Management: Timing, Side Effects, and Drug Interactions</div>
+      </a>
+      <a href="/blog/parkinson-exercise-therapy/" class="related-card">
+        <div class="rc-cat">Rehabilitation</div>
+        <div class="rc-title">Exercise as Medicine in Parkinson's Disease: Neuroprotection and Motor Function</div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 NervLock Lab. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

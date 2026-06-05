@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>REM Sleep Behavior Disorder in Parkinson's Disease | NervLock Lab</title>
+<meta name="description" content="REM sleep behavior disorder (RBD) is among the earliest and most predictive biomarkers of Parkinson's disease. Learn the neuroscience behind REM atonia loss, clinical presentation, and current management strategies.">
+<style>
+  :root {
+    --navy: #0a1628; --navy2: #1a2d4a;
+    --teal: #00c9b1; --teal2: #00a896;
+    --gold: #f5c842; --gold2: #e0a800;
+    --gray: #f4f6fa; --gray2: #e0e4ef;
+    --muted: #6b7a99;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI','Helvetica Neue',Arial,sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; }
+  a { color: inherit; text-decoration: none; }
+
+  /* NAV */
+  nav { background: var(--navy); padding: 0 32px; height: 60px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+  .nav-logo { color: var(--teal); font-weight: 800; font-size: 18px; letter-spacing: 1px; }
+  .nav-right { display: flex; align-items: center; gap: 20px; }
+  .nav-back { color: #fff; font-size: 14px; opacity: 0.8; transition: opacity 0.2s; }
+  .nav-back:hover { opacity: 1; }
+  .lang-btn { font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.6); transition: all 0.2s; }
+  .lang-btn.active { background: var(--teal); border-color: var(--teal); color: #fff; }
+  .lang-btn:hover:not(.active) { border-color: rgba(255,255,255,0.7); color: #fff; }
+
+  /* HERO */
+  .hero { background: linear-gradient(135deg, #1a0a35 0%, #2d1a6e 100%); padding: 60px 32px 48px; text-align: center; }
+  .hero-icon { font-size: 52px; margin-bottom: 16px; }
+  .hero-category { font-size: 12px; font-weight: 700; color: var(--teal); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(24px,4vw,38px); font-weight: 800; color: #fff; line-height: 1.3; max-width: 700px; margin: 0 auto 20px; }
+  .hero-meta { font-size: 13px; color: rgba(255,255,255,0.55); }
+  .hero-meta span + span::before { content: " · "; }
+
+  /* CONTENT */
+  .container { max-width: 780px; margin: 0 auto; padding: 48px 24px 80px; }
+
+  /* LANG SWITCH BANNER */
+  .lang-switch-banner { background: var(--gray); border: 1px solid var(--gray2); border-radius: 14px; padding: 14px 20px; margin-bottom: 40px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .lang-switch-banner span { font-size: 14px; color: var(--muted); }
+  .lang-switch-link { font-size: 13px; font-weight: 700; color: var(--teal2); border: 1px solid var(--teal2); border-radius: 50px; padding: 6px 16px; transition: all 0.2s; white-space: nowrap; }
+  .lang-switch-link:hover { background: var(--teal2); color: #fff; }
+
+  /* ABSTRACT */
+  .abstract { background: var(--gray); border-left: 4px solid var(--teal); border-radius: 0 12px 12px 0; padding: 20px 24px; margin-bottom: 48px; font-size: 15px; color: #2a2a3e; line-height: 1.75; }
+
+  /* SECTIONS */
+  h2 { font-size: 22px; font-weight: 800; color: var(--navy); margin: 44px 0 16px; padding-bottom: 8px; border-bottom: 2px solid var(--gray2); }
+  h3 { font-size: 17px; font-weight: 700; color: var(--navy2); margin: 28px 0 12px; }
+  p { margin-bottom: 18px; font-size: 15.5px; line-height: 1.8; color: #2a2a3e; }
+  ul, ol { padding-left: 22px; margin-bottom: 18px; }
+  li { font-size: 15.5px; line-height: 1.8; color: #2a2a3e; margin-bottom: 6px; }
+  strong { color: var(--navy); }
+
+  /* EVIDENCE BOX */
+  .evidence-box { background: #f0f7ff; border: 1px solid #c5daf5; border-radius: 12px; padding: 20px 24px; margin: 32px 0; }
+  .evidence-box .ev-title { font-size: 12px; font-weight: 700; color: #4a7ab5; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px; }
+  .evidence-box ul { margin: 0; }
+  .evidence-box li { font-size: 14px; color: #2a3a5e; line-height: 1.7; }
+
+  /* HIGHLIGHT BOX */
+  .highlight-box { background: linear-gradient(135deg, #1a0a35 0%, #2d1a6e 100%); border-radius: 14px; padding: 24px 28px; margin: 32px 0; color: #fff; }
+  .highlight-box h3 { color: var(--teal); margin-top: 0; font-size: 16px; }
+  .highlight-box p, .highlight-box li { color: rgba(255,255,255,0.88); font-size: 15px; }
+
+  /* WARNING BOX */
+  .warning-box { background: #fff8e6; border: 1px solid #f5c842; border-radius: 12px; padding: 18px 22px; margin: 28px 0; }
+  .warning-box .w-title { font-size: 13px; font-weight: 700; color: #b8860b; margin-bottom: 8px; }
+  .warning-box p, .warning-box li { font-size: 14px; color: #5a4a00; margin-bottom: 4px; }
+
+  /* TABLE */
+  .table-wrap { overflow-x: auto; margin: 24px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th { background: var(--navy); color: #fff; padding: 10px 14px; text-align: left; font-weight: 700; }
+  td { padding: 10px 14px; border-bottom: 1px solid var(--gray2); color: #2a2a3e; }
+  tr:nth-child(even) td { background: var(--gray); }
+
+  /* SIG BLOCK */
+  .sig-block { margin-top: 56px; padding-top: 28px; border-top: 2px solid var(--gray2); }
+  .sig-main { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 12px; }
+  .sig-creds { padding-left: 18px; margin-bottom: 12px; }
+  .sig-creds li { font-size: 13.5px; color: var(--muted); line-height: 1.7; }
+  .sig-notice { font-size: 12.5px; color: var(--muted); font-style: italic; }
+
+  /* RELATED */
+  .related { margin-top: 60px; padding-top: 28px; border-top: 2px solid var(--gray2); }
+  .related h4 { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 20px; }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 16px; }
+  .related-card { background: var(--gray); border-radius: 14px; padding: 18px 20px; transition: transform 0.2s; }
+  .related-card:hover { transform: translateY(-3px); }
+  .related-card .rc-cat { font-size: 11px; font-weight: 700; color: var(--teal2); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
+  .related-card .rc-title { font-size: 14px; font-weight: 700; color: var(--navy); line-height: 1.4; }
+
+  /* FOOTER */
+  footer { background: var(--navy); padding: 32px; text-align: center; }
+  footer p { color: rgba(255,255,255,0.4); font-size: 13px; }
+
+  @media (max-width: 600px) {
+    nav { padding: 0 16px; }
+    .hero { padding: 40px 16px 36px; }
+    .container { padding: 32px 16px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/en/" class="nav-logo">NervLock Lab</a>
+  <div class="nav-right">
+    <a href="/en/#blog" class="nav-back">← Blog</a>
+    <a href="/blog/파킨슨-REM수면장애/" class="lang-btn">KR</a>
+    <a href="/blog/parkinson-rem-sleep-disorder/" class="lang-btn active">EN</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-icon">💤</div>
+  <div class="hero-category">Neuroscience</div>
+  <h1>REM Sleep Behavior Disorder in Parkinson's Disease: The Silent Harbinger</h1>
+  <div class="hero-meta">
+    <span>March 11, 2026</span>
+    <span>9 min read</span>
+    <span>Dr. Claire Ham, M.D.</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lang-switch-banner">
+    <span>🇰🇷 이 글의 한국어 버전을 보시겠습니까?</span>
+    <a href="/blog/파킨슨-REM수면장애/" class="lang-switch-link">한국어로 읽기 →</a>
+  </div>
+
+  <div class="abstract">
+    REM sleep behavior disorder (RBD) is a parasomnia characterized by loss of the normal skeletal muscle atonia during REM sleep, resulting in dream enactment behavior. Far from being merely a sleep nuisance, isolated RBD carries an 80–90% lifetime risk of phenoconversion to an alpha-synucleinopathy — most commonly Parkinson's disease, dementia with Lewy bodies, or multiple system atrophy. This article examines the neurophysiological basis of REM atonia, the clinical and polysomnographic approach to diagnosis, and evidence-based management strategies, with a focus on surveillance for prodromal neurodegeneration.
+  </div>
+
+  <h2>The Neurophysiology of REM Atonia — and Its Breakdown</h2>
+  <p>During normal REM sleep, a descending inhibitory pathway — originating in the sublaterodorsal nucleus (SLD) in the pons — activates GABAergic and glycinergic interneurons in the ventromedial medulla, which in turn hyperpolarize spinal alpha-motor neurons. This "brainstem atonia circuit" ensures that the vivid motor activity of dreams does not translate into physical movement.</p>
+  <p>In RBD, this circuit is disrupted. Accumulation of alpha-synuclein aggregates (Lewy bodies and Lewy neurites) in the SLD and its efferent projections causes progressive failure of the REM-atonia switch. The result is REM sleep without atonia (RSWA): the loss of chin and limb muscle suppression that is the electrophysiologic hallmark of the disorder.</p>
+  <p>Crucially, the brainstem nuclei vulnerable in RBD — the SLD, locus coeruleus, raphe nuclei — correspond precisely to Braak stages 1–2, the earliest sites of alpha-synuclein pathology in the proposed Braak staging scheme for Parkinson's disease. RBD is therefore not merely a symptom of neurodegeneration; it is its anatomic signature in time.</p>
+
+  <h2>Prodromal Significance: The 80–90% Phenoconversion Risk</h2>
+  <p>The landmark longitudinal data are stark. Iranzo et al. (2014) followed 44 patients with polysomnography-confirmed idiopathic RBD for a mean of 14.2 years; at 14 years, the cumulative probability of a defined neurodegenerative syndrome reached 91%. Postuma et al. (2019), in the largest multicenter cohort to date (n = 1,280), reported a 10-year phenoconversion rate of approximately 74%.</p>
+
+  <div class="evidence-box">
+    <div class="ev-title">Key Clinical References</div>
+    <ul>
+      <li><strong>Postuma et al., 2019</strong> — Multicenter RBD cohort (n=1,280): 10-yr phenoconversion rate ~74%; risk markers include subtle motor slowing and olfactory loss.</li>
+      <li><strong>Iranzo et al., 2014</strong> — 14-year follow-up of polysomnogram-confirmed RBD: cumulative neurodegenerative syndrome at 14 yr = 91%.</li>
+      <li><strong>McCarter et al., 2013</strong> — Video-PSG quantification of complex motor behaviors; correlates RSWA severity with phenoconversion timeline.</li>
+      <li><strong>Boeve et al., 2013</strong> — Comprehensive review of RBD pathophysiology and its role as the definitive prodromal alpha-synucleinopathy biomarker.</li>
+    </ul>
+  </div>
+
+  <p>The distribution of phenoconversion destinations reflects the underlying alpha-synuclein burden: roughly 45–50% develop Parkinson's disease, 25–30% dementia with Lewy bodies, 10–15% multiple system atrophy, and approximately 10% develop other synucleinopathies. The key practical implication is that the neurologist seeing a patient with isolated RBD is, in the majority of cases, witnessing the pre-motor phase of a synucleinopathy — years before the first dopaminergic symptom appears.</p>
+
+  <h2>Clinical Presentation</h2>
+  <p>The defining feature is dream enactment behavior: patients vocalize (shouting, cursing, laughing), make limb movements (punching, kicking, reaching), or abruptly sit up during REM sleep. The enacted behaviors often correlate with dream content; patients frequently report dreams of being chased or attacked. Injury — to the patient or bedpartner — is common and is often the precipitating reason for medical evaluation.</p>
+
+  <h3>Key History Points</h3>
+  <ul>
+    <li>Onset typically in the 5th–7th decade; male predominance (2–3:1), though this bias may partly reflect under-reporting in women</li>
+    <li>Behaviors predominantly in the latter half of the night (REM sleep is most abundant in the early morning hours)</li>
+    <li>Dream recall is often vivid and frightening; patients may wake confused but quickly orient — distinguishing RBD from the post-ictal confusion of sleep-related epilepsy</li>
+    <li>Assess for antidepressant use (SSRIs and SNRIs can precipitate or unmask RBD) and brainstem lesions (narcolepsy, multiple sclerosis, pontine tumors)</li>
+  </ul>
+
+  <div class="highlight-box">
+    <h3>The "Injury Threshold" Clinical Clue</h3>
+    <p>A bedpartner reporting being struck, kicked, or pushed out of bed during the patient's sleep has a high positive predictive value for RBD. When combined with dream recall of physical confrontation, this history alone warrants formal polysomnographic evaluation — even before clinical motor signs are present.</p>
+  </div>
+
+  <h2>Diagnostic Approach: Video-PSG is the Gold Standard</h2>
+  <p>The definitive diagnosis of RBD requires video-polysomnography (vPSG) demonstrating two simultaneous features:</p>
+  <ol>
+    <li><strong>REM sleep without atonia (RSWA):</strong> Elevated chin EMG tone (sustained muscle activity > 50% of the epoch, or excessive transient muscle activity during REM)</li>
+    <li><strong>Dream enactment behavior:</strong> Observable on video recording or reported by reliable history</li>
+  </ol>
+  <p>The ICSD-3 criteria require both elements. RSWA alone — documented on PSG but without behavioral correlate — represents a risk state but does not fulfill diagnostic criteria for RBD. Conversely, a compelling clinical history without PSG confirmation remains "probable RBD" and warrants vPSG when clinical circumstances permit.</p>
+
+  <h3>Differential Diagnosis</h3>
+  <div class="table-wrap">
+    <table>
+      <tr><th>Condition</th><th>Distinguishing Feature</th></tr>
+      <tr><td>NREM parasomnias (sleepwalking, night terrors)</td><td>Arise from N3 sleep; no dream recall; behavioral amnesia</td></tr>
+      <tr><td>Sleep-related epilepsy (nocturnal frontal lobe)</td><td>Stereotyped motor patterns; post-ictal confusion; EEG ictal activity</td></tr>
+      <tr><td>OSA with pseudo-RBD</td><td>Arousals from apnea events; resolved with CPAP</td></tr>
+      <tr><td>PTSD-related nightmares</td><td>Full awakening with recall; no RSWA on PSG</td></tr>
+      <tr><td>Drug-induced RBD (SSRI/SNRI)</td><td>Temporal association with medication; may partially resolve on discontinuation</td></tr>
+    </table>
+  </div>
+
+  <h2>Management</h2>
+  <h3>1. Injury Prevention: The Immediate Priority</h3>
+  <p>Regardless of phenoconversion trajectory, the immediate clinical mandate is preventing harm. Practical environmental modifications include:</p>
+  <ul>
+    <li>Bed rail padding or floor-level mattress placement</li>
+    <li>Removal of sharp objects, lamps, and glass from the bedside</li>
+    <li>Separate sleeping arrangements for the bedpartner until behaviors are controlled</li>
+    <li>Door alarm if patients are at risk of leaving the room in a dream-enacting state</li>
+  </ul>
+
+  <h3>2. Pharmacological Treatment</h3>
+  <div class="table-wrap">
+    <table>
+      <tr><th>Agent</th><th>Dose</th><th>Evidence Level</th><th>Notes</th></tr>
+      <tr><td>Melatonin</td><td>3–12 mg at bedtime</td><td>B (controlled trials)</td><td>First-line; reduces RSWA; safer fall/cognitive profile</td></tr>
+      <tr><td>Clonazepam</td><td>0.25–1.0 mg at bedtime</td><td>B (open-label + series)</td><td>Reduces behavioral complexity; cognitive/fall risk in elderly; use with caution in OSA</td></tr>
+    </table>
+  </div>
+  <p>Melatonin is increasingly preferred as first-line therapy, particularly in older patients with comorbid cognitive risk. It does not suppress REM sleep architecture and has a favorable safety profile. Clonazepam remains effective for severe or refractory cases but requires careful risk-benefit assessment regarding falls and respiratory depression, particularly in patients who may already have subtle motor or cognitive compromise.</p>
+
+  <h3>3. Surveillance for Phenoconversion</h3>
+  <p>Annual structured assessment is recommended for all RBD patients and should include:</p>
+  <ul>
+    <li>MDS-UPDRS motor subscale (annual baseline; detect emerging parkinsonism)</li>
+    <li>Montreal Cognitive Assessment (MoCA) for cognitive screening</li>
+    <li>University of Pennsylvania Smell Identification Test (UPSIT) — hyposmia strengthens prodromal phenotyping</li>
+    <li>Autonomic symptom questionnaire (orthostatic symptoms, constipation, urinary urgency)</li>
+    <li>Skin or submandibular gland biopsy for alpha-synuclein seed amplification assay (SAA) — emerging diagnostic tool</li>
+  </ul>
+
+  <div class="warning-box">
+    <div class="w-title">⚠ Clinical Note: SSRI/SNRI Use</div>
+    <p>Serotonergic antidepressants (SSRIs, SNRIs, TCAs) are among the most common causes of secondary RBD or RSWA exacerbation. In a patient newly diagnosed with RBD who is on an antidepressant, consider whether the temporal association is causal before attributing to idiopathic/prodromal disease — though both may coexist.</p>
+  </div>
+
+  <h2>The Emerging Landscape: Alpha-Synuclein Seed Amplification Assays</h2>
+  <p>The development of alpha-synuclein SAA (e.g., real-time quaking-induced conversion, RT-QuIC) has transformed prodromal staging. In RBD cohorts, SAA positivity in CSF or skin biopsy is detected in 80–90% of patients prior to motor onset, offering a direct molecular confirmation of synucleinopathy rather than indirect phenotypic inference. While not yet standard clinical practice, the technique is increasingly available at academic centers and will likely become integral to the neuroprotective trial enrollment of the coming decade.</p>
+
+  <h2>Summary</h2>
+  <p>REM sleep behavior disorder occupies a unique position in the Parkinson's disease spectrum: it is the most specific known prodromal biomarker, detectable a decade or more before motor onset, and it carries a risk of phenoconversion that rivals or exceeds that of any other isolated non-motor feature. For the neurologist, RBD diagnosis opens a window — for patient counseling, fall and injury prevention, and enrollment in neuroprotective research that will define the next era of Parkinson's therapeutics.</p>
+
+  <div class="sig-block">
+    <p class="sig-main">Written by <strong>Dr. Claire Ham</strong>, Neurologist, M.D.</p>
+    <ul class="sig-creds">
+      <li>Trained at Yonsei University Severance Hospital</li>
+      <li>Member, Korean Neurological Association</li>
+      <li>Member, Korean Parkinson's Disease and Movement Disorder Society</li>
+      <li>Member, Korean Society of Functional Medicine</li>
+    </ul>
+    <p class="sig-notice">※ This content is for informational purposes only and does not constitute medical advice.</p>
+  </div>
+
+  <div class="related">
+    <h4>Related Articles</h4>
+    <div class="related-grid">
+      <a href="/blog/parkinson-early-signs/" class="related-card">
+        <div class="rc-cat">Neuroscience</div>
+        <div class="rc-title">Early Signs of Parkinson's Disease: What to Watch Before Motor Symptoms</div>
+      </a>
+      <a href="/blog/parkinson-caregiver-guide/" class="related-card">
+        <div class="rc-cat">Clinical Guidance</div>
+        <div class="rc-title">Parkinson's Caregiver Guide: Sleep Safety, Medications, and Fall Prevention</div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 NervLock Lab. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

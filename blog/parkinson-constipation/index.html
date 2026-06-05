@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Constipation in Parkinson's Disease | NervLock Lab</title>
+<meta name="description" content="Constipation affects up to 80% of Parkinson's patients and can impair levodopa absorption. Learn about enteric nervous system pathology, contraindicated antiemetics, and evidence-based management strategies.">
+<style>
+  :root {
+    --navy: #0a1628; --navy2: #1a2d4a;
+    --teal: #00c9b1; --teal2: #00a896;
+    --gold: #f5c842; --gold2: #e0a800;
+    --gray: #f4f6fa; --gray2: #e0e4ef;
+    --muted: #6b7a99;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI','Helvetica Neue',Arial,sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; }
+  a { color: inherit; text-decoration: none; }
+
+  nav { background: var(--navy); padding: 0 32px; height: 60px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+  .nav-logo { color: var(--teal); font-weight: 800; font-size: 18px; letter-spacing: 1px; }
+  .nav-right { display: flex; align-items: center; gap: 20px; }
+  .nav-back { color: #fff; font-size: 14px; opacity: 0.8; transition: opacity 0.2s; }
+  .nav-back:hover { opacity: 1; }
+  .lang-btn { font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.6); transition: all 0.2s; }
+  .lang-btn.active { background: var(--teal); border-color: var(--teal); color: #fff; }
+  .lang-btn:hover:not(.active) { border-color: rgba(255,255,255,0.7); color: #fff; }
+
+  .hero { background: linear-gradient(135deg, #0f4f3a 0%, #22a090 100%); padding: 60px 32px 48px; text-align: center; }
+  .hero-icon { font-size: 52px; margin-bottom: 16px; }
+  .hero-category { font-size: 12px; font-weight: 700; color: var(--teal); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(24px,4vw,38px); font-weight: 800; color: #fff; line-height: 1.3; max-width: 700px; margin: 0 auto 20px; }
+  .hero-meta { font-size: 13px; color: rgba(255,255,255,0.55); }
+  .hero-meta span + span::before { content: " · "; }
+
+  .container { max-width: 780px; margin: 0 auto; padding: 48px 24px 80px; }
+
+  .lang-switch-banner { background: var(--gray); border: 1px solid var(--gray2); border-radius: 14px; padding: 14px 20px; margin-bottom: 40px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .lang-switch-banner span { font-size: 14px; color: var(--muted); }
+  .lang-switch-link { font-size: 13px; font-weight: 700; color: var(--teal2); border: 1px solid var(--teal2); border-radius: 50px; padding: 6px 16px; transition: all 0.2s; white-space: nowrap; }
+  .lang-switch-link:hover { background: var(--teal2); color: #fff; }
+
+  .abstract { background: var(--gray); border-left: 4px solid var(--teal); border-radius: 0 12px 12px 0; padding: 20px 24px; margin-bottom: 48px; font-size: 15px; color: #2a2a3e; line-height: 1.75; }
+
+  h2 { font-size: 22px; font-weight: 800; color: var(--navy); margin: 44px 0 16px; padding-bottom: 8px; border-bottom: 2px solid var(--gray2); }
+  h3 { font-size: 17px; font-weight: 700; color: var(--navy2); margin: 28px 0 12px; }
+  p { margin-bottom: 18px; font-size: 15.5px; line-height: 1.8; color: #2a2a3e; }
+  ul, ol { padding-left: 22px; margin-bottom: 18px; }
+  li { font-size: 15.5px; line-height: 1.8; color: #2a2a3e; margin-bottom: 6px; }
+  strong { color: var(--navy); }
+
+  .evidence-box { background: #f0f7ff; border: 1px solid #c5daf5; border-radius: 12px; padding: 20px 24px; margin: 32px 0; }
+  .evidence-box .ev-title { font-size: 12px; font-weight: 700; color: #4a7ab5; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px; }
+  .evidence-box ul { margin: 0; }
+  .evidence-box li { font-size: 14px; color: #2a3a5e; line-height: 1.7; }
+
+  .danger-box { background: #fff2f2; border: 1px solid #f5c5c5; border-radius: 12px; padding: 18px 22px; margin: 28px 0; }
+  .danger-box .d-title { font-size: 13px; font-weight: 700; color: #c0392b; margin-bottom: 10px; }
+  .danger-box p, .danger-box li { font-size: 14px; color: #5a2020; margin-bottom: 4px; }
+
+  .highlight-box { background: linear-gradient(135deg, #0f4f3a 0%, #22a090 100%); border-radius: 14px; padding: 24px 28px; margin: 32px 0; color: #fff; }
+  .highlight-box h3 { color: #b3f5e8; margin-top: 0; font-size: 16px; }
+  .highlight-box p, .highlight-box li { color: rgba(255,255,255,0.88); font-size: 15px; }
+
+  .table-wrap { overflow-x: auto; margin: 24px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th { background: var(--navy); color: #fff; padding: 10px 14px; text-align: left; font-weight: 700; }
+  td { padding: 10px 14px; border-bottom: 1px solid var(--gray2); color: #2a2a3e; }
+  tr:nth-child(even) td { background: var(--gray); }
+
+  .sig-block { margin-top: 56px; padding-top: 28px; border-top: 2px solid var(--gray2); }
+  .sig-main { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 12px; }
+  .sig-creds { padding-left: 18px; margin-bottom: 12px; }
+  .sig-creds li { font-size: 13.5px; color: var(--muted); line-height: 1.7; }
+  .sig-notice { font-size: 12.5px; color: var(--muted); font-style: italic; }
+
+  .related { margin-top: 60px; padding-top: 28px; border-top: 2px solid var(--gray2); }
+  .related h4 { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 20px; }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 16px; }
+  .related-card { background: var(--gray); border-radius: 14px; padding: 18px 20px; transition: transform 0.2s; }
+  .related-card:hover { transform: translateY(-3px); }
+  .related-card .rc-cat { font-size: 11px; font-weight: 700; color: var(--teal2); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
+  .related-card .rc-title { font-size: 14px; font-weight: 700; color: var(--navy); line-height: 1.4; }
+
+  footer { background: var(--navy); padding: 32px; text-align: center; }
+  footer p { color: rgba(255,255,255,0.4); font-size: 13px; }
+
+  @media (max-width: 600px) {
+    nav { padding: 0 16px; }
+    .hero { padding: 40px 16px 36px; }
+    .container { padding: 32px 16px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/en/" class="nav-logo">NervLock Lab</a>
+  <div class="nav-right">
+    <a href="/en/#blog" class="nav-back">← Blog</a>
+    <a href="/blog/파킨슨-변비/" class="lang-btn">KR</a>
+    <a href="/blog/parkinson-constipation/" class="lang-btn active">EN</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-icon">🌿</div>
+  <div class="hero-category">Autonomic Neurology</div>
+  <h1>Constipation in Parkinson's Disease: Enteric Neuropathology, Drug Interactions, and Evidence-Based Management</h1>
+  <div class="hero-meta">
+    <span>April 27, 2026</span>
+    <span>8 min read</span>
+    <span>Dr. Claire Ham, M.D.</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lang-switch-banner">
+    <span>🇰🇷 이 글의 한국어 버전을 보시겠습니까?</span>
+    <a href="/blog/파킨슨-변비/" class="lang-switch-link">한국어로 읽기 →</a>
+  </div>
+
+  <div class="abstract">
+    Constipation is among the most prevalent and clinically significant gastrointestinal manifestations of Parkinson's disease, affecting up to 80% of patients and frequently predating motor symptom onset by years to decades. Beyond its impact on quality of life, constipation in Parkinson's disease carries specific pharmacological implications — most critically, its capacity to impair levodopa absorption and precipitate motor fluctuations. This article examines the enteric neuropathological basis of Parkinson's disease-related constipation, critical drug safety considerations, and an evidence-informed management framework.
+  </div>
+
+  <h2>The Enteric Nervous System in Parkinson's Disease</h2>
+  <p>The gastrointestinal manifestations of Parkinson's disease reflect pathological involvement of the enteric nervous system (ENS) — the semi-autonomous neural network embedded within the gut wall that governs gastrointestinal motility, secretion, and blood flow. The ENS comprises approximately 500 million neurons, rivaling the spinal cord in complexity, and is uniquely vulnerable to the alpha-synuclein pathology that defines Parkinson's disease.</p>
+  <p>Post-mortem and biopsy studies have consistently demonstrated Lewy body and Lewy neurite pathology throughout the ENS in Parkinson's disease — in the myenteric (Auerbach's) and submucosal (Meissner's) plexuses of the esophagus, stomach, small intestine, and colon. Critically, enteric alpha-synuclein pathology is detectable years before clinical motor diagnosis — a finding that both explains the early emergence of gastrointestinal symptoms and has informed the "gut-first" hypothesis of Parkinson's disease initiation (Braak et al.).</p>
+
+  <div class="highlight-box">
+    <h3>The Gut-First Hypothesis</h3>
+    <p>The observation that enteric Lewy pathology precedes brainstem and cortical involvement has led to the hypothesis that environmental or ingested alpha-synuclein triggers may initiate PD pathology in the gut, with subsequent retrograde propagation to the CNS via the vagus nerve. While this remains an active area of debate, it explains why constipation precedes motor symptoms in many patients — and why gut health should be an active therapeutic target, not a passive symptom to manage.</p>
+  </div>
+
+  <h2>Mechanisms of Constipation</h2>
+  <p>Parkinson's disease-related constipation arises through multiple concurrent mechanisms:</p>
+  <ul>
+    <li><strong>Colonic dysmotility:</strong> Degeneration of myenteric neurons reduces propulsive colonic contractions, prolonging colonic transit time by 2–3-fold compared to age-matched controls. Prolonged transit results in excessive water reabsorption, producing hard, difficult-to-pass stools.</li>
+    <li><strong>Defecatory dysfunction:</strong> Paradoxical puborectalis and external anal sphincter contraction during attempted defecation — analogous to the dystonic co-contraction seen in limb musculature — impairs the coordinated relaxation required for normal defecation. This "outlet obstruction" component often persists even when colonic motility is pharmacologically improved.</li>
+    <li><strong>Reduced physical activity:</strong> The motor impairment of Parkinson's disease reduces whole-body activity, contributing to colonic transit slowing through reduced mechanical stimulation of intestinal motility.</li>
+    <li><strong>Autonomic dysfunction:</strong> Sympathetic and parasympathetic imbalance impairs the normal autonomic regulation of intestinal motility, secretion, and blood flow.</li>
+  </ul>
+
+  <div class="evidence-box">
+    <div class="ev-title">Key Clinical References</div>
+    <ul>
+      <li><strong>Pfeiffer RF (2011)</strong> — Comprehensive review of gastrointestinal dysfunction in PD; prevalence, mechanisms, and management framework. <em>Parkinsonism and Related Disorders</em>.</li>
+      <li><strong>Fasano et al. (2015)</strong> — Authoritative Lancet Neurology review covering ENS pathology, gastric emptying delay, and the full spectrum of GI dysfunction in PD.</li>
+      <li><strong>Unger et al. (2016)</strong> — Fecal microbiome analysis in PD patients: reduced Firmicutes/Lachnospiraceae, increased Proteobacteria; short-chain fatty acid reduction correlates with constipation severity.</li>
+      <li><strong>Heetun &amp; Quigley (2012)</strong> — Gastroparesis in PD: delayed gastric emptying compounds levodopa absorption variability; documented levodopa pharmacokinetic consequences.</li>
+    </ul>
+  </div>
+
+  <h2>The Levodopa Absorption Crisis</h2>
+  <p>A pharmacologically critical consequence of severe constipation in levodopa-treated Parkinson's disease is impaired drug absorption. Levodopa is absorbed primarily in the proximal small intestine via the LAT1 transporter. When colonic stasis and fecal loading delays gastric emptying and small intestinal transit, levodopa absorption becomes erratic and unpredictable — producing the clinical picture of apparently random "dose failures" and prolonged "OFF" periods that may superficially resemble disease progression.</p>
+  <p>Recognition of constipation as a reversible cause of levodopa pharmacokinetic failure is clinically important: effective constipation management can restore predictable drug absorption and substantially improve motor control without any dose adjustment. In a patient with worsening "OFF" periods, addressing constipation should be among the first interventions evaluated before escalating levodopa dosing.</p>
+
+  <div class="danger-box">
+    <div class="d-title">🚫 Contraindicated: Dopamine Antagonist Antiemetics and Prokinetics</div>
+    <p>Several gastrointestinal medications are absolutely contraindicated in Parkinson's disease:</p>
+    <ul>
+      <li><strong>Metoclopramide</strong> — central D2 blocker; acutely worsens parkinsonism; may precipitate prolonged deterioration</li>
+      <li><strong>Levosulpiride</strong> — widely used in Korea for dyspepsia; potent central D2 antagonist; contraindicated</li>
+      <li><strong>Prochlorperazine, haloperidol</strong> — traditional antiemetics; D2 blockers; must be avoided</li>
+    </ul>
+    <p style="margin-top:12px;"><strong>Safe alternative prokinetic:</strong> Domperidone (peripheral D2 antagonist; limited BBB penetration) — use with QTc monitoring.</p>
+    <p><strong>Safe antiemetics:</strong> Ondansetron (5-HT3 antagonist; no D2 activity); trimethobenzamide.</p>
+  </div>
+
+  <h2>Evidence-Based Management Framework</h2>
+
+  <h3>1. Osmotic Agents — Magnesium Salts</h3>
+  <p>Magnesium oxide and magnesium citrate act as osmotic laxatives, drawing water into the colonic lumen to soften stool consistency and stimulate peristalsis without directly stimulating ENS neurons. Magnesium citrate offers superior bioavailability; magnesium oxide is more economical for daily use. Both are preferred as first-line pharmacological agents in Parkinson's disease given their ENS-sparing mechanism and favorable safety profile.</p>
+  <p>Polyethylene glycol (PEG, Miralax/Movicol) is an equally safe osmotic alternative supported by controlled trial data in PD populations. Stimulant laxatives (bisacodyl, senna) should be used judiciously — chronic use may further compromise the already-vulnerable ENS neuronal population.</p>
+
+  <h3>2. Dietary Fiber and Hydration</h3>
+  <p>A targeted increase in dietary soluble and insoluble fiber (psyllium, oats, legumes, vegetables), combined with adequate fluid intake (≥ 1.5–2L/day), forms the behavioral foundation of constipation management. Fiber supplementation should be initiated gradually to minimize flatulence and introduced alongside adequate hydration to prevent fiber-induced colonic obstruction.</p>
+
+  <h3>3. Gut Microbiome Restoration</h3>
+  <p>Parkinson's disease is associated with characteristic gut dysbiosis: reduced abundance of short-chain fatty acid-producing Firmicutes and Lachnospiraceae, and increased abundance of pro-inflammatory Proteobacteria. This dysbiosis promotes intestinal barrier dysfunction and translocation of inflammatory mediators into the systemic circulation — with potential consequences for neuroinflammatory burden and the gut-brain axis.</p>
+  <p>Dietary strategies supporting microbiome diversity — fermented foods (yogurt, kimchi, kefir), prebiotic fiber (inulin, FOS), polyphenol-rich foods (berries, green tea, olive oil) — and targeted probiotic supplementation represent rational adjunctive approaches. Several small trials of multi-strain probiotics in PD have demonstrated improvement in bowel frequency and stool consistency.</p>
+
+  <h3>4. Vagus Nerve Modulation</h3>
+  <p>The vagus nerve is the principal pathway through which the ENS communicates with the CNS, and vagal tone directly modulates gastrointestinal motility via parasympathetic cholinergic innervation of the gut wall. Diaphragmatic breathing exercises (slow, prolonged exhalation; 5–10 minutes daily) activate the parasympathetic nervous system via vagal afferents, promoting intestinal peristalsis and reducing sympathetic tone.</p>
+  <p>Transcutaneous auricular vagus nerve stimulation (taVNS) — non-invasive stimulation of the auricular branch of the vagus nerve — is under active investigation for autonomic dysfunction in Parkinson's disease, including constipation. Preliminary data suggest improvements in colonic motility with taVNS protocols, though larger controlled trials are needed.</p>
+
+  <h3>5. Physical Activity</h3>
+  <p>Structured aerobic exercise promotes gastrointestinal motility through both mechanical stimulation (core muscle activity generating intraabdominal pressure variation) and neurohumoral mechanisms (exercise-induced release of serotonin, peptide YY, and motilin in the gut). Walking 30–45 minutes daily at moderate intensity is consistently associated with reduced constipation severity in PD cohorts and should be integrated as a therapeutic recommendation.</p>
+
+  <div class="table-wrap">
+    <table>
+      <tr><th>Intervention</th><th>Mechanism</th><th>Evidence</th><th>Notes</th></tr>
+      <tr><td>Magnesium citrate/oxide</td><td>Osmotic; ENS-sparing</td><td>Clinical practice (preferred)</td><td>1st-line pharmacological agent in PD</td></tr>
+      <tr><td>PEG (Miralax)</td><td>Osmotic</td><td>RCT in PD</td><td>Equally safe; good tolerability</td></tr>
+      <tr><td>Dietary fiber + fluids</td><td>Stool bulk; motility</td><td>Observational</td><td>Foundation of behavioral management</td></tr>
+      <tr><td>Probiotics</td><td>Microbiome restoration</td><td>Small RCTs</td><td>Multi-strain; 8+ weeks for effect</td></tr>
+      <tr><td>Diaphragmatic breathing</td><td>Vagal activation</td><td>Mechanistic + pilot</td><td>5–10 min daily; low risk</td></tr>
+      <tr><td>Aerobic exercise</td><td>Motility; neurohumoral</td><td>Cohort + RCT</td><td>30–45 min/day walking; dual benefit</td></tr>
+    </table>
+  </div>
+
+  <h2>Summary</h2>
+  <p>Constipation in Parkinson's disease is not a peripheral nuisance but a direct reflection of alpha-synuclein pathology in the enteric nervous system. Its clinical implications extend beyond discomfort: unmanaged constipation disrupts levodopa pharmacokinetics, amplifies motor fluctuations, and sustains the gut-brain inflammatory circuit that may accelerate central neurodegeneration. The avoidance of dopaminergic antagonist medications, optimization of osmotic agents, and integration of dietary, microbiome, and vagal strategies constitute a comprehensive management approach that addresses both the symptom and its underlying neuroautonomic substrate.</p>
+
+  <div class="sig-block">
+    <p class="sig-main">Written by <strong>Dr. Claire Ham</strong>, Neurologist, M.D.</p>
+    <ul class="sig-creds">
+      <li>Trained at Yonsei University Severance Hospital</li>
+      <li>Member, Korean Neurological Association</li>
+      <li>Member, Korean Parkinson's Disease and Movement Disorder Society</li>
+      <li>Member, Korean Society of Functional Medicine</li>
+    </ul>
+    <p class="sig-notice">※ This content is for informational purposes only and does not constitute medical advice.</p>
+  </div>
+
+  <div class="related">
+    <h4>Related Articles</h4>
+    <div class="related-grid">
+      <a href="/blog/parkinson-glutathione/" class="related-card">
+        <div class="rc-cat">Nutritional Neuroscience</div>
+        <div class="rc-title">Glutathione Depletion in Parkinson's Disease: Biochemistry and Replenishment</div>
+      </a>
+      <a href="/blog/parkinson-early-signs/" class="related-card">
+        <div class="rc-cat">Neuroscience</div>
+        <div class="rc-title">Early Signs of Parkinson's Disease: What to Watch Before Motor Symptoms</div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 NervLock Lab. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

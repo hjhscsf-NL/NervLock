@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glutathione Depletion in Parkinson's Disease | NervLock Lab</title>
+<meta name="description" content="The substantia nigra in Parkinson's disease shows 40-50% GSH depletion at post-mortem. Explore the neurochemistry of glutathione, the challenge of replenishment, and current evidence for IV and dietary strategies.">
+<style>
+  :root {
+    --navy: #0a1628; --navy2: #1a2d4a;
+    --teal: #00c9b1; --teal2: #00a896;
+    --gold: #f5c842; --gold2: #e0a800;
+    --gray: #f4f6fa; --gray2: #e0e4ef;
+    --muted: #6b7a99;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI','Helvetica Neue',Arial,sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; }
+  a { color: inherit; text-decoration: none; }
+
+  nav { background: var(--navy); padding: 0 32px; height: 60px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+  .nav-logo { color: var(--teal); font-weight: 800; font-size: 18px; letter-spacing: 1px; }
+  .nav-right { display: flex; align-items: center; gap: 20px; }
+  .nav-back { color: #fff; font-size: 14px; opacity: 0.8; transition: opacity 0.2s; }
+  .nav-back:hover { opacity: 1; }
+  .lang-btn { font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.6); transition: all 0.2s; }
+  .lang-btn.active { background: var(--teal); border-color: var(--teal); color: #fff; }
+  .lang-btn:hover:not(.active) { border-color: rgba(255,255,255,0.7); color: #fff; }
+
+  .hero { background: linear-gradient(135deg, #0a3d2a 0%, #0d6e4e 100%); padding: 60px 32px 48px; text-align: center; }
+  .hero-icon { font-size: 52px; margin-bottom: 16px; }
+  .hero-category { font-size: 12px; font-weight: 700; color: var(--teal); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(24px,4vw,38px); font-weight: 800; color: #fff; line-height: 1.3; max-width: 700px; margin: 0 auto 20px; }
+  .hero-meta { font-size: 13px; color: rgba(255,255,255,0.55); }
+  .hero-meta span + span::before { content: " · "; }
+
+  .container { max-width: 780px; margin: 0 auto; padding: 48px 24px 80px; }
+
+  .lang-switch-banner { background: var(--gray); border: 1px solid var(--gray2); border-radius: 14px; padding: 14px 20px; margin-bottom: 40px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .lang-switch-banner span { font-size: 14px; color: var(--muted); }
+  .lang-switch-link { font-size: 13px; font-weight: 700; color: var(--teal2); border: 1px solid var(--teal2); border-radius: 50px; padding: 6px 16px; transition: all 0.2s; white-space: nowrap; }
+  .lang-switch-link:hover { background: var(--teal2); color: #fff; }
+
+  .abstract { background: var(--gray); border-left: 4px solid var(--teal); border-radius: 0 12px 12px 0; padding: 20px 24px; margin-bottom: 48px; font-size: 15px; color: #2a2a3e; line-height: 1.75; }
+
+  h2 { font-size: 22px; font-weight: 800; color: var(--navy); margin: 44px 0 16px; padding-bottom: 8px; border-bottom: 2px solid var(--gray2); }
+  h3 { font-size: 17px; font-weight: 700; color: var(--navy2); margin: 28px 0 12px; }
+  p { margin-bottom: 18px; font-size: 15.5px; line-height: 1.8; color: #2a2a3e; }
+  ul, ol { padding-left: 22px; margin-bottom: 18px; }
+  li { font-size: 15.5px; line-height: 1.8; color: #2a2a3e; margin-bottom: 6px; }
+  strong { color: var(--navy); }
+
+  .evidence-box { background: #f0f7ff; border: 1px solid #c5daf5; border-radius: 12px; padding: 20px 24px; margin: 32px 0; }
+  .evidence-box .ev-title { font-size: 12px; font-weight: 700; color: #4a7ab5; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px; }
+  .evidence-box ul { margin: 0; }
+  .evidence-box li { font-size: 14px; color: #2a3a5e; line-height: 1.7; }
+
+  .highlight-box { background: linear-gradient(135deg, #0a3d2a 0%, #0d6e4e 100%); border-radius: 14px; padding: 24px 28px; margin: 32px 0; color: #fff; }
+  .highlight-box h3 { color: var(--teal); margin-top: 0; font-size: 16px; }
+  .highlight-box p, .highlight-box li { color: rgba(255,255,255,0.88); font-size: 15px; }
+
+  .table-wrap { overflow-x: auto; margin: 24px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th { background: var(--navy); color: #fff; padding: 10px 14px; text-align: left; font-weight: 700; }
+  td { padding: 10px 14px; border-bottom: 1px solid var(--gray2); color: #2a2a3e; }
+  tr:nth-child(even) td { background: var(--gray); }
+
+  .sig-block { margin-top: 56px; padding-top: 28px; border-top: 2px solid var(--gray2); }
+  .sig-main { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 12px; }
+  .sig-creds { padding-left: 18px; margin-bottom: 12px; }
+  .sig-creds li { font-size: 13.5px; color: var(--muted); line-height: 1.7; }
+  .sig-notice { font-size: 12.5px; color: var(--muted); font-style: italic; }
+
+  .related { margin-top: 60px; padding-top: 28px; border-top: 2px solid var(--gray2); }
+  .related h4 { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 20px; }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 16px; }
+  .related-card { background: var(--gray); border-radius: 14px; padding: 18px 20px; transition: transform 0.2s; }
+  .related-card:hover { transform: translateY(-3px); }
+  .related-card .rc-cat { font-size: 11px; font-weight: 700; color: var(--teal2); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
+  .related-card .rc-title { font-size: 14px; font-weight: 700; color: var(--navy); line-height: 1.4; }
+
+  footer { background: var(--navy); padding: 32px; text-align: center; }
+  footer p { color: rgba(255,255,255,0.4); font-size: 13px; }
+
+  @media (max-width: 600px) {
+    nav { padding: 0 16px; }
+    .hero { padding: 40px 16px 36px; }
+    .container { padding: 32px 16px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/en/" class="nav-logo">NervLock Lab</a>
+  <div class="nav-right">
+    <a href="/en/#blog" class="nav-back">← Blog</a>
+    <a href="/blog/파킨슨-글루타치온/" class="lang-btn">KR</a>
+    <a href="/blog/parkinson-glutathione/" class="lang-btn active">EN</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-icon">🧪</div>
+  <div class="hero-category">Nutritional Neuroscience</div>
+  <h1>Glutathione Depletion in Parkinson's Disease: Biochemistry, Evidence, and Replenishment Strategies</h1>
+  <div class="hero-meta">
+    <span>March 11, 2026</span>
+    <span>7 min read</span>
+    <span>Dr. Claire Ham, M.D.</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lang-switch-banner">
+    <span>🇰🇷 이 글의 한국어 버전을 보시겠습니까?</span>
+    <a href="/blog/파킨슨-글루타치온/" class="lang-switch-link">한국어로 읽기 →</a>
+  </div>
+
+  <div class="abstract">
+    Glutathione (GSH), the brain's principal endogenous antioxidant, is depleted by 40–50% in the substantia nigra of post-mortem Parkinson's disease brains — among the earliest and most consistent biochemical findings in the disease. This depletion precedes frank dopaminergic neuronal loss and may represent both a consequence and an amplifier of the oxidative cascade driving alpha-synuclein aggregation. We review GSH neurochemistry, the blood-brain barrier challenge of systemic replenishment, pilot clinical evidence for intravenous GSH, and dietary strategies that support endogenous synthesis.
+  </div>
+
+  <h2>GSH Neurochemistry: Why the Substantia Nigra Is Vulnerable</h2>
+  <p>Glutathione is a tripeptide (γ-glutamyl-cysteinyl-glycine) synthesized intracellularly in two ATP-dependent steps catalyzed by glutamate-cysteine ligase (GCL) and GSH synthetase. It functions as a direct free radical scavenger, a cofactor for glutathione peroxidase (which reduces hydrogen peroxide and lipid hydroperoxides), and a substrate for glutathione S-transferase in xenobiotic detoxification.</p>
+  <p>The substantia nigra pars compacta (SNpc) faces exceptional oxidative load for several anatomic and biochemical reasons:</p>
+  <ul>
+    <li><strong>Dopamine metabolism:</strong> Monoamine oxidase-catalyzed dopamine turnover generates hydrogen peroxide as a stoichiometric byproduct. High dopamine flux = high peroxide flux.</li>
+    <li><strong>Neuromelanin:</strong> The dark pigment of nigral neurons is a redox-active iron-chelating polymer that, when iron-loaded, catalyzes Fenton reactions producing hydroxyl radicals.</li>
+    <li><strong>High mitochondrial density:</strong> Complex I activity in SNpc is 30–40% lower in PD brains, amplifying superoxide generation from the respiratory chain.</li>
+    <li><strong>Low baseline GSH:</strong> Compared to cortex and striatum, the nigra has inherently lower GSH reserves, offering less buffer against oxidative challenge.</li>
+  </ul>
+  <p>Sian et al. (1994) established in post-mortem quantification that GSH is reduced ~40% in SNpc of PD patients, with no corresponding depletion in other brain regions, and crucially, no increase in oxidized glutathione (GSSG) — suggesting accelerated consumption rather than oxidation turnover failure.</p>
+
+  <div class="evidence-box">
+    <div class="ev-title">Key Clinical References</div>
+    <ul>
+      <li><strong>Sian et al., 1994</strong> — Post-mortem quantification: ~40% GSH reduction selective to SNpc; GSSG not increased, implicating accelerated GSH consumption.</li>
+      <li><strong>Hauser et al., 2009</strong> — Pilot double-blind crossover RCT (n=21): IV GSH 1400 mg 3×/week for 4 weeks; UPDRS motor subscale improvement vs. placebo (p<0.05).</li>
+      <li><strong>Mischley et al., 2017</strong> — Intranasal GSH pilot (n=45): trend toward motor improvement and safety; bioavailability superior to oral.</li>
+      <li><strong>Zeevalk et al., 2008</strong> — NAC precursor supplementation in cell and animal models: GSH restoration and neuroprotection against dopaminergic toxicity.</li>
+    </ul>
+  </div>
+
+  <h2>The Blood-Brain Barrier Problem</h2>
+  <p>Oral glutathione supplementation faces a fundamental pharmacokinetic obstacle: GSH is cleaved in the gut lumen and portal circulation by gamma-glutamyltransferase and other peptidases. Plasma GSH levels may rise transiently, but brain penetration of intact GSH is negligible because the molecule is too hydrophilic to cross the blood-brain barrier by passive diffusion, and the specific transporters that carry GSH across the BBB are saturable at physiological concentrations.</p>
+  <p>Intravenous administration achieves transiently higher plasma concentrations, and some animal data support limited CNS entry via the choroid plexus. Intranasal delivery bypasses the BBB via olfactory and trigeminal nerve pathways, achieving direct CNS deposition — the rationale for Mischley's pilot trial design.</p>
+
+  <div class="highlight-box">
+    <h3>The Hauser 2009 Pilot RCT</h3>
+    <p>In a double-blind crossover design, 21 PD patients received IV glutathione 1,400 mg three times weekly for 4 weeks, then crossed to placebo (or vice versa). The primary outcome — UPDRS motor subscale — showed significant improvement in the GSH arm versus placebo. While the trial was small and not powered for neuroprotection endpoints, it provided the first controlled evidence of measurable motor benefit and established feasibility for larger trials.</p>
+  </div>
+
+  <h2>N-Acetylcysteine: The Cysteine Delivery Vehicle</h2>
+  <p>N-acetylcysteine (NAC) is a cysteine prodrug that crosses cell membranes, is deacetylated intracellularly, and provides the rate-limiting substrate for GCL-catalyzed GSH synthesis. In the NESSIE trial (Monti et al., 2019) in early Parkinson's disease, IV NAC 50 mg/kg weekly for 3 months was associated with a significant increase in striatal dopamine transporter (DAT) binding on DaTscan and improvement in UPDRS scores versus oral NAC comparator — suggesting CNS bioavailability of the IV route.</p>
+  <p>Oral NAC (1,200–2,400 mg/day) effectively raises systemic GSH but has modest CNS effect. Liposomal oral NAC formulations and intravenous NAC represent the most clinically actionable delivery strategies given current evidence.</p>
+
+  <h2>Dietary and Lifestyle Strategies</h2>
+  <h3>GSH Precursor Nutrition</h3>
+  <div class="table-wrap">
+    <table>
+      <tr><th>Strategy</th><th>Mechanism</th><th>Evidence Level</th></tr>
+      <tr><td>Sulfur-rich foods (broccoli, cabbage, garlic, onion)</td><td>Dietary cysteine substrate + NRF2 activation</td><td>Observational/mechanistic</td></tr>
+      <tr><td>Whey protein (undenatured)</td><td>High cysteine content; raises plasma GSH in humans</td><td>RCT (non-PD populations)</td></tr>
+      <tr><td>Alpha-lipoic acid (300–600 mg)</td><td>Recycles oxidized GSH (GSSG → GSH); synergistic antioxidant</td><td>Mechanistic + small trials</td></tr>
+      <tr><td>Aerobic exercise</td><td>NRF2 pathway induction; upregulates GCL and GSH synthetase</td><td>RCT in PD cohorts</td></tr>
+      <tr><td>Vitamin D sufficiency</td><td>NRF2/GCL gene expression support</td><td>Mechanistic</td></tr>
+    </table>
+  </div>
+
+  <h3>NRF2: The Master Antioxidant Switch</h3>
+  <p>The nuclear factor erythroid 2-related factor 2 (NRF2) transcription factor regulates over 200 cytoprotective genes including GCL, GSH synthetase, heme oxygenase-1, and thioredoxin reductase. Dietary NRF2 activators — sulforaphane (from broccoli sprouts), curcumin, quercetin, resveratrol — represent a rational adjunct strategy. Sulforaphane has demonstrated NRF2 target gene induction in human trials and crosses the BBB efficiently.</p>
+
+  <h2>Integrative Framework: Combining Approaches</h2>
+  <p>Given the multifactorial nature of GSH depletion in PD, a layered approach is rational:</p>
+  <ol>
+    <li><strong>IV NAC or IV GSH</strong> (under clinical supervision) for patients with early-to-moderate disease where neuroprotective intent is explicit</li>
+    <li><strong>Oral NAC 600–1,200 mg/day</strong> as maintenance, noting the limited CNS penetration but systemic antioxidant benefit</li>
+    <li><strong>NRF2-activating dietary pattern</strong> emphasizing cruciferous vegetables, sulfur-containing foods, and polyphenols</li>
+    <li><strong>Regular aerobic exercise</strong> as the most evidence-backed NRF2 inducer in PD populations</li>
+  </ol>
+
+  <h2>Summary</h2>
+  <p>Glutathione depletion in the substantia nigra is not an epiphenomenon of Parkinson's disease but a central feature of its oxidative pathophysiology. The pharmacokinetic challenge of restoring CNS GSH is real but not insurmountable: IV administration, NAC supplementation, and dietary NRF2 activation each address different facets of the deficit. As clinical trials mature, GSH-pathway interventions may emerge as a neuroprotective adjunct to dopaminergic therapy.</p>
+
+  <div class="sig-block">
+    <p class="sig-main">Written by <strong>Dr. Claire Ham</strong>, Neurologist, M.D.</p>
+    <ul class="sig-creds">
+      <li>Trained at Yonsei University Severance Hospital</li>
+      <li>Member, Korean Neurological Association</li>
+      <li>Member, Korean Parkinson's Disease and Movement Disorder Society</li>
+      <li>Member, Korean Society of Functional Medicine</li>
+    </ul>
+    <p class="sig-notice">※ This content is for informational purposes only and does not constitute medical advice.</p>
+  </div>
+
+  <div class="related">
+    <h4>Related Articles</h4>
+    <div class="related-grid">
+      <a href="/blog/parkinson-constipation/" class="related-card">
+        <div class="rc-cat">Autonomic Neurology</div>
+        <div class="rc-title">Constipation in Parkinson's Disease: The Gut-Brain Axis</div>
+      </a>
+      <a href="/blog/parkinson-dopamine-neuroinflammation/" class="related-card">
+        <div class="rc-cat">Neuroinflammation</div>
+        <div class="rc-title">Dopamine, Neuroinflammation, and Functional Recovery in Parkinson's</div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 NervLock Lab. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

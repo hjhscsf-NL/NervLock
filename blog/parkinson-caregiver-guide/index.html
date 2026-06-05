@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parkinson's Caregiver Guide | NervLock Lab</title>
+<meta name="description" content="A clinical guide for Parkinson's disease caregivers covering levodopa timing, contraindicated medications, fall prevention, sleep safety, and caregiver burden assessment.">
+<style>
+  :root {
+    --navy: #0a1628; --navy2: #1a2d4a;
+    --teal: #00c9b1; --teal2: #00a896;
+    --gold: #f5c842; --gold2: #e0a800;
+    --gray: #f4f6fa; --gray2: #e0e4ef;
+    --muted: #6b7a99;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI','Helvetica Neue',Arial,sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; }
+  a { color: inherit; text-decoration: none; }
+
+  nav { background: var(--navy); padding: 0 32px; height: 60px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+  .nav-logo { color: var(--teal); font-weight: 800; font-size: 18px; letter-spacing: 1px; }
+  .nav-right { display: flex; align-items: center; gap: 20px; }
+  .nav-back { color: #fff; font-size: 14px; opacity: 0.8; transition: opacity 0.2s; }
+  .nav-back:hover { opacity: 1; }
+  .lang-btn { font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.6); transition: all 0.2s; }
+  .lang-btn.active { background: var(--teal); border-color: var(--teal); color: #fff; }
+  .lang-btn:hover:not(.active) { border-color: rgba(255,255,255,0.7); color: #fff; }
+
+  .hero { background: linear-gradient(135deg, #2d1a45 0%, #4a2800 100%); padding: 60px 32px 48px; text-align: center; }
+  .hero-icon { font-size: 52px; margin-bottom: 16px; }
+  .hero-category { font-size: 12px; font-weight: 700; color: var(--teal); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(24px,4vw,38px); font-weight: 800; color: #fff; line-height: 1.3; max-width: 700px; margin: 0 auto 20px; }
+  .hero-meta { font-size: 13px; color: rgba(255,255,255,0.55); }
+  .hero-meta span + span::before { content: " · "; }
+
+  .container { max-width: 780px; margin: 0 auto; padding: 48px 24px 80px; }
+
+  .lang-switch-banner { background: var(--gray); border: 1px solid var(--gray2); border-radius: 14px; padding: 14px 20px; margin-bottom: 40px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .lang-switch-banner span { font-size: 14px; color: var(--muted); }
+  .lang-switch-link { font-size: 13px; font-weight: 700; color: var(--teal2); border: 1px solid var(--teal2); border-radius: 50px; padding: 6px 16px; transition: all 0.2s; white-space: nowrap; }
+  .lang-switch-link:hover { background: var(--teal2); color: #fff; }
+
+  .abstract { background: var(--gray); border-left: 4px solid var(--teal); border-radius: 0 12px 12px 0; padding: 20px 24px; margin-bottom: 48px; font-size: 15px; color: #2a2a3e; line-height: 1.75; }
+
+  h2 { font-size: 22px; font-weight: 800; color: var(--navy); margin: 44px 0 16px; padding-bottom: 8px; border-bottom: 2px solid var(--gray2); }
+  h3 { font-size: 17px; font-weight: 700; color: var(--navy2); margin: 28px 0 12px; }
+  p { margin-bottom: 18px; font-size: 15.5px; line-height: 1.8; color: #2a2a3e; }
+  ul, ol { padding-left: 22px; margin-bottom: 18px; }
+  li { font-size: 15.5px; line-height: 1.8; color: #2a2a3e; margin-bottom: 6px; }
+  strong { color: var(--navy); }
+
+  .evidence-box { background: #f0f7ff; border: 1px solid #c5daf5; border-radius: 12px; padding: 20px 24px; margin: 32px 0; }
+  .evidence-box .ev-title { font-size: 12px; font-weight: 700; color: #4a7ab5; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px; }
+  .evidence-box ul { margin: 0; }
+  .evidence-box li { font-size: 14px; color: #2a3a5e; line-height: 1.7; }
+
+  .danger-box { background: #fff2f2; border: 1px solid #f5c5c5; border-radius: 12px; padding: 18px 22px; margin: 28px 0; }
+  .danger-box .d-title { font-size: 13px; font-weight: 700; color: #c0392b; margin-bottom: 10px; }
+  .danger-box p, .danger-box li { font-size: 14px; color: #5a2020; margin-bottom: 4px; }
+
+  .highlight-box { background: linear-gradient(135deg, #2d1a45 0%, #4a2800 100%); border-radius: 14px; padding: 24px 28px; margin: 32px 0; color: #fff; }
+  .highlight-box h3 { color: var(--teal); margin-top: 0; font-size: 16px; }
+  .highlight-box p, .highlight-box li { color: rgba(255,255,255,0.88); font-size: 15px; }
+
+  .table-wrap { overflow-x: auto; margin: 24px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th { background: var(--navy); color: #fff; padding: 10px 14px; text-align: left; font-weight: 700; }
+  td { padding: 10px 14px; border-bottom: 1px solid var(--gray2); color: #2a2a3e; }
+  tr:nth-child(even) td { background: var(--gray); }
+
+  .sig-block { margin-top: 56px; padding-top: 28px; border-top: 2px solid var(--gray2); }
+  .sig-main { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 12px; }
+  .sig-creds { padding-left: 18px; margin-bottom: 12px; }
+  .sig-creds li { font-size: 13.5px; color: var(--muted); line-height: 1.7; }
+  .sig-notice { font-size: 12.5px; color: var(--muted); font-style: italic; }
+
+  .related { margin-top: 60px; padding-top: 28px; border-top: 2px solid var(--gray2); }
+  .related h4 { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 20px; }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 16px; }
+  .related-card { background: var(--gray); border-radius: 14px; padding: 18px 20px; transition: transform 0.2s; }
+  .related-card:hover { transform: translateY(-3px); }
+  .related-card .rc-cat { font-size: 11px; font-weight: 700; color: var(--teal2); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
+  .related-card .rc-title { font-size: 14px; font-weight: 700; color: var(--navy); line-height: 1.4; }
+
+  footer { background: var(--navy); padding: 32px; text-align: center; }
+  footer p { color: rgba(255,255,255,0.4); font-size: 13px; }
+
+  @media (max-width: 600px) {
+    nav { padding: 0 16px; }
+    .hero { padding: 40px 16px 36px; }
+    .container { padding: 32px 16px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/en/" class="nav-logo">NervLock Lab</a>
+  <div class="nav-right">
+    <a href="/en/#blog" class="nav-back">← Blog</a>
+    <a href="/blog/파킨슨-보호자/" class="lang-btn">KR</a>
+    <a href="/blog/parkinson-caregiver-guide/" class="lang-btn active">EN</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-icon">🤝</div>
+  <div class="hero-category">Clinical Guidance</div>
+  <h1>Parkinson's Caregiver Guide: Medications, Falls, Sleep, and Burnout</h1>
+  <div class="hero-meta">
+    <span>March 16, 2026</span>
+    <span>10 min read</span>
+    <span>Dr. Claire Ham, M.D.</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lang-switch-banner">
+    <span>🇰🇷 이 글의 한국어 버전을 보시겠습니까?</span>
+    <a href="/blog/파킨슨-보호자/" class="lang-switch-link">한국어로 읽기 →</a>
+  </div>
+
+  <div class="abstract">
+    Caregivers of people with Parkinson's disease face a unique constellation of clinical responsibilities: managing time-sensitive medication administration, navigating a landscape of contraindicated drugs, preventing falls in a patient with postural instability, protecting both patient and themselves from RBD-related sleep injuries, and managing the protein-levodopa interaction. At least 40–50% of PD caregivers experience clinically significant depression or anxiety. This guide provides evidence-based guidance on each of these domains, with emphasis on decisions that are often made in the home setting without access to clinical input.
+  </div>
+
+  <h2>The Caregiver Burden: Clinical Epidemiology</h2>
+  <p>Parkinson's disease imposes one of the highest caregiver burdens among chronic neurological conditions. Martinez-Martin et al. (2015), using validated burden scales across a large multinational cohort, documented that carer burden correlates more strongly with non-motor symptoms — particularly depression, psychosis, sleep disturbance, and cognitive impairment — than with motor severity.</p>
+  <p>The Zarit Burden Interview (ZBI) is the most validated tool for quantifying caregiver burden in PD. A ZBI score ≥ 21 indicates mild-to-moderate burden; ≥ 41 indicates severe burden and predicts caregiver burnout and institutionalization of the patient. Systematic caregiver assessment using ZBI is recommended at clinic visits — but caregivers rarely raise the issue unless directly asked.</p>
+
+  <div class="evidence-box">
+    <div class="ev-title">Key Clinical References</div>
+    <ul>
+      <li><strong>Martinez-Martin et al., 2015</strong> — Multinational PD caregiver cohort: non-motor symptoms (depression, psychosis, sleep disorder) drive burden more than motor disability.</li>
+      <li><strong>Aarsland et al., 2017</strong> — 40–50% of PD caregivers meet criteria for depression/anxiety; caregiver depression predicts patient nursing home placement.</li>
+      <li><strong>Allen et al., 2013</strong> — Metoclopramide exposure in PD: worsening of motor symptoms, falls, and hospitalization risk documented in claims database.</li>
+      <li><strong>Sheard et al., 2011</strong> — Systematic review of protein-levodopa interaction: high-protein meals delay peak plasma levodopa and cause OFF state; protein redistribution diet improves motor fluctuations.</li>
+    </ul>
+  </div>
+
+  <h2>Levodopa Timing: Why Every Minute Matters</h2>
+  <p>Levodopa has a narrow therapeutic window and a plasma half-life of approximately 90 minutes. In the early disease phase, pre-synaptic dopaminergic neurons buffer plasma levodopa fluctuations. As disease advances and nigral neurons are lost, the striatum becomes dependent on exogenous levodopa levels in real time — small delays in dosing translate directly into motor "OFF" states that can persist for 30–90 minutes.</p>
+  <h3>Key Timing Rules</h3>
+  <ul>
+    <li><strong>Administer on time, every time:</strong> Motor "OFF" states in advanced PD are best prevented by strict dosing intervals. Even a 30-minute delay can trigger wearing-off in patients with advanced disease.</li>
+    <li><strong>Consistency with meals:</strong> High-protein meals compete with levodopa for intestinal LAT1 transport and reduce absorption. Administer levodopa 30–60 minutes before, or 90 minutes after, protein-rich meals.</li>
+    <li><strong>Hospitalization vigilance:</strong> Missed or delayed levodopa doses in hospitalized PD patients is a leading cause of iatrogenic deterioration. Caregivers should bring the patient's medication schedule in writing and advocate actively for on-time dosing.</li>
+  </ul>
+
+  <div class="danger-box">
+    <div class="d-title">🚫 Medications Contraindicated in Parkinson's Disease</div>
+    <p>Several common medications worsen parkinsonism by blocking dopamine D2 receptors. Caregivers must know these names and alert any emergency physician, hospitalist, or prescriber treating the patient:</p>
+    <ul>
+      <li><strong>Metoclopramide (Reglan, Macperan)</strong> — commonly prescribed for nausea/gastroparesis; potent D2 blocker; can cause acute, severe motor deterioration in PD</li>
+      <li><strong>Levosulpiride</strong> — used in Korea for functional dyspepsia; D2 antagonist; absolutely contraindicated</li>
+      <li><strong>Prochlorperazine, haloperidol, promethazine</strong> — traditional antiemetics and antipsychotics; strong D2 blockers</li>
+      <li><strong>First-generation antihistamines with CNS dopamine effects</strong> (e.g., metoclopramide-containing combination products)</li>
+    </ul>
+    <p style="margin-top:12px;"><strong>Safe alternatives for nausea:</strong> Domperidone (acts peripherally, does not cross BBB) or ondansetron (5-HT3 antagonist).</p>
+    <p><strong>Safe alternatives for psychosis in PD:</strong> Quetiapine or clozapine (low D2 affinity); pimavanserin (serotonin-selective; no D2 activity).</p>
+  </div>
+
+  <h2>Fall Prevention: The Highest-Stakes Safety Priority</h2>
+  <p>Falls are the leading cause of hospitalization and injury-related death in Parkinson's disease. Postural instability, freezing of gait, orthostatic hypotension, and visual impairment combine to create a fall risk far exceeding that of the general elderly population.</p>
+
+  <h3>Environmental Modifications</h3>
+  <div class="table-wrap">
+    <table>
+      <tr><th>Location</th><th>Modification</th><th>Target Risk</th></tr>
+      <tr><td>Bathroom</td><td>Grab bars at toilet and tub/shower; non-slip mat; shower chair; raised toilet seat</td><td>Transfer falls, slip falls</td></tr>
+      <tr><td>Hallways/floors</td><td>Remove rugs and thresholds; ensure adequate night lighting; cable management</td><td>Trip falls, freezing-related falls</td></tr>
+      <tr><td>Bedroom</td><td>Bed rail or floor-level mattress; lit path to bathroom; avoid sedating medications at night if ambulatory</td><td>Nocturnal falls</td></tr>
+      <tr><td>Stairs</td><td>Bilateral handrails; high-contrast tape on steps; stair lift if frequent use</td><td>Stair falls</td></tr>
+      <tr><td>Footwear</td><td>Flat, closed-toe shoes with thin rubber sole; avoid slippers and socks on bare floor</td><td>Shuffling-related trips</td></tr>
+    </table>
+  </div>
+
+  <h3>Gait and Cueing Strategies</h3>
+  <p>Freezing of gait — the transient inability to initiate or continue walking — is among the most dangerous fall triggers. Auditory cueing (metronome, rhythmic counting), visual cueing (floor stripes, laser line projectors), and attentional strategies ("big steps, heel first") can interrupt freezing episodes. Caregivers should be trained in these techniques, which are effective but must be practiced in non-crisis moments to be deployable during actual freezing.</p>
+
+  <div class="highlight-box">
+    <h3>Orthostatic Hypotension: The Hidden Fall Trigger</h3>
+    <p>In Parkinson's disease, autonomic dysfunction causes postural blood pressure drops of 20–30 mmHg systolic within minutes of standing. Caregivers should instruct patients to: (1) sit for 30 seconds before standing; (2) stand at the bedside before walking; (3) avoid hot showers and large meals before walking. Compression stockings and adequate hydration are first-line non-pharmacological approaches. Report all syncopal or near-syncopal events to the neurologist promptly.</p>
+  </div>
+
+  <h2>RBD Sleep Safety for the Household</h2>
+  <p>REM sleep behavior disorder affects 50–60% of Parkinson's disease patients, often preceding diagnosis by years. The caregiver sharing a bed is at risk of being struck, kicked, or pushed. Practical household adaptations:</p>
+  <ul>
+    <li>Consider separate sleeping arrangements during active, violent RBD episodes — not as an emotional withdrawal but as a medical safety measure</li>
+    <li>Clear the bedside of sharp objects, lamps, glasses of water</li>
+    <li>Pad the bed rail or use a pool noodle along the bed edge</li>
+    <li>Floor-level mattress or low-profile bed frame for patients who repeatedly fall out of bed during enacted dreams</li>
+    <li>Door alarm if patient has wandered or left the room in a dream-enacting state</li>
+  </ul>
+
+  <h2>The Protein-Levodopa Interaction</h2>
+  <p>Dietary neutral large amino acids (tyrosine, phenylalanine, valine, leucine, isoleucine, tryptophan) compete with levodopa for intestinal absorption via the LAT1 transporter and for BBB entry via the same transporter at the cerebral endothelium. A high-protein meal can reduce peak levodopa plasma concentration by 30–50% and delay Tmax by 60–120 minutes.</p>
+  <p>The clinical strategy of "protein redistribution" — concentrating daily protein intake in the evening meal while keeping morning and midday meals low-protein — has been shown in controlled trials to reduce motor fluctuations in advanced PD (Sheard et al., 2011). This requires deliberate meal planning and consistent caregiver involvement.</p>
+
+  <h2>Caregiver Mental Health: Assessment and Resources</h2>
+  <p>Caregiver depression is not a personal weakness but a predictable consequence of sustained caregiving under high demand with low respite. Aarsland et al. (2017) documented 40–50% prevalence of clinical depression and anxiety in PD caregivers — rates comparable to depression in cancer caregiver populations.</p>
+  <p>Validated screening tools include the Zarit Burden Interview (ZBI, 22 items) and the Beck Depression Inventory for caregivers. A ZBI score ≥ 41 warrants direct discussion of respite care, social work referral, or psychiatric support. Caregiver support groups — both condition-specific (Parkinson's Association programs) and general — have demonstrated benefit in randomized trials for reducing burden scores and improving caregiver quality of life.</p>
+
+  <h2>Summary</h2>
+  <p>Effective caregiving in Parkinson's disease requires clinical knowledge that is rarely provided in clinical consultations: which medications are absolutely contraindicated, how to administer levodopa in relation to meals, how to modify the environment to prevent falls, how to manage sleep safety, and when to seek help for one's own mental health. Caregivers who have this knowledge are not just supports — they are an extension of the clinical team, and their education should be treated as such.</p>
+
+  <div class="sig-block">
+    <p class="sig-main">Written by <strong>Dr. Claire Ham</strong>, Neurologist, M.D.</p>
+    <ul class="sig-creds">
+      <li>Trained at Yonsei University Severance Hospital</li>
+      <li>Member, Korean Neurological Association</li>
+      <li>Member, Korean Parkinson's Disease and Movement Disorder Society</li>
+      <li>Member, Korean Society of Functional Medicine</li>
+    </ul>
+    <p class="sig-notice">※ This content is for informational purposes only and does not constitute medical advice.</p>
+  </div>
+
+  <div class="related">
+    <h4>Related Articles</h4>
+    <div class="related-grid">
+      <a href="/blog/parkinson-medication-management/" class="related-card">
+        <div class="rc-cat">Clinical Guidance</div>
+        <div class="rc-title">Parkinson's Medication Management: Timing, Side Effects, and Drug Interactions</div>
+      </a>
+      <a href="/blog/parkinson-rem-sleep-disorder/" class="related-card">
+        <div class="rc-cat">Neuroscience</div>
+        <div class="rc-title">REM Sleep Behavior Disorder: The Silent Harbinger of Parkinson's</div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 NervLock Lab. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
