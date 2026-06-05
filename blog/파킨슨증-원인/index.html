@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>손 떨리고 몸이 뻣뻣… 파킨슨병이 아니라면? '파킨슨증'과 그 원인들 | NervLock</title>
+  <meta name="description" content="파킨슨병과 유사한 증상, 파킨슨증(Parkinsonism)의 네 가지 원인 — 약물, 혈관, 정상압 수두증, 파킨슨 플러스. 신경과 전문의가 감별 진단의 핵심을 설명합니다."/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Apple SD Gothic Neo','Noto Sans KR','맑은 고딕',sans-serif; color: #1a1a2e; background: #fff; font-size: 17px; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    :root {
+      --navy: #0d2545; --navy2: #163561;
+      --teal: #1a7a6e; --teal2: #22a090;
+      --gold: #b8922a; --gold2: #d4a843;
+      --gray: #f4f6f9; --gray2: #e8ecf2;
+      --muted: #5a6278;
+    }
+
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(13,37,69,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-logo { font-size: 20px; font-weight: 900; color: #fff; white-space: nowrap; }
+    .nav-logo span { color: var(--gold2); }
+    .nav-back { font-size: 14px; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold2); }
+    .lang-toggle { display: flex; border: 1px solid rgba(255,255,255,0.22); border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+    .lang-btn { padding: 5px 12px; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); transition: all 0.18s; }
+    .lang-btn + .lang-btn { border-left: 1px solid rgba(255,255,255,0.22); }
+    .lang-btn.active { background: rgba(255,255,255,0.18); color: #fff; }
+
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 60px 24px 100px; }
+
+    .article-hero { background: linear-gradient(135deg, #1a3a0a 0%, #4a7a1a 100%); border-radius: 24px; padding: 52px 48px; margin-bottom: 48px; position: relative; overflow: hidden; }
+    .article-hero::before { content: '🔍'; position: absolute; right: 32px; top: 32px; font-size: 80px; opacity: 0.15; }
+    .article-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(26,122,110,0.3); border: 1px solid rgba(26,122,110,0.5); border-radius: 50px; font-size: 12px; font-weight: 700; color: #6ee7da; padding: 4px 14px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+    .article-title { font-size: clamp(22px, 3.5vw, 34px); font-weight: 900; color: #fff; line-height: 1.3; margin-bottom: 20px; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 20px; }
+    .article-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.65); }
+    .article-meta-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+
+    .abstract { background: linear-gradient(135deg, rgba(26,122,110,0.06), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 16px 16px 0; padding: 24px 28px; margin-bottom: 48px; }
+    .abstract-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--teal2); margin-bottom: 10px; }
+    .abstract p { font-size: 15px; color: #2a3a4a; line-height: 1.85; margin: 0; font-style: italic; }
+
+    .article-body h2 { font-size: 24px; font-weight: 900; color: var(--navy); margin: 52px 0 16px; line-height: 1.35; padding-bottom: 12px; border-bottom: 2px solid var(--gray2); }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-size: 19px; font-weight: 800; color: var(--navy2); margin: 36px 0 12px; }
+    .article-body p { font-size: 16px; color: #2a2a3e; line-height: 1.95; margin-bottom: 20px; }
+    .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .article-body li { font-size: 15px; color: #3a3a50; line-height: 1.75; }
+    .article-body strong { color: var(--navy); }
+
+    .callout { background: linear-gradient(135deg, rgba(26,122,110,0.07), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: var(--navy); font-style: italic; line-height: 1.85; }
+    .callout strong { color: var(--teal); font-style: normal; }
+
+    .evidence-box { background: var(--gray); border-radius: 14px; padding: 20px 24px; margin: 28px 0; }
+    .evidence-box h4 { font-size: 12px; font-weight: 800; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .evidence-box ul { margin: 0; }
+    .evidence-box li { font-size: 13px; color: var(--muted); }
+
+    .cause-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 28px 0; }
+    .cause-card { background: var(--gray); border-radius: 16px; padding: 22px 24px; border: 1px solid var(--gray2); border-top: 4px solid var(--teal2); }
+    .cause-card .cause-label { font-size: 11px; font-weight: 800; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+    .cause-card h4 { font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 10px; line-height: 1.4; }
+    .cause-card p { font-size: 13px; color: var(--muted); line-height: 1.7; margin: 0; }
+
+    .compare-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+    .compare-table th { background: var(--navy); color: #fff; padding: 10px 14px; text-align: left; font-size: 13px; }
+    .compare-table td { padding: 10px 14px; border-bottom: 1px solid var(--gray2); color: #2a2a3e; vertical-align: top; line-height: 1.6; }
+    .compare-table tr:nth-child(even) td { background: var(--gray); }
+    .compare-table th:first-child, .compare-table td:first-child { font-weight: 700; color: var(--navy); }
+
+    .sig-block { border-top: 2px solid var(--gray2); margin-top: 48px; padding-top: 24px; }
+    .sig-main { font-size: 14px; color: var(--navy); font-weight: 700; margin-bottom: 12px; line-height: 1.7; }
+    .sig-creds { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+    .sig-creds li { font-size: 13px; color: var(--muted); padding-left: 14px; position: relative; line-height: 1.6; }
+    .sig-creds li::before { content: "·"; position: absolute; left: 0; color: var(--teal2); font-weight: 900; }
+    .sig-notice { font-size: 12px; color: var(--muted); font-style: italic; line-height: 1.7; }
+
+    .related { margin-top: 64px; }
+    .related h3 { font-size: 20px; font-weight: 900; color: var(--navy); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .related-card { background: var(--gray); border-radius: 16px; padding: 20px; border: 1px solid var(--gray2); transition: transform 0.2s; }
+    .related-card:hover { transform: translateY(-3px); }
+    .related-card .tag { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .related-card h4 { font-size: 15px; font-weight: 800; color: var(--navy); line-height: 1.4; }
+
+    footer { background: #0a1a32; color: rgba(255,255,255,0.5); padding: 32px 0; }
+    .footer-bottom { max-width: 900px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 12px; }
+
+    @media (max-width: 600px) {
+      .article-hero { padding: 36px 28px; }
+      .cause-grid, .related-grid { grid-template-columns: 1fr; }
+      .compare-table { font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Nerv<span>Lock</span></a>
+    <a href="/#blog" class="nav-back">← 의학 칼럼</a>
+    <div class="lang-toggle">
+      <a href="/blog/파킨슨증-원인/" class="lang-btn active">KR</a>
+      <span class="lang-btn" style="opacity:0.3;cursor:default;">EN</span>
+    </div>
+  </div>
+</nav>
+
+<div class="article-wrap">
+
+  <div class="article-hero">
+    <div class="article-tag">신경과학</div>
+    <h1 class="article-title">손 떨리고 몸이 뻣뻣…<br>파킨슨병이 아니라면?<br>'파킨슨증'과 그 원인들</h1>
+    <div class="article-meta">
+      <div class="article-meta-item">👨‍⚕️ <strong>Dr.H</strong> — 신경과 전문의 · NervLock 설립자</div>
+      <div class="article-meta-item">📅 2026. 5. 17</div>
+      <div class="article-meta-item">⏱ 7분 읽기</div>
+    </div>
+  </div>
+
+  <div class="abstract">
+    <div class="abstract-label">요약</div>
+    <p>몸이 굳고, 걸음이 느려지고, 손이 떨린다고 해서 반드시 파킨슨병인 것은 아닙니다. 이처럼 파킨슨병과 겹치는 증상군을 통틀어 '파킨슨증(Parkinsonism)'이라 부르며, 원인에 따라 관리 전략이 완전히 달라집니다. 약물, 혈관 질환, 정상압 수두증, 파킨슨 플러스 증후군 — 네 가지 주요 원인과 정확한 감별이 왜 필요한지 설명합니다.</p>
+  </div>
+
+  <div class="article-body">
+
+    <h2>파킨슨증이란 무엇인가</h2>
+    <p>의학적으로 <strong>파킨슨증(Parkinsonism)</strong>은 특정 질환명이 아니라 일종의 증상 카테고리입니다. 동작 느림(서동), 근육 경직, 자세 불안정, 안정 시 떨림 중 하나 이상을 보이는 모든 상태를 포함합니다. 파킨슨병(Parkinson's disease)은 이 범주에 속하는 가장 흔한 원인이지만, 전체 파킨슨증 환자 중 파킨슨병이 차지하는 비율은 약 75~85%입니다. 나머지 15~25%는 전혀 다른 원인입니다.</p>
+    <p>이 구분이 중요한 이유는 명확합니다. 파킨슨병에 효과적인 레보도파 약물이 다른 원인의 파킨슨증에는 거의 듣지 않는 경우가 많고, 반대로 원인을 정확히 파악하면 증상을 뚜렷하게 호전시킬 수 있는 경우도 있기 때문입니다.</p>
+
+    <div class="callout">
+      <strong>핵심 개념:</strong> 파킨슨증은 진단명이 아니라 증상 집합입니다. 겉모습이 같아도 원인이 다를 수 있고, 원인에 따라 관리 방향이 근본적으로 달라집니다.
+    </div>
+
+    <h2>네 가지 주요 원인</h2>
+
+    <div class="cause-grid">
+      <div class="cause-card">
+        <div class="cause-label">원인 01</div>
+        <h4>약물 유발성 파킨슨증</h4>
+        <p>도파민 수용체를 차단하는 약물의 장기 복용으로 발생. 원인 약물 중단 후 수주~수개월에 걸쳐 회복 가능.</p>
+      </div>
+      <div class="cause-card">
+        <div class="cause-label">원인 02</div>
+        <h4>혈관성 파킨슨증</h4>
+        <p>뇌 깊은 곳의 미세혈관 손상 또는 반복 뇌졸중이 도파민 경로를 손상. 하반신 증상이 먼저 나타나는 경우 많음.</p>
+      </div>
+      <div class="cause-card">
+        <div class="cause-label">원인 03</div>
+        <h4>정상압 수두증 (NPH)</h4>
+        <p>뇌척수액 과잉 축적으로 주변 조직 압박. 보행 장애·요실금·인지 저하의 3대 증상. 션트 수술로 극적 호전 가능.</p>
+      </div>
+      <div class="cause-card">
+        <div class="cause-label">원인 04</div>
+        <h4>파킨슨 플러스 (비전형 증후군)</h4>
+        <p>MSA, PSP, CBD 등 — 파킨슨증보다 더 광범위한 신경 퇴행. 레보도파 반응이 제한적이며 진행이 빠른 경우 많음.</p>
+      </div>
+    </div>
+
+    <h2>원인 1 — 약물 유발성 파킨슨증</h2>
+    <p>파킨슨증 원인 중 가장 흔하면서도 원인을 파악하면 관리가 가능한 유형입니다. 뇌에서 도파민 수용체(주로 D2 수용체)를 차단하는 약물을 장기간 복용할 때 발생합니다. 도파민 신호 전달이 억제되면 운동 회로에 파킨슨병과 동일한 증상이 나타납니다.</p>
+    <p>주요 원인 약물로는 일부 항정신병 약물(할로페리돌, 리스페리돈 등), 소화기계 운동 조절제(메토클로프라미드, 레보설피리드), 어지러움증 관리제(신나리진, 플루나리진), 일부 항고혈압제 등이 있습니다. 특히 고령에서 복합 약물을 복용하는 경우 단일 약물보다 위험이 높습니다.</p>
+    <p>원인 약물을 중단하면 수 주에서 수개월에 걸쳐 증상이 서서히 호전됩니다. 갑자기 파킨슨 증상이 나타났을 때 가장 먼저 확인해야 할 것은 최근 새로 시작하거나 변경된 약물 처방입니다.</p>
+
+    <div class="callout">
+      <strong>주의할 점:</strong> 약물 유발성 파킨슨증과 파킨슨병이 동시에 존재할 수 있습니다. 약을 끊었는데도 수개월이 지나도 증상이 남는다면 파킨슨병이 공존하는지 정밀 검사가 필요합니다.
+    </div>
+
+    <h2>원인 2 — 혈관성 파킨슨증</h2>
+    <p>뇌의 심부 백질과 기저핵 부위를 지나는 소혈관들이 반복적으로 막히거나 손상되면서 도파민 경로가 단절되어 발생합니다. 단발성 뇌졸중보다는 오랜 기간 축적되는 소혈관 질환(white matter lesions)이 더 흔한 원인입니다.</p>
+    <p>파킨슨병과의 가장 뚜렷한 차이는 증상의 분포입니다. 파킨슨병은 대부분 한쪽 손의 안정 시 떨림으로 시작하는 반면, 혈관성 파킨슨증은 <strong>하반신</strong>에서 먼저 증상이 나타납니다. 발이 바닥에서 떨어지지 않는 듯한 '마그네틱 보행(magnetic gait)', 좁아진 보폭, 균형 감각 저하가 특징입니다. 떨림은 상대적으로 드뭅니다.</p>
+    <p>고혈압, 당뇨, 이상지질혈증 등 혈관 위험 인자를 가진 분들에게 주로 발생하며, 뇌 MRI의 소혈관 질환 소견이 진단에 중요한 단서가 됩니다. 혈관 위험 인자를 잘 관리하는 것이 진행을 늦추는 핵심 접근법입니다.</p>
+
+    <h2>원인 3 — 정상압 수두증 (NPH)</h2>
+    <p>뇌척수액(CSF)이 순환하는 뇌실계에 액체가 비정상적으로 축적되면서 주변 뇌 조직을 압박하는 상태입니다. '정상압'이라는 이름처럼 요추 천자 시 압력이 정상 범위이면서도 뇌실이 확장된다는 특징이 있습니다.</p>
+    <p>정상압 수두증의 <strong>3대 증상</strong>은 다음과 같습니다:</p>
+    <ul>
+      <li><strong>보행 장애:</strong> 발을 들어 올리기 힘들고 보폭이 좁아지며 자주 넘어집니다. 스키어처럼 발이 벌어진 채 걷는 모습이 특징적입니다.</li>
+      <li><strong>요실금:</strong> 소변을 참는 힘이 약해지거나 의지와 무관하게 새는 증상이 나타납니다.</li>
+      <li><strong>인지기능 저하:</strong> 전두엽 기능 저하로 기억력 감퇴, 판단력 둔화, 반응 속도 저하가 동반됩니다.</li>
+    </ul>
+    <p>세 가지 증상이 동시에 존재할 때 NPH를 강력히 의심해야 합니다. 뇌 MRI와 요추 천자(CSF 배액 후 보행 호전 여부 확인)가 진단에 사용됩니다. 복강-뇌실 단락술(션트 수술)로 CSF 흐름을 우회시키면 증상이 극적으로 호전될 수 있어, 조기 발견과 수술적 관리가 매우 중요합니다.</p>
+
+    <h2>원인 4 — 파킨슨 플러스 (비전형적 파킨슨 증후군)</h2>
+    <p>파킨슨병처럼 신경 퇴행으로 발생하지만, 흑질 이외의 광범위한 신경계가 손상되어 파킨슨 증상에 더해 다른 신경학적 이상이 동반됩니다. 레보도파에 대한 반응이 제한적이고 진행 속도가 빠른 경향이 있습니다.</p>
+    <ul>
+      <li><strong>다계통 위축증(MSA):</strong> 자율신경계(기립성 저혈압, 배뇨 장애, 발기부전 등)와 소뇌(보행 실조, 구음 장애)가 함께 침범됩니다. 파킨슨병보다 훨씬 이른 시기에 자율신경 증상이 뚜렷하게 나타납니다.</li>
+      <li><strong>진행성 핵상마비(PSP):</strong> 안구를 위아래로 움직이는 수의적 운동이 제한됩니다. 특히 아래를 내려다보는 동작이 어려워지고, 뒤로 넘어지는 낙상이 반복됩니다. 목과 몸통이 뒤쪽으로 강직되는 자세가 특징입니다.</li>
+      <li><strong>피질기저핵 변성(CBD):</strong> 한쪽 팔다리가 의지와 무관하게 움직이는 '외계인 손 증후군(alien limb phenomenon)', 실행증(apraxia), 피질 감각 소실 등 비대칭적인 증상이 두드러집니다.</li>
+    </ul>
+
+    <h2>감별 진단이 왜 중요한가</h2>
+    <p>원인별 관리 전략이 근본적으로 다르기 때문입니다. 파킨슨병은 레보도파를 투여하면 뚜렷한 호전을 보이지만, 비전형 파킨슨 증후군에서는 같은 약물을 써도 반응이 불충분하거나 없는 경우가 많습니다. 약물 유발성 파킨슨증은 원인 약물을 조정하면 회복이 가능하고, 정상압 수두증은 수술로 증상을 극적으로 개선할 수 있습니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>유형</th>
+          <th>특징적 소견</th>
+          <th>레보도파 반응</th>
+          <th>관리 포인트</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>파킨슨병</td>
+          <td>한쪽 손 안정 시 떨림으로 시작</td>
+          <td>뚜렷한 호전</td>
+          <td>도파민 약물 조율</td>
+        </tr>
+        <tr>
+          <td>약물 유발성</td>
+          <td>원인 약물 복용력</td>
+          <td>반응 불량</td>
+          <td>원인 약물 중단·변경</td>
+        </tr>
+        <tr>
+          <td>혈관성</td>
+          <td>하반신 우세, 혈관 위험 인자</td>
+          <td>제한적</td>
+          <td>혈관 위험 인자 조절</td>
+        </tr>
+        <tr>
+          <td>정상압 수두증</td>
+          <td>3대 증상(보행·요실금·인지)</td>
+          <td>반응 불량</td>
+          <td>션트 수술 고려</td>
+        </tr>
+        <tr>
+          <td>파킨슨 플러스</td>
+          <td>자율신경·안구·실행증 동반</td>
+          <td>제한적·없음</td>
+          <td>조기 진단, 증상별 지원</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>정확한 감별을 위해서는 신경과 전문의의 정밀 신경학적 검진, 뇌 MRI, 필요 시 도파민 운반체 PET-CT(DAT scan) 검사가 활용됩니다. DAT scan은 도파민 신경 말단의 밀도를 직접 영상화하여 파킨슨병과 약물 유발성 파킨슨증을 구별하는 데 특히 유용합니다.</p>
+
+    <div class="evidence-box">
+      <h4>📚 참고 근거</h4>
+      <ul>
+        <li>Postuma RB et al. (2015). MDS clinical diagnostic criteria for Parkinson's disease. <em>Movement Disorders</em> 30(12):1591-1601</li>
+        <li>Bhidayasiri R &amp; Tarsy D (2012). Differential diagnosis of Parkinsonism. <em>Current Neurology and Neuroscience Reports</em></li>
+        <li>Relkin N et al. (2005). Diagnosing idiopathic normal-pressure hydrocephalus. <em>Neurosurgery</em> 57(3 Suppl):S4-16</li>
+        <li>Gilman S et al. (2008). Second consensus statement on the diagnosis of MSA. <em>Neurology</em> 71(9):670-676</li>
+      </ul>
+    </div>
+
+    <div class="related">
+      <h3>관련 칼럼</h3>
+      <div class="related-grid">
+        <a href="/blog/파킨슨-약물치료/" class="related-card">
+          <div class="tag">신경과학</div>
+          <h4>파킨슨 약물 관리, 어떻게 시작하고 어떻게 이해해야 할까</h4>
+        </a>
+        <a href="/blog/파킨슨-약물용량/" class="related-card">
+          <div class="tag">신경과학</div>
+          <h4>파킨슨 약 용량이 계속 늘어나는 이유 — 내성이 아니에요</h4>
+        </a>
+      </div>
+    </div>
+
+    <div class="sig-block">
+      <p class="sig-main">본 글은 신경과 전문의 <strong>함지현 원장</strong>이 직접 작성하였습니다.</p>
+      <ul class="sig-creds">
+        <li>연세대 세브란스 출신 신경과 전문의</li>
+        <li>대한신경과학회 정회원</li>
+        <li>대한파킨슨병 및 이상운동질환 학회 정회원</li>
+        <li>대한기능의학회 정회원</li>
+      </ul>
+      <p class="sig-notice">※ 본 내용은 의학 정보 제공을 목적으로 하며, 개인 진료를 대체하지 않습니다.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <span>© 2026 NervLock. All rights reserved.</span>
+    <span>신경과 전문의가 직접 쓰는 뇌·신경 건강 칼럼</span>
+  </div>
+</footer>
+
+</body>
+</html>
