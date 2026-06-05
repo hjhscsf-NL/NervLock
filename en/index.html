@@ -183,7 +183,14 @@
 
     /* Blog */
     #blog { background: #fff; }
-    .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 56px; }
+    .blog-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin: 36px 0 0; }
+    .blog-tab { padding: 9px 22px; border-radius: 50px; font-size: 13px; font-weight: 700; cursor: pointer; border: 1.5px solid var(--gray2); background: var(--gray); color: var(--muted); transition: all 0.2s; font-family: inherit; }
+    .blog-tab.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+    .blog-tab:hover:not(.active) { border-color: var(--navy2); color: var(--navy); }
+    .blog-card.hidden { display: none !important; }
+    .blog-empty { display: none; text-align: center; padding: 56px 0; color: var(--muted); font-size: 15px; line-height: 1.8; grid-column: 1 / -1; }
+    .blog-empty.show { display: block; }
+    .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 28px; }
     .blog-card { background: var(--gray); border-radius: 20px; overflow: hidden; border: 1.5px solid var(--gray2); transition: box-shadow 0.25s, transform 0.25s; display: flex; flex-direction: column; }
     .blog-card:hover { box-shadow: 0 14px 44px rgba(13,37,69,0.12); transform: translateY(-4px); }
     .blog-thumb { height: 180px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
@@ -749,10 +756,18 @@
     <div class="section-label">Medical Column</div>
     <h2 class="section-title">Neural Health Insights<br>from a Neurologist</h2>
     <p class="section-sub">Dr.H explains complex neural health topics in clear, clinically grounded terms.</p>
+
+    <div class="blog-tabs">
+      <button class="blog-tab active" data-cat="all">All</button>
+      <button class="blog-tab" data-cat="pain">Neuropathic Pain</button>
+      <button class="blog-tab" data-cat="movement">Parkinson's &amp; Movement</button>
+      <button class="blog-tab" data-cat="functional">Functional Medicine</button>
+    </div>
+
     <div class="blog-grid">
 
-      <!-- Card 1 -->
-      <div class="blog-card">
+      <!-- Card 1 · Neuropathic Pain -->
+      <div class="blog-card" data-category="pain">
         <div class="blog-thumb">
           <div class="blog-thumb-bg" style="background:linear-gradient(135deg,#0d2545 0%,#1a7a6e 100%);"></div>
           <div class="blog-thumb-icon">🧠</div>
@@ -772,8 +787,8 @@
         </div>
       </div>
 
-      <!-- Card 2 -->
-      <div class="blog-card">
+      <!-- Card 2 · Neuropathic Pain -->
+      <div class="blog-card" data-category="pain">
         <div class="blog-thumb">
           <div class="blog-thumb-bg" style="background:linear-gradient(135deg,#2d1a45 0%,#5e3c96 100%);"></div>
           <div class="blog-thumb-icon">⚡</div>
@@ -793,8 +808,8 @@
         </div>
       </div>
 
-      <!-- Card 3 -->
-      <div class="blog-card">
+      <!-- Card 3 · Functional Medicine -->
+      <div class="blog-card" data-category="functional">
         <div class="blog-thumb">
           <div class="blog-thumb-bg" style="background:linear-gradient(135deg,#0f4f3a 0%,#b8922a 100%);"></div>
           <div class="blog-thumb-icon">💊</div>
@@ -814,8 +829,8 @@
         </div>
       </div>
 
-      <!-- Card 4 -->
-      <div class="blog-card">
+      <!-- Card 4 · Functional Medicine -->
+      <div class="blog-card" data-category="functional">
         <div class="blog-thumb">
           <div class="blog-thumb-bg" style="background:linear-gradient(135deg,#1a2a5e 0%,#22a090 100%);"></div>
           <div class="blog-thumb-icon">🔬</div>
@@ -835,8 +850,8 @@
         </div>
       </div>
 
-      <!-- Card 5 -->
-      <div class="blog-card">
+      <!-- Card 5 · Neuropathic Pain -->
+      <div class="blog-card" data-category="pain">
         <div class="blog-thumb">
           <div class="blog-thumb-bg" style="background:linear-gradient(135deg,#1a0a2e 0%,#8e1a22 100%);"></div>
           <div class="blog-thumb-icon">🌙</div>
@@ -856,8 +871,8 @@
         </div>
       </div>
 
-      <!-- Card 6 -->
-      <div class="blog-card">
+      <!-- Card 6 · Functional Medicine -->
+      <div class="blog-card" data-category="functional">
         <div class="blog-thumb">
           <div class="blog-thumb-bg" style="background:linear-gradient(135deg,#0d3d2a 0%,#1a7a6e 100%);"></div>
           <div class="blog-thumb-icon">🍽️</div>
@@ -875,6 +890,10 @@
             <a href="/blog/nerve-health-foods/" class="blog-more">Read Article</a>
           </div>
         </div>
+      </div>
+
+      <div class="blog-empty" id="blogEmpty">
+        Articles on Parkinson's &amp; Movement Disorders are coming soon.
       </div>
 
     </div>
@@ -1065,6 +1084,29 @@
         hamburger.classList.remove('open');
         mobileNav.classList.remove('open');
         document.body.style.overflow = '';
+      });
+    });
+  })();
+
+  // Blog category tabs
+  (function() {
+    var tabs  = document.querySelectorAll('.blog-tab');
+    var cards = document.querySelectorAll('.blog-card[data-category]');
+    var empty = document.getElementById('blogEmpty');
+    tabs.forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        tabs.forEach(function(t) { t.classList.remove('active'); });
+        this.classList.add('active');
+        var cat = this.dataset.cat;
+        var visible = 0;
+        cards.forEach(function(card) {
+          if (cat === 'all' || card.dataset.category === cat) {
+            card.classList.remove('hidden'); visible++;
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+        if (empty) empty.classList.toggle('show', visible === 0);
       });
     });
   })();

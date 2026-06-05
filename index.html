@@ -527,9 +527,16 @@
 
     /* ── Blog ── */
     #blog { background: var(--gray); }
+    .blog-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin: 36px 0 0; }
+    .blog-tab { padding: 9px 22px; border-radius: 50px; font-size: 13px; font-weight: 700; cursor: pointer; border: 1.5px solid var(--gray2); background: #fff; color: var(--muted); transition: all 0.2s; font-family: inherit; }
+    .blog-tab.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+    .blog-tab:hover:not(.active) { border-color: var(--navy2); color: var(--navy); }
+    .blog-card.hidden { display: none !important; }
+    .blog-empty { display: none; text-align: center; padding: 56px 0; color: var(--muted); font-size: 15px; line-height: 1.8; grid-column: 1 / -1; }
+    .blog-empty.show { display: block; }
     .blog-grid {
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
-      margin-top: 56px;
+      margin-top: 28px;
     }
     .blog-card {
       background: #fff; border-radius: 20px; overflow: hidden;
@@ -1424,10 +1431,17 @@
     <h2 class="section-title">신경과 전문의가 직접 쓴<br>신경 건강 이야기</h2>
     <p class="section-sub">신경 건강에 대해 궁금한 점들을 전문의가 직접 알기 쉽게 설명합니다.</p>
 
+    <div class="blog-tabs">
+      <button class="blog-tab active" data-cat="all">전체</button>
+      <button class="blog-tab" data-cat="pain">신경통증</button>
+      <button class="blog-tab" data-cat="movement">파킨슨 / 이상운동질환</button>
+      <button class="blog-tab" data-cat="functional">기능의학</button>
+    </div>
+
     <div class="blog-grid">
 
-      <!-- Card 1 -->
-      <div class="blog-card" data-post="0">
+      <!-- Card 1 · 신경통증 -->
+      <div class="blog-card" data-post="0" data-category="pain">
         <div class="blog-thumb">
           <div class="blog-thumb-bg" style="background: linear-gradient(135deg, #0d2545 0%, #1a7a6e 100%);"></div>
           <div class="blog-thumb-icon">🧠</div>
@@ -1441,17 +1455,14 @@
           <h3>말초신경병증이란? 증상, 원인, 신경과 전문의의 시각</h3>
           <p>말초신경병증의 병태생리, 증상 분류, 주요 원인, 그리고 신경 건강을 위한 영양학적 지원에 관한 신경과 전문의의 임상적 시각을 담았습니다.</p>
           <div class="blog-footer">
-            <div class="blog-author">
-              <div class="blog-author-dot">H</div>
-              Dr.H
-            </div>
+            <div class="blog-author"><div class="blog-author-dot">H</div>Dr.H</div>
             <a href="/blog/말초신경병증/" class="blog-more">전문 읽기</a>
           </div>
         </div>
       </div>
 
-      <!-- Card 2 -->
-      <div class="blog-card">
+      <!-- Card 2 · 신경통증 -->
+      <div class="blog-card" data-category="pain">
         <div class="blog-thumb">
           <div class="blog-thumb-bg" style="background: linear-gradient(135deg, #163561 0%, #5e3c96 100%);"></div>
           <div class="blog-thumb-icon">⚡</div>
@@ -1471,8 +1482,8 @@
         </div>
       </div>
 
-      <!-- Card 3 -->
-      <div class="blog-card">
+      <!-- Card 3 · 기능의학 -->
+      <div class="blog-card" data-category="functional">
         <div class="blog-thumb">
           <div class="blog-thumb-bg" style="background: linear-gradient(135deg, #0f4f3a 0%, #b8922a 100%);"></div>
           <div class="blog-thumb-icon">💊</div>
@@ -1492,8 +1503,8 @@
         </div>
       </div>
 
-      <!-- Card 4 -->
-      <div class="blog-card">
+      <!-- Card 4 · 기능의학 -->
+      <div class="blog-card" data-category="functional">
         <div class="blog-thumb">
           <div class="blog-thumb-bg" style="background: linear-gradient(135deg, #1a2a5e 0%, #22a090 100%);"></div>
           <div class="blog-thumb-icon">🔬</div>
@@ -1513,8 +1524,8 @@
         </div>
       </div>
 
-      <!-- Card 5 -->
-      <div class="blog-card">
+      <!-- Card 5 · 신경통증 -->
+      <div class="blog-card" data-category="pain">
         <div class="blog-thumb">
           <div class="blog-thumb-bg" style="background: linear-gradient(135deg, #2d1a45 0%, #c0392b 100%);"></div>
           <div class="blog-thumb-icon">🌙</div>
@@ -1534,8 +1545,8 @@
         </div>
       </div>
 
-      <!-- Card 6 -->
-      <div class="blog-card">
+      <!-- Card 6 · 기능의학 -->
+      <div class="blog-card" data-category="functional">
         <div class="blog-thumb">
           <div class="blog-thumb-bg" style="background: linear-gradient(135deg, #0d3d2a 0%, #1a7a6e 100%);"></div>
           <div class="blog-thumb-icon">🍽️</div>
@@ -1553,6 +1564,10 @@
             <a href="/blog/신경-건강-음식/" class="blog-more">전문 읽기</a>
           </div>
         </div>
+      </div>
+
+      <div class="blog-empty" id="blogEmpty">
+        파킨슨 / 이상운동질환 관련 글을 준비 중입니다.<br>곧 업데이트될 예정입니다.
       </div>
 
     </div>
@@ -2188,6 +2203,29 @@
     });
   }, { threshold: 0.45 });
   sections.forEach(s => observer.observe(s));
+
+  // 블로그 카테고리 탭 필터
+  (function() {
+    var tabs  = document.querySelectorAll('.blog-tab');
+    var cards = document.querySelectorAll('.blog-card[data-category]');
+    var empty = document.getElementById('blogEmpty');
+    tabs.forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        tabs.forEach(function(t) { t.classList.remove('active'); });
+        this.classList.add('active');
+        var cat = this.dataset.cat;
+        var visible = 0;
+        cards.forEach(function(card) {
+          if (cat === 'all' || card.dataset.category === cat) {
+            card.classList.remove('hidden'); visible++;
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+        if (empty) empty.classList.toggle('show', visible === 0);
+      });
+    });
+  })();
 </script>
 
 </body>
