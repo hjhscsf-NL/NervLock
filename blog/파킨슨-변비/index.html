@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>파킨슨 환자의 변비 — 물 많이 드세요로는 해결되지 않습니다 | NervLock</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Apple SD Gothic Neo','Noto Sans KR','맑은 고딕',sans-serif; color: #1a1a2e; background: #fff; font-size: 17px; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    :root {
+      --navy: #0d2545; --navy2: #163561;
+      --teal: #1a7a6e; --teal2: #22a090;
+      --gold: #b8922a; --gold2: #d4a843;
+      --gray: #f4f6f9; --gray2: #e8ecf2;
+      --muted: #5a6278;
+    }
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(13,37,69,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-logo { font-size: 20px; font-weight: 900; color: #fff; white-space: nowrap; }
+    .nav-logo span { color: var(--gold2); }
+    .nav-back { font-size: 14px; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold2); }
+    .lang-toggle { display: flex; border: 1px solid rgba(255,255,255,0.22); border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+    .lang-btn { padding: 5px 12px; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); transition: all 0.18s; }
+    .lang-btn + .lang-btn { border-left: 1px solid rgba(255,255,255,0.22); }
+    .lang-btn.active { background: rgba(255,255,255,0.18); color: #fff; }
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 60px 24px 100px; }
+    .article-hero { background: linear-gradient(135deg, #0f4f3a 0%, #22a090 100%); border-radius: 24px; padding: 52px 48px; margin-bottom: 48px; position: relative; overflow: hidden; }
+    .article-hero::before { content: '🌿'; position: absolute; right: 32px; top: 32px; font-size: 80px; opacity: 0.15; }
+    .article-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(26,122,110,0.3); border: 1px solid rgba(26,122,110,0.5); border-radius: 50px; font-size: 12px; font-weight: 700; color: #6ee7da; padding: 4px 14px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+    .article-title { font-size: clamp(22px, 3.5vw, 34px); font-weight: 900; color: #fff; line-height: 1.3; margin-bottom: 20px; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 20px; }
+    .article-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.65); }
+    .article-meta-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+    .abstract { background: linear-gradient(135deg, rgba(26,122,110,0.06), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 16px 16px 0; padding: 24px 28px; margin-bottom: 48px; }
+    .abstract-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--teal2); margin-bottom: 10px; }
+    .abstract p { font-size: 15px; color: #2a3a4a; line-height: 1.85; margin: 0; font-style: italic; }
+    .article-body h2 { font-size: 24px; font-weight: 900; color: var(--navy); margin: 52px 0 16px; line-height: 1.35; padding-bottom: 12px; border-bottom: 2px solid var(--gray2); }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-size: 19px; font-weight: 800; color: var(--navy2); margin: 36px 0 12px; }
+    .article-body p { font-size: 16px; color: #2a2a3e; line-height: 1.95; margin-bottom: 20px; }
+    .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .article-body li { font-size: 15px; color: #3a3a50; line-height: 1.75; }
+    .article-body strong { color: var(--navy); }
+    .callout { background: linear-gradient(135deg, rgba(26,122,110,0.07), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: var(--navy); font-style: italic; line-height: 1.85; }
+    .callout strong { color: var(--teal); font-style: normal; }
+    .warning-box { background: rgba(200, 50, 50, 0.06); border: 1.5px solid rgba(200, 50, 50, 0.2); border-radius: 14px; padding: 20px 24px; margin: 28px 0; }
+    .warning-box h4 { font-size: 13px; font-weight: 800; color: #c83232; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px; }
+    .warning-box p { font-size: 14px; color: #5a2020; line-height: 1.8; margin: 0; }
+    .evidence-box { background: var(--gray); border-radius: 14px; padding: 20px 24px; margin: 28px 0; }
+    .evidence-box h4 { font-size: 12px; font-weight: 800; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .evidence-box ul { margin: 0; }
+    .evidence-box li { font-size: 13px; color: var(--muted); }
+    .symptom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+    .symptom-card { background: var(--gray); border-radius: 14px; padding: 18px 20px; border: 1px solid var(--gray2); }
+    .symptom-card h4 { font-size: 14px; font-weight: 800; color: var(--navy); margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+    .symptom-card p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+    .author-card { background: var(--gray); border-radius: 20px; padding: 28px 32px; margin-top: 64px; display: flex; align-items: flex-start; gap: 20px; }
+    .author-avatar { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--navy), var(--teal)); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+    .author-info h4 { font-size: 17px; font-weight: 900; color: var(--navy); margin-bottom: 4px; }
+    .author-info .creds { font-size: 13px; color: var(--teal); font-weight: 600; margin-bottom: 10px; }
+    .author-info p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+    .cta-banner { background: linear-gradient(135deg, var(--navy), #0f4f6e); border-radius: 20px; padding: 40px 36px; margin-top: 48px; text-align: center; }
+    .cta-banner h3 { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 10px; }
+    .cta-banner p { font-size: 15px; color: rgba(255,255,255,0.7); margin-bottom: 24px; line-height: 1.7; }
+    .cta-btn { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold2)); color: #fff; font-size: 16px; font-weight: 800; padding: 14px 36px; border-radius: 50px; box-shadow: 0 6px 20px rgba(184,146,42,0.4); transition: transform 0.2s; }
+    .cta-btn:hover { transform: translateY(-2px); }
+    .related { margin-top: 64px; }
+    .related h3 { font-size: 20px; font-weight: 900; color: var(--navy); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .related-card { background: var(--gray); border-radius: 16px; padding: 20px; border: 1px solid var(--gray2); }
+    .related-card .tag { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .related-card h4 { font-size: 15px; font-weight: 800; color: var(--navy); line-height: 1.4; }
+    footer { background: #0a1a32; color: rgba(255,255,255,0.5); padding: 32px 0; }
+    .footer-bottom { max-width: 900px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 12px; }
+    @media (max-width: 600px) {
+      .article-hero { padding: 36px 28px; }
+      .symptom-grid, .related-grid { grid-template-columns: 1fr; }
+      .author-card { flex-direction: column; }
+    }
+    .sig-block { border-top: 2px solid var(--gray2); margin-top: 48px; padding-top: 24px; }
+    .sig-main { font-size: 14px; color: var(--navy); font-weight: 700; margin-bottom: 12px; line-height: 1.7; }
+    .sig-creds { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+    .sig-creds li { font-size: 13px; color: var(--muted); padding-left: 14px; position: relative; line-height: 1.6; }
+    .sig-creds li::before { content: "·"; position: absolute; left: 0; color: var(--teal2); font-weight: 900; }
+    .sig-notice { font-size: 12px; color: var(--muted); font-style: italic; line-height: 1.7; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Nerv<span>Lock</span></a>
+    <a href="/#blog" class="nav-back">← 의학 칼럼</a>
+    <div class="lang-toggle">
+      <a href="/blog/파킨슨-변비/" class="lang-btn active">KR</a>
+      <span class="lang-btn" style="opacity:0.3;cursor:default;">EN</span>
+    </div>
+  </div>
+</nav>
+
+<div class="article-wrap">
+
+  <div class="article-hero">
+    <div class="article-tag">생활습관</div>
+    <h1 class="article-title">파킨슨 환자의 변비<br>"물 많이 드세요"로는 해결되지 않습니다</h1>
+    <div class="article-meta">
+      <div class="article-meta-item">👨‍⚕️ <strong>Dr.H</strong> — 신경과 전문의 · NervLock 설립자</div>
+      <div class="article-meta-item">📅 2026. 4. 27</div>
+      <div class="article-meta-item">⏱ 8분 읽기</div>
+    </div>
+  </div>
+
+  <div class="abstract">
+    <div class="abstract-label">요약</div>
+    <p>파킨슨 환자의 80%가 변비로 고생합니다. 그러나 이 변비는 일반적인 변비와 다릅니다. 장 신경계 기능 저하가 원인이며, 변비가 지속되면 파킨슨 약물(레보도파)의 흡수가 방해를 받아 증상 관리에 직접적인 영향을 미칩니다. 이 글에서는 파킨슨 변비의 기전, 주의해야 할 위장약, 그리고 실제로 도움이 되는 접근법을 설명합니다.</p>
+  </div>
+
+  <div class="article-body">
+
+    <h2>파킨슨 변비는 일반 변비와 다릅니다</h2>
+    <p>파킨슨병은 뇌의 병이지만, 동시에 장의 병이기도 합니다. 파킨슨 환자 10명 중 8명이 변비를 경험하며, 이 변비는 단순히 수분이나 식이섬유가 부족해서 생기는 것이 아닙니다.</p>
+    <p>도파민 신경계는 뇌뿐 아니라 <strong>장 신경계(enteric nervous system)</strong>에도 분포합니다. 파킨슨병이 진행되면 장 신경계 기능도 함께 저하됩니다. 그 결과 장의 연동 운동이 느려지고, 대변이 장에 머무는 시간이 일반인보다 2~3배 이상 길어집니다. 변의를 느끼더라도 골반 근육이 적절하게 이완되지 않아 배변 자체가 어려워집니다.</p>
+
+    <h2>변비가 파킨슨 증상에 미치는 영향</h2>
+    <p>변비를 단순한 불편함으로 여기면 안 됩니다. 파킨슨 관리의 핵심인 레보도파는 <strong>소장</strong>에서 흡수됩니다. 심한 변비로 장에 숙변과 가스가 가득 차 있으면 약이 소장까지 도달하는 경로가 막힙니다.</p>
+    <p>그 결과 약을 제시간에 먹어도 몸이 굳어 있는 시간이 예상보다 길어지거나, 약효가 기대보다 일찍 사라지는 현상이 나타납니다. <strong>변비 관리가 곧 파킨슨 증상 관리의 시작</strong>이라고 할 수 있습니다.</p>
+
+    <div class="callout">
+      <strong>핵심 연결고리:</strong> 변비 → 소장 내 레보도파 흡수 방해 → 약효 불안정 → 파킨슨 증상 악화. 변비는 위장 문제가 아니라 파킨슨 관리 문제입니다.
+    </div>
+
+    <h2>반드시 주의해야 할 위장약</h2>
+    <p>속이 더부룩하거나 변비가 심하다고 약국에서 위장약을 구매해 드시는 경우가 있는데, 파킨슨 환자에게는 매우 위험한 성분이 있습니다.</p>
+
+    <div class="warning-box">
+      <h4>⚠️ 파킨슨 환자 주의 성분</h4>
+      <p><strong>메토클로프라미드(맥페란 등), 레보설피리드(레보프라이드 등)</strong> — 이 성분들은 뇌의 도파민 수용체를 차단합니다. 파킨슨 환자가 복용하면 떨림이 갑자기 심해지거나 몸이 극도로 경직되는 부작용이 생길 수 있습니다. 위장약이 필요하면 반드시 담당 의사에게 먼저 확인하세요.</p>
+    </div>
+
+    <p>일반 변비약도 주의가 필요합니다. 자극성 변비약(비사코딜, 센나 성분)을 장기간 반복 사용하면 이미 기능이 저하된 장 신경이 더욱 둔해질 수 있습니다. 습관성이 생기면 스스로 장을 움직이는 능력이 더 약해집니다.</p>
+
+    <h2>실제로 도움이 되는 접근법</h2>
+
+    <h3>마그네슘 — 장 부담 없이 변을 부드럽게</h3>
+    <p>산화마그네슘은 삼투압 기전으로 장 내로 수분을 끌어들여 변을 부드럽게 합니다. 자극성 변비약과 달리 장 신경에 직접적인 부담을 주지 않아 파킨슨 환자에게 적합합니다. 구연산마그네슘은 흡수율이 높고 근육 이완 지원도 함께 기대할 수 있어, 변비와 경직 두 가지를 동시에 접근하는 방법으로 주목받습니다.</p>
+
+    <h3>장내 환경 회복</h3>
+    <p>파킨슨 환자의 장내 세균 구성은 건강한 사람과 다릅니다. 유익균이 감소하고 염증을 촉진하는 균이 늘어나는 불균형이 관찰됩니다. 이 불균형이 장벽을 약화시키고, 장누수(leaky gut)로 이어지면 전신 염증이 높아져 장-뇌 축(gut-brain axis)에도 부정적 영향을 미칩니다. 장내 환경 회복은 변비 관리를 넘어 파킨슨 증상 전반의 지원에도 연결됩니다.</p>
+
+    <h3>미주신경 자극 — 가장 간단한 방법</h3>
+    <p>장과 뇌는 미주신경(vagus nerve)으로 연결됩니다. 미주신경 기능이 활성화되면 장 운동도 함께 활성화됩니다. 가장 간단하고 안전한 방법은 <strong>느리고 깊은 복식호흡</strong>입니다. 날숨을 들숨보다 2배 길게 내쉬는 방식으로 하루 5~10분 실천하면 미주신경 톤을 높이는 데 도움이 됩니다.</p>
+
+    <div class="symptom-grid">
+      <div class="symptom-card">
+        <h4>💊 마그네슘</h4>
+        <p>삼투압으로 장 내 수분 증가. 장 신경 부담 없이 변을 부드럽게. 구연산마그네슘은 흡수율 우수.</p>
+      </div>
+      <div class="symptom-card">
+        <h4>🦠 장내 환경</h4>
+        <p>유익균 지원으로 장-뇌 축 개선. 변비 완화뿐 아니라 파킨슨 증상 전반 지원에 연결.</p>
+      </div>
+      <div class="symptom-card">
+        <h4>🫁 복식호흡</h4>
+        <p>날숨을 길게 내쉬는 깊은 호흡으로 미주신경 활성화. 장 운동 지원. 하루 5~10분.</p>
+      </div>
+      <div class="symptom-card">
+        <h4>🚶 걷기 운동</h4>
+        <p>규칙적인 유산소 운동이 장 운동을 직접 촉진. 파킨슨 전반적 관리와 동시에 변비 지원.</p>
+      </div>
+    </div>
+
+    <h2>정리 — 변비가 해결되어야 약이 제대로 듭니다</h2>
+    <p>수분·식이섬유·운동은 기본입니다. 그러나 파킨슨 환자의 변비는 이것만으로 충분하지 않은 경우가 많습니다. 위장약 성분을 반드시 확인하고, 마그네슘으로 장 부담 없이 접근하며, 장내 환경 회복과 미주신경 자극을 병행하는 것이 더 현실적인 전략입니다.</p>
+    <p>그리고 무엇보다, 변비가 해결되어야 레보도파가 제대로 흡수되고 파킨슨 증상도 안정적으로 관리됩니다. 변비 관리는 삶의 질 문제인 동시에 파킨슨 관리의 핵심 기반입니다.</p>
+
+    <div class="evidence-box">
+      <h4>담당 의사에게 꼭 알려야 할 것들</h4>
+      <ul>
+        <li>현재 복용 중인 모든 위장약 및 변비약 이름과 성분</li>
+        <li>마지막 배변 날짜와 배변 횟수 패턴</li>
+        <li>변비가 심해진 시점과 약 용량 변화의 관계</li>
+        <li>약을 먹어도 몸이 굳어 있는 시간이 길어지는 패턴이 있는지</li>
+      </ul>
+    </div>
+
+    <div class="author-card">
+      <div class="author-avatar">👨‍⚕️</div>
+      <div class="author-info">
+        <h4>Dr.H</h4>
+        <div class="creds">신경과 전문의 · 연세대 세브란스 출신 · 뇌·통증·기능의학 전문 · NervLock 설립자</div>
+        <p>대한신경과학회 정회원 · 대한 파킨슨병 및 이상운동질환 학회 정회원 · 대한기능의학회 정회원. 본 칼럼은 의학적 정보 제공을 목적으로 하며 개인 진료를 대체하지 않습니다.</p>
+      </div>
+    </div>
+
+    <div class="cta-banner">
+      <h3>NervLock 너브케어로 신경 건강을 지원하세요</h3>
+      <p>신경과 전문의가 직접 설계한 커큐민 + 애플라핀® — 신경 염증 균형을 위한 가장 근거 있는 두 가지 성분.<br>NervLock 브랜드의 첫 번째 제품이 곧 출시됩니다.</p>
+      <a href="/#coming-soon" class="cta-btn">출시 알림 신청하기</a>
+    </div>
+
+    <div class="related">
+      <h3>관련 칼럼</h3>
+      <div class="related-grid">
+        <a href="/blog/파킨슨-글루타치온/" class="related-card">
+          <div class="tag">영양·성분</div>
+          <h4>글루타치온 수액, 파킨슨 관리에 어떤 역할을 하는가</h4>
+        </a>
+        <a href="/blog/파킨슨-초기증상/" class="related-card">
+          <div class="tag">신경과학</div>
+          <h4>파킨슨병 초기 신호 5가지 — 떨림보다 먼저 오는 것들</h4>
+        </a>
+      </div>
+    </div>
+
+    <div class="sig-block">
+      <p class="sig-main">본 글은 신경과 전문의 <strong>함지현 원장</strong>이 직접 작성하였습니다.</p>
+      <ul class="sig-creds">
+        <li>연세대 세브란스 출신 신경과 전문의</li>
+        <li>대한신경과학회 정회원</li>
+        <li>대한 파킨슨병 및 이상운동질환 학회 정회원</li>
+        <li>대한기능의학회 정회원</li>
+      </ul>
+      <p class="sig-notice">※ 본 내용은 의학 정보 제공을 목적으로 하며, 개인 진료를 대체하지 않습니다.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2026 NervLock. All rights reserved.</p>
+    <p>본 칼럼은 의학적 정보 제공을 목적으로 하며 개인 진료를 대체하지 않습니다.</p>
+  </div>
+</footer>
+
+</body>
+</html>

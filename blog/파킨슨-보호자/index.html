@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>파킨슨 보호자가 꼭 알아야 할 것들 | NervLock</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Apple SD Gothic Neo','Noto Sans KR','맑은 고딕',sans-serif; color: #1a1a2e; background: #fff; font-size: 17px; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    :root {
+      --navy: #0d2545; --navy2: #163561;
+      --teal: #1a7a6e; --teal2: #22a090;
+      --gold: #b8922a; --gold2: #d4a843;
+      --gray: #f4f6f9; --gray2: #e8ecf2;
+      --muted: #5a6278;
+    }
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(13,37,69,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-logo { font-size: 20px; font-weight: 900; color: #fff; white-space: nowrap; }
+    .nav-logo span { color: var(--gold2); }
+    .nav-back { font-size: 14px; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold2); }
+    .lang-toggle { display: flex; border: 1px solid rgba(255,255,255,0.22); border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+    .lang-btn { padding: 5px 12px; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); transition: all 0.18s; }
+    .lang-btn + .lang-btn { border-left: 1px solid rgba(255,255,255,0.22); }
+    .lang-btn.active { background: rgba(255,255,255,0.18); color: #fff; }
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 60px 24px 100px; }
+    .article-hero { background: linear-gradient(135deg, #2d1a45 0%, #4a2800 100%); border-radius: 24px; padding: 52px 48px; margin-bottom: 48px; position: relative; overflow: hidden; }
+    .article-hero::before { content: '🤝'; position: absolute; right: 32px; top: 32px; font-size: 80px; opacity: 0.15; }
+    .article-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(26,122,110,0.3); border: 1px solid rgba(26,122,110,0.5); border-radius: 50px; font-size: 12px; font-weight: 700; color: #6ee7da; padding: 4px 14px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+    .article-title { font-size: clamp(22px, 3.5vw, 34px); font-weight: 900; color: #fff; line-height: 1.3; margin-bottom: 20px; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 20px; }
+    .article-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.65); }
+    .article-meta-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+    .abstract { background: linear-gradient(135deg, rgba(26,122,110,0.06), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 16px 16px 0; padding: 24px 28px; margin-bottom: 48px; }
+    .abstract-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--teal2); margin-bottom: 10px; }
+    .abstract p { font-size: 15px; color: #2a3a4a; line-height: 1.85; margin: 0; font-style: italic; }
+    .article-body h2 { font-size: 24px; font-weight: 900; color: var(--navy); margin: 52px 0 16px; line-height: 1.35; padding-bottom: 12px; border-bottom: 2px solid var(--gray2); }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-size: 19px; font-weight: 800; color: var(--navy2); margin: 36px 0 12px; }
+    .article-body p { font-size: 16px; color: #2a2a3e; line-height: 1.95; margin-bottom: 20px; }
+    .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .article-body li { font-size: 15px; color: #3a3a50; line-height: 1.75; }
+    .article-body strong { color: var(--navy); }
+    .callout { background: linear-gradient(135deg, rgba(26,122,110,0.07), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: var(--navy); font-style: italic; line-height: 1.85; }
+    .callout strong { color: var(--teal); font-style: normal; }
+    .evidence-box { background: var(--gray); border-radius: 14px; padding: 20px 24px; margin: 28px 0; }
+    .evidence-box h4 { font-size: 12px; font-weight: 800; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .evidence-box ul { margin: 0; }
+    .evidence-box li { font-size: 13px; color: var(--muted); }
+    .symptom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+    .symptom-card { background: var(--gray); border-radius: 14px; padding: 18px 20px; border: 1px solid var(--gray2); }
+    .symptom-card h4 { font-size: 14px; font-weight: 800; color: var(--navy); margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+    .symptom-card p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+    .author-card { background: var(--gray); border-radius: 20px; padding: 28px 32px; margin-top: 64px; display: flex; align-items: flex-start; gap: 20px; }
+    .author-avatar { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--navy), var(--teal)); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+    .author-info h4 { font-size: 17px; font-weight: 900; color: var(--navy); margin-bottom: 4px; }
+    .author-info .creds { font-size: 13px; color: var(--teal); font-weight: 600; margin-bottom: 10px; }
+    .author-info p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+    .cta-banner { background: linear-gradient(135deg, var(--navy), #0f4f6e); border-radius: 20px; padding: 40px 36px; margin-top: 48px; text-align: center; }
+    .cta-banner h3 { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 10px; }
+    .cta-banner p { font-size: 15px; color: rgba(255,255,255,0.7); margin-bottom: 24px; line-height: 1.7; }
+    .cta-btn { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold2)); color: #fff; font-size: 16px; font-weight: 800; padding: 14px 36px; border-radius: 50px; box-shadow: 0 6px 20px rgba(184,146,42,0.4); transition: transform 0.2s; }
+    .cta-btn:hover { transform: translateY(-2px); }
+    .related { margin-top: 64px; }
+    .related h3 { font-size: 20px; font-weight: 900; color: var(--navy); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .related-card { background: var(--gray); border-radius: 16px; padding: 20px; border: 1px solid var(--gray2); }
+    .related-card .tag { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .related-card h4 { font-size: 15px; font-weight: 800; color: var(--navy); line-height: 1.4; }
+    footer { background: #0a1a32; color: rgba(255,255,255,0.5); padding: 32px 0; }
+    .footer-bottom { max-width: 900px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 12px; }
+    @media (max-width: 600px) {
+      .article-hero { padding: 36px 28px; }
+      .symptom-grid, .related-grid { grid-template-columns: 1fr; }
+      .author-card { flex-direction: column; }
+    }
+    .sig-block { border-top: 2px solid var(--gray2); margin-top: 48px; padding-top: 24px; }
+    .sig-main { font-size: 14px; color: var(--navy); font-weight: 700; margin-bottom: 12px; line-height: 1.7; }
+    .sig-creds { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+    .sig-creds li { font-size: 13px; color: var(--muted); padding-left: 14px; position: relative; line-height: 1.6; }
+    .sig-creds li::before { content: "·"; position: absolute; left: 0; color: var(--teal2); font-weight: 900; }
+    .sig-notice { font-size: 12px; color: var(--muted); font-style: italic; line-height: 1.7; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Nerv<span>Lock</span></a>
+    <a href="/#blog" class="nav-back">← 의학 칼럼</a>
+    <div class="lang-toggle">
+      <a href="/blog/파킨슨-보호자/" class="lang-btn active">KR</a>
+      <span class="lang-btn" style="opacity:0.3;cursor:default;">EN</span>
+    </div>
+  </div>
+</nav>
+
+<div class="article-wrap">
+
+  <div class="article-hero">
+    <div class="article-tag">생활습관</div>
+    <h1 class="article-title">파킨슨 보호자가<br>꼭 알아야 할 것들</h1>
+    <div class="article-meta">
+      <div class="article-meta-item">👨‍⚕️ <strong>Dr.H</strong> — 신경과 전문의 · NervLock 설립자</div>
+      <div class="article-meta-item">📅 2026. 3. 16</div>
+      <div class="article-meta-item">⏱ 10분 읽기</div>
+    </div>
+  </div>
+
+  <div class="abstract">
+    <div class="abstract-label">요약</div>
+    <p>파킨슨병은 환자뿐 아니라 보호자에게도 긴 여정입니다. 연구에 따르면 파킨슨 보호자의 40~50%가 우울이나 불안 증상을 경험합니다. 이 글은 보호자가 실질적으로 활용할 수 있는 운동·수면·영양·약 관리·낙상 예방 방법과 함께, 보호자 자신의 건강을 지키는 것이 왜 중요한지를 다룹니다.</p>
+  </div>
+
+  <div class="article-body">
+
+    <h2>보호자의 부담은 천천히, 그러나 분명히 쌓입니다</h2>
+    <p>파킨슨병은 천천히 진행되는 만성 질환입니다. 그래서 보호자의 역할도 하루아침에 무거워지지 않습니다. 약 복용 확인, 걸음걸이 관찰, 표정과 표현의 변화 체크, 수면 상태 모니터링, 식사와 연하 기능 점검—이 모든 것이 매일 조금씩 보호자의 일상 속에 쌓여갑니다.</p>
+    <p>보호자의 번아웃은 통계로도 확인됩니다. 파킨슨 보호자의 <strong>40~50%가 우울이나 불안 증상</strong>을 경험하며, 수면 장애, 만성 피로, 사회적 고립을 호소하는 비율은 그보다 훨씬 높습니다.</p>
+
+    <div class="callout">
+      <strong>번아웃의 경고 신호:</strong> 환자에게 이유 없이 짜증이 난다 / 아무것도 하고 싶지 않다 / 잠을 자도 피곤하다 / 예전에 좋아하던 것에 흥미를 잃었다. 이 중 하나라도 해당된다면 이미 번아웃의 초기 신호입니다. 부끄러운 일이 아닙니다.
+    </div>
+
+    <h2>운동 — 잔소리보다 함께 걷기</h2>
+    <p>운동이 파킨슨 관리에서 약만큼 중요하다는 것은 이제 잘 알려진 사실입니다. 보호자의 역할은 "운동하세요"라고 말하는 것보다, 함께 움직여 주는 것입니다.</p>
+    <p>매일 30분 함께 산책하는 것만으로도 큰 차이를 만들 수 있습니다. 한 가지 더 중요한 것은 <strong>타이밍</strong>입니다. 파킨슨 약이 잘 작동하는 ON 타임에 운동하면 훨씬 안전하고 효과적입니다. 보호자가 환자의 약효 패턴을 파악하고 운동 시간을 맞춰주는 것—이것은 보호자만 할 수 있는 실질적인 도움입니다.</p>
+
+    <h2>수면과 REM수면행동장애</h2>
+    <p>파킨슨 환자의 상당수가 수면 중 소리를 지르거나 팔다리를 격렬하게 움직이는 REM수면행동장애(RBD)를 경험합니다. 가장 직접적으로 영향받는 사람이 바로 함께 자는 보호자입니다.</p>
+    <p>중요한 것은 이 행동이 환자 본인의 의지와 전혀 무관하다는 점입니다. 꿈 내용이 몸 밖으로 표출되는 것으로, 깨어 있는 상태에서의 행동과는 완전히 다릅니다. 보호자의 안전을 위해 분리 수면을 선택하는 것은 합리적이고 현명한 결정입니다.</p>
+
+    <div class="evidence-box">
+      <h4>수면 환경 안전 조치</h4>
+      <ul>
+        <li>침대 옆 날카롭거나 딱딱한 물건 제거</li>
+        <li>침대 높이를 낮추거나 매트리스를 바닥에 배치</li>
+        <li>침대 가장자리 보호 쿠션 설치</li>
+        <li>분리 수면 고려 (보호자와 환자 모두를 위해)</li>
+      </ul>
+    </div>
+
+    <h2>영양 관리 — 실질적으로 가장 중요한 부분</h2>
+    <p>보호자가 매일 챙길 수 있는 가장 현실적인 지원은 식사 관리입니다. 항산화에 도움이 되는 채소(브로콜리, 시금치, 마늘), 충분한 단백질, 적절한 수분 섭취가 기본입니다.</p>
+    <p>단, 레보도파를 복용 중인 분들은 한 가지를 꼭 기억해야 합니다. 단백질이 레보도파의 소장 흡수를 방해할 수 있습니다. <strong>약 복용 시간과 단백질이 풍부한 식사는 30분~1시간 이상 간격</strong>을 두는 것이 약효를 안정적으로 유지하는 데 중요합니다.</p>
+
+    <h2>약 관리 — 30분의 차이가 하루를 바꿉니다</h2>
+    <p>파킨슨 약물은 복용 시간이 매우 중요합니다. 30분의 차이로 약효가 달라질 수 있습니다. 보호자가 할 수 있는 가장 큰 도움 중 하나는 <strong>약 복용 시간표를 만들고 지키는 것</strong>입니다.</p>
+    <p>알람 설정이나 요일별 약 케이스 활용도 좋습니다. 그리고 증상 변화를 기록해 두세요. "오늘 오후 2시에 많이 뻣뻣해졌다", "약 먹고 40분 후에 몸이 풀렸다" — 이런 기록이 외래 진료 시 약 조절에 결정적인 정보가 됩니다.</p>
+
+    <h2>낙상 예방 — 환경이 안전망입니다</h2>
+    <p>파킨슨 환자에게 낙상은 삶의 질을 급격히 떨어뜨리는 사건입니다. 골절로 이어지면 재활 기간 동안 파킨슨 증상이 빠르게 악화될 수 있습니다. 환경 조성이 가장 현실적인 예방책입니다.</p>
+
+    <div class="symptom-grid">
+      <div class="symptom-card">
+        <h4>🚿 화장실</h4>
+        <p>미끄럼 방지 매트 설치, 손잡이 부착. 가장 낙상이 자주 발생하는 공간입니다.</p>
+      </div>
+      <div class="symptom-card">
+        <h4>🚪 이동 경로</h4>
+        <p>문턱 제거 또는 경사로 교체. 밤 화장실 동선에 조명 설치.</p>
+      </div>
+      <div class="symptom-card">
+        <h4>👟 신발</h4>
+        <p>슬리퍼 대신 미끄러지지 않는 실내화. 발 전체를 감싸는 형태가 안전합니다.</p>
+      </div>
+      <div class="symptom-card">
+        <h4>🛋️ 가구 배치</h4>
+        <p>동선에서 장애물 제거. 손을 짚을 수 있는 지지대 마련.</p>
+      </div>
+    </div>
+
+    <h2>보호자도 자신을 돌봐야 합니다</h2>
+    <p>보호자가 쓰러지면 환자도 쓰러집니다. 이것은 과장이 아닙니다.</p>
+    <p>보호자가 지쳐 기능을 잃으면 환자 관리의 질도 함께 떨어집니다. 정기적으로 자신만의 시간을 확보하고, 주변에 도움을 요청하는 것은 환자를 위한 일이기도 합니다. 혼자 모든 것을 감당하려 하면 반드시 무너집니다.</p>
+    <p>힘들다고 말하는 것은 괜찮습니다. 감정을 억누르지 마세요. 필요하다면 전문 상담을 받는 것도 좋습니다. 보호자의 정신 건강은 환자 관리의 지속 가능성과 직결됩니다.</p>
+
+    <div class="author-card">
+      <div class="author-avatar">👨‍⚕️</div>
+      <div class="author-info">
+        <h4>Dr.H</h4>
+        <div class="creds">신경과 전문의 · 연세대 세브란스 출신 · 뇌·통증·기능의학 전문 · NervLock 설립자</div>
+        <p>대한신경과학회 정회원 · 대한 파킨슨병 및 이상운동질환 학회 정회원 · 대한기능의학회 정회원. 본 칼럼은 의학적 정보 제공을 목적으로 하며 개인 진료를 대체하지 않습니다.</p>
+      </div>
+    </div>
+
+    <div class="cta-banner">
+      <h3>NervLock 너브케어로 신경 건강을 지원하세요</h3>
+      <p>신경과 전문의가 직접 설계한 커큐민 + 애플라핀® — 신경 염증 균형을 위한 가장 근거 있는 두 가지 성분.<br>NervLock 브랜드의 첫 번째 제품이 곧 출시됩니다.</p>
+      <a href="/#coming-soon" class="cta-btn">출시 알림 신청하기</a>
+    </div>
+
+    <div class="related">
+      <h3>관련 칼럼</h3>
+      <div class="related-grid">
+        <a href="/blog/파킨슨-약물치료/" class="related-card">
+          <div class="tag">통증의학</div>
+          <h4>파킨슨 약물 관리 — 레보도파, 약효 변동과 장기 전략</h4>
+        </a>
+        <a href="/blog/파킨슨-REM수면장애/" class="related-card">
+          <div class="tag">신경과학</div>
+          <h4>파킨슨과 수면 — REM수면행동장애를 깊이 이해하기</h4>
+        </a>
+      </div>
+    </div>
+
+    <div class="sig-block">
+      <p class="sig-main">본 글은 신경과 전문의 <strong>함지현 원장</strong>이 직접 작성하였습니다.</p>
+      <ul class="sig-creds">
+        <li>연세대 세브란스 출신 신경과 전문의</li>
+        <li>대한신경과학회 정회원</li>
+        <li>대한 파킨슨병 및 이상운동질환 학회 정회원</li>
+        <li>대한기능의학회 정회원</li>
+      </ul>
+      <p class="sig-notice">※ 본 내용은 의학 정보 제공을 목적으로 하며, 개인 진료를 대체하지 않습니다.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2026 NervLock. All rights reserved.</p>
+    <p>본 칼럼은 의학적 정보 제공을 목적으로 하며 개인 진료를 대체하지 않습니다.</p>
+  </div>
+</footer>
+
+</body>
+</html>
