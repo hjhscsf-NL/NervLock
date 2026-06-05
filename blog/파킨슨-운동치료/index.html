@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>파킨슨병과 운동 — 신경과 전문의가 운동을 처방하는 이유 | NervLock</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Apple SD Gothic Neo','Noto Sans KR','맑은 고딕',sans-serif; color: #1a1a2e; background: #fff; font-size: 17px; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    :root {
+      --navy: #0d2545; --navy2: #163561;
+      --teal: #1a7a6e; --teal2: #22a090;
+      --gold: #b8922a; --gold2: #d4a843;
+      --gray: #f4f6f9; --gray2: #e8ecf2;
+      --muted: #5a6278;
+    }
+
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(13,37,69,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-logo { font-size: 20px; font-weight: 900; color: #fff; white-space: nowrap; }
+    .nav-logo span { color: var(--gold2); }
+    .nav-back { font-size: 14px; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold2); }
+    .lang-toggle { display: flex; border: 1px solid rgba(255,255,255,0.22); border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+    .lang-btn { padding: 5px 12px; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); transition: all 0.18s; }
+    .lang-btn + .lang-btn { border-left: 1px solid rgba(255,255,255,0.22); }
+    .lang-btn.active { background: rgba(255,255,255,0.18); color: #fff; }
+
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 60px 24px 100px; }
+
+    .article-hero { background: linear-gradient(135deg, #0f4f3a 0%, #22a090 100%); border-radius: 24px; padding: 52px 48px; margin-bottom: 48px; position: relative; overflow: hidden; }
+    .article-hero::before { content: '🏃'; position: absolute; right: 32px; top: 32px; font-size: 80px; opacity: 0.15; }
+    .article-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(26,122,110,0.3); border: 1px solid rgba(26,122,110,0.5); border-radius: 50px; font-size: 12px; font-weight: 700; color: #6ee7da; padding: 4px 14px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+    .article-title { font-size: clamp(22px, 3.5vw, 34px); font-weight: 900; color: #fff; line-height: 1.3; margin-bottom: 20px; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 20px; }
+    .article-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.65); }
+    .article-meta-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+
+    .abstract { background: linear-gradient(135deg, rgba(26,122,110,0.06), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 16px 16px 0; padding: 24px 28px; margin-bottom: 48px; }
+    .abstract-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--teal2); margin-bottom: 10px; }
+    .abstract p { font-size: 15px; color: #2a3a4a; line-height: 1.85; margin: 0; font-style: italic; }
+
+    .article-body h2 { font-size: 24px; font-weight: 900; color: var(--navy); margin: 52px 0 16px; line-height: 1.35; padding-bottom: 12px; border-bottom: 2px solid var(--gray2); }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-size: 19px; font-weight: 800; color: var(--navy2); margin: 36px 0 12px; }
+    .article-body p { font-size: 16px; color: #2a2a3e; line-height: 1.95; margin-bottom: 20px; }
+    .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .article-body li { font-size: 15px; color: #3a3a50; line-height: 1.75; }
+    .article-body strong { color: var(--navy); }
+
+    .callout { background: linear-gradient(135deg, rgba(26,122,110,0.07), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: var(--navy); font-style: italic; line-height: 1.85; }
+    .callout strong { color: var(--teal); font-style: normal; }
+
+    .evidence-box { background: var(--gray); border-radius: 14px; padding: 20px 24px; margin: 28px 0; }
+    .evidence-box h4 { font-size: 12px; font-weight: 800; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .evidence-box ul { margin: 0; }
+    .evidence-box li { font-size: 13px; color: var(--muted); }
+
+    .exercise-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+    .exercise-table th { background: var(--navy); color: #fff; padding: 10px 14px; text-align: left; font-weight: 700; }
+    .exercise-table td { padding: 10px 14px; border-bottom: 1px solid var(--gray2); color: #2a2a3e; vertical-align: top; }
+    .exercise-table tr:last-child td { border-bottom: none; }
+    .exercise-table tr:nth-child(even) td { background: var(--gray); }
+
+    .author-card { background: var(--gray); border-radius: 20px; padding: 28px 32px; margin-top: 64px; display: flex; align-items: flex-start; gap: 20px; }
+    .author-avatar { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--navy), var(--teal)); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+    .author-info h4 { font-size: 17px; font-weight: 900; color: var(--navy); margin-bottom: 4px; }
+    .author-info .creds { font-size: 13px; color: var(--teal); font-weight: 600; margin-bottom: 10px; }
+    .author-info p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+
+    .cta-banner { background: linear-gradient(135deg, var(--navy), #0f4f6e); border-radius: 20px; padding: 40px 36px; margin-top: 48px; text-align: center; }
+    .cta-banner h3 { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 10px; }
+    .cta-banner p { font-size: 15px; color: rgba(255,255,255,0.7); margin-bottom: 24px; line-height: 1.7; }
+    .cta-btn { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold2)); color: #fff; font-size: 16px; font-weight: 800; padding: 14px 36px; border-radius: 50px; box-shadow: 0 6px 20px rgba(184,146,42,0.4); transition: transform 0.2s; }
+    .cta-btn:hover { transform: translateY(-2px); }
+
+    .related { margin-top: 64px; }
+    .related h3 { font-size: 20px; font-weight: 900; color: var(--navy); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .related-card { background: var(--gray); border-radius: 16px; padding: 20px; border: 1px solid var(--gray2); }
+    .related-card .tag { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .related-card h4 { font-size: 15px; font-weight: 800; color: var(--navy); line-height: 1.4; }
+
+    footer { background: #0a1a32; color: rgba(255,255,255,0.5); padding: 32px 0; }
+    .footer-bottom { max-width: 900px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 12px; }
+
+    @media (max-width: 600px) {
+      .article-hero { padding: 36px 28px; }
+      .related-grid { grid-template-columns: 1fr; }
+      .author-card { flex-direction: column; }
+      .exercise-table { font-size: 13px; }
+    }
+    .sig-block { border-top: 2px solid var(--gray2); margin-top: 48px; padding-top: 24px; }
+    .sig-main { font-size: 14px; color: var(--navy); font-weight: 700; margin-bottom: 12px; line-height: 1.7; }
+    .sig-creds { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+    .sig-creds li { font-size: 13px; color: var(--muted); padding-left: 14px; position: relative; line-height: 1.6; }
+    .sig-creds li::before { content: "·"; position: absolute; left: 0; color: var(--teal2); font-weight: 900; }
+    .sig-notice { font-size: 12px; color: var(--muted); font-style: italic; line-height: 1.7; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Nerv<span>Lock</span></a>
+    <a href="/#blog" class="nav-back">← 의학 칼럼</a>
+    <div class="lang-toggle">
+      <a href="/blog/파킨슨-운동치료/" class="lang-btn active">KR</a>
+      <span class="lang-btn" style="opacity:0.3;cursor:default;">EN</span>
+    </div>
+  </div>
+</nav>
+
+<div class="article-wrap">
+
+  <div class="article-hero">
+    <div class="article-tag">생활습관</div>
+    <h1 class="article-title">파킨슨병과 운동<br>신경과 전문의가 운동을 처방하는 이유</h1>
+    <div class="article-meta">
+      <div class="article-meta-item">👨‍⚕️ <strong>Dr.H</strong> — 신경과 전문의 · NervLock 설립자</div>
+      <div class="article-meta-item">📅 2026. 3. 8</div>
+      <div class="article-meta-item">⏱ 10분 읽기</div>
+    </div>
+  </div>
+
+  <div class="abstract">
+    <div class="abstract-label">요약</div>
+    <p>파킨슨병에서 운동이 단순한 체력 유지를 넘어 BDNF 분비 촉진과 도파민 시스템 보호라는 신경과학적 근거를 가지는 이유. 유산소·균형·근력·리듬 운동 각각의 역할과 실용적 가이드를 담습니다.</p>
+  </div>
+
+  <div class="article-body">
+
+    <h2>파킨슨 환자에게 운동은 선택이 아닙니다</h2>
+    <p>파킨슨 환자를 처음 만나면 저는 늘 두 가지를 확인합니다. 약을 잘 복용하고 있는지, 그리고 운동을 하고 있는지입니다. 많은 분들이 두 번째 질문에서 머뭇거립니다. "몸이 뻣뻣하고 쉽게 피곤한데 무슨 운동을 하겠어요"라고 하십니다. 하지만 파킨슨병에서 운동은 선택이 아니라 관리의 핵심 축입니다.</p>
+
+    <h2>운동이 도파민에 미치는 영향</h2>
+    <p>약물(레보도파 등)은 부족한 도파민을 외부에서 보충하는 방식입니다. 운동은 다른 경로로 작동합니다.</p>
+    <p>규칙적인 유산소 운동은 뇌에서 <strong>BDNF(뇌유래신경영양인자, Brain-Derived Neurotrophic Factor)</strong>의 분비를 촉진합니다. BDNF는 신경세포의 영양제와 같습니다. 손상된 도파민 신경세포의 생존을 돕고, 남아 있는 세포들이 더 효율적으로 기능하도록 지원합니다.</p>
+    <p>약이 도파민을 공급하는 것이라면, 운동은 도파민 시스템을 보호하고 강화하는 것입니다. 두 접근법은 서로 대체재가 아니라 보완재입니다.</p>
+
+    <div class="callout">
+      <strong>신경과학적 근거:</strong> 운동은 BDNF 분비를 통해 도파민 신경세포 생존을 지원합니다. 단순한 체력 단련이 아니라 신경 보호적 중재입니다.
+    </div>
+
+    <h2>실제 연구가 말하는 것들</h2>
+    <p><strong>고강도 유산소 운동</strong>(주 3회, 30분 이상)을 6개월간 지속한 파킨슨병 환자 그룹은 운동을 하지 않은 그룹에 비해 운동기능 저하 속도가 유의미하게 느려졌습니다. 단순히 체력이 좋아진 것이 아니라 질병 자체의 진행이 늦춰졌다는 의미입니다.</p>
+    <p><strong>태극권</strong>을 꾸준히 한 파킨슨병 환자들이 균형감각과 낙상 빈도에서 뚜렷한 개선을 보였다는 연구 결과도 있습니다. 태극권의 느리고 의식적인 동작이 파킨슨병으로 손상된 자세 조절 기능을 보완하는 데 특히 주목받고 있습니다.</p>
+
+    <h2>어떤 운동이 좋을까</h2>
+
+    <h3>유산소 운동</h3>
+    <p>빠르게 걷기, 실내자전거, 수영이 대표적입니다. 심박수가 올라가는 강도로 일주일에 3~4회, 한 번에 30분 이상 권장합니다. 숨이 약간 차서 대화가 살짝 힘든 정도면 적절한 강도입니다. BDNF 분비에 가장 효과적인 운동 방식입니다.</p>
+
+    <h3>균형·유연성 운동</h3>
+    <p>태극권, 요가, 스트레칭이 해당됩니다. 파킨슨병은 자세 불안정을 일으키기 때문에 균형 훈련은 낙상 예방에 실질적인 도움이 됩니다. 주 2회, 20~30분을 목표로 합니다.</p>
+
+    <h3>저항 운동(근력 운동)</h3>
+    <p>가벼운 웨이트 트레이닝이나 밴드 운동입니다. 파킨슨병이 진행되면 근력이 빠르게 감소하는 경향이 있어 근력 운동은 필수입니다. 주 2~3회, 20분 정도로 시작하는 것이 좋습니다.</p>
+
+    <h3>리듬 기반 운동</h3>
+    <p>음악에 맞춰 걷기, 복싱 리듬 운동, 댄스입니다. 파킨슨병 환자의 뇌는 내부 리듬 생성에 어려움을 겪는데, 외부 리듬이 주어지면 놀라울 정도로 움직임이 개선됩니다. 매일 15~20분도 좋습니다.</p>
+
+    <table class="exercise-table">
+      <thead>
+        <tr>
+          <th>운동 종류</th>
+          <th>대표 방법</th>
+          <th>권장 빈도</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>유산소</strong></td>
+          <td>빠르게 걷기, 실내자전거</td>
+          <td>주 3~4회, 30분 이상</td>
+        </tr>
+        <tr>
+          <td><strong>균형·유연성</strong></td>
+          <td>태극권, 요가, 스트레칭</td>
+          <td>주 2회, 20~30분</td>
+        </tr>
+        <tr>
+          <td><strong>근력</strong></td>
+          <td>밴드 운동, 가벼운 웨이트</td>
+          <td>주 2~3회, 20분</td>
+        </tr>
+        <tr>
+          <td><strong>리듬</strong></td>
+          <td>음악 걷기, 댄스</td>
+          <td>매일, 15~20분</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>"운동하기 힘든 몸인데, 어떻게요?"</h2>
+    <p>"아프니까 운동을 못 한다"가 아니라 "아프기 때문에 운동이 더 필요하다"라는 인식 전환이 핵심입니다. 약효가 가장 좋은 시간(ON 타임)에 운동하세요. 처음부터 30분을 채울 필요 없습니다. 10분 걷기부터 시작해서 조금씩 늘려가는 것이 지속 가능합니다.</p>
+    <p>딱 한 가지만 하라면? <strong>빠르게 걷기</strong>입니다. 도구가 필요 없고, 어디서든 할 수 있고, 연구 근거가 가장 탄탄합니다. 오늘 현관문을 열고 10분만 걸어보세요.</p>
+
+    <div class="evidence-box">
+      <h4>📚 참고 문헌</h4>
+      <ul>
+        <li>Bhatt U et al. (2018). Exercise therapy in Parkinson's disease. <em>Translational Neurodegeneration</em> 7:25</li>
+        <li>Li F et al. (2012). Tai chi and fall reductions in older adults. <em>NEJM</em> 366(6):511-519</li>
+        <li>Ahlskog JE (2011). Does vigorous exercise have a neuroprotective effect in Parkinson disease? <em>Neurology</em> 77(3):288-294</li>
+        <li>Hirsch MA &amp; Farley BG (2009). Exercise and neuroplasticity in persons living with Parkinson's disease. <em>European Journal of Physical and Rehabilitation Medicine</em> 45(2):215-229</li>
+      </ul>
+    </div>
+
+    <div class="author-card">
+      <div class="author-avatar">👨‍⚕️</div>
+      <div class="author-info">
+        <h4>Dr.H</h4>
+        <div class="creds">신경과 전문의 · 연세대 세브란스 출신 · 파킨슨·이상운동·기능의학 · NervLock 설립자</div>
+        <p>대한신경과학회 정회원 · 대한 파킨슨병 및 이상운동질환 학회 정회원 · 대한기능의학회 정회원. 본 칼럼은 의학적 정보 제공을 목적으로 하며 개인 진료를 대체하지 않습니다.</p>
+      </div>
+    </div>
+
+    <div class="cta-banner">
+      <h3>NervLock 너브케어로 신경 건강을 지원하세요</h3>
+      <p>신경과 전문의가 직접 처방한 커큐민 + 애플라핀® — 신경 염증 균형을 위한 근거 있는 이중 경로 설계.<br>NervLock 브랜드의 첫 번째 제품이 곧 출시됩니다.</p>
+      <a href="/#coming-soon" class="cta-btn">출시 알림 신청하기</a>
+    </div>
+
+    <div class="related">
+      <h3>관련 칼럼</h3>
+      <div class="related-grid">
+        <div class="related-card">
+          <div class="tag">통증의학</div>
+          <h4><a href="/blog/파킨슨-약물치료/">파킨슨 약물 관리, 어떻게 시작하고 어떻게 이해해야 할까</a></h4>
+        </div>
+        <div class="related-card">
+          <div class="tag">통증의학</div>
+          <h4><a href="/blog/파킨슨-통증/">파킨슨 환자의 통증을 나이 탓으로만 돌리지 마세요</a></h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="sig-block">
+      <p class="sig-main">본 글은 신경과 전문의 <strong>함지현 원장</strong>이 직접 작성하였습니다.</p>
+      <ul class="sig-creds">
+        <li>연세대 세브란스 출신 신경과 전문의</li>
+        <li>대한신경과학회 정회원</li>
+        <li>대한 파킨슨병 및 이상운동질환 학회 정회원</li>
+        <li>대한기능의학회 정회원</li>
+      </ul>
+      <p class="sig-notice">※ 본 내용은 의학 정보 제공을 목적으로 하며, 개인 진료를 대체하지 않습니다.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2026 NervLock. All rights reserved.</p>
+    <p>본 칼럼은 의학적 정보 제공을 목적으로 하며 개인 진료를 대체하지 않습니다.</p>
+  </div>
+</footer>
+
+</body>
+</html>

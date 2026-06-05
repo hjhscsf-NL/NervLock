@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>파킨슨 약물 관리, 어떻게 시작하고 어떻게 이해해야 할까 | NervLock</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Apple SD Gothic Neo','Noto Sans KR','맑은 고딕',sans-serif; color: #1a1a2e; background: #fff; font-size: 17px; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    :root {
+      --navy: #0d2545; --navy2: #163561;
+      --teal: #1a7a6e; --teal2: #22a090;
+      --gold: #b8922a; --gold2: #d4a843;
+      --gray: #f4f6f9; --gray2: #e8ecf2;
+      --muted: #5a6278;
+    }
+
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(13,37,69,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-logo { font-size: 20px; font-weight: 900; color: #fff; white-space: nowrap; }
+    .nav-logo span { color: var(--gold2); }
+    .nav-back { font-size: 14px; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold2); }
+    .lang-toggle { display: flex; border: 1px solid rgba(255,255,255,0.22); border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+    .lang-btn { padding: 5px 12px; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); transition: all 0.18s; }
+    .lang-btn + .lang-btn { border-left: 1px solid rgba(255,255,255,0.22); }
+    .lang-btn.active { background: rgba(255,255,255,0.18); color: #fff; }
+
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 60px 24px 100px; }
+
+    .article-hero { background: linear-gradient(135deg, #163561 0%, #0f4f6e 100%); border-radius: 24px; padding: 52px 48px; margin-bottom: 48px; position: relative; overflow: hidden; }
+    .article-hero::before { content: '💊'; position: absolute; right: 32px; top: 32px; font-size: 80px; opacity: 0.15; }
+    .article-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(26,122,110,0.3); border: 1px solid rgba(26,122,110,0.5); border-radius: 50px; font-size: 12px; font-weight: 700; color: #6ee7da; padding: 4px 14px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+    .article-title { font-size: clamp(22px, 3.5vw, 34px); font-weight: 900; color: #fff; line-height: 1.3; margin-bottom: 20px; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 20px; }
+    .article-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.65); }
+    .article-meta-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+
+    .abstract { background: linear-gradient(135deg, rgba(26,122,110,0.06), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 16px 16px 0; padding: 24px 28px; margin-bottom: 48px; }
+    .abstract-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--teal2); margin-bottom: 10px; }
+    .abstract p { font-size: 15px; color: #2a3a4a; line-height: 1.85; margin: 0; font-style: italic; }
+
+    .article-body h2 { font-size: 24px; font-weight: 900; color: var(--navy); margin: 52px 0 16px; line-height: 1.35; padding-bottom: 12px; border-bottom: 2px solid var(--gray2); }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-size: 19px; font-weight: 800; color: var(--navy2); margin: 36px 0 12px; }
+    .article-body p { font-size: 16px; color: #2a2a3e; line-height: 1.95; margin-bottom: 20px; }
+    .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .article-body li { font-size: 15px; color: #3a3a50; line-height: 1.75; }
+    .article-body strong { color: var(--navy); }
+
+    .callout { background: linear-gradient(135deg, rgba(26,122,110,0.07), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: var(--navy); font-style: italic; line-height: 1.85; }
+    .callout strong { color: var(--teal); font-style: normal; }
+
+    .evidence-box { background: var(--gray); border-radius: 14px; padding: 20px 24px; margin: 28px 0; }
+    .evidence-box h4 { font-size: 12px; font-weight: 800; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .evidence-box ul { margin: 0; }
+    .evidence-box li { font-size: 13px; color: var(--muted); }
+
+    .author-card { background: var(--gray); border-radius: 20px; padding: 28px 32px; margin-top: 64px; display: flex; align-items: flex-start; gap: 20px; }
+    .author-avatar { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--navy), var(--teal)); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+    .author-info h4 { font-size: 17px; font-weight: 900; color: var(--navy); margin-bottom: 4px; }
+    .author-info .creds { font-size: 13px; color: var(--teal); font-weight: 600; margin-bottom: 10px; }
+    .author-info p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+
+    .cta-banner { background: linear-gradient(135deg, var(--navy), #0f4f6e); border-radius: 20px; padding: 40px 36px; margin-top: 48px; text-align: center; }
+    .cta-banner h3 { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 10px; }
+    .cta-banner p { font-size: 15px; color: rgba(255,255,255,0.7); margin-bottom: 24px; line-height: 1.7; }
+    .cta-btn { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold2)); color: #fff; font-size: 16px; font-weight: 800; padding: 14px 36px; border-radius: 50px; box-shadow: 0 6px 20px rgba(184,146,42,0.4); transition: transform 0.2s; }
+    .cta-btn:hover { transform: translateY(-2px); }
+
+    .related { margin-top: 64px; }
+    .related h3 { font-size: 20px; font-weight: 900; color: var(--navy); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .related-card { background: var(--gray); border-radius: 16px; padding: 20px; border: 1px solid var(--gray2); }
+    .related-card .tag { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .related-card h4 { font-size: 15px; font-weight: 800; color: var(--navy); line-height: 1.4; }
+
+    footer { background: #0a1a32; color: rgba(255,255,255,0.5); padding: 32px 0; }
+    .footer-bottom { max-width: 900px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 12px; }
+
+    @media (max-width: 600px) {
+      .article-hero { padding: 36px 28px; }
+      .related-grid { grid-template-columns: 1fr; }
+      .author-card { flex-direction: column; }
+    }
+    .sig-block { border-top: 2px solid var(--gray2); margin-top: 48px; padding-top: 24px; }
+    .sig-main { font-size: 14px; color: var(--navy); font-weight: 700; margin-bottom: 12px; line-height: 1.7; }
+    .sig-creds { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+    .sig-creds li { font-size: 13px; color: var(--muted); padding-left: 14px; position: relative; line-height: 1.6; }
+    .sig-creds li::before { content: "·"; position: absolute; left: 0; color: var(--teal2); font-weight: 900; }
+    .sig-notice { font-size: 12px; color: var(--muted); font-style: italic; line-height: 1.7; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Nerv<span>Lock</span></a>
+    <a href="/#blog" class="nav-back">← 의학 칼럼</a>
+    <div class="lang-toggle">
+      <a href="/blog/파킨슨-약물치료/" class="lang-btn active">KR</a>
+      <span class="lang-btn" style="opacity:0.3;cursor:default;">EN</span>
+    </div>
+  </div>
+</nav>
+
+<div class="article-wrap">
+
+  <div class="article-hero">
+    <div class="article-tag">통증의학</div>
+    <h1 class="article-title">파킨슨 약물 관리<br>어떻게 시작하고 어떻게 이해해야 할까</h1>
+    <div class="article-meta">
+      <div class="article-meta-item">👨‍⚕️ <strong>Dr.H</strong> — 신경과 전문의 · NervLock 설립자</div>
+      <div class="article-meta-item">📅 2026. 2. 28</div>
+      <div class="article-meta-item">⏱ 8분 읽기</div>
+    </div>
+  </div>
+
+  <div class="abstract">
+    <div class="abstract-label">요약</div>
+    <p>파킨슨병 관리의 핵심 약제인 레보도파의 작용 원리, 복용 시작 시점에 관한 최신 임상적 시각, 도파민 작용제·MAO-B 억제제·COMT 억제제의 역할, wearing-off 현상과 그 대응을 신경과 전문의 입장에서 설명합니다.</p>
+  </div>
+
+  <div class="article-body">
+
+    <h2>약이 두렵다는 분들께</h2>
+    <p>파킨슨 진단 후 가장 많이 듣는 말 중 하나가 "약을 평생 먹어야 한다"는 것입니다. 약을 언제부터 시작해야 하는지, 부작용은 어떤지, 꼭 먹어야 하는지 많은 분들이 불안해합니다. 약을 제대로 이해하면 관리에 훨씬 적극적으로 임할 수 있습니다. 신경과 전문의 입장에서 가장 중요한 내용을 정리해드립니다.</p>
+
+    <h2>파킨슨 약물 관리의 목표</h2>
+    <p>파킨슨병 약물 관리는 병을 완치하는 것이 아닙니다. 도파민 신경세포가 줄어드는 속도 자체를 완전히 막을 수는 없습니다. 약을 통해 도파민을 보충하면 손떨림, 경직, 보행 장애 같은 증상이 개선되고 일상생활을 훨씬 편하게 유지할 수 있습니다. 이것이 핵심입니다.</p>
+
+    <div class="callout">
+      <strong>중요한 구분:</strong> 파킨슨 약물은 증상을 조절하는 것이지 병의 원인을 제거하는 것이 아닙니다. 그렇기 때문에 운동, 영양, 수면 관리와 함께 병행하는 것이 중요합니다.
+    </div>
+
+    <h2>가장 중요한 약 — 레보도파</h2>
+    <p>파킨슨 약물 관리의 중심은 <strong>레보도파(Levodopa)</strong>입니다. 1960년대에 개발된 이후 지금까지도 파킨슨 관리에서 가장 주목받는 약제입니다.</p>
+    <p>레보도파는 뇌에서 도파민으로 전환됩니다. 부족해진 도파민을 직접 보충하는 방식입니다. 카비도파(carbidopa)와 함께 복합제로 처방되는 경우가 많은데, 카비도파는 레보도파가 뇌에 도달하기 전에 말초에서 분해되는 것을 막아 뇌 내 도달률을 높이는 역할을 합니다.</p>
+
+    <h2>"약을 늦게 시작할수록 좋다"는 말, 맞나요?</h2>
+    <p>예전에는 레보도파를 오래 복용하면 이상운동증(dyskinesia)이 생길 수 있다는 이유로 약을 최대한 늦게 시작하자는 경향이 있었습니다. 하지만 최근 연구들은 이 부분에 복잡한 결론을 보여주고 있습니다.</p>
+    <p>증상이 일상생활에 영향을 준다면, 적절한 시점에 관리를 시작하는 것이 낫습니다. 언제 시작할지는 환자의 나이, 증상 정도, 직업, 생활 환경에 따라 담당 신경과 전문의와 함께 결정하는 것이 중요합니다.</p>
+
+    <h2>레보도파 외에 어떤 약이 있나요</h2>
+    <ul>
+      <li><strong>도파민 작용제(Dopamine Agonist):</strong> 도파민 수용체를 직접 자극합니다. 레보도파보다 효과는 약하지만 이상운동증이 덜 나타나는 장점이 있어 특히 젊은 환자에게 먼저 사용하는 경우가 많습니다.</li>
+      <li><strong>MAO-B 억제제:</strong> 도파민이 분해되는 것을 막아 도파민 농도를 유지합니다. 단독으로 또는 레보도파와 병용합니다.</li>
+      <li><strong>COMT 억제제:</strong> 레보도파의 약효가 들쑥날쑥해지는 wearing-off 현상을 줄이는 역할을 합니다.</li>
+    </ul>
+
+    <h2>Wearing-off란 무엇인가</h2>
+    <p>약을 먹으면 한동안 증상이 괜찮다가 다음 약 먹을 시간이 되기 전에 증상이 다시 심해지는 현상을 <strong>wearing-off(약효 소진)</strong>라고 합니다. 파킨슨병이 진행될수록 더 자주, 더 뚜렷하게 나타나는 경향이 있습니다.</p>
+    <p>이런 변화가 나타나면 담당 선생님께 반드시 말씀해주세요. 약의 용량이나 복용 간격을 조정하거나 약물을 추가하는 방식으로 조율할 수 있습니다. 환자 스스로 임의로 조절하지 않는 것이 중요합니다.</p>
+
+    <div class="callout">
+      <strong>실용적 팁:</strong> 약효가 잘 드는 시간(ON 타임)과 떨어지는 시간(OFF 타임)을 일기로 기록해두면 담당 의사와의 상담에 큰 도움이 됩니다.
+    </div>
+
+    <h2>약물만으로 충분할까요</h2>
+    <p>파킨슨병은 약으로 증상을 조절하면서 동시에 운동, 수면 관리, 영양, 정신 건강을 함께 챙겨야 합니다. 특히 운동은 파킨슨 진행을 늦추는 데 도움이 된다는 근거가 점점 쌓이고 있습니다. 약물 관리와 생활 관리는 분리되는 것이 아니라 함께 작동합니다.</p>
+
+    <div class="evidence-box">
+      <h4>📚 참고 문헌</h4>
+      <ul>
+        <li>Hauser RA et al. (2020). Levodopa in Parkinson's disease. <em>Journal of Parkinson's Disease</em> 10(4):1477-1492</li>
+        <li>Olanow CW et al. (2009). Drug insight: continuous dopaminergic stimulation. <em>Nature Clinical Practice Neurology</em> 2(7):382-392</li>
+        <li>Verschuur CVM et al. (2019). Randomized delayed-start trial of levodopa in Parkinson's disease. <em>NEJM</em> 380(4):315-324</li>
+      </ul>
+    </div>
+
+    <div class="author-card">
+      <div class="author-avatar">👨‍⚕️</div>
+      <div class="author-info">
+        <h4>Dr.H</h4>
+        <div class="creds">신경과 전문의 · 연세대 세브란스 출신 · 파킨슨·이상운동·기능의학 · NervLock 설립자</div>
+        <p>대한신경과학회 정회원 · 대한 파킨슨병 및 이상운동질환 학회 정회원 · 대한기능의학회 정회원. 본 칼럼은 의학적 정보 제공을 목적으로 하며 개인 진료를 대체하지 않습니다.</p>
+      </div>
+    </div>
+
+    <div class="cta-banner">
+      <h3>NervLock 너브케어로 신경 건강을 지원하세요</h3>
+      <p>신경과 전문의가 직접 처방한 커큐민 + 애플라핀® — 신경 염증 균형을 위한 근거 있는 이중 경로 설계.<br>NervLock 브랜드의 첫 번째 제품이 곧 출시됩니다.</p>
+      <a href="/#coming-soon" class="cta-btn">출시 알림 신청하기</a>
+    </div>
+
+    <div class="related">
+      <h3>관련 칼럼</h3>
+      <div class="related-grid">
+        <div class="related-card">
+          <div class="tag">신경과학</div>
+          <h4><a href="/blog/파킨슨-원인-도파민/">파킨슨병은 왜 생기는가 — 도파민, 루이소체, 신경 염증</a></h4>
+        </div>
+        <div class="related-card">
+          <div class="tag">생활습관</div>
+          <h4><a href="/blog/파킨슨-운동치료/">파킨슨병과 운동 — 신경과 전문의가 운동을 처방하는 이유</a></h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="sig-block">
+      <p class="sig-main">본 글은 신경과 전문의 <strong>함지현 원장</strong>이 직접 작성하였습니다.</p>
+      <ul class="sig-creds">
+        <li>연세대 세브란스 출신 신경과 전문의</li>
+        <li>대한신경과학회 정회원</li>
+        <li>대한 파킨슨병 및 이상운동질환 학회 정회원</li>
+        <li>대한기능의학회 정회원</li>
+      </ul>
+      <p class="sig-notice">※ 본 내용은 의학 정보 제공을 목적으로 하며, 개인 진료를 대체하지 않습니다.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2026 NervLock. All rights reserved.</p>
+    <p>본 칼럼은 의학적 정보 제공을 목적으로 하며 개인 진료를 대체하지 않습니다.</p>
+  </div>
+</footer>
+
+</body>
+</html>

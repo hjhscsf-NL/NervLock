@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>파킨슨 환자의 통증을 나이 탓으로만 돌리지 마세요 | NervLock</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Apple SD Gothic Neo','Noto Sans KR','맑은 고딕',sans-serif; color: #1a1a2e; background: #fff; font-size: 17px; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    :root {
+      --navy: #0d2545; --navy2: #163561;
+      --teal: #1a7a6e; --teal2: #22a090;
+      --gold: #b8922a; --gold2: #d4a843;
+      --gray: #f4f6f9; --gray2: #e8ecf2;
+      --muted: #5a6278;
+    }
+
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(13,37,69,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-logo { font-size: 20px; font-weight: 900; color: #fff; white-space: nowrap; }
+    .nav-logo span { color: var(--gold2); }
+    .nav-back { font-size: 14px; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold2); }
+    .lang-toggle { display: flex; border: 1px solid rgba(255,255,255,0.22); border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+    .lang-btn { padding: 5px 12px; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); transition: all 0.18s; }
+    .lang-btn + .lang-btn { border-left: 1px solid rgba(255,255,255,0.22); }
+    .lang-btn.active { background: rgba(255,255,255,0.18); color: #fff; }
+
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 60px 24px 100px; }
+
+    .article-hero { background: linear-gradient(135deg, #2d1a45 0%, #1a4a6e 100%); border-radius: 24px; padding: 52px 48px; margin-bottom: 48px; position: relative; overflow: hidden; }
+    .article-hero::before { content: '⚡'; position: absolute; right: 32px; top: 32px; font-size: 80px; opacity: 0.15; }
+    .article-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(26,122,110,0.3); border: 1px solid rgba(26,122,110,0.5); border-radius: 50px; font-size: 12px; font-weight: 700; color: #6ee7da; padding: 4px 14px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+    .article-title { font-size: clamp(22px, 3.5vw, 34px); font-weight: 900; color: #fff; line-height: 1.3; margin-bottom: 20px; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 20px; }
+    .article-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.65); }
+    .article-meta-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+
+    .abstract { background: linear-gradient(135deg, rgba(26,122,110,0.06), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 16px 16px 0; padding: 24px 28px; margin-bottom: 48px; }
+    .abstract-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--teal2); margin-bottom: 10px; }
+    .abstract p { font-size: 15px; color: #2a3a4a; line-height: 1.85; margin: 0; font-style: italic; }
+
+    .article-body h2 { font-size: 24px; font-weight: 900; color: var(--navy); margin: 52px 0 16px; line-height: 1.35; padding-bottom: 12px; border-bottom: 2px solid var(--gray2); }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-size: 19px; font-weight: 800; color: var(--navy2); margin: 36px 0 12px; }
+    .article-body p { font-size: 16px; color: #2a2a3e; line-height: 1.95; margin-bottom: 20px; }
+    .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .article-body li { font-size: 15px; color: #3a3a50; line-height: 1.75; }
+    .article-body strong { color: var(--navy); }
+
+    .callout { background: linear-gradient(135deg, rgba(26,122,110,0.07), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: var(--navy); font-style: italic; line-height: 1.85; }
+    .callout strong { color: var(--teal); font-style: normal; }
+
+    .evidence-box { background: var(--gray); border-radius: 14px; padding: 20px 24px; margin: 28px 0; }
+    .evidence-box h4 { font-size: 12px; font-weight: 800; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .evidence-box ul { margin: 0; }
+    .evidence-box li { font-size: 13px; color: var(--muted); }
+
+    .symptom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+    .symptom-card { background: var(--gray); border-radius: 14px; padding: 18px 20px; border: 1px solid var(--gray2); }
+    .symptom-card h4 { font-size: 14px; font-weight: 800; color: var(--navy); margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+    .symptom-card p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+
+    .author-card { background: var(--gray); border-radius: 20px; padding: 28px 32px; margin-top: 64px; display: flex; align-items: flex-start; gap: 20px; }
+    .author-avatar { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--navy), var(--teal)); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+    .author-info h4 { font-size: 17px; font-weight: 900; color: var(--navy); margin-bottom: 4px; }
+    .author-info .creds { font-size: 13px; color: var(--teal); font-weight: 600; margin-bottom: 10px; }
+    .author-info p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+
+    .cta-banner { background: linear-gradient(135deg, var(--navy), #0f4f6e); border-radius: 20px; padding: 40px 36px; margin-top: 48px; text-align: center; }
+    .cta-banner h3 { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 10px; }
+    .cta-banner p { font-size: 15px; color: rgba(255,255,255,0.7); margin-bottom: 24px; line-height: 1.7; }
+    .cta-btn { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold2)); color: #fff; font-size: 16px; font-weight: 800; padding: 14px 36px; border-radius: 50px; box-shadow: 0 6px 20px rgba(184,146,42,0.4); transition: transform 0.2s; }
+    .cta-btn:hover { transform: translateY(-2px); }
+
+    .related { margin-top: 64px; }
+    .related h3 { font-size: 20px; font-weight: 900; color: var(--navy); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .related-card { background: var(--gray); border-radius: 16px; padding: 20px; border: 1px solid var(--gray2); }
+    .related-card .tag { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .related-card h4 { font-size: 15px; font-weight: 800; color: var(--navy); line-height: 1.4; }
+
+    footer { background: #0a1a32; color: rgba(255,255,255,0.5); padding: 32px 0; }
+    .footer-bottom { max-width: 900px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 12px; }
+
+    @media (max-width: 600px) {
+      .article-hero { padding: 36px 28px; }
+      .symptom-grid, .related-grid { grid-template-columns: 1fr; }
+      .author-card { flex-direction: column; }
+    }
+    .sig-block { border-top: 2px solid var(--gray2); margin-top: 48px; padding-top: 24px; }
+    .sig-main { font-size: 14px; color: var(--navy); font-weight: 700; margin-bottom: 12px; line-height: 1.7; }
+    .sig-creds { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+    .sig-creds li { font-size: 13px; color: var(--muted); padding-left: 14px; position: relative; line-height: 1.6; }
+    .sig-creds li::before { content: "·"; position: absolute; left: 0; color: var(--teal2); font-weight: 900; }
+    .sig-notice { font-size: 12px; color: var(--muted); font-style: italic; line-height: 1.7; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Nerv<span>Lock</span></a>
+    <a href="/#blog" class="nav-back">← 의학 칼럼</a>
+    <div class="lang-toggle">
+      <a href="/blog/파킨슨-통증/" class="lang-btn active">KR</a>
+      <span class="lang-btn" style="opacity:0.3;cursor:default;">EN</span>
+    </div>
+  </div>
+</nav>
+
+<div class="article-wrap">
+
+  <div class="article-hero">
+    <div class="article-tag">통증의학</div>
+    <h1 class="article-title">파킨슨 환자의 통증<br>단순한 노화가 아닙니다</h1>
+    <div class="article-meta">
+      <div class="article-meta-item">👨‍⚕️ <strong>Dr.H</strong> — 신경과 전문의 · NervLock 설립자</div>
+      <div class="article-meta-item">📅 2026. 3. 1</div>
+      <div class="article-meta-item">⏱ 8분 읽기</div>
+    </div>
+  </div>
+
+  <div class="abstract">
+    <div class="abstract-label">요약</div>
+    <p>파킨슨 환자의 40~85%에서 동반되는 통증. 근골격계 통증, 근긴장이상증, 하지불안증후군, 중추성 통증의 기전과 특징. 도파민 시스템과 통증 억제의 관계, 각 유형별 관리 접근법을 설명합니다.</p>
+  </div>
+
+  <div class="article-body">
+
+    <h2>파킨슨 환자의 허리·어깨 통증, 나이 탓이 아닐 수 있습니다</h2>
+    <p>파킨슨 환자분들 중 상당수가 허리, 어깨, 다리의 통증을 호소합니다. 그런데 이 통증을 단순히 '나이가 들어서' 혹은 '오래 앉아 있어서' 생긴 근골격계 문제로만 여기고 지나치는 경우가 많습니다. 신경과 전문의 입장에서 보면, 파킨슨 환자의 통증은 질환과 직접 연관된 경우가 상당히 많습니다.</p>
+
+    <h2>파킨슨 환자에서 통증, 얼마나 흔할까요</h2>
+    <p>생각보다 훨씬 흔합니다. 파킨슨 환자의 약 <strong>40~85%</strong>에서 통증이 동반된다고 알려져 있습니다. 운동 증상만큼이나 중요한 비운동 증상 중 하나입니다.</p>
+    <p>파킨슨 진단을 받은 분들도, 주변 가족들도, 심지어 일부 의료진도 통증을 파킨슨의 일부로 인식하지 못하는 경우가 있습니다. 통증이 있다면 반드시 담당 신경과 전문의에게 알려야 합니다.</p>
+
+    <div class="callout">
+      <strong>중요한 사실:</strong> 파킨슨 환자의 통증은 단순한 노화 현상이 아닙니다. 질환과 연관된 통증은 적절한 관리를 통해 개선 가능한 경우가 많습니다.
+    </div>
+
+    <h2>파킨슨에서 통증이 생기는 이유</h2>
+
+    <h3>근육 경직과 자세 변화로 인한 통증</h3>
+    <p>파킨슨이 진행되면 근육이 뻣뻣해지고 자세가 앞으로 굽어지는 경향이 생깁니다. 이 자세 변화가 허리, 어깨, 목, 무릎에 지속적인 부담을 줍니다. 특히 <strong>어깨 통증</strong>은 파킨슨의 초기 증상으로 나타나는 경우가 있어 오십견으로 오해하고 정형외과 관리를 먼저 받다가 뒤늦게 파킨슨으로 진단되는 경우도 드물지 않습니다.</p>
+    <p>골반 불균형도 자주 동반됩니다. 한쪽 근육이 더 경직되면서 골반이 틀어지는 경우가 많고, 이것이 허리 통증과 보행 불편으로 이어지기도 합니다.</p>
+
+    <h3>도파민 감소로 인한 통증 억제 기능 저하</h3>
+    <p>도파민 신경계는 단순히 운동만 조절하는 것이 아닙니다. 통증을 조절하는 데도 관여합니다. 도파민이 줄어들면 통증 억제 기능도 함께 떨어져서, 같은 자극에도 더 강하게 통증을 느끼게 될 수 있습니다. 이를 <strong>중추성 통증</strong>이라고 합니다.</p>
+
+    <h2>파킨슨 통증의 종류</h2>
+
+    <div class="symptom-grid">
+      <div class="symptom-card">
+        <h4>🦴 근골격계 통증</h4>
+        <p>가장 흔한 유형. 근육 경직과 자세 변화로 인한 허리·어깨·목 통증. 뻐근하고 묵직한 느낌이 특징.</p>
+      </div>
+      <div class="symptom-card">
+        <h4>💫 근긴장이상증 통증</h4>
+        <p>근육이 의지와 무관하게 수축하면서 생기는 통증. 발이 안쪽으로 꼬이거나 발가락이 구부러지는 형태. 약효가 떨어질 때 나타나는 경우 많음.</p>
+      </div>
+      <div class="symptom-card">
+        <h4>🦵 하지불안증후군</h4>
+        <p>다리가 저리고 불편해서 가만히 있지 못하는 증상. 특히 밤에 심해져서 수면을 방해함.</p>
+      </div>
+      <div class="symptom-card">
+        <h4>⚡ 중추성 통증</h4>
+        <p>신체 여러 부위에 타는 듯하거나 저리거나 쥐어짜는 느낌. 원인을 설명하기 어렵고 일반 검사에서 잘 확인되지 않음.</p>
+      </div>
+    </div>
+
+    <h2>관리는 어떻게 하나요</h2>
+
+    <h3>파킨슨 약물 조절이 먼저</h3>
+    <p>도파민 보충이 잘 이루어지면 근육 경직이 풀리고 근골격계 통증과 근긴장이상증이 함께 나아지는 경우가 많습니다. 특히 <strong>약효가 떨어지는 시간(OFF 타임)에 통증이 심해진다면</strong> 약 용량이나 복용 간격 조절이 필요한 신호입니다. 임의로 조절하지 말고 담당 의사에게 꼭 말씀해주세요.</p>
+
+    <h3>운동과 물리적 관리</h3>
+    <p>스트레칭, 자세 교정, 물리관리가 근골격계 통증 지원에 도움이 됩니다. 운동은 통증 관리 측면에서도 파킨슨 관리에서 중요한 역할을 합니다.</p>
+
+    <h3>중추성 통증에 대한 별도 관리</h3>
+    <p>중추성 통증은 레보도파만으로 충분하지 않을 수 있으며, 별도의 약물 관리가 필요한 경우도 있습니다. 이 경우 담당 신경과 전문의와의 상담이 필수입니다.</p>
+
+    <div class="callout">
+      <strong>중요한 메시지:</strong> 파킨슨 환자에서 통증은 흔하고 관리가 가능한 경우가 많습니다. "나이 들면 다 아프지"가 아니라, 파킨슨과 연관된 통증인지 담당 신경과 전문의에게 반드시 말씀해주세요.
+    </div>
+
+    <div class="evidence-box">
+      <h4>📚 참고 문헌</h4>
+      <ul>
+        <li>Chaudhuri KR et al. (2013). Non-motor symptoms of Parkinson's disease. <em>Lancet Neurology</em> 5(3):235-245</li>
+        <li>Fil A et al. (2013). Pain in Parkinson disease: a review of the literature. <em>Parkinsonism &amp; Related Disorders</em> 19(3):285-294</li>
+        <li>Ford B (2010). Pain in Parkinson's disease. <em>Movement Disorders</em> 25(S1):S98-S103</li>
+        <li>Nebe A &amp; Ebersbach G (2009). Pain intensity on and off levodopa in patients with Parkinson's disease. <em>Movement Disorders</em> 24(8):1233-1237</li>
+      </ul>
+    </div>
+
+    <div class="author-card">
+      <div class="author-avatar">👨‍⚕️</div>
+      <div class="author-info">
+        <h4>Dr.H</h4>
+        <div class="creds">신경과 전문의 · 연세대 세브란스 출신 · 파킨슨·이상운동·기능의학 · NervLock 설립자</div>
+        <p>대한신경과학회 정회원 · 대한 파킨슨병 및 이상운동질환 학회 정회원 · 대한기능의학회 정회원. 본 칼럼은 의학적 정보 제공을 목적으로 하며 개인 진료를 대체하지 않습니다.</p>
+      </div>
+    </div>
+
+    <div class="cta-banner">
+      <h3>NervLock 너브케어로 신경 건강을 지원하세요</h3>
+      <p>신경과 전문의가 직접 처방한 커큐민 + 애플라핀® — 신경 염증 균형을 위한 근거 있는 이중 경로 설계.<br>NervLock 브랜드의 첫 번째 제품이 곧 출시됩니다.</p>
+      <a href="/#coming-soon" class="cta-btn">출시 알림 신청하기</a>
+    </div>
+
+    <div class="related">
+      <h3>관련 칼럼</h3>
+      <div class="related-grid">
+        <div class="related-card">
+          <div class="tag">생활습관</div>
+          <h4><a href="/blog/파킨슨-운동치료/">파킨슨병과 운동 — 신경과 전문의가 운동을 처방하는 이유</a></h4>
+        </div>
+        <div class="related-card">
+          <div class="tag">신경과학</div>
+          <h4><a href="/blog/파킨슨-초기증상/">파킨슨병 초기 신호 5가지 — 손이 떨리기 전에 몸이 먼저 말합니다</a></h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="sig-block">
+      <p class="sig-main">본 글은 신경과 전문의 <strong>함지현 원장</strong>이 직접 작성하였습니다.</p>
+      <ul class="sig-creds">
+        <li>연세대 세브란스 출신 신경과 전문의</li>
+        <li>대한신경과학회 정회원</li>
+        <li>대한 파킨슨병 및 이상운동질환 학회 정회원</li>
+        <li>대한기능의학회 정회원</li>
+      </ul>
+      <p class="sig-notice">※ 본 내용은 의학 정보 제공을 목적으로 하며, 개인 진료를 대체하지 않습니다.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2026 NervLock. All rights reserved.</p>
+    <p>본 칼럼은 의학적 정보 제공을 목적으로 하며 개인 진료를 대체하지 않습니다.</p>
+  </div>
+</footer>
+
+</body>
+</html>
