@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>파킨슨 약 용량이 계속 늘어나는 이유 — 내성이 아니에요 | NervLock</title>
+  <meta name="description" content="레보도파 용량이 늘어나는 건 내성이 아니라 질병 진행의 결과예요. 도파민 저장 용량 감소, wearing-off, 이상운동증 — 세 가지 이유를 신경과 전문의가 설명합니다."/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Apple SD Gothic Neo','Noto Sans KR','맑은 고딕',sans-serif; color: #1a1a2e; background: #fff; font-size: 17px; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    :root {
+      --navy: #0d2545; --navy2: #163561;
+      --teal: #1a7a6e; --teal2: #22a090;
+      --gold: #b8922a; --gold2: #d4a843;
+      --gray: #f4f6f9; --gray2: #e8ecf2;
+      --muted: #5a6278;
+    }
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(13,37,69,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-logo { font-size: 20px; font-weight: 900; color: #fff; white-space: nowrap; }
+    .nav-logo span { color: var(--gold2); }
+    .nav-back { font-size: 14px; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold2); }
+    .lang-toggle { display: flex; border: 1px solid rgba(255,255,255,0.22); border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+    .lang-btn { padding: 5px 12px; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); transition: all 0.18s; }
+    .lang-btn + .lang-btn { border-left: 1px solid rgba(255,255,255,0.22); }
+    .lang-btn.active { background: rgba(255,255,255,0.18); color: #fff; }
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 60px 24px 100px; }
+    .article-hero { background: linear-gradient(135deg, #1a0545 0%, #3d1a8e 100%); border-radius: 24px; padding: 52px 48px; margin-bottom: 48px; position: relative; overflow: hidden; }
+    .article-hero::before { content: '💊'; position: absolute; right: 32px; top: 32px; font-size: 80px; opacity: 0.15; }
+    .article-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(26,122,110,0.3); border: 1px solid rgba(26,122,110,0.5); border-radius: 50px; font-size: 12px; font-weight: 700; color: #6ee7da; padding: 4px 14px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+    .article-title { font-size: clamp(22px, 3.5vw, 34px); font-weight: 900; color: #fff; line-height: 1.3; margin-bottom: 20px; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 20px; }
+    .article-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.65); }
+    .article-meta-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+    .abstract { background: linear-gradient(135deg, rgba(26,122,110,0.06), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 16px 16px 0; padding: 24px 28px; margin-bottom: 48px; }
+    .abstract-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--teal2); margin-bottom: 10px; }
+    .abstract p { font-size: 15px; color: #2a3a4a; line-height: 1.85; margin: 0; font-style: italic; }
+    .article-body h2 { font-size: 24px; font-weight: 900; color: var(--navy); margin: 52px 0 16px; line-height: 1.35; padding-bottom: 12px; border-bottom: 2px solid var(--gray2); }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-size: 19px; font-weight: 800; color: var(--navy2); margin: 36px 0 12px; }
+    .article-body p { font-size: 16px; color: #2a2a3e; line-height: 1.95; margin-bottom: 20px; }
+    .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .article-body li { font-size: 15px; color: #3a3a50; line-height: 1.75; }
+    .article-body strong { color: var(--navy); }
+    .callout { background: linear-gradient(135deg, rgba(26,122,110,0.07), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: var(--navy); font-style: italic; line-height: 1.85; }
+    .callout strong { color: var(--teal); font-style: normal; }
+    .warning-box { background: #fff8e6; border: 1px solid #f5c842; border-radius: 14px; padding: 22px 26px; margin: 32px 0; }
+    .warning-box .w-title { font-size: 14px; font-weight: 800; color: #8a6000; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+    .warning-box p { font-size: 15px; color: #5a4000; margin-bottom: 10px; line-height: 1.8; }
+    .warning-box p:last-child { margin-bottom: 0; }
+    .warning-box ul { padding-left: 20px; }
+    .warning-box li { font-size: 14px; color: #5a4000; line-height: 1.75; }
+    .evidence-box { background: var(--gray); border-radius: 14px; padding: 20px 24px; margin: 28px 0; }
+    .evidence-box h4 { font-size: 12px; font-weight: 800; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .evidence-box ul { margin: 0; }
+    .evidence-box li { font-size: 13px; color: var(--muted); }
+    .reason-card { background: var(--gray); border-radius: 16px; padding: 24px 28px; margin: 24px 0; border-left: 4px solid var(--teal2); }
+    .reason-card .reason-num { font-size: 11px; font-weight: 800; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+    .reason-card h3 { font-size: 18px; font-weight: 800; color: var(--navy); margin: 0 0 12px; }
+    .reason-card p { font-size: 15px; color: #3a3a50; line-height: 1.85; margin-bottom: 10px; }
+    .reason-card p:last-child { margin-bottom: 0; }
+    .flow-box { background: rgba(13,37,69,0.05); border-radius: 12px; padding: 16px 20px; margin: 16px 0; text-align: center; font-size: 14px; color: var(--navy2); font-weight: 700; letter-spacing: 0.5px; line-height: 2; }
+    .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 14px; margin: 24px 0; }
+    .summary-card { background: var(--gray); border-radius: 14px; padding: 18px 20px; border-top: 3px solid var(--teal2); }
+    .summary-card .sc-num { font-size: 28px; font-weight: 900; color: var(--teal2); margin-bottom: 6px; }
+    .summary-card p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+    .sig-block { border-top: 2px solid var(--gray2); margin-top: 48px; padding-top: 24px; }
+    .sig-main { font-size: 14px; color: var(--navy); font-weight: 700; margin-bottom: 12px; line-height: 1.7; }
+    .sig-creds { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+    .sig-creds li { font-size: 13px; color: var(--muted); padding-left: 14px; position: relative; line-height: 1.6; }
+    .sig-creds li::before { content: "·"; position: absolute; left: 0; color: var(--teal2); font-weight: 900; }
+    .sig-notice { font-size: 12px; color: var(--muted); font-style: italic; line-height: 1.7; }
+    .related { margin-top: 64px; }
+    .related h3 { font-size: 20px; font-weight: 900; color: var(--navy); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .related-card { background: var(--gray); border-radius: 16px; padding: 20px; border: 1px solid var(--gray2); transition: transform 0.2s; }
+    .related-card:hover { transform: translateY(-3px); }
+    .related-card .tag { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .related-card h4 { font-size: 15px; font-weight: 800; color: var(--navy); line-height: 1.4; }
+    footer { background: #0a1a32; color: rgba(255,255,255,0.5); padding: 32px 0; }
+    .footer-bottom { max-width: 900px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 12px; }
+    @media (max-width: 600px) {
+      .article-hero { padding: 36px 28px; }
+      .related-grid, .summary-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Nerv<span>Lock</span></a>
+    <a href="/#blog" class="nav-back">← 의학 칼럼</a>
+    <div class="lang-toggle">
+      <a href="/blog/파킨슨-약물용량/" class="lang-btn active">KR</a>
+      <span class="lang-btn" style="opacity:0.3;cursor:default;">EN</span>
+    </div>
+  </div>
+</nav>
+
+<div class="article-wrap">
+
+  <div class="article-hero">
+    <div class="article-tag">신경과학</div>
+    <h1 class="article-title">파킨슨 약 용량이 계속 늘어나는 이유<br>— 내성이 아니에요</h1>
+    <div class="article-meta">
+      <div class="article-meta-item">👨‍⚕️ <strong>Dr.H</strong> — 신경과 전문의 · NervLock 설립자</div>
+      <div class="article-meta-item">📅 2026. 6. 3</div>
+      <div class="article-meta-item">⏱ 6분 읽기</div>
+    </div>
+  </div>
+
+  <div class="abstract">
+    <div class="abstract-label">요약</div>
+    <p>"약이 또 늘었어요. 내성이 생긴 건 아닌가요?" — 진료실에서 가장 많이 듣는 질문 중 하나입니다. 레보도파 용량 증가는 내성이 아니라 질병 진행에 따른 세 가지 생물학적 현상의 결과입니다. 도파민 저장 용량 감소, wearing-off, 이상운동증 조절을 위한 용량 분할 — 각각의 이유를 정확히 이해하면 치료에 더 적극적으로 임할 수 있습니다.</p>
+  </div>
+
+  <div class="article-body">
+
+    <h2>왜 이 질문이 중요한가</h2>
+    <p>파킨슨병 환자와 보호자분들이 레보도파 용량 증가를 "내성"으로 오해하면 자의적으로 약을 줄이거나 복용을 불규칙하게 하는 경우가 생깁니다. 이는 매우 위험합니다. 반대로 용량 증가의 이유를 정확히 이해하면, 의사와 함께 치료를 최적화하는 과정에 더 적극적으로 참여할 수 있습니다.</p>
+
+    <div class="callout">
+      레보도파 용량이 늘어나는 것은 약이 나빠진 것이 아닙니다. <strong>뇌의 환경이 바뀌면서 치료를 조율해가는 과정</strong>입니다.
+    </div>
+
+    <h2>세 가지 이유</h2>
+
+    <div class="reason-card">
+      <div class="reason-num">이유 01</div>
+      <h3>도파민 신경세포가 줄어들기 때문이에요</h3>
+      <p>레보도파는 뇌혈관 장벽을 통과한 뒤 흑질의 도파민 신경세포 말단에서 도파민으로 전환되고 저장됩니다. 도파민이 필요한 순간 이 저장고에서 방출되어 운동 회로를 안정적으로 조절합니다.</p>
+      <p>파킨슨병이 진행되면 흑질의 도파민 신경세포가 지속적으로 감소합니다. 신경세포가 줄어든다는 것은 도파민을 저장하고 완충할 수 있는 용량도 함께 줄어든다는 의미입니다. 진단 시점에서 이미 흑질 신경세포의 약 60~80%가 손상된 상태라는 사실을 고려하면, 이 완충 시스템은 처음부터 여유가 크지 않습니다.</p>
+      <div class="flow-box">
+        신경세포 감소 → 저장·완충 용량 감소 → 같은 용량으론 효과 부족 → 용량 조정 필요
+      </div>
+      <p>이것은 내성이 아닙니다. 질병 자체가 진행한 결과이며, 약이 나빠진 것이 아니라 뇌의 환경이 달라진 것입니다.</p>
+    </div>
+
+    <div class="reason-card">
+      <div class="reason-num">이유 02</div>
+      <h3>약효 소진 (Wearing-off) 현상</h3>
+      <p>파킨슨 초기에는 레보도파를 복용하면 긴 시간 안정적으로 효과가 지속됩니다. 남아 있는 도파민 신경세포들이 약물을 흡수해 조금씩 방출하며 완충 역할을 하기 때문입니다.</p>
+      <p>병이 진행될수록 이 완충 능력이 줄어들면서, 혈중 레보도파 농도가 직접적으로 뇌의 도파민 수준을 결정하게 됩니다. 혈중 농도가 떨어지는 순간 바로 오프(OFF) 현상이 나타납니다. 레보도파 복용 4~5년이 지나면 환자의 약 50%에서 wearing-off를 경험한다는 연구 결과가 있습니다.</p>
+      <div class="callout">
+        <strong>오프(OFF) 현상이란?</strong> 약효가 떨어지면서 몸이 갑자기 굳거나 걷기가 어려워지는 상태입니다. 약 먹기 직전에 증상이 심해지는 것이 이 때문입니다.
+      </div>
+      <p>이 문제를 해결하기 위해 복용 횟수를 늘리거나 1회 용량을 높이게 됩니다. 혈중 레보도파 농도를 더 일정하게 유지하여 오프 시간을 최소화하는 것이 목표입니다.</p>
+    </div>
+
+    <div class="reason-card">
+      <div class="reason-num">이유 03</div>
+      <h3>이상운동증 조절을 위한 용량 분할</h3>
+      <p>장기 복용 시 이상운동증(dyskinesia) — 의지와 상관없이 몸이 꿈틀거리거나 흔들리는 증상 — 이 나타날 수 있습니다. 이는 레보도파 혈중 농도가 급격히 오르내리면서 도파민 수용체가 불균일하게 자극받아 발생하는 현상입니다.</p>
+      <p>이를 줄이기 위해 의사는 1회 용량을 낮추고 복용 횟수를 늘리는 <strong>'용량 분할'</strong> 전략을 사용합니다. 혈중 농도의 고점을 낮추고 저점도 높여 더 안정적인 도파민 환경을 만드는 것입니다.</p>
+      <p>이 경우 하루 총 용량은 늘어나더라도 1회 복용량은 오히려 줄어들 수 있습니다. 단순히 총 용량이 늘었다는 숫자만으로 걱정하지 않아도 되는 이유입니다.</p>
+    </div>
+
+    <div class="warning-box">
+      <div class="w-title">⚠️ 이것만은 절대 하지 마세요</div>
+      <p>가장 위험한 것은 내성을 걱정한 나머지 <strong>의사와 상의 없이 임의로 용량을 줄이는 것</strong>입니다.</p>
+      <ul>
+        <li>임의 감약 시 오프 시간이 급격히 늘어나고 운동 기능이 빠르게 저하됩니다</li>
+        <li>심한 경우 <strong>파킨슨 과고열증 (Parkinsonism-hyperpyrexia syndrome)</strong>이라는 응급 상황으로 이어질 수 있습니다 — 고열, 심한 근경직, 의식 저하를 동반하는 생명을 위협하는 상태입니다</li>
+        <li>모든 용량 변경은 반드시 신경과 전문의와 함께 결정하세요</li>
+      </ul>
+    </div>
+
+    <h2>핵심 요약</h2>
+    <div class="summary-grid">
+      <div class="summary-card">
+        <div class="sc-num">01</div>
+        <p>도파민 신경세포 감소 → 저장 용량 줄어 더 많은 용량이 필요해요</p>
+      </div>
+      <div class="summary-card">
+        <div class="sc-num">02</div>
+        <p>약효 소진(Wearing-off) → 복용 횟수·용량이 늘어나요</p>
+      </div>
+      <div class="summary-card">
+        <div class="sc-num">03</div>
+        <p>이상운동증 조절 → 용량 분할로 총량이 늘어나요</p>
+      </div>
+    </div>
+
+    <p style="margin-top:24px;">파킨슨 약 용량 증가는 내성이 아닙니다. 질병의 진행에 맞춰 치료를 조율하는 과정입니다. 용량이 늘었다고 걱정하지 마시고, 궁금한 점은 신경과 전문의와 충분히 상의해 주세요.</p>
+
+    <div class="evidence-box">
+      <h4>📚 참고 근거</h4>
+      <ul>
+        <li>Cenci MA &amp; Bhidayasiri R (2023). Motor complications in Parkinson's disease: mechanisms and management. <em>Movement Disorders</em></li>
+        <li>Bloem BR et al. (2021). Parkinson's disease. <em>The Lancet</em> 397(10291):2284-2303</li>
+        <li>Olanow CW et al. (2020). Continuous drug delivery as a model for continuous dopaminergic stimulation in Parkinson's disease. <em>NEJM</em></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="sig-block">
+    <p class="sig-main">본 글은 신경과 전문의 <strong>함지현 원장</strong>이 직접 작성하였습니다.</p>
+    <ul class="sig-creds">
+      <li>연세대 세브란스 출신 신경과 전문의</li>
+      <li>대한신경과학회 정회원</li>
+      <li>대한 파킨슨병 및 이상운동질환 학회 정회원</li>
+      <li>대한기능의학회 정회원</li>
+    </ul>
+    <p class="sig-notice">※ 본 내용은 의학 정보 제공을 목적으로 하며, 개인 진료를 대체하지 않습니다.</p>
+  </div>
+
+  <div class="related">
+    <h3>관련 칼럼</h3>
+    <div class="related-grid">
+      <a href="/blog/파킨슨-약물치료/" class="related-card">
+        <div class="tag">신경과학</div>
+        <h4>파킨슨 약물 관리, 어떻게 시작하고 어떻게 이해해야 할까</h4>
+      </a>
+      <a href="/blog/파킨슨-이상운동증/" class="related-card">
+        <div class="tag">신경과학</div>
+        <h4>약을 먹는데 몸이 저절로 움직여요 — 이상운동증 이야기</h4>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <span>© 2026 NervLock. All rights reserved.</span>
+    <span>신경과 전문의가 직접 쓰는 뇌·신경 건강 칼럼</span>
+  </div>
+</footer>
+
+</body>
+</html>
