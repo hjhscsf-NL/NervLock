@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Genetics of Parkinson's Disease: Risk, Penetrance, and Clinical Implications | NervLock</title>
+  <meta name="description" content="LRRK2, GBA1, SNCA, PINK1, PARKIN — monogenic Parkinson's disease, incomplete penetrance, and the indications for genetic testing. Evidence-based guidance from a neurologist."/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; color: #1a1a2e; background: #fff; font-size: 17px; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    :root {
+      --navy: #0d2545; --navy2: #163561;
+      --teal: #1a7a6e; --teal2: #22a090;
+      --gold: #b8922a; --gold2: #d4a843;
+      --gray: #f4f6f9; --gray2: #e8ecf2;
+      --muted: #5a6278;
+    }
+
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(13,37,69,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-logo { font-size: 20px; font-weight: 900; color: #fff; white-space: nowrap; }
+    .nav-logo span { color: var(--gold2); }
+    .nav-back { font-size: 14px; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold2); }
+    .lang-toggle { display: flex; border: 1px solid rgba(255,255,255,0.22); border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+    .lang-btn { padding: 5px 12px; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); transition: all 0.18s; }
+    .lang-btn + .lang-btn { border-left: 1px solid rgba(255,255,255,0.22); }
+    .lang-btn.active { background: rgba(255,255,255,0.18); color: #fff; }
+
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 60px 24px 100px; }
+
+    .article-hero { background: linear-gradient(135deg, #2a1a00 0%, #7a4a00 100%); border-radius: 24px; padding: 52px 48px; margin-bottom: 48px; position: relative; overflow: hidden; }
+    .article-hero::before { content: '🧬'; position: absolute; right: 32px; top: 32px; font-size: 80px; opacity: 0.15; }
+    .article-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(26,122,110,0.3); border: 1px solid rgba(26,122,110,0.5); border-radius: 50px; font-size: 12px; font-weight: 700; color: #6ee7da; padding: 4px 14px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+    .article-title { font-size: clamp(22px, 3.5vw, 34px); font-weight: 900; color: #fff; line-height: 1.3; margin-bottom: 20px; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 20px; }
+    .article-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.65); }
+    .article-meta-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+
+    .lang-switch-banner { background: var(--gray); border: 1px solid var(--gray2); border-radius: 14px; padding: 14px 20px; margin-bottom: 40px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .lang-switch-banner span { font-size: 14px; color: var(--muted); }
+    .lang-switch-link { font-size: 13px; font-weight: 700; color: var(--teal2); border: 1px solid var(--teal2); border-radius: 50px; padding: 6px 16px; transition: all 0.2s; white-space: nowrap; }
+    .lang-switch-link:hover { background: var(--teal2); color: #fff; }
+
+    .abstract { background: linear-gradient(135deg, rgba(26,122,110,0.06), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 16px 16px 0; padding: 24px 28px; margin-bottom: 48px; }
+    .abstract-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--teal2); margin-bottom: 10px; }
+    .abstract p { font-size: 15px; color: #2a3a4a; line-height: 1.85; margin: 0; font-style: italic; }
+
+    .article-body h2 { font-size: 24px; font-weight: 900; color: var(--navy); margin: 52px 0 16px; line-height: 1.35; padding-bottom: 12px; border-bottom: 2px solid var(--gray2); }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-size: 19px; font-weight: 800; color: var(--navy2); margin: 36px 0 12px; }
+    .article-body p { font-size: 16px; color: #2a2a3e; line-height: 1.95; margin-bottom: 20px; }
+    .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .article-body li { font-size: 15px; color: #3a3a50; line-height: 1.75; }
+    .article-body strong { color: var(--navy); }
+
+    .callout { background: linear-gradient(135deg, rgba(26,122,110,0.07), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: var(--navy); font-style: italic; line-height: 1.85; }
+    .callout strong { color: var(--teal); font-style: normal; }
+
+    .gene-card { background: var(--gray); border-radius: 16px; padding: 24px 28px; margin: 20px 0; border-left: 4px solid var(--teal2); }
+    .gene-card .gene-label { font-size: 11px; font-weight: 800; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
+    .gene-card h3 { font-size: 18px; font-weight: 900; color: var(--navy); margin: 0 0 10px; }
+    .gene-card p { font-size: 15px; color: #3a3a50; line-height: 1.85; margin-bottom: 10px; }
+    .gene-card p:last-child { margin-bottom: 0; }
+    .gene-card .gene-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .gene-tag { font-size: 12px; font-weight: 700; background: rgba(26,122,110,0.12); color: var(--teal); border-radius: 50px; padding: 3px 12px; }
+
+    .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 24px 0; }
+    .stat-box { background: var(--gray); border-radius: 14px; padding: 18px 16px; text-align: center; border-top: 3px solid var(--teal2); }
+    .stat-box .stat-num { font-size: 26px; font-weight: 900; color: var(--teal2); margin-bottom: 6px; }
+    .stat-box p { font-size: 13px; color: var(--muted); line-height: 1.55; margin: 0; }
+
+    .check-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
+    .check-list li { display: flex; gap: 12px; align-items: flex-start; font-size: 15px; color: #2a2a3e; line-height: 1.7; }
+    .check-list li::before { content: '✓'; color: var(--teal2); font-weight: 900; flex-shrink: 0; margin-top: 2px; }
+
+    .evidence-box { background: var(--gray); border-radius: 14px; padding: 20px 24px; margin: 28px 0; }
+    .evidence-box h4 { font-size: 12px; font-weight: 800; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .evidence-box ul { margin: 0; }
+    .evidence-box li { font-size: 13px; color: var(--muted); }
+
+    .sig-block { border-top: 2px solid var(--gray2); margin-top: 48px; padding-top: 24px; }
+    .sig-main { font-size: 14px; color: var(--navy); font-weight: 700; margin-bottom: 12px; line-height: 1.7; }
+    .sig-creds { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+    .sig-creds li { font-size: 13px; color: var(--muted); padding-left: 14px; position: relative; line-height: 1.6; }
+    .sig-creds li::before { content: "·"; position: absolute; left: 0; color: var(--teal2); font-weight: 900; }
+    .sig-notice { font-size: 12px; color: var(--muted); font-style: italic; line-height: 1.7; }
+
+    .related { margin-top: 64px; }
+    .related h3 { font-size: 20px; font-weight: 900; color: var(--navy); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .related-card { background: var(--gray); border-radius: 16px; padding: 20px; border: 1px solid var(--gray2); transition: transform 0.2s; }
+    .related-card:hover { transform: translateY(-3px); }
+    .related-card .tag { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .related-card h4 { font-size: 15px; font-weight: 800; color: var(--navy); line-height: 1.4; }
+
+    footer { background: #0a1a32; color: rgba(255,255,255,0.5); padding: 32px 0; }
+    .footer-bottom { max-width: 900px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 12px; }
+
+    @media (max-width: 600px) {
+      .article-hero { padding: 36px 28px; }
+      .stat-row { grid-template-columns: 1fr; }
+      .related-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/en/" class="nav-logo">Nerv<span>Lock</span></a>
+    <a href="/en/#blog" class="nav-back">← Medical Blog</a>
+    <div class="lang-toggle">
+      <a href="/blog/파킨슨-유전/" class="lang-btn">KR</a>
+      <a href="/blog/parkinson-genetics/" class="lang-btn active">EN</a>
+    </div>
+  </div>
+</nav>
+
+<div class="article-wrap">
+
+  <div class="article-hero">
+    <div class="article-tag">Neuroscience</div>
+    <h1 class="article-title">The Genetics of Parkinson's Disease:<br>Risk, Penetrance,<br>and Clinical Implications</h1>
+    <div class="article-meta">
+      <div class="article-meta-item">👨‍⚕️ <strong>Dr. Claire Ham</strong> — Neurologist, NervLock Founder</div>
+      <div class="article-meta-item">📅 May 31, 2026</div>
+      <div class="article-meta-item">⏱ 6 min read</div>
+    </div>
+  </div>
+
+  <div class="lang-switch-banner">
+    <span>🇰🇷 이 글의 한국어 버전을 보시겠습니까?</span>
+    <a href="/blog/파킨슨-유전/" class="lang-switch-link">한국어로 읽기 →</a>
+  </div>
+
+  <div class="abstract">
+    <div class="abstract-label">Abstract</div>
+    <p>"Will I develop Parkinson's disease?" is among the most anxiety-provoking questions in neurological genetics counseling. This article provides an evidence-based framework for approaching the genetic architecture of Parkinson's disease — the prevalence of monogenic forms, the principal disease-associated genes, the concept of incomplete penetrance, indications for genetic testing, and modifiable risk factors — to enable patients, families, and clinicians to engage with accurate probabilistic information rather than unfounded certainty in either direction.</p>
+  </div>
+
+  <div class="article-body">
+
+    <h2>1. The Genetic Landscape: Monogenic vs. Polygenic Disease</h2>
+    <p>Parkinson's disease is etiologically heterogeneous. Pathogenic variants in single genes — monogenic Parkinson's disease — account for approximately 5–10% of all cases. The remaining 90–95% of Parkinson's disease is sporadic or idiopathic in nature, arising from the complex interaction of polygenic susceptibility, environmental exposures, aging-related cellular vulnerability, and gut-brain axis dysregulation rather than any single causative mutation.</p>
+    <p>This distinction carries direct clinical relevance: a positive family history, while constituting a real risk factor (relative risk approximately 2–3-fold for first-degree relatives of affected individuals compared with the general population), does not indicate inevitable or even probable disease transmission. Conversely, absence of family history does not exclude a genetic contribution, as many pathogenic variants exhibit substantially reduced penetrance and some arise de novo.</p>
+
+    <div class="stat-row">
+      <div class="stat-box">
+        <div class="stat-num">5–10%</div>
+        <p>Monogenic Parkinson's disease — single pathogenic variant as primary cause</p>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">~15%</div>
+        <p>Patients with a positive family history (including sporadic cases)</p>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">2–3×</div>
+        <p>Relative risk for first-degree relatives vs. general population</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>Key framing:</strong> A genetic test result for Parkinson's disease is not a binary verdict. Even variants classified as pathogenic operate within a probabilistic framework — penetrance, environmental modifiers, and polygenic background all determine whether and when clinical disease manifests.
+    </div>
+
+    <h2>2. Principal Disease-Associated Genes</h2>
+
+    <div class="gene-card">
+      <div class="gene-label">Most common autosomal dominant cause</div>
+      <h3>LRRK2 (Leucine-Rich Repeat Kinase 2)</h3>
+      <p>The G2019S variant of LRRK2 — which confers constitutively elevated kinase activity — is the most prevalent single pathogenic mutation in Parkinson's disease, found in approximately 1% of sporadic and 4% of familial cases in European populations. Frequencies are substantially higher in Ashkenazi Jewish (15–20% of familial cases) and North African Berber populations, making ethnicity a relevant variable in pre-test counseling.</p>
+      <p>Lifetime penetrance of G2019S is both age-dependent and population-specific, ranging from approximately 25% to 85% by age 80 — a range wide enough to preclude deterministic counseling. The clinical phenotype closely resembles sporadic PD: asymmetric onset, levodopa-responsive parkinsonism, and relatively preserved cognition. LRRK2 kinase inhibitors are currently in advanced clinical trials as the first genotype-directed neuroprotective strategy in PD.</p>
+      <div class="gene-meta">
+        <span class="gene-tag">Autosomal dominant</span>
+        <span class="gene-tag">Incomplete penetrance</span>
+        <span class="gene-tag">LRRK2 inhibitor trials ongoing</span>
+      </div>
+    </div>
+
+    <div class="gene-card">
+      <div class="gene-label">Most common genetic risk factor overall</div>
+      <h3>GBA1 (Glucocerebrosidase)</h3>
+      <p>Heterozygous variants in GBA1 — the gene encoding glucocerebrosidase, biallelic loss-of-function of which causes Gaucher disease — represent the most common genetic risk factor for sporadic Parkinson's disease across most ethnic populations, present in 5–15% of patients depending on ancestry. The mechanism likely involves impaired lysosomal function leading to alpha-synuclein accumulation, creating a feedforward loop between GCase deficiency and Lewy body pathology.</p>
+      <p>GBA1-associated Parkinson's disease carries important prognostic implications: earlier age of onset than idiopathic disease, faster cognitive decline, higher rates of Lewy body dementia, and more rapid motor progression. This makes GBA1 status clinically relevant not merely as a risk marker but as a prognostic modifier. GCase-targeted therapies (small molecule chaperones, gene therapy) are in active clinical development.</p>
+      <div class="gene-meta">
+        <span class="gene-tag">Risk variant (heterozygous)</span>
+        <span class="gene-tag">Earlier onset, faster progression</span>
+        <span class="gene-tag">GCase-targeted trials ongoing</span>
+      </div>
+    </div>
+
+    <div class="gene-card">
+      <div class="gene-label">Alpha-synuclein gene — rare but mechanistically central</div>
+      <h3>SNCA (Alpha-Synuclein)</h3>
+      <p>Alpha-synuclein protein — encoded by SNCA — is the principal component of Lewy bodies, the neuropathological hallmark of all forms of Parkinson's disease. Point mutations (A53T, A30P, E46K) are extremely rare. More consequential clinically are genomic multiplications: SNCA duplications cause typically late-onset, levodopa-responsive Parkinson's disease, while triplications produce a more aggressive phenotype with early onset, rapid progression, and prominent dementia — the gene dosage effect reflecting the direct relationship between alpha-synuclein expression levels and aggregation propensity.</p>
+      <div class="gene-meta">
+        <span class="gene-tag">Autosomal dominant</span>
+        <span class="gene-tag">Gene dosage effect</span>
+        <span class="gene-tag">Triplication: young onset, rapid</span>
+      </div>
+    </div>
+
+    <div class="gene-card">
+      <div class="gene-label">Autosomal recessive, early-onset</div>
+      <h3>PINK1 &amp; PRKN (Parkin)</h3>
+      <p>Biallelic loss-of-function variants in PINK1 and PRKN are the most common causes of autosomal recessive, early-onset Parkinson's disease (typically onset before age 50, often before 40). Both proteins operate within the same mitochondrial quality-control axis — PINK1 phosphorylates and activates Parkin, which ubiquitinates damaged mitochondrial outer membrane proteins to initiate mitophagy. Loss of either disrupts selective removal of dysfunctional mitochondria, leading to oxidative stress accumulation in dopaminergic neurons.</p>
+      <p>The clinical trajectory of PINK1/PRKN-associated disease is generally more favorable than idiopathic late-onset disease: slower progression, better levodopa response over longer follow-up, and lower rates of dementia. Heterozygous single-allele carriers — who do not develop classical Parkinson's disease — may have modestly elevated risk, though the clinical relevance of this remains debated.</p>
+      <div class="gene-meta">
+        <span class="gene-tag">Autosomal recessive</span>
+        <span class="gene-tag">Onset typically &lt; 50 years</span>
+        <span class="gene-tag">Milder course, good levodopa response</span>
+      </div>
+    </div>
+
+    <h2>3. Incomplete Penetrance: Why Genotype Does Not Determine Fate</h2>
+    <p>A fundamental conceptual point in Parkinson's disease genetics is incomplete penetrance — the observation that a substantial proportion of individuals carrying pathogenic variants never develop the disease during their lifetime. This phenomenon reflects the genuinely multifactorial nature of Parkinson's disease pathogenesis: genetic variants modulate risk within a biological system shaped by environmental exposures, mitochondrial functional reserve, neuroinflammatory status, gut microbiome composition, and the cumulative burden of additional polygenic susceptibility loci.</p>
+    <p>Factors that modulate penetrance include:</p>
+    <ul>
+      <li><strong>Age:</strong> Penetrance increases progressively with age across most PD-associated variants</li>
+      <li><strong>Sex:</strong> Male sex is associated with higher disease risk across most genetic backgrounds</li>
+      <li><strong>Epistasis:</strong> Interaction with other susceptibility variants across the genome</li>
+      <li><strong>Environmental exposures:</strong> Pesticide/solvent exposure, traumatic brain injury, rural well-water use</li>
+      <li><strong>Lifestyle factors:</strong> Physical activity level, caffeine consumption, sleep quality</li>
+      <li><strong>Gut microbiome:</strong> Emerging evidence implicates gut-to-brain alpha-synuclein propagation</li>
+    </ul>
+
+    <div class="callout">
+      <strong>The clinical implication:</strong> A positive genetic test result — even for LRRK2 G2019S — cannot be interpreted as a diagnosis or a certain prediction of disease. It identifies elevated probabilistic risk within a modifiable biological context. This framing is essential to communicate accurately in pre-test counseling.
+    </div>
+
+    <h2>4. Genetic Testing: Indications and Pre-Test Considerations</h2>
+    <p>Genetic testing for Parkinson's disease-associated variants is clinically indicated in specific circumstances. It is not a routine component of evaluation for all patients with Parkinson's disease.</p>
+
+    <h3>Appropriate indications</h3>
+    <ul class="check-list">
+      <li>Early-onset disease — motor symptom onset before age 50</li>
+      <li>Two or more first-degree relatives with confirmed Parkinson's disease, particularly with early onset</li>
+      <li>Specific ethnic backgrounds with substantially elevated variant frequencies (Ashkenazi Jewish heritage for LRRK2/GBA1; Berber ancestry for LRRK2)</li>
+      <li>Participation in genotype-stratified clinical trials (e.g., LRRK2 inhibitor or GCase-targeted therapy trials)</li>
+    </ul>
+
+    <h3>Pre-test counseling essentials</h3>
+    <p>Pre-test genetic counseling with a specialist (neurologist with genetics expertise or certified genetic counselor) is essential before testing. Key discussion points include: the probabilistic rather than deterministic nature of results; the distinction between disease-causing variants and risk-modifying variants; potential psychological impact of a positive result on the patient and implications for first-degree relatives; insurance and employment considerations where applicable; and the current absence of genotype-specific disease-modifying therapies for most variants in routine clinical use.</p>
+    <p>Direct-to-consumer genetic testing platforms are not an appropriate pathway for Parkinson's disease risk assessment. Results from such platforms should be interpreted only in consultation with a clinician with specific genetics expertise.</p>
+
+    <h2>5. Modifiable Risk and Protective Factors</h2>
+    <p>For individuals with a family history of Parkinson's disease — regardless of whether genetic testing has been performed — the most immediately actionable guidance centers on modifiable factors with the strongest epidemiological support:</p>
+    <ul>
+      <li><strong>Vigorous aerobic exercise:</strong> The most robustly supported protective factor. Prospective cohort studies demonstrate 30–40% risk reduction in highest-activity tertiles. Mechanisms include BDNF upregulation, mitochondrial biogenesis, and anti-inflammatory signaling.</li>
+      <li><strong>Caffeine consumption:</strong> Consistent inverse association across multiple independent cohorts; mechanism likely involves adenosine A2A receptor antagonism, which modulates dopaminergic signaling.</li>
+      <li><strong>Pesticide and organic solvent avoidance:</strong> Rotenone, paraquat, and trichloroethylene have established epidemiological and experimental links to nigrostriatal injury.</li>
+      <li><strong>REM sleep behavior disorder (RBD) surveillance:</strong> RBD is among the most specific prodromal markers of alpha-synucleinopathy, with 80–90% of affected individuals developing Parkinson's disease, DLB, or MSA over long-term follow-up. Early identification creates an opportunity for neuroprotective trial participation.</li>
+      <li><strong>Mediterranean dietary pattern:</strong> Associated with reduced Parkinson's risk and slower progression; likely mediated through reduced neuroinflammation and improved gut microbiome diversity.</li>
+    </ul>
+
+    <div class="evidence-box">
+      <h4>📚 Key References</h4>
+      <ul>
+        <li>Blauwendraat C et al. (2020). The genetic architecture of Parkinson's disease. <em>Lancet Neurology</em> 19(2):170-178</li>
+        <li>Nalls MA et al. (2019). Identification of novel risk loci, causal insights, and heritable risk for Parkinson's disease. <em>Lancet Neurology</em> 18(12):1091-1102</li>
+        <li>Sidransky E &amp; Lopez G (2012). The link between the GBA gene and parkinsonism. <em>Lancet Neurology</em> 11(11):986-998</li>
+        <li>Alcalay RN et al. (2020). Parkinson disease phenotype in Ashkenazi Jews with and without LRRK2 G2019S mutations. <em>Movement Disorders</em></li>
+        <li>Kalia LV &amp; Lang AE (2015). Parkinson's disease. <em>The Lancet</em> 386(9996):896-912</li>
+      </ul>
+    </div>
+
+    <div class="related">
+      <h3>Related Articles</h3>
+      <div class="related-grid">
+        <a href="/blog/parkinsonism-differential-causes/" class="related-card">
+          <div class="tag">Neuroscience</div>
+          <h4>Beyond Parkinson's Disease: Understanding the Differential Diagnosis of Parkinsonism</h4>
+        </a>
+        <a href="/blog/parkinson-rem-sleep-disorder/" class="related-card">
+          <div class="tag">Neuroscience</div>
+          <h4>REM Sleep Behavior Disorder: A Prodromal Window into Parkinson's Disease</h4>
+        </a>
+      </div>
+    </div>
+
+    <div class="sig-block">
+      <p class="sig-main">Written by <strong>Dr. Claire Ham</strong>, Neurologist, M.D.</p>
+      <ul class="sig-creds">
+        <li>Trained at Yonsei University Severance Hospital</li>
+        <li>Member, Korean Neurological Association</li>
+        <li>Member, Korean Parkinson's Disease and Movement Disorder Society</li>
+        <li>Member, Korean Society of Functional Medicine</li>
+      </ul>
+      <p class="sig-notice">※ This content is for informational purposes only and does not constitute medical advice.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2026 NervLock. All rights reserved.</p>
+    <p>This article is for informational purposes only and does not constitute medical advice.</p>
+  </div>
+</footer>
+
+</body>
+</html>

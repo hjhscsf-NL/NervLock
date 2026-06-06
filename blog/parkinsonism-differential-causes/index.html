@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Beyond Parkinson's Disease: Understanding the Differential Diagnosis of Parkinsonism | NervLock</title>
+  <meta name="description" content="Drug-induced parkinsonism, vascular parkinsonism, NPH, and atypical Parkinson-plus syndromes — a neurologist's clinical framework for differential diagnosis of parkinsonism."/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; color: #1a1a2e; background: #fff; font-size: 17px; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    :root {
+      --navy: #0d2545; --navy2: #163561;
+      --teal: #1a7a6e; --teal2: #22a090;
+      --gold: #b8922a; --gold2: #d4a843;
+      --gray: #f4f6f9; --gray2: #e8ecf2;
+      --muted: #5a6278;
+    }
+
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(13,37,69,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-logo { font-size: 20px; font-weight: 900; color: #fff; white-space: nowrap; }
+    .nav-logo span { color: var(--gold2); }
+    .nav-back { font-size: 14px; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold2); }
+    .lang-toggle { display: flex; border: 1px solid rgba(255,255,255,0.22); border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+    .lang-btn { padding: 5px 12px; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); transition: all 0.18s; }
+    .lang-btn + .lang-btn { border-left: 1px solid rgba(255,255,255,0.22); }
+    .lang-btn.active { background: rgba(255,255,255,0.18); color: #fff; }
+
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 60px 24px 100px; }
+
+    .article-hero { background: linear-gradient(135deg, #1a3a0a 0%, #4a7a1a 100%); border-radius: 24px; padding: 52px 48px; margin-bottom: 48px; position: relative; overflow: hidden; }
+    .article-hero::before { content: '🔍'; position: absolute; right: 32px; top: 32px; font-size: 80px; opacity: 0.15; }
+    .article-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(26,122,110,0.3); border: 1px solid rgba(26,122,110,0.5); border-radius: 50px; font-size: 12px; font-weight: 700; color: #6ee7da; padding: 4px 14px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+    .article-title { font-size: clamp(22px, 3.5vw, 34px); font-weight: 900; color: #fff; line-height: 1.3; margin-bottom: 20px; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 20px; }
+    .article-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.65); }
+    .article-meta-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+
+    .lang-switch-banner { background: var(--gray); border: 1px solid var(--gray2); border-radius: 14px; padding: 14px 20px; margin-bottom: 40px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .lang-switch-banner span { font-size: 14px; color: var(--muted); }
+    .lang-switch-link { font-size: 13px; font-weight: 700; color: var(--teal2); border: 1px solid var(--teal2); border-radius: 50px; padding: 6px 16px; transition: all 0.2s; white-space: nowrap; }
+    .lang-switch-link:hover { background: var(--teal2); color: #fff; }
+
+    .abstract { background: linear-gradient(135deg, rgba(26,122,110,0.06), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 16px 16px 0; padding: 24px 28px; margin-bottom: 48px; }
+    .abstract-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--teal2); margin-bottom: 10px; }
+    .abstract p { font-size: 15px; color: #2a3a4a; line-height: 1.85; margin: 0; font-style: italic; }
+
+    .article-body h2 { font-size: 24px; font-weight: 900; color: var(--navy); margin: 52px 0 16px; line-height: 1.35; padding-bottom: 12px; border-bottom: 2px solid var(--gray2); }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-size: 19px; font-weight: 800; color: var(--navy2); margin: 36px 0 12px; }
+    .article-body p { font-size: 16px; color: #2a2a3e; line-height: 1.95; margin-bottom: 20px; }
+    .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .article-body li { font-size: 15px; color: #3a3a50; line-height: 1.75; }
+    .article-body strong { color: var(--navy); }
+
+    .callout { background: linear-gradient(135deg, rgba(26,122,110,0.07), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: var(--navy); font-style: italic; line-height: 1.85; }
+    .callout strong { color: var(--teal); font-style: normal; }
+
+    .cause-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 28px 0; }
+    .cause-card { background: var(--gray); border-radius: 16px; padding: 22px 24px; border: 1px solid var(--gray2); border-top: 4px solid var(--teal2); }
+    .cause-card .cause-label { font-size: 11px; font-weight: 800; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+    .cause-card h4 { font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 10px; line-height: 1.4; }
+    .cause-card p { font-size: 13px; color: var(--muted); line-height: 1.7; margin: 0; }
+
+    .compare-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; overflow-x: auto; display: block; }
+    .compare-table th { background: var(--navy); color: #fff; padding: 11px 14px; text-align: left; font-size: 12px; font-weight: 800; white-space: nowrap; }
+    .compare-table td { padding: 10px 14px; border-bottom: 1px solid var(--gray2); color: #2a2a3e; vertical-align: top; line-height: 1.6; }
+    .compare-table tr:nth-child(even) td { background: var(--gray); }
+    .compare-table td:first-child { font-weight: 800; color: var(--navy); white-space: nowrap; }
+    .compare-table .resp-good { color: #1a7a1a; font-weight: 700; }
+    .compare-table .resp-poor { color: #8a0000; font-weight: 700; }
+    .compare-table .resp-limited { color: #7a5a00; font-weight: 700; }
+
+    .evidence-box { background: var(--gray); border-radius: 14px; padding: 20px 24px; margin: 28px 0; }
+    .evidence-box h4 { font-size: 12px; font-weight: 800; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .evidence-box ul { margin: 0; }
+    .evidence-box li { font-size: 13px; color: var(--muted); }
+
+    .sig-block { border-top: 2px solid var(--gray2); margin-top: 48px; padding-top: 24px; }
+    .sig-main { font-size: 14px; color: var(--navy); font-weight: 700; margin-bottom: 12px; line-height: 1.7; }
+    .sig-creds { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+    .sig-creds li { font-size: 13px; color: var(--muted); padding-left: 14px; position: relative; line-height: 1.6; }
+    .sig-creds li::before { content: "·"; position: absolute; left: 0; color: var(--teal2); font-weight: 900; }
+    .sig-notice { font-size: 12px; color: var(--muted); font-style: italic; line-height: 1.7; }
+
+    .related { margin-top: 64px; }
+    .related h3 { font-size: 20px; font-weight: 900; color: var(--navy); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .related-card { background: var(--gray); border-radius: 16px; padding: 20px; border: 1px solid var(--gray2); transition: transform 0.2s; }
+    .related-card:hover { transform: translateY(-3px); }
+    .related-card .tag { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .related-card h4 { font-size: 15px; font-weight: 800; color: var(--navy); line-height: 1.4; }
+
+    footer { background: #0a1a32; color: rgba(255,255,255,0.5); padding: 32px 0; }
+    .footer-bottom { max-width: 900px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 12px; }
+
+    @media (max-width: 600px) {
+      .article-hero { padding: 36px 28px; }
+      .cause-grid, .related-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/en/" class="nav-logo">Nerv<span>Lock</span></a>
+    <a href="/en/#blog" class="nav-back">← Medical Blog</a>
+    <div class="lang-toggle">
+      <a href="/blog/파킨슨증-원인/" class="lang-btn">KR</a>
+      <a href="/blog/parkinsonism-differential-causes/" class="lang-btn active">EN</a>
+    </div>
+  </div>
+</nav>
+
+<div class="article-wrap">
+
+  <div class="article-hero">
+    <div class="article-tag">Neuroscience</div>
+    <h1 class="article-title">Beyond Parkinson's Disease:<br>Understanding the Differential<br>Diagnosis of Parkinsonism</h1>
+    <div class="article-meta">
+      <div class="article-meta-item">👨‍⚕️ <strong>Dr. Claire Ham</strong> — Neurologist, NervLock Founder</div>
+      <div class="article-meta-item">📅 May 17, 2026</div>
+      <div class="article-meta-item">⏱ 7 min read</div>
+    </div>
+  </div>
+
+  <div class="lang-switch-banner">
+    <span>🇰🇷 이 글의 한국어 버전을 보시겠습니까?</span>
+    <a href="/blog/파킨슨증-원인/" class="lang-switch-link">한국어로 읽기 →</a>
+  </div>
+
+  <div class="abstract">
+    <div class="abstract-label">Abstract</div>
+    <p>The term "parkinsonism" defines a clinical syndrome — bradykinesia combined with at least one of resting tremor, rigidity, or postural instability — that encompasses Parkinson's disease alongside a heterogeneous group of conditions that mimic its presentation. Accurate differential diagnosis carries direct therapeutic consequences: patients with drug-induced parkinsonism may be exposed to unnecessary dopaminergic therapy; those with normal pressure hydrocephalus may miss a surgically reversible window; and those with Parkinson-plus syndromes require fundamentally different prognostic counseling. This article reviews four major categories of non-PD parkinsonism and the clinical features that differentiate them.</p>
+  </div>
+
+  <div class="article-body">
+
+    <h2>1. The Diagnostic Framework: Parkinsonism vs. Parkinson's Disease</h2>
+    <p>Parkinson's disease accounts for approximately 75–80% of all parkinsonism encountered in general neurological practice. The remainder — secondary and atypical parkinsonisms — are frequently misidentified, with diagnostic delays ranging from months to years before accurate classification. The consequence of misdiagnosis is clinically significant in each direction: over-treatment in reversible forms, and under-preparation in progressive ones.</p>
+    <p>The cardinal differentiating tool in the initial workup remains the <strong>levodopa challenge</strong>: a robust, sustained motor response to adequate levodopa doses strongly favors idiopathic Parkinson's disease. Absent or minimal response should prompt systematic evaluation of the categories outlined below. Dopamine transporter (DAT) imaging provides an additional binary distinction — DAT uptake is reduced in neurodegenerative parkinsonisms but preserved in drug-induced and psychogenic forms.</p>
+
+    <div class="callout">
+      <strong>Clinical principle:</strong> Parkinsonism is a syndrome, not a diagnosis. The critical question is not "does this patient have parkinsonism?" but rather "what is the cause of this patient's parkinsonism?" — a distinction with direct consequences for management and prognosis.
+    </div>
+
+    <h2>2. The Four Major Non-PD Categories</h2>
+
+    <div class="cause-grid">
+      <div class="cause-card">
+        <div class="cause-label">Category 01</div>
+        <h4>Drug-Induced Parkinsonism</h4>
+        <p>Most common secondary cause. D2 receptor blockade produces functional dopaminergic deficit without nigrostriatal degeneration. Reversible on drug withdrawal in most cases.</p>
+      </div>
+      <div class="cause-card">
+        <div class="cause-label">Category 02</div>
+        <h4>Vascular Parkinsonism</h4>
+        <p>Cerebrovascular disease affecting basal ganglia or white matter tracts. Lower-body predominance, gait-dominant picture, minimal tremor. Associated with vascular risk factors.</p>
+      </div>
+      <div class="cause-card">
+        <div class="cause-label">Category 03</div>
+        <h4>Normal Pressure Hydrocephalus</h4>
+        <p>Impaired CSF reabsorption → ventricular enlargement. Classic triad: gait apraxia, urinary incontinence, cognitive impairment. Surgically reversible with VP shunting.</p>
+      </div>
+      <div class="cause-card">
+        <div class="cause-label">Category 04</div>
+        <h4>Parkinson-Plus Syndromes</h4>
+        <p>MSA, PSP, CBS — alpha-synuclein or tau pathology beyond the nigrostriatal pathway. Levodopa response absent or limited; faster progression than PD.</p>
+      </div>
+    </div>
+
+    <h2>3. Drug-Induced Parkinsonism (DIP)</h2>
+    <p>Drug-induced parkinsonism is the most prevalent secondary cause, accounting for up to 20% of parkinsonism presentations in some clinical series — and uniquely, the most potentially reversible. The pathophysiology centers on striatal dopamine D2 receptor blockade by dopamine antagonist medications, producing a functional dopaminergic deficit without any underlying nigrostriatal neurodegeneration.</p>
+    <p>Principal offending drug classes include: typical and atypical antipsychotics; prokinetic and antiemetic dopamine antagonists (metoclopramide, levosulpiride); calcium channel blockers with dopamine antagonist properties (cinnarizine, flunarizine); and certain antivertigo formulations. In elderly patients receiving polypharmacy, the risk is substantially elevated over single-agent exposure.</p>
+    <p>Clinical features that raise suspicion for DIP over idiopathic Parkinson's disease include: <strong>symmetric onset</strong> (PD characteristically begins asymmetrically); clear temporal correlation with drug initiation; and preserved olfactory function (anosmia is a hallmark of PD, not DIP). Crucially, DAT SPECT imaging is <em>normal</em> in DIP — a finding that definitively distinguishes it from PD, in which DAT uptake is reduced.</p>
+    <p>Management centers on withdrawal or substitution of the causative agent. Recovery typically occurs over weeks to months. In a subset of patients — particularly older individuals — parkinsonism persists beyond the expected washout period, raising the possibility of co-existing subclinical PD that was "unmasked" by the offending drug rather than caused by it.</p>
+
+    <h2>4. Vascular Parkinsonism</h2>
+    <p>Vascular parkinsonism arises from cerebrovascular disease affecting the basal ganglia, thalamus, or the white matter tracts of the nigrostriatal-thalamocortical circuit. It accounts for approximately 3–6% of parkinsonism cases and is strongly associated with chronic vascular risk factor burden: hypertension, diabetes mellitus, hyperlipidemia, and prior cerebrovascular events.</p>
+    <p>The clinical phenotype is characteristically distinct from idiopathic PD. The predominant manifestation is <strong>lower-body parkinsonism</strong> — gait disturbance with the characteristic "magnetic gait" (feet appearing glued to the floor), postural instability, and freezing of gait — with relative sparing of upper limb function and resting tremor. This lower-limb predilection reflects the watershed distribution of small vessel ischemic disease in the deep white matter and basal ganglia, where long motor tracts are particularly vulnerable.</p>
+    <p>Neuroimaging is diagnostically essential: MRI demonstrates periventricular and subcortical white matter hyperintensities, lacunar infarcts, or discrete basal ganglia lesions on T2/FLAIR sequences. Levodopa response is characteristically poor, particularly for the gait disorder, though upper limb rigidity may show partial, inconsistent improvement. Management focuses on aggressive vascular risk factor control to slow progression.</p>
+
+    <h2>5. Normal Pressure Hydrocephalus (NPH)</h2>
+    <p>Normal pressure hydrocephalus represents a surgically treatable cause of parkinsonism — and one of the most consequential misdiagnoses to miss. The pathophysiology involves impaired CSF reabsorption at the arachnoid granulations, leading to progressive ventriculomegaly and periventricular white matter compression, despite lumbar puncture opening pressures that fall within normal range (hence "normal pressure").</p>
+    <p>The classical clinical triad — gait apraxia, urinary incontinence, and cognitive impairment, colloquially described as "wet, wobbly, and wacky" — is present in its complete form in fewer than 50% of cases, making partial presentations an ongoing diagnostic challenge. The gait disturbance of NPH has a characteristic appearance: wide-based, short-stepped, with markedly reduced foot clearance and en bloc turning — features that overlap substantially with both Parkinson's disease and vascular parkinsonism.</p>
+    <p>MRI demonstrates ventriculomegaly disproportionate to cortical atrophy (Evans index &gt;0.3 on axial imaging). The large-volume CSF tap test — removal of 30–50 mL with assessment of gait before and 1–4 hours after — serves as a confirmatory functional test. Ventriculoperitoneal shunting can produce dramatic and sustained clinical improvement, particularly in gait and urinary symptoms, when performed before irreversible white matter injury occurs. This underscores the importance of early identification.</p>
+
+    <h2>6. Atypical Parkinsonisms (Parkinson-Plus Syndromes)</h2>
+    <p>The atypical parkinsonian syndromes — multiple system atrophy (MSA), progressive supranuclear palsy (PSP), and corticobasal syndrome (CBS) — each involve alpha-synuclein or tau proteinopathy extending beyond the nigrostriatal pathway to affect multiple neural systems, generating clinical features that transcend classical parkinsonism.</p>
+
+    <h3>Multiple System Atrophy (MSA)</h3>
+    <p>MSA is defined by parkinsonism combined with prominent autonomic failure (orthostatic hypotension, urogenital dysfunction), cerebellar ataxia, or both. The key differentiating feature is the severity and early timing of autonomic involvement: symptomatic orthostatic hypotension developing within the first year of motor symptom onset is a strong red flag against idiopathic PD. Characteristic MRI findings include the "hot cross bun sign" in the pons and putaminal atrophy with hypointense rim.</p>
+
+    <h3>Progressive Supranuclear Palsy (PSP)</h3>
+    <p>PSP is distinguished by vertical supranuclear gaze palsy — with downward saccades particularly impaired — early postural instability manifesting as backward falls, axial rigidity greater than appendicular, and frontal-predominant cognitive dysfunction. The "hummingbird sign" on midsagittal MRI (midbrain atrophy with preserved pontine volume, resembling a hummingbird in profile) supports the diagnosis. Levodopa response is typically absent.</p>
+
+    <h3>Corticobasal Syndrome (CBS)</h3>
+    <p>CBS presents with markedly asymmetric parkinsonism, limb apraxia, cortical sensory loss, and the pathognomonic alien limb phenomenon — involuntary, seemingly purposeful movements of one limb that the patient experiences as foreign to their volition. The histopathological substrate of CBS is heterogeneous and may include corticobasal degeneration (CBD), PSP, or Alzheimer's disease pathology. Levodopa response is typically absent.</p>
+
+    <h2>7. Comparative Overview</h2>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Diagnosis</th>
+          <th>Key Distinguishing Features</th>
+          <th>Levodopa Response</th>
+          <th>DAT Scan</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Parkinson's Disease</td>
+          <td>Asymmetric onset, resting tremor, anosmia, RBD</td>
+          <td class="resp-good">Robust, sustained</td>
+          <td>Reduced</td>
+        </tr>
+        <tr>
+          <td>Drug-Induced (DIP)</td>
+          <td>Symmetric, drug exposure history, normal olfaction</td>
+          <td class="resp-poor">Absent/poor</td>
+          <td>Normal</td>
+        </tr>
+        <tr>
+          <td>Vascular</td>
+          <td>Lower-body predominance, vascular risk factors, MRI lesions</td>
+          <td class="resp-limited">Limited/poor</td>
+          <td>Variable</td>
+        </tr>
+        <tr>
+          <td>NPH</td>
+          <td>Gait apraxia + incontinence + cognitive impairment triad</td>
+          <td class="resp-poor">Absent</td>
+          <td>Normal</td>
+        </tr>
+        <tr>
+          <td>MSA</td>
+          <td>Early severe autonomic failure, cerebellar signs</td>
+          <td class="resp-limited">Early partial, then absent</td>
+          <td>Reduced</td>
+        </tr>
+        <tr>
+          <td>PSP</td>
+          <td>Vertical gaze palsy, backward falls, hummingbird sign</td>
+          <td class="resp-poor">Absent</td>
+          <td>Reduced</td>
+        </tr>
+        <tr>
+          <td>CBS</td>
+          <td>Marked asymmetry, apraxia, alien limb</td>
+          <td class="resp-poor">Absent</td>
+          <td>Asymmetrically reduced</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <strong>When to seek re-evaluation:</strong> If levodopa does not produce a clear motor benefit at adequate doses; if early prominent autonomic dysfunction, falls, or gaze abnormalities are present; or if symptoms are markedly asymmetric from onset — a specialist reassessment is warranted to confirm or revise the diagnosis.
+    </div>
+
+    <div class="evidence-box">
+      <h4>📚 Key References</h4>
+      <ul>
+        <li>Tolosa E et al. (2021). Challenges in the diagnosis of Parkinson's disease. <em>Lancet Neurology</em> 20(5):385-397</li>
+        <li>Wenning GK et al. (2022). The Movement Disorder Society criteria for the diagnosis of multiple system atrophy. <em>Movement Disorders</em> 37(6):1131-1148</li>
+        <li>Höglinger GU et al. (2017). Clinical diagnosis of progressive supranuclear palsy. <em>Movement Disorders</em> 32(6):853-864</li>
+        <li>Relkin N et al. (2005). Diagnosing idiopathic normal-pressure hydrocephalus. <em>Neurosurgery</em> 57(3 Suppl):S4-16</li>
+        <li>Postuma RB et al. (2015). MDS clinical diagnostic criteria for Parkinson's disease. <em>Movement Disorders</em> 30(12):1591-1601</li>
+      </ul>
+    </div>
+
+    <div class="related">
+      <h3>Related Articles</h3>
+      <div class="related-grid">
+        <a href="/blog/parkinson-genetics/" class="related-card">
+          <div class="tag">Neuroscience</div>
+          <h4>The Genetics of Parkinson's Disease: Risk, Penetrance, and Clinical Implications</h4>
+        </a>
+        <a href="/blog/parkinson-medication-management/" class="related-card">
+          <div class="tag">Neuroscience</div>
+          <h4>Managing Parkinson's Medications: A Neurologist's Clinical Guide</h4>
+        </a>
+      </div>
+    </div>
+
+    <div class="sig-block">
+      <p class="sig-main">Written by <strong>Dr. Claire Ham</strong>, Neurologist, M.D.</p>
+      <ul class="sig-creds">
+        <li>Trained at Yonsei University Severance Hospital</li>
+        <li>Member, Korean Neurological Association</li>
+        <li>Member, Korean Parkinson's Disease and Movement Disorder Society</li>
+        <li>Member, Korean Society of Functional Medicine</li>
+      </ul>
+      <p class="sig-notice">※ This content is for informational purposes only and does not constitute medical advice.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2026 NervLock. All rights reserved.</p>
+    <p>This article is for informational purposes only and does not constitute medical advice.</p>
+  </div>
+</footer>
+
+</body>
+</html>
