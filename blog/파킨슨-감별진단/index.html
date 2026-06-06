@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>파킨슨병과 파킨슨 증후군 — 헷갈리기 쉬운 4가지 질환 정확히 구별하기 | NervLock</title>
+  <meta name="description" content="MSA, PSP, 루이소체 치매, CBS — 파킨슨처럼 보이지만 다른 네 가지 질환의 감별 포인트를 신경과 전문의가 비교표와 함께 설명합니다."/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Apple SD Gothic Neo','Noto Sans KR','맑은 고딕',sans-serif; color: #1a1a2e; background: #fff; font-size: 17px; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    :root {
+      --navy: #0d2545; --navy2: #163561;
+      --teal: #1a7a6e; --teal2: #22a090;
+      --gold: #b8922a; --gold2: #d4a843;
+      --gray: #f4f6f9; --gray2: #e8ecf2;
+      --muted: #5a6278;
+    }
+
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(13,37,69,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-logo { font-size: 20px; font-weight: 900; color: #fff; white-space: nowrap; }
+    .nav-logo span { color: var(--gold2); }
+    .nav-back { font-size: 14px; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold2); }
+    .lang-toggle { display: flex; border: 1px solid rgba(255,255,255,0.22); border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+    .lang-btn { padding: 5px 12px; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); transition: all 0.18s; }
+    .lang-btn + .lang-btn { border-left: 1px solid rgba(255,255,255,0.22); }
+    .lang-btn.active { background: rgba(255,255,255,0.18); color: #fff; }
+
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 60px 24px 100px; }
+
+    .article-hero { background: linear-gradient(135deg, #0a1a3d 0%, #1a3a8e 100%); border-radius: 24px; padding: 52px 48px; margin-bottom: 48px; position: relative; overflow: hidden; }
+    .article-hero::before { content: '⚖️'; position: absolute; right: 32px; top: 32px; font-size: 80px; opacity: 0.15; }
+    .article-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(26,122,110,0.3); border: 1px solid rgba(26,122,110,0.5); border-radius: 50px; font-size: 12px; font-weight: 700; color: #6ee7da; padding: 4px 14px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+    .article-title { font-size: clamp(22px, 3.5vw, 34px); font-weight: 900; color: #fff; line-height: 1.3; margin-bottom: 20px; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 20px; }
+    .article-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.65); }
+    .article-meta-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+
+    .abstract { background: linear-gradient(135deg, rgba(26,122,110,0.06), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 16px 16px 0; padding: 24px 28px; margin-bottom: 48px; }
+    .abstract-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--teal2); margin-bottom: 10px; }
+    .abstract p { font-size: 15px; color: #2a3a4a; line-height: 1.85; margin: 0; font-style: italic; }
+
+    .article-body h2 { font-size: 24px; font-weight: 900; color: var(--navy); margin: 52px 0 16px; line-height: 1.35; padding-bottom: 12px; border-bottom: 2px solid var(--gray2); }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-size: 19px; font-weight: 800; color: var(--navy2); margin: 36px 0 12px; }
+    .article-body p { font-size: 16px; color: #2a2a3e; line-height: 1.95; margin-bottom: 20px; }
+    .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .article-body li { font-size: 15px; color: #3a3a50; line-height: 1.75; }
+    .article-body strong { color: var(--navy); }
+
+    .callout { background: linear-gradient(135deg, rgba(26,122,110,0.07), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: var(--navy); font-style: italic; line-height: 1.85; }
+    .callout strong { color: var(--teal); font-style: normal; }
+
+    .dx-card { background: var(--gray); border-radius: 16px; padding: 26px 28px; margin: 24px 0; border-left: 4px solid var(--teal2); }
+    .dx-card .dx-num { font-size: 11px; font-weight: 800; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
+    .dx-card h3 { font-size: 19px; font-weight: 900; color: var(--navy); margin: 0 0 6px; }
+    .dx-card .dx-abbr { font-size: 13px; color: var(--muted); font-weight: 600; margin-bottom: 14px; }
+    .dx-card p { font-size: 15px; color: #3a3a50; line-height: 1.85; margin-bottom: 10px; }
+    .dx-card p:last-child { margin-bottom: 0; }
+    .dx-card .key-sign { background: rgba(13,37,69,0.06); border-radius: 10px; padding: 12px 16px; margin: 12px 0; }
+    .dx-card .key-sign strong { font-size: 12px; color: var(--teal2); letter-spacing: 1px; text-transform: uppercase; display: block; margin-bottom: 6px; }
+    .dx-card .key-sign ul { padding-left: 16px; margin: 0; }
+    .dx-card .key-sign li { font-size: 14px; color: var(--navy2); line-height: 1.65; }
+
+    .compare-table { width: 100%; border-collapse: collapse; margin: 28px 0; font-size: 14px; overflow-x: auto; display: block; }
+    .compare-table th { background: var(--navy); color: #fff; padding: 12px 14px; text-align: left; font-size: 12px; font-weight: 800; white-space: nowrap; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid var(--gray2); color: #2a2a3e; vertical-align: top; line-height: 1.6; }
+    .compare-table tr:nth-child(even) td { background: var(--gray); }
+    .compare-table td:first-child { font-weight: 800; color: var(--navy); white-space: nowrap; }
+    .compare-table .resp-good { color: #1a7a1a; font-weight: 700; }
+    .compare-table .resp-poor { color: #8a0000; font-weight: 700; }
+    .compare-table .resp-limited { color: #7a5a00; font-weight: 700; }
+
+    .evidence-box { background: var(--gray); border-radius: 14px; padding: 20px 24px; margin: 28px 0; }
+    .evidence-box h4 { font-size: 12px; font-weight: 800; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .evidence-box ul { margin: 0; }
+    .evidence-box li { font-size: 13px; color: var(--muted); }
+
+    .sig-block { border-top: 2px solid var(--gray2); margin-top: 48px; padding-top: 24px; }
+    .sig-main { font-size: 14px; color: var(--navy); font-weight: 700; margin-bottom: 12px; line-height: 1.7; }
+    .sig-creds { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+    .sig-creds li { font-size: 13px; color: var(--muted); padding-left: 14px; position: relative; line-height: 1.6; }
+    .sig-creds li::before { content: "·"; position: absolute; left: 0; color: var(--teal2); font-weight: 900; }
+    .sig-notice { font-size: 12px; color: var(--muted); font-style: italic; line-height: 1.7; }
+
+    .related { margin-top: 64px; }
+    .related h3 { font-size: 20px; font-weight: 900; color: var(--navy); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .related-card { background: var(--gray); border-radius: 16px; padding: 20px; border: 1px solid var(--gray2); transition: transform 0.2s; }
+    .related-card:hover { transform: translateY(-3px); }
+    .related-card .tag { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .related-card h4 { font-size: 15px; font-weight: 800; color: var(--navy); line-height: 1.4; }
+
+    footer { background: #0a1a32; color: rgba(255,255,255,0.5); padding: 32px 0; }
+    .footer-bottom { max-width: 900px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 12px; }
+
+    @media (max-width: 600px) {
+      .article-hero { padding: 36px 28px; }
+      .related-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Nerv<span>Lock</span></a>
+    <a href="/#blog" class="nav-back">← 의학 칼럼</a>
+    <div class="lang-toggle">
+      <a href="/blog/파킨슨-감별진단/" class="lang-btn active">KR</a>
+      <span class="lang-btn" style="opacity:0.3;cursor:default;">EN</span>
+    </div>
+  </div>
+</nav>
+
+<div class="article-wrap">
+
+  <div class="article-hero">
+    <div class="article-tag">신경과학</div>
+    <h1 class="article-title">파킨슨병과<br>파킨슨 증후군<br>— 4가지 질환 정확히 구별하기</h1>
+    <div class="article-meta">
+      <div class="article-meta-item">👨‍⚕️ <strong>Dr.H</strong> — 신경과 전문의 · NervLock 설립자</div>
+      <div class="article-meta-item">📅 2026. 6. 2</div>
+      <div class="article-meta-item">⏱ 8분 읽기</div>
+    </div>
+  </div>
+
+  <div class="abstract">
+    <div class="abstract-label">요약</div>
+    <p>몸이 굳고 움직임이 느려지는 증상이 모두 파킨슨병인 것은 아닙니다. 다계통위축증(MSA), 진행성 핵상마비(PSP), 루이소체 치매(LBD), 대뇌피질기저핵 증후군(CBS) — 네 가지 비전형 파킨슨 증후군은 파킨슨병과 겹치는 증상이 많지만 핵심 감별 포인트가 다릅니다. 레보도파 반응, 특징적 임상 징후, 진행 양상을 비교표와 함께 정리합니다.</p>
+  </div>
+
+  <div class="article-body">
+
+    <h2>레보도파 반응이 첫 번째 단서</h2>
+    <p>파킨슨 증후군(Parkinsonism)의 감별에서 가장 중요한 첫 번째 단서는 <strong>레보도파에 대한 반응</strong>입니다. 파킨슨병은 레보도파에 뚜렷하고 지속적인 반응을 보이는 것이 진단 기준의 핵심입니다. 반면 다음에 소개하는 비전형 파킨슨 증후군들은 초기에 부분적인 반응을 보이거나 반응이 없는 경우가 많습니다.</p>
+    <p>물론 레보도파 반응만으로 모든 것이 결정되지는 않습니다. 신경과 전문의는 임상 소견, 뇌 MRI, 필요 시 DAT scan(도파민 운반체 PET-CT), CSF 검사 등을 종합하여 감별 진단을 내립니다.</p>
+
+    <div class="callout">
+      <strong>핵심 원칙:</strong> 파킨슨 약이 잘 듣지 않거나 비전형적인 증상이 함께 나타난다면, 파킨슨 전문 신경과에서 정밀 재평가를 받는 것이 중요합니다.
+    </div>
+
+    <h2>네 가지 비전형 파킨슨 증후군</h2>
+
+    <div class="dx-card">
+      <div class="dx-num">질환 01</div>
+      <h3>다계통위축증</h3>
+      <p class="dx-abbr">MSA (Multiple System Atrophy)</p>
+      <p>파킨슨 운동 증상과 함께 자율신경계 및 소뇌 기능 이상이 초기부터 두드러집니다. 흑질 외에도 선조체, 소뇌, 뇌간, 척수 자율신경 등 여러 계통의 신경이 함께 손상되기 때문에 다계통(multi-system)이라는 이름이 붙었습니다.</p>
+      <div class="key-sign">
+        <strong>핵심 감별 소견</strong>
+        <ul>
+          <li>기립성 저혈압: 일어설 때 혈압이 20mmHg 이상 떨어져 어지럼증·실신</li>
+          <li>배뇨 장애: 소변이 안 나오거나 조절이 어려움 (초기부터 심함)</li>
+          <li>남성 발기부전 (파킨슨병보다 훨씬 이른 시기에 나타남)</li>
+          <li>소뇌 실조: 비틀거리는 걸음, 구음 장애</li>
+          <li>뇌 MRI: 십자 징후(hot cross bun sign), 조가비핵 위축</li>
+        </ul>
+      </div>
+      <p>레보도파 반응이 초기에만 있거나 거의 없습니다. 파킨슨병보다 진행 속도가 빠르며 발병 후 평균 생존 기간이 약 6~10년으로 보고됩니다.</p>
+    </div>
+
+    <div class="dx-card">
+      <div class="dx-num">질환 02</div>
+      <h3>진행성 핵상마비</h3>
+      <p class="dx-abbr">PSP (Progressive Supranuclear Palsy)</p>
+      <p>이름에서 '핵상(supranuclear)'은 안구 운동을 담당하는 뇌간 신경핵 위쪽의 수의적 조절 경로가 손상됨을 의미합니다. 가장 특징적인 감별 징후는 안구 운동 이상입니다.</p>
+      <div class="key-sign">
+        <strong>핵심 감별 소견</strong>
+        <ul>
+          <li>수직 안구 운동 장애: 특히 아래를 내려다보기가 어려움 (계단 내려가기, 식사 시 접시 보기 등)</li>
+          <li>초기부터 반복되는 뒤로 넘어지는 낙상 (파킨슨병에서는 후기 증상)</li>
+          <li>목과 몸통이 뒤로 꼿꼿하게 강직되는 자세 (후굴 자세, retrocollis)</li>
+          <li>무표정하고 눈 깜박임이 줄어들며 특유의 '놀란 표정(surprised look)'</li>
+          <li>뇌 MRI: 중뇌 위축 — '허밍버드 징후(hummingbird sign)'</li>
+        </ul>
+      </div>
+      <p>레보도파에 반응이 거의 없습니다. 초기 낙상이 잦고 언어 장애·연하 곤란이 비교적 이른 시기에 나타납니다. 발병 후 평균 생존 기간은 약 5~8년입니다.</p>
+    </div>
+
+    <div class="dx-card">
+      <div class="dx-num">질환 03</div>
+      <h3>루이소체 치매</h3>
+      <p class="dx-abbr">LBD (Lewy Body Dementia)</p>
+      <p>파킨슨병의 병리적 특징인 루이소체(알파시뉴클레인 응집체)가 대뇌피질 전반에 광범위하게 침착되면서 파킨슨 운동 증상과 인지 기능 저하가 동시에 또는 가까운 시기에 나타납니다. 파킨슨 치매(PD-D)와의 구분은 인지 저하가 운동 증상보다 먼저 나타나거나 1년 이내에 동반되는 경우 LBD로 분류합니다.</p>
+      <div class="key-sign">
+        <strong>핵심 감별 소견 (3대 핵심 증상)</strong>
+        <ul>
+          <li>생생한 시각적 환각: 없는 사람, 동물, 작은 형체가 보이는 선명한 환시 (반복적)</li>
+          <li>인지 기능의 날마다 변동: 어떤 날은 멀쩡하다가 어떤 날은 혼란스러운 상태가 반복됨</li>
+          <li>REM수면행동장애(RBD): 꿈을 꾸면서 소리 지르거나 주먹질하는 수면 이상 행동</li>
+        </ul>
+      </div>
+      <p>레보도파에 제한적인 반응을 보입니다. 중요한 주의 사항으로 항정신병 약물(특히 전형 항정신병제)에 극도로 민감한 반응을 보여 심각한 부작용이 나타날 수 있으므로, LBD 환자의 환각 관리 시 이 점을 반드시 고려해야 합니다.</p>
+    </div>
+
+    <div class="dx-card">
+      <div class="dx-num">질환 04</div>
+      <h3>대뇌피질기저핵 증후군</h3>
+      <p class="dx-abbr">CBS (Corticobasal Syndrome)</p>
+      <p>피질기저핵 변성(CBD)으로 인한 증후군으로, 대뇌피질과 기저핵이 함께 손상되어 운동 증상과 고위 피질 기능 이상이 동시에 나타납니다. 파킨슨 증후군 중 가장 비대칭성이 두드러지는 특징이 있습니다.</p>
+      <div class="key-sign">
+        <strong>핵심 감별 소견</strong>
+        <ul>
+          <li>뚜렷한 좌우 비대칭: 한쪽 팔다리만 심하게 굳고 움직이기 어려움</li>
+          <li>실행증(apraxia): 원하는 동작을 지시하면 알면서도 수행하지 못함</li>
+          <li>외계인 손 증후군(alien limb phenomenon): 한쪽 손이 본인 의지와 무관하게 움직이는 것처럼 느껴짐</li>
+          <li>피질 감각 소실: 눈을 감고 손에 놓인 물체를 인식하지 못함</li>
+          <li>뇌 MRI: 한쪽 두정엽 위축이 비대칭적으로 나타남</li>
+        </ul>
+      </div>
+      <p>레보도파에 반응이 없거나 매우 제한적입니다. CBS는 증후군적 개념이므로 병리학적으로 다양한 원인 — CBD 외에도 PSP, 알츠하이머 등 — 이 동일한 임상 양상을 보일 수 있습니다.</p>
+    </div>
+
+    <h2>한눈에 비교</h2>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>질환</th>
+          <th>핵심 특징</th>
+          <th>레보도파 반응</th>
+          <th>빠른 감별 포인트</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>파킨슨병 (PD)</td>
+          <td>한쪽 손 안정 시 떨림으로 시작, 서서히 진행</td>
+          <td class="resp-good">뚜렷한 반응</td>
+          <td>떨림·비대칭 시작, 레보도파 효과 명확</td>
+        </tr>
+        <tr>
+          <td>다계통위축증 (MSA)</td>
+          <td>자율신경계 이상 초기부터 동반</td>
+          <td class="resp-poor">반응 적음</td>
+          <td>기립성 저혈압·배뇨 장애 초기 출현</td>
+        </tr>
+        <tr>
+          <td>진행성 핵상마비 (PSP)</td>
+          <td>수직 안구 운동 장애, 뒤로 낙상</td>
+          <td class="resp-poor">반응 없음</td>
+          <td>아래 못 내려다봄, 초기 반복 낙상</td>
+        </tr>
+        <tr>
+          <td>루이소체 치매 (LBD)</td>
+          <td>환각·인지 변동·RBD 동반</td>
+          <td class="resp-limited">반응 제한적</td>
+          <td>생생한 환시, 인지 기능 하루하루 달라짐</td>
+        </tr>
+        <tr>
+          <td>대뇌피질기저핵 (CBS)</td>
+          <td>한쪽 비대칭 심함, 외계인 손</td>
+          <td class="resp-poor">반응 없음</td>
+          <td>뚜렷한 좌우 비대칭, 실행증</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>정밀 재평가가 필요한 신호</h2>
+    <p>다음 상황이라면 파킨슨 전문 신경과에서 재평가를 받는 것을 권장합니다:</p>
+    <ul>
+      <li>레보도파를 충분한 용량으로 복용해도 운동 증상의 호전이 뚜렷하지 않을 때</li>
+      <li>초기부터 두드러진 자율신경 증상(기립성 저혈압, 배뇨 장애)이 동반될 때</li>
+      <li>눈 움직임이 어렵거나 잦은 낙상이 초기에 발생할 때</li>
+      <li>파킨슨 증상과 함께 생생한 환시나 인지 기능 저하가 동반될 때</li>
+      <li>한쪽 팔다리만 비대칭적으로 심하게 굳거나 의지대로 움직이지 않을 때</li>
+    </ul>
+
+    <div class="callout">
+      비전형 파킨슨 증후군은 진행 양상과 예후가 파킨슨병과 다르기 때문에, 정확한 진단이 현실적인 목표 설정과 적절한 지원 계획 수립에 매우 중요합니다.
+    </div>
+
+    <div class="evidence-box">
+      <h4>📚 참고 근거</h4>
+      <ul>
+        <li>Gilman S et al. (2008). Second consensus statement on the diagnosis of MSA. <em>Neurology</em> 71(9):670-676</li>
+        <li>Höglinger GU et al. (2017). Clinical diagnosis of progressive supranuclear palsy: MDS criteria. <em>Movement Disorders</em> 32(6):853-864</li>
+        <li>McKeith IG et al. (2017). Diagnosis and management of dementia with Lewy bodies. <em>Neurology</em> 89(1):88-100</li>
+        <li>Armstrong MJ et al. (2013). Criteria for the diagnosis of corticobasal degeneration. <em>Neurology</em> 80(5):496-503</li>
+        <li>Postuma RB et al. (2015). MDS clinical diagnostic criteria for Parkinson's disease. <em>Movement Disorders</em> 30(12):1591-1601</li>
+      </ul>
+    </div>
+
+    <div class="related">
+      <h3>관련 칼럼</h3>
+      <div class="related-grid">
+        <a href="/blog/파킨슨증-원인/" class="related-card">
+          <div class="tag">신경과학</div>
+          <h4>손 떨리고 몸이 뻣뻣… 파킨슨병이 아니라면? '파킨슨증'과 그 원인들</h4>
+        </a>
+        <a href="/blog/레보도파-오해/" class="related-card">
+          <div class="tag">신경과학</div>
+          <h4>레보도파 장기 복용, 정말 위험한가? — 오해와 진실</h4>
+        </a>
+      </div>
+    </div>
+
+    <div class="sig-block">
+      <p class="sig-main">본 글은 신경과 전문의 <strong>함지현 원장</strong>이 직접 작성하였습니다.</p>
+      <ul class="sig-creds">
+        <li>연세대 세브란스 출신 신경과 전문의</li>
+        <li>대한신경과학회 정회원</li>
+        <li>대한파킨슨병 및 이상운동질환 학회 정회원</li>
+        <li>대한기능의학회 정회원</li>
+      </ul>
+      <p class="sig-notice">※ 본 내용은 의학 정보 제공을 목적으로 하며, 개인 진료를 대체하지 않습니다.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <span>© 2026 NervLock. All rights reserved.</span>
+    <span>신경과 전문의가 직접 쓰는 뇌·신경 건강 칼럼</span>
+  </div>
+</footer>
+
+</body>
+</html>
