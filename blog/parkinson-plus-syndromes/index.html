@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Parkinson's Disease vs. Parkinson-Plus Syndromes: A Clinical Differential Diagnosis Guide | NervLock</title>
+  <meta name="description" content="MSA, PSP, Lewy body dementia, and corticobasal syndrome — clinical features, red flags, and levodopa response that distinguish Parkinson-plus syndromes from Parkinson's disease."/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; color: #1a1a2e; background: #fff; font-size: 17px; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    :root {
+      --navy: #0d2545; --navy2: #163561;
+      --teal: #1a7a6e; --teal2: #22a090;
+      --gold: #b8922a; --gold2: #d4a843;
+      --gray: #f4f6f9; --gray2: #e8ecf2;
+      --muted: #5a6278;
+    }
+
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(13,37,69,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-logo { font-size: 20px; font-weight: 900; color: #fff; white-space: nowrap; }
+    .nav-logo span { color: var(--gold2); }
+    .nav-back { font-size: 14px; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold2); }
+    .lang-toggle { display: flex; border: 1px solid rgba(255,255,255,0.22); border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+    .lang-btn { padding: 5px 12px; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); transition: all 0.18s; }
+    .lang-btn + .lang-btn { border-left: 1px solid rgba(255,255,255,0.22); }
+    .lang-btn.active { background: rgba(255,255,255,0.18); color: #fff; }
+
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 60px 24px 100px; }
+
+    .article-hero { background: linear-gradient(135deg, #0a1a3d 0%, #1a3a8e 100%); border-radius: 24px; padding: 52px 48px; margin-bottom: 48px; position: relative; overflow: hidden; }
+    .article-hero::before { content: '⚖️'; position: absolute; right: 32px; top: 32px; font-size: 80px; opacity: 0.15; }
+    .article-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(26,122,110,0.3); border: 1px solid rgba(26,122,110,0.5); border-radius: 50px; font-size: 12px; font-weight: 700; color: #6ee7da; padding: 4px 14px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+    .article-title { font-size: clamp(22px, 3.5vw, 34px); font-weight: 900; color: #fff; line-height: 1.3; margin-bottom: 20px; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 20px; }
+    .article-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.65); }
+    .article-meta-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+
+    .lang-switch-banner { background: var(--gray); border: 1px solid var(--gray2); border-radius: 14px; padding: 14px 20px; margin-bottom: 40px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .lang-switch-banner span { font-size: 14px; color: var(--muted); }
+    .lang-switch-link { font-size: 13px; font-weight: 700; color: var(--teal2); border: 1px solid var(--teal2); border-radius: 50px; padding: 6px 16px; transition: all 0.2s; white-space: nowrap; }
+    .lang-switch-link:hover { background: var(--teal2); color: #fff; }
+
+    .abstract { background: linear-gradient(135deg, rgba(26,122,110,0.06), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 16px 16px 0; padding: 24px 28px; margin-bottom: 48px; }
+    .abstract-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--teal2); margin-bottom: 10px; }
+    .abstract p { font-size: 15px; color: #2a3a4a; line-height: 1.85; margin: 0; font-style: italic; }
+
+    .article-body h2 { font-size: 24px; font-weight: 900; color: var(--navy); margin: 52px 0 16px; line-height: 1.35; padding-bottom: 12px; border-bottom: 2px solid var(--gray2); }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-size: 19px; font-weight: 800; color: var(--navy2); margin: 36px 0 12px; }
+    .article-body p { font-size: 16px; color: #2a2a3e; line-height: 1.95; margin-bottom: 20px; }
+    .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .article-body li { font-size: 15px; color: #3a3a50; line-height: 1.75; }
+    .article-body strong { color: var(--navy); }
+
+    .callout { background: linear-gradient(135deg, rgba(26,122,110,0.07), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: var(--navy); font-style: italic; line-height: 1.85; }
+    .callout strong { color: var(--teal); font-style: normal; }
+
+    .dx-card { background: var(--gray); border-radius: 16px; padding: 26px 28px; margin: 24px 0; border-left: 4px solid var(--teal2); }
+    .dx-card .dx-num { font-size: 11px; font-weight: 800; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
+    .dx-card h3 { font-size: 19px; font-weight: 900; color: var(--navy); margin: 0 0 6px; }
+    .dx-card .dx-abbr { font-size: 13px; color: var(--muted); font-weight: 600; margin-bottom: 14px; }
+    .dx-card p { font-size: 15px; color: #3a3a50; line-height: 1.85; margin-bottom: 10px; }
+    .dx-card p:last-child { margin-bottom: 0; }
+    .dx-card .key-sign { background: rgba(13,37,69,0.06); border-radius: 10px; padding: 12px 16px; margin: 12px 0; }
+    .dx-card .key-sign strong { font-size: 12px; color: var(--teal2); letter-spacing: 1px; text-transform: uppercase; display: block; margin-bottom: 6px; }
+    .dx-card .key-sign ul { padding-left: 16px; margin: 0; }
+    .dx-card .key-sign li { font-size: 14px; color: var(--navy2); line-height: 1.65; }
+
+    .warning-alert { background: #fff0f0; border: 1px solid #e57373; border-radius: 12px; padding: 18px 22px; margin: 20px 0; }
+    .warning-alert .w-label { font-size: 12px; font-weight: 800; color: #8a0000; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .warning-alert p { font-size: 15px; color: #5a0000; line-height: 1.8; margin: 0; }
+
+    .compare-table { width: 100%; border-collapse: collapse; margin: 28px 0; font-size: 14px; overflow-x: auto; display: block; }
+    .compare-table th { background: var(--navy); color: #fff; padding: 12px 14px; text-align: left; font-size: 12px; font-weight: 800; white-space: nowrap; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid var(--gray2); color: #2a2a3e; vertical-align: top; line-height: 1.6; }
+    .compare-table tr:nth-child(even) td { background: var(--gray); }
+    .compare-table td:first-child { font-weight: 800; color: var(--navy); white-space: nowrap; }
+    .compare-table .resp-good { color: #1a7a1a; font-weight: 700; }
+    .compare-table .resp-poor { color: #8a0000; font-weight: 700; }
+    .compare-table .resp-limited { color: #7a5a00; font-weight: 700; }
+
+    .evidence-box { background: var(--gray); border-radius: 14px; padding: 20px 24px; margin: 28px 0; }
+    .evidence-box h4 { font-size: 12px; font-weight: 800; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .evidence-box ul { margin: 0; }
+    .evidence-box li { font-size: 13px; color: var(--muted); }
+
+    .sig-block { border-top: 2px solid var(--gray2); margin-top: 48px; padding-top: 24px; }
+    .sig-main { font-size: 14px; color: var(--navy); font-weight: 700; margin-bottom: 12px; line-height: 1.7; }
+    .sig-creds { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+    .sig-creds li { font-size: 13px; color: var(--muted); padding-left: 14px; position: relative; line-height: 1.6; }
+    .sig-creds li::before { content: "·"; position: absolute; left: 0; color: var(--teal2); font-weight: 900; }
+    .sig-notice { font-size: 12px; color: var(--muted); font-style: italic; line-height: 1.7; }
+
+    .related { margin-top: 64px; }
+    .related h3 { font-size: 20px; font-weight: 900; color: var(--navy); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .related-card { background: var(--gray); border-radius: 16px; padding: 20px; border: 1px solid var(--gray2); transition: transform 0.2s; }
+    .related-card:hover { transform: translateY(-3px); }
+    .related-card .tag { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .related-card h4 { font-size: 15px; font-weight: 800; color: var(--navy); line-height: 1.4; }
+
+    footer { background: #0a1a32; color: rgba(255,255,255,0.5); padding: 32px 0; }
+    .footer-bottom { max-width: 900px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 12px; }
+
+    @media (max-width: 600px) {
+      .article-hero { padding: 36px 28px; }
+      .related-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/en/" class="nav-logo">Nerv<span>Lock</span></a>
+    <a href="/en/#blog" class="nav-back">← Medical Blog</a>
+    <div class="lang-toggle">
+      <a href="/blog/파킨슨-감별진단/" class="lang-btn">KR</a>
+      <a href="/blog/parkinson-plus-syndromes/" class="lang-btn active">EN</a>
+    </div>
+  </div>
+</nav>
+
+<div class="article-wrap">
+
+  <div class="article-hero">
+    <div class="article-tag">Neuroscience</div>
+    <h1 class="article-title">Parkinson's Disease vs.<br>Parkinson-Plus Syndromes:<br>A Clinical Differential Diagnosis Guide</h1>
+    <div class="article-meta">
+      <div class="article-meta-item">👨‍⚕️ <strong>Dr. Claire Ham</strong> — Neurologist, NervLock Founder</div>
+      <div class="article-meta-item">📅 June 2, 2026</div>
+      <div class="article-meta-item">⏱ 8 min read</div>
+    </div>
+  </div>
+
+  <div class="lang-switch-banner">
+    <span>🇰🇷 이 글의 한국어 버전을 보시겠습니까?</span>
+    <a href="/blog/파킨슨-감별진단/" class="lang-switch-link">한국어로 읽기 →</a>
+  </div>
+
+  <div class="abstract">
+    <div class="abstract-label">Abstract</div>
+    <p>The atypical parkinsonian syndromes — multiple system atrophy (MSA), progressive supranuclear palsy (PSP), Lewy body dementia (LBD), and corticobasal syndrome (CBS) — collectively account for approximately 15–25% of parkinsonism cases presenting to specialist movement disorder clinics. Their distinction from Parkinson's disease carries profound implications for prognosis, therapeutic decision-making, and safety counseling. This article provides a structured clinical framework for differentiating these conditions, with emphasis on the "red flags" that should prompt diagnostic reassessment and the irreversible consequences of misdiagnosis.</p>
+  </div>
+
+  <div class="article-body">
+
+    <h2>1. The Differential Diagnostic Framework</h2>
+    <p>The clinical diagnosis of Parkinson's disease rests on the 2015 Movement Disorder Society (MDS) criteria: bradykinesia plus at least one of resting tremor or rigidity, combined with supportive criteria and the absence of absolute exclusion criteria. A robust, sustained levodopa response — the most powerful single clinical argument for idiopathic Parkinson's disease — is absent or limited in all atypical syndromes.</p>
+    <p>The following "red flags" should prompt consideration of an alternative diagnosis, particularly when two or more are present:</p>
+    <ul>
+      <li><strong>Early falls</strong> — within the first year of symptom onset</li>
+      <li><strong>Rapid motor progression</strong> — requiring wheelchair within 3 years</li>
+      <li><strong>Early severe autonomic failure</strong> — symptomatic orthostatic hypotension or urogenital dysfunction within the first year</li>
+      <li><strong>Absent resting tremor</strong> — present in &gt;70% of Parkinson's disease at diagnosis</li>
+      <li><strong>Symmetric onset</strong> — Parkinson's disease characteristically begins asymmetrically</li>
+      <li><strong>Poor or absent levodopa response</strong> at adequate doses</li>
+      <li><strong>Early cognitive impairment or prominent hallucinations</strong></li>
+      <li><strong>Vertical gaze palsy</strong> — pathognomonic for PSP when present</li>
+      <li><strong>Inspiratory stridor</strong> — characteristic of MSA</li>
+    </ul>
+
+    <div class="callout">
+      <strong>Diagnostic principle:</strong> The levodopa challenge is not merely a therapeutic maneuver — it is a diagnostic tool. A clear, sustained motor benefit from adequate levodopa doses (at least 600 mg/day of levodopa for at least 4 weeks) substantially raises the probability of Parkinson's disease. Its absence is among the most powerful arguments for an atypical etiology.
+    </div>
+
+    <h2>2. Multiple System Atrophy (MSA)</h2>
+
+    <div class="dx-card">
+      <div class="dx-num">Syndrome 01</div>
+      <h3>Multiple System Atrophy</h3>
+      <p class="dx-abbr">MSA — Alpha-synucleinopathy · Oligodendroglial glial cytoplasmic inclusions</p>
+      <p>MSA is characterized by parkinsonism combined with autonomic failure and/or cerebellar ataxia, arising from oligodendroglial alpha-synuclein inclusions (glial cytoplasmic inclusions, GCIs) that cause degeneration across the striatum, cerebellum, brainstem, and spinal autonomic neurons — hence "multiple system."</p>
+      <div class="key-sign">
+        <strong>Key Distinguishing Features</strong>
+        <ul>
+          <li>Symptomatic orthostatic hypotension (systolic BP drop ≥20 mmHg or diastolic ≥10 mmHg within 3 minutes of standing) — often the presenting complaint</li>
+          <li>Urogenital dysfunction: urinary urgency/retention, erectile dysfunction — typically preceding or concurrent with motor onset</li>
+          <li>Cerebellar ataxia: wide-based gait, dysarthria, limb incoordination (MSA-C subtype)</li>
+          <li>Inspiratory stridor — a characteristic, sometimes life-threatening finding in advanced MSA</li>
+          <li>MRI: "hot cross bun sign" in the pons; putaminal atrophy with hypointense rim on T2 (MSA-P subtype)</li>
+        </ul>
+      </div>
+      <p>Levodopa response is poor in most patients; a minority show transient early benefit that diminishes within 1–2 years. Disease progression is substantially faster than Parkinson's disease, with median survival from diagnosis of approximately 6–10 years.</p>
+    </div>
+
+    <h2>3. Progressive Supranuclear Palsy (PSP)</h2>
+
+    <div class="dx-card">
+      <div class="dx-num">Syndrome 02</div>
+      <h3>Progressive Supranuclear Palsy</h3>
+      <p class="dx-abbr">PSP — Primary 4-repeat tauopathy · MAPT gene · Richardson syndrome (classic)</p>
+      <p>PSP is a primary tauopathy (4-repeat tau, same isoform as corticobasal degeneration) producing a distinctive syndrome dominated by vertical supranuclear gaze palsy — particularly impaired downward saccades — early postural instability with backward falls, axial rigidity greater than appendicular rigidity, and frontal-subcortical cognitive dysfunction.</p>
+      <div class="key-sign">
+        <strong>Key Distinguishing Features</strong>
+        <ul>
+          <li>Vertical supranuclear gaze palsy: inability to voluntarily look downward, causing difficulty reading, descending stairs, and making eye contact during conversation — often an early, under-recognized symptom</li>
+          <li>Early backward falls — within the first year, often before formal diagnosis</li>
+          <li>Axial rigidity predominance — neck and trunk more rigid than limbs; retrocollis may produce the characteristic "surprised look" facial expression</li>
+          <li>Frontal cognitive dysfunction: executive impairment, apathy, pseudobulbar affect</li>
+          <li>MRI: midbrain tegmentum atrophy — "hummingbird sign" (midsagittal view) and "Mickey Mouse sign" (axial view) reflecting selective midbrain atrophy relative to the pons</li>
+        </ul>
+      </div>
+      <p>Levodopa response is absent or minimal. Dysphagia and dysarthria typically develop within 3–5 years, significantly increasing aspiration risk. Median survival from symptom onset is approximately 7 years.</p>
+    </div>
+
+    <h2>4. Lewy Body Dementia (LBD)</h2>
+
+    <div class="dx-card">
+      <div class="dx-num">Syndrome 03</div>
+      <h3>Lewy Body Dementia</h3>
+      <p class="dx-abbr">LBD (DLB + PDD) — Cortical alpha-synuclein pathology</p>
+      <p>LBD — encompassing dementia with Lewy bodies (DLB) and Parkinson's disease dementia (PDD) — shares the alpha-synuclein pathology of Parkinson's disease but is distinguished by the prominence and early onset of cognitive and neuropsychiatric features relative to motor symptoms. The "one-year rule" remains the operational clinical distinction: DLB is diagnosed when dementia onset precedes or occurs within one year of parkinsonism; PDD when dementia develops more than one year after established parkinsonism.</p>
+      <div class="key-sign">
+        <strong>Core Diagnostic Features (DLB — two core = probable diagnosis)</strong>
+        <ul>
+          <li>Fluctuating cognition: pronounced day-to-day variation in attention and alertness, with episodes of apparent confusion alternating with periods of relative clarity</li>
+          <li>Recurrent well-formed visual hallucinations: characteristically vivid, detailed, and often benign in content (people, animals) — present in ~80% of DLB</li>
+          <li>REM sleep behavior disorder (RBD): acting out dreams with vocalization and limb movements — may precede cognitive symptoms by years</li>
+          <li>Spontaneous parkinsonism: present in most patients, though often milder and more symmetric than idiopathic PD</li>
+        </ul>
+      </div>
+      <p>Levodopa response is limited. Cognitive and neuropsychiatric symptoms often drive clinical management more than motor features.</p>
+    </div>
+
+    <div class="warning-alert">
+      <div class="w-label">⚠️ Critical Safety Consideration: Neuroleptic Sensitivity</div>
+      <p>Patients with LBD exhibit severe, sometimes irreversible sensitivity to antipsychotic medications — particularly typical antipsychotics (haloperidol, chlorpromazine) and many atypicals (risperidone, olanzapine). Even low doses can precipitate acute, severe parkinsonism, impaired consciousness, and autonomic instability resembling neuroleptic malignant syndrome. This contraindication must be documented prominently in the medical record and communicated explicitly to all treating clinicians, including emergency physicians. When antipsychotic therapy is unavoidable for severe behavioral disturbance, clozapine or low-dose quetiapine (with careful monitoring) are the agents with the best-characterized safety profiles in LBD.</p>
+    </div>
+
+    <h2>5. Corticobasal Syndrome (CBS)</h2>
+
+    <div class="dx-card">
+      <div class="dx-num">Syndrome 04</div>
+      <h3>Corticobasal Syndrome</h3>
+      <p class="dx-abbr">CBS — Heterogeneous pathology (CBD, PSP, AD, CJD)</p>
+      <p>CBS is characterized by markedly asymmetric parkinsonism combined with cortical signs reflecting parietal and frontal lobe dysfunction: limb apraxia (inability to perform learned motor sequences despite intact primary motor and sensory function), cortical sensory loss (astereognosis, agraphesthesia), and the alien limb phenomenon — involuntary, quasi-purposive movements of one limb experienced by the patient as foreign to their own volition.</p>
+      <div class="key-sign">
+        <strong>Key Distinguishing Features</strong>
+        <ul>
+          <li>Marked limb asymmetry — typically one arm is severely affected while the other remains relatively spared</li>
+          <li>Limb apraxia — the patient knows what they want to do but cannot execute the movement correctly</li>
+          <li>Alien limb phenomenon — present in fewer than 50% but pathognomonically distinctive; the affected limb moves independently, sometimes appearing to "reach for" objects without conscious intent</li>
+          <li>Cortical sensory loss — inability to identify objects by touch (astereognosis) or numbers drawn on the skin (agraphesthesia)</li>
+          <li>MRI: asymmetric parietal atrophy contralateral to the more affected limb</li>
+        </ul>
+      </div>
+      <p>A critical caveat: CBS is a clinical syndrome, not a pathological diagnosis. The underlying histopathology is heterogeneous — corticobasal degeneration (CBD, a 4-repeat tauopathy), PSP pathology, Alzheimer's disease, or Creutzfeldt-Jakob disease may each produce an identical clinical picture. Ante-mortem pathological confirmation is not possible. Levodopa response is typically absent. Management is supportive: botulinum toxin for focal dystonia, occupational therapy for apraxia, and clonazepam for the alien limb.</p>
+    </div>
+
+    <h2>6. Comparative Summary</h2>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Diagnosis</th>
+          <th>Distinguishing Features</th>
+          <th>Levodopa Response</th>
+          <th>Key Imaging</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Parkinson's Disease</td>
+          <td>Asymmetric onset, resting tremor, anosmia, good levodopa response</td>
+          <td class="resp-good">Robust, sustained</td>
+          <td>DAT scan: reduced</td>
+        </tr>
+        <tr>
+          <td>MSA</td>
+          <td>Early autonomic failure, cerebellar signs, inspiratory stridor</td>
+          <td class="resp-poor">Poor/absent</td>
+          <td>Hot cross bun sign; putaminal rim</td>
+        </tr>
+        <tr>
+          <td>PSP</td>
+          <td>Vertical gaze palsy, backward falls, axial rigidity</td>
+          <td class="resp-poor">Absent</td>
+          <td>Hummingbird sign (midbrain atrophy)</td>
+        </tr>
+        <tr>
+          <td>LBD (DLB)</td>
+          <td>Fluctuating cognition, visual hallucinations, RBD, neuroleptic sensitivity</td>
+          <td class="resp-limited">Limited</td>
+          <td>DAT scan: reduced; occipital hypometabolism</td>
+        </tr>
+        <tr>
+          <td>CBS</td>
+          <td>Asymmetric cortical signs, apraxia, alien limb</td>
+          <td class="resp-poor">Absent</td>
+          <td>Asymmetric parietal atrophy</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <strong>When to seek specialist reassessment:</strong> If levodopa does not produce a clear motor benefit at adequate doses after 4–8 weeks; if early falls, vertical gaze abnormalities, prominent autonomic dysfunction, or early cognitive impairment are present; or if symptoms are symmetric from the outset — these patterns warrant formal reassessment at a specialist movement disorder centre. Early accurate diagnosis directly impacts safety counseling, prognostic guidance, and eligibility for disease-specific clinical trials.
+    </div>
+
+    <div class="evidence-box">
+      <h4>📚 Key References</h4>
+      <ul>
+        <li>Postuma RB et al. (2015). MDS clinical diagnostic criteria for Parkinson's disease. <em>Movement Disorders</em> 30(12):1591-1601</li>
+        <li>Wenning GK et al. (2022). The Movement Disorder Society criteria for the diagnosis of multiple system atrophy. <em>Movement Disorders</em> 37(6):1131-1148</li>
+        <li>McKeith IG et al. (2017). Diagnosis and management of dementia with Lewy bodies: Fourth consensus report of the DLB Consortium. <em>Neurology</em> 89(1):88-100</li>
+        <li>Armstrong MJ et al. (2013). Criteria for the diagnosis of corticobasal degeneration. <em>Neurology</em> 80(5):496-503</li>
+        <li>Höglinger GU et al. (2017). Clinical diagnosis of progressive supranuclear palsy: The Movement Disorder Society criteria. <em>Movement Disorders</em> 32(6):853-864</li>
+      </ul>
+    </div>
+
+    <div class="related">
+      <h3>Related Articles</h3>
+      <div class="related-grid">
+        <a href="/blog/levodopa-long-term-misconceptions/" class="related-card">
+          <div class="tag">Neuroscience</div>
+          <h4>Levodopa Long-Term Use in Parkinson's Disease: Separating Evidence from Misconception</h4>
+        </a>
+        <a href="/blog/parkinsonism-differential-causes/" class="related-card">
+          <div class="tag">Neuroscience</div>
+          <h4>Beyond Parkinson's Disease: Understanding the Differential Diagnosis of Parkinsonism</h4>
+        </a>
+      </div>
+    </div>
+
+    <div class="sig-block">
+      <p class="sig-main">Written by <strong>Dr. Claire Ham</strong>, Neurologist, M.D.</p>
+      <ul class="sig-creds">
+        <li>Trained at Yonsei University Severance Hospital</li>
+        <li>Member, Korean Neurological Association</li>
+        <li>Member, Korean Parkinson's Disease and Movement Disorder Society</li>
+        <li>Member, Korean Society of Functional Medicine</li>
+      </ul>
+      <p class="sig-notice">※ This content is for informational purposes only and does not constitute medical advice.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2026 NervLock. All rights reserved.</p>
+    <p>This article is for informational purposes only and does not constitute medical advice.</p>
+  </div>
+</footer>
+
+</body>
+</html>
