@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Why Levodopa Doses Increase Over Time in Parkinson's Disease: Disease Progression, Not Tolerance | NervLock</title>
+  <meta name="description" content="Levodopa dose escalation in Parkinson's disease reflects disease progression — not pharmacological tolerance. Three mechanisms explained with clinical evidence."/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; color: #1a1a2e; background: #fff; font-size: 17px; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    :root {
+      --navy: #0d2545; --navy2: #163561;
+      --teal: #1a7a6e; --teal2: #22a090;
+      --gold: #b8922a; --gold2: #d4a843;
+      --gray: #f4f6f9; --gray2: #e8ecf2;
+      --muted: #5a6278;
+    }
+
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(13,37,69,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-logo { font-size: 20px; font-weight: 900; color: #fff; white-space: nowrap; }
+    .nav-logo span { color: var(--gold2); }
+    .nav-back { font-size: 14px; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold2); }
+    .lang-toggle { display: flex; border: 1px solid rgba(255,255,255,0.22); border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+    .lang-btn { padding: 5px 12px; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); transition: all 0.18s; }
+    .lang-btn + .lang-btn { border-left: 1px solid rgba(255,255,255,0.22); }
+    .lang-btn.active { background: rgba(255,255,255,0.18); color: #fff; }
+
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 60px 24px 100px; }
+
+    .article-hero { background: linear-gradient(135deg, #1a0545 0%, #3d1a8e 100%); border-radius: 24px; padding: 52px 48px; margin-bottom: 48px; position: relative; overflow: hidden; }
+    .article-hero::before { content: '💊'; position: absolute; right: 32px; top: 32px; font-size: 80px; opacity: 0.15; }
+    .article-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(26,122,110,0.3); border: 1px solid rgba(26,122,110,0.5); border-radius: 50px; font-size: 12px; font-weight: 700; color: #6ee7da; padding: 4px 14px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+    .article-title { font-size: clamp(22px, 3.5vw, 34px); font-weight: 900; color: #fff; line-height: 1.3; margin-bottom: 20px; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 20px; }
+    .article-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.65); }
+    .article-meta-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+
+    .lang-switch-banner { background: var(--gray); border: 1px solid var(--gray2); border-radius: 14px; padding: 14px 20px; margin-bottom: 40px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .lang-switch-banner span { font-size: 14px; color: var(--muted); }
+    .lang-switch-link { font-size: 13px; font-weight: 700; color: var(--teal2); border: 1px solid var(--teal2); border-radius: 50px; padding: 6px 16px; transition: all 0.2s; white-space: nowrap; }
+    .lang-switch-link:hover { background: var(--teal2); color: #fff; }
+
+    .abstract { background: linear-gradient(135deg, rgba(26,122,110,0.06), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 16px 16px 0; padding: 24px 28px; margin-bottom: 48px; }
+    .abstract-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--teal2); margin-bottom: 10px; }
+    .abstract p { font-size: 15px; color: #2a3a4a; line-height: 1.85; margin: 0; font-style: italic; }
+
+    .article-body h2 { font-size: 24px; font-weight: 900; color: var(--navy); margin: 52px 0 16px; line-height: 1.35; padding-bottom: 12px; border-bottom: 2px solid var(--gray2); }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-size: 19px; font-weight: 800; color: var(--navy2); margin: 36px 0 12px; }
+    .article-body p { font-size: 16px; color: #2a2a3e; line-height: 1.95; margin-bottom: 20px; }
+    .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .article-body li { font-size: 15px; color: #3a3a50; line-height: 1.75; }
+    .article-body strong { color: var(--navy); }
+
+    .callout { background: linear-gradient(135deg, rgba(26,122,110,0.07), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: var(--navy); font-style: italic; line-height: 1.85; }
+    .callout strong { color: var(--teal); font-style: normal; }
+
+    .reason-card { background: var(--gray); border-radius: 16px; padding: 24px 28px; margin: 24px 0; border-left: 4px solid var(--teal2); }
+    .reason-card .reason-num { font-size: 11px; font-weight: 800; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+    .reason-card h3 { font-size: 18px; font-weight: 800; color: var(--navy); margin: 0 0 12px; }
+    .reason-card p { font-size: 15px; color: #3a3a50; line-height: 1.85; margin-bottom: 10px; }
+    .reason-card p:last-child { margin-bottom: 0; }
+
+    .flow-box { background: rgba(13,37,69,0.05); border-radius: 12px; padding: 16px 20px; margin: 16px 0; text-align: center; font-size: 14px; color: var(--navy2); font-weight: 700; letter-spacing: 0.5px; line-height: 2; }
+
+    .warning-box { background: #fff0f0; border: 1px solid #e57373; border-radius: 14px; padding: 22px 26px; margin: 32px 0; }
+    .warning-box .w-title { font-size: 14px; font-weight: 800; color: #8a0000; margin-bottom: 12px; }
+    .warning-box p { font-size: 15px; color: #5a0000; margin-bottom: 10px; line-height: 1.8; }
+    .warning-box p:last-child { margin-bottom: 0; }
+    .warning-box ul { padding-left: 20px; margin-bottom: 10px; }
+    .warning-box li { font-size: 14px; color: #5a0000; line-height: 1.75; }
+
+    .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 24px 0; }
+    .summary-card { background: var(--gray); border-radius: 14px; padding: 18px 20px; border-top: 3px solid var(--teal2); }
+    .summary-card .sc-num { font-size: 28px; font-weight: 900; color: var(--teal2); margin-bottom: 6px; }
+    .summary-card p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+
+    .evidence-box { background: var(--gray); border-radius: 14px; padding: 20px 24px; margin: 28px 0; }
+    .evidence-box h4 { font-size: 12px; font-weight: 800; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .evidence-box ul { margin: 0; }
+    .evidence-box li { font-size: 13px; color: var(--muted); }
+
+    .sig-block { border-top: 2px solid var(--gray2); margin-top: 48px; padding-top: 24px; }
+    .sig-main { font-size: 14px; color: var(--navy); font-weight: 700; margin-bottom: 12px; line-height: 1.7; }
+    .sig-creds { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+    .sig-creds li { font-size: 13px; color: var(--muted); padding-left: 14px; position: relative; line-height: 1.6; }
+    .sig-creds li::before { content: "·"; position: absolute; left: 0; color: var(--teal2); font-weight: 900; }
+    .sig-notice { font-size: 12px; color: var(--muted); font-style: italic; line-height: 1.7; }
+
+    .related { margin-top: 64px; }
+    .related h3 { font-size: 20px; font-weight: 900; color: var(--navy); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .related-card { background: var(--gray); border-radius: 16px; padding: 20px; border: 1px solid var(--gray2); transition: transform 0.2s; }
+    .related-card:hover { transform: translateY(-3px); }
+    .related-card .tag { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .related-card h4 { font-size: 15px; font-weight: 800; color: var(--navy); line-height: 1.4; }
+
+    footer { background: #0a1a32; color: rgba(255,255,255,0.5); padding: 32px 0; }
+    .footer-bottom { max-width: 900px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 12px; }
+
+    @media (max-width: 600px) {
+      .article-hero { padding: 36px 28px; }
+      .related-grid, .summary-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/en/" class="nav-logo">Nerv<span>Lock</span></a>
+    <a href="/en/#blog" class="nav-back">← Medical Blog</a>
+    <div class="lang-toggle">
+      <a href="/blog/파킨슨-약물용량/" class="lang-btn">KR</a>
+      <a href="/blog/parkinson-medication-dosage/" class="lang-btn active">EN</a>
+    </div>
+  </div>
+</nav>
+
+<div class="article-wrap">
+
+  <div class="article-hero">
+    <div class="article-tag">Neuroscience</div>
+    <h1 class="article-title">Why Levodopa Doses Increase<br>Over Time in Parkinson's Disease:<br>Disease Progression, Not Tolerance</h1>
+    <div class="article-meta">
+      <div class="article-meta-item">👨‍⚕️ <strong>Dr. Claire Ham</strong> — Neurologist, NervLock Founder</div>
+      <div class="article-meta-item">📅 June 3, 2026</div>
+      <div class="article-meta-item">⏱ 7 min read</div>
+    </div>
+  </div>
+
+  <div class="lang-switch-banner">
+    <span>🇰🇷 이 글의 한국어 버전을 보시겠습니까?</span>
+    <a href="/blog/파킨슨-약물용량/" class="lang-switch-link">한국어로 읽기 →</a>
+  </div>
+
+  <div class="abstract">
+    <div class="abstract-label">Abstract</div>
+    <p>A frequent source of anxiety for patients with Parkinson's disease and their caregivers is the progressive increase in levodopa dosing requirements over the disease course. This phenomenon is commonly — and incorrectly — attributed to pharmacological tolerance. This article clarifies the three principal biological mechanisms responsible for escalating levodopa requirements, reviews the evidence on wearing-off and dyskinesia management, and underscores the serious risks of unsupervised dose modification.</p>
+  </div>
+
+  <div class="article-body">
+
+    <h2>1. Tolerance vs. Disease Progression: A Critical Distinction</h2>
+    <p>Pharmacological tolerance is a well-defined phenomenon: a diminishing drug response at a fixed dose, requiring escalation to achieve equivalent therapeutic effect. It is clearly characterized with opioids, benzodiazepines, and nitrates — drug classes in which receptor downregulation, signal desensitization, or pharmacokinetic adaptation genuinely reduce drug effect at a given dose.</p>
+    <p>Levodopa dose escalation in Parkinson's disease is mechanistically distinct. It does not arise from receptor downregulation or pharmacodynamic adaptation to levodopa itself. Rather, it reflects the <strong>progressive loss of the biological substrate upon which levodopa depends for its therapeutic action</strong> — the nigrostriatal dopaminergic terminals that convert, store, and release dopamine in a physiologically regulated manner. The drug retains its intrinsic efficacy throughout the disease course. It is the neural environment in which it acts that has changed.</p>
+
+    <div class="callout">
+      <strong>Key conceptual reframe:</strong> When a patient asks "is levodopa becoming less effective?", the more accurate clinical answer is: "levodopa works as well as ever — but the brain's capacity to handle it has decreased as the disease progresses." This distinction matters enormously for treatment adherence and for preventing dangerous self-directed dose reductions.
+    </div>
+
+    <h2>2. Mechanism 1: Progressive Loss of Presynaptic Buffering Capacity</h2>
+
+    <div class="reason-card">
+      <div class="reason-num">Mechanism 01</div>
+      <h3>Nigrostriatal Terminal Loss and the Vanishing Buffer</h3>
+      <p>In early Parkinson's disease, a sufficient complement of surviving dopaminergic nigrostriatal terminals performs a critical pharmacokinetic function: absorbing exogenous levodopa, converting it to dopamine, storing it in synaptic vesicles, and releasing it in a physiologically regulated, demand-responsive manner. This presynaptic machinery acts as a pharmacokinetic buffer — smoothing the oscillations in plasma levodopa concentration that are an inherent consequence of intermittent oral dosing.</p>
+      <p>As nigrostriatal neurodegeneration advances and terminal density falls below a critical threshold — recognizing that at clinical diagnosis, approximately 60–80% of substantia nigra pars compacta neurons are already lost — this buffering capacity is progressively depleted. Striatal dopamine concentrations increasingly mirror the kinetics of plasma levodopa: rising sharply after each dose and falling precipitously as intestinal absorption wanes.</p>
+      <div class="flow-box">
+        Neuronal loss → Reduced vesicular storage → Plasma levodopa drives striatal dopamine directly → Pulsatile receptor stimulation → Narrowing therapeutic window → Higher / more frequent doses required
+      </div>
+      <p>The consequence is a direct, mechanistically intelligible relationship between disease stage and dose requirement — not a drug losing its potency, but a pharmacokinetic system losing its buffering capacity as the underlying neurodegenerative process advances.</p>
+    </div>
+
+    <h2>3. Mechanism 2: Wearing-Off and Therapeutic Window Narrowing</h2>
+
+    <div class="reason-card">
+      <div class="reason-num">Mechanism 02</div>
+      <h3>Wearing-Off: The Clinical Expression of Lost Buffering</h3>
+      <p>The wearing-off phenomenon — re-emergence of parkinsonian motor symptoms (rigidity, bradykinesia, resting tremor) before the next scheduled dose — is the direct clinical manifestation of diminished presynaptic buffering. As terminal density falls, the therapeutic benefit from each levodopa dose becomes increasingly tied to plasma concentration: as plasma levodopa falls below a patient-specific threshold, motor benefit dissipates predictably.</p>
+      <p>Wearing-off affects approximately 40% of patients within 4–6 years of levodopa initiation and up to 70% after 9 years in prospective cohort studies (Hauser et al., 2006). It is recognized by its temporal relationship to the dosing schedule: predictable motor worsening in the hour before the next dose, morning akinesia on waking before the first dose, and consistent improvement within 20–40 minutes of each dose.</p>
+      <p>When wearing-off emerges, the treating neurologist's response involves dose optimization — not pharmacological rationing. Evidence-based strategies include: increased dosing frequency; addition of <strong>COMT inhibitors</strong> (entacapone, opicapone) to extend levodopa's effective plasma half-life by blocking its peripheral metabolism; addition of <strong>MAO-B inhibitors</strong> (rasagiline, safinamide) to reduce central dopamine catabolism; and transition to continuous dopaminergic stimulation via intestinal gel infusion or transdermal rotigotine in advanced cases.</p>
+    </div>
+
+    <h2>4. Mechanism 3: Dose Fractionation for Dyskinesia Management</h2>
+
+    <div class="reason-card">
+      <div class="reason-num">Mechanism 03</div>
+      <h3>Dyskinesia Management Through Dose Fractionation</h3>
+      <p>Levodopa-induced dyskinesia (LID) — involuntary choreiform movements occurring at peak plasma levodopa concentrations — arises when high-amplitude plasma oscillations drive pulsatile D1 receptor stimulation in the dopamine-depleted striatum. The neurobiological mechanism involves maladaptive corticostriatal synaptic plasticity, with ERK1/2 dysregulation and ΔFosB accumulation producing altered sensitivity to dopaminergic input at concentration peaks.</p>
+      <p>The management strategy for established LID paradoxically requires a dosing restructuring that frequently increases total daily levodopa dose while reducing individual dose size. The pharmacokinetic rationale is to minimize concentration peaks (which drive dyskinesia) while maintaining adequate trough concentrations (to prevent wearing-off) — compressing oscillation amplitude without sacrificing mean dopaminergic tone.</p>
+      <p>Dose fractionation — dividing the total daily levodopa requirement into more frequent, smaller administrations — achieves this objective. The clinical result is a higher daily pill burden and often a modestly higher total daily dose, but with improved motor consistency and reduced dyskinesia severity. Caregivers who observe an increase in the number of daily doses or total daily dose should recognize that this may represent refined pharmacokinetic management rather than evidence of disease deterioration or tolerance.</p>
+    </div>
+
+    <h2>5. The Safety Imperative: Never Modify Doses Unilaterally</h2>
+    <p>The clinical misconception most fraught with danger is not intellectual — it is behavioral: the patient or caregiver who independently reduces or discontinues levodopa to "reset tolerance" or "preserve the drug for later." Two serious consequences follow from this course.</p>
+
+    <div class="warning-box">
+      <div class="w-title">⚠️ Never reduce or stop levodopa without medical supervision</div>
+      <p><strong>Abrupt or rapid dopaminergic withdrawal</strong> can precipitate Parkinsonism-hyperpyrexia syndrome (PHS) — a life-threatening emergency analogous to neuroleptic malignant syndrome:</p>
+      <ul>
+        <li>Hyperthermia (temperature &gt;38–39°C)</li>
+        <li>Severe generalized rigidity and akinesia</li>
+        <li>Altered consciousness — confusion, stupor, or coma</li>
+        <li>Autonomic instability — diaphoresis, tachycardia, labile blood pressure</li>
+        <li>Rhabdomyolysis and risk of acute kidney injury</li>
+      </ul>
+      <p>PHS carries reported mortality rates of 4–20% and requires emergency hospitalization, immediate reinstitution of dopaminergic therapy, and intensive supportive care.</p>
+      <p><strong>Even gradual unsupervised dose reduction</strong> — without triggering full PHS — accelerates functional decline, prolongs OFF periods, increases fall risk, and may precipitate aspiration events in patients with dysphagia. All levodopa modifications must be made in consultation with the treating neurologist.</p>
+    </div>
+
+    <h2>6. The Value of Systematic Symptom Documentation</h2>
+    <p>Rational, individualized dose titration depends critically on characterizing the patient's unique temporal pattern of ON periods, OFF periods, wearing-off timing, and dyskinesia occurrence. No outpatient clinic visit — however thorough — provides the granular pharmacodynamic data that a patient-maintained symptom diary can generate across multiple days and dosing cycles.</p>
+    <p>A structured diary recording: medication administration times; onset and estimated duration of each ON period; timing, duration, and functional impact of OFF periods; and dyskinesia occurrence (time of day, body region, severity rating) gives the neurologist the data foundation for evidence-based, individualized adjustment. This is a high-value clinical contribution that patients and caregivers can make between appointments.</p>
+
+    <h2>7. Summary</h2>
+
+    <div class="summary-grid">
+      <div class="summary-card">
+        <div class="sc-num">01</div>
+        <p>Dopaminergic terminal loss → reduced presynaptic buffering → higher doses needed for equivalent motor control</p>
+      </div>
+      <div class="summary-card">
+        <div class="sc-num">02</div>
+        <p>Wearing-off → dosing frequency and dose size increase to maintain stable therapeutic plasma levels</p>
+      </div>
+      <div class="summary-card">
+        <div class="sc-num">03</div>
+        <p>Dyskinesia management → dose fractionation raises total daily dose while reducing peak concentrations</p>
+      </div>
+    </div>
+
+    <p style="margin-top:24px;">Levodopa dose escalation in Parkinson's disease is an expected, mechanistically explicable feature of long-term management — not a sign of drug failure or pharmacological tolerance. Understanding this distinction enables patients and caregivers to engage with dose optimization as an active therapeutic strategy rather than a reason for alarm, and eliminates the dangerous impulse to self-reduce therapy.</p>
+
+    <div class="evidence-box">
+      <h4>📚 Key References</h4>
+      <ul>
+        <li>Cilia R et al. (2020). Long-duration response to levodopa in patients with Parkinson disease. <em>Neurology</em> 94(10):e1090-e1099</li>
+        <li>Stocchi F et al. (2014). Initiating levodopa/carbidopa therapy with and without entacapone in early Parkinson disease. <em>Annals of Neurology</em> 68(1):18-27</li>
+        <li>Hauser RA et al. (2006). Factors associated with the development of motor fluctuations and dyskinesias in Parkinson disease. <em>Archives of Neurology</em> 63(12):1756-1760</li>
+        <li>Olanow CW &amp; Obeso JA (2000). Preventing levodopa-induced dyskinesias. <em>Annals of Neurology</em> 47(4 Suppl 1):S167-178</li>
+        <li>Bloem BR et al. (2021). Parkinson's disease. <em>The Lancet</em> 397(10291):2284-2303</li>
+      </ul>
+    </div>
+
+    <div class="related">
+      <h3>Related Articles</h3>
+      <div class="related-grid">
+        <a href="/blog/levodopa-long-term-misconceptions/" class="related-card">
+          <div class="tag">Neuroscience</div>
+          <h4>Levodopa Long-Term Use in Parkinson's Disease: Separating Evidence from Misconception</h4>
+        </a>
+        <a href="/blog/parkinson-medication-management/" class="related-card">
+          <div class="tag">Neuroscience</div>
+          <h4>Parkinson's Disease Medication: Levodopa, Motor Fluctuations &amp; Long-Term Management</h4>
+        </a>
+      </div>
+    </div>
+
+    <div class="sig-block">
+      <p class="sig-main">Written by <strong>Dr. Claire Ham</strong>, Neurologist, M.D.</p>
+      <ul class="sig-creds">
+        <li>Trained at Yonsei University Severance Hospital</li>
+        <li>Member, Korean Neurological Association</li>
+        <li>Member, Korean Parkinson's Disease and Movement Disorder Society</li>
+        <li>Member, Korean Society of Functional Medicine</li>
+      </ul>
+      <p class="sig-notice">※ This content is for informational purposes only and does not constitute medical advice.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2026 NervLock. All rights reserved.</p>
+    <p>This article is for informational purposes only and does not constitute medical advice.</p>
+  </div>
+</footer>
+
+</body>
+</html>
