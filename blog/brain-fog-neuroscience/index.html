@@ -1,86 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Brain Fog: Neurobiological Mechanisms and Evidence-Based Nutritional Support | NervLock</title>
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif;color:#1a1a2e;background:#fff;font-size:17px;line-height:1.7}
-a{text-decoration:none;color:inherit}
-:root{--navy:#0d2545;--navy2:#163561;--teal:#1a7a6e;--teal2:#22a090;--gold:#b8922a;--gold2:#d4a843;--gray:#f4f6f9;--gray2:#e8ecf2;--muted:#5a6278}
-nav{position:sticky;top:0;z-index:100;background:rgba(13,37,69,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
-.nav-inner{max-width:900px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.nav-logo{font-size:20px;font-weight:900;color:#fff;white-space:nowrap}.nav-logo span{color:var(--gold2)}
-.nav-back{font-size:14px;color:rgba(255,255,255,.7);display:flex;align-items:center;gap:6px;transition:color .2s}.nav-back:hover{color:var(--gold2)}
-.lang-toggle{display:flex;border:1px solid rgba(255,255,255,.22);border-radius:8px;overflow:hidden;flex-shrink:0}
-.lang-btn{padding:5px 12px;font-size:12px;font-weight:800;letter-spacing:.5px;color:rgba(255,255,255,.5);transition:all .18s}
-.lang-btn+.lang-btn{border-left:1px solid rgba(255,255,255,.22)}
-.lang-btn.active{background:rgba(255,255,255,.18);color:#fff}
-.article-wrap{max-width:760px;margin:0 auto;padding:60px 24px 100px}
-.article-hero{background:linear-gradient(135deg,#1a2450 0%,#0f4f6e 100%);border-radius:24px;padding:52px 48px;margin-bottom:48px;position:relative;overflow:hidden}
-.article-hero::before{content:'🧠';position:absolute;right:32px;top:32px;font-size:80px;opacity:.15}
-.article-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(26,122,110,.3);border:1px solid rgba(26,122,110,.5);border-radius:50px;font-size:12px;font-weight:700;color:#6ee7da;padding:4px 14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px}
-.article-title{font-size:clamp(22px,3.5vw,34px);font-weight:900;color:#fff;line-height:1.3;margin-bottom:20px}
-.article-meta{display:flex;flex-wrap:wrap;gap:20px}
-.article-meta-item{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.65)}
-.article-meta-item strong{color:rgba(255,255,255,.9);font-weight:700}
-.lang-switch-banner{background:var(--gray);border:1px solid var(--gray2);border-radius:14px;padding:14px 20px;margin-bottom:40px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.lang-switch-banner span{font-size:14px;color:var(--muted)}
-.lang-switch-link{font-size:13px;font-weight:700;color:var(--teal2);border:1px solid var(--teal2);border-radius:50px;padding:6px 16px;transition:all .2s;white-space:nowrap}
-.lang-switch-link:hover{background:var(--teal2);color:#fff}
-.abstract{background:linear-gradient(135deg,rgba(26,122,110,.06),rgba(26,122,110,.02));border-left:4px solid var(--teal2);border-radius:0 16px 16px 0;padding:24px 28px;margin-bottom:48px}
-.abstract-label{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--teal2);margin-bottom:10px}
-.abstract p{font-size:15px;color:#2a3a4a;line-height:1.85;margin:0;font-style:italic}
-.article-body h2{font-size:24px;font-weight:900;color:var(--navy);margin:52px 0 16px;line-height:1.35;padding-bottom:12px;border-bottom:2px solid var(--gray2)}
-.article-body h2:first-child{margin-top:0}
-.article-body h3{font-size:19px;font-weight:800;color:var(--navy2);margin:36px 0 12px}
-.article-body p{font-size:16px;color:#2a2a3e;line-height:1.95;margin-bottom:20px}
-.article-body ul,.article-body ol{padding-left:24px;margin-bottom:20px;display:flex;flex-direction:column;gap:10px}
-.article-body li{font-size:15px;color:#3a3a50;line-height:1.75}
-.article-body strong{color:var(--navy)}
-.callout{background:linear-gradient(135deg,rgba(26,122,110,.07),rgba(26,122,110,.02));border-left:4px solid var(--teal2);border-radius:0 12px 12px 0;padding:20px 24px;margin:28px 0;font-size:15px;color:var(--navy);font-style:italic;line-height:1.85}
-.callout strong{color:var(--teal);font-style:normal}
-.evidence-box{background:var(--gray);border-radius:14px;padding:20px 24px;margin:28px 0}
-.evidence-box h4{font-size:12px;font-weight:800;color:var(--teal2);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
-.evidence-box ul{margin:0}
-.evidence-box li{font-size:13px;color:var(--muted)}
-.mech-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
-.mech-card{background:var(--gray);border-radius:14px;padding:18px 20px;border:1px solid var(--gray2)}
-.mech-card h4{font-size:14px;font-weight:800;color:var(--navy);margin-bottom:8px}
-.mech-card p{font-size:13px;color:var(--muted);line-height:1.65;margin:0}
-.nutri-card{background:#fff;border:1px solid var(--gray2);border-radius:16px;padding:22px 26px;margin:16px 0;border-left:4px solid var(--teal2)}
-.nutri-card h4{font-size:16px;font-weight:800;color:var(--navy);margin-bottom:8px;display:flex;align-items:center;gap:10px}
-.nutri-card .badge{font-size:11px;font-weight:700;background:rgba(26,122,110,.1);color:var(--teal);border-radius:50px;padding:3px 10px}
-.nutri-card p{font-size:14px;color:var(--muted);line-height:1.8;margin:0}
-.author-card{background:var(--gray);border-radius:20px;padding:28px 32px;margin-top:64px;display:flex;align-items:flex-start;gap:20px}
-.author-avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--teal));flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:28px}
-.author-info h4{font-size:17px;font-weight:900;color:var(--navy);margin-bottom:4px}
-.author-info .creds{font-size:13px;color:var(--teal);font-weight:600;margin-bottom:10px}
-.author-info p{font-size:13px;color:var(--muted);line-height:1.65;margin:0}
-.cta-banner{background:linear-gradient(135deg,var(--navy),#0f4f6e);border-radius:20px;padding:40px 36px;margin-top:48px;text-align:center}
-.cta-banner h3{font-size:22px;font-weight:900;color:#fff;margin-bottom:10px}
-.cta-banner p{font-size:15px;color:rgba(255,255,255,.7);margin-bottom:24px;line-height:1.7}
-.cta-btn{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#fff;font-size:16px;font-weight:800;padding:14px 36px;border-radius:50px;box-shadow:0 6px 20px rgba(184,146,42,.4);transition:transform .2s}
-.cta-btn:hover{transform:translateY(-2px)}
-.related{margin-top:64px}
-.related h3{font-size:20px;font-weight:900;color:var(--navy);margin-bottom:20px}
-.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.related-card{background:var(--gray);border-radius:16px;padding:20px;border:1px solid var(--gray2)}
-.related-card .tag{font-size:11px;font-weight:700;color:var(--teal);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
-.related-card h4{font-size:15px;font-weight:800;color:var(--navy);line-height:1.4}
-footer{background:#0a1a32;color:rgba(255,255,255,.5);padding:32px 0}
-.footer-bottom{max-width:900px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:12px}
-@media(max-width:600px){.article-hero{padding:36px 28px}.mech-grid,.related-grid{grid-template-columns:1fr}.author-card{flex-direction:column}}
-.sig-block{border-top:2px solid var(--gray2);margin-top:48px;padding-top:24px}
-.sig-main{font-size:14px;color:var(--navy);font-weight:700;margin-bottom:12px;line-height:1.7}
-.sig-creds{list-style:none;padding:0;display:flex;flex-direction:column;gap:5px;margin-bottom:14px}
-.sig-creds li{font-size:13px;color:var(--muted);padding-left:14px;position:relative;line-height:1.6}
-.sig-creds li::before{content:"·";position:absolute;left:0;color:var(--teal2);font-weight:900}
-.sig-notice{font-size:12px;color:var(--muted);font-style:italic;line-height:1.7}
-</style>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brain Fog: Neurobiological Mechanisms and Evidence-Based Nutritional Support | NervLock</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; color: #1a1a2e; background: #fff; font-size: 17px; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    :root {
+      --navy: #0d2545; --navy2: #163561;
+      --teal: #1a7a6e; --teal2: #22a090;
+      --gold: #b8922a; --gold2: #d4a843;
+      --gray: #f4f6f9; --gray2: #e8ecf2;
+      --muted: #5a6278;
+    }
+
+    /* Nav */
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(13,37,69,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-logo { font-size: 20px; font-weight: 900; color: #fff; white-space: nowrap; }
+    .nav-logo span { color: var(--gold2); }
+    .nav-back { font-size: 14px; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold2); }
+    .lang-toggle { display: flex; border: 1px solid rgba(255,255,255,0.22); border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+    .lang-btn { padding: 5px 12px; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); transition: all 0.18s; }
+    .lang-btn + .lang-btn { border-left: 1px solid rgba(255,255,255,0.22); }
+    .lang-btn.active { background: rgba(255,255,255,0.18); color: #fff; }
+
+    /* Article layout */
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 60px 24px 100px; }
+
+    /* Hero header */
+    .article-hero { background: linear-gradient(135deg, #1a2450 0%, #0f4f6e 100%); border-radius: 24px; padding: 52px 48px; margin-bottom: 48px; position: relative; overflow: hidden; }
+    .article-hero::before { content: '🧠'; position: absolute; right: 32px; top: 32px; font-size: 80px; opacity: 0.15; }
+    .article-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(26,122,110,0.3); border: 1px solid rgba(26,122,110,0.5); border-radius: 50px; font-size: 12px; font-weight: 700; color: #6ee7da; padding: 4px 14px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+    .article-title { font-size: clamp(22px, 3.5vw, 34px); font-weight: 900; color: #fff; line-height: 1.3; margin-bottom: 20px; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 20px; }
+    .article-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.65); }
+    .article-meta-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+
+    /* Lang switch banner */
+    .lang-switch-banner { background: var(--gray); border: 1px solid var(--gray2); border-radius: 14px; padding: 14px 20px; margin-bottom: 40px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .lang-switch-banner span { font-size: 14px; color: var(--muted); }
+    .lang-switch-link { font-size: 13px; font-weight: 700; color: var(--teal2); border: 1px solid var(--teal2); border-radius: 50px; padding: 6px 16px; transition: all 0.2s; white-space: nowrap; }
+    .lang-switch-link:hover { background: var(--teal2); color: #fff; }
+
+    /* Abstract box */
+    .abstract { background: linear-gradient(135deg, rgba(26,122,110,0.06), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 16px 16px 0; padding: 24px 28px; margin-bottom: 48px; }
+    .abstract-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--teal2); margin-bottom: 10px; }
+    .abstract p { font-size: 15px; color: #2a3a4a; line-height: 1.85; margin: 0; font-style: italic; }
+
+    /* Article body */
+    .article-body h2 { font-size: 24px; font-weight: 900; color: var(--navy); margin: 52px 0 16px; line-height: 1.35; padding-bottom: 12px; border-bottom: 2px solid var(--gray2); }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-size: 19px; font-weight: 800; color: var(--navy2); margin: 36px 0 12px; }
+    .article-body p { font-size: 16px; color: #2a2a3e; line-height: 1.95; margin-bottom: 20px; }
+    .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .article-body li { font-size: 15px; color: #3a3a50; line-height: 1.75; }
+    .article-body strong { color: var(--navy); }
+
+    /* Callout */
+    .callout { background: linear-gradient(135deg, rgba(26,122,110,0.07), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: var(--navy); font-style: italic; line-height: 1.85; }
+    .callout strong { color: var(--teal); font-style: normal; }
+
+    /* Evidence box */
+    .evidence-box { background: var(--gray); border-radius: 14px; padding: 20px 24px; margin: 28px 0; }
+    .evidence-box h4 { font-size: 12px; font-weight: 800; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .evidence-box ul { margin: 0; }
+    .evidence-box li { font-size: 13px; color: var(--muted); }
+
+    /* Mechanism grid */
+    .mech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+    .mech-card { background: var(--gray); border-radius: 14px; padding: 18px 20px; border: 1px solid var(--gray2); }
+    .mech-card h4 { font-size: 14px; font-weight: 800; color: var(--navy); margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+    .mech-card p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+
+    /* Nutrient cards */
+    .nutri-card { background: #fff; border: 1px solid var(--gray2); border-radius: 16px; padding: 22px 26px; margin: 16px 0; border-left: 4px solid var(--teal2); }
+    .nutri-card h4 { font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+    .nutri-card .badge { font-size: 11px; font-weight: 700; background: rgba(26,122,110,0.1); color: var(--teal); border-radius: 50px; padding: 3px 10px; }
+    .nutri-card p { font-size: 14px; color: var(--muted); line-height: 1.8; margin: 0; }
+
+    /* Author footer */
+    .author-card { background: var(--gray); border-radius: 20px; padding: 28px 32px; margin-top: 64px; display: flex; align-items: flex-start; gap: 20px; }
+    .author-avatar { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--navy), var(--teal)); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+    .author-info h4 { font-size: 17px; font-weight: 900; color: var(--navy); margin-bottom: 4px; }
+    .author-info .creds { font-size: 13px; color: var(--teal); font-weight: 600; margin-bottom: 10px; }
+    .author-info p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+
+    /* CTA banner */
+    .cta-banner { background: linear-gradient(135deg, var(--navy), #0f4f6e); border-radius: 20px; padding: 40px 36px; margin-top: 48px; text-align: center; }
+    .cta-banner h3 { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 10px; }
+    .cta-banner p { font-size: 15px; color: rgba(255,255,255,0.7); margin-bottom: 24px; line-height: 1.7; }
+    .cta-btn { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold2)); color: #fff; font-size: 16px; font-weight: 800; padding: 14px 36px; border-radius: 50px; box-shadow: 0 6px 20px rgba(184,146,42,0.4); transition: transform 0.2s; }
+    .cta-btn:hover { transform: translateY(-2px); }
+
+    /* Related */
+    .related { margin-top: 64px; }
+    .related h3 { font-size: 20px; font-weight: 900; color: var(--navy); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .related-card { background: var(--gray); border-radius: 16px; padding: 20px; border: 1px solid var(--gray2); }
+    .related-card .tag { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .related-card h4 { font-size: 15px; font-weight: 800; color: var(--navy); line-height: 1.4; }
+
+    footer { background: #0a1a32; color: rgba(255,255,255,0.5); padding: 32px 0; }
+    .footer-bottom { max-width: 900px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 12px; }
+
+    @media (max-width: 600px) {
+      .article-hero { padding: 36px 28px; }
+      .mech-grid, .related-grid { grid-template-columns: 1fr; }
+      .author-card { flex-direction: column; }
+    }
+
+    /* Signature */
+    .sig-block { border-top: 2px solid var(--gray2); margin-top: 48px; padding-top: 24px; }
+    .sig-main { font-size: 14px; color: var(--navy); font-weight: 700; margin-bottom: 12px; line-height: 1.7; }
+    .sig-creds { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+    .sig-creds li { font-size: 13px; color: var(--muted); padding-left: 14px; position: relative; line-height: 1.6; }
+    .sig-creds li::before { content: "·"; position: absolute; left: 0; color: var(--teal2); font-weight: 900; }
+    .sig-notice { font-size: 12px; color: var(--muted); font-style: italic; line-height: 1.7; }
+  </style>
 </head>
 <body>
+
 <nav>
   <div class="nav-inner">
     <a href="/en/" class="nav-logo">Nerv<span>Lock</span></a>
@@ -117,8 +161,8 @@ footer{background:#0a1a32;color:rgba(255,255,255,.5);padding:32px 0}
   <div class="article-body">
 
     <h2>1. Defining Brain Fog: Beyond Subjective Complaint</h2>
-    <p>Brain fog is not a formal diagnostic entity but a clinical descriptor for a constellation of symptoms: reduced concentration, slowed cognitive processing, word-finding difficulties, and mental fatigue that feels disproportionate to physical exertion. In a neurology clinic, among the most frequently heard patient statements is some version of <strong>"I'm just not as sharp as I used to be."</strong></p>
-    <p>Neuropsychological assessment in individuals with subjective brain fog frequently reveals objective deficits in processing speed, working memory, and executive function — confirming these are measurable cognitive changes, not merely psychological perceptions. The syndrome is particularly prevalent in adults aged 40–60, where it intersects with hormonal transitions, accumulated sleep debt, occupational stress, and early metabolic dysregulation. Recognizing this as a neurobiological phenomenon rather than a character deficit is the necessary starting point for addressing it effectively.</p>
+    <p>Brain fog is not a formal diagnostic entity but a clinical descriptor for a constellation of symptoms: reduced concentration, slowed cognitive processing, word-finding difficulties, and mental fatigue that feels disproportionate to physical exertion. Neuropsychological assessment in individuals with subjective brain fog frequently reveals objective deficits in processing speed, working memory, and executive function — confirming these are measurable cognitive changes, not merely psychological perceptions.</p>
+    <p>The syndrome is particularly prevalent in adults aged 40–60, where it intersects with hormonal transitions, accumulated sleep debt, occupational stress, and early metabolic dysregulation. Recognizing brain fog as a neurobiological phenomenon, rather than a character or motivational deficit, is the necessary starting point for addressing it effectively.</p>
 
     <div class="mech-grid">
       <div class="mech-card">
@@ -127,11 +171,11 @@ footer{background:#0a1a32;color:rgba(255,255,255,.5);padding:32px 0}
       </div>
       <div class="mech-card">
         <h4>⚡ Mitochondrial Dysfunction</h4>
-        <p>Oxidative stress → electron transport chain inefficiency → ATP deficit → prefrontal cortex impact</p>
+        <p>Oxidative stress → electron transport chain impairment → ATP deficit → prefrontal cortex sensitivity</p>
       </div>
       <div class="mech-card">
         <h4>🧪 Neurotransmitter Dysregulation</h4>
-        <p>Dopamine, acetylcholine, serotonin reduction → cascading deficits in attention, memory, motivation, sleep</p>
+        <p>Dopamine, acetylcholine, serotonin imbalance → cascading deficits in attention, memory, motivation, sleep</p>
       </div>
       <div class="mech-card">
         <h4>🍚 Cerebral Glucose Dysregulation</h4>
@@ -140,77 +184,75 @@ footer{background:#0a1a32;color:rgba(255,255,255,.5);padding:32px 0}
     </div>
 
     <h2>2. Mechanism 1 — Neuroinflammation</h2>
-    <p>Microglia — the resident immune cells of the central nervous system — perform essential surveillance functions in the healthy brain, monitoring for pathogens, clearing cellular debris, and modulating synaptic pruning. Under chronic stressors including sleep deprivation, psychological stress, and gut dysbiosis, microglia adopt a sustained pro-inflammatory activation state.</p>
-    <p>In this activated state, microglia release cytokines — TNF-α, IL-1β, and IL-6 — that suppress long-term potentiation (the cellular basis of synaptic plasticity and learning) and reduce expression of BDNF (brain-derived neurotrophic factor), the key growth factor supporting neuronal survival and hippocampal function. Compromise of blood-brain barrier integrity, permitting peripheral inflammatory mediators to access the CNS, amplifies this process in a self-reinforcing cycle.</p>
-    <p>The clinical phenomenon of <strong>"sickness behavior"</strong> — cognitive slowing, social withdrawal, anhedonia, and difficulty concentrating accompanying acute infection — provides a compelling real-world model of how inflammatory cytokine signaling produces central cognitive effects. Dantzer R et al. (2008) systematically established the mechanism by which inflammatory cytokines modulate cognitive and emotional function beyond peripheral symptoms. Chronic low-grade neuroinflammation produces a sustained, attenuated version of this syndrome without any acute infectious trigger.</p>
+    <p>Microglia — the resident immune cells of the central nervous system — perform essential surveillance functions in the healthy brain. Under chronic stressors including sleep deprivation, psychological stress, and dysbiosis, microglia adopt a sustained pro-inflammatory activation state, releasing cytokines (TNF-α, IL-1β, IL-6) that suppress synaptic plasticity and reduce BDNF expression.</p>
+    <p>The clinical phenomenon of <strong>"sickness behavior"</strong> — cognitive slowing, social withdrawal, and anhedonia accompanying acute infection — provides a compelling model of how inflammatory cytokine signaling produces central cognitive effects. Chronic low-grade neuroinflammation produces a sustained, attenuated version of this syndrome. Compromise of blood-brain barrier integrity, permitting peripheral inflammatory mediators to access the CNS, further amplifies this process in a self-reinforcing cycle.</p>
+    <p>Dantzer R et al. (2008) systematically established that inflammatory cytokines modulate cognitive and emotional function through discrete neural circuits — providing the mechanistic foundation for understanding neuroinflammation as a driver of cognitive symptoms rather than a mere correlate.</p>
+
+    <div class="callout">
+      <strong>Clinical parallel:</strong> The "sickness behavior" model explains why even transient systemic inflammation — a common cold, a minor infection — produces the same subjective experience of cognitive dulling. Chronic low-grade neuroinflammation reproduces this pattern at lower intensity, continuously.
+    </div>
 
     <h2>3. Mechanism 2 — Mitochondrial Dysfunction</h2>
-    <p>The brain consumes approximately 20% of total body energy production despite comprising only 2% of body mass — an extraordinary energetic demand that makes neural tissue uniquely vulnerable to mitochondrial impairment. Oxidative stress, accumulating from inflammatory burden, environmental exposures, and aging, damages mitochondrial DNA and impairs electron transport chain (ETC) efficiency, reducing the rate of ATP synthesis.</p>
-    <p>When ATP availability falls below the threshold required for optimal synaptic transmission, signal propagation slows. The <strong>prefrontal cortex</strong> — mediating executive function, working memory, sustained attention, and cognitive flexibility — is particularly sensitive to energetic shortfalls due to its exceptionally high metabolic rate and dense synaptic connectivity. This explains the characteristic topography of brain fog: the specific functions affected (planning, concentration, mental flexibility) map precisely onto prefrontal circuitry rather than the motor or sensory systems that are energetically more robust.</p>
-    <p>This is the neurobiological basis of the experience described as "my body has energy, but my mind won't work" — a dissociation that is not metaphorical but reflects actual differential metabolic vulnerability across brain regions.</p>
+    <p>The brain consumes approximately 20% of total energy production despite comprising only 2% of body mass. Oxidative stress — accumulating from inflammatory burden, environmental toxins, and aging — damages mitochondrial DNA and impairs electron transport chain efficiency, reducing ATP synthesis.</p>
+    <p>The <strong>prefrontal cortex</strong>, mediating executive function, working memory, and sustained attention, is particularly sensitive to energetic shortfalls. This explains the characteristic topography of brain fog: the specific cognitive domains affected — planning, concentration, mental flexibility — map precisely onto prefrontal cortex functions rather than motor or sensory systems that are energetically more robust.</p>
+    <p>This is the neurobiological basis of the experience described as "my body has energy but my mind won't work" — a dissociation that reflects genuine differential metabolic vulnerability across brain regions, not a psychological state.</p>
 
     <h2>4. Mechanism 3 — Neurotransmitter Dysregulation</h2>
 
-    <h3>4.1 Dopaminergic Deficit</h3>
-    <p>Reduced dopaminergic tone in the mesocortical pathway — projecting from the ventral tegmental area to the prefrontal cortex — impairs working memory, motivated attention, and cognitive flexibility. This produces the "can't get started," executive paralysis quality that is characteristic of brain fog. The subjective experience of tasks feeling effortful even when they're familiar reflects a genuine alteration in prefrontal dopaminergic signaling, not reduced willpower.</p>
+    <h3>4.1 Dopaminergic</h3>
+    <p>Reduced dopaminergic tone in the mesocortical pathway impairs working memory, motivated attention, and cognitive flexibility — producing the <strong>"can't get started"</strong> quality characteristic of brain fog. The subjective experience of familiar tasks feeling effortful reflects a genuine alteration in prefrontal dopaminergic signaling.</p>
 
-    <h3>4.2 Cholinergic Deficit</h3>
-    <p>Acetylcholine is the principal neuromodulator of the basal forebrain-hippocampal projection system that supports encoding and retrieval of declarative memory. Cholinergic deficit produces the memory retrieval failures — knowing that you know something but being unable to access it — and word-finding difficulties central to the brain fog experience. The cholinergic system is also the first to be substantially damaged in Alzheimer's disease, making cholinergic support a high-relevance target for age-related cognitive maintenance.</p>
+    <h3>4.2 Cholinergic</h3>
+    <p>Acetylcholine supports encoding and retrieval of declarative memory through the basal forebrain-hippocampal system. Cholinergic deficit produces the memory retrieval failures and word-finding difficulties central to the brain fog experience — knowing that you know something but being unable to access it on demand.</p>
 
-    <h3>4.3 Serotonergic Dysregulation</h3>
-    <p>Serotonin modulates sleep architecture, particularly the ratio of slow-wave to REM sleep, and regulates attentional set-shifting — the ability to flexibly redirect cognitive resources. Serotonergic dysregulation compounds cognitive dysfunction through both direct attentional effects and indirect effects via sleep quality degradation. Disrupted sleep then feeds back to elevate microglial activation, closing a negative cycle between serotonin, sleep, and neuroinflammation.</p>
+    <h3>4.3 Serotonergic</h3>
+    <p>Serotonin modulates sleep architecture and attentional set-shifting. Dysregulation compounds cognitive dysfunction through both direct attentional effects and indirect effects via sleep quality degradation. Disrupted sleep then feeds back to elevate microglial activation, connecting serotonin, sleep, and neuroinflammation in a negative cycle.</p>
 
     <h2>5. Mechanism 4 — Cerebral Glucose Dysregulation</h2>
-    <p>The brain relies almost exclusively on glucose as metabolic fuel, with minimal capacity to store glycogen compared to muscle tissue. High-glycemic dietary patterns produce rapid postprandial glucose peaks followed by sharp reactive declines, generating cyclical cerebral energy deficits that manifest as post-prandial cognitive fatigue, difficulty concentrating, and irritability — the familiar "afternoon slump" that many individuals attribute to tiredness rather than glycemic physiology.</p>
-    <p>Chronic insulin resistance at the neuronal level — occurring along a spectrum from sub-diabetic metabolic dysregulation to type 2 diabetes — reduces glucose transporter (GLUT3, GLUT1) efficiency in neural tissue, producing a sustained state of neuronal energy insufficiency. This explains why brain fog can persist even in individuals who manage their acute glycemic responses, if underlying insulin resistance impairs the delivery of glucose to neurons independently of blood glucose concentration.</p>
+    <p>The brain relies almost exclusively on glucose as metabolic fuel, with minimal glycogen storage capacity. High-glycemic dietary patterns produce rapid postprandial glucose peaks followed by sharp reactive declines, generating cyclical cerebral energy deficits that manifest as post-prandial cognitive fatigue and difficulty concentrating — the familiar "afternoon slump."</p>
+    <p>Chronic insulin resistance at the neuronal level reduces glucose transporter efficiency (GLUT3, GLUT1), producing a sustained state of neuronal energy insufficiency that underlies persistent brain fog independent of acute glycemic fluctuation. This explains why brain fog can persist even when blood glucose levels appear well-controlled.</p>
 
-    <div class="callout">
-      <strong>Clinical perspective:</strong> These four mechanisms do not operate independently — they amplify each other. Sleep deprivation elevates microglial activation; neuroinflammation impairs mitochondrial function; energetic deficit reduces the ATP available for neurotransmitter synthesis and vesicular loading; neurotransmitter depletion further disrupts sleep. Brain fog is typically not a single-mechanism problem, which is why isolated interventions addressing only one pathway often produce incomplete results.
-    </div>
-
-    <h2>6. Nutritional Support: Mechanistic Rationale</h2>
+    <h2>6. Evidence-Based Nutritional Support</h2>
 
     <div class="nutri-card">
       <h4>🐟 Omega-3 Fatty Acids (EPA/DHA) <span class="badge">Neuroinflammation</span></h4>
-      <p>DHA is the predominant structural fatty acid in brain gray matter, essential for maintaining neuronal membrane fluidity and synaptic vesicle dynamics. EPA addresses the neuroinflammatory arm of brain fog through competitive inhibition of arachidonic acid conversion to pro-inflammatory eicosanoids (PGE2, LTB4), shifting the prostaglandin balance toward resolution-promoting mediators (SPMs). Kidd PM (2005) reviewed the evidence that omega-3 supplementation supports cognitive function through hippocampal BDNF expression and synaptic membrane maintenance. Bhatt DL et al. (2019) established the systemic anti-inflammatory effects of EPA at therapeutic doses.</p>
+      <p>DHA is the predominant structural fatty acid in brain gray matter, essential for neuronal membrane fluidity and synaptic vesicle dynamics. EPA modulates neuroinflammation through competitive inhibition of arachidonic acid-derived pro-inflammatory eicosanoids, shifting the prostaglandin balance toward resolution-promoting mediators. Omega-3 supplementation has been associated with hippocampal BDNF expression in preclinical studies (Kidd PM, 2005).</p>
     </div>
 
     <div class="nutri-card">
       <h4>💊 Phosphatidylserine (PS) <span class="badge">Neuronal Membrane</span></h4>
-      <p>Phosphatidylserine is an aminophospholipid component of the inner leaflet of neuronal cell membranes, where it participates in cell signaling, neurotransmitter synthesis, and the activation of protein kinase C — a key mediator of synaptic plasticity. Brain PS concentrations decline with age, and PS supplementation has been investigated as a means of supporting age-related cognitive maintenance. The US FDA has recognized a qualified health claim between PS and reduced risk of cognitive dysfunction, reflecting the available evidence while acknowledging its limitations. This represents one of the more specifically recognized nutritional-cognitive relationships in the regulatory literature.</p>
+      <p>PS is a phospholipid component of neuronal cell membranes, involved in cell-to-cell signaling and neuronal survival. Brain PS concentrations decline with age. PS has received recognition as a dietary ingredient supporting cognitive function, with a qualified health claim from the US FDA noting the relationship between PS consumption and reduced risk of cognitive dysfunction.</p>
     </div>
 
     <div class="nutri-card">
       <h4>🧬 B Vitamin Complex (B1, B6, B12, Folate) <span class="badge">Energy &amp; Homocysteine</span></h4>
-      <p><strong>Thiamine (B1)</strong> is the essential cofactor for pyruvate dehydrogenase complex (PDHC) — the rate-limiting enzyme linking glycolysis to the citric acid cycle and mitochondrial ATP production. B1 deficiency directly impairs cerebral energy metabolism, producing cognitive dysfunction even at sub-clinical deficiency levels. <strong>Vitamin B6</strong> is required as pyridoxal phosphate (PLP) for the synthesis of dopamine, serotonin, and GABA from their amino acid precursors — providing direct substrate support for neurotransmitter balance. <strong>B12 and folate</strong> cooperate in the methionine cycle to metabolize homocysteine; elevated homocysteine is associated with accelerated brain atrophy and cognitive decline across multiple longitudinal cohort studies. The VITACOG trial (Smith AD et al., 2010) provided controlled clinical evidence that B12/folate/B6 supplementation significantly attenuated the rate of brain atrophy in individuals with elevated baseline homocysteine — one of the clearest nutritional intervention signals in cognitive neuroscience. Kennedy DO (2016) provides a comprehensive mechanistic review of B vitamin roles across all of these neural systems.</p>
+      <p>Thiamine (B1) is an essential cofactor for pyruvate dehydrogenase — the rate-limiting enzyme linking glycolysis to mitochondrial energy production. Deficiency directly impairs cerebral energy metabolism. B6 is required for synthesis of dopamine, serotonin, and GABA from their amino acid precursors. B12 and folate cooperate in homocysteine metabolism; elevated homocysteine is associated with accelerated brain atrophy and cognitive decline. The VITACOG trial (Smith AD et al., 2010) demonstrated that B12/folate/B6 supplementation significantly reduced brain atrophy rates in individuals with elevated homocysteine — one of the clearest nutritional intervention signals in cognitive neuroscience.</p>
     </div>
 
     <div class="nutri-card">
       <h4>🪨 Magnesium <span class="badge">Mitochondria &amp; NMDA</span></h4>
-      <p>Magnesium is an essential cofactor for over 300 enzymatic reactions, including the ATP synthase and adenylate kinase reactions central to mitochondrial energy production. Its role as a voltage-dependent pore blocker of NMDA receptors makes it a key modulator of glutamatergic synaptic transmission — preventing excitotoxic overstimulation that depletes neuronal energy reserves and contributes to neuroinflammation. Magnesium deficiency is associated with sleep disturbance (reduced slow-wave sleep), anxiety amplification, and cognitive impairment through multiple overlapping mechanisms. Magnesium glycinate and L-threonate are preferred supplemental forms for their superior gastrointestinal tolerability and higher bioavailability relative to oxide or sulfate salts.</p>
+      <p>Magnesium is an essential cofactor for over 300 enzymatic reactions, including mitochondrial ATP synthesis. As a non-competitive NMDA receptor antagonist, it modulates glutamate-mediated synaptic activity, preventing excitotoxic overstimulation. Magnesium deficiency is associated with sleep disturbance, anxiety, and cognitive impairment. Glycinate and L-threonate forms offer superior bioavailability compared to oxide forms.</p>
     </div>
 
     <div class="nutri-card">
       <h4>⚡ Coenzyme Q10 (CoQ10) <span class="badge">Electron Transport Chain</span></h4>
-      <p>CoQ10 is an essential electron carrier in the mitochondrial inner membrane, shuttling electrons between complex I/II and complex III of the electron transport chain — a non-negotiable step in ATP synthesis. As a lipid-soluble antioxidant, CoQ10 also directly protects mitochondrial membrane phospholipids from lipid peroxidation that would impair ETC function in a destructive feedback loop. Endogenous CoQ10 biosynthesis (via the mevalonate pathway) declines with age and is additionally suppressed by statin medications — making supplementation increasingly relevant after the fourth decade. Supporting mitochondrial function through CoQ10 addresses the energetic deficit component of brain fog at its biochemical source.</p>
+      <p>CoQ10 is an essential electron carrier in the mitochondrial electron transport chain, directly participating in ATP synthesis. As a lipid-soluble antioxidant, it protects mitochondrial membranes from oxidative damage that would further impair energy production. Endogenous CoQ10 synthesis declines after the fourth decade of life, making supplementation increasingly relevant with age.</p>
     </div>
 
     <h2>7. Lifestyle Foundations</h2>
     <ul>
-      <li><strong>Sleep:</strong> During slow-wave sleep, glymphatic flow through perivascular spaces increases substantially, facilitating clearance of metabolic waste products — including amyloid-β and tau — that accumulate during waking neural activity. Chronic sleep restriction impairs this clearance process and elevates microglial activation, establishing sleep optimization as the foundational cognitive health intervention that no supplementation strategy can fully substitute for.</li>
-      <li><strong>Aerobic exercise:</strong> Exercise promotes BDNF synthesis in the hippocampus, improves cerebrovascular autoregulation and neurovascular coupling, and enhances mitochondrial biogenesis in neural tissue. Even moderate-intensity aerobic activity (30 minutes, 3 times per week) produces measurable cognitive benefits across multiple domains in controlled trials.</li>
-      <li><strong>Gut microbiome health:</strong> Dysbiosis modulates neuroinflammatory tone through multiple gut-brain axis pathways: short-chain fatty acids (SCFAs) from fiber fermentation exert systemic anti-inflammatory effects; enteric serotonin (90% of total body serotonin is produced in the gut) influences central serotonergic signaling indirectly; and gut mucosal permeability affects the quantity of inflammatory lipopolysaccharide (LPS) that translocates into systemic circulation and reaches the CNS.</li>
-      <li><strong>Glycemic management:</strong> Reducing refined carbohydrate and high-GI food intake, co-ingesting protein and healthy fats with carbohydrate sources, and maintaining regular meal timing all reduce glycemic volatility and support stable cerebral glucose delivery — addressing the fourth mechanism at the dietary level.</li>
+      <li><strong>Sleep:</strong> During sleep, cerebrospinal fluid flow through perivascular spaces increases substantially, facilitating clearance of metabolic waste products that accumulate during waking neural activity. Chronic sleep restriction impairs this clearance process and elevates neuroinflammatory markers — establishing sleep as the foundational cognitive health intervention that no supplementation strategy can substitute for.</li>
+      <li><strong>Aerobic exercise:</strong> Exercise promotes BDNF synthesis in the hippocampus, improves cerebrovascular autoregulation, and enhances mitochondrial biogenesis in neural tissue. Moderate-intensity aerobic activity produces measurable cognitive benefits across multiple domains in controlled trials.</li>
+      <li><strong>Gut microbiome:</strong> Dysbiosis modulates neuroinflammatory tone through gut-brain axis signaling — short-chain fatty acids from fiber fermentation exert systemic anti-inflammatory effects, and gut mucosal permeability affects the quantity of inflammatory mediators reaching the CNS. Dietary approaches supporting microbial diversity represent an additional rational intervention point.</li>
     </ul>
 
     <div class="evidence-box">
       <h4>📚 Key References</h4>
       <ul>
-        <li>Dantzer R et al. (2008). From inflammation to sickness and depression. <em>Nature Reviews Neuroscience</em> 9(1):46-56</li>
+        <li>Dantzer R et al. (2008). From inflammation to sickness and depression: when the immune system subjugates the brain. <em>Nature Reviews Neuroscience</em> 9(1):46-56</li>
         <li>Smith AD et al. (2010). Homocysteine-lowering by B vitamins slows the rate of accelerated brain atrophy in mild cognitive impairment. <em>PLOS ONE</em> 5(9):e12244</li>
         <li>Kidd PM (2005). Omega-3 DHA and EPA for cognition, behavior, and mood: clinical findings and structural-functional synergies with cell membrane phospholipids. <em>Alternative Medicine Review</em> 12(3):207-227</li>
         <li>Kennedy DO (2016). B vitamins and the brain: mechanisms, dose and efficacy — a review. <em>Nutrients</em> 8(2):68</li>
-        <li>Bhatt DL et al. (2019). Cardiovascular risk reduction with icosapentaenoic acid (REDUCE-IT). <em>New England Journal of Medicine</em> 380:11-22</li>
       </ul>
     </div>
 
@@ -225,7 +267,7 @@ footer{background:#0a1a32;color:rgba(255,255,255,.5);padding:32px 0}
 
     <div class="cta-banner">
       <h3>Support Your Neural Health with NervLock Nerve Care</h3>
-      <p>Formulated by a neurologist — curcumin + Aflapin® dual-pathway neuroinflammatory modulation.<br>NervLock's first product is launching soon.</p>
+      <p>Formulated by a neurologist with curcumin + Aflapin® — dual NF-κB and 5-LOX pathway modulation for neural inflammatory balance.<br>NervLock's first product is launching soon.</p>
       <a href="/en/#coming-soon" class="cta-btn">Get Launch Notification</a>
     </div>
 
@@ -260,8 +302,9 @@ footer{background:#0a1a32;color:rgba(255,255,255,.5);padding:32px 0}
 <footer>
   <div class="footer-bottom">
     <p>© 2026 NervLock. All rights reserved.</p>
-    <p>This content is for informational purposes only and does not constitute medical advice.</p>
+    <p>This article is for informational purposes only and does not constitute medical advice.</p>
   </div>
 </footer>
+
 </body>
 </html>
