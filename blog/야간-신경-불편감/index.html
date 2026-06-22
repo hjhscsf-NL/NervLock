@@ -1,24 +1,26 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>왜 밤에 신경 불편감이 심해지는가 | NervLock</title>
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
 body{font-family:'Apple SD Gothic Neo','Noto Sans KR','맑은 고딕',sans-serif;color:#1a1a2e;background:#fff;font-size:17px;line-height:1.7}
 a{text-decoration:none;color:inherit}
 :root{--navy:#0d2545;--navy2:#163561;--teal:#1a7a6e;--teal2:#22a090;--gold:#b8922a;--gold2:#d4a843;--gray:#f4f6f9;--gray2:#e8ecf2;--muted:#5a6278}
 nav{position:sticky;top:0;z-index:100;background:rgba(13,37,69,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
 .nav-inner{max-width:900px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:20px}
 .nav-logo{font-size:20px;font-weight:900;color:#fff;white-space:nowrap}.nav-logo span{color:var(--gold2)}
-.nav-back{font-size:14px;color:rgba(255,255,255,.7);transition:color .2s}.nav-back:hover{color:var(--gold2)}
+.nav-back{font-size:14px;color:rgba(255,255,255,.7);display:flex;align-items:center;gap:6px;transition:color .2s}.nav-back:hover{color:var(--gold2)}
 .lang-toggle{display:flex;border:1px solid rgba(255,255,255,.22);border-radius:8px;overflow:hidden;flex-shrink:0}
-.lang-btn{padding:5px 12px;font-size:12px;font-weight:800;color:rgba(255,255,255,.5);transition:all .18s}
-.lang-btn+.lang-btn{border-left:1px solid rgba(255,255,255,.22)}.lang-btn.active{background:rgba(255,255,255,.18);color:#fff}
+.lang-btn{padding:5px 12px;font-size:12px;font-weight:800;letter-spacing:.5px;color:rgba(255,255,255,.5);transition:all .18s}
+.lang-btn+.lang-btn{border-left:1px solid rgba(255,255,255,.22)}
+.lang-btn.active{background:rgba(255,255,255,.18);color:#fff}
 .article-wrap{max-width:760px;margin:0 auto;padding:60px 24px 100px}
-.article-hero{background:linear-gradient(135deg,#2d1a45 0%,#c0392b 100%);border-radius:24px;padding:52px 48px;margin-bottom:48px;position:relative;overflow:hidden}
+.article-hero{background:linear-gradient(135deg,#2d1a45 0%,#0d3561 100%);border-radius:24px;padding:52px 48px;margin-bottom:48px;position:relative;overflow:hidden}
 .article-hero::before{content:'🌙';position:absolute;right:32px;top:32px;font-size:80px;opacity:.15}
-.article-tag{display:inline-flex;background:rgba(192,57,43,.25);border:1px solid rgba(192,57,43,.4);border-radius:50px;font-size:12px;font-weight:700;color:#f5b8b0;padding:4px 14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px}
+.article-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(26,122,110,.3);border:1px solid rgba(26,122,110,.5);border-radius:50px;font-size:12px;font-weight:700;color:#6ee7da;padding:4px 14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px}
 .article-title{font-size:clamp(22px,3.5vw,34px);font-weight:900;color:#fff;line-height:1.3;margin-bottom:20px}
 .article-meta{display:flex;flex-wrap:wrap;gap:20px}
 .article-meta-item{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.65)}
@@ -30,22 +32,23 @@ nav{position:sticky;top:0;z-index:100;background:rgba(13,37,69,.97);backdrop-fil
 .abstract{background:linear-gradient(135deg,rgba(26,122,110,.06),rgba(26,122,110,.02));border-left:4px solid var(--teal2);border-radius:0 16px 16px 0;padding:24px 28px;margin-bottom:48px}
 .abstract-label{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--teal2);margin-bottom:10px}
 .abstract p{font-size:15px;color:#2a3a4a;line-height:1.85;margin:0;font-style:italic}
-.article-body h2{font-size:24px;font-weight:900;color:var(--navy);margin:52px 0 16px;padding-bottom:12px;border-bottom:2px solid var(--gray2)}
+.article-body h2{font-size:24px;font-weight:900;color:var(--navy);margin:52px 0 16px;line-height:1.35;padding-bottom:12px;border-bottom:2px solid var(--gray2)}
 .article-body h2:first-child{margin-top:0}
 .article-body h3{font-size:19px;font-weight:800;color:var(--navy2);margin:36px 0 12px}
 .article-body p{font-size:16px;color:#2a2a3e;line-height:1.95;margin-bottom:20px}
-.article-body ul{padding-left:24px;margin-bottom:20px;display:flex;flex-direction:column;gap:10px}
+.article-body ul,.article-body ol{padding-left:24px;margin-bottom:20px;display:flex;flex-direction:column;gap:10px}
 .article-body li{font-size:15px;color:#3a3a50;line-height:1.75}
 .article-body strong{color:var(--navy)}
 .callout{background:linear-gradient(135deg,rgba(26,122,110,.07),rgba(26,122,110,.02));border-left:4px solid var(--teal2);border-radius:0 12px 12px 0;padding:20px 24px;margin:28px 0;font-size:15px;color:var(--navy);font-style:italic;line-height:1.85}
 .callout strong{color:var(--teal);font-style:normal}
-.tip-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
-.tip-card{background:var(--gray);border-radius:14px;padding:18px 20px;border:1px solid var(--gray2)}
-.tip-card h4{font-size:14px;font-weight:800;color:var(--navy);margin-bottom:6px}
-.tip-card p{font-size:13px;color:var(--muted);line-height:1.65;margin:0}
 .evidence-box{background:var(--gray);border-radius:14px;padding:20px 24px;margin:28px 0}
 .evidence-box h4{font-size:12px;font-weight:800;color:var(--teal2);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
-.evidence-box ul{margin:0}.evidence-box li{font-size:13px;color:var(--muted)}
+.evidence-box ul{margin:0}
+.evidence-box li{font-size:13px;color:var(--muted)}
+.mech-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin:24px 0}
+.mech-card{background:var(--gray);border-radius:14px;padding:18px 20px;border:1px solid var(--gray2)}
+.mech-card h4{font-size:13px;font-weight:800;color:var(--navy);margin-bottom:8px}
+.mech-card p{font-size:12px;color:var(--muted);line-height:1.65;margin:0}
 .author-card{background:var(--gray);border-radius:20px;padding:28px 32px;margin-top:64px;display:flex;align-items:flex-start;gap:20px}
 .author-avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--teal));flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:28px}
 .author-info h4{font-size:17px;font-weight:900;color:var(--navy);margin-bottom:4px}
@@ -56,124 +59,160 @@ nav{position:sticky;top:0;z-index:100;background:rgba(13,37,69,.97);backdrop-fil
 .cta-banner p{font-size:15px;color:rgba(255,255,255,.7);margin-bottom:24px;line-height:1.7}
 .cta-btn{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#fff;font-size:16px;font-weight:800;padding:14px 36px;border-radius:50px;box-shadow:0 6px 20px rgba(184,146,42,.4);transition:transform .2s}
 .cta-btn:hover{transform:translateY(-2px)}
-.related{margin-top:64px}.related h3{font-size:20px;font-weight:900;color:var(--navy);margin-bottom:20px}
+.related{margin-top:64px}
+.related h3{font-size:20px;font-weight:900;color:var(--navy);margin-bottom:20px}
 .related-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .related-card{background:var(--gray);border-radius:16px;padding:20px;border:1px solid var(--gray2)}
 .related-card .tag{font-size:11px;font-weight:700;color:var(--teal);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
 .related-card h4{font-size:15px;font-weight:800;color:var(--navy);line-height:1.4}
 footer{background:#0a1a32;color:rgba(255,255,255,.5);padding:32px 0}
 .footer-bottom{max-width:900px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:12px}
-@media(max-width:600px){.article-hero{padding:36px 28px}.tip-grid,.related-grid{grid-template-columns:1fr}.author-card{flex-direction:column}}
-    /* Signature */
-    .sig-block { border-top: 2px solid var(--gray2); margin-top: 48px; padding-top: 24px; }
-    .sig-main { font-size: 14px; color: var(--navy); font-weight: 700; margin-bottom: 12px; line-height: 1.7; }
-    .sig-creds { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
-    .sig-creds li { font-size: 13px; color: var(--muted); padding-left: 14px; position: relative; line-height: 1.6; }
-    .sig-creds li::before { content: "·"; position: absolute; left: 0; color: var(--teal2); font-weight: 900; }
-    .sig-notice { font-size: 12px; color: var(--muted); font-style: italic; line-height: 1.7; }
+@media(max-width:600px){.article-hero{padding:36px 28px}.mech-grid,.related-grid{grid-template-columns:1fr}.author-card{flex-direction:column}}
+.sig-block{border-top:2px solid var(--gray2);margin-top:48px;padding-top:24px}
+.sig-main{font-size:14px;color:var(--navy);font-weight:700;margin-bottom:12px;line-height:1.7}
+.sig-creds{list-style:none;padding:0;display:flex;flex-direction:column;gap:5px;margin-bottom:14px}
+.sig-creds li{font-size:13px;color:var(--muted);padding-left:14px;position:relative;line-height:1.6}
+.sig-creds li::before{content:"·";position:absolute;left:0;color:var(--teal2);font-weight:900}
+.sig-notice{font-size:12px;color:var(--muted);font-style:italic;line-height:1.7}
 </style>
 </head>
 <body>
-<nav><div class="nav-inner">
-  <a href="/" class="nav-logo">Nerv<span>Lock</span></a>
-  <a href="/#blog" class="nav-back">← 의학 칼럼</a>
-  <div class="lang-toggle">
-    <a href="/blog/야간-신경-불편감/" class="lang-btn active">KR</a>
-    <a href="/blog/nocturnal-nerve-discomfort/" class="lang-btn">EN</a>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Nerv<span>Lock</span></a>
+    <a href="/#blog" class="nav-back">← 의학 칼럼</a>
+    <div class="lang-toggle">
+      <a href="/blog/야간-신경-불편감/" class="lang-btn active">KR</a>
+      <a href="/blog/nocturnal-nerve-discomfort/" class="lang-btn">EN</a>
+    </div>
   </div>
-</div></nav>
+</nav>
+
 <div class="article-wrap">
+
   <div class="article-hero">
-    <div class="article-tag">통증의학</div>
+    <div class="article-tag">신경과학</div>
     <h1 class="article-title">왜 밤에<br>신경 불편감이 심해지는가</h1>
     <div class="article-meta">
-      <div class="article-meta-item">👨‍⚕️ <strong>Dr.H</strong> — 신경과 전문의 · NervLock 설립자</div>
+      <div class="article-meta-item">👩‍⚕️ <strong>Dr. Claire Ham</strong> — 신경과 전문의 · NervLock 설립자</div>
       <div class="article-meta-item">📅 2024. 09. 03</div>
       <div class="article-meta-item">⏱ 6분 읽기</div>
     </div>
   </div>
+
   <div class="lang-switch-banner">
     <span>🇺🇸 Read this article in English?</span>
     <a href="/blog/nocturnal-nerve-discomfort/" class="lang-switch-link">Read in English →</a>
   </div>
+
   <div class="abstract">
     <div class="abstract-label">요약</div>
-    <p>야간 신경 불편감 악화는 심리적 현상이 아니라 생리학적으로 명확히 설명 가능한 현상입니다. 코르티솔의 일주기 리듬, 주의 분산 효과의 소실, 체온 하강에 따른 말초 혈류 변화, 자세 관련 신경 압박이 복합적으로 작용합니다. 본 글에서는 이 4가지 기전과 실질적인 관리 전략을 다룹니다.</p>
+    <p>낮에는 괜찮다가 밤만 되면 신경 불편감이 심해지는 현상은 매우 흔합니다. 이것은 심리적 현상이 아니라 코르티솔 일주기 리듬, 주의 분산 효과 소실, 말초 혈류 변화, 그리고 수면-통증 민감도 악순환이 복합적으로 작용하는 생리학적 현상입니다. 본 글에서는 이 기전들을 신경과 전문의의 시각에서 설명하고, 비약물적 관리 전략을 제시합니다.</p>
   </div>
+
   <div class="article-body">
 
-    <h2>1. 낮에는 괜찮은데 밤에만 심해지는 이유</h2>
-    <p>신경 불편감을 경험하는 분들의 상당수가 밤에 불편감이 심해진다고 호소합니다. "낮에는 버틸 만한데 밤에는 잠을 못 잘 정도"라는 표현을 자주 듣습니다. 이것은 심리적인 문제나 과민 반응이 아닙니다. 뚜렷한 생리학적 근거가 있습니다.</p>
+    <h2>1. 야간 악화는 심리적 현상이 아닙니다</h2>
+    <p>신경 불편감으로 내원하는 많은 환자분들이 "낮에는 그래도 참을 만한데, 저녁만 되면 너무 힘들어요"라고 호소합니다. 그리고 많은 분들이 "지쳐서 예민해지는 것 아닐까요?"라고 자책하기도 합니다.</p>
+    <p>결론부터 말씀드리면, 야간 신경 불편감 악화는 생리학적으로 명확히 설명 가능한 현상입니다. 신경과학적으로 크게 세 가지 주요 기전이 상호작용하며 야간 악화를 유발합니다. 이를 이해하면 막연한 불안 대신 실제 관리 전략을 세울 수 있습니다.</p>
 
-    <h2>2. 4가지 기전</h2>
-    <h3>기전 1: 코르티솔의 일주기 리듬</h3>
-    <p>코르티솔(스트레스 호르몬)은 강력한 항염 작용을 합니다. 코르티솔 수치는 이른 아침에 최고조에 달하고, 밤에는 최저치로 떨어집니다.</p>
-    <p>낮 동안은 코르티솔이 신경 주변의 염증 반응을 자연스럽게 억제하고 있습니다. 밤이 되어 코르티솔이 감소하면 이 억제가 풀리면서 신경 불편감이 상대적으로 더 강하게 느껴집니다.</p>
+    <div class="mech-grid">
+      <div class="mech-card">
+        <h4>🌅 코르티솔 리듬</h4>
+        <p>낮에 항염 역할을 하는 코르티솔이 밤에 최저치로 떨어지면서 신경 주변 염증 신호가 증폭됩니다</p>
+      </div>
+      <div class="mech-card">
+        <h4>🔇 주의 분산 소실</h4>
+        <p>낮의 활동으로 배경에 밀렸던 불편 신호가 조용한 밤 환경에서 전면으로 부각됩니다</p>
+      </div>
+      <div class="mech-card">
+        <h4>🩸 말초 혈류 변화</h4>
+        <p>누운 자세에서의 정맥 울혈과 체온 변화가 신경 주변 조직압과 이소성 발화에 영향을 줍니다</p>
+      </div>
+    </div>
 
-    <h3>기전 2: 주의 분산 효과의 소실</h3>
-    <p>낮에는 일, 대화, 활동으로 뇌의 주의가 분산됩니다. 뇌의 감각 처리 자원이 여러 곳에 분배되면 신경 불편 신호가 상대적으로 덜 부각됩니다. 이를 하향 억제(descending inhibition)라고 합니다.</p>
-    <p>밤의 어둠과 정적은 뇌가 신경 신호에만 집중하게 만듭니다. 배경 자극이 없어지면 신경 불편 신호가 전경으로 부상합니다.</p>
+    <h2>2. 기전 1 — 코르티솔의 일주기 리듬</h2>
+    <p>코르티솔(cortisol)은 부신 피질에서 분비되는 스테로이드 호르몬으로, 가장 잘 알려진 '스트레스 호르몬'이지만 동시에 강력한 <strong>항염 호르몬</strong>입니다. 코르티솔은 NF-κB 경로와 사이토카인 생성을 억제하여 전신 염증 반응을 조절합니다.</p>
+    <p>코르티솔 분비는 뚜렷한 일주기 리듬을 따릅니다. 기상 직후 약 30분 이내에 최고치에 도달하는 '코르티솔 각성 반응(cortisol awakening response, CAR)'이 일어나고, 이후 점차 감소하여 <strong>자정~새벽 2~3시에 최저치</strong>가 됩니다.</p>
+    <p>따라서 낮 동안에는 코르티솔이 신경 주변의 염증 신호를 어느 정도 억제합니다. 그런데 저녁이 되면서 코르티솔이 낮아지면 이 억제가 풀리고, 신경 주변의 염증성 사이토카인(TNF-α, IL-1β 등)이 상대적으로 더 자유롭게 작용하게 됩니다. 이것이 밤에 신경 불편감이 심해지는 첫 번째 이유입니다.</p>
 
-    <h3>기전 3: 체온 하강과 말초 혈류 변화</h3>
-    <p>밤에 체온이 낮아지면 말초 혈관이 수축합니다. 이미 영양 공급이 부족한 말초신경에 산소와 영양소 공급이 더 줄어들면서 신경의 이상 발화가 증가합니다. 특히 발끝과 손끝의 불편감이 심해지는 이유입니다.</p>
-
-    <h3>기전 4: 자세와 신경 압박</h3>
-    <p>누운 자세에서 척추 추간판의 압력 분포가 달라지고, 오랜 시간 같은 자세를 유지하면서 신경 압박이 누적됩니다. 목·허리 신경근 문제가 있는 분들은 자세 변화에 따른 불편감이 특히 크게 나타납니다.</p>
-
-    <h2>3. 수면 방해와 악순환</h2>
     <div class="callout">
-      야간 불편감으로 수면이 지속적으로 방해받으면 <strong>수면 부족 자체가 신경 민감도를 높입니다.</strong> 덜 자면 더 불편하고, 더 불편하면 못 자는 악순환이 시작됩니다. 이 사이클을 끊는 것이 신경 건강 관리의 핵심입니다.
+      <strong>임상 관찰:</strong> 류마티스 관절염 환자들이 아침에 특히 뻣뻣한 이유도 같은 기전입니다. 밤새 낮아진 코르티솔로 인해 관절 주변 염증이 축적되어 기상 시 증상이 최악이 됩니다. 신경병증의 야간 악화도 이와 유사한 일주기 염증 패턴의 일부입니다.
     </div>
-    <p>수면 부족은 뇌의 하향 억제 시스템을 약화시키고, 염증 사이토카인 수치를 높이며, 코르티솔 리듬을 교란합니다. 단순히 '잘 못 자는 것'이 아니라 신경 건강 전반에 영향을 미치는 악화 인자입니다.</p>
 
-    <h2>4. 실질적인 야간 관리 전략</h2>
-    <div class="tip-grid">
-      <div class="tip-card">
-        <h4>🛁 취침 전 온욕</h4>
-        <p>취침 1~2시간 전 따뜻한 목욕이나 족욕으로 말초 혈관을 확장시켜 신경 혈류를 개선합니다.</p>
-      </div>
-      <div class="tip-card">
-        <h4>💊 마그네슘 저녁 복용</h4>
-        <p>마그네슘은 신경계 정상 기능 유지에 필요한 미네랄로, 저녁에 복용하면 수면의 질 개선에 도움이 됩니다.</p>
-      </div>
-      <div class="tip-card">
-        <h4>🌡️ 수면 환경 온도</h4>
-        <p>18~20°C의 서늘한 환경이 오히려 말초 혈관 수축을 최소화합니다. 발을 따뜻하게 유지하는 것이 중요합니다.</p>
-      </div>
-      <div class="tip-card">
-        <h4>⏰ 규칙적인 수면 리듬</h4>
-        <p>일주기 리듬 정상화가 코르티솔 패턴 회복에 필수적입니다. 취침·기상 시간을 일정하게 유지하세요.</p>
-      </div>
-    </div>
+    <h2>3. 기전 2 — 주의 분산 효과의 소실</h2>
+    <p>뇌는 동시에 처리할 수 있는 정보량에 한계가 있습니다. 낮 동안에는 시각 자극, 청각 자극, 업무 집중, 대화, 이동 등 다양한 외부 입력이 뇌의 주의 자원을 분산시킵니다. 이때 말초에서 올라오는 신경 불편 신호는 '배경 소음'처럼 뇌의 처리 우선순위에서 밀려납니다.</p>
+    <p>이것은 단순히 '잊어버리는 것'이 아닙니다. 하향 조절(descending modulation)이라는 능동적인 신경 신호 억제 시스템이 작동하는 것입니다. 중뇌 수도관 주위 회색질(PAG, periaqueductal gray)과 뇌간 봉선핵(raphe nucleus)에서 내려오는 억제성 신호가 척수 후각에서 불편 신호 전달을 감소시킵니다.</p>
+    <p>밤에 조용해지고 다른 자극이 사라지면 이 하향 억제가 약화되고, 불편 신호가 전면에 부각됩니다. 말초 신경에서 올라오는 신호량 자체가 늘어난 것이 아니라, 뇌가 그 신호에 더 많은 주의를 기울이게 된 것입니다. Haack M et al. (2012, Sleep)의 연구에 따르면, 수면 부족과 주의 자원 고갈이 불편 민감도에 유의한 영향을 미칩니다.</p>
+
+    <h2>4. 기전 3 — 말초 혈류와 자세 변화</h2>
+    <p>수면 시에는 자율신경계의 균형이 교감신경 우세에서 부교감신경 우세로 이동합니다. 이에 따라 말초 혈관이 확장되고, 체온 조절을 위해 피부 혈류가 증가합니다. 이 변화 자체는 정상적인 수면 생리이지만, 말초신경병증이 있는 경우 몇 가지 문제를 만들 수 있습니다.</p>
+    <ul>
+      <li><strong>정맥 울혈:</strong> 누운 자세에서 하지 정맥의 귀환이 줄어 다리 말단에 혈액이 고이면, 신경 주변 조직압이 높아지고 신경 섬유에 기계적 자극이 증가할 수 있습니다.</li>
+      <li><strong>말초 혈류 역설:</strong> 신경 주변 미세혈관이 이미 손상된 경우(예: 당뇨성 신경병증), 혈관 확장 반응 자체가 비정상적으로 이루어져 신경에 공급되는 산소와 영양소가 오히려 불균등해질 수 있습니다.</li>
+      <li><strong>온도 변화와 이소성 발화:</strong> 체온 변화는 신경 섬유의 이온 채널 개폐에 영향을 미칩니다. 손상된 C 섬유와 Aδ 섬유는 온도 변화에 비정상적으로 반응하여 이소성 발화 빈도가 변화할 수 있습니다.</li>
+    </ul>
+
+    <h2>5. 길이 의존성 신경병증과 야간 악화</h2>
+    <p>가장 흔한 말초신경병증 패턴인 <strong>길이 의존성 신경병증(length-dependent neuropathy)</strong>에서 야간 악화가 특히 두드러지는 이유가 있습니다. 이 패턴에서는 가장 긴 신경 섬유, 즉 발가락 끝까지 뻗어 있는 섬유가 가장 먼저 영향을 받습니다.</p>
+    <p>발은 심장에서 가장 멀고, 중력의 영향을 가장 많이 받는 부위입니다. 누운 자세에서도 발은 심장보다 수평하거나 약간 아래에 위치하게 되어 정맥 귀환이 낮 동안보다 변화합니다. 또한 이불에 눌리거나 침구 무게가 발등에 가해지는 자극도 과민화된 신경에 불편감을 줄 수 있습니다.</p>
+
+    <h2>6. 수면과 통증 민감도의 악순환</h2>
+    <p>야간 신경 불편감이 수면을 방해하고, 수면 부족이 다시 신경 불편 민감도를 높이는 <strong>악순환</strong>이 발생합니다. Haack M et al. (2012)의 연구에서는 실험적 수면 제한이 건강한 성인에서도 불편 민감도를 유의하게 높이는 것을 보여주었습니다. Burish MJ et al. (2010, Pain)에서도 수면 장애와 만성 신경 불편감의 양방향적 관계가 강조됩니다.</p>
+    <p>수면 중 통증 신호 처리 억제가 이루어지는데, 수면 구조가 깨지면 이 억제가 약화됩니다. 특히 깊은 수면(slow-wave sleep) 단계에서 성장호르몬과 함께 진행되는 신경 회복 과정이 중단됩니다. 만성 신경 불편감 환자에서 수면의 질을 개선하는 것이 불편감 관리의 중요한 요소인 이유입니다.</p>
+
+    <h2>7. 비약물적 관리 전략</h2>
+    <p>야간 신경 불편감 관리를 위한 비약물적 접근은 전문의 처방 치료를 대체하지 않지만, 보완적으로 중요한 역할을 합니다.</p>
+
+    <h3>7.1 자세 최적화</h3>
+    <p>발을 심장 높이보다 약간 높이 올린 자세(하지 거상, elevation)는 정맥 울혈을 줄여 야간 불편감을 경감하는 데 도움이 됩니다. 다리 아래에 얇은 베개를 받치는 것만으로도 차이를 느끼는 분들이 있습니다. 반면 발 아래에 무거운 이불이 눌리는 것은 과민화된 신경을 자극하므로, 이불을 가볍게 하거나 발 위에 이불 공간을 만들어주는 것이 도움이 됩니다.</p>
+
+    <h3>7.2 온도 관리</h3>
+    <p>미지근한 물로 족욕을 하면 말초 혈류를 개선하고 신경 긴장을 완화하는 데 기여할 수 있습니다. 단 너무 뜨거운 온도는 손상된 신경에 오히려 자극이 될 수 있으므로 36~38°C 정도의 체온에 가까운 온도가 적절합니다. 온도 감각이 저하된 경우에는 반드시 온도계를 사용해야 합니다.</p>
+
+    <h3>7.3 수면 위생(Sleep Hygiene)</h3>
+    <p>규칙적인 취침·기상 시각 유지, 취침 전 2시간 내 스마트폰·TV 사용 자제(청색광이 멜라토닌 분비를 억제), 침실 온도를 18~20°C로 유지, 카페인을 오후 2시 이후 섭취하지 않는 것이 수면의 질을 높이는 데 도움이 됩니다. 깊은 수면이 확보되면 야간 불편감에 대한 민감도도 낮아집니다.</p>
+
+    <h3>7.4 이완 기법</h3>
+    <p>취침 전 점진적 근육 이완(progressive muscle relaxation), 복식 호흡, 마음 챙김 명상이 통증 하향 조절 시스템을 강화하고 수면 진입을 돕는다는 연구들이 있습니다. 특히 복식 호흡은 교감신경 활성을 낮추어 수면-각성 전환을 부드럽게 합니다.</p>
 
     <div class="evidence-box">
-      <h4>📚 참고 문헌</h4>
+      <h4>📚 주요 참고 문헌</h4>
       <ul>
-        <li>Moldofsky H (2001). Sleep and pain. Sleep Med Rev 5(5):385-396</li>
-        <li>Haack M et al. (2012). Sleep deficiency and chronic pain. J Pain 13(6):593-604</li>
-        <li>Drewes AM et al. (2010). Nocturnal pain in neuropathic pain syndromes. Eur J Pain 14(2):138-141</li>
-        <li>Irwin MR (2019). Sleep and inflammation: partners in sickness and in health. Nat Rev Immunol 19(11):702-715</li>
+        <li>Haack M et al. (2012). Sleep deficiency and chronic pain: potential underlying mechanisms and clinical implications. <em>Annals of the New York Academy of Sciences</em> 1267:82-93</li>
+        <li>Burish MJ et al. (2010). Relationship between sleep disruption and pain in chronic daily headache. <em>Pain</em> 148(2):228-233</li>
+        <li>Tracey I, Mantyh PW (2007). The cerebral signature for pain perception and its modulation. <em>Neuron</em> 55(3):377-391</li>
+        <li>Steiger A, Dresler M (2020). Sleep hormone interactions. <em>Current Opinion in Endocrinology, Diabetes and Obesity</em> 27(2):82-88</li>
+        <li>Dworkin RH et al. (2008). Advances in neuropathic pain: diagnosis, mechanisms, and treatment recommendations. <em>Clinical Infectious Diseases</em> 44(Suppl 1):S1-26</li>
       </ul>
     </div>
 
     <div class="author-card">
-      <div class="author-avatar">👨‍⚕️</div>
+      <div class="author-avatar">👩‍⚕️</div>
       <div class="author-info">
-        <h4>Dr.H</h4>
-        <div class="creds">신경과 전문의 · 연세대 세브란스 출신 · 뇌·통증·기능의학 · NervLock 설립자</div>
-        <p>대한신경과학회 · 대한 파킨슨병 및 이상운동질환 학회 · 대한기능의학회 정회원. 본 칼럼은 의학적 정보 제공을 목적으로 하며 개인 진료를 대체하지 않습니다.</p>
+        <h4>Dr. Claire Ham (함지현)</h4>
+        <div class="creds">신경과 전문의 · 연세대 세브란스 출신 · 뇌·통증·기능의학 전문 · NervLock 설립자</div>
+        <p>대한신경과학회 정회원 · 대한 파킨슨병 및 이상운동질환 학회 정회원 · 대한기능의학회 정회원. 본 칼럼은 의학적 정보 제공을 목적으로 하며 개인 진료를 대체하지 않습니다.</p>
       </div>
     </div>
+
     <div class="cta-banner">
       <h3>NervLock 너브케어로 신경 건강을 지원하세요</h3>
-      <p>마그네슘 포함 서포트 6종 + 커큐민·애플라핀® 이중 경로 핵심 성분.<br>NervLock 브랜드의 첫 번째 제품이 곧 출시됩니다.</p>
+      <p>신경과 전문의가 직접 처방한 커큐민 + 애플라핀® — 신경 염증 균형을 위한 근거 기반 접근.<br>NervLock 브랜드의 첫 번째 제품이 곧 출시됩니다.</p>
       <a href="/#coming-soon" class="cta-btn">출시 알림 신청하기</a>
     </div>
+
     <div class="related">
       <h3>관련 칼럼</h3>
       <div class="related-grid">
-        <div class="related-card"><div class="tag">통증의학</div><h4><a href="/blog/대상포진-신경통/">대상포진 후 신경통, 왜 수십 년씩 지속되는가</a></h4></div>
-        <div class="related-card"><div class="tag">생활습관</div><h4><a href="/blog/신경-건강-음식/">신경 건강을 위해 조심해야 할 음식 5가지</a></h4></div>
+        <div class="related-card">
+          <div class="tag">신경과학</div>
+          <h4><a href="/blog/대상포진-신경통/">대상포진 후 신경통, 왜 수십 년씩 지속되는가</a></h4>
+        </div>
+        <div class="related-card">
+          <div class="tag">신경과학</div>
+          <h4><a href="/blog/말초신경병증/">말초신경병증이란? 증상, 원인, 신경과 전문의의 시각</a></h4>
+        </div>
       </div>
     </div>
 
@@ -182,14 +221,20 @@ footer{background:#0a1a32;color:rgba(255,255,255,.5);padding:32px 0}
       <ul class="sig-creds">
         <li>연세대 세브란스 출신 신경과 전문의</li>
         <li>대한신경과학회 정회원</li>
-        <li>대한 파킨슨병 및 이상운동질환 학회 정회원</li>
+        <li>대한파킨슨병 및 이상운동질환 학회 정회원</li>
         <li>대한기능의학회 정회원</li>
       </ul>
-      <p class="sig-notice">&#8251; 본 내용은 의학 정보 제공을 목적으로 하며, 개인 진료를 대체하지 않습니다.</p>
+      <p class="sig-notice">※ 본 내용은 의학 정보 제공을 목적으로 하며, 개인 진료를 대체하지 않습니다.</p>
     </div>
 
   </div>
 </div>
-<footer><div class="footer-bottom"><p>© 2026 NervLock. All rights reserved.</p><p>본 칼럼은 의학적 정보 제공을 목적으로 하며 개인 진료를 대체하지 않습니다.</p></div></footer>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2026 NervLock. All rights reserved.</p>
+    <p>본 칼럼은 의학적 정보 제공을 목적으로 하며 개인 진료를 대체하지 않습니다.</p>
+  </div>
+</footer>
 </body>
 </html>
