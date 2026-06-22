@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Foods and Peripheral Nerve Health: What a Neurologist Looks at on Your Plate | NervLock</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif;color:#1a1a2e;background:#fff;font-size:17px;line-height:1.7}
+a{text-decoration:none;color:inherit}
+:root{--navy:#0d2545;--navy2:#163561;--teal:#1a7a6e;--teal2:#22a090;--gold:#b8922a;--gold2:#d4a843;--gray:#f4f6f9;--gray2:#e8ecf2;--muted:#5a6278}
+nav{position:sticky;top:0;z-index:100;background:rgba(13,37,69,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav-inner{max-width:900px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.nav-logo{font-size:20px;font-weight:900;color:#fff;white-space:nowrap}.nav-logo span{color:var(--gold2)}
+.nav-back{font-size:14px;color:rgba(255,255,255,.7);display:flex;align-items:center;gap:6px;transition:color .2s}.nav-back:hover{color:var(--gold2)}
+.lang-toggle{display:flex;border:1px solid rgba(255,255,255,.22);border-radius:8px;overflow:hidden;flex-shrink:0}
+.lang-btn{padding:5px 12px;font-size:12px;font-weight:800;letter-spacing:.5px;color:rgba(255,255,255,.5);transition:all .18s}
+.lang-btn+.lang-btn{border-left:1px solid rgba(255,255,255,.22)}
+.lang-btn.active{background:rgba(255,255,255,.18);color:#fff}
+.article-wrap{max-width:760px;margin:0 auto;padding:60px 24px 100px}
+.article-hero{background:linear-gradient(135deg,#0d3d2a 0%,#1a7a6e 100%);border-radius:24px;padding:52px 48px;margin-bottom:48px;position:relative;overflow:hidden}
+.article-hero::before{content:'🍽️';position:absolute;right:32px;top:32px;font-size:80px;opacity:.15}
+.article-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(26,122,110,.3);border:1px solid rgba(26,122,110,.5);border-radius:50px;font-size:12px;font-weight:700;color:#6ee7da;padding:4px 14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px}
+.article-title{font-size:clamp(22px,3.5vw,34px);font-weight:900;color:#fff;line-height:1.3;margin-bottom:20px}
+.article-meta{display:flex;flex-wrap:wrap;gap:20px}
+.article-meta-item{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.65)}
+.article-meta-item strong{color:rgba(255,255,255,.9);font-weight:700}
+.lang-switch-banner{background:var(--gray);border:1px solid var(--gray2);border-radius:14px;padding:14px 20px;margin-bottom:40px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.lang-switch-banner span{font-size:14px;color:var(--muted)}
+.lang-switch-link{font-size:13px;font-weight:700;color:var(--teal2);border:1px solid var(--teal2);border-radius:50px;padding:6px 16px;transition:all .2s;white-space:nowrap}
+.lang-switch-link:hover{background:var(--teal2);color:#fff}
+.abstract{background:linear-gradient(135deg,rgba(26,122,110,.06),rgba(26,122,110,.02));border-left:4px solid var(--teal2);border-radius:0 16px 16px 0;padding:24px 28px;margin-bottom:48px}
+.abstract-label{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--teal2);margin-bottom:10px}
+.abstract p{font-size:15px;color:#2a3a4a;line-height:1.85;margin:0;font-style:italic}
+.article-body h2{font-size:24px;font-weight:900;color:var(--navy);margin:52px 0 16px;line-height:1.35;padding-bottom:12px;border-bottom:2px solid var(--gray2)}
+.article-body h2:first-child{margin-top:0}
+.article-body h3{font-size:19px;font-weight:800;color:var(--navy2);margin:36px 0 12px}
+.article-body p{font-size:16px;color:#2a2a3e;line-height:1.95;margin-bottom:20px}
+.article-body ul,.article-body ol{padding-left:24px;margin-bottom:20px;display:flex;flex-direction:column;gap:10px}
+.article-body li{font-size:15px;color:#3a3a50;line-height:1.75}
+.article-body strong{color:var(--navy)}
+.callout{background:linear-gradient(135deg,rgba(26,122,110,.07),rgba(26,122,110,.02));border-left:4px solid var(--teal2);border-radius:0 12px 12px 0;padding:20px 24px;margin:28px 0;font-size:15px;color:var(--navy);font-style:italic;line-height:1.85}
+.callout strong{color:var(--teal);font-style:normal}
+.evidence-box{background:var(--gray);border-radius:14px;padding:20px 24px;margin:28px 0}
+.evidence-box h4{font-size:12px;font-weight:800;color:var(--teal2);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+.evidence-box ul{margin:0}
+.evidence-box li{font-size:13px;color:var(--muted)}
+.food-card{background:#fff;border:1px solid var(--gray2);border-radius:16px;padding:22px 26px;margin:16px 0;border-left:4px solid #e05252}
+.food-card.risk-high{border-left-color:#c0392b}
+.food-card h4{font-size:16px;font-weight:800;color:var(--navy);margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.food-card .badge{font-size:11px;font-weight:700;background:#fdecea;color:#c0392b;border-radius:50px;padding:3px 10px}
+.food-card p{font-size:14px;color:var(--muted);line-height:1.8;margin:0}
+.benefit-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin:24px 0}
+.benefit-card{background:linear-gradient(135deg,rgba(26,122,110,.06),rgba(26,122,110,.02));border:1px solid rgba(26,122,110,.2);border-radius:14px;padding:18px 20px}
+.benefit-card h4{font-size:14px;font-weight:800;color:var(--teal);margin-bottom:6px}
+.benefit-card p{font-size:12px;color:var(--muted);line-height:1.65;margin:0}
+.author-card{background:var(--gray);border-radius:20px;padding:28px 32px;margin-top:64px;display:flex;align-items:flex-start;gap:20px}
+.author-avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--teal));flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:28px}
+.author-info h4{font-size:17px;font-weight:900;color:var(--navy);margin-bottom:4px}
+.author-info .creds{font-size:13px;color:var(--teal);font-weight:600;margin-bottom:10px}
+.author-info p{font-size:13px;color:var(--muted);line-height:1.65;margin:0}
+.cta-banner{background:linear-gradient(135deg,var(--navy),#0f4f6e);border-radius:20px;padding:40px 36px;margin-top:48px;text-align:center}
+.cta-banner h3{font-size:22px;font-weight:900;color:#fff;margin-bottom:10px}
+.cta-banner p{font-size:15px;color:rgba(255,255,255,.7);margin-bottom:24px;line-height:1.7}
+.cta-btn{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#fff;font-size:16px;font-weight:800;padding:14px 36px;border-radius:50px;box-shadow:0 6px 20px rgba(184,146,42,.4);transition:transform .2s}
+.cta-btn:hover{transform:translateY(-2px)}
+.related{margin-top:64px}
+.related h3{font-size:20px;font-weight:900;color:var(--navy);margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.related-card{background:var(--gray);border-radius:16px;padding:20px;border:1px solid var(--gray2)}
+.related-card .tag{font-size:11px;font-weight:700;color:var(--teal);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.related-card h4{font-size:15px;font-weight:800;color:var(--navy);line-height:1.4}
+footer{background:#0a1a32;color:rgba(255,255,255,.5);padding:32px 0}
+.footer-bottom{max-width:900px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:12px}
+@media(max-width:600px){.article-hero{padding:36px 28px}.benefit-grid,.related-grid{grid-template-columns:1fr}.author-card{flex-direction:column}}
+.sig-block{border-top:2px solid var(--gray2);margin-top:48px;padding-top:24px}
+.sig-main{font-size:14px;color:var(--navy);font-weight:700;margin-bottom:12px;line-height:1.7}
+.sig-creds{list-style:none;padding:0;display:flex;flex-direction:column;gap:5px;margin-bottom:14px}
+.sig-creds li{font-size:13px;color:var(--muted);padding-left:14px;position:relative;line-height:1.6}
+.sig-creds li::before{content:"·";position:absolute;left:0;color:var(--teal2);font-weight:900}
+.sig-notice{font-size:12px;color:var(--muted);font-style:italic;line-height:1.7}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="/en/" class="nav-logo">Nerv<span>Lock</span></a>
+    <a href="/en/#blog" class="nav-back">← Medical Blog</a>
+    <div class="lang-toggle">
+      <a href="/blog/신경-건강-음식/" class="lang-btn">KR</a>
+      <a href="/blog/foods-nerve-health/" class="lang-btn active">EN</a>
+    </div>
+  </div>
+</nav>
+
+<div class="article-wrap">
+
+  <div class="article-hero">
+    <div class="article-tag">Neuroscience</div>
+    <h1 class="article-title">Foods and Peripheral Nerve Health:<br>What a Neurologist Looks at on Your Plate</h1>
+    <div class="article-meta">
+      <div class="article-meta-item">👩‍⚕️ <strong>Dr. Claire Ham</strong> — Neurologist, NervLock Founder</div>
+      <div class="article-meta-item">📅 August 6, 2024</div>
+      <div class="article-meta-item">⏱ 8 min read</div>
+    </div>
+  </div>
+
+  <div class="lang-switch-banner">
+    <span>🇰🇷 이 글의 한국어 버전을 보시겠습니까?</span>
+    <a href="/blog/신경-건강-음식/" class="lang-switch-link">한국어로 읽기 →</a>
+  </div>
+
+  <div class="abstract">
+    <div class="abstract-label">Abstract</div>
+    <p>Emerging nutritional neuroscience has delineated specific dietary patterns and individual food constituents that exert measurable effects on peripheral nerve biology — through mechanisms including systemic glycemic load, neuroinflammatory signaling, oxidative stress, lipid membrane composition, and endoneurial microvascular integrity. This article examines the dietary risk factors most relevant to peripheral nerve health — those with established neurobiological mechanisms — and the neuroprotective dietary constituents with evidence supporting their neurological relevance.</p>
+  </div>
+
+  <div class="article-body">
+
+    <h2>1. How Diet Reaches the Nerve</h2>
+    <p>The relationship between diet and peripheral nerve health operates through several converging pathways that are distinct from the more familiar cardiovascular or metabolic effects of dietary choice. Understanding these mechanisms makes the dietary recommendations that follow mechanistically grounded rather than simply epidemiologically associated.</p>
+    <p>The key pathways are: (1) <strong>glycemic signaling</strong> — chronic postprandial glucose excursions drive non-enzymatic glycation of peripheral nerve proteins and basement membrane collagen, impairing nerve microcirculation and structural integrity; (2) <strong>systemic neuroinflammation</strong> — dietary patterns high in refined carbohydrates, trans fats, and excess omega-6 fatty acids shift the prostaglandin balance toward pro-inflammatory eicosanoids, amplifying neuroinflammatory signaling in dorsal root ganglia and peripheral nerve fascicles; (3) <strong>oxidative stress</strong> — high-AGE diets and excess dietary iron catalyze reactive oxygen species that deplete glutathione and impair mitochondrial function in high-demand sensory neurons; and (4) <strong>membrane lipid composition</strong> — the fatty acid composition of peripheral nerve myelin and axonal membranes reflects dietary fatty acid intake over weeks to months, with omega-3 incorporation improving membrane fluidity and ion channel function.</p>
+
+    <h2>2. Dietary Risk Factors: Five Categories with Neurobiological Mechanisms</h2>
+
+    <div class="food-card risk-high">
+      <h4>🍚 High Glycemic Index Carbohydrates <span class="badge">Glycation Risk</span></h4>
+      <p>White rice, white bread, and other rapidly digested refined starches produce acute postprandial glucose spikes that far exceed those from whole-grain equivalents, despite similar caloric content. Each glucose spike drives non-enzymatic glycation of peripheral nerve proteins — including axonal neurofilaments, myelin-associated glycoprotein, and endoneurial basement membrane collagen. Glycation cross-links stiffen these proteins and, in the case of basement membrane collagen, impair the compliance of vasa nervorum supplying nerve fascicles. Freeman LR et al. (2014) demonstrated that high-fat, high-glycemic diet in animal models produced measurable intraepidermal nerve fiber density reduction — a direct anatomical correlate of peripheral neuropathy — within 16 weeks. The mechanism extends beyond diabetes: sub-diabetic glycemic variability produces similar cumulative glycation burden over years.</p>
+    </div>
+
+    <div class="food-card risk-high">
+      <h4>🍺 Alcohol <span class="badge">Direct Neurotoxin</span></h4>
+      <p>Ethanol and its primary metabolite acetaldehyde exert direct axonal toxicity through multiple mechanisms: impaired axonal transport of neurofilament proteins and mitochondria along the axon; acetaldehyde adduct formation with tubulin, disrupting microtubule-dependent transport; inhibition of hepatic methylenetetrahydrofolate reductase (MTHFR) activity, reducing methyl group availability for myelin maintenance; and direct mitochondrial respiratory chain inhibition, impairing the energetic supply of peripheral neurons. Alcoholic peripheral neuropathy — one of the most prevalent nutritional neuropathies worldwide — is the clinical consequence, presenting with a symmetrical length-dependent axonal neuropathy that is both metabolically and nutritionally mediated (folate, thiamine, and B12 deficiency compound the direct toxicity). There is no established "safe" alcohol threshold in the context of established peripheral neuropathy.</p>
+    </div>
+
+    <div class="food-card">
+      <h4>🍟 Trans Fats and Partially Hydrogenated Oils <span class="badge">Membrane Disruption</span></h4>
+      <p>Industrially produced trans fatty acids (elaidic acid and its isomers from partial hydrogenation of vegetable oils) incorporate into cell membrane phospholipids, where their geometrically abnormal configuration impairs membrane fluidity, alters ion channel gating kinetics, and disrupts lipid raft organization. In peripheral nerve myelin — whose function depends critically on the precise lipid composition and fluidity of the myelin sheath — trans fat incorporation compromises the electrical insulation properties that underlie normal nerve conduction velocity. Esposito K et al. (2007) demonstrated that Mediterranean-pattern diets low in trans fats and saturated fats significantly reduced inflammatory biomarkers relevant to endothelial function, with direct implications for vasa nervorum perfusion. Regulatory elimination of industrial trans fats from food supplies has reduced but not eliminated dietary exposure, as they persist in some fried restaurant foods and packaged goods.</p>
+    </div>
+
+    <div class="food-card">
+      <h4>🧂 Excess Sodium <span class="badge">Microvascular</span></h4>
+      <p>Chronic sodium excess (average Western dietary intake of 3,400–4,000 mg/day versus the recommended ≤2,300 mg) drives blood pressure elevation through plasma volume expansion and vasoconstriction — both of which impair the microvascular supply of peripheral nerve fascicles. The vasa nervorum are particularly vulnerable to hypertensive damage given their small caliber and the absence of autoregulatory reserve available in larger vessels: hypertensive arteriolar changes reduce endoneurial blood flow and increase diffusion distance for oxygen and nutrients to axons. In patients with pre-existing peripheral neuropathy from any cause, hypertension superimposes ischemic damage on the existing pathology, accelerating progression. The clinical implication is that dietary sodium restriction in neuropathy patients achieves neurological benefit through vascular mechanisms, not just cardiovascular ones.</p>
+    </div>
+
+    <div class="food-card">
+      <h4>🍬 Refined Sugar and High-Fructose Corn Syrup <span class="badge">AGE Formation</span></h4>
+      <p>Dietary fructose — significantly more glycation-reactive than glucose due to its open-chain aldehyde configuration — is a particularly efficient driver of advanced glycation end-product (AGE) formation. Brownlee M (2001) established the "unified mechanism" of hyperglycemic damage in which mitochondrial superoxide overproduction drives all four pathways of diabetic neuropathy development: the polyol pathway, hexosamine pathway, PKC activation, and AGE formation. While established in the context of frank diabetes, this mechanistic framework applies to chronic sub-diabetic fructose and glucose excess: cumulative AGE burden builds over decades, with peripheral nerve as one of the most metabolically exposed targets given the long axonal lengths and high surface-area-to-volume ratio of nerve fibers relative to other cell types.</p>
+    </div>
+
+    <h2>3. Neuroprotective Dietary Constituents</h2>
+    <p>The inverse of the risk picture above is a set of dietary constituents with specific mechanistic relevance to peripheral nerve protection. These are not abstract "healthy foods" but specific compounds with identified neurobiological mechanisms:</p>
+
+    <div class="benefit-grid">
+      <div class="benefit-card">
+        <h4>🐟 Omega-3 Fatty Acids</h4>
+        <p>EPA and DHA from fatty fish (salmon, mackerel, sardines) incorporate into peripheral nerve membrane phospholipids, improving myelin fluidity, reducing NF-κB-driven neuroinflammation via SPM (specialized pro-resolving mediators), and enhancing BDNF-mediated axonal survival signaling. Target: 2+ servings fatty fish/week</p>
+      </div>
+      <div class="benefit-card">
+        <h4>🌿 Curcumin</h4>
+        <p>The principal curcuminoid of turmeric inhibits NF-κB nuclear translocation and 5-LOX-mediated leukotriene synthesis, addressing both the COX and LOX arms of the neuroinflammatory cascade. Bioavailability is enhanced by black pepper piperine co-administration (20-fold increase) or phospholipid complexation formulations</p>
+      </div>
+      <div class="benefit-card">
+        <h4>🥬 Folate-Rich Leafy Greens</h4>
+        <p>Spinach, kale, and other leafy greens provide dietary folate (5-MTHF) essential for homocysteine remethylation — reducing the neurotoxic homocysteine accumulation that drives NMDA receptor overstimulation and vasa nervorum endothelial dysfunction</p>
+      </div>
+      <div class="benefit-card">
+        <h4>🫐 Polyphenol-Rich Berries</h4>
+        <p>Blueberries, strawberries, and dark berries provide anthocyanins that cross the blood-brain barrier and exert antioxidant activity in neural tissue, protecting against oxidative stress-mediated axonal damage. Pterostilbene (found in blueberries) shows particular promise for mitochondrial protection in sensory neurons</p>
+      </div>
+      <div class="benefit-card">
+        <h4>🥚 Eggs and Choline</h4>
+        <p>Egg yolks provide choline — the rate-limiting substrate for phosphatidylcholine synthesis and, consequently, myelin membrane biosynthesis. Dietary choline adequacy supports the continuous myelin renewal that peripheral nerve health requires. Two whole eggs provide approximately 250 mg choline</p>
+      </div>
+      <div class="benefit-card">
+        <h4>🌰 Nuts and Vitamin E</h4>
+        <p>Almonds, hazelnuts, and sunflower seeds are concentrated sources of alpha-tocopherol (vitamin E) — the lipid-soluble antioxidant that protects myelin phospholipids from peroxidative damage. Vitamin E deficiency produces a progressive ataxic neuropathy; dietary adequacy maintains the myelin phospholipid antioxidant defense</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>Pattern over individual foods:</strong> The mechanistic rationale above supports a dietary pattern characterized by low glycemic load, high omega-3 to omega-6 ratio, abundant polyphenols, adequate B vitamins, and minimal trans fats and dietary AGEs — consistent with what is broadly recognized as a Mediterranean-style dietary pattern. No individual "superfood" substitutes for dietary pattern quality.
+    </div>
+
+    <h2>4. The Gut–Nerve Axis: An Emerging Consideration</h2>
+    <p>Emerging research in the gut microbiome has identified bidirectional communication pathways between gut microbiota composition and peripheral nerve biology — the enteric nervous system (ENS) provides the anatomical substrate for this communication, but systemic effects extend beyond ENS to somatic peripheral nerves. Dietary fiber fermentation by commensal bacteria produces short-chain fatty acids (SCFAs) — particularly butyrate — that exert systemic anti-inflammatory effects through free fatty acid receptor signaling on immune cells, potentially reducing the systemic inflammatory burden that contributes to peripheral neuroinflammation. While this field is rapidly evolving and specific clinical recommendations await larger interventional trials, maintaining adequate dietary fiber intake (25–30 g/day) to support microbiome diversity is consistent with the broader anti-inflammatory dietary goals that benefit peripheral nerve health.</p>
+
+    <div class="evidence-box">
+      <h4>📚 Key References</h4>
+      <ul>
+        <li>Freeman LR et al. (2014). Damaging effects of a high-fat diet to the brain and cognition: a review of proposed mechanisms. <em>Nutritional Neuroscience</em> 17(6):241-251</li>
+        <li>Esposito K et al. (2007). Effect of a Mediterranean-style diet on endothelial dysfunction and markers of vascular inflammation. <em>JAMA</em> 292(12):1440-1446</li>
+        <li>Brownlee M (2001). Biochemistry and molecular cell biology of diabetic complications. <em>Nature</em> 414(6865):813-820</li>
+        <li>Fernyhough P (2015). Mitochondrial dysfunction in diabetic neuropathy: a series of unfortunate metabolic events. <em>Current Diabetes Reports</em> 15(11):89</li>
+        <li>Saito Y et al. (2014). Peripheral nerve involvement in vitamin B12 deficiency. <em>Clinical Neurology and Neurosurgery</em> 122:107-109</li>
+      </ul>
+    </div>
+
+    <div class="author-card">
+      <div class="author-avatar">👩‍⚕️</div>
+      <div class="author-info">
+        <h4>Dr. Claire Ham</h4>
+        <div class="creds">Neurologist · Yonsei University Severance Hospital · Brain, Pain &amp; Functional Medicine · NervLock Founder</div>
+        <p>Member, Korean Neurological Association · Member, Korean Parkinson's and Movement Disorder Society · Member, Korean Society of Functional Medicine. This article is for informational purposes only and does not constitute medical advice.</p>
+      </div>
+    </div>
+
+    <div class="cta-banner">
+      <h3>Support Your Neural Health with NervLock Nerve Care</h3>
+      <p>Curcumin + Aflapin® — dual NF-κB and 5-LOX pathway modulation, formulated for nerve health by a neurologist.<br>NervLock's first product is launching soon.</p>
+      <a href="/en/#coming-soon" class="cta-btn">Get Launch Notification</a>
+    </div>
+
+    <div class="related">
+      <h3>Related Articles</h3>
+      <div class="related-grid">
+        <div class="related-card">
+          <div class="tag">Neuroscience</div>
+          <h4><a href="/blog/vitamin-b12-methylcobalamin/">Vitamin B12 and Nerve Health: Why Form Matters</a></h4>
+        </div>
+        <div class="related-card">
+          <div class="tag">Neuroscience</div>
+          <h4><a href="/blog/alpha-lipoic-acid-nerve/">Alpha-Lipoic Acid and Peripheral Nerve Health</a></h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="sig-block">
+      <p class="sig-main">Written by <strong>Dr. Claire Ham</strong>, Neurologist, M.D.</p>
+      <ul class="sig-creds">
+        <li>Trained at Yonsei University Severance Hospital</li>
+        <li>Member, Korean Neurological Association</li>
+        <li>Member, Korean Parkinson's Disease and Movement Disorder Society</li>
+        <li>Member, Korean Society of Functional Medicine</li>
+      </ul>
+      <p class="sig-notice">※ This content is for informational purposes only and does not constitute medical advice.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2026 NervLock. All rights reserved.</p>
+    <p>This article is for informational purposes only and does not constitute medical advice.</p>
+  </div>
+</footer>
+</body>
+</html>
