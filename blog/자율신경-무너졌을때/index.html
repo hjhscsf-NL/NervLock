@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>자율신경이 무너졌을 때 — 몸이 보내는 신호들 | NervLock</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Apple SD Gothic Neo','Noto Sans KR','맑은 고딕',sans-serif; color: #1a1a2e; background: #fff; font-size: 17px; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    :root {
+      --navy: #0d2545; --navy2: #163561;
+      --teal: #1a7a6e; --teal2: #22a090;
+      --gold: #b8922a; --gold2: #d4a843;
+      --gray: #f4f6f9; --gray2: #e8ecf2;
+      --muted: #5a6278;
+    }
+
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(13,37,69,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-logo { font-size: 20px; font-weight: 900; color: #fff; white-space: nowrap; }
+    .nav-logo span { color: var(--gold2); }
+    .nav-back { font-size: 14px; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold2); }
+    .lang-toggle { display: flex; border: 1px solid rgba(255,255,255,0.22); border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+    .lang-btn { padding: 5px 12px; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); transition: all 0.18s; }
+    .lang-btn + .lang-btn { border-left: 1px solid rgba(255,255,255,0.22); }
+    .lang-btn.active { background: rgba(255,255,255,0.18); color: #fff; }
+
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 60px 24px 100px; }
+
+    .article-hero { background: linear-gradient(135deg, #1a0a3d 0%, #6e2a4a 100%); border-radius: 24px; padding: 52px 48px; margin-bottom: 48px; position: relative; overflow: hidden; }
+    .article-hero::before { content: '⚡'; position: absolute; right: 32px; top: 32px; font-size: 80px; opacity: 0.15; }
+    .article-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(26,122,110,0.3); border: 1px solid rgba(26,122,110,0.5); border-radius: 50px; font-size: 12px; font-weight: 700; color: #6ee7da; padding: 4px 14px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+    .article-title { font-size: clamp(22px, 3.5vw, 34px); font-weight: 900; color: #fff; line-height: 1.3; margin-bottom: 20px; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 20px; }
+    .article-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.65); }
+    .article-meta-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+
+    .abstract { background: linear-gradient(135deg, rgba(26,122,110,0.06), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 16px 16px 0; padding: 24px 28px; margin-bottom: 48px; }
+    .abstract-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--teal2); margin-bottom: 10px; }
+    .abstract p { font-size: 15px; color: #2a3a4a; line-height: 1.85; margin: 0; font-style: italic; }
+
+    .article-body h2 { font-size: 24px; font-weight: 900; color: var(--navy); margin: 52px 0 16px; line-height: 1.35; padding-bottom: 12px; border-bottom: 2px solid var(--gray2); }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-size: 19px; font-weight: 800; color: var(--navy2); margin: 36px 0 12px; }
+    .article-body p { font-size: 16px; color: #2a2a3e; line-height: 1.95; margin-bottom: 20px; }
+    .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .article-body li { font-size: 15px; color: #3a3a50; line-height: 1.75; }
+    .article-body strong { color: var(--navy); }
+
+    .callout { background: linear-gradient(135deg, rgba(26,122,110,0.07), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: var(--navy); font-style: italic; line-height: 1.85; }
+    .callout strong { color: var(--teal); font-style: normal; }
+
+    .evidence-box { background: var(--gray); border-radius: 14px; padding: 20px 24px; margin: 28px 0; }
+    .evidence-box h4 { font-size: 12px; font-weight: 800; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .evidence-box ul { margin: 0; }
+    .evidence-box li { font-size: 13px; color: var(--muted); }
+
+    .symptom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+    .symptom-card { background: var(--gray); border-radius: 14px; padding: 18px 20px; border: 1px solid var(--gray2); }
+    .symptom-card h4 { font-size: 14px; font-weight: 800; color: var(--navy); margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+    .symptom-card p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+
+    .author-card { background: var(--gray); border-radius: 20px; padding: 28px 32px; margin-top: 64px; display: flex; align-items: flex-start; gap: 20px; }
+    .author-avatar { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--navy), var(--teal)); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+    .author-info h4 { font-size: 17px; font-weight: 900; color: var(--navy); margin-bottom: 4px; }
+    .author-info .creds { font-size: 13px; color: var(--teal); font-weight: 600; margin-bottom: 10px; }
+    .author-info p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+
+    .cta-banner { background: linear-gradient(135deg, var(--navy), #0f4f6e); border-radius: 20px; padding: 40px 36px; margin-top: 48px; text-align: center; }
+    .cta-banner h3 { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 10px; }
+    .cta-banner p { font-size: 15px; color: rgba(255,255,255,0.7); margin-bottom: 24px; line-height: 1.7; }
+    .cta-btn { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold2)); color: #fff; font-size: 16px; font-weight: 800; padding: 14px 36px; border-radius: 50px; box-shadow: 0 6px 20px rgba(184,146,42,0.4); transition: transform 0.2s; }
+    .cta-btn:hover { transform: translateY(-2px); }
+
+    .related { margin-top: 64px; }
+    .related h3 { font-size: 20px; font-weight: 900; color: var(--navy); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .related-card { background: var(--gray); border-radius: 16px; padding: 20px; border: 1px solid var(--gray2); }
+    .related-card .tag { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .related-card h4 { font-size: 15px; font-weight: 800; color: var(--navy); line-height: 1.4; }
+
+    footer { background: #0a1a32; color: rgba(255,255,255,0.5); padding: 32px 0; }
+    .footer-bottom { max-width: 900px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 12px; }
+
+    @media (max-width: 600px) {
+      .article-hero { padding: 36px 28px; }
+      .symptom-grid, .related-grid { grid-template-columns: 1fr; }
+      .author-card { flex-direction: column; }
+    }
+    /* Signature */
+    .sig-block { border-top: 2px solid var(--gray2); margin-top: 48px; padding-top: 24px; }
+    .sig-main { font-size: 14px; color: var(--navy); font-weight: 700; margin-bottom: 12px; line-height: 1.7; }
+    .sig-creds { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+    .sig-creds li { font-size: 13px; color: var(--muted); padding-left: 14px; position: relative; line-height: 1.6; }
+    .sig-creds li::before { content: "·"; position: absolute; left: 0; color: var(--teal2); font-weight: 900; }
+    .sig-notice { font-size: 12px; color: var(--muted); font-style: italic; line-height: 1.7; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Nerv<span>Lock</span></a>
+    <a href="/#blog" class="nav-back">← 의학 칼럼</a>
+    <div class="lang-toggle">
+      <a href="/blog/자율신경-무너졌을때/" class="lang-btn active">KR</a>
+    </div>
+  </div>
+</nav>
+
+<div class="article-wrap">
+
+  <div class="article-hero">
+    <div class="article-tag">기능의학</div>
+    <h1 class="article-title">자율신경이 무너졌을 때<br>— 몸이 보내는 신호들</h1>
+    <div class="article-meta">
+      <div class="article-meta-item">👩‍⚕️ <strong>Dr.H</strong> — 신경과 전문의 · NervLock 설립자</div>
+      <div class="article-meta-item">📅 2026. 6. 15</div>
+      <div class="article-meta-item">⏱ 8분 읽기</div>
+    </div>
+  </div>
+
+  <div class="abstract">
+    <div class="abstract-label">요약</div>
+    <p>두근거림, 식은땀, 기립 시 어지러움, 소화불량 — 검사에서 이상이 없다고 해도 몸이 이상하다고 느낀다면, 자율신경계 기능 이상을 의심해볼 필요가 있습니다. 본 글에서는 교감신경과 부교감신경의 균형이 무너질 때 신체 각 계통에 나타나는 신호들, 주요 원인, 그리고 자율신경 균형을 지원하기 위한 근거 있는 접근법을 신경과 전문의의 시각으로 정리합니다.</p>
+  </div>
+
+  <div class="article-body">
+
+    <h2>1. 자율신경계란 무엇인가</h2>
+    <p>자율신경계(Autonomic Nervous System, ANS)는 우리가 의식하지 않아도 자동으로 작동하는 신경계입니다. 심장 박동, 혈압 조절, 소화, 체온 유지, 발한, 배뇨 — 이 모든 생리 작용이 자율신경계의 정밀한 제어 아래 이루어집니다. 우리가 잠든 사이에도, 식사를 소화하는 동안에도, 추위에 몸이 떨릴 때도 자율신경계는 쉬지 않고 작동합니다.</p>
+    <p>자율신경계는 크게 두 축으로 구성됩니다. <strong>교감신경(Sympathetic NS)</strong>은 이른바 '싸우거나 도망가라(Fight-or-Flight)' 반응을 담당합니다. 위기 상황에서 심박수와 혈압을 높이고, 동공을 확대하며, 소화를 일시 억제해 근육에 혈류를 집중시킵니다. <strong>부교감신경(Parasympathetic NS)</strong>은 반대로 '쉬고 소화하라(Rest-and-Digest)' 반응을 주도합니다. 심박수를 낮추고, 소화를 촉진하며, 에너지를 비축합니다.</p>
+    <p>두 시스템은 시소처럼 균형을 이루며 작동합니다. 현대인의 문제는 이 균형이 지속적으로 교감신경 쪽으로 기울어 있다는 점입니다. 만성 스트레스, 수면 부족, 불규칙한 생활 리듬은 부교감신경의 회복 기회를 박탈하고, 결국 자율신경 조절 능력 자체가 서서히 약화됩니다.</p>
+
+    <div class="callout">
+      <strong>핵심 개념:</strong> 자율신경계는 의지로 직접 제어할 수 없지만, 호흡·수면·운동 등 생활 습관을 통해 간접적으로 조율할 수 있습니다. 이것이 자율신경 관리에서 기능의학적 접근이 주목받는 이유입니다.
+    </div>
+
+    <h2>2. 자율신경이 무너졌을 때 — 몸의 신호들</h2>
+    <p>자율신경 기능 이상은 특정 장기 하나가 아니라 신체 전반에 동시다발적으로 영향을 미칩니다. 각 계통별로 나타나는 주요 신호들을 정리합니다.</p>
+
+    <div class="symptom-grid">
+      <div class="symptom-card">
+        <h4>💓 심혈관계</h4>
+        <p>이유 없는 심계항진, 기립 시 어지러움과 눈앞이 캄캄해지는 느낌(기립성 저혈압), 자세 변화에 따른 맥박 급변(POTS)</p>
+      </div>
+      <div class="symptom-card">
+        <h4>💧 발한 이상</h4>
+        <p>과도한 식은땀(손발·겨드랑이), 특정 부위에서 땀이 전혀 안 나는 무한증, 식사 후 얼굴에만 땀이 나는 미각성 발한</p>
+      </div>
+      <div class="symptom-card">
+        <h4>🫃 소화기계</h4>
+        <p>식후 더부룩함·위마비, 변비와 설사의 교대 반복, 오심·구토, 이유 없는 체중 변화</p>
+      </div>
+      <div class="symptom-card">
+        <h4>🌡️ 체온·기타</h4>
+        <p>손발 냉감 또는 화끈거림, 더위·추위 과민, 안구 건조 또는 과도한 눈물, 만성 피로·수면 장애</p>
+      </div>
+    </div>
+
+    <h3>심혈관계 증상 — 기립성 저혈압과 POTS</h3>
+    <p>심혈관 자율신경 증상은 가장 두드러지고 삶의 질에 직접 영향을 미칩니다. <strong>기립성 저혈압(orthostatic hypotension)</strong>은 누운 자세에서 일어설 때 수축기 혈압이 20 mmHg 이상, 또는 이완기 혈압이 10 mmHg 이상 감소하는 상태로 정의됩니다(Freeman et al., 2011). 갑작스러운 어지러움, 눈앞이 캄캄해지는 느낌, 심한 경우 실신까지 유발합니다. <strong>기립성 빈맥 증후군(POTS)</strong>은 기립 후 10분 이내 맥박이 분당 30회 이상 증가하는 상태로, 특히 젊은 여성과 Long COVID 환자에서 빈도가 높아 주목받고 있습니다(Raj, 2013).</p>
+
+    <h3>발한 이상 — 교감신경 섬유의 불균형</h3>
+    <p>발한은 교감신경 콜린성 섬유가 담당합니다. 과도한 식은땀 — 특히 손발·겨드랑이에 집중되는 — 은 교감신경 말초 섬유 과활성화의 결과입니다. 반대로 특정 부위에서 땀이 전혀 나지 않는 <strong>무한증(anhidrosis)</strong>은 자율신경 섬유 손상을 시사하며, 당뇨병성 자율신경병증에서 특히 흔히 나타납니다. 식사 중 또는 식사 직후 얼굴에만 땀이 나는 <strong>미각성 발한</strong>은 이하선 자율신경 재지배 이상 또는 부교감신경 섬유 손상과 관련됩니다.</p>
+
+    <h3>소화기계 증상 — 위마비와 장 운동 이상</h3>
+    <p>자율신경은 위장관 운동을 총괄합니다. 교감신경이 과활성화되면 위·장관의 운동이 억제되고, 반대로 부교감신경이 회복되면 연동 운동이 정상화됩니다. 자율신경 기능 이상이 지속될 경우 <strong>위마비(gastroparesis)</strong> — 위 배출이 비정상적으로 지연되는 상태 — 가 나타날 수 있으며, 식후 더부룩함, 과도한 포만감, 오심이 대표 증상입니다. 변비와 설사가 교대로 반복되는 패턴도 장 자율신경 기능 이상의 전형적 표현입니다.</p>
+
+    <h2>3. 왜 자율신경이 무너지는가</h2>
+    <p>자율신경 기능 이상을 유발하는 원인은 다양합니다. 임상적으로 중요한 주요 원인들을 살펴봅니다.</p>
+    <ul>
+      <li><strong>만성 스트레스:</strong> 교감신경 과활성화가 장기화되면 시상하부-뇌하수체-부신 축(HPA axis)이 지속 활성화되어 자율신경 조절 중추 자체가 교란됩니다. 부교감신경의 회복 기능이 점진적으로 약화되는 악순환이 시작됩니다.</li>
+      <li><strong>수면 부족:</strong> 자율신경은 수면 중, 특히 비렘(NREM) 수면 단계에서 가장 활발하게 회복됩니다. 만성 수면 부족은 심박변이도(HRV) 저하로 이어지며, 이는 자율신경 탄력성 감소의 객관적 지표입니다.</li>
+      <li><strong>당뇨:</strong> 당뇨병성 자율신경병증(diabetic autonomic neuropathy)은 말초신경병증과 함께 당뇨의 가장 흔한 합병증 중 하나입니다. 고혈당에 의한 산화 스트레스와 최종당화산물(AGE) 축적이 자율신경 섬유를 직접 손상시킵니다.</li>
+      <li><strong>파킨슨병·다계통위축증(MSA):</strong> 자율신경계 핵심 구조물을 직접 침범합니다. 특히 MSA에서는 자율신경 기능 이상이 가장 두드러진 초기 증상이며, 파킨슨병에서도 기립성 저혈압과 위마비가 흔히 동반됩니다(Goldstein, 2012).</li>
+      <li><strong>코로나 후유증(Long COVID):</strong> POTS를 포함한 자율신경계 이상이 Long COVID의 주요 증상으로 보고되고 있습니다. 면역 매개 자율신경 섬유 손상과 소섬유 신경병증이 기전으로 제기되고 있으며(Vernino et al., 2021), 신경학 분야에서 활발히 연구 중입니다.</li>
+      <li><strong>갱년기:</strong> 에스트로겐 감소는 시상하부 체온 조절 중추의 안정성에 영향을 주어 자율신경계 불안정성을 높입니다. 안면 홍조, 발한, 심계항진이 대표적 증상입니다.</li>
+    </ul>
+
+    <h2>4. 검사는 정상인데 왜 이런 증상이?</h2>
+    <p>"혈액검사, 심전도, 위내시경 모두 정상인데 왜 이렇게 몸이 이상하죠?" — 자율신경 기능 이상 환자에서 매우 흔히 들을 수 있는 호소입니다.</p>
+    <p>자율신경 기능 이상은 일반 선별 검사에서 쉽게 탐지되지 않습니다. 혈액검사는 대사 지표와 염증 수치를 확인하고, 심전도는 안정 시 심장 리듬을 측정하지만, 자율신경 반사 회로의 기능적 통합성을 평가하지는 않습니다.</p>
+
+    <div class="callout">
+      <strong>중요한 시각:</strong> "검사 정상"은 "몸 정상"을 의미하지 않습니다. 자율신경 기능을 평가하려면 전문적인 자율신경 기능 검사가 필요합니다.
+    </div>
+
+    <p>자율신경 기능 이상을 평가하는 전문 검사는 다음과 같습니다:</p>
+    <ul>
+      <li><strong>기립경사검사(Tilt Table Test):</strong> 누운 자세에서 세운 상태로 변화 시 혈압·맥박 반응을 측정합니다. 기립성 저혈압과 POTS 진단의 표준 검사입니다.</li>
+      <li><strong>심박변이도(HRV) 검사:</strong> 심장 박동 간격의 변동성을 분석해 자율신경 탄력성을 정량화합니다. 부교감신경 활성도를 반영하는 HF(고주파) 성분이 특히 중요합니다.</li>
+      <li><strong>발한 기능 검사(QSART):</strong> 피부 발한 반응을 통해 콜린성 교감신경 섬유 기능을 평가합니다.</li>
+      <li><strong>피부 교감신경 반응(SSR):</strong> 전기 자극에 대한 피부 전기 반응으로 교감신경 피부 분지를 평가합니다.</li>
+    </ul>
+    <p>증상이 지속되고 삶의 질에 영향을 준다면, 신경과 전문의와의 상담을 통해 적절한 자율신경 기능 검사 여부를 확인하는 것이 중요합니다.</p>
+
+    <h2>5. 자율신경 균형을 위한 접근</h2>
+    <p>자율신경 기능 이상의 원인과 중증도에 따라 관리 방법이 달라지지만, 근거가 축적된 보편적 접근들을 소개합니다. 아래 내용은 의학적 진단과 관리를 대체하지 않으며, 보완적 생활 습관 지원의 관점에서 제시합니다.</p>
+
+    <h3>미주신경 자극과 호흡</h3>
+    <p>미주신경(Vagus nerve)은 부교감신경의 핵심 통로로, 뇌줄기에서 출발해 심장·폐·소화관까지 연결되는 가장 긴 뇌신경입니다. 느리고 깊은 복식호흡은 미주신경 활성화를 통해 부교감신경 긴장도를 높이는 데 주목받고 있습니다. '4-7-8 호흡법'(4초 흡기, 7초 유지, 8초 호기)이나 공명 호흡(분당 6회, 즉 5초 흡기+5초 호기) 등이 심박변이도(HRV) 개선과 관련해 연구되고 있습니다.</p>
+
+    <h3>규칙적인 수면</h3>
+    <p>자율신경 회복의 가장 기본적인 토대입니다. 수면 중 — 특히 비렘 수면 단계에서 — 부교감신경이 우세해지면서 심박수와 혈압이 생리적으로 낮아지고 HRV가 높아집니다. 매일 같은 시간에 잠들고 기상하는 패턴을 유지하는 것이 자율신경 회복 사이클을 안정화하는 데 핵심입니다.</p>
+
+    <h3>유산소 운동</h3>
+    <p>규칙적인 중등도 유산소 운동은 HRV를 개선하고 자율신경 탄력성을 회복시키는 것으로 보고됩니다. 특히 기립성 저혈압이나 POTS가 있는 경우, 초기에는 앉은 자세 또는 누운 자세에서의 운동(수중 운동, 리컴번트 바이크)부터 시작하고, 적응에 따라 점진적으로 직립 운동을 늘리는 것이 권장됩니다(Raj, 2013).</p>
+
+    <h3>기립성 저혈압 생활 관리</h3>
+    <ul>
+      <li>누운 자세에서 바로 서지 않기 — 앉은 자세에서 잠시 머문 후 천천히 일어서기</li>
+      <li>적절한 수분 섭취: 하루 2~2.5L 수분이 혈액량 유지에 지원이 됩니다</li>
+      <li>염분 적절 섭취: 혈압이 낮은 기립성 저혈압 환자에서 염분 섭취량 조절이 도움이 될 수 있습니다(주치의와 상의)</li>
+      <li>하지 압박 스타킹 착용: 정맥 환류를 지원해 기립 시 혈압 저하를 줄이는 데 주목받습니다</li>
+    </ul>
+
+    <h3>장 건강과 자율신경</h3>
+    <p>장-뇌 축(Gut-Brain Axis)을 통해 장내 미생물군과 장 신경계(enteric nervous system)는 자율신경계와 지속적으로 소통합니다. 다양한 섬유질 섭취, 발효식품, 프로바이오틱스를 통한 장 건강 관리는 자율신경 균형을 지원하는 보조적 접근으로 주목받고 있습니다. 미주신경이 장-뇌 축의 핵심 연결 통로임을 감안할 때, 장 환경 최적화는 자율신경 관리의 중요한 구성 요소입니다.</p>
+
+    <div class="evidence-box">
+      <h4>📚 주요 참고 문헌</h4>
+      <ul>
+        <li>Goldstein DS (2012). Dysautonomia in Parkinson disease. <em>Comprehensive Physiology</em> 4(2):805-826</li>
+        <li>Freeman R et al. (2011). Consensus statement on the definition of orthostatic hypotension. <em>Autonomic Neuroscience</em> 161(1-2):46-48</li>
+        <li>Raj SR (2013). Postural tachycardia syndrome. <em>Circulation</em> 127(23):2336-2342</li>
+        <li>Vernino S et al. (2021). Postural orthostatic tachycardia syndrome: what do we know? <em>Journal of the American Heart Association</em> 10(23):e023125</li>
+      </ul>
+    </div>
+
+    <h2>6. 요약</h2>
+    <p>자율신경계는 우리가 의식하지 못하는 사이 심장, 혈압, 소화, 체온, 발한 — 몸 전체를 총괄합니다. 교감신경과 부교감신경의 균형이 무너지면, 검사에서 "이상 없음"이 나와도 두근거림, 기립 시 어지러움, 식은땀, 소화불량, 수면 장애 등 다양한 증상이 나타날 수 있습니다.</p>
+    <p>원인을 파악하고, 필요한 경우 전문적인 자율신경 기능 검사를 받으며, 미주신경 자극·수면·운동·기립성 저혈압 관리·장 건강 등 근거 있는 생활 습관 접근을 병행하는 것이 핵심입니다. 증상이 삶의 질에 영향을 준다면 신경과 전문의와의 상담을 권장합니다.</p>
+
+    <div class="author-card">
+      <div class="author-avatar">👩‍⚕️</div>
+      <div class="author-info">
+        <h4>Dr.H</h4>
+        <div class="creds">신경과 전문의 · 연세대 세브란스 출신 · 뇌·통증·기능의학 전문 · NervLock 설립자</div>
+        <p>대한신경과학회 정회원 · 대한파킨슨병 및 이상운동질환 학회 정회원 · 대한기능의학회 정회원. 본 칼럼은 의학적 정보 제공을 목적으로 하며 개인 진료를 대체하지 않습니다.</p>
+      </div>
+    </div>
+
+    <div class="cta-banner">
+      <h3>NervLock 너브케어로 신경 건강을 지원하세요</h3>
+      <p>신경과 전문의가 직접 처방한 커큐민 + 애플라핀® — 신경 염증 균형을 위한 가장 근거 있는 두 가지 성분.<br>NervLock 브랜드의 첫 번째 제품이 곧 출시됩니다.</p>
+      <a href="/#coming-soon" class="cta-btn">출시 알림 신청하기</a>
+    </div>
+
+    <div class="related">
+      <h3>관련 칼럼</h3>
+      <div class="related-grid">
+        <a href="/blog/브레인포그-신경과학/" class="related-card">
+          <div class="tag">기능의학</div>
+          <h4>브레인포그는 왜 생기는가 — 신경과학적 설명과 개선 접근</h4>
+        </a>
+        <a href="/blog/말초신경병증/" class="related-card">
+          <div class="tag">신경과학</div>
+          <h4>말초신경병증이란? 증상, 원인, 신경과 전문의의 시각</h4>
+        </a>
+      </div>
+    </div>
+
+    <div class="sig-block">
+      <p class="sig-main">본 글은 신경과 전문의 <strong>함지현 원장</strong>이 직접 작성하였습니다.</p>
+      <ul class="sig-creds">
+        <li>연세대 세브란스 출신 신경과 전문의</li>
+        <li>대한신경과학회 정회원</li>
+        <li>대한파킨슨병 및 이상운동질환 학회 정회원</li>
+        <li>대한기능의학회 정회원</li>
+      </ul>
+      <p class="sig-notice">※ 본 내용은 의학 정보 제공을 목적으로 하며, 개인 진료를 대체하지 않습니다.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2026 NervLock. All rights reserved.</p>
+    <p>본 칼럼은 의학적 정보 제공을 목적으로 하며 개인 진료를 대체하지 않습니다.</p>
+  </div>
+</footer>
+
+</body>
+</html>
