@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>rTG 오메가3, 일반 오메가3와 뭐가 다른가 — 흡수율의 과학 | NervLock</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Apple SD Gothic Neo','Noto Sans KR','맑은 고딕',sans-serif; color: #1a1a2e; background: #fff; font-size: 17px; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    :root {
+      --navy: #0d2545; --navy2: #163561;
+      --teal: #1a7a6e; --teal2: #22a090;
+      --gold: #b8922a; --gold2: #d4a843;
+      --gray: #f4f6f9; --gray2: #e8ecf2;
+      --muted: #5a6278;
+    }
+
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(13,37,69,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-logo { font-size: 20px; font-weight: 900; color: #fff; white-space: nowrap; }
+    .nav-logo span { color: var(--gold2); }
+    .nav-back { font-size: 14px; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold2); }
+
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 60px 24px 100px; }
+
+    .article-hero { background: linear-gradient(135deg, #0a3d5e 0%, #1a7a6e 100%); border-radius: 24px; padding: 52px 48px; margin-bottom: 48px; position: relative; overflow: hidden; }
+    .article-hero::before { content: '🐟'; position: absolute; right: 32px; top: 32px; font-size: 80px; opacity: 0.15; }
+    .article-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(26,122,110,0.3); border: 1px solid rgba(26,122,110,0.5); border-radius: 50px; font-size: 12px; font-weight: 700; color: #6ee7da; padding: 4px 14px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+    .article-title { font-size: clamp(20px, 3.2vw, 32px); font-weight: 900; color: #fff; line-height: 1.3; margin-bottom: 20px; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 20px; }
+    .article-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.65); }
+    .article-meta-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+
+    .abstract { background: linear-gradient(135deg, rgba(26,122,110,0.06), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 16px 16px 0; padding: 24px 28px; margin-bottom: 48px; }
+    .abstract-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--teal2); margin-bottom: 10px; }
+    .abstract p { font-size: 15px; color: #2a3a4a; line-height: 1.85; margin: 0; font-style: italic; }
+
+    .article-body h2 { font-size: 24px; font-weight: 900; color: var(--navy); margin: 52px 0 16px; line-height: 1.35; padding-bottom: 12px; border-bottom: 2px solid var(--gray2); }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-size: 19px; font-weight: 800; color: var(--navy2); margin: 36px 0 12px; }
+    .article-body p { font-size: 16px; color: #2a2a3e; line-height: 1.95; margin-bottom: 20px; }
+    .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .article-body li { font-size: 15px; color: #3a3a50; line-height: 1.75; }
+    .article-body strong { color: var(--navy); }
+
+    .callout { background: linear-gradient(135deg, rgba(26,122,110,0.07), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: var(--navy); font-style: italic; line-height: 1.85; }
+    .callout strong { color: var(--teal); font-style: normal; }
+
+    .evidence-box { background: var(--gray); border-radius: 14px; padding: 20px 24px; margin: 28px 0; }
+    .evidence-box h4 { font-size: 12px; font-weight: 800; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .evidence-box ul { margin: 0; }
+    .evidence-box li { font-size: 13px; color: var(--muted); }
+
+    .form-compare { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin: 28px 0; }
+    .form-card { border-radius: 16px; padding: 22px 20px; border: 1.5px solid var(--gray2); }
+    .form-card.ee { background: #fff8f8; border-color: #f0c0b0; }
+    .form-card.tg { background: #f4f9f4; border-color: #a8d4a8; }
+    .form-card.rtg { background: linear-gradient(135deg, rgba(26,122,110,0.07), rgba(26,122,110,0.02)); border-color: var(--teal2); }
+    .form-card-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+    .form-card.ee .form-card-label { color: #c05030; }
+    .form-card.tg .form-card-label { color: #2a7a2a; }
+    .form-card.rtg .form-card-label { color: var(--teal); }
+    .form-card h4 { font-size: 15px; font-weight: 900; color: var(--navy); margin-bottom: 10px; line-height: 1.3; }
+    .form-card ul { padding-left: 16px; margin: 0; display: flex; flex-direction: column; gap: 6px; }
+    .form-card li { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    .absorption-bar { margin: 28px 0; }
+    .bar-row { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; }
+    .bar-label { font-size: 13px; font-weight: 700; color: var(--navy); width: 60px; flex-shrink: 0; }
+    .bar-track { flex: 1; background: var(--gray2); border-radius: 50px; height: 12px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 50px; }
+    .bar-fill.rtg { background: linear-gradient(90deg, var(--teal), var(--teal2)); width: 100%; }
+    .bar-fill.tg  { background: linear-gradient(90deg, #2a9a40, #4abf60); width: 68%; }
+    .bar-fill.ee  { background: linear-gradient(90deg, #c05030, #e07050); width: 45%; }
+    .bar-pct { font-size: 13px; font-weight: 800; color: var(--navy2); width: 48px; flex-shrink: 0; }
+
+    .checklist { background: var(--gray); border-radius: 16px; padding: 24px 28px; margin: 28px 0; }
+    .checklist h4 { font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 16px; }
+    .checklist-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+    .checklist-item:last-child { margin-bottom: 0; }
+    .check-num { width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(135deg, var(--teal), var(--teal2)); color: #fff; font-size: 12px; font-weight: 900; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+    .check-text strong { display: block; font-size: 14px; font-weight: 800; color: var(--navy); margin-bottom: 3px; }
+    .check-text span { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    .highlight-box { background: linear-gradient(135deg, rgba(184,146,42,0.08), rgba(184,146,42,0.02)); border: 1px solid rgba(184,146,42,0.25); border-radius: 16px; padding: 24px 28px; margin: 28px 0; }
+    .highlight-box h4 { font-size: 14px; font-weight: 800; color: var(--gold); letter-spacing: 1px; margin-bottom: 12px; }
+    .highlight-box p { font-size: 15px; color: #2a2a3e; line-height: 1.85; margin: 0; }
+
+    .author-card { background: var(--gray); border-radius: 20px; padding: 28px 32px; margin-top: 64px; display: flex; align-items: flex-start; gap: 20px; }
+    .author-avatar { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--navy), var(--teal)); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+    .author-info h4 { font-size: 17px; font-weight: 900; color: var(--navy); margin-bottom: 4px; }
+    .author-info .creds { font-size: 13px; color: var(--teal); font-weight: 600; margin-bottom: 10px; }
+    .author-info p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+
+    .cta-banner { background: linear-gradient(135deg, var(--navy), #0f4f6e); border-radius: 20px; padding: 40px 36px; margin-top: 48px; text-align: center; }
+    .cta-banner h3 { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 10px; }
+    .cta-banner p { font-size: 15px; color: rgba(255,255,255,0.7); margin-bottom: 24px; line-height: 1.7; }
+    .cta-btn { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold2)); color: #fff; font-size: 16px; font-weight: 800; padding: 14px 36px; border-radius: 50px; box-shadow: 0 6px 20px rgba(184,146,42,0.4); transition: transform 0.2s; }
+    .cta-btn:hover { transform: translateY(-2px); }
+
+    .related { margin-top: 64px; }
+    .related h3 { font-size: 20px; font-weight: 900; color: var(--navy); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .related-card { background: var(--gray); border-radius: 16px; padding: 20px; border: 1px solid var(--gray2); }
+    .related-card .tag { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .related-card h4 { font-size: 15px; font-weight: 800; color: var(--navy); line-height: 1.4; }
+
+    footer { background: #0a1a32; color: rgba(255,255,255,0.5); padding: 32px 0; }
+    .footer-bottom { max-width: 900px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 12px; }
+
+    @media (max-width: 700px) {
+      .form-compare { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .article-hero { padding: 36px 28px; }
+      .related-grid { grid-template-columns: 1fr; }
+      .author-card { flex-direction: column; }
+    }
+    .sig-block { border-top: 2px solid var(--gray2); margin-top: 48px; padding-top: 24px; }
+    .sig-main { font-size: 14px; color: var(--navy); font-weight: 700; margin-bottom: 12px; line-height: 1.7; }
+    .sig-creds { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+    .sig-creds li { font-size: 13px; color: var(--muted); padding-left: 14px; position: relative; line-height: 1.6; }
+    .sig-creds li::before { content: "·"; position: absolute; left: 0; color: var(--teal2); font-weight: 900; }
+    .sig-notice { font-size: 12px; color: var(--muted); font-style: italic; line-height: 1.7; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Nerv<span>Lock</span></a>
+    <a href="/#blog" class="nav-back">← 의학 칼럼</a>
+  </div>
+</nav>
+
+<div class="article-wrap">
+
+  <div class="article-hero">
+    <div class="article-tag">기능의학</div>
+    <h1 class="article-title">rTG 오메가3, 일반 오메가3와 뭐가 다른가<br>— 신경과 전문의가 설명하는 흡수율의 과학</h1>
+    <div class="article-meta">
+      <div class="article-meta-item">👨‍⚕️ <strong>Dr.H</strong> — 신경과 전문의 · NervLock 설립자</div>
+      <div class="article-meta-item">📅 2026. 6. 28</div>
+      <div class="article-meta-item">⏱ 8분 읽기</div>
+    </div>
+  </div>
+
+  <div class="abstract">
+    <div class="abstract-label">요약</div>
+    <p>오메가3는 EPA·DHA 함량만 보면 된다고 생각하기 쉽습니다. 그러나 같은 함량이라도 어떤 분자 형태(EE형·TG형·rTG형)냐에 따라 체내 흡수율이 최대 2배 이상 차이납니다. 본 글에서는 오메가3 형태별 구조적 차이와 임상 흡수율 데이터, 뇌건강에서 DHA·EPA가 하는 역할, 그리고 rTG형을 선택할 때 확인해야 할 사항들을 신경과 전문의 관점에서 정리합니다.</p>
+  </div>
+
+  <div class="article-body">
+
+    <h2>1. 오메가3, 왜 형태가 중요한가</h2>
+    <p>오메가3 보충제를 구입할 때 대부분의 소비자는 "EPA+DHA 몇 mg"이라는 숫자에 집중합니다. 합리적인 접근처럼 보이지만, 사실 그 숫자가 말해주지 않는 것이 있습니다. 바로 <strong>오메가3가 어떤 분자 형태로 담겨 있는가</strong>입니다.</p>
+    <p>오메가3의 핵심 성분인 EPA(에이코사펜타엔산, eicosapentaenoic acid)와 DHA(도코사헥사엔산, docosahexaenoic acid)는 자연 상태에서 글리세롤 골격에 결합된 트리글리세리드(TG) 구조로 존재합니다. 그런데 어유(fish oil)를 정제·농축하는 제조 과정에서 이 구조가 변형되고, 최종 제품이 어떤 형태로 만들어지느냐에 따라 소화·흡수 경로와 효율이 달라집니다.</p>
+    <p>현재 시장에 유통되는 오메가3 제품은 크게 세 가지 형태로 구분됩니다: EE형(에틸에스테르), TG형(트리글리세리드), rTG형(재에스테르화 트리글리세리드). 가격이 저렴한 EE형이 시중 제품의 대부분을 차지하지만, 소비자의 상당수는 이 차이를 인식하지 못한 채 구매합니다.</p>
+
+    <div class="callout">
+      <strong>핵심 질문:</strong> 같은 EPA+DHA 500mg을 섭취해도, 어떤 형태냐에 따라 실제로 혈중에 흡수되는 양이 다를 수 있습니다. 어떤 형태가 더 효율적으로 흡수될까요?
+    </div>
+
+    <h2>2. 오메가3의 3가지 형태</h2>
+
+    <div class="form-compare">
+      <div class="form-card ee">
+        <div class="form-card-label">EE형</div>
+        <h4>에틸에스테르<br>(Ethyl Ester)</h4>
+        <ul>
+          <li>자연에 존재하지 않는 인공 구조</li>
+          <li>에탄올과 결합해 만들어짐</li>
+          <li>제조가 쉬워 가장 저렴</li>
+          <li>췌장 리파아제 분해 효율 낮음</li>
+          <li>공복 섭취 시 흡수율 크게 저하</li>
+        </ul>
+      </div>
+      <div class="form-card tg">
+        <div class="form-card-label">TG형</div>
+        <h4>트리글리세리드<br>(Triglyceride)</h4>
+        <ul>
+          <li>자연 생선 기름과 동일한 구조</li>
+          <li>체내 지방 흡수 경로로 처리</li>
+          <li>EE형보다 흡수율 높음</li>
+          <li>자연산은 EPA+DHA 농도 낮음</li>
+          <li>고농도 제품 만들기 어려움</li>
+        </ul>
+      </div>
+      <div class="form-card rtg">
+        <div class="form-card-label">rTG형 ★</div>
+        <h4>재에스테르화 트리글리세리드<br>(re-esterified TG)</h4>
+        <ul>
+          <li>EE형으로 고농도 농축 후 TG 재결합</li>
+          <li>높은 농도(EPA+DHA 70~90%)와</li>
+          <li>자연 TG 구조의 흡수율을 동시에 구현</li>
+          <li>제조 공정 복잡해 가격 높음</li>
+          <li>현재 가장 주목받는 오메가3 형태</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>왜 EE형은 흡수율이 낮은가</h3>
+    <p>EE형의 흡수율이 낮은 이유는 구조적 문제에서 비롯됩니다. 자연 상태의 지방산은 글리세롤에 에스테르 결합으로 연결된 TG 구조입니다. 인체의 소화 시스템 — 특히 췌장 리파아제 — 은 바로 이 TG 구조를 분해하도록 최적화되어 있습니다.</p>
+    <p>EE형은 에탄올(에틸기)과 결합된 구조로, 췌장 리파아제가 이 에틸에스테르 결합을 분해하는 효율이 자연 TG 구조에 비해 현저히 낮습니다. 결과적으로 같은 양을 섭취해도 실제 흡수되는 EPA·DHA의 비율이 TG형·rTG형에 비해 낮습니다. 또한 EE형은 지용성 물질의 흡수를 돕는 담즙산이 충분히 분비되는 식사 후에 복용해야 흡수율이 올라가며, 공복 복용 시 흡수율이 특히 낮아집니다.</p>
+
+    <h2>3. 흡수율 비교 — 임상 데이터</h2>
+    <p>오메가3 형태별 흡수율 차이는 임상 연구로 확인된 사실입니다.</p>
+
+    <h3>Dyerberg et al. (2010) — Prostaglandins, Leukotrienes and Essential Fatty Acids</h3>
+    <p>72명을 대상으로 EE형, TG형, rTG형 오메가3를 각각 섭취하게 한 후 혈중 EPA+DHA 농도를 비교한 무작위 교차 연구입니다. 결과는 다음과 같았습니다:</p>
+    <ul>
+      <li><strong>rTG형 vs EE형:</strong> rTG형이 약 124% 더 높은 혈중 EPA+DHA 농도를 달성</li>
+      <li><strong>TG형 vs EE형:</strong> TG형이 약 53% 더 높음</li>
+      <li>흡수율 순서: <strong>rTG형 &gt; TG형 &gt; EE형</strong></li>
+    </ul>
+
+    <div class="absorption-bar">
+      <div class="bar-row">
+        <div class="bar-label">rTG형</div>
+        <div class="bar-track"><div class="bar-fill rtg"></div></div>
+        <div class="bar-pct">+124%</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">TG형</div>
+        <div class="bar-track"><div class="bar-fill tg"></div></div>
+        <div class="bar-pct">+53%</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">EE형</div>
+        <div class="bar-track"><div class="bar-fill ee"></div></div>
+        <div class="bar-pct">기준</div>
+      </div>
+    </div>
+    <p style="font-size:12px; color:var(--muted); margin-top:-16px; margin-bottom:24px;">▲ EE형 대비 상대적 혈중 흡수율 비교 (Dyerberg et al., 2010)</p>
+
+    <h3>Neubronner et al. (2011) — European Journal of Clinical Nutrition</h3>
+    <p>150명을 대상으로 26주간 rTG형과 EE형을 비교한 대규모 연구입니다. 오메가3 지수(Omega-3 Index, 적혈구 내 EPA+DHA 비율)를 측정한 결과, rTG형 섭취군에서 오메가3 지수가 EE형에 비해 유의미하게 높게 상승하는 것이 확인되었습니다. 오메가3 지수는 심혈관 위험도 및 뇌건강과 관련된 바이오마커로 주목받고 있습니다.</p>
+
+    <div class="callout">
+      <strong>임상적 의미:</strong> EE형 오메가3를 고용량 복용하는 것보다 rTG형을 적정량 복용하는 편이 혈중 오메가3 지수를 효율적으로 높이는 데 도움을 줄 수 있습니다. 섭취량만큼 '어떻게 흡수되는가'도 중요합니다.
+    </div>
+
+    <h2>4. 뇌건강과 DHA — 신경과 전문의가 주목하는 이유</h2>
+    <p>오메가3가 뇌건강과 연결되는 핵심은 <strong>DHA</strong>입니다. DHA는 뇌 회백질의 주요 구성 지방산으로, 뇌 총 지방의 약 15~20%를 차지합니다. 뇌는 체중의 약 2%에 불과하지만, 전신에서 가장 높은 DHA 농도를 유지하는 기관입니다.</p>
+
+    <h3>DHA가 신경계에서 하는 일</h3>
+    <p>DHA의 역할은 단순히 뇌에 많다는 것을 넘어, 신경세포의 기능적 완전성과 직접적으로 연결됩니다:</p>
+    <ul>
+      <li><strong>신경세포막 유동성 유지에 필요:</strong> DHA는 6개의 이중결합을 가진 고도불포화지방산으로, 세포막에 유연성을 부여합니다. 막 유동성이 유지되어야 이온채널·수용체·신호전달 단백질이 정상 작동합니다.</li>
+      <li><strong>시냅스 소포 기능과 신경전달물질 분비에 관여:</strong> 시냅스 전 말단의 막 DHA 함량은 신경전달물질이 담긴 소포(vesicle)의 분비 효율에 영향을 줍니다.</li>
+      <li><strong>나이가 들면서 DHA 합성 능력 저하:</strong> 체내에서 ALA(알파리놀렌산)로부터 EPA·DHA를 합성할 수 있지만, 이 전환 효율은 나이가 들면서 저하되고 개인차도 큽니다. 중장년 이후에는 식이 또는 보충제를 통한 직접 섭취가 필요합니다.</li>
+    </ul>
+
+    <div class="highlight-box">
+      <h4>🏛 식약처 인정 기능성 (DHA)</h4>
+      <p>EPA 및 DHA 함유 유지 — <strong>기억력 개선에 도움을 줄 수 있음</strong> (건강기능식품 고시형 원료)</p>
+    </div>
+
+    <h2>5. EPA의 역할 — 신경 염증 조절</h2>
+    <p>DHA가 신경세포의 구조를 지지하는 역할을 한다면, EPA는 신경계의 <strong>염증 환경 조절</strong>에 관여합니다.</p>
+    <p>EPA는 아라키돈산(AA, arachidonic acid)과 COX-2(시클로옥시게나아제-2) 효소에서 경쟁적으로 결합합니다. 아라키돈산 유래의 염증 촉진 물질인 프로스타글란딘 E2(PGE2), 류코트리엔 B4(LTB4) 생성이 억제되고, 대신 EPA로부터 레졸빈(Resolvin E 계열)·프로텍틴(Protectin) 등 <strong>염증 수습 매개물질(pro-resolving mediators)</strong>이 생성됩니다. 신경 염증(neuroinflammation)이 신경퇴행성 질환과 인지기능 저하에 관여한다는 연구가 축적되고 있으며, EPA가 이 과정에 관여할 수 있다는 보고가 이어지고 있습니다.</p>
+
+    <div class="highlight-box">
+      <h4>🏛 식약처 인정 기능성 (EPA+DHA)</h4>
+      <p>EPA 및 DHA 함유 유지 — <strong>혈중 중성지방 감소에 도움을 줄 수 있음, 혈행 개선에 도움을 줄 수 있음</strong></p>
+    </div>
+
+    <h2>6. rTG형 오메가3를 선택할 때 확인할 것들</h2>
+
+    <div class="checklist">
+      <h4>✅ rTG 오메가3 선택 가이드</h4>
+      <div class="checklist-item">
+        <div class="check-num">1</div>
+        <div class="check-text">
+          <strong>EPA+DHA 합산 함량 확인</strong>
+          <span>1일 섭취량 기준 EPA+DHA 합 500mg 이상이 기본입니다. 뇌건강을 주목적으로 한다면 DHA 함량이 상대적으로 높은 제품을 선택하세요.</span>
+        </div>
+      </div>
+      <div class="checklist-item">
+        <div class="check-num">2</div>
+        <div class="check-text">
+          <strong>원료 어종 및 출처 확인</strong>
+          <span>멸치·정어리·고등어 등 소형 어류 유래가 먹이사슬 상단 대형 어류보다 중금속(수은 등) 오염 위험이 낮습니다. MSC(해양관리협의회) 지속가능 어업 인증 여부도 참고할 수 있습니다.</span>
+        </div>
+      </div>
+      <div class="checklist-item">
+        <div class="check-num">3</div>
+        <div class="check-text">
+          <strong>산화 안정성 확인</strong>
+          <span>오메가3는 다중불포화지방산으로 산화(산패)되기 쉽습니다. 산패도 지표인 TOTOX값이 낮을수록 품질이 좋습니다. 질소 충전 포장, 천연 비타민E(토코페롤) 첨가 여부를 확인하세요.</span>
+        </div>
+      </div>
+      <div class="checklist-item">
+        <div class="check-num">4</div>
+        <div class="check-text">
+          <strong>복용 시기</strong>
+          <span>rTG형도 식사와 함께, 특히 지방이 포함된 식사 후에 복용하면 담즙산 분비가 촉진되어 흡수율이 더 높아집니다. 가능하면 점심 또는 저녁 식사 직후를 권장합니다.</span>
+        </div>
+      </div>
+    </div>
+
+    <h2>7. 신경과 전문의 관점에서 정리</h2>
+    <p>오메가3 보충제를 뇌건강 관리 루틴의 일환으로 고려한다면, 단순히 "오메가3를 먹는다"는 것보다 세 가지를 함께 생각해야 합니다: <strong>어떤 형태인가(형태 선택), EPA와 DHA 비율은 어떤가(성분 설계), 실제로 얼마나 흡수되는가(생체이용률)</strong>.</p>
+    <p>임상 데이터는 EE형 오메가3를 고용량 복용하는 것보다 rTG형을 적정량 복용하는 편이 혈중 오메가3 지수를 효율적으로 높이는 데 도움을 줄 수 있다는 것을 보여줍니다. 가격 차이는 실재하지만, 실제로 흡수되는 양을 고려하면 단순히 함량 대비 가격으로만 비교하기 어렵습니다.</p>
+    <p>오메가3는 즉각적인 효과가 나타나는 성분이 아닙니다. 꾸준한 섭취를 통해 신경세포막 DHA 비율과 혈중 오메가3 지수가 서서히 올라가는 방식으로 작용합니다. 최소 8~12주 이상의 지속적인 섭취가 필요하며, 갑작스러운 인지기능 변화나 신경학적 증상이 있다면 보충제보다 먼저 신경과 전문의 상담을 받으셔야 합니다.</p>
+
+    <div class="evidence-box">
+      <h4>📚 주요 참고 문헌</h4>
+      <ul>
+        <li>Dyerberg J et al. (2010). Bioavailability of marine n-3 fatty acid formulations. <em>Prostaglandins, Leukotrienes and Essential Fatty Acids</em> 83(3):137–141</li>
+        <li>Neubronner J et al. (2011). Enhanced increase of omega-3 index in response to long-term n-3 fatty acid supplementation from triacylglycerides versus ethyl esters. <em>European Journal of Clinical Nutrition</em> 65(2):247–254</li>
+        <li>Kidd PM (2007). Omega-3 DHA and EPA for cognition, behavior, and mood. <em>Alternative Medicine Review</em> 12(3):207–227</li>
+        <li>Harris WS (2007). Omega-3 fatty acids and cardiovascular disease: a case for omega-3 index as a new risk factor. <em>Pharmacological Research</em> 55(3):217–223</li>
+      </ul>
+    </div>
+
+    <div class="author-card">
+      <div class="author-avatar">👨‍⚕️</div>
+      <div class="author-info">
+        <h4>Dr.H</h4>
+        <div class="creds">신경과 전문의 · 연세대 세브란스 출신 · 뇌·기능의학 전문 · NervLock 설립자</div>
+        <p>대한신경과학회 정회원 · 대한파킨슨병 및 이상운동질환 학회 정회원 · 대한기능의학회 정회원. 본 칼럼은 의학적 정보 제공을 목적으로 하며 개인 진료를 대체하지 않습니다.</p>
+      </div>
+    </div>
+
+    <div class="cta-banner">
+      <h3>NervLock Brain Energy로 뇌 건강 루틴을 시작하세요</h3>
+      <p>신경과 전문의가 설계한 rTG형 오메가3 포함 뇌 건강 영양 루틴.<br>흡수율부터 설계한 NervLock Brain Energy가 곧 출시됩니다.</p>
+      <a href="/#coming-soon" class="cta-btn">출시 알림 신청하기</a>
+    </div>
+
+    <div class="related">
+      <h3>관련 칼럼</h3>
+      <div class="related-grid">
+        <a href="/blog/포스파티딜세린-기억력/" class="related-card">
+          <div class="tag">기능의학</div>
+          <h4>포스파티딜세린(PS), 왜 기억력에 주목받는가</h4>
+        </a>
+        <a href="/blog/브레인포그-신경과학/" class="related-card">
+          <div class="tag">기능의학</div>
+          <h4>브레인 포그(Brain Fog) — 멍한 머리의 신경과학적 원인과 필요 영양소</h4>
+        </a>
+      </div>
+    </div>
+
+    <div class="sig-block">
+      <p class="sig-main">본 글은 신경과 전문의 <strong>함지현 원장</strong>이 직접 작성하였습니다.</p>
+      <ul class="sig-creds">
+        <li>연세대 세브란스 출신 신경과 전문의</li>
+        <li>대한신경과학회 정회원</li>
+        <li>대한파킨슨병 및 이상운동질환 학회 정회원</li>
+        <li>대한기능의학회 정회원</li>
+      </ul>
+      <p class="sig-notice">※ 본 내용은 의학 정보 제공을 목적으로 하며, 개인 진료를 대체하지 않습니다.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2026 NervLock. All rights reserved.</p>
+    <p>본 칼럼은 의학적 정보 제공을 목적으로 하며 개인 진료를 대체하지 않습니다.</p>
+  </div>
+</footer>
+
+</body>
+</html>
