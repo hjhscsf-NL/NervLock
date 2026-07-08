@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>rTG Omega-3: Why Molecular Form Determines Bioavailability | NervLock</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; color: #1a1a2e; background: #fff; font-size: 17px; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    :root {
+      --navy: #0d2545; --navy2: #163561;
+      --teal: #1a7a6e; --teal2: #22a090;
+      --gold: #b8922a; --gold2: #d4a843;
+      --gray: #f4f6f9; --gray2: #e8ecf2;
+      --muted: #5a6278;
+    }
+
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(13,37,69,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-logo { font-size: 20px; font-weight: 900; color: #fff; white-space: nowrap; }
+    .nav-logo span { color: var(--gold2); }
+    .nav-back { font-size: 14px; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold2); }
+    .lang-toggle { display: flex; border: 1px solid rgba(255,255,255,0.22); border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+    .lang-btn { padding: 5px 12px; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); transition: all 0.18s; }
+    .lang-btn + .lang-btn { border-left: 1px solid rgba(255,255,255,0.22); }
+    .lang-btn.active { background: rgba(255,255,255,0.18); color: #fff; }
+
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 60px 24px 100px; }
+
+    .article-hero { background: linear-gradient(135deg, #0a3d5e 0%, #1a7a6e 100%); border-radius: 24px; padding: 52px 48px; margin-bottom: 48px; position: relative; overflow: hidden; }
+    .article-hero::before { content: '🐟'; position: absolute; right: 32px; top: 32px; font-size: 80px; opacity: 0.15; }
+    .article-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(26,122,110,0.3); border: 1px solid rgba(26,122,110,0.5); border-radius: 50px; font-size: 12px; font-weight: 700; color: #6ee7da; padding: 4px 14px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+    .article-title { font-size: clamp(20px, 3.2vw, 32px); font-weight: 900; color: #fff; line-height: 1.3; margin-bottom: 20px; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 20px; }
+    .article-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.65); }
+    .article-meta-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+
+    .lang-switch-banner { background: var(--gray); border: 1px solid var(--gray2); border-radius: 14px; padding: 14px 20px; margin-bottom: 40px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .lang-switch-banner span { font-size: 14px; color: var(--muted); }
+    .lang-switch-link { font-size: 13px; font-weight: 700; color: var(--teal2); border: 1px solid var(--teal2); border-radius: 50px; padding: 6px 16px; transition: all 0.2s; white-space: nowrap; }
+    .lang-switch-link:hover { background: var(--teal2); color: #fff; }
+
+    .abstract { background: linear-gradient(135deg, rgba(26,122,110,0.06), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 16px 16px 0; padding: 24px 28px; margin-bottom: 48px; }
+    .abstract-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--teal2); margin-bottom: 10px; }
+    .abstract p { font-size: 15px; color: #2a3a4a; line-height: 1.85; margin: 0; font-style: italic; }
+
+    .article-body h2 { font-size: 24px; font-weight: 900; color: var(--navy); margin: 52px 0 16px; line-height: 1.35; padding-bottom: 12px; border-bottom: 2px solid var(--gray2); }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-size: 19px; font-weight: 800; color: var(--navy2); margin: 36px 0 12px; }
+    .article-body p { font-size: 16px; color: #2a2a3e; line-height: 1.95; margin-bottom: 20px; }
+    .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .article-body li { font-size: 15px; color: #3a3a50; line-height: 1.75; }
+    .article-body strong { color: var(--navy); }
+
+    .callout { background: linear-gradient(135deg, rgba(26,122,110,0.07), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: var(--navy); font-style: italic; line-height: 1.85; }
+    .callout strong { color: var(--teal); font-style: normal; }
+
+    .evidence-box { background: var(--gray); border-radius: 14px; padding: 20px 24px; margin: 28px 0; }
+    .evidence-box h4 { font-size: 12px; font-weight: 800; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .evidence-box ul { margin: 0; }
+    .evidence-box li { font-size: 13px; color: var(--muted); }
+
+    .form-compare { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin: 28px 0; }
+    .form-card { border-radius: 16px; padding: 22px 20px; border: 1.5px solid var(--gray2); }
+    .form-card.ee  { background: #fff8f8; border-color: #f0c0b0; }
+    .form-card.tg  { background: #f4f9f4; border-color: #a8d4a8; }
+    .form-card.rtg { background: linear-gradient(135deg, rgba(26,122,110,0.07), rgba(26,122,110,0.02)); border-color: var(--teal2); }
+    .form-card-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+    .form-card.ee  .form-card-label { color: #c05030; }
+    .form-card.tg  .form-card-label { color: #2a7a2a; }
+    .form-card.rtg .form-card-label { color: var(--teal); }
+    .form-card h4 { font-size: 15px; font-weight: 900; color: var(--navy); margin-bottom: 10px; line-height: 1.3; }
+    .form-card ul { padding-left: 16px; margin: 0; display: flex; flex-direction: column; gap: 6px; }
+    .form-card li { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    .absorption-bar { margin: 28px 0; }
+    .bar-row { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; }
+    .bar-label { font-size: 13px; font-weight: 700; color: var(--navy); width: 60px; flex-shrink: 0; }
+    .bar-track { flex: 1; background: var(--gray2); border-radius: 50px; height: 12px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 50px; }
+    .bar-fill.rtg { background: linear-gradient(90deg, var(--teal), var(--teal2)); width: 100%; }
+    .bar-fill.tg  { background: linear-gradient(90deg, #2a9a40, #4abf60); width: 62%; }
+    .bar-fill.ee  { background: linear-gradient(90deg, #c05030, #e07050); width: 45%; }
+    .bar-pct { font-size: 13px; font-weight: 800; color: var(--navy2); width: 72px; flex-shrink: 0; }
+
+    .highlight-box { background: linear-gradient(135deg, rgba(184,146,42,0.08), rgba(184,146,42,0.02)); border: 1px solid rgba(184,146,42,0.25); border-radius: 16px; padding: 24px 28px; margin: 28px 0; }
+    .highlight-box h4 { font-size: 14px; font-weight: 800; color: var(--gold); letter-spacing: 1px; margin-bottom: 12px; }
+    .highlight-box p { font-size: 15px; color: #2a2a3e; line-height: 1.85; margin: 0; }
+
+    .checklist { background: var(--gray); border-radius: 16px; padding: 24px 28px; margin: 28px 0; }
+    .checklist h4 { font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 16px; }
+    .checklist-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+    .checklist-item:last-child { margin-bottom: 0; }
+    .check-num { width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(135deg, var(--teal), var(--teal2)); color: #fff; font-size: 12px; font-weight: 900; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+    .check-text strong { display: block; font-size: 14px; font-weight: 800; color: var(--navy); margin-bottom: 3px; }
+    .check-text span { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    .author-card { background: var(--gray); border-radius: 20px; padding: 28px 32px; margin-top: 64px; display: flex; align-items: flex-start; gap: 20px; }
+    .author-avatar { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--navy), var(--teal)); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+    .author-info h4 { font-size: 17px; font-weight: 900; color: var(--navy); margin-bottom: 4px; }
+    .author-info .creds { font-size: 13px; color: var(--teal); font-weight: 600; margin-bottom: 10px; }
+    .author-info p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+
+    .cta-banner { background: linear-gradient(135deg, var(--navy), #0f4f6e); border-radius: 20px; padding: 40px 36px; margin-top: 48px; text-align: center; }
+    .cta-banner h3 { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 10px; }
+    .cta-banner p { font-size: 15px; color: rgba(255,255,255,0.7); margin-bottom: 24px; line-height: 1.7; }
+    .cta-btn { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold2)); color: #fff; font-size: 16px; font-weight: 800; padding: 14px 36px; border-radius: 50px; box-shadow: 0 6px 20px rgba(184,146,42,0.4); transition: transform 0.2s; }
+    .cta-btn:hover { transform: translateY(-2px); }
+
+    .related { margin-top: 64px; }
+    .related h3 { font-size: 20px; font-weight: 900; color: var(--navy); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .related-card { background: var(--gray); border-radius: 16px; padding: 20px; border: 1px solid var(--gray2); }
+    .related-card .tag { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .related-card h4 { font-size: 15px; font-weight: 800; color: var(--navy); line-height: 1.4; }
+
+    footer { background: #0a1a32; color: rgba(255,255,255,0.5); padding: 32px 0; }
+    .footer-bottom { max-width: 900px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 12px; }
+
+    @media (max-width: 700px) { .form-compare { grid-template-columns: 1fr; } }
+    @media (max-width: 600px) {
+      .article-hero { padding: 36px 28px; }
+      .related-grid { grid-template-columns: 1fr; }
+      .author-card { flex-direction: column; }
+    }
+    .sig-block { border-top: 2px solid var(--gray2); margin-top: 48px; padding-top: 24px; }
+    .sig-main { font-size: 14px; color: var(--navy); font-weight: 700; margin-bottom: 12px; line-height: 1.7; }
+    .sig-creds { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+    .sig-creds li { font-size: 13px; color: var(--muted); padding-left: 14px; position: relative; line-height: 1.6; }
+    .sig-creds li::before { content: "·"; position: absolute; left: 0; color: var(--teal2); font-weight: 900; }
+    .sig-notice { font-size: 12px; color: var(--muted); font-style: italic; line-height: 1.7; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/en/" class="nav-logo">Nerv<span>Lock</span></a>
+    <a href="/en/#blog" class="nav-back">← Medical Blog</a>
+    <div class="lang-toggle">
+      <a href="/blog/rTG-오메가3-차이/" class="lang-btn">KR</a>
+      <a href="/blog/rtg-omega3-bioavailability/" class="lang-btn active">EN</a>
+    </div>
+  </div>
+</nav>
+
+<div class="article-wrap">
+
+  <div class="article-hero">
+    <div class="article-tag">Functional Medicine</div>
+    <h1 class="article-title">rTG Omega-3: Why Molecular Form Determines Bioavailability<br>— A Neurologist's Guide</h1>
+    <div class="article-meta">
+      <div class="article-meta-item">👨‍⚕️ <strong>Dr. Claire Ham</strong> — Neurologist, NervLock Founder</div>
+      <div class="article-meta-item">📅 June 28, 2026</div>
+      <div class="article-meta-item">⏱ 8 min read</div>
+    </div>
+  </div>
+
+  <div class="lang-switch-banner">
+    <span>🇰🇷 이 글의 한국어 버전을 보시겠습니까?</span>
+    <a href="/blog/rTG-오메가3-차이/" class="lang-switch-link">한국어로 읽기 →</a>
+  </div>
+
+  <div class="abstract">
+    <div class="abstract-label">Abstract</div>
+    <p>Omega-3 fatty acids — specifically eicosapentaenoic acid (EPA) and docosahexaenoic acid (DHA) — have accumulated one of the most extensive evidence bases in nutritional medicine, with established roles in cardiovascular risk reduction, neuroinflammation modulation, and cognitive support. Yet a clinically significant and largely underappreciated variable determines whether the EPA and DHA listed on a supplement label actually reaches target tissues in meaningful concentrations: molecular form. This article examines the three principal omega-3 delivery forms — ethyl ester (EE), natural triglyceride (TG), and re-esterified triglyceride (rTG) — and the pharmacokinetic evidence that distinguishes them.</p>
+  </div>
+
+  <div class="article-body">
+
+    <h2>1. The Omega-3 Processing Problem</h2>
+    <p>Omega-3 fatty acids occur naturally in marine oils in the <strong>triglyceride (TG) form</strong>, esterified to a glycerol backbone at the sn-1, sn-2, and sn-3 positions. In their native state, however, EPA and DHA concentrations in fish oil are relatively modest — typically 25–30% of total fatty acids — insufficient to deliver clinically relevant doses within a practical daily capsule volume.</p>
+    <p>The nutraceutical industry addresses this concentration problem through molecular distillation: fish oil is transesterified with ethanol, liberating the fatty acids as <strong>ethyl esters (EE)</strong> and enabling vacuum distillation to concentrate EPA and DHA to 60–90% of total fatty acids. The EE form is the most widely distributed omega-3 supplement format globally, primarily because of its manufacturing simplicity and lower production cost relative to alternative forms. What this processing step costs in bioavailability terms is the central clinical question this article addresses.</p>
+
+    <div class="callout">
+      <strong>The core issue:</strong> EPA+DHA content on a supplement label describes what is <em>ingested</em>, not what is <em>absorbed</em>. Molecular form is the primary determinant of the gap between these two numbers — and for EE-form products, that gap is clinically significant.
+    </div>
+
+    <h2>2. Ethyl Ester (EE) Form: The Bioavailability Cost of Cheap Manufacturing</h2>
+    <p>The EE form presents a fundamental gastrointestinal absorption challenge: ethyl esters do not occur in mammalian physiology, and the human digestive system is consequently ill-equipped to process them efficiently. <strong>Pancreatic lipase</strong> — the principal enzyme mediating intestinal fatty acid absorption — demonstrates substantially lower catalytic affinity for ethyl ester substrates compared to triglyceride substrates. In vitro kinetic analyses indicate that pancreatic lipase hydrolyzes TG substrates approximately 50-fold faster than equivalent EE substrates under physiological conditions.</p>
+    <p>The clinical consequence is reduced and highly variable absorption. EE-form omega-3 is strongly fat-dependent: studies demonstrate that EE omega-3 taken in a fasted state achieves plasma EPA+DHA increments only 20–30% of those achieved when taken with a high-fat meal. This fat-dependency creates substantial real-world variability in the plasma omega-3 index achieved by patients taking nominally equivalent doses — a variable that is rarely communicated to consumers purchasing EE-form products.</p>
+
+    <div class="form-compare">
+      <div class="form-card ee">
+        <div class="form-card-label">EE Form</div>
+        <h4>Ethyl Ester</h4>
+        <ul>
+          <li>Synthetic, not found in nature</li>
+          <li>Produced by ethanol transesterification</li>
+          <li>Lowest manufacturing cost</li>
+          <li>Poor pancreatic lipase affinity (~50× slower than TG)</li>
+          <li>Strongly fat-dependent absorption</li>
+          <li>Highly variable plasma uptake</li>
+        </ul>
+      </div>
+      <div class="form-card tg">
+        <div class="form-card-label">TG Form</div>
+        <h4>Natural Triglyceride</h4>
+        <ul>
+          <li>Native fish oil configuration</li>
+          <li>Processed via normal fat digestion</li>
+          <li>Superior absorption vs. EE</li>
+          <li>Low EPA+DHA concentration (30–50%)</li>
+          <li>Higher capsule burden for therapeutic doses</li>
+        </ul>
+      </div>
+      <div class="form-card rtg">
+        <div class="form-card-label">rTG Form ★</div>
+        <h4>Re-esterified Triglyceride</h4>
+        <ul>
+          <li>EE concentrated, then enzymatically re-esterified to glycerol</li>
+          <li>High EPA+DHA density (70–90%)</li>
+          <li>TG-equivalent absorption kinetics</li>
+          <li>Higher manufacturing complexity and cost</li>
+          <li>Best bioavailability-to-dose ratio</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>3. Natural TG Form: Better Absorption, Lower Concentration</h2>
+    <p>Natural TG-form fish oils — in which EPA and DHA remain esterified to a glycerol backbone in their native configuration — are processed by pancreatic lipase via the same enzymatic pathway as dietary fat, achieving substantially superior absorption compared to EE forms. Meta-analytic data suggest that TG-form omega-3 increases the plasma omega-3 index approximately <strong>23–50% more effectively</strong> than equivalent EE doses.</p>
+    <p>The practical limitation of natural TG forms is concentration: because the re-esterification step required to achieve high EPA+DHA percentages is absent, natural TG products typically contain only 30–50% EPA+DHA, necessitating larger or more numerous capsules to achieve therapeutic doses. This profile — high absorption efficiency but low concentration — is the inverse of the EE form. Selecting between them involves an undesirable trade-off that the rTG form resolves.</p>
+
+    <h2>4. Re-Esterified TG (rTG) Form: Resolving the Trade-off</h2>
+    <p>The rTG form addresses both limitations through an additional manufacturing step: EE-concentrated omega-3 is enzymatically re-esterified back onto a glycerol backbone, reconstituting the triglyceride structure while retaining high EPA+DHA concentrations (typically 70–90% of total fatty acids). The resulting molecule combines the <strong>high EPA+DHA density</strong> of the EE form with the <strong>physiologically compatible absorption kinetics</strong> of the natural TG form.</p>
+
+    <h3>The Definitive Bioavailability Evidence</h3>
+    <p>Dyerberg and colleagues (2010) published the landmark comparative bioavailability trial in <em>Prostaglandins, Leukotrienes and Essential Fatty Acids</em>. In a randomized crossover design of 72 healthy subjects, plasma EPA+DHA area-under-the-curve (AUC) values were measured following single doses of EE, natural TG, and rTG-form omega-3. The results established a clear hierarchy:</p>
+
+    <div class="absorption-bar">
+      <div class="bar-row">
+        <div class="bar-label">rTG</div>
+        <div class="bar-track"><div class="bar-fill rtg"></div></div>
+        <div class="bar-pct">+124% vs EE</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">TG</div>
+        <div class="bar-track"><div class="bar-fill tg"></div></div>
+        <div class="bar-pct">+53% vs EE</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">EE</div>
+        <div class="bar-track"><div class="bar-fill ee"></div></div>
+        <div class="bar-pct">Baseline</div>
+      </div>
+    </div>
+    <p style="font-size:12px; color:var(--muted); margin-top:-16px; margin-bottom:24px;">▲ Relative plasma EPA+DHA AUC vs. EE form (Dyerberg et al., 2010)</p>
+
+    <p>Neubronner et al. (2011) confirmed and extended these findings in a 26-week parallel-group trial of 150 subjects, demonstrating significantly superior <strong>omega-3 index elevation</strong> — the erythrocyte membrane EPA+DHA percentage — with rTG versus EE supplementation over a clinically meaningful timeframe. The omega-3 index is the preferred endpoint for evaluating supplementation efficacy because erythrocyte membrane composition reflects cumulative omega-3 status over the preceding 8–12 weeks (the erythrocyte lifespan), providing a time-integrated biomarker that correlates with tissue EPA+DHA levels far more reliably than single-timepoint plasma measurements.</p>
+
+    <h2>5. The Omega-3 Index: Why Target Tissue Concentration Matters</h2>
+    <p>The omega-3 index — defined as the percentage of EPA+DHA in erythrocyte membrane phospholipids — has emerged as a significant cardiovascular and neurological risk biomarker. Harris WS (2007) proposed the omega-3 index as an independent cardiovascular risk factor, with an index ≥8% associated with the lowest risk tier in epidemiological cohorts, compared to the 4–5% range typical of Western populations.</p>
+    <p>For neurological applications, the erythrocyte omega-3 index provides a practical proxy for the brain's DHA status — directly relevant to the neuronal membrane composition changes that underpin the cognitive effects of long-term omega-3 supplementation. The bioavailability advantage of rTG over EE forms translates <em>directly</em> into greater omega-3 index elevation per unit dose, which is to say: greater biological effect per capsule consumed.</p>
+
+    <div class="callout">
+      <strong>Clinical implication:</strong> Achieving an omega-3 index ≥8% with EE-form supplementation requires substantially higher nominal doses than with rTG-form. If a patient takes EE omega-3 and their omega-3 index fails to respond adequately, switching to rTG form at the same dose is a mechanistically sound first step before increasing dose.
+    </div>
+
+    <h2>6. DHA and the Neurological Case for Omega-3</h2>
+    <p>DHA constitutes approximately <strong>15–20% of total fatty acids in brain gray matter</strong> and is the dominant structural fatty acid in both neuronal plasma membranes and synaptic vesicle membranes. Its unique molecular geometry — six double bonds producing a highly flexible polyunsaturated chain — confers exceptional membrane fluidity, enabling the rapid lateral diffusion of ion channels, receptor complexes, and signal transduction proteins that is prerequisite for efficient synaptic transmission.</p>
+    <p>The neurobiological consequences of DHA deficiency are well-documented in animal models: reduced synaptic spine density, impaired hippocampal neurogenesis, suppressed BDNF expression, and deficits on spatial memory tasks. Human epidemiological data associate lower plasma and erythrocyte DHA with accelerated cognitive decline and greater dementia risk, though causality remains an active research question. Because the brain's capacity for endogenous DHA synthesis from alpha-linolenic acid (ALA) is severely limited — conversion efficiency below 1% in most adults — adequate dietary or supplemental DHA intake is a prerequisite for maintaining neuronal membrane DHA content across the lifespan.</p>
+
+    <div class="highlight-box">
+      <h4>📌 Korean MFDS Functional Recognition</h4>
+      <p>EPA and DHA-containing oils: <strong>May help improve memory</strong> and <strong>may help improve blood circulation</strong> (notified functional ingredient).</p>
+    </div>
+
+    <h2>7. EPA and Neuroinflammation Resolution</h2>
+    <p>EPA's neurological relevance operates primarily through the resolution of neuroinflammation. EPA competes with arachidonic acid (AA) for both cyclooxygenase (COX) and 5-lipoxygenase (5-LOX) enzymes, reducing the production of pro-inflammatory eicosanoids — prostaglandin E2 (PGE2) and leukotriene B4 (LTB4) — that contribute to chronic neuroinflammatory signaling. Beyond competitive inhibition, EPA serves as the direct precursor for <strong>E-series resolvins (RvE1, RvE2)</strong> — specialized pro-resolving mediators (SPMs) that actively terminate inflammatory responses in neural tissue, in contrast to conventional anti-inflammatory agents that merely inhibit the initiation of inflammation.</p>
+    <p>Elevated AA:EPA ratios — a characteristic feature of Western dietary patterns — favor pro-inflammatory eicosanoid production and have been associated with increased neuroinflammatory markers in cross-sectional epidemiological studies. Calder (2015) provides a comprehensive mechanistic review of how marine omega-3 fatty acids modulate inflammatory processes at the cellular and molecular level. rTG-form EPA supplementation, by achieving higher plasma EPA concentrations per dose, more effectively shifts the AA:EPA ratio toward pro-resolving signaling — a clinically relevant distinction when supplementing for neuroinflammatory applications.</p>
+
+    <h2>8. Selection Criteria for rTG Omega-3</h2>
+
+    <div class="checklist">
+      <h4>✅ rTG Omega-3 Quality Checklist</h4>
+      <div class="checklist-item">
+        <div class="check-num">1</div>
+        <div class="check-text">
+          <strong>EPA+DHA Combined Content per Serving</strong>
+          <span>Minimum 500 mg EPA+DHA per daily serving as a baseline. For neurological applications with DHA emphasis, 1,000 mg or above with a DHA-dominant ratio is appropriate.</span>
+        </div>
+      </div>
+      <div class="checklist-item">
+        <div class="check-num">2</div>
+        <div class="check-text">
+          <strong>Source Species and Heavy Metal Risk</strong>
+          <span>Small pelagic fish (anchovies, sardines, mackerel) occupy lower trophic positions and accumulate significantly less methylmercury and PCBs than large predatory species. MSC (Marine Stewardship Council) certification indicates sustainable sourcing practices.</span>
+        </div>
+      </div>
+      <div class="checklist-item">
+        <div class="check-num">3</div>
+        <div class="check-text">
+          <strong>Oxidative Stability (TOTOX Value)</strong>
+          <span>Polyunsaturated fatty acids are susceptible to peroxidation; oxidized omega-3 has reduced efficacy and potential pro-inflammatory effects. TOTOX values below 26 (per GOED standards) indicate acceptable oxidative quality. Nitrogen flushing and natural tocopherol antioxidant addition are positive manufacturing indicators.</span>
+        </div>
+      </div>
+      <div class="checklist-item">
+        <div class="check-num">4</div>
+        <div class="check-text">
+          <strong>Administration Timing</strong>
+          <span>Co-administration with a lipid-containing meal optimizes absorption even for rTG-form products, by stimulating bile acid secretion and promoting chylomicron assembly. Lunch or dinner co-administration is generally preferred over breakfast or fasted administration.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="evidence-box">
+      <h4>📚 Key References</h4>
+      <ul>
+        <li>Dyerberg J et al. (2010). Bioavailability of marine n-3 fatty acid formulations. <em>Prostaglandins, Leukotrienes and Essential Fatty Acids</em> 83(3):137–141</li>
+        <li>Neubronner J et al. (2011). Enhanced increase of omega-3 index in response to long-term n-3 fatty acid supplementation from triacylglycerides versus ethyl esters. <em>European Journal of Clinical Nutrition</em> 65(2):247–254</li>
+        <li>Harris WS (2007). Omega-3 fatty acids and cardiovascular disease: a case for omega-3 index as a new risk factor. <em>Pharmacological Research</em> 55(3):217–223</li>
+        <li>Kidd PM (2007). Omega-3 DHA and EPA for cognition, behavior, and mood. <em>Alternative Medicine Review</em> 12(3):207–227</li>
+        <li>Calder PC (2015). Marine omega-3 fatty acids and inflammatory processes: effects, mechanisms and clinical relevance. <em>Biochimica et Biophysica Acta</em> 1851(4):469–484</li>
+      </ul>
+    </div>
+
+    <div class="author-card">
+      <div class="author-avatar">👨‍⚕️</div>
+      <div class="author-info">
+        <h4>Dr. Claire Ham</h4>
+        <div class="creds">Neurologist · Yonsei University Severance Hospital · Brain Health & Functional Medicine · NervLock Founder</div>
+        <p>Member, Korean Neurological Association · Member, Korean Parkinson's and Movement Disorder Society · Member, Korean Society of Functional Medicine. This article is for informational purposes only and does not constitute medical advice or replace professional consultation.</p>
+      </div>
+    </div>
+
+    <div class="cta-banner">
+      <h3>Support Brain Health with NervLock Brain Energy</h3>
+      <p>Formulated by a neurologist with rTG-form omega-3 as a core ingredient — bioavailability-first design from the ground up.<br>NervLock Brain Energy launching soon.</p>
+      <a href="/en/#coming-soon" class="cta-btn">Get Launch Notification</a>
+    </div>
+
+    <div class="related">
+      <h3>Related Articles</h3>
+      <div class="related-grid">
+        <a href="/blog/phosphatidylserine-memory/" class="related-card">
+          <div class="tag">Functional Medicine</div>
+          <h4>Phosphatidylserine and Memory: The Neurobiological Case for a Clinically Recognized Nutrient</h4>
+        </a>
+        <a href="/blog/brain-fog-neuroscience/" class="related-card">
+          <div class="tag">Functional Medicine</div>
+          <h4>Brain Fog: Neurobiological Mechanisms and Evidence-Based Nutritional Support</h4>
+        </a>
+      </div>
+    </div>
+
+    <div class="sig-block">
+      <p class="sig-main">Written by <strong>Dr. Claire Ham</strong>, Neurologist, M.D.</p>
+      <ul class="sig-creds">
+        <li>Trained at Yonsei University Severance Hospital</li>
+        <li>Member, Korean Neurological Association</li>
+        <li>Member, Korean Parkinson's Disease and Movement Disorder Society</li>
+        <li>Member, Korean Society of Functional Medicine</li>
+      </ul>
+      <p class="sig-notice">※ This content is for informational purposes only and does not constitute medical advice.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2026 NervLock. All rights reserved.</p>
+    <p>This article is for informational purposes only and does not constitute medical advice.</p>
+  </div>
+</footer>
+
+</body>
+</html>
