@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>호모시스테인과 뇌 — 치매 위험과 B군 비타민의 관계 | NervLock</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Apple SD Gothic Neo','Noto Sans KR','맑은 고딕',sans-serif; color: #1a1a2e; background: #fff; font-size: 17px; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    :root {
+      --navy: #0d2545; --navy2: #163561;
+      --teal: #1a7a6e; --teal2: #22a090;
+      --gold: #b8922a; --gold2: #d4a843;
+      --gray: #f4f6f9; --gray2: #e8ecf2;
+      --muted: #5a6278;
+    }
+
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(13,37,69,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-logo { font-size: 20px; font-weight: 900; color: #fff; white-space: nowrap; }
+    .nav-logo span { color: var(--gold2); }
+    .nav-back { font-size: 14px; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold2); }
+
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 60px 24px 100px; }
+
+    .article-hero { background: linear-gradient(135deg, var(--navy) 0%, #0f4f6e 100%); border-radius: 24px; padding: 52px 48px; margin-bottom: 48px; position: relative; overflow: hidden; }
+    .article-hero::before { content: '🧪'; position: absolute; right: 32px; top: 32px; font-size: 80px; opacity: 0.15; }
+    .article-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(26,122,110,0.3); border: 1px solid rgba(26,122,110,0.5); border-radius: 50px; font-size: 12px; font-weight: 700; color: #6ee7da; padding: 4px 14px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+    .article-title { font-size: clamp(22px, 3.5vw, 34px); font-weight: 900; color: #fff; line-height: 1.3; margin-bottom: 20px; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 20px; }
+    .article-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.65); }
+    .article-meta-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+
+    .abstract { background: linear-gradient(135deg, rgba(26,122,110,0.06), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 16px 16px 0; padding: 24px 28px; margin-bottom: 48px; }
+    .abstract-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--teal2); margin-bottom: 10px; }
+    .abstract p { font-size: 15px; color: #2a3a4a; line-height: 1.85; margin: 0; font-style: italic; }
+
+    .article-body h2 { font-size: 24px; font-weight: 900; color: var(--navy); margin: 52px 0 16px; line-height: 1.35; padding-bottom: 12px; border-bottom: 2px solid var(--gray2); }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-size: 19px; font-weight: 800; color: var(--navy2); margin: 36px 0 12px; }
+    .article-body p { font-size: 16px; color: #2a2a3e; line-height: 1.95; margin-bottom: 20px; }
+    .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .article-body li { font-size: 15px; color: #3a3a50; line-height: 1.75; }
+    .article-body strong { color: var(--navy); }
+
+    .callout { background: linear-gradient(135deg, rgba(26,122,110,0.07), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: var(--navy); font-style: italic; line-height: 1.85; }
+    .callout strong { color: var(--teal); font-style: normal; }
+
+    .evidence-box { background: var(--gray); border-radius: 14px; padding: 20px 24px; margin: 28px 0; }
+    .evidence-box h4 { font-size: 12px; font-weight: 800; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .evidence-box ul { margin: 0; }
+    .evidence-box li { font-size: 13px; color: var(--muted); }
+
+    .symptom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+    .symptom-card { background: var(--gray); border-radius: 14px; padding: 18px 20px; border: 1px solid var(--gray2); }
+    .symptom-card h4 { font-size: 14px; font-weight: 800; color: var(--navy); margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+    .symptom-card p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+
+    .author-card { background: var(--gray); border-radius: 20px; padding: 28px 32px; margin-top: 64px; display: flex; align-items: flex-start; gap: 20px; }
+    .author-avatar { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--navy), var(--teal)); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+    .author-info h4 { font-size: 17px; font-weight: 900; color: var(--navy); margin-bottom: 4px; }
+    .author-info .creds { font-size: 13px; color: var(--teal); font-weight: 600; margin-bottom: 10px; }
+    .author-info p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+
+    .cta-banner { background: linear-gradient(135deg, var(--navy), #0f4f6e); border-radius: 20px; padding: 40px 36px; margin-top: 48px; text-align: center; }
+    .cta-banner h3 { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 10px; }
+    .cta-banner p { font-size: 15px; color: rgba(255,255,255,0.7); margin-bottom: 24px; line-height: 1.7; }
+    .cta-btn { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold2)); color: #fff; font-size: 16px; font-weight: 800; padding: 14px 36px; border-radius: 50px; box-shadow: 0 6px 20px rgba(184,146,42,0.4); transition: transform 0.2s; }
+    .cta-btn:hover { transform: translateY(-2px); }
+
+    .related { margin-top: 64px; }
+    .related h3 { font-size: 20px; font-weight: 900; color: var(--navy); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .related-card { background: var(--gray); border-radius: 16px; padding: 20px; border: 1px solid var(--gray2); }
+    .related-card .tag { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .related-card h4 { font-size: 15px; font-weight: 800; color: var(--navy); line-height: 1.4; }
+
+    footer { background: #0a1a32; color: rgba(255,255,255,0.5); padding: 32px 0; }
+    .footer-bottom { max-width: 900px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 12px; }
+
+    @media (max-width: 600px) {
+      .article-hero { padding: 36px 28px; }
+      .symptom-grid, .related-grid { grid-template-columns: 1fr; }
+      .author-card { flex-direction: column; }
+    }
+    /* Signature */
+    .sig-block { border-top: 2px solid var(--gray2); margin-top: 48px; padding-top: 24px; }
+    .sig-main { font-size: 14px; color: var(--navy); font-weight: 700; margin-bottom: 12px; line-height: 1.7; }
+    .sig-creds { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+    .sig-creds li { font-size: 13px; color: var(--muted); padding-left: 14px; position: relative; line-height: 1.6; }
+    .sig-creds li::before { content: "·"; position: absolute; left: 0; color: var(--teal2); font-weight: 900; }
+    .sig-notice { font-size: 12px; color: var(--muted); font-style: italic; line-height: 1.7; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Nerv<span>Lock</span></a>
+    <a href="/#blog" class="nav-back">← 의학 칼럼</a>
+  </div>
+</nav>
+
+<div class="article-wrap">
+
+  <div class="article-hero">
+    <div class="article-tag">뇌신경질환</div>
+    <h1 class="article-title">호모시스테인과 뇌<br>치매 위험과 B군 비타민의 관계</h1>
+    <div class="article-meta">
+      <div class="article-meta-item">👨‍⚕️ <strong>Dr.H</strong> — 신경과 전문의 · NervLock 설립자</div>
+      <div class="article-meta-item">📅 2026. 7. 5</div>
+      <div class="article-meta-item">⏱ 8분 읽기</div>
+    </div>
+  </div>
+
+  <div class="abstract">
+    <div class="abstract-label">요약</div>
+    <p>혈액 검사에서 흔히 지나치는 호모시스테인 수치. 높을수록 뇌 위축과 인지 기능 저하 위험이 높아집니다. B12·엽산·B6가 왜 필요한지 신경과 전문의가 설명합니다.</p>
+  </div>
+
+  <div class="article-body">
+
+    <h2>1. 호모시스테인이란</h2>
+    <p>호모시스테인(Homocysteine)은 우리 몸이 단백질을 대사하는 과정에서 자연스럽게 만들어지는 아미노산입니다. 정상적인 상태에서는 비타민 B12, 엽산, 비타민 B6의 도움을 받아 메티오닌 또는 시스테인이라는 다른 물질로 전환되어 몸 밖으로 제거됩니다.</p>
+    <p>그런데 이 전환 과정이 원활하지 않으면 혈액 속 호모시스테인 농도가 점점 높아지는데, 이를 고호모시스테인혈증이라고 합니다. 일반적으로 정상 수치는 5~15 μmol/L 범위이며, 15를 넘어서면 주의가 필요한 것으로 봅니다.</p>
+
+    <h2>2. 호모시스테인이 뇌에 미치는 영향</h2>
+
+    <h3>2.1 혈관에 대한 영향</h3>
+    <p>높은 호모시스테인 수치는 혈관 내피세포를 손상시켜 뇌혈관을 경직시키고 죽상동맥경화를 촉진할 수 있습니다. 이는 뇌로 가는 혈류를 줄여 뇌 조직의 영양 공급을 저하시키는 방향으로 작용합니다.</p>
+
+    <h3>2.2 신경세포에 대한 직접적 영향</h3>
+    <p>호모시스테인은 NMDA 수용체를 과도하게 자극해 흥분독성(excitotoxicity)이라는 현상을 유발하고, 이 과정에서 신경세포 손상이 진행될 수 있습니다. 동시에 산화 스트레스를 높여 신경세포의 DNA 손상 위험도 함께 커집니다.</p>
+
+    <h3>2.3 뇌 위축 가속화</h3>
+    <p>고호모시스테인혈증이 있는 어르신들에게서는 기억을 담당하는 해마와 대뇌피질의 위축이 더 빠르게 진행된다는 관찰 결과들이 있습니다. 대표적으로 2010년 발표된 VITACOG 연구(Smith et al.)에서는 호모시스테인 수치가 높은 경도인지장애 환자들에게 비타민 B12·엽산·B6를 함께 투여한 결과, MRI로 측정한 뇌 위축 속도가 위약군 대비 53% 감소했다는 결과를 보고했습니다.</p>
+
+    <div class="callout">
+      <strong>핵심 근거:</strong> VITACOG 연구는 B군 비타민과 뇌 위축 속도 사이의 관계를 MRI로 직접 확인한 대표적인 임상 연구로, 호모시스테인 대사 지원의 중요한 근거로 인용됩니다.
+    </div>
+
+    <h2>3. 호모시스테인이 높아지는 이유</h2>
+    <ul>
+      <li><strong>비타민 B12 부족:</strong> 가장 흔한 원인입니다. 채식 위주의 식습관, 고령, 메트포민 복용, 위산 억제제의 장기 복용 등이 관련됩니다.</li>
+      <li><strong>엽산 부족:</strong> 채소 섭취가 부족하거나 알코올 섭취가 많은 경우 나타날 수 있습니다.</li>
+      <li><strong>비타민 B6 부족:</strong> 단백질을 과다 섭취할 때 상대적으로 부족해질 수 있습니다.</li>
+      <li><strong>유전적 요인:</strong> 엽산 대사 효율에 관여하는 MTHFR 유전자(C677T)의 변이가 있는 경우입니다.</li>
+      <li><strong>신장 기능 저하:</strong> 호모시스테인 배출이 원활하지 않게 됩니다.</li>
+    </ul>
+
+    <h2>4. VITACOG 연구 — 핵심 임상 근거</h2>
+    <p>옥스퍼드 대학 연구팀이 2010년 PLOS ONE에 발표한 이 연구는 경도인지장애가 있는 168명을 대상으로 2년간 비타민 B12(500μg), 엽산(800μg), 비타민 B6(20mg)를 함께 투여했습니다. 그 결과 위약군과 비교했을 때 뇌 위축 속도가 53% 감소한 것으로 나타났으며, 특히 시작 시점에 호모시스테인 수치가 높았던 참가자 군에서 그 차이가 더욱 뚜렷했습니다. 이 연구는 B군 비타민이 호모시스테인 대사를 지원하는 것과 인지 기능 관리 사이의 관계를 보여주는 핵심 근거로 자주 인용됩니다.</p>
+
+    <h2>5. 호모시스테인 수치 확인 방법</h2>
+    <p>호모시스테인은 일반적인 건강검진 항목에 기본으로 포함되지 않는 경우가 많아, 별도로 검사를 요청해야 확인할 수 있는 경우가 대부분입니다. 특히 40세 이상이거나, 인지 저하 가족력이 있거나, 채식을 하거나, B12 부족 위험이 있는 분이라면 건강검진 시 이 항목을 추가로 요청해 확인해 보시길 권합니다.</p>
+
+    <h2>6. B군 비타민으로 호모시스테인 대사 지원하기</h2>
+    <ul>
+      <li><strong>비타민 B12(메코발라민 형태):</strong> 호모시스테인이 메티오닌으로 전환되는 과정에 필요합니다.</li>
+      <li><strong>엽산:</strong> 메틸화 사이클 전체를 지탱하는 핵심 보조인자입니다.</li>
+      <li><strong>비타민 B6:</strong> 호모시스테인이 시스테인으로 전환되는 또 다른 경로에 필요합니다.</li>
+    </ul>
+    <p>세 가지 영양소는 호모시스테인 대사의 서로 다른 단계에 관여하기 때문에, 한 가지만 보충하기보다 세 가지를 함께 섭취하는 것이 호모시스테인 대사 경로 전체를 지원하는 데 도움을 줄 수 있습니다.</p>
+
+    <h2>7. 신경과 전문의의 시각</h2>
+    <p>호모시스테인은 혈액 검사 한 번으로 확인할 수 있는, 비교적 파악하기 쉬운 수정 가능한 위험인자입니다. 비타민 B12·엽산·B6는 식약처로부터 "호모시스테인 대사에 필요"한 성분으로 인정받은 기능성 원료이기도 합니다. 호모시스테인 수치가 높으면서 동시에 B12 수치가 낮게 나온다면, B군 비타민 보충을 우선적으로 고려해 볼 수 있습니다. 다만 호모시스테인 수치가 매우 높거나 신장 기능에 이상이 있는 경우에는 반드시 신경과 전문의와의 상담을 거치시길 권장합니다.</p>
+
+    <div class="evidence-box">
+      <h4>📚 주요 참고 문헌</h4>
+      <ul>
+        <li>Smith AD et al. (2010). Homocysteine-lowering by B vitamins slows the rate of accelerated brain atrophy. <em>PLOS ONE</em> 5(9):e12244</li>
+        <li>Seshadri S et al. (2002). Plasma homocysteine as a risk factor for dementia and Alzheimer's disease. <em>NEJM</em> 346(7):476-483</li>
+        <li>Clarke R et al. (1998). Folate, vitamin B12, and serum total homocysteine levels in confirmed Alzheimer disease. <em>Archives of Neurology</em> 55(11):1449-1455</li>
+        <li>Selhub J (1999). Homocysteine metabolism. <em>Annual Review of Nutrition</em> 19:217-246</li>
+      </ul>
+    </div>
+
+    <div class="author-card">
+      <div class="author-avatar">👨‍⚕️</div>
+      <div class="author-info">
+        <h4>Dr.H (함지현)</h4>
+        <div class="creds">함지현 원장, 신경과 전문의 · 연세대학교 의과대학 졸업 · 세브란스병원 신경과 출신</div>
+        <p>대한신경과학회 정회원 · 대한파킨슨병 및 이상운동질환 학회 정회원 · 대한기능의학회 정회원. 본 칼럼은 의학적 정보 제공을 목적으로 하며 개인 진료를 대체하지 않습니다.</p>
+      </div>
+    </div>
+
+    <div class="cta-banner">
+      <h3>NervLock Brain Energy로 뇌 건강 루틴을 시작하세요</h3>
+      <p>비타민 B12·엽산·B6를 포함한 서포트 성분 — 호모시스테인 대사 지원에 필요한 조합.<br>NervLock 브랜드의 첫 번째 제품이 곧 출시됩니다.</p>
+      <a href="/#coming-soon" class="cta-btn">출시 알림 신청하기</a>
+    </div>
+
+    <div class="related">
+      <h3>관련 칼럼</h3>
+      <div class="related-grid">
+        <div class="related-card">
+          <a href="/blog/치매-10년전-신호/">
+            <div class="tag">뇌신경질환</div>
+            <h4>치매는 갑자기 오지 않는다 — 10년 전부터 시작되는 뇌의 변화</h4>
+          </a>
+        </div>
+        <div class="related-card">
+          <a href="/blog/치매-위험-생활습관/">
+            <div class="tag">뇌신경질환</div>
+            <h4>치매 위험을 높이는 생활습관 7가지 — 신경과 전문의가 정리한 수정 가능한 위험인자</h4>
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="sig-block">
+      <p class="sig-main"><strong>Dr.H (함지현)</strong><br>함지현 원장, 신경과 전문의</p>
+      <ul class="sig-creds">
+        <li>연세대학교 의과대학 졸업</li>
+        <li>세브란스병원 신경과 출신</li>
+        <li>대한신경과학회 정회원</li>
+        <li>대한파킨슨병 및 이상운동질환 학회 정회원</li>
+        <li>대한기능의학회 정회원</li>
+      </ul>
+      <p class="sig-notice">※ 본 내용은 의학 정보 제공을 목적으로 하며, 개인 진료를 대체하지 않습니다.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2026 NervLock. All rights reserved.</p>
+    <p>본 칼럼은 의학적 정보 제공을 목적으로 하며 개인 진료를 대체하지 않습니다.</p>
+  </div>
+</footer>
+
+</body>
+</html>
