@@ -1,1652 +1,761 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NervLock | Neural Health Supplement Designed by a Neurologist</title>
-  <link rel="canonical" href="https://nervlocklab.com/en/" />
-  <link rel="alternate" hreflang="ko" href="https://nervlocklab.com/" />
-  <link rel="alternate" hreflang="en" href="https://nervlocklab.com/en/" />
-  <link rel="alternate" hreflang="x-default" href="https://nervlocklab.com/" />
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:locale:alternate" content="ko_KR" />
-  <meta property="og:url" content="https://nervlocklab.com/en/" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-      color: #1a1a2e; background: #fff;
-      font-size: 17px; line-height: 1.7;
-    }
-    img { max-width: 100%; display: block; }
-    a { text-decoration: none; color: inherit; }
-    :root {
-      --navy: #0d2545; --navy2: #163561;
-      --teal: #1a7a6e; --teal2: #22a090;
-      --gold: #b8922a; --gold2: #d4a843;
-      --gray: #f4f6f9; --gray2: #e8ecf2;
-      --text: #1a1a2e; --muted: #5a6278;
-    }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-    .section { padding: 90px 0; }
-    .section-label { font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: var(--teal2); font-weight: 700; margin-bottom: 12px; }
-    .section-title { font-size: clamp(26px, 3.5vw, 40px); font-weight: 800; color: var(--navy); line-height: 1.35; margin-bottom: 20px; }
-    .section-sub { font-size: 17px; color: var(--muted); max-width: 600px; line-height: 1.8; }
-    .btn-primary { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold2)); color: #fff; font-size: 17px; font-weight: 700; padding: 17px 40px; border-radius: 50px; letter-spacing: 0.5px; box-shadow: 0 6px 24px rgba(184,146,42,0.35); transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; border: none; }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(184,146,42,0.45); }
-    .btn-outline { display: inline-block; border: 2px solid var(--gold2); color: var(--gold); font-size: 16px; font-weight: 700; padding: 14px 34px; border-radius: 50px; transition: all 0.2s; cursor: pointer; }
-    .btn-outline:hover { background: var(--gold2); color: #fff; }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NervLock Lab | Evidence-Based Brain Health Platform</title>
+<meta name="description" content="NervLock Lab provides neurologist-led brain health education, responsible scientific interpretation, and evidence-informed resources." />
+<link rel="canonical" href="https://nervlocklab.com/en/" />
+<link rel="alternate" hreflang="ko" href="https://nervlocklab.com/" />
+<link rel="alternate" hreflang="en" href="https://nervlocklab.com/en/" />
+<link rel="alternate" hreflang="x-default" href="https://nervlocklab.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://nervlocklab.com/en/" />
+<meta property="og:title" content="NervLock Lab | Evidence-Based Brain Health Platform" />
+<meta property="og:description" content="NervLock Lab provides neurologist-led brain health education, responsible scientific interpretation, and evidence-informed resources." />
+<meta property="og:locale" content="en_US" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:site_name" content="NervLock Lab" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="NervLock Lab | Evidence-Based Brain Health Platform" />
+<meta name="twitter:description" content="Neurologist-led brain health education grounded in peer-reviewed evidence." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  * , *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  :root {
+    --navy-primary:   #0D1B2A;
+    --navy-secondary: #16324F;
+    --navy-accent:    #274C77;
+    --bg-light:       #F8FAFC;
+    --bg-warm:        #FCFCFA;
+    --bg-blue-gray:   #EEF2F5;
+    --white:          #ffffff;
 
-    /* Nav */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(13,37,69,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
-    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; gap: 16px; }
-    .nav-logo { font-size: 20px; font-weight: 900; color: #fff; white-space: nowrap; flex-shrink: 0; }
-    .nav-logo span { color: var(--gold2); }
-    .nav-links { display: flex; gap: 2px; list-style: none; flex: 1; justify-content: center; }
-    .nav-links a { color: rgba(255,255,255,0.75); font-size: 13px; font-weight: 500; padding: 6px 10px; border-radius: 6px; white-space: nowrap; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--gold2); }
-    .nav-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
-    .nav-cta { background: var(--gold); color: #fff; font-size: 12px; font-weight: 700; padding: 8px 16px; border-radius: 50px; white-space: nowrap; transition: background 0.2s; }
-    .nav-cta:hover { background: var(--gold2); }
-    .lang-toggle { display: flex; border: 1px solid rgba(255,255,255,0.22); border-radius: 8px; overflow: hidden; flex-shrink: 0; }
-    .lang-btn { padding: 5px 11px; font-size: 11px; font-weight: 800; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); transition: all 0.18s; }
-    .lang-btn + .lang-btn { border-left: 1px solid rgba(255,255,255,0.22); }
-    .lang-btn:hover { color: #fff; background: rgba(255,255,255,0.08); }
-    .lang-btn.active { background: rgba(255,255,255,0.18); color: #fff; }
-    /* Hamburger */
-    .nav-hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; cursor: pointer; background: none; border: none; padding: 8px; flex-shrink: 0; margin-left: auto; }
-    .nav-hamburger span { display: block; width: 22px; height: 2px; background: rgba(255,255,255,0.85); border-radius: 2px; transition: all 0.25s; }
-    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    /* Mobile nav drawer */
-    .nav-mobile { display: none; position: fixed; top: 64px; left: 0; right: 0; z-index: 99; background: rgba(9,26,54,0.98); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .nav-mobile.open { display: block; }
-    .nav-mobile ul { list-style: none; }
-    .nav-mobile ul li a { display: block; padding: 15px 28px; font-size: 15px; font-weight: 600; color: rgba(255,255,255,0.8); border-bottom: 1px solid rgba(255,255,255,0.06); transition: color 0.2s, background 0.2s; }
-    .nav-mobile ul li a:hover { color: var(--gold2); background: rgba(255,255,255,0.04); }
-    .nav-mobile-footer { display: flex; align-items: center; justify-content: space-between; padding: 18px 28px; }
-    .nav-cta-mobile { background: var(--gold); color: #fff; font-size: 14px; font-weight: 700; padding: 11px 24px; border-radius: 50px; transition: background 0.2s; }
-    .nav-cta-mobile:hover { background: var(--gold2); }
+    --text-primary:   #1E293B;
+    --text-secondary: #64748B;
+    --text-white:     #F8FAFC;
+    --brand-blue:     #4fc3f7;
+    --brand-green:    #81c784;
+    --brand-green-on-light: #2e7d32;
+    --accent:         #1565c0;
 
-    /* Hero */
-    #hero { min-height: 100vh; background: linear-gradient(150deg, var(--navy) 0%, var(--navy2) 60%, #0f4f6e 100%); display: flex; align-items: center; padding-top: 64px; position: relative; overflow: hidden; }
-    #hero::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 80px; background: #fff; clip-path: ellipse(55% 100% at 50% 100%); }
-    .hero-content { position: relative; z-index: 2; max-width: 700px; padding: 80px 0; }
-    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.9); font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 50px; margin-bottom: 28px; letter-spacing: 0.5px; }
-    .hero-badge::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--gold2); flex-shrink: 0; }
-    .hero-title { font-size: clamp(30px, 4.5vw, 54px); font-weight: 900; color: #fff; line-height: 1.2; margin-bottom: 24px; letter-spacing: -1px; }
-    .hero-title em { color: var(--gold2); font-style: normal; }
-    .hero-sub { font-size: 18px; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 40px; max-width: 560px; }
-    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
-    .hero-trust { margin-top: 48px; display: flex; gap: 32px; flex-wrap: wrap; }
-    .hero-trust-item { display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.7); font-size: 14px; }
-    .hero-trust-icon { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; font-size: 16px; }
+    --divider-dark: rgba(255,255,255,0.08);
+    --divider-light: rgba(13,27,42,0.08);
+  }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--white);
+    color: var(--text-primary);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+  a { text-decoration: none; color: inherit; }
+  ul { list-style: none; }
+  canvas { display: block; max-width: 100%; }
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+  .section { padding: 130px 0; }
 
-    /* Pain section */
-    #pain { background: var(--gray); }
-    .pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
-    .pain-card { background: #fff; border-radius: 20px; padding: 32px 28px; border: 1.5px solid var(--gray2); transition: box-shadow 0.25s, transform 0.25s; }
-    .pain-card:hover { box-shadow: 0 12px 40px rgba(13,37,69,0.10); transform: translateY(-4px); }
-    .pain-icon { width: 56px; height: 56px; border-radius: 16px; background: linear-gradient(135deg, #e8f4f8, #c5dff0); display: flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 20px; }
-    .pain-card h3 { font-size: 18px; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
-    .pain-card p { font-size: 15px; color: var(--muted); line-height: 1.75; }
+  .label { font-size: 12px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 20px; }
+  .label-on-light { color: var(--accent); }
+  .label-on-dark { color: var(--brand-blue); }
 
-    /* Science */
-    #science { background: linear-gradient(160deg, var(--navy) 0%, var(--navy2) 100%); color: #fff; }
-    #science .section-title { color: #fff; }
-    #science .section-sub { color: rgba(255,255,255,0.7); }
-    .science-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; margin-top: 56px; }
-    .science-steps { display: flex; flex-direction: column; gap: 32px; }
-    .science-step { display: flex; gap: 20px; }
-    .step-num { flex-shrink: 0; width: 44px; height: 44px; background: linear-gradient(135deg, var(--gold), var(--gold2)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 17px; font-weight: 900; color: #fff; box-shadow: 0 4px 16px rgba(184,146,42,0.4); }
-    .step-text h4 { font-size: 18px; font-weight: 800; margin-bottom: 6px; color: #fff; }
-    .step-text p { font-size: 15px; color: rgba(255,255,255,0.65); line-height: 1.75; }
-    .nerve-diagram { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 24px; padding: 40px; }
-    .nerve-svg { width: 100%; height: 280px; }
+  .title-on-light { font-size: clamp(28px, 4vw, 42px); font-weight: 700; line-height: 1.3; color: var(--text-primary); margin-bottom: 20px; letter-spacing: -0.5px; }
+  .title-on-dark  { font-size: clamp(28px, 4vw, 42px); font-weight: 700; line-height: 1.3; color: var(--text-white); margin-bottom: 20px; letter-spacing: -0.5px; }
+  .sub-on-light { font-size: 17px; color: var(--text-secondary); max-width: 640px; line-height: 1.85; }
+  .sub-on-dark  { font-size: 17px; color: rgba(240,244,248,0.72); max-width: 640px; line-height: 1.85; }
 
-    /* Ingredients */
-    #ingredients { background: #fff; }
-    .ing-why { display: flex; align-items: flex-start; gap: 20px; background: var(--gray); border-radius: 20px; padding: 28px 32px; margin-top: 48px; border-left: 4px solid var(--gold2); }
-    .ing-why-avatar { width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0; background: linear-gradient(135deg, var(--navy), var(--teal)); display: flex; align-items: center; justify-content: center; font-size: 22px; }
-    .ing-why-text strong { display: block; font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
-    .ing-why-text p { font-size: 15px; color: var(--muted); line-height: 1.8; margin: 0; }
-    .ing-why-text em { color: var(--teal); font-style: normal; font-weight: 700; }
-    .ing-duo { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 32px; }
-    .ing-main-card { border-radius: 24px; overflow: hidden; border: 1.5px solid var(--gray2); transition: box-shadow 0.25s, transform 0.25s; }
-    .ing-main-card:hover { box-shadow: 0 16px 48px rgba(13,37,69,0.10); transform: translateY(-4px); }
-    .ing-main-header { padding: 32px 32px 24px; position: relative; overflow: hidden; }
-    .ing-main-header::after { content: ''; position: absolute; right: -20px; bottom: -20px; width: 120px; height: 120px; border-radius: 50%; background: rgba(255,255,255,0.08); }
-    .ing-main-num { font-size: 11px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 10px; }
-    .ing-main-name { font-size: 28px; font-weight: 900; color: #fff; line-height: 1.2; margin-bottom: 6px; }
-    .ing-main-sub { font-size: 13px; color: rgba(255,255,255,0.65); }
-    .ing-main-icon { position: absolute; right: 28px; top: 24px; font-size: 52px; opacity: 0.85; }
-    .ing-main-body { padding: 28px 32px 32px; background: #fff; }
-    .ing-badge { display: inline-flex; align-items: center; gap: 6px; border-radius: 50px; font-size: 12px; font-weight: 700; padding: 5px 14px; margin-bottom: 18px; }
-    .ing-origin { background: var(--gray); color: var(--navy); }
-    .ing-patent { background: rgba(184,146,42,0.1); border: 1px solid rgba(184,146,42,0.25); color: var(--gold); }
-    .ing-main-desc { font-size: 15px; color: var(--text); line-height: 1.85; margin-bottom: 22px; }
-    .ing-points { display: flex; flex-direction: column; gap: 10px; padding-top: 20px; border-top: 1px solid var(--gray2); }
-    .ing-point { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--muted); line-height: 1.6; }
-    .ing-point-dot { width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0; margin-top: 1px; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 900; color: #fff; }
-    .ing-support { margin-top: 48px; }
-    .ing-support-label { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
-    .ing-support-label-text { font-size: 12px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
-    .ing-support-label-line { flex: 1; height: 1px; background: var(--gray2); }
-    .ing-support-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
-    .ing-sup-card { background: var(--gray); border-radius: 16px; padding: 18px 14px; text-align: center; border: 1px solid var(--gray2); transition: border-color 0.2s, background 0.2s; }
-    .ing-sup-card:hover { border-color: var(--teal2); background: #fff; }
-    .ing-sup-emoji { font-size: 24px; margin-bottom: 10px; }
-    .ing-sup-name { font-size: 13px; font-weight: 800; color: var(--navy); margin-bottom: 4px; line-height: 1.3; }
-    .ing-sup-desc { font-size: 11px; color: var(--muted); line-height: 1.5; }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .reveal.is-visible { opacity: 1; transform: translateY(0); }
 
-    /* Doctor */
-    #doctor { background: var(--gray); }
-    .doctor-inner { display: grid; grid-template-columns: 380px 1fr; gap: 64px; align-items: center; }
-    .doctor-card { background: #fff; border-radius: 28px; padding: 40px 36px; box-shadow: 0 12px 48px rgba(13,37,69,0.10); text-align: center; }
-    .doctor-avatar { width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, var(--navy), var(--teal)); margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 48px; box-shadow: 0 8px 28px rgba(13,37,69,0.25); }
-    .doctor-name { font-size: 22px; font-weight: 900; color: var(--navy); margin-bottom: 6px; }
-    .doctor-title { font-size: 14px; color: var(--teal); font-weight: 700; margin-bottom: 20px; }
-    .doctor-certs { display: flex; flex-direction: column; gap: 10px; text-align: left; }
-    .cert-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: var(--muted); line-height: 1.5; }
-    .cert-item::before { content: '✓'; color: var(--teal2); font-weight: 900; font-size: 14px; flex-shrink: 0; margin-top: 1px; }
-    .doctor-message h3 { font-size: clamp(20px, 2.5vw, 28px); font-weight: 900; color: var(--navy); line-height: 1.4; margin-bottom: 24px; }
-    .doctor-message h3 em { color: var(--teal); font-style: normal; }
-    .doctor-message p { font-size: 16px; color: var(--muted); line-height: 1.9; margin-bottom: 16px; }
-    .doctor-signature { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--gray2); font-size: 15px; color: var(--navy); font-style: italic; }
+  .btn-on-light { display: inline-block; background: var(--accent); color: #fff; font-weight: 600; font-size: 15px; padding: 15px 32px; border-radius: 8px; transition: transform 0.2s, box-shadow 0.2s; border: none; cursor: pointer; }
+  .btn-on-light:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(21,101,192,0.28); }
+  .btn-on-dark { display: inline-block; background: var(--brand-blue); color: var(--navy-primary); font-weight: 700; font-size: 15px; padding: 15px 32px; border-radius: 8px; transition: transform 0.2s, box-shadow 0.2s; border: none; cursor: pointer; }
+  .btn-on-dark:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(79,195,247,0.3); }
+  .btn-outline-dark { display: inline-block; background: transparent; color: var(--text-white); font-weight: 600; font-size: 15px; padding: 15px 32px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.25); transition: all 0.2s; }
+  .btn-outline-dark:hover { border-color: var(--brand-blue); color: var(--brand-blue); }
+  .btn-outline-light { display: inline-block; background: transparent; color: var(--accent); font-weight: 600; font-size: 15px; padding: 15px 32px; border-radius: 8px; border: 1px solid rgba(21,101,192,0.3); transition: all 0.2s; }
+  .btn-outline-light:hover { background: rgba(21,101,192,0.06); }
 
-    /* Reviews */
-    #reviews { background: #fff; }
-    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
-    .review-card { background: var(--gray); border-radius: 20px; padding: 32px 28px; position: relative; }
-    .review-card::before { content: '"'; font-size: 80px; color: var(--gray2); position: absolute; top: 12px; left: 24px; line-height: 1; font-family: Georgia, serif; }
-    .review-stars { color: var(--gold2); font-size: 18px; margin-bottom: 16px; letter-spacing: 2px; }
-    .review-text { font-size: 15px; color: var(--text); line-height: 1.8; margin-bottom: 24px; position: relative; }
-    .reviewer { display: flex; align-items: center; gap: 12px; }
-    .reviewer-avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--navy), var(--teal)); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 16px; }
-    .reviewer-info h4 { font-size: 15px; font-weight: 700; color: var(--navy); }
-    .reviewer-info span { font-size: 13px; color: var(--muted); }
-    .verified { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; color: var(--teal); font-weight: 700; background: rgba(26,122,110,0.08); padding: 2px 8px; border-radius: 50px; margin-left: 8px; }
+  /* ── Nav ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+    background: transparent; transition: background 0.35s ease, border-color 0.35s ease;
+    border-bottom: 1px solid transparent;
+  }
+  nav.scrolled { background: rgba(13,27,42,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--divider-dark); }
+  .nav-inner { max-width: 1180px; margin: 0 auto; padding: 20px 28px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .nav-logo { font-size: 19px; font-weight: 700; letter-spacing: -0.3px; color: #fff; }
+  .nav-logo span { color: var(--brand-blue); }
+  .nav-menu { display: flex; gap: 32px; }
+  .nav-menu a { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.75); transition: color 0.2s; }
+  .nav-menu a:hover { color: #fff; }
+  .nav-menu .disabled { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.32); cursor: default; }
+  .nav-right { display: flex; align-items: center; gap: 18px; }
+  .nav-lang {
+    display: flex; align-items: center; gap: 2px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 20px;
+    padding: 3px;
+    backdrop-filter: blur(8px);
+  }
+  .nav-lang a {
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(248,250,252,0.5);
+    letter-spacing: 0.05em;
+    transition: background 0.2s, color 0.2s;
+  }
+  .nav-lang a.active { background: rgba(255,255,255,0.15); color: #F8FAFC; }
+  .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 6px; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
+  .nav-toggle span { width: 22px; height: 2px; background: #fff; }
+  .nav-mobile-menu { display: none; flex-direction: column; gap: 2px; background: rgba(4,8,15,0.98); backdrop-filter: blur(14px); border-top: 1px solid var(--divider-dark); padding: 8px 28px 20px; }
+  .nav-mobile-menu.open { display: flex; }
+  .nav-mobile-menu a { padding: 14px 0; font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.8); border-bottom: 1px solid var(--divider-dark); min-height: 44px; display: flex; align-items: center; }
+  .nav-mobile-menu .disabled { padding: 14px 0; font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.3); border-bottom: 1px solid var(--divider-dark); min-height: 44px; display: flex; align-items: center; }
+  .nav-mobile-menu a:last-child, .nav-mobile-menu .disabled:last-child { border-bottom: none; }
 
-    /* Products */
-    #products { background: var(--gray); }
-    .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
-    .product-box { background: #fff; border-radius: 24px; padding: 36px 28px; border: 2px solid transparent; transition: all 0.25s; position: relative; overflow: hidden; }
-    .product-box:hover, .product-box.featured { border-color: var(--gold2); }
-    .product-box.featured { box-shadow: 0 16px 48px rgba(184,146,42,0.18); }
-    .best-badge { position: absolute; top: 20px; right: -28px; background: var(--gold); color: #fff; font-size: 11px; font-weight: 800; letter-spacing: 1px; padding: 6px 40px; transform: rotate(45deg); }
-    .product-type { font-size: 12px; font-weight: 700; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
-    .product-box h3 { font-size: 22px; font-weight: 900; color: var(--navy); margin-bottom: 8px; }
-    .product-box .sub { font-size: 14px; color: var(--muted); margin-bottom: 24px; }
-    .price-wrap { margin-bottom: 28px; }
-    .product-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
-    .product-features li { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--text); }
-    .product-features li::before { content: '✓'; color: var(--teal2); font-weight: 900; font-size: 15px; }
-    .full-btn { display: block; text-align: center; background: linear-gradient(135deg, var(--gold), var(--gold2)); color: #fff; font-size: 16px; font-weight: 700; padding: 16px; border-radius: 50px; box-shadow: 0 4px 20px rgba(184,146,42,0.3); transition: all 0.2s; }
-    .full-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(184,146,42,0.4); }
-    .full-btn.outline { background: transparent; color: var(--navy); border: 2px solid var(--gray2); box-shadow: none; }
-    .full-btn.outline:hover { border-color: var(--gold2); color: var(--gold); }
+  /* ── Hero ── */
+  #hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding: 160px 0 100px; overflow: hidden; background: linear-gradient(160deg, var(--navy-primary) 0%, var(--navy-secondary) 100%); }
+  #heroCanvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .hero-inner { position: relative; z-index: 2; text-align: center; max-width: 760px; margin: 0 auto; }
+  .hero-label { font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--brand-blue); margin-bottom: 26px; }
+  .hero-title { font-size: clamp(46px, 8.5vw, 92px); font-weight: 700; letter-spacing: -2px; color: #fff; margin-bottom: 24px; }
+  .hero-sub { font-size: clamp(18px, 2.2vw, 23px); font-weight: 500; color: rgba(240,244,248,0.85); line-height: 1.6; margin-bottom: 28px; }
+  .hero-tagline { font-size: 15px; color: rgba(240,244,248,0.6); letter-spacing: 0.3px; line-height: 1.9; margin-bottom: 46px; }
+  .hero-actions { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
 
-    /* Blog */
-    #blog { background: #fff; }
-    .blog-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin: 36px 0 0; }
-    .blog-tab { padding: 9px 22px; border-radius: 50px; font-size: 13px; font-weight: 700; cursor: pointer; border: 1.5px solid var(--gray2); background: var(--gray); color: var(--muted); transition: all 0.2s; font-family: inherit; }
-    .blog-tab.active { background: var(--navy); color: #fff; border-color: var(--navy); }
-    .blog-tab:hover:not(.active) { border-color: var(--navy2); color: var(--navy); }
-    .blog-card.hidden { display: none !important; }
-    .blog-empty { display: none; text-align: center; padding: 56px 0; color: var(--muted); font-size: 15px; line-height: 1.8; grid-column: 1 / -1; }
-    .blog-empty.show { display: block; }
-    .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 28px; }
-    .blog-card { background: var(--gray); border-radius: 20px; overflow: hidden; border: 1.5px solid var(--gray2); transition: box-shadow 0.25s, transform 0.25s; display: flex; flex-direction: column; }
-    .blog-card:hover { box-shadow: 0 14px 44px rgba(13,37,69,0.12); transform: translateY(-4px); }
-    .blog-thumb { height: 180px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-    .blog-thumb-bg { position: absolute; inset: 0; }
-    .blog-thumb-icon { font-size: 52px; position: relative; z-index: 1; }
-    .blog-body { padding: 26px 24px 22px; flex: 1; display: flex; flex-direction: column; background: #fff; }
-    .blog-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
-    .blog-tag { font-size: 11px; font-weight: 700; letter-spacing: 1px; padding: 3px 10px; border-radius: 50px; text-transform: uppercase; }
-    .tag-neuro  { background: rgba(26,122,110,0.10); color: var(--teal); }
-    .tag-nutri  { background: rgba(184,146,42,0.12); color: var(--gold); }
-    .tag-pain   { background: rgba(13,37,69,0.09); color: var(--navy2); }
-    .tag-life       { background: rgba(94,60,150,0.10);  color: #5e3c96; }
-    .tag-functional { background: rgba(60,130,80,0.11); color: #2a7840; }
-    .tag-movement   { background: rgba(22,53,97,0.10);  color: var(--navy2); }
-    .blog-date { font-size: 12px; color: var(--muted); }
-    .blog-read { font-size: 12px; color: var(--muted); }
-    .blog-read::before { content: '·'; margin-right: 10px; }
-    .blog-card h3 { font-size: 17px; font-weight: 800; color: var(--navy); line-height: 1.45; margin-bottom: 10px; }
-    .blog-card p { font-size: 14px; color: var(--muted); line-height: 1.75; flex: 1; }
-    .blog-footer { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--gray2); display: flex; align-items: center; justify-content: space-between; }
-    .blog-author { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--navy); font-weight: 600; }
-    .blog-author-dot { width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, var(--navy), var(--teal)); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 11px; font-weight: 700; flex-shrink: 0; }
-    .blog-more { font-size: 13px; color: var(--teal2); font-weight: 700; display: flex; align-items: center; gap: 4px; }
-    .blog-more::after { content: '→'; }
+  /* ── Why Brain Health ── */
+  #why { background: var(--bg-warm); }
+  .why-grid { display: grid; grid-template-columns: 1fr; gap: 20px; max-width: 780px; margin: 0 auto 56px; text-align: left; }
+  .why-grid p { font-size: 17px; color: var(--text-secondary); line-height: 2; }
+  .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; max-width: 1000px; }
+  .stat-card { background: var(--white); border-radius: 12px; padding: 30px 28px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .stat-card p { font-size: 15px; color: var(--text-primary); line-height: 1.75; margin-bottom: 14px; }
+  .stat-source { font-size: 12px; color: var(--text-secondary); font-style: italic; }
 
-    /* Coming Soon */
-    #coming-soon { background: var(--navy); padding: 100px 0; position: relative; overflow: hidden; }
-    #coming-soon::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 60% at 10% 50%, rgba(26,122,110,0.18) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 90% 30%, rgba(184,146,42,0.12) 0%, transparent 70%); pointer-events: none; }
-    .cs-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
-    .cs-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(212,168,67,0.15); border: 1px solid rgba(212,168,67,0.35); color: var(--gold2); font-size: 12px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; padding: 8px 20px; border-radius: 50px; margin-bottom: 28px; }
-    .cs-badge::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--gold2); flex-shrink: 0; animation: cs-pulse 1.8s ease-in-out infinite; }
-    @keyframes cs-pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.7); } }
-    .cs-title { font-size: clamp(28px, 4vw, 46px); font-weight: 900; color: #fff; line-height: 1.25; letter-spacing: -1px; margin-bottom: 20px; }
-    .cs-title em { color: var(--gold2); font-style: normal; }
-    .cs-desc { font-size: 17px; color: rgba(255,255,255,0.65); line-height: 1.85; margin-bottom: 36px; max-width: 480px; }
-    .cs-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; }
-    .cs-pill { display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.75); font-size: 13px; font-weight: 600; padding: 8px 16px; border-radius: 50px; }
-    .cs-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 28px; padding: 44px 40px; backdrop-filter: blur(8px); }
-    .cs-card-title { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 10px; }
-    .cs-card-sub { font-size: 15px; color: rgba(255,255,255,0.55); margin-bottom: 28px; line-height: 1.7; }
-    .cs-form { display: flex; flex-direction: column; gap: 12px; }
-    .cs-input { width: 100%; padding: 16px 20px; background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.15); border-radius: 14px; color: #fff; font-size: 16px; font-family: inherit; outline: none; transition: border-color 0.2s; }
-    .cs-input::placeholder { color: rgba(255,255,255,0.35); }
-    .cs-input:focus { border-color: var(--gold2); background: rgba(255,255,255,0.12); }
-    .cs-submit { width: 100%; padding: 17px; background: linear-gradient(135deg, var(--gold), var(--gold2)); color: #fff; font-size: 17px; font-weight: 800; border: none; border-radius: 14px; cursor: pointer; box-shadow: 0 6px 24px rgba(184,146,42,0.4); transition: transform 0.2s, box-shadow 0.2s; font-family: inherit; }
-    .cs-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(184,146,42,0.5); }
-    .cs-submit:disabled { opacity: 0.65; cursor: default; transform: none; }
-    .cs-notice { font-size: 12px; color: rgba(255,255,255,0.35); text-align: center; line-height: 1.6; }
-    .cs-success { display: none; text-align: center; padding: 8px 0; }
-    .cs-success.show { display: block; }
-    .cs-success-icon { width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--teal), var(--teal2)); display: flex; align-items: center; justify-content: center; font-size: 28px; margin: 0 auto 16px; }
-    .cs-success h4 { font-size: 20px; font-weight: 900; color: #fff; margin-bottom: 8px; }
-    .cs-success p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.65; }
-    .cs-count { margin-top: 28px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; gap: 28px; justify-content: center; flex-wrap: wrap; }
-    .cs-count-item { text-align: center; }
-    .cs-count-num { font-size: 26px; font-weight: 900; color: var(--gold2); line-height: 1; display: block; margin-bottom: 4px; }
-    .cs-count-label { font-size: 12px; color: rgba(255,255,255,0.45); }
-    .cs-error { font-size: 13px; color: #ff7c7c; margin-top: 2px; display: none; padding-left: 4px; }
-    .cs-error.show { display: block; }
+  /* ── Academy ── */
+  #academy { background: var(--bg-blue-gray); }
+  .academy-cards { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; margin-top: 52px; }
+  .academy-card { display: block; background: var(--white); border-radius: 12px; padding: 30px 22px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+  .academy-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(13,27,42,0.12); }
+  .academy-icon { font-size: 32px; margin-bottom: 18px; }
+  .academy-tag { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+  .academy-desc { font-size: 14px; color: var(--text-primary); line-height: 1.6; font-weight: 500; margin-bottom: 12px; }
+  .academy-coming { font-size: 11px; color: var(--text-secondary); font-style: italic; }
+  .academy-more { text-align: center; margin-top: 48px; }
 
-    /* FAQ */
-    #faq { background: #fff; }
-    .faq-list { max-width: 780px; margin: 48px auto 0; }
-    .faq-item { border-bottom: 1.5px solid var(--gray2); }
-    .faq-q { width: 100%; background: none; border: none; cursor: pointer; padding: 24px 0; display: flex; justify-content: space-between; align-items: center; font-size: 17px; font-weight: 700; color: var(--navy); text-align: left; gap: 16px; }
-    .faq-q .icon { width: 28px; height: 28px; border-radius: 50%; background: var(--gray); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 18px; color: var(--teal2); transition: transform 0.3s; }
-    .faq-item.open .faq-q .icon { transform: rotate(45deg); }
-    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.3s; font-size: 15px; color: var(--muted); line-height: 1.85; }
-    .faq-item.open .faq-a { max-height: 400px; padding-bottom: 20px; }
+  /* ── Why NervLock ── */
+  #why-nervlock { background: var(--bg-warm); }
+  .manifesto { max-width: 720px; margin: 0 auto 48px; text-align: center; }
+  .manifesto-line { font-size: clamp(20px, 2.8vw, 28px); font-weight: 700; color: var(--text-primary); line-height: 1.6; margin-bottom: 14px; }
+  .manifesto-divider { width: 60px; height: 2px; background: var(--divider-light); margin: 48px auto; }
+  .mission-text { max-width: 620px; margin: 0 auto 56px; text-align: center; font-size: 16px; color: var(--text-secondary); line-height: 1.95; }
 
-    /* CTA */
-    #cta { background: linear-gradient(135deg, var(--navy), var(--teal)); padding: 90px 0; text-align: center; }
-    #cta .section-title { color: #fff; }
-    #cta .section-sub { color: rgba(255,255,255,0.75); margin: 0 auto 40px; text-align: center; }
+  /* ── Founder ── */
+  .founder-card { max-width: 480px; margin: 0 auto; background: #F5F8FC; border: 1px solid rgba(21,101,192,0.08); border-radius: 12px; padding: 48px 46px; text-align: center; box-shadow: 0 8px 28px rgba(13,27,42,0.07); }
+  .founder-name { font-size: 22px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
+  .founder-role { font-size: 15px; color: var(--brand-blue); background: var(--navy-primary); display: inline-block; padding: 4px 14px; border-radius: 20px; font-weight: 600; margin-bottom: 20px; }
+  .founder-detail { font-size: 13.5px; color: #5B6B80; line-height: 1.9; font-weight: 400; }
 
-    /* Footer */
-    footer { background: #0a1a32; color: rgba(255,255,255,0.5); padding: 56px 0 32px; }
-    .footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
-    .footer-brand { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 12px; }
-    .footer-brand span { color: var(--gold2); }
-    .footer-desc { font-size: 13px; line-height: 1.8; }
-    .footer-col h4 { color: rgba(255,255,255,0.8); font-size: 14px; font-weight: 700; margin-bottom: 16px; }
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .footer-col ul li a { font-size: 13px; transition: color 0.2s; }
-    .footer-col ul li a:hover { color: var(--gold2); }
-    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
-    .footer-notice { font-size: 11px; line-height: 1.7; max-width: 600px; }
+  /* ── Science ── */
+  #research { background: var(--bg-blue-gray); }
+  .paper-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 52px; }
+  .paper-card { background: var(--white); border-radius: 12px; padding: 28px 26px; display: flex; flex-direction: column; gap: 12px; min-height: 320px; position: relative; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .paper-badge { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 1px; color: var(--text-secondary); border: 1px solid var(--divider-light); border-radius: 50px; padding: 4px 12px; width: fit-content; }
+  .paper-field { font-size: 12px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; }
+  .paper-field strong { display: block; color: var(--text-primary); font-size: 13px; text-transform: none; letter-spacing: 0; margin-top: 3px; font-weight: 500; }
+  .paper-placeholder { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; text-align: center; padding: 30px; background: rgba(255,255,255,0.9); border-radius: 12px; }
+  .paper-placeholder p { font-size: 13px; color: var(--text-secondary); line-height: 1.8; }
 
-    @media (max-width: 900px) {
-      .hero-content, .science-grid, .doctor-inner, .footer-inner, .cs-inner { grid-template-columns: 1fr; }
-      .pain-grid, .reviews-grid, .products-grid, .blog-grid, .ing-duo { grid-template-columns: 1fr 1fr; }
-      .ing-support-grid { grid-template-columns: repeat(3, 1fr); }
-      .nav-links, .nav-right { display: none; }
-      .nav-hamburger { display: flex; }
-    }
-    @media (max-width: 600px) {
-      .pain-grid, .reviews-grid, .products-grid, .blog-grid, .ing-duo { grid-template-columns: 1fr; }
-      .section { padding: 64px 0; }
-      .ing-support-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-  </style>
+  /* ── Solutions ── */
+  #solutions { background: var(--white); }
+  .solutions-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 52px; }
+  .solution-card { border-radius: 12px; padding: 40px; }
+  .solution-card.featured { background: var(--navy-primary); color: var(--text-white); }
+  .solution-card.placeholder { background: var(--bg-blue-gray); border: 1px solid var(--divider-light); }
+  .solution-tag { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--brand-blue); margin-bottom: 16px; }
+  .solution-card.placeholder .solution-tag { color: var(--accent); }
+  .solution-title { font-size: 23px; font-weight: 700; margin-bottom: 12px; }
+  .solution-card.placeholder .solution-title { color: var(--text-primary); }
+  .solution-desc { font-size: 15px; line-height: 1.8; margin-bottom: 18px; opacity: 0.85; }
+  .solution-card.placeholder .solution-desc { color: var(--text-secondary); opacity: 1; }
+  .solution-specs { font-size: 13px; margin-bottom: 8px; opacity: 0.7; }
+  .solution-date { font-size: 13px; color: var(--brand-blue); font-weight: 700; margin-bottom: 24px; }
+  .solution-footnote { font-size: 12px; color: var(--text-white); opacity: 0.55; line-height: 1.6; margin-top: 18px; }
+
+  /* ── Newsletter ── */
+  #newsletter { background: var(--navy-primary); }
+  .newsletter-form { display: flex; gap: 12px; max-width: 480px; margin: 36px 0 18px; flex-wrap: wrap; }
+  .nl-input { flex: 1; min-width: 220px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 15px 18px; color: var(--text-white); font-size: 15px; font-family: inherit; }
+  .nl-input::placeholder { color: rgba(240,244,248,0.4); }
+  .nl-input:focus { border-color: var(--brand-blue); }
+  .newsletter-notice { font-size: 12px; color: rgba(240,244,248,0.5); line-height: 1.8; }
+  .newsletter-notice a { color: var(--brand-blue); font-weight: 600; }
+  .newsletter-success { display: none; font-size: 15px; color: var(--brand-green); font-weight: 600; margin-top: 20px; }
+  .newsletter-success.show { display: block; }
+
+  .consent-row { display: flex; align-items: flex-start; gap: 10px; max-width: 480px; margin-bottom: 18px; }
+  .consent-row input[type="checkbox"] { width: 18px; height: 18px; margin-top: 2px; flex-shrink: 0; accent-color: var(--brand-blue); cursor: pointer; }
+  .consent-row label { font-size: 13px; line-height: 1.6; cursor: pointer; color: rgba(240,244,248,0.75); }
+  .consent-detail { list-style: none; padding: 0; margin: 8px 0 0; font-size: 12px; line-height: 1.9; color: rgba(240,244,248,0.5); }
+  .consent-detail li { padding-left: 12px; position: relative; }
+  .consent-detail li::before { content: "·"; position: absolute; left: 0; }
+  .consent-detail a { color: var(--brand-blue); font-weight: 600; }
+  .consent-error { display: none; font-size: 12px; color: #ff8a8a; margin-bottom: 12px; }
+  .consent-error.show { display: block; }
+
+  /* ── Footer ── */
+  footer { background: var(--navy-secondary); padding: 90px 0 36px; }
+  .footer-top { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 60px; }
+  .footer-brand { font-size: 20px; font-weight: 700; margin-bottom: 16px; color: var(--text-white); }
+  .footer-brand span { color: var(--brand-blue); }
+  .footer-desc { font-size: 14px; color: rgba(240,244,248,0.6); line-height: 1.9; }
+  .footer-col h4 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: rgba(240,244,248,0.4); margin-bottom: 18px; }
+  .footer-col ul { display: flex; flex-direction: column; gap: 12px; }
+  .footer-col a { font-size: 14px; color: rgba(240,244,248,0.7); transition: color 0.2s; }
+  .footer-col a:hover { color: var(--brand-blue); }
+  .footer-col .disabled { font-size: 14px; color: rgba(240,244,248,0.28); cursor: default; }
+  .footer-bottom { border-top: 1px solid var(--divider-dark); padding-top: 28px; font-size: 12px; color: rgba(240,244,248,0.4); }
+
+  @media (max-width: 900px) {
+    .nav-menu { display: none; }
+    .nav-toggle { display: flex; }
+    .nav-right .nav-lang { display: none; }
+    .stat-grid, .paper-grid, .solutions-grid { grid-template-columns: 1fr; }
+    .academy-cards { grid-template-columns: repeat(2, 1fr); }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .section { padding: 84px 0; }
+  }
+  @media (max-width: 560px) {
+    .academy-cards { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; }
+  }
+
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  :focus-visible { outline: 2px solid #4fc3f7; outline-offset: 2px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+    html { scroll-behavior: auto; }
+    .reveal { transform: none; }
+  }
+</style>
 </head>
 <body>
 
-<nav>
+<nav id="mainNav">
   <div class="nav-inner">
     <a href="/en/" class="nav-logo">Nerv<span>Lock</span></a>
-    <ul class="nav-links">
-      <li><a href="#pain">Symptoms</a></li>
-      <li><a href="#science">How It Works</a></li>
-      <li><a href="#ingredients">Ingredients</a></li>
-      <li><a href="#doctor">Neurologist</a></li>
-      <li><a href="#blog">Blog</a></li>
-      <li><a href="#products">Products</a></li>
-    </ul>
-    <div class="nav-right">
-      <div class="lang-toggle">
-        <a href="/" class="lang-btn">KR</a>
-        <a href="/en/" class="lang-btn active">EN</a>
-      </div>
-      <a href="#coming-soon" class="nav-cta">Get Launch Alert</a>
+    <div class="nav-menu">
+      <a href="#academy">Academy</a>
+      <a href="#research">Science &amp; Research</a>
+      <a href="#solutions">Products</a>
+      <a href="#why-nervlock">About</a>
+      <span class="disabled" title="English blog coming soon">Blog</span>
+      <a href="#newsletter">Newsletter</a>
     </div>
-    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-right">
+      <div class="nav-lang">
+        <a href="/">KR</a>
+        <a href="/en/" class="active">EN</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="nav-mobile-menu" id="navMobileMenu">
+    <a href="#academy">Academy</a>
+    <a href="#research">Science &amp; Research</a>
+    <a href="#solutions">Products</a>
+    <a href="#why-nervlock">About</a>
+    <span class="disabled">Blog (coming soon)</span>
+    <a href="#newsletter">Newsletter</a>
+    <a href="/">KR ↗</a>
   </div>
 </nav>
 
-<!-- Mobile nav -->
-<div class="nav-mobile" id="navMobile">
-  <ul>
-    <li><a href="#pain">Symptoms</a></li>
-    <li><a href="#science">How It Works</a></li>
-    <li><a href="#ingredients">Ingredients</a></li>
-    <li><a href="#doctor">Our Neurologist</a></li>
-    <li><a href="#blog">Medical Blog</a></li>
-    <li><a href="#products">Products</a></li>
-  </ul>
-  <div class="nav-mobile-footer">
-    <div class="lang-toggle">
-      <a href="/" class="lang-btn">KR</a>
-      <a href="/en/" class="lang-btn active">EN</a>
-    </div>
-    <a href="#coming-soon" class="nav-cta-mobile">Get Launch Alert</a>
-  </div>
-</div>
-
-<!-- Hero -->
+<!-- SECTION 1 — Hero -->
 <section id="hero">
+  <canvas id="heroCanvas"></canvas>
+  <div class="container hero-inner">
+    <div class="hero-label reveal">Evidence-Based Brain Health</div>
+    <h1 class="hero-title reveal">NervLock Lab</h1>
+    <p class="hero-sub reveal">An evidence-based brain health platform led by a neurologist.</p>
+    <p class="hero-tagline reveal">Understand Your Brain.<br>Protect It for Life.</p>
+    <div class="hero-actions reveal">
+      <a href="#academy" class="btn-on-dark">Explore the Brain Health Academy →</a>
+      <a href="#research" class="btn-outline-dark">View Science &amp; Research →</a>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2 — Why Brain Health -->
+<section class="section" id="why">
   <div class="container">
-    <div class="hero-content">
-      <div class="hero-badge">Designed by a Neurologist · Brain Care Routine</div>
-      <h1 class="hero-title">
-        A clearer mind,<br>
-        <em>built to last.</em>
-      </h1>
-      <p class="hero-sub">
-        A brain care routine designed by a neurologist — <strong style="color:var(--gold2)">NervLock Brain Energy</strong>.<br>
-        For brain fog, memory lapses, and cognitive fatigue,
-        this formula delivers the nutrients your brain actually needs.
+    <div class="why-grid">
+      <div class="label label-on-light reveal">WHY BRAIN HEALTH</div>
+      <h2 class="title-on-light reveal">Why Brain Health Matters</h2>
+      <p class="reveal">
+        The brain supports memory, attention, movement, emotion, sleep, and the ability to navigate daily life.
       </p>
-      <div class="hero-actions">
-        <a href="#coming-soon" class="btn-primary">Get Launch Notification</a>
-        <a href="#science" class="btn-outline">How It Works</a>
+      <p class="reveal">
+        Brain health is shaped over time by lifestyle choices, medical history, and environmental factors — many of which can be addressed before symptoms appear.
+      </p>
+      <p class="reveal">
+        Yet early changes are often subtle and easy to dismiss.
+      </p>
+      <p class="reveal">
+        NervLock exists to make evidence-based brain health information accessible, honest, and practical — without replacing the role of medical evaluation.
+      </p>
+    </div>
+    <div class="stat-grid">
+      <div class="stat-card reveal">
+        <p>Research suggests that approximately 45% of dementia risk factors may be modifiable.</p>
+        <div class="stat-source">Source: Lancet Commission on Dementia Prevention, 2024</div>
       </div>
-      <div class="hero-trust">
-        <div class="hero-trust-item">
-          <div class="hero-trust-icon">🏥</div>
-          Neurologist-Developed
-        </div>
-        <div class="hero-trust-item">
-          <div class="hero-trust-icon">🔬</div>
-          Evidence-Based Ingredients
-        </div>
-        <div class="hero-trust-item">
-          <div class="hero-trust-icon">📋</div>
-          Quality-Controlled Manufacturing
-        </div>
+      <div class="stat-card reveal">
+        <p>In some neurodegenerative conditions, pathological changes may begin years or decades before noticeable symptoms appear.</p>
+        <div class="stat-source">Source: NIA-AA Research Framework, 2018</div>
+      </div>
+      <div class="stat-card reveal">
+        <p>Brain health is meaningfully influenced by sleep quality, nutrition, physical activity, and stress management — all modifiable aspects of daily life.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Discomfort Section -->
-<section id="pain" class="section">
+<!-- SECTION 3 — Brain Health Academy -->
+<section class="section" id="academy">
   <div class="container">
-    <div class="section-label">Does This Sound Familiar?</div>
-    <h2 class="section-title">Why Brain Health<br>Needs Consistent Support</h2>
-    <p class="section-sub">
-      After 40, the brain's nutritional reserves decline — leading to cognitive fatigue, brain fog,
-      and reduced mental sharpness that standard tests rarely catch.
+    <div class="label label-on-light reveal">BRAIN HEALTH ACADEMY</div>
+    <h2 class="title-on-light reveal">Understand Your Brain</h2>
+    <p class="sub-on-light reveal">Evidence-based content written by a neurologist.</p>
+
+    <div class="academy-cards">
+      <a href="#academy" class="academy-card reveal" data-coming="true">
+        <div class="academy-icon">🌫️</div>
+        <div class="academy-tag">Brain Fog</div>
+        <div class="academy-desc">When mental clarity becomes elusive</div>
+        <div class="academy-coming">English content coming soon</div>
+      </a>
+      <a href="#academy" class="academy-card reveal" data-coming="true">
+        <div class="academy-icon">😴</div>
+        <div class="academy-tag">Sleep</div>
+        <div class="academy-desc">The neuroscience of rest and recovery</div>
+        <div class="academy-coming">English content coming soon</div>
+      </a>
+      <a href="#academy" class="academy-card reveal" data-coming="true">
+        <div class="academy-icon">🧠</div>
+        <div class="academy-tag">Memory</div>
+        <div class="academy-desc">How memory works and what affects it</div>
+        <div class="academy-coming">English content coming soon</div>
+      </a>
+      <a href="#academy" class="academy-card reveal" data-coming="true">
+        <div class="academy-icon">⚡</div>
+        <div class="academy-tag">Focus</div>
+        <div class="academy-desc">Attention, dopamine, and cognitive performance</div>
+        <div class="academy-coming">English content coming soon</div>
+      </a>
+      <a href="#academy" class="academy-card reveal" data-coming="true">
+        <div class="academy-icon">🌿</div>
+        <div class="academy-tag">Nutrition</div>
+        <div class="academy-desc">Key nutrients for brain health</div>
+        <div class="academy-coming">English content coming soon</div>
+      </a>
+    </div>
+
+    <div class="academy-more reveal">
+      <a href="#academy" class="btn-outline-light">View all articles →</a>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4 — Why NervLock + Founder -->
+<section class="section" id="why-nervlock">
+  <div class="container">
+    <div class="label label-on-light reveal" style="text-align:center;">WHY NERVLOCK</div>
+    <h2 class="title-on-light reveal" style="text-align:center;">Our Approach</h2>
+    <div class="manifesto">
+      <p class="manifesto-line reveal">Evidence before marketing.</p>
+      <p class="manifesto-line reveal">Education before promotion.</p>
+      <p class="manifesto-line reveal">Science before products.</p>
+      <p class="manifesto-line reveal">Trust before sales.</p>
+    </div>
+
+    <div class="manifesto-divider reveal"></div>
+
+    <p class="mission-text reveal">
+      NervLock connects clinical neurological experience with current medical evidence
+      to build a brain health ecosystem grounded in education, transparency, and long-term trust.
     </p>
-    <div class="pain-grid">
-      <div class="pain-card">
-        <div class="pain-icon">🧠</div>
-        <h3>Memory & Concentration Decline</h3>
-        <p>Forgetting things more easily, struggling to stay focused — these may signal that your brain needs better nutritional support.</p>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon">😴</div>
-        <h3>Persistent Fatigue</h3>
-        <p>Feeling drained even after a full night's sleep? Declining brain energy metabolism may be contributing to that lingering tiredness.</p>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon">🌫️</div>
-        <h3>Brain Fog</h3>
-        <p>A mental haze that makes thinking feel slow and unclear. Often linked to reduced neuronal energy efficiency and signal transmission.</p>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon">😰</div>
-        <h3>Stress & Hyperarousal</h3>
-        <p>Becoming easily irritable or unable to unwind? Autonomic nervous system balance and brain nutritional status may both be factors.</p>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon">📉</div>
-        <h3>Reduced Productivity</h3>
-        <p>Not performing as sharply as you used to? Nutritional support for neuronal signal efficiency may help restore your mental edge.</p>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon">🌙</div>
-        <h3>Poor Sleep Quality</h3>
-        <p>Trouble falling asleep or staying asleep? Brain recovery during sleep depends on an adequate supply of key neurological nutrients.</p>
+
+    <div class="founder-card reveal">
+      <div class="founder-name">Dr. Ham Jeehyun, M.D.</div>
+      <div class="founder-role">Board-Certified Neurologist</div>
+      <div class="founder-detail">
+        M.D., Yonsei University College of Medicine<br>
+        Former Assistant Professor of Clinical Research,<br>
+        Severance Hospital
       </div>
     </div>
   </div>
 </section>
 
-<!-- Science -->
-<section id="science" class="section">
+<!-- SECTION 5 — Science & Research -->
+<section class="section" id="research">
   <div class="container">
-    <div class="section-label" style="color:rgba(255,255,255,0.6)">Neuroscience-Based Approach</div>
-    <h2 class="section-title">NervLock's 3-Path<br>Brain Health Mechanism</h2>
-    <p class="section-sub">
-      Rather than chasing isolated symptoms, NervLock Brain Energy takes a
-      comprehensive, science-driven approach to supporting the brain and nervous system.
+    <div class="label label-on-light reveal">SCIENCE &amp; RESEARCH</div>
+    <h2 class="title-on-light reveal">Grounded in Evidence</h2>
+    <p class="sub-on-light reveal">NervLock prioritizes peer-reviewed medical literature and authoritative clinical guidelines when developing its content and products.</p>
+
+    <div class="paper-grid">
+      <div class="paper-card reveal">
+        <span class="paper-badge">Journal</span>
+        <div class="paper-field">Article Title<strong>—</strong></div>
+        <div class="paper-field">Study Design<strong>—</strong></div>
+        <div class="paper-field">Key Findings<strong>—</strong></div>
+        <div class="paper-field">Clinical Relevance<strong>—</strong></div>
+        <div class="paper-field">Year · DOI<strong>—</strong></div>
+        <div class="paper-placeholder">
+          <p>Research articles coming soon.<br>Our evidence review library is being developed.</p>
+        </div>
+      </div>
+      <div class="paper-card reveal">
+        <span class="paper-badge">Journal</span>
+        <div class="paper-field">Article Title<strong>—</strong></div>
+        <div class="paper-field">Study Design<strong>—</strong></div>
+        <div class="paper-field">Key Findings<strong>—</strong></div>
+        <div class="paper-field">Clinical Relevance<strong>—</strong></div>
+        <div class="paper-field">Year · DOI<strong>—</strong></div>
+        <div class="paper-placeholder">
+          <p>Research articles coming soon.<br>Our evidence review library is being developed.</p>
+        </div>
+      </div>
+      <div class="paper-card reveal">
+        <span class="paper-badge">Journal</span>
+        <div class="paper-field">Article Title<strong>—</strong></div>
+        <div class="paper-field">Study Design<strong>—</strong></div>
+        <div class="paper-field">Key Findings<strong>—</strong></div>
+        <div class="paper-field">Clinical Relevance<strong>—</strong></div>
+        <div class="paper-field">Year · DOI<strong>—</strong></div>
+        <div class="paper-placeholder">
+          <p>Research articles coming soon.<br>Our evidence review library is being developed.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6 — Brain Health Solutions -->
+<section class="section" id="solutions">
+  <div class="container">
+    <div class="label label-on-light reveal">OUR SOLUTIONS</div>
+    <h2 class="title-on-light reveal">Brain Health Solutions</h2>
+    <p class="sub-on-light reveal">An evidence-informed approach to brain care, developed with attention to scientific rationale, ingredient quality, and safety.</p>
+
+    <div class="solutions-grid">
+      <div class="solution-card featured reveal">
+        <div class="solution-tag">Brain Energy</div>
+        <div class="solution-title">NervLock Brain Energy</div>
+        <p class="solution-desc">A brain health formulation being developed with attention to scientific rationale, ingredient quality, and safety.</p>
+        <div class="solution-specs">Phosphatidylserine (PS) · rTG Omega-3 · B vitamins · Vitamin D3</div>
+        <div class="solution-date">Launching in late 2026</div>
+        <a href="#newsletter" class="btn-on-dark">Notify me when available →</a>
+        <p class="solution-footnote">Product formulation and launch timing may change during development.</p>
+      </div>
+      <div class="solution-card placeholder reveal">
+        <div class="solution-tag">Coming Soon</div>
+        <div class="solution-title">More Brain Health Solutions</div>
+        <p class="solution-desc">More evidence-informed brain health solutions are being developed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7 — Newsletter -->
+<section class="section" id="newsletter">
+  <div class="container">
+    <div class="label label-on-dark reveal">BRAIN HEALTH WEEKLY</div>
+    <h2 class="title-on-dark reveal">Stay Informed</h2>
+    <p class="sub-on-dark reveal">Weekly brain health insights, curated by a neurologist.<br>Evidence-based updates, practical guidance, and responsible science communication.</p>
+
+    <form id="nlForm" novalidate>
+      <div class="newsletter-form reveal">
+        <label for="nlEmail" class="sr-only">Email address</label>
+        <input type="email" class="nl-input" id="nlEmail" placeholder="Enter your email address" autocomplete="email" />
+        <button type="submit" class="btn-on-dark" id="nlSubmit" aria-label="Subscribe to Brain Health Weekly">Subscribe to Brain Health Weekly</button>
+      </div>
+
+      <div class="consent-row reveal">
+        <input type="checkbox" id="nlConsent" required />
+        <label for="nlConsent">
+          I agree to the collection and use of my email address for newsletter delivery.
+          <ul class="consent-detail">
+            <li>Data collected: Email address</li>
+            <li>Purpose: Newsletter delivery</li>
+            <li>Retention: Until unsubscription</li>
+            <li><a href="#">Privacy Policy →</a></li>
+          </ul>
+        </label>
+      </div>
+      <div class="consent-error" id="nlConsentError" role="alert">Please agree to the collection and use of your email address.</div>
+    </form>
+    <p class="newsletter-notice reveal">
+      No spam. Unsubscribe anytime.
     </p>
-    <div class="science-grid">
-      <div class="science-steps">
-        <div class="science-step">
-          <div class="step-num">1</div>
-          <div class="step-text">
-            <h4>Brain Energy Metabolism Support</h4>
-            <p>Phosphatidylserine (PS) and B-complex vitamins supply the nutrients needed for neuronal energy production and efficient signal transmission.</p>
-          </div>
-        </div>
-        <div class="science-step">
-          <div class="step-num">2</div>
-          <div class="step-text">
-            <h4>Nervous System Nutritional Balance</h4>
-            <p>Omega-3 (EPA+DHA) delivers DHA essential for neuronal membrane integrity, while also supporting healthy circulation to the brain.</p>
-          </div>
-        </div>
-        <div class="science-step">
-          <div class="step-num">3</div>
-          <div class="step-text">
-            <h4>Homocysteine Metabolism Support</h4>
-            <p>Vitamins B12, B6, and folate are required for normal homocysteine metabolism — foundational nutrients for neurological health after midlife.</p>
-          </div>
-        </div>
-      </div>
-      <div class="nerve-diagram">
-        <svg class="nerve-svg" viewBox="0 0 320 280" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="axon2" x1="0" y1="0" x2="320" y2="0">
-              <stop offset="0%" stop-color="#22a090"/>
-              <stop offset="100%" stop-color="#d4a843"/>
-            </linearGradient>
-          </defs>
-          <rect x="20" y="125" width="280" height="30" rx="15" fill="url(#axon2)" opacity="0.9"/>
-          <rect x="30" y="110" width="50" height="60" rx="30" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
-          <rect x="100" y="110" width="50" height="60" rx="30" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
-          <rect x="170" y="110" width="50" height="60" rx="30" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
-          <rect x="240" y="110" width="50" height="60" rx="30" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
-          <text x="90" y="200" fill="rgba(255,255,255,0.5)" font-size="10" text-anchor="middle">Node of Ranvier</text>
-          <text x="160" y="200" fill="rgba(255,255,255,0.5)" font-size="10" text-anchor="middle">Node of Ranvier</text>
-          <text x="230" y="200" fill="rgba(255,255,255,0.5)" font-size="10" text-anchor="middle">Node of Ranvier</text>
-          <circle cx="265" cy="140" r="10" fill="#d4a843" opacity="0.9">
-            <animate attributeName="cx" values="35;285;35" dur="3s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.9;0.9;0" dur="3s" repeatCount="indefinite"/>
-          </circle>
-          <text x="55" y="90" fill="rgba(255,255,255,0.8)" font-size="11" text-anchor="middle">Myelin Sheath</text>
-          <text x="55" y="105" fill="rgba(26,122,110,0.9)" font-size="10" text-anchor="middle">Nourished</text>
-          <text x="160" y="48" fill="rgba(255,255,255,0.9)" font-size="13" text-anchor="middle" font-weight="bold">Nerve Axon</text>
-          <text x="160" y="64" fill="rgba(212,168,67,0.8)" font-size="11" text-anchor="middle">Neural Health Supported</text>
-        </svg>
-        <p style="color:rgba(255,255,255,0.5);font-size:12px;text-align:center;margin-top:8px;">
-          NervLock Brain Energy supports the nutritional environment for brain and nervous system health
-        </p>
-      </div>
-    </div>
+    <p class="newsletter-success" id="nlSuccess">Thank you for subscribing — your first issue of Brain Health Weekly is on its way. 🙏</p>
   </div>
 </section>
 
-<!-- Ingredients -->
-<section id="ingredients" class="section">
-  <div class="container">
-    <div class="section-label">Formulation</div>
-    <h2 class="section-title">2 Core + 4 Support Ingredients,<br>Brain Energy v1.0 Formula</h2>
-    <p class="section-sub">Built around government-approved functional ingredients, complemented by supporting nutrients for comprehensive brain and nervous system health.</p>
-
-    <div class="ing-why">
-      <div class="ing-why-avatar">👨‍⚕️</div>
-      <div class="ing-why-text">
-        <strong>Why these ingredients? — Dr. Claire Ham, Neurologist</strong>
-        <p>
-          When your mind doesn't feel as sharp as it used to, the first thing to address is what your brain actually needs nutritionally.
-          NervLock Brain Energy was designed by selecting only the <em>ingredients with the clearest evidence</em> from a neurologist's perspective.
-        </p>
-      </div>
-    </div>
-
-    <div class="ing-duo">
-      <div class="ing-main-card">
-        <div class="ing-main-header" style="background: linear-gradient(135deg, #1a2a5e 0%, #22a090 100%);">
-          <div class="ing-main-num">Core Ingredient 01</div>
-          <div class="ing-main-name">Phosphatidylserine (PS)</div>
-          <div class="ing-main-sub">300mg · Neuronal Membrane Phospholipid</div>
-          <div class="ing-main-icon">🧬</div>
-        </div>
-        <div class="ing-main-body">
-          <span class="ing-badge ing-origin">🧬 Notified functional ingredient (MFDS-approved)</span>
-          <p class="ing-main-desc">
-            A key phospholipid in neuronal cell membranes, phosphatidylserine is involved in cell-to-cell
-            signaling and brain energy metabolism. The Korean MFDS (Ministry of Food and Drug Safety)
-            recognizes PS as a functional ingredient that <strong>may help improve memory</strong>,
-            backed by an extensive body of clinical research.
-          </p>
-          <div class="ing-points">
-            <div class="ing-point">
-              <div class="ing-point-dot" style="background:var(--teal2);">1</div>
-              <span>MFDS-recognized function: <strong>may help improve memory</strong></span>
-            </div>
-            <div class="ing-point">
-              <div class="ing-point-dot" style="background:var(--teal2);">2</div>
-              <span>Neuronal membrane phospholipid supporting <strong>efficient cellular signal transmission</strong></span>
-            </div>
-            <div class="ing-point">
-              <div class="ing-point-dot" style="background:var(--teal2);">3</div>
-              <span>Notified-grade ingredient with <strong>extensive clinical evidence</strong></span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="ing-main-card">
-        <div class="ing-main-header" style="background: linear-gradient(135deg, #0d3d6e 0%, #1a7a9e 100%);">
-          <div class="ing-main-num">Core Ingredient 02</div>
-          <div class="ing-main-name">rTG Omega-3</div>
-          <div class="ing-main-sub">Re-esterified Triglyceride Form · EPA+DHA 900–1,000mg</div>
-          <div class="ing-main-icon">🐟</div>
-        </div>
-        <div class="ing-main-body">
-          <span class="ing-badge ing-origin">🐟 rTG form — superior absorption vs. ethyl ester</span>
-          <p class="ing-main-desc">
-            DHA — the primary structural fatty acid of brain grey matter (~15%) — and EPA for circulatory support,
-            delivered in re-esterified triglyceride (rTG) form for optimal absorption.
-            The MFDS recognizes EPA+DHA as a functional ingredient that <strong>may help improve memory
-            and support healthy blood flow</strong>.
-          </p>
-          <div class="ing-points">
-            <div class="ing-point">
-              <div class="ing-point-dot" style="background:var(--navy2);">1</div>
-              <span>MFDS-recognized: <strong>may help improve memory + support blood flow</strong></span>
-            </div>
-            <div class="ing-point">
-              <div class="ing-point-dot" style="background:var(--navy2);">2</div>
-              <span>rTG form delivers <strong>superior bioavailability</strong> vs. standard ethyl ester</span>
-            </div>
-            <div class="ing-point">
-              <div class="ing-point-dot" style="background:var(--navy2);">3</div>
-              <span>DHA: <strong>essential structural fatty acid of the neuronal membrane</strong></span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="ing-support">
-      <div class="ing-support-label">
-        <span class="ing-support-label-text">Support Ingredients</span>
-        <div class="ing-support-label-line"></div>
-      </div>
-      <div class="ing-support-grid">
-        <div class="ing-sup-card"><div class="ing-sup-emoji">💊</div><div class="ing-sup-name">Vitamin B12</div><div class="ing-sup-desc">Methylcobalamin — nervous system health</div></div>
-        <div class="ing-sup-card"><div class="ing-sup-emoji">🧬</div><div class="ing-sup-name">Folate + Vitamin B6</div><div class="ing-sup-desc">Homocysteine metabolism support</div></div>
-        <div class="ing-sup-card"><div class="ing-sup-emoji">⚡</div><div class="ing-sup-name">B-Complex</div><div class="ing-sup-desc">B1 · B2 · Niacin · Pantothenic acid — energy</div></div>
-        <div class="ing-sup-card"><div class="ing-sup-emoji">☀️</div><div class="ing-sup-name">Vitamin D3</div><div class="ing-sup-desc">Immune & bone health</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Doctor -->
-<section id="doctor" class="section">
-  <div class="container">
-    <div class="doctor-inner">
-      <div class="doctor-card">
-        <div class="doctor-avatar">👨‍⚕️</div>
-        <div class="doctor-name">Dr. Claire Ham (Jeehyun Ham, M.D.)</div>
-        <div class="doctor-title">Claire Ham, M.D. — Neurologist</div>
-        <div class="doctor-certs">
-          <div class="cert-item">Yonsei University College of Medicine</div>
-          <div class="cert-item">Severance Hospital, Department of Neurology</div>
-          <div class="cert-item">Member, Korean Neurological Association</div>
-          <div class="cert-item">Member, Korean Parkinson's Disease and Movement Disorder Society</div>
-          <div class="cert-item">Member, Korean Society of Functional Medicine</div>
-        </div>
-      </div>
-      <div class="doctor-message">
-        <h3>
-          "When your mind doesn't feel as sharp as it used to,<br>
-          <em>the first step is giving your brain what it actually needs.</em>"
-        </h3>
-        <p>
-          NervLock Brain Energy was designed by selecting only ingredients with clear, reliable evidence —
-          from a neurologist's perspective. Phosphatidylserine (PS) and rTG Omega-3 as core ingredients,
-          MFDS-recognized for memory and circulation support, with B-complex vitamins to underpin
-          homocysteine metabolism and cellular energy production.
-        </p>
-        <p>
-          Rather than packing in many marginally effective ingredients,
-          <strong>my principle is: fewer ingredients, at meaningful doses, with the strongest evidence</strong>.
-        </p>
-        <div class="doctor-signature">
-          — Dr. Claire Ham (Jeehyun Ham, M.D.), Neurologist
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 출시 후 후기 추가 예정 -->
-<!--
-<section id="reviews" class="section">
-  <div class="container">
-    <div class="section-label">User Reviews</div>
-    <h2 class="section-title">Real Experiences<br>from Real Users</h2>
-    <div class="reviews-grid">
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">
-          My concentration had dropped noticeably and I never felt rested even after sleeping.
-          By month two of NervLock Brain Energy, my head has gradually started to feel clearer.
-          The fact that a neurologist personally designed this was what won me over.
-        </p>
-        <div class="reviewer">
-          <div class="reviewer-avatar">L</div>
-          <div class="reviewer-info">
-            <h4>L. ○○<span class="verified">✓ Verified Purchase</span></h4>
-            <span>52 · Managing brain health</span>
-          </div>
-        </div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">
-          I started this during a period when brain fog was causing mistakes at work.
-          Around week six of NervLock Brain Energy, my thinking started to feel more organized —
-          so I've kept going. Knowing each ingredient has clinical backing was the deciding factor.
-        </p>
-        <div class="reviewer">
-          <div class="reviewer-avatar">P</div>
-          <div class="reviewer-info">
-            <h4>P. ○○<span class="verified">✓ Verified Purchase</span></h4>
-            <span>47 · Managing brain health</span>
-          </div>
-        </div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">★★★★☆</div>
-        <p class="review-text">
-          I noticed my memory slipping noticeably in my mid-40s and started researching options.
-          After three consistent months, I find I can stay focused for longer stretches.
-          The government-recognized functional ingredients gave me confidence to try it.
-        </p>
-        <div class="reviewer">
-          <div class="reviewer-avatar">C</div>
-          <div class="reviewer-info">
-            <h4>C. ○○<span class="verified">✓ Verified Purchase</span></h4>
-            <span>45 · Managing brain health</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
--->
-
-<!-- Blog -->
-<section id="blog" class="section">
-  <div class="container">
-    <div class="section-label">Medical Column</div>
-    <h2 class="section-title">Neural Health Insights<br>from a Neurologist</h2>
-    <p class="section-sub">Dr. Claire Ham explains complex neural health topics in clear, clinically grounded terms.</p>
-
-    <div class="blog-tabs">
-      <button class="blog-tab active" data-cat="all">All</button>
-      <button class="blog-tab" data-cat="pain">Pain</button>
-      <button class="blog-tab" data-cat="movement">Neurological Disorders</button>
-      <button class="blog-tab" data-cat="functional">Functional Medicine</button>
-    </div>
-
-    <div class="blog-grid">
-
-      <!-- Card 1 · Pain -->
-      <div class="blog-card" data-category="pain">
-        <div class="blog-thumb">
-          <div class="blog-thumb-bg" style="background:linear-gradient(135deg,#0d2545 0%,#1a7a6e 100%);"></div>
-          <div class="blog-thumb-icon">🧠</div>
-        </div>
-        <div class="blog-body">
-          <div class="blog-meta">
-            <span class="blog-tag tag-neuro">Neuroscience</span>
-            <span class="blog-date">Nov 12, 2024</span>
-            <span class="blog-read">8 min read</span>
-          </div>
-          <h3>What is Peripheral Neuropathy? Symptoms, Causes & Neurologist's Perspective</h3>
-          <p>A comprehensive overview of peripheral neuropathy — how nerves become sensitized, what causes it, and a neurologist's evidence-based perspective on nutritional support.</p>
-          <div class="blog-footer">
-            <div class="blog-author"><div class="blog-author-dot">H</div>Dr. Claire Ham</div>
-            <a href="/blog/peripheral-neuropathy/" class="blog-more">Read Article</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 2 · Pain -->
-      <div class="blog-card" data-category="pain">
-        <div class="blog-thumb">
-          <div class="blog-thumb-bg" style="background:linear-gradient(135deg,#2d1a45 0%,#5e3c96 100%);"></div>
-          <div class="blog-thumb-icon">⚡</div>
-        </div>
-        <div class="blog-body">
-          <div class="blog-meta">
-            <span class="blog-tag tag-pain">Pain</span>
-            <span class="blog-date">Oct 28, 2024</span>
-            <span class="blog-read">10 min read</span>
-          </div>
-          <h3>Post-Herpetic Neuralgia: Why Pain Persists After Shingles</h3>
-          <p>Skin healed, pain remains. How varicella-zoster virus permanently rewires peripheral and central neural circuits — and why early intervention is critical.</p>
-          <div class="blog-footer">
-            <div class="blog-author"><div class="blog-author-dot">H</div>Dr. Claire Ham</div>
-            <a href="/blog/herpes-zoster-neuralgia/" class="blog-more">Read Article</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 3 · Functional Medicine -->
-      <div class="blog-card" data-category="functional">
-        <div class="blog-thumb">
-          <div class="blog-thumb-bg" style="background:linear-gradient(135deg,#0f4f3a 0%,#b8922a 100%);"></div>
-          <div class="blog-thumb-icon">💊</div>
-        </div>
-        <div class="blog-body">
-          <div class="blog-meta">
-            <span class="blog-tag tag-functional">Functional Medicine</span>
-            <span class="blog-date">Oct 8, 2024</span>
-            <span class="blog-read">7 min read</span>
-          </div>
-          <h3>Methylcobalamin vs. Cyanocobalamin: What Your Nerves Actually Need</h3>
-          <p>Over 90% of B12 supplements use a synthetic form your body can't directly use for nerves. Here's what the difference means for myelin synthesis and neural function.</p>
-          <div class="blog-footer">
-            <div class="blog-author"><div class="blog-author-dot">H</div>Dr. Claire Ham</div>
-            <a href="/blog/vitamin-b12-nerve/" class="blog-more">Read Article</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 4 · Functional Medicine -->
-      <div class="blog-card" data-category="functional">
-        <div class="blog-thumb">
-          <div class="blog-thumb-bg" style="background:linear-gradient(135deg,#1a2a5e 0%,#22a090 100%);"></div>
-          <div class="blog-thumb-icon">🔬</div>
-        </div>
-        <div class="blog-body">
-          <div class="blog-meta">
-            <span class="blog-tag tag-functional">Functional Medicine</span>
-            <span class="blog-date">Sep 17, 2024</span>
-            <span class="blog-read">9 min read</span>
-          </div>
-          <h3>Alpha-Lipoic Acid and Neural Health: The Evidence</h3>
-          <p>ALA works in both lipid and aqueous cellular environments — making it uniquely positioned to protect peripheral neurons. SYDNEY 2 trial data and R-ALA vs. racemic distinction explained.</p>
-          <div class="blog-footer">
-            <div class="blog-author"><div class="blog-author-dot">H</div>Dr. Claire Ham</div>
-            <a href="/blog/alpha-lipoic-acid/" class="blog-more">Read Article</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 5 · Pain -->
-      <div class="blog-card" data-category="pain">
-        <div class="blog-thumb">
-          <div class="blog-thumb-bg" style="background:linear-gradient(135deg,#1a0a2e 0%,#8e1a22 100%);"></div>
-          <div class="blog-thumb-icon">🌙</div>
-        </div>
-        <div class="blog-body">
-          <div class="blog-meta">
-            <span class="blog-tag tag-pain">Pain</span>
-            <span class="blog-date">Sep 3, 2024</span>
-            <span class="blog-read">6 min read</span>
-          </div>
-          <h3>Why Does Neural Discomfort Worsen at Night?</h3>
-          <p>Four converging physiological mechanisms — cortisol rhythm withdrawal, attentional inhibition loss, peripheral vasoconstriction, and positional compression — explain nocturnal neuropathic exacerbation.</p>
-          <div class="blog-footer">
-            <div class="blog-author"><div class="blog-author-dot">H</div>Dr. Claire Ham</div>
-            <a href="/blog/nocturnal-nerve-discomfort/" class="blog-more">Read Article</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 6 · Functional Medicine -->
-      <div class="blog-card" data-category="functional">
-        <div class="blog-thumb">
-          <div class="blog-thumb-bg" style="background:linear-gradient(135deg,#0d3d2a 0%,#1a7a6e 100%);"></div>
-          <div class="blog-thumb-icon">🍽️</div>
-        </div>
-        <div class="blog-body">
-          <div class="blog-meta">
-            <span class="blog-tag tag-functional">Functional Medicine</span>
-            <span class="blog-date">Aug 22, 2024</span>
-            <span class="blog-read">7 min read</span>
-          </div>
-          <h3>Diet and Neural Health: 5 Foods That Harm Your Nerves</h3>
-          <p>Specific dietary patterns measurably worsen neuroinflammation and impair nerve microvascular function. A neurologist identifies the five highest-impact categories to limit.</p>
-          <div class="blog-footer">
-            <div class="blog-author"><div class="blog-author-dot">H</div>Dr. Claire Ham</div>
-            <a href="/blog/nerve-health-foods/" class="blog-more">Read Article</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 7 · Neurological Disorders -->
-      <div class="blog-card" data-category="movement">
-        <div class="blog-thumb">
-          <div class="blog-thumb-bg" style="background:linear-gradient(135deg,#0d2545 0%,#2a6496 100%);"></div>
-          <div class="blog-thumb-icon">🧠</div>
-        </div>
-        <div class="blog-body">
-          <div class="blog-meta">
-            <span class="blog-tag tag-movement">Neurological Disorders</span>
-            <span class="blog-date">Feb 27, 2026</span>
-            <span class="blog-read">8 min read</span>
-          </div>
-          <h3>Early Signs of Parkinson's Disease: The Prodromal Signals That Precede Motor Symptoms</h3>
-          <p>By the time tremor appears, 60–80% of dopaminergic neurons are already lost. Five clinically significant prodromal markers — anosmia, RBD, constipation, hypomimia, micrographia — and the neuroscience behind them.</p>
-          <div class="blog-footer">
-            <div class="blog-author"><div class="blog-author-dot">H</div>Dr. Claire Ham</div>
-            <a href="/blog/parkinson-early-signs/" class="blog-more">Read Article</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 8 · Neurological Disorders -->
-      <div class="blog-card" data-category="movement">
-        <div class="blog-thumb">
-          <div class="blog-thumb-bg" style="background:linear-gradient(135deg,#1a2a5e 0%,#22a090 100%);"></div>
-          <div class="blog-thumb-icon">🔬</div>
-        </div>
-        <div class="blog-body">
-          <div class="blog-meta">
-            <span class="blog-tag tag-movement">Neurological Disorders</span>
-            <span class="blog-date">Feb 27, 2026</span>
-            <span class="blog-read">7 min read</span>
-          </div>
-          <h3>Dopamine, Neuroinflammation & Parkinson's Disease: The Pathophysiological Link</h3>
-          <p>Parkinson's disease is not simply a dopamine-deficiency disorder. Microglial activation, alpha-synuclein aggregation, and neuroinflammatory cascades drive the neurodegenerative process — and open new therapeutic windows.</p>
-          <div class="blog-footer">
-            <div class="blog-author"><div class="blog-author-dot">H</div>Dr. Claire Ham</div>
-            <a href="/blog/parkinson-dopamine-neuroinflammation/" class="blog-more">Read Article</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 9 · Neurological Disorders -->
-      <div class="blog-card" data-category="movement">
-        <div class="blog-thumb">
-          <div class="blog-thumb-bg" style="background:linear-gradient(135deg,#163561 0%,#0f4f6e 100%);"></div>
-          <div class="blog-thumb-icon">💊</div>
-        </div>
-        <div class="blog-body">
-          <div class="blog-meta">
-            <span class="blog-tag tag-movement">Neurological Disorders</span>
-            <span class="blog-date">Feb 28, 2026</span>
-            <span class="blog-read">8 min read</span>
-          </div>
-          <h3>Parkinson's Disease Medication: Levodopa, Motor Fluctuations & Long-Term Management</h3>
-          <p>Levodopa remains the gold standard — but motor fluctuations, wearing-off, and dyskinesia emerge over time. A neurologist's framework for pharmacological decision-making across disease stages.</p>
-          <div class="blog-footer">
-            <div class="blog-author"><div class="blog-author-dot">H</div>Dr. Claire Ham</div>
-            <a href="/blog/parkinson-medication-management/" class="blog-more">Read Article</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 10 · Neurological Disorders -->
-      <div class="blog-card" data-category="movement">
-        <div class="blog-thumb">
-          <div class="blog-thumb-bg" style="background:linear-gradient(135deg,#0f4f3a 0%,#22a090 100%);"></div>
-          <div class="blog-thumb-icon">🏃</div>
-        </div>
-        <div class="blog-body">
-          <div class="blog-meta">
-            <span class="blog-tag tag-movement">Neurological Disorders</span>
-            <span class="blog-date">Mar 8, 2026</span>
-            <span class="blog-read">10 min read</span>
-          </div>
-          <h3>Exercise as Disease-Modifying Therapy in Parkinson's Disease</h3>
-          <p>Aerobic exercise, resistance training, and LSVT BIG — evidence from RCTs and BDNF-mediated neuroplasticity research demonstrates that structured exercise is among the most effective interventions available for Parkinson's disease.</p>
-          <div class="blog-footer">
-            <div class="blog-author"><div class="blog-author-dot">H</div>Dr. Claire Ham</div>
-            <a href="/blog/parkinson-exercise-therapy/" class="blog-more">Read Article</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 11 · Pain -->
-      <div class="blog-card" data-category="pain">
-        <div class="blog-thumb">
-          <div class="blog-thumb-bg" style="background:linear-gradient(135deg,#2d1a45 0%,#1a4a6e 100%);"></div>
-          <div class="blog-thumb-icon">⚡</div>
-        </div>
-        <div class="blog-body">
-          <div class="blog-meta">
-            <span class="blog-tag tag-pain">Pain</span>
-            <span class="blog-date">Mar 1, 2026</span>
-            <span class="blog-read">8 min read</span>
-          </div>
-          <h3>Pain in Parkinson's Disease: Pathophysiology, Classification & Clinical Management</h3>
-          <p>Pain affects 40–85% of Parkinson's patients yet is systematically underrecognized. The Ford (2010) five-subtype classification, the dopaminergic pain modulation deficit, and mechanism-guided management strategies.</p>
-          <div class="blog-footer">
-            <div class="blog-author"><div class="blog-author-dot">H</div>Dr. Claire Ham</div>
-            <a href="/blog/parkinson-pain-management/" class="blog-more">Read Article</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 12 · Parkinson REM Sleep -->
-      <div class="blog-card" data-category="movement">
-        <div class="blog-thumb">
-          <div class="blog-thumb-bg" style="background:linear-gradient(135deg,#1a0a35 0%,#2d1a6e 100%);"></div>
-          <div class="blog-thumb-icon">💤</div>
-        </div>
-        <div class="blog-body">
-          <div class="blog-meta">
-            <span class="blog-tag tag-movement">Neurological Disorders</span>
-            <span class="blog-date">Mar 11, 2026</span>
-            <span class="blog-read">9 min read</span>
-          </div>
-          <h3>REM Sleep Behavior Disorder in Parkinson's Disease: The Silent Harbinger</h3>
-          <p>RBD carries an 80–90% lifetime risk of phenoconversion to Parkinson's. Understand the neurophysiology of REM atonia loss, polysomnographic diagnosis, and evidence-based management with melatonin and clonazepam.</p>
-          <div class="blog-footer">
-            <div class="blog-author"><div class="blog-author-dot">H</div>Dr. Claire Ham</div>
-            <a href="/blog/parkinson-rem-sleep-disorder/" class="blog-more">Read Article</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 13 · Functional Medicine -->
-      <div class="blog-card" data-category="functional">
-        <div class="blog-thumb">
-          <div class="blog-thumb-bg" style="background:linear-gradient(135deg,#0a3d2a 0%,#0d6e4e 100%);"></div>
-          <div class="blog-thumb-icon">🧪</div>
-        </div>
-        <div class="blog-body">
-          <div class="blog-meta">
-            <span class="blog-tag tag-functional">Functional Medicine</span>
-            <span class="blog-date">Mar 11, 2026</span>
-            <span class="blog-read">7 min read</span>
-          </div>
-          <h3>Glutathione Depletion in Parkinson's Disease: Biochemistry, Evidence, and Replenishment</h3>
-          <p>The substantia nigra shows 40–50% GSH depletion at post-mortem. Explore the BBB challenge, Hauser 2009 IV GSH pilot RCT, NAC precursor strategies, and NRF2 dietary activation.</p>
-          <div class="blog-footer">
-            <div class="blog-author"><div class="blog-author-dot">H</div>Dr. Claire Ham</div>
-            <a href="/blog/parkinson-glutathione/" class="blog-more">Read Article</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 14 · Parkinson Caregiver -->
-      <div class="blog-card" data-category="movement">
-        <div class="blog-thumb">
-          <div class="blog-thumb-bg" style="background:linear-gradient(135deg,#2d1a45 0%,#4a2800 100%);"></div>
-          <div class="blog-thumb-icon">🤝</div>
-        </div>
-        <div class="blog-body">
-          <div class="blog-meta">
-            <span class="blog-tag tag-movement">Neurological Disorders</span>
-            <span class="blog-date">Mar 16, 2026</span>
-            <span class="blog-read">10 min read</span>
-          </div>
-          <h3>Parkinson's Caregiver Guide: Medications, Falls, Sleep, and Burnout</h3>
-          <p>40–50% of PD caregivers develop depression. Learn levodopa timing principles, absolutely contraindicated antiemetics (metoclopramide, levosulpiride), fall-proofing strategies, RBD sleep safety, and Zarit Burden assessment.</p>
-          <div class="blog-footer">
-            <div class="blog-author"><div class="blog-author-dot">H</div>Dr. Claire Ham</div>
-            <a href="/blog/parkinson-caregiver-guide/" class="blog-more">Read Article</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 15 · Parkinson Dyskinesia -->
-      <div class="blog-card" data-category="movement">
-        <div class="blog-thumb">
-          <div class="blog-thumb-bg" style="background:linear-gradient(135deg,#0d2545 0%,#1a4a8e 100%);"></div>
-          <div class="blog-thumb-icon">🌊</div>
-        </div>
-        <div class="blog-body">
-          <div class="blog-meta">
-            <span class="blog-tag tag-movement">Neurological Disorders</span>
-            <span class="blog-date">Mar 24, 2026</span>
-            <span class="blog-read">9 min read</span>
-          </div>
-          <h3>Levodopa-Induced Dyskinesia in Parkinson's Disease: Mechanisms, Recognition, and Management</h3>
-          <p>LID emerges from D1/ERK1/2/FosB maladaptive striatal plasticity. Clinical classification of peak-dose, biphasic, and off-period types; evidence for amantadine (ADS-5102, Level A) and DBS in advanced cases.</p>
-          <div class="blog-footer">
-            <div class="blog-author"><div class="blog-author-dot">H</div>Dr. Claire Ham</div>
-            <a href="/blog/parkinson-dyskinesia/" class="blog-more">Read Article</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 16 · Parkinson Constipation -->
-      <div class="blog-card" data-category="movement">
-        <div class="blog-thumb">
-          <div class="blog-thumb-bg" style="background:linear-gradient(135deg,#0f4f3a 0%,#22a090 100%);"></div>
-          <div class="blog-thumb-icon">🌿</div>
-        </div>
-        <div class="blog-body">
-          <div class="blog-meta">
-            <span class="blog-tag tag-movement">Neurological Disorders</span>
-            <span class="blog-date">Apr 27, 2026</span>
-            <span class="blog-read">8 min read</span>
-          </div>
-          <h3>Constipation in Parkinson's Disease: Enteric Neuropathology, Drug Interactions, and Management</h3>
-          <p>ENS Lewy body pathology precedes motor onset by years. Understand how constipation impairs levodopa absorption, why metoclopramide is contraindicated, and the evidence for magnesium, microbiome, and vagal strategies.</p>
-          <div class="blog-footer">
-            <div class="blog-author"><div class="blog-author-dot">H</div>Dr. Claire Ham</div>
-            <a href="/blog/parkinson-constipation/" class="blog-more">Read Article</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 17 · Parkinsonism Differential -->
-      <div class="blog-card" data-category="movement">
-        <div class="blog-thumb">
-          <div class="blog-thumb-bg" style="background:linear-gradient(135deg,#1a3a0a 0%,#4a7a1a 100%);"></div>
-          <div class="blog-thumb-icon">🔍</div>
-        </div>
-        <div class="blog-body">
-          <div class="blog-meta">
-            <span class="blog-tag tag-movement">Neurological Disorders</span>
-            <span class="blog-date">May 17, 2026</span>
-            <span class="blog-read">7 min read</span>
-          </div>
-          <h3>Beyond Parkinson's Disease: Understanding the Differential Diagnosis of Parkinsonism</h3>
-          <p>Drug-induced parkinsonism, vascular parkinsonism, normal pressure hydrocephalus, and Parkinson-plus syndromes — a neurologist's clinical framework for differential diagnosis and management implications.</p>
-          <div class="blog-footer">
-            <div class="blog-author"><div class="blog-author-dot">H</div>Dr. Claire Ham</div>
-            <a href="/blog/parkinsonism-differential-causes/" class="blog-more">Read Article</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 18 · Parkinson Genetics -->
-      <div class="blog-card" data-category="movement">
-        <div class="blog-thumb">
-          <div class="blog-thumb-bg" style="background:linear-gradient(135deg,#2a1a00 0%,#7a4a00 100%);"></div>
-          <div class="blog-thumb-icon">🧬</div>
-        </div>
-        <div class="blog-body">
-          <div class="blog-meta">
-            <span class="blog-tag tag-movement">Neurological Disorders</span>
-            <span class="blog-date">May 31, 2026</span>
-            <span class="blog-read">6 min read</span>
-          </div>
-          <h3>The Genetics of Parkinson's Disease: Risk, Penetrance, and Clinical Implications</h3>
-          <p>LRRK2, GBA1, SNCA, PINK1, PARKIN — monogenic Parkinson's disease accounts for only 5–10% of cases. Understand incomplete penetrance, genetic testing indications, and evidence-based modifiable risk factors.</p>
-          <div class="blog-footer">
-            <div class="blog-author"><div class="blog-author-dot">H</div>Dr. Claire Ham</div>
-            <a href="/blog/parkinson-genetics/" class="blog-more">Read Article</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 19 · Levodopa Misconceptions -->
-      <div class="blog-card" data-category="movement">
-        <div class="blog-thumb">
-          <div class="blog-thumb-bg" style="background: linear-gradient(135deg, #3d0a0a 0%, #8e2a1a 100%);"></div>
-          <div class="blog-thumb-icon">🔬</div>
-        </div>
-        <div class="blog-body">
-          <div class="blog-meta">
-            <span class="blog-tag tag-movement">Neurological Disorders</span>
-            <span class="blog-date">June 1, 2026</span>
-            <span class="blog-read">7 min read</span>
-          </div>
-          <h3>Levodopa Long-Term Use in Parkinson's Disease: Separating Evidence from Misconception</h3>
-          <p>Dyskinesia is not tolerance. The LEAP trial on early initiation, parkinsonism-hyperpyrexia syndrome risks, and why unsupervised dose reduction is dangerous.</p>
-          <div class="blog-footer">
-            <div class="blog-author"><div class="blog-author-dot">H</div>Dr. Claire Ham</div>
-            <a href="/blog/levodopa-long-term-misconceptions/" class="blog-more">Read Article</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 21 · Parkinson Medication Dosage -->
-      <div class="blog-card" data-category="movement">
-        <div class="blog-thumb">
-          <div class="blog-thumb-bg" style="background: linear-gradient(135deg, #1a0545 0%, #3d1a8e 100%);"></div>
-          <div class="blog-thumb-icon">💊</div>
-        </div>
-        <div class="blog-body">
-          <div class="blog-meta">
-            <span class="blog-tag tag-movement">Neurological Disorders</span>
-            <span class="blog-date">June 3, 2026</span>
-            <span class="blog-read">7 min read</span>
-          </div>
-          <h3>Why Levodopa Doses Increase Over Time in Parkinson's Disease: Disease Progression, Not Tolerance</h3>
-          <p>Three mechanistic explanations for escalating levodopa requirements — presynaptic buffering loss, wearing-off, and dyskinesia management — and why self-directed dose reduction can be life-threatening.</p>
-          <div class="blog-footer">
-            <div class="blog-author"><div class="blog-author-dot">H</div>Dr. Claire Ham</div>
-            <a href="/blog/parkinson-medication-dosage/" class="blog-more">Read Article</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 20 · Parkinson-Plus Syndromes -->
-      <div class="blog-card" data-category="movement">
-        <div class="blog-thumb">
-          <div class="blog-thumb-bg" style="background: linear-gradient(135deg, #0a1a3d 0%, #1a3a8e 100%);"></div>
-          <div class="blog-thumb-icon">⚖️</div>
-        </div>
-        <div class="blog-body">
-          <div class="blog-meta">
-            <span class="blog-tag tag-movement">Neurological Disorders</span>
-            <span class="blog-date">June 2, 2026</span>
-            <span class="blog-read">8 min read</span>
-          </div>
-          <h3>Parkinson's Disease vs. Parkinson-Plus Syndromes: A Clinical Differential Diagnosis Guide</h3>
-          <p>MSA, PSP, Lewy body dementia, and CBS — the red flags, levodopa response patterns, and critical safety considerations (including neuroleptic sensitivity in LBD) that distinguish atypical syndromes from Parkinson's disease.</p>
-          <div class="blog-footer">
-            <div class="blog-author"><div class="blog-author-dot">H</div>Dr. Claire Ham</div>
-            <a href="/blog/parkinson-plus-syndromes/" class="blog-more">Read Article</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 21 · Brain Fog Neuroscience -->
-      <div class="blog-card" data-category="functional">
-        <div class="blog-thumb">
-          <div class="blog-thumb-bg" style="background: linear-gradient(135deg, #1a2450 0%, #0f4f6e 100%);"></div>
-          <div class="blog-thumb-icon">🧠</div>
-        </div>
-        <div class="blog-body">
-          <div class="blog-meta">
-            <span class="blog-tag tag-functional">Functional Medicine</span>
-            <span class="blog-date">June 10, 2026</span>
-            <span class="blog-read">9 min read</span>
-          </div>
-          <h3>Brain Fog: Neurobiological Mechanisms and Evidence-Based Nutritional Support</h3>
-          <p>Four interconnected neural mechanisms behind cognitive dulling — neuroinflammation, mitochondrial dysfunction, neurotransmitter dysregulation, and cerebral glucose instability.</p>
-          <div class="blog-footer">
-            <div class="blog-author"><div class="blog-author-dot">H</div>Dr. Claire Ham</div>
-            <a href="/blog/brain-fog-neuroscience/" class="blog-more">Read Article</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- EN Card · Phosphatidylserine -->
-      <div class="blog-card" data-category="functional">
-        <div class="blog-thumb">
-          <div class="blog-thumb-bg" style="background:linear-gradient(135deg,#0f4f3a 0%,#b8922a 100%);"></div>
-          <div class="blog-thumb-icon">🧬</div>
-        </div>
-        <div class="blog-body">
-          <div class="blog-meta">
-            <span class="blog-tag tag-functional">Functional Medicine</span>
-            <span class="blog-date">June 20, 2026</span>
-            <span class="blog-read">8 min read</span>
-          </div>
-          <h3>Phosphatidylserine and Memory: The Neurobiological Case for a Clinically Recognized Nutrient</h3>
-          <p>One of the few nutritional compounds with FDA qualified health claim recognition for cognitive function. A neurologist examines the PS evidence base — from membrane biology to clinical trials.</p>
-          <div class="blog-footer">
-            <div class="blog-author"><div class="blog-author-dot">H</div>Dr. Claire Ham</div>
-            <a href="/blog/phosphatidylserine-memory/" class="blog-more">Read Article</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- EN Card · rTG Omega-3 -->
-      <div class="blog-card" data-category="functional">
-        <div class="blog-thumb">
-          <div class="blog-thumb-bg" style="background:linear-gradient(135deg,#0a3d5e 0%,#1a7a6e 100%);"></div>
-          <div class="blog-thumb-icon">🐟</div>
-        </div>
-        <div class="blog-body">
-          <div class="blog-meta">
-            <span class="blog-tag tag-functional">Functional Medicine</span>
-            <span class="blog-date">June 28, 2026</span>
-            <span class="blog-read">8 min read</span>
-          </div>
-          <h3>rTG Omega-3: Why Molecular Form Determines Bioavailability — A Neurologist's Guide</h3>
-          <p>Not all omega-3 supplements deliver equivalent EPA and DHA to the bloodstream. The molecular form — EE, TG, or rTG — determines bioavailability by orders of magnitude. A neurologist explains why form matters.</p>
-          <div class="blog-footer">
-            <div class="blog-author"><div class="blog-author-dot">H</div>Dr. Claire Ham</div>
-            <a href="/blog/rtg-omega3-bioavailability/" class="blog-more">Read Article</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 22 · Autonomic Dysfunction -->
-      <div class="blog-card" data-category="functional">
-        <div class="blog-thumb">
-          <div class="blog-thumb-bg" style="background:linear-gradient(135deg,#1a0a3d 0%,#6e2a4a 100%);"></div>
-          <div class="blog-thumb-icon">⚡</div>
-        </div>
-        <div class="blog-body">
-          <div class="blog-meta">
-            <span class="blog-tag tag-functional">Functional Medicine</span>
-            <span class="blog-date">June 15, 2026</span>
-            <span class="blog-read">8 min read</span>
-          </div>
-          <h3>When the Autonomic Nervous System Fails: Recognizing the Clinical Spectrum of Dysautonomia</h3>
-          <p>Palpitations, cold sweats, orthostatic dizziness, gastroparesis — normal investigations but a dysregulated autonomic nervous system. A neurologist's guide to recognizing autonomic dysfunction.</p>
-          <div class="blog-footer">
-            <div class="blog-author"><div class="blog-author-dot">H</div>Dr. Claire Ham</div>
-            <a href="/blog/autonomic-dysfunction-symptoms/" class="blog-more">Read Article</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card · Dementia Preclinical Stage -->
-      <div class="blog-card" data-category="movement">
-        <div class="blog-thumb">
-          <div class="blog-thumb-bg" style="background:linear-gradient(135deg,#163561 0%,#5e3c96 100%);"></div>
-          <div class="blog-thumb-icon">🧠</div>
-        </div>
-        <div class="blog-body">
-          <div class="blog-meta">
-            <span class="blog-tag tag-movement">Neurological Disorders</span>
-            <span class="blog-date">July 1, 2026</span>
-            <span class="blog-read">9 min read</span>
-          </div>
-          <h3>Dementia Doesn't Arrive Suddenly: The Decade-Long Neurobiological Cascade Before Diagnosis</h3>
-          <p>Alzheimer's disease begins 15–20 years before symptoms appear. A neurologist explains the preclinical stage, MCI, amyloid-tau pathology, and why the glymphatic system makes sleep a medical priority.</p>
-          <div class="blog-footer">
-            <div class="blog-author"><div class="blog-author-dot">H</div>Dr. Claire Ham</div>
-            <a href="/blog/dementia-preclinical-stage/" class="blog-more">Read Article</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card · Dementia Modifiable Risk Factors -->
-      <div class="blog-card" data-category="movement">
-        <div class="blog-thumb">
-          <div class="blog-thumb-bg" style="background:linear-gradient(135deg,#0d2545 0%,#1a7a6e 100%);"></div>
-          <div class="blog-thumb-icon">🏃</div>
-        </div>
-        <div class="blog-body">
-          <div class="blog-meta">
-            <span class="blog-tag tag-movement">Neurological Disorders</span>
-            <span class="blog-date">July 3, 2026</span>
-            <span class="blog-read">8 min read</span>
-          </div>
-          <h3>Modifiable Risk Factors for Dementia: What the Lancet Commission Evidence Tells Us</h3>
-          <p>The 2020 Lancet Commission identified 12 modifiable risk factors accounting for up to 40% of dementia cases globally. A neurologist reviews the seven most actionable — and the neuroscience behind each.</p>
-          <div class="blog-footer">
-            <div class="blog-author"><div class="blog-author-dot">H</div>Dr. Claire Ham</div>
-            <a href="/blog/dementia-modifiable-risk-factors/" class="blog-more">Read Article</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card · Homocysteine Dementia B Vitamins -->
-      <div class="blog-card" data-category="movement">
-        <div class="blog-thumb">
-          <div class="blog-thumb-bg" style="background:linear-gradient(135deg,#0a3d5e 0%,#1a7a6e 100%);"></div>
-          <div class="blog-thumb-icon">🧪</div>
-        </div>
-        <div class="blog-body">
-          <div class="blog-meta">
-            <span class="blog-tag tag-movement">Neurological Disorders</span>
-            <span class="blog-date">July 5, 2026</span>
-            <span class="blog-read">8 min read</span>
-          </div>
-          <h3>Homocysteine, Brain Atrophy, and B Vitamins: The Neurological Evidence</h3>
-          <p>Elevated homocysteine is an independent, measurable, and modifiable risk factor for brain atrophy and cognitive decline. The VITACOG trial demonstrated 53% reduction in brain atrophy with B12, folate, and B6. A neurologist explains the biochemistry and clinical implications.</p>
-          <div class="blog-footer">
-            <div class="blog-author"><div class="blog-author-dot">H</div>Dr. Claire Ham</div>
-            <a href="/blog/homocysteine-dementia-b-vitamins/" class="blog-more">Read Article</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="blog-empty" id="blogEmpty" style="display:none;"></div>
-
-    </div>
-  </div>
-</section>
-
-<!-- Brand FAQ -->
-<section id="brand-faq" class="section">
-  <div class="container">
-    <div class="section-label" style="text-align:center">FAQ</div>
-    <h2 class="section-title" style="text-align:center">Frequently Asked Questions</h2>
-    <div class="faq-list">
-      <div class="faq-item">
-        <button class="faq-q">
-          What is NervLock?
-          <span class="icon">+</span>
-        </button>
-        <div class="faq-a">
-          NervLock is a brain and neurological health brand designed by Dr. Jeehyun Ham (Claire Ham, M.D.), a neurologist from Yonsei University College of Medicine and Severance Hospital. Every product is built on peer-reviewed neuroscience, not marketing trends.
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">
-          How is NervLock Brain Energy different from a regular multivitamin?
-          <span class="icon">+</span>
-        </button>
-        <div class="faq-a">
-          Multivitamins are formulated for general nutritional coverage at low doses. Brain Energy targets specific neurological pathways — cerebral energy metabolism, neuronal membrane integrity, and homocysteine regulation — with clinically studied ingredients at evidence-based doses.
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">
-          Was this really designed by a neurologist?
-          <span class="icon">+</span>
-        </button>
-        <div class="faq-a">
-          Yes. Dr. Claire Ham (Jeehyun Ham, M.D.), from Yonsei University College of Medicine and Severance Hospital Neurology, personally selected every ingredient and determined every dose based on peer-reviewed clinical evidence and her neurological practice experience. No ingredient was included without a clear mechanistic rationale.
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">
-          What are the key ingredients in Brain Energy?
-          <span class="icon">+</span>
-        </button>
-        <div class="faq-a">
-          Brain Energy contains Phosphatidylserine (PS) 300mg, rTG Omega-3 (EPA+DHA), B-vitamin complex (B1, B2, B6, B12, Folate, Niacin, Pantothenic Acid), and Vitamin D3. All ingredients are recognized functional raw materials under Korean MFDS standards.
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">
-          Can it help with brain fog or memory decline?
-          <span class="icon">+</span>
-        </button>
-        <div class="faq-a">
-          Phosphatidylserine — the primary active ingredient — carries recognition from Korea's MFDS for memory support. Brain fog has multiple potential causes; if symptoms are persistent or severe, consultation with a neurologist is recommended.
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">
-          How long before I notice a difference?
-          <span class="icon">+</span>
-        </button>
-        <div class="faq-a">
-          Nutritional interventions require time to reach stable tissue concentrations. We recommend a minimum 12-week commitment to accurately assess benefit. Think of it as a routine, not a quick fix.
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">
-          Are there any side effects?
-          <span class="icon">+</span>
-        </button>
-        <div class="faq-a">
-          All ingredients meet MFDS safety standards. Individuals on anticoagulant therapy or with pre-existing medical conditions should consult their physician before use.
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">
-          Is NervLock Brain Energy suitable even without specific symptoms?
-          <span class="icon">+</span>
-        </button>
-        <div class="faq-a">
-          Yes. NervLock Brain Energy is designed for anyone interested in proactive brain health maintenance. Its ingredients are formulated to provide comprehensive nutritional support for brain and nervous system function regardless of specific symptoms.
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">
-          What is the recommended dosage?
-          <span class="icon">+</span>
-        </button>
-        <div class="faq-a">
-          2 capsules daily, taken with food. The fat-soluble ingredients (omega-3, PS, Vitamin D3) require dietary fat for optimal absorption, so post-meal dosing is essential. You may split the dose between morning and evening.
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">
-          Can I take NervLock Brain Energy with other medications?
-          <span class="icon">+</span>
-        </button>
-        <div class="faq-a">
-          NervLock Brain Energy is a food supplement and is generally compatible with most medications. However, if you are taking anticoagulants (e.g., warfarin) or other blood-related medications, consult your physician before use. As it contains omega-3, caution is advised with antiplatelet agents.
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">
-          How do I contact customer support?
-          <span class="icon">+</span>
-        </button>
-        <div class="faq-a">
-          For purchase and product inquiries, please contact our customer support team at 1800-0000 (weekdays 9am–6pm KST). We are happy to assist you.
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Products -->
-<section id="products" class="section">
-  <div class="container">
-    <div class="section-label">Product Range</div>
-    <h2 class="section-title">NervLock Brain Energy<br>Choose Your Plan</h2>
-    <p class="section-sub">Consistent supplementation is key to brain health management. We recommend a minimum of 3 months for optimal results.</p>
-    <div style="display:inline-flex;align-items:center;gap:10px;background:rgba(26,122,110,0.07);border:1px solid rgba(26,122,110,0.18);border-radius:50px;padding:8px 18px;margin-top:16px;font-size:13px;color:var(--teal);font-weight:700;">
-      <span>✦</span> Launching in late 2026
-    </div>
-    <div class="products-grid" style="margin-top:40px;">
-      <div class="product-box">
-        <div class="product-type">1-Month Supply</div>
-        <h3>Brain Energy Basic</h3>
-        <p class="sub">Ideal for first-time users</p>
-        <div class="price-wrap">
-          <div style="font-size:26px;color:var(--navy);font-weight:900;">Launching in late 2026</div>
-        </div>
-        <ul class="product-features">
-          <li>NervLock Brain Energy 60 caps × 1</li>
-          <li>PS 300mg + rTG Omega-3 core ingredients</li>
-          <li>4 support ingredients included</li>
-          <li>Usage guide provided</li>
-        </ul>
-        <a href="#coming-soon" class="full-btn outline">Notify Me at Launch</a>
-      </div>
-      <div class="product-box featured">
-        <div class="best-badge">Best</div>
-        <div class="product-type">3-Month Supply</div>
-        <h3>Brain Energy Intensive</h3>
-        <p class="sub">Optimal duration for brain health focus</p>
-        <div class="price-wrap">
-          <div style="font-size:26px;color:var(--navy);font-weight:900;">Launching in late 2026</div>
-        </div>
-        <ul class="product-features">
-          <li>NervLock Brain Energy 60 caps × 3</li>
-          <li>PS 300mg + rTG Omega-3 core ingredients</li>
-          <li>4 support ingredients included</li>
-          <li>Monthly care guide provided</li>
-          <li>Early-bird benefits available</li>
-        </ul>
-        <a href="#coming-soon" class="full-btn">Notify Me at Launch</a>
-      </div>
-      <div class="product-box">
-        <div class="product-type">6-Month Supply</div>
-        <h3>Brain Energy Complete</h3>
-        <p class="sub">Long-term brain health management</p>
-        <div class="price-wrap">
-          <div style="font-size:26px;color:var(--navy);font-weight:900;">Launching in late 2026</div>
-        </div>
-        <ul class="product-features">
-          <li>NervLock Brain Energy 60 caps × 6</li>
-          <li>PS 300mg + rTG Omega-3 core ingredients</li>
-          <li>4 support ingredients included</li>
-          <li>Monthly care guide provided</li>
-          <li>Early-bird benefits available</li>
-        </ul>
-        <a href="#coming-soon" class="full-btn outline">Notify Me at Launch</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Coming Soon -->
-<section id="coming-soon">
-  <div class="container">
-    <div class="cs-inner">
-      <div>
-        <div class="cs-badge">Coming Soon</div>
-        <h2 class="cs-title">NervLock,<br><em>Arriving</em> Soon</h2>
-        <p class="cs-desc">
-          NervLock's first product — <strong style="color:var(--gold2)">NervLock Brain Energy</strong> —
-          developed directly by a board-certified neurologist, is preparing for launch.
-          Be first to receive launch news and exclusive early-bird benefits.
-        </p>
-        <div class="cs-pills">
-          <div class="cs-pill">🏥 Neurologist-Developed</div>
-          <div class="cs-pill">🔬 Evidence-Based</div>
-          <div class="cs-pill">📦 Launch Pending</div>
-          <div class="cs-pill">🎁 Early-Bird Benefits</div>
-        </div>
-      </div>
-      <div class="cs-card">
-        <div id="csFormWrap2">
-          <div class="cs-card-title">Launch Notification</div>
-          <div class="cs-card-sub">
-            Leave your email and we'll send you NervLock Brain Energy's launch announcement
-            and exclusive early-bird benefits first.
-          </div>
-          <form class="cs-form" id="csForm2" novalidate>
-            <div>
-              <input type="email" class="cs-input" id="csEmail2" placeholder="Enter your email address" autocomplete="email"/>
-              <div class="cs-error" id="csEmailError2">Please enter a valid email address.</div>
-            </div>
-            <button type="submit" class="cs-submit" id="csSubmit2">Get Launch Notification</button>
-            <p class="cs-notice">No spam, ever. Unsubscribe at any time.</p>
-          </form>
-          <div class="cs-count">
-            <div class="cs-count-item">
-              <span class="cs-count-num" id="csCounter2">1,247</span>
-              <span class="cs-count-label">Notifications Registered</span>
-            </div>
-            <div class="cs-count-item">
-              <span class="cs-count-num">TBA</span>
-              <span class="cs-count-label">Launch Date</span>
-            </div>
-          </div>
-        </div>
-        <div class="cs-success" id="csSuccess2">
-          <div class="cs-success-icon">✓</div>
-          <h4>You're on the list!</h4>
-          <p>We'll send launch updates and early-bird details to your email.<br><br><span style="color:var(--gold2);font-weight:700;">Thank you 🙏</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section id="cta">
-  <div class="container" style="text-align:center">
-    <div class="section-label" style="color:rgba(255,255,255,0.6);text-align:center">Start Today</div>
-    <h2 class="section-title">A More Comfortable Tomorrow<br>Starts with Today's Decision</h2>
-    <p class="section-sub">Experience the science-backed brain care routine designed by a board-certified neurologist. Start your brain health journey with NervLock Brain Energy today.</p>
-    <a href="#coming-soon" class="btn-primary" style="font-size:18px;padding:20px 52px;">Start NervLock Brain Energy</a>
-  </div>
-</section>
-
-<!-- Footer -->
+<!-- SECTION 8 — Footer -->
 <footer>
   <div class="container">
-    <div class="footer-inner">
+    <div class="footer-top">
       <div>
-        <div class="footer-brand">Nerv<span>Lock</span></div>
-        <p class="footer-desc">Brain care routine designed by a neurologist.<br>Science-backed ingredients for comprehensive brain and nervous system health.</p>
+        <div class="footer-brand">Nerv<span>Lock</span> Lab</div>
+        <p class="footer-desc">
+          An evidence-based brain health platform led by a neurologist.
+        </p>
       </div>
       <div class="footer-col">
-        <h4>Products</h4>
+        <h4>Explore</h4>
         <ul>
-          <li><a href="#">Brain Energy Basic</a></li>
-          <li><a href="#">Brain Energy Intensive</a></li>
-          <li><a href="#">Brain Energy Complete</a></li>
-          <li><a href="#">Ingredient Details</a></li>
+          <li><a href="#academy">Academy</a></li>
+          <li><a href="#research">Science &amp; Research</a></li>
+          <li><a href="#solutions">Products</a></li>
+          <li><span class="disabled" title="English blog coming soon">Blog</span></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Support</h4>
+        <h4>Company</h4>
         <ul>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Usage Guide</a></li>
-          <li><a href="#">Purchase Info</a></li>
-          <li><a href="#">Contact Us</a></li>
+          <li><a href="#why-nervlock">About</a></li>
+          <li><a href="#newsletter">Newsletter</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#" target="_blank" rel="noopener noreferrer">Instagram (@neurologist_jh)</a></li>
+          <li><a href="#" target="_blank" rel="noopener noreferrer">YouTube (@Dr.H-neuro)</a></li>
+          <li><a href="#" target="_blank" rel="noopener noreferrer">Naver Blog</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p class="footer-notice">
-        ※ NervLock Brain Energy is a food supplement and is not a medicinal product intended for the diagnosis, treatment, mitigation, or prevention of any disease.
-        Individual results may vary. User testimonials reflect subjective personal experiences.
-      </p>
-      <p style="font-size:12px;white-space:nowrap;">© 2026 NervLock. All rights reserved.</p>
+      <p>© 2026 NervLock Lab. All rights reserved.</p>
     </div>
   </div>
 </footer>
 
 <script>
-  document.querySelectorAll('.faq-q').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var item = btn.closest('.faq-item');
-      var isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
-      if (!isOpen) item.classList.add('open');
-    });
-  });
-
-  var SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzJ6PIgSeOdTyXjdZ8LJsKb-v-KEn-hn7cTywGSRKsndOw_2OGPi9b_ANPWxn2fSvXq/exec';
+  // ── Nav scroll background ──
   (function() {
-    var form = document.getElementById('csForm2');
-    var input = document.getElementById('csEmail2');
-    var errMsg = document.getElementById('csEmailError2');
-    var btn = document.getElementById('csSubmit2');
-    var wrap = document.getElementById('csFormWrap2');
-    var success = document.getElementById('csSuccess2');
-    function isValid(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()); }
-    input.addEventListener('input', function() {
-      if (errMsg.classList.contains('show') && isValid(this.value)) { errMsg.classList.remove('show'); input.style.borderColor = ''; }
+    var nav = document.getElementById('mainNav');
+    function onScroll() {
+      if (window.scrollY > 40) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+
+  // ── Mobile nav toggle ──
+  (function() {
+    var toggle = document.getElementById('navToggle');
+    var menu = document.getElementById('navMobileMenu');
+
+    toggle.addEventListener('click', function() {
+      var isOpen = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
+
+    menu.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 900) {
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  })();
+
+  // ── Reveal on scroll ──
+  (function() {
+    var els = document.querySelectorAll('.reveal');
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry, i) {
+        if (entry.isIntersecting) {
+          setTimeout(function() { entry.target.classList.add('is-visible'); }, i * 40);
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(function(el) { io.observe(el); });
+  })();
+
+  // ── Hero neuron network canvas (12 nodes max, very subtle) ──
+  (function() {
+    var canvas = document.getElementById('heroCanvas');
+    var ctx = canvas.getContext('2d');
+    var hero = document.getElementById('hero');
+    var particles = [];
+    var W, H;
+    var NODE_COUNT = 10;
+
+    function resize() {
+      W = canvas.width = hero.offsetWidth;
+      H = canvas.height = hero.offsetHeight;
+      particles = [];
+      for (var i = 0; i < NODE_COUNT; i++) {
+        particles.push({
+          x: Math.random() * W,
+          y: Math.random() * H,
+          vx: (Math.random() - 0.5) * 0.2,
+          vy: (Math.random() - 0.5) * 0.2,
+          r: Math.random() * 1.6 + 0.8
+        });
+      }
+    }
+
+    function drawFrame() {
+      ctx.clearRect(0, 0, W, H);
+      for (var i = 0; i < particles.length; i++) {
+        for (var j = i + 1; j < particles.length; j++) {
+          var a = particles[i], b = particles[j];
+          var dx = a.x - b.x, dy = a.y - b.y;
+          var dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 220) {
+            ctx.strokeStyle = 'rgba(79,195,247,' + (0.08 * (1 - dist / 220)) + ')';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
+            ctx.stroke();
+          }
+        }
+      }
+      for (var i = 0; i < particles.length; i++) {
+        var p = particles[i];
+        ctx.fillStyle = 'rgba(79,195,247,0.22)';
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    function tick() {
+      for (var i = 0; i < particles.length; i++) {
+        var p = particles[i];
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0 || p.x > W) p.vx *= -1;
+        if (p.y < 0 || p.y > H) p.vy *= -1;
+      }
+      drawFrame();
+      requestAnimationFrame(tick);
+    }
+
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    window.addEventListener('resize', function() {
+      resize();
+      if (reduceMotion) drawFrame();
+    }, { passive: true });
+    resize();
+    if (reduceMotion) {
+      drawFrame();
+    } else {
+      tick();
+    }
+  })();
+
+  // ── Shared Google Apps Script endpoint (same as Korean homepage) ──
+  var SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzJ6PIgSeOdTyXjdZ8LJsKb-v-KEn-hn7cTywGSRKsndOw_2OGPi9b_ANPWxn2fSvXq/exec';
+
+  function isValidEmail(v) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
+  }
+
+  // ── Newsletter form (Brain Health Weekly) ──
+  (function() {
+    var form = document.getElementById('nlForm');
+    var input = document.getElementById('nlEmail');
+    var consent = document.getElementById('nlConsent');
+    var consentError = document.getElementById('nlConsentError');
+    var btn = document.getElementById('nlSubmit');
+    var success = document.getElementById('nlSuccess');
+
+    consent.addEventListener('change', function() {
+      if (this.checked) consentError.classList.remove('show');
+    });
+
     form.addEventListener('submit', function(e) {
       e.preventDefault();
       var email = input.value.trim();
-      if (!isValid(email)) { errMsg.classList.add('show'); input.style.borderColor = '#ff7c7c'; input.focus(); return; }
-      btn.disabled = true; btn.textContent = 'Processing...';
+      if (!isValidEmail(email)) {
+        input.style.borderColor = '#ff7c7c';
+        input.focus();
+        return;
+      }
+      if (!consent.checked) {
+        consentError.classList.add('show');
+        consent.focus();
+        return;
+      }
+      btn.disabled = true;
+      btn.textContent = 'Submitting...';
       fetch(SHEET_ENDPOINT, {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'text/plain' },
-        body: JSON.stringify({ email: email, source: 'landing_en' })
-      })
-        .then(function() { wrap.style.display = 'none'; success.classList.add('show'); })
-        .catch(function() { wrap.style.display = 'none'; success.classList.add('show'); });
-    });
-  })();
+        body: JSON.stringify({ email: email, source: 'brain_health_weekly_en' })
+      }).then(finish).catch(finish);
 
-  // Hamburger menu
-  (function() {
-    var hamburger = document.getElementById('navHamburger');
-    var mobileNav = document.getElementById('navMobile');
-    hamburger.addEventListener('click', function() {
-      hamburger.classList.toggle('open');
-      mobileNav.classList.toggle('open');
-      document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
-    });
-    mobileNav.querySelectorAll('a').forEach(function(a) {
-      a.addEventListener('click', function() {
-        hamburger.classList.remove('open');
-        mobileNav.classList.remove('open');
-        document.body.style.overflow = '';
-      });
-    });
-  })();
-
-  // Blog category tabs
-  (function() {
-    var tabs  = document.querySelectorAll('.blog-tab');
-    var cards = document.querySelectorAll('.blog-card[data-category]');
-    var empty = document.getElementById('blogEmpty');
-    tabs.forEach(function(tab) {
-      tab.addEventListener('click', function() {
-        tabs.forEach(function(t) { t.classList.remove('active'); });
-        this.classList.add('active');
-        var cat = this.dataset.cat;
-        var visible = 0;
-        cards.forEach(function(card) {
-          if (cat === 'all' || card.dataset.category === cat) {
-            card.classList.remove('hidden'); visible++;
-          } else {
-            card.classList.add('hidden');
-          }
-        });
-        if (empty) empty.classList.toggle('show', visible === 0);
-      });
+      function finish() {
+        form.style.display = 'none';
+        success.classList.add('show');
+      }
     });
   })();
 </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "NervLock Lab",
+  "url": "https://nervlocklab.com/en/",
+  "description": "An evidence-based brain health platform led by a neurologist.",
+  "sameAs": [
+    "https://www.instagram.com/neurologist_jh",
+    "https://www.youtube.com/@Dr.H-neuro"
+  ],
+  "founder": {
+    "@type": "Person",
+    "name": "Ham Jeehyun",
+    "honorificPrefix": "Dr.",
+    "jobTitle": "Neurologist",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Yonsei University College of Medicine"
+    }
+  }
+}
+</script>
+
 </body>
 </html>
