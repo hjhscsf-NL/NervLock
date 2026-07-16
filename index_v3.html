@@ -4,7 +4,21 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>NervLock Lab | Evidence-Based Brain Health Platform</title>
-<meta name="description" content="Neurologist-designed Brain Health Platform. Evidence-based education, science, and brain care solutions." />
+<meta name="description" content="신경과 전문의가 설계한 근거 중심의 뇌 건강 플랫폼. NervLock Lab은 최신 의학 근거를 바탕으로 Brain Health Ecosystem을 만들어갑니다." />
+<link rel="canonical" href="https://nervlocklab.com/" />
+<link rel="alternate" hreflang="ko" href="https://nervlocklab.com/" />
+<link rel="alternate" hreflang="en" href="https://nervlocklab.com/en/" />
+<link rel="alternate" hreflang="x-default" href="https://nervlocklab.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://nervlocklab.com/" />
+<meta property="og:title" content="NervLock Lab — 신경과 전문의가 설계한 Brain Health Platform" />
+<meta property="og:description" content="신경과 전문의가 설계한 근거 중심의 뇌 건강 플랫폼." />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:site_name" content="NervLock Lab" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="NervLock Lab — Brain Health Platform" />
+<meta name="twitter:description" content="신경과 전문의가 설계한 근거 중심의 뇌 건강 플랫폼." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -80,10 +94,24 @@
   .nav-menu a { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.75); transition: color 0.2s; }
   .nav-menu a:hover { color: #fff; }
   .nav-right { display: flex; align-items: center; gap: 18px; }
-  .nav-lang { display: flex; border: 1px solid rgba(255,255,255,0.22); border-radius: 7px; overflow: hidden; }
-  .nav-lang a { padding: 5px 11px; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); }
-  .nav-lang a.active { background: rgba(255,255,255,0.16); color: #fff; }
-  .nav-lang a + a { border-left: 1px solid rgba(255,255,255,0.22); }
+  .nav-lang {
+    display: flex; align-items: center; gap: 2px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 20px;
+    padding: 3px;
+    backdrop-filter: blur(8px);
+  }
+  .nav-lang a {
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(248,250,252,0.5);
+    letter-spacing: 0.05em;
+    transition: background 0.2s, color 0.2s;
+  }
+  .nav-lang a.active { background: rgba(255,255,255,0.15); color: #F8FAFC; }
   .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 6px; }
   .nav-toggle span { width: 22px; height: 2px; background: #fff; }
   .nav-mobile-menu { display: none; flex-direction: column; gap: 2px; background: rgba(4,8,15,0.98); backdrop-filter: blur(14px); border-top: 1px solid var(--divider-dark); padding: 8px 28px 20px; }
@@ -847,6 +875,27 @@
       }
     });
   })();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "NervLock Lab",
+  "url": "https://nervlocklab.com",
+  "logo": "https://nervlocklab.com/assets/logo.png",
+  "description": "신경과 전문의가 설계한 근거 중심의 뇌 건강 플랫폼",
+  "sameAs": [
+    "https://www.instagram.com/neurologist_jh",
+    "https://www.youtube.com/@Dr.H-neuro"
+  ],
+  "founder": {
+    "@type": "Person",
+    "name": "Ham Jeehyun",
+    "jobTitle": "Neurologist",
+    "alumniOf": "Yonsei University College of Medicine"
+  }
+}
 </script>
 
 </body>
