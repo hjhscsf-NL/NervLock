@@ -51,6 +51,7 @@
   .title-on-light { font-size: clamp(28px, 4vw, 42px); font-weight: 700; line-height: 1.3; color: var(--text-primary); margin-bottom: 20px; letter-spacing: -0.5px; }
   .title-on-dark  { font-size: clamp(28px, 4vw, 42px); font-weight: 700; line-height: 1.3; color: var(--text-white); margin-bottom: 20px; letter-spacing: -0.5px; }
   .sub-on-light { font-size: 17px; color: var(--text-secondary); max-width: 640px; line-height: 1.85; }
+  .sub-en-light { font-size: 13px; color: var(--text-secondary); opacity: 0.75; max-width: 640px; line-height: 1.7; margin-top: 6px; }
   .sub-on-dark  { font-size: 17px; color: rgba(240,244,248,0.72); max-width: 640px; line-height: 1.85; }
 
   .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
@@ -96,7 +97,8 @@
   .hero-inner { position: relative; z-index: 2; text-align: center; max-width: 760px; margin: 0 auto; }
   .hero-label { font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--brand-blue); margin-bottom: 26px; }
   .hero-title { font-size: clamp(46px, 8.5vw, 92px); font-weight: 700; letter-spacing: -2px; color: #fff; margin-bottom: 24px; }
-  .hero-sub { font-size: clamp(18px, 2.2vw, 23px); font-weight: 500; color: rgba(240,244,248,0.85); line-height: 1.6; margin-bottom: 22px; }
+  .hero-sub { font-size: clamp(18px, 2.2vw, 23px); font-weight: 500; color: rgba(240,244,248,0.85); line-height: 1.6; margin-bottom: 8px; }
+  .hero-sub-en { font-size: 14px; font-weight: 400; color: rgba(240,244,248,0.5); letter-spacing: 0.2px; margin-bottom: 22px; }
   .hero-tagline { font-size: 15px; color: rgba(240,244,248,0.6); letter-spacing: 0.3px; line-height: 1.9; margin-bottom: 46px; }
   .hero-actions { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
 
@@ -122,14 +124,18 @@
   /* ── Why NervLock ── */
   #why-nervlock { background: var(--white); }
   .manifesto { max-width: 720px; margin: 0 auto 48px; text-align: center; }
-  .manifesto-line { font-size: clamp(20px, 2.8vw, 28px); font-weight: 700; color: var(--text-primary); line-height: 1.6; margin-bottom: 4px; }
+  .manifesto-line { font-size: clamp(20px, 2.8vw, 28px); font-weight: 700; color: var(--text-primary); line-height: 1.6; margin-bottom: 2px; }
+  .manifesto-line-en { font-size: 13px; font-weight: 400; color: var(--text-secondary); line-height: 1.5; margin-bottom: 14px; }
   .manifesto-divider { width: 60px; height: 2px; background: var(--divider-light); margin: 48px auto; }
   .mission-text { max-width: 620px; margin: 0 auto 56px; text-align: center; font-size: 16px; color: var(--text-secondary); line-height: 1.95; }
-  .founder-card { max-width: 460px; margin: 0 auto; background: var(--bg-blue-gray); border-radius: 12px; padding: 32px 36px; text-align: center; }
+  .founder-card { max-width: 375px; margin: 0 auto; background: #F3F7FB; border: 1px solid rgba(21,101,192,0.08); border-radius: 12px; padding: 40px 42px; text-align: center; box-shadow: 0 8px 28px rgba(13,27,42,0.07); }
   .founder-name { font-size: 17px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
   .founder-role { font-size: 13px; color: var(--accent); font-weight: 600; margin-bottom: 10px; }
-  .founder-detail { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
-  .founder-detail-en { font-size: 11px; color: var(--text-secondary); line-height: 1.7; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--divider-light); opacity: 0.85; }
+  .founder-detail { font-size: 13px; color: #5B6B80; line-height: 1.7; }
+  .founder-detail-en { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--divider-light); }
+  .founder-en-name { font-size: 15px; font-weight: 700; color: var(--text-primary); margin-bottom: 5px; }
+  .founder-en-role { font-size: 12px; font-weight: 600; color: var(--accent); letter-spacing: 0.2px; margin-bottom: 12px; }
+  .founder-en-detail { font-size: 11px; font-weight: 400; color: #5B6B80; line-height: 1.85; }
 
   /* ── Science ── */
   #research { background: var(--bg-blue-gray); }
@@ -286,11 +292,12 @@
   <div class="container hero-inner">
     <div class="hero-label reveal">Evidence-Based Brain Health</div>
     <h1 class="hero-title reveal">NervLock Lab</h1>
-    <p class="hero-sub reveal">Neurologist-designed Brain Health Platform</p>
+    <p class="hero-sub reveal">신경과 전문의가 설계한 뇌 건강 플랫폼</p>
+    <p class="hero-sub-en reveal">Neurologist-designed Brain Health Platform</p>
     <p class="hero-tagline reveal">Understand Your Brain.<br>Protect It for Life.</p>
     <div class="hero-actions reveal">
-      <a href="/blog/" class="btn-on-dark">Brain Health Academy →</a>
-      <a href="#research" class="btn-outline-dark">Latest Research →</a>
+      <a href="/blog/" class="btn-on-dark">Brain Health Academy 살펴보기 →</a>
+      <a href="#research" class="btn-outline-dark">최신 연구 보기 →</a>
     </div>
   </div>
 </section>
@@ -300,11 +307,11 @@
   <div class="container">
     <div class="why-grid">
       <div class="label label-on-light reveal">WHY BRAIN HEALTH</div>
-      <h2 class="title-on-light reveal">Why Brain Health?</h2>
+      <h2 class="title-on-light reveal">왜 뇌 건강이 중요할까요?</h2>
       <p class="reveal">
-        Your brain never rests. It allows you to think, remember, focus, sleep, and experience emotions.
-        Many people dismiss subtle changes as stress, aging, or fatigue.
-        NervLock exists to help people understand these early signals through evidence-based medicine.
+        우리의 뇌는 잠시도 쉬지 않습니다. 생각하고, 기억하고, 집중하고, 잠을 자고, 감정을 느끼는 모든 순간에 뇌가 작동합니다.
+        하지만 많은 사람들은 이런 작은 변화를 스트레스나 노화, 피로 탓으로 넘기곤 합니다.
+        NervLock는 이러한 초기 신호를 근거 기반 의학을 통해 더 잘 이해할 수 있도록 돕기 위해 존재합니다.
       </p>
     </div>
     <div class="stat-grid">
@@ -324,8 +331,8 @@
 <section class="section" id="academy">
   <div class="container">
     <div class="label label-on-light reveal">BRAIN HEALTH ACADEMY</div>
-    <h2 class="title-on-light reveal">Understand Your Brain</h2>
-    <p class="sub-on-light reveal">Evidence-based content written by a neurologist</p>
+    <h2 class="title-on-light reveal">뇌건강, 제대로 이해하기</h2>
+    <p class="sub-on-light reveal">신경과 전문의가 작성한 근거 기반 콘텐츠</p>
 
     <div class="academy-cards">
       <a href="/blog/브레인포그-신경과학/" class="academy-card reveal">
@@ -366,18 +373,21 @@
   <div class="container">
     <div class="label label-on-light reveal" style="text-align:center;">WHY NERVLOCK</div>
     <div class="manifesto">
-      <p class="manifesto-line reveal">Evidence before marketing.</p>
-      <p class="manifesto-line reveal">Education before promotion.</p>
-      <p class="manifesto-line reveal">Science before products.</p>
-      <p class="manifesto-line reveal">Trust before sales.</p>
+      <p class="manifesto-line reveal">근거가 마케팅보다 먼저입니다.</p>
+      <p class="manifesto-line-en reveal">Evidence before marketing.</p>
+      <p class="manifesto-line reveal">교육이 홍보보다 먼저입니다.</p>
+      <p class="manifesto-line-en reveal">Education before promotion.</p>
+      <p class="manifesto-line reveal">과학이 제품보다 먼저입니다.</p>
+      <p class="manifesto-line-en reveal">Science before products.</p>
+      <p class="manifesto-line reveal">신뢰가 판매보다 먼저입니다.</p>
+      <p class="manifesto-line-en reveal">Trust before sales.</p>
     </div>
 
     <div class="manifesto-divider reveal"></div>
 
     <p class="mission-text reveal">
-      NervLock는 신경과 전문의의 임상 경험과<br>
-      최신 과학적 근거를 연결하여<br>
-      Brain Health Ecosystem을 만들고 있습니다.
+      NervLock는 신경과 전문의의 임상 경험과 최신 의학 근거를 바탕으로,<br>
+      누구나 신뢰할 수 있는 Brain Health Ecosystem을 만들어갑니다.
     </p>
 
     <div class="founder-card reveal">
@@ -388,8 +398,13 @@
         세브란스병원 전 임상연구조교수
       </div>
       <div class="founder-detail-en">
-        Dr. Ham Jeehyun, M.D. — Neurologist<br>
-        Yonsei University College of Medicine, M.D. · Former Assistant Professor of Clinical Research, Severance Hospital
+        <div class="founder-en-name">Dr. Ham Jeehyun, M.D.</div>
+        <div class="founder-en-role">Board-Certified Neurologist</div>
+        <div class="founder-en-detail">
+          Graduate of Yonsei University College of Medicine<br>
+          Former Assistant Professor of Clinical Research,<br>
+          Severance Hospital
+        </div>
       </div>
     </div>
   </div>
@@ -399,11 +414,9 @@
 <section class="section" id="research">
   <div class="container">
     <div class="label label-on-light reveal">SCIENCE &amp; RESEARCH</div>
-    <h2 class="title-on-light reveal">Grounded in Evidence</h2>
-    <p class="sub-on-light reveal">
-      NervLock prioritizes peer-reviewed medical literature and authoritative clinical guidelines when developing its content and products.<br>
-      NervLock는 콘텐츠와 제품을 기획할 때 동료 심사를 거친 의학 문헌과 공신력 있는 가이드라인을 우선 검토합니다.
-    </p>
+    <h2 class="title-on-light reveal">근거를 기반으로 합니다</h2>
+    <p class="sub-on-light reveal">NervLock는 콘텐츠와 제품을 기획할 때 동료 심사를 거친 의학 문헌과 공신력 있는 가이드라인을 우선 검토합니다.</p>
+    <p class="sub-en-light reveal">Built on peer-reviewed literature and clinical guidelines.</p>
 
     <div class="paper-grid">
       <div class="paper-card reveal">
@@ -414,7 +427,7 @@
         <div class="paper-field">Clinical Relevance<strong>—</strong></div>
         <div class="paper-field">Year · DOI<strong>—</strong></div>
         <div class="paper-placeholder">
-          <p>Research articles are carefully reviewed before publication.<br>Curated content coming soon.</p>
+          <p>논문은 검토 및 승인 후 게시됩니다.<br>콘텐츠를 준비 중입니다.</p>
         </div>
       </div>
       <div class="paper-card reveal">
@@ -425,7 +438,7 @@
         <div class="paper-field">Clinical Relevance<strong>—</strong></div>
         <div class="paper-field">Year · DOI<strong>—</strong></div>
         <div class="paper-placeholder">
-          <p>Research articles are carefully reviewed before publication.<br>Curated content coming soon.</p>
+          <p>논문은 검토 및 승인 후 게시됩니다.<br>콘텐츠를 준비 중입니다.</p>
         </div>
       </div>
       <div class="paper-card reveal">
@@ -436,7 +449,7 @@
         <div class="paper-field">Clinical Relevance<strong>—</strong></div>
         <div class="paper-field">Year · DOI<strong>—</strong></div>
         <div class="paper-placeholder">
-          <p>Research articles are carefully reviewed before publication.<br>Curated content coming soon.</p>
+          <p>논문은 검토 및 승인 후 게시됩니다.<br>콘텐츠를 준비 중입니다.</p>
         </div>
       </div>
     </div>
@@ -447,8 +460,8 @@
 <section class="section" id="solutions">
   <div class="container">
     <div class="label label-on-light reveal">OUR SOLUTIONS</div>
-    <h2 class="title-on-light reveal">Brain Health Solutions</h2>
-    <p class="sub-on-light reveal">Science-informed brain care, designed by a neurologist.</p>
+    <h2 class="title-on-light reveal">브레인 케어 솔루션</h2>
+    <p class="sub-on-light reveal">신경과 전문의가 설계한 과학적 근거 기반 브레인 케어</p>
 
     <div class="solutions-grid">
       <div class="solution-card featured reveal">
@@ -461,9 +474,9 @@
         <p class="solution-footnote">제품의 원료 구성과 출시 일정은 개발 과정에서 변경될 수 있습니다.</p>
       </div>
       <div class="solution-card placeholder reveal">
-        <div class="solution-tag">Coming Soon</div>
-        <div class="solution-title">More Brain Health Solutions</div>
-        <p class="solution-desc">More brain health solutions are being developed.</p>
+        <div class="solution-tag">출시 예정</div>
+        <div class="solution-title">더 다양한 브레인 케어 솔루션</div>
+        <p class="solution-desc">더 다양한 뇌 건강 솔루션을 준비하고 있습니다.</p>
       </div>
     </div>
   </div>
@@ -473,14 +486,14 @@
 <section class="section" id="newsletter">
   <div class="container">
     <div class="label label-on-dark reveal">BRAIN HEALTH WEEKLY</div>
-    <h2 class="title-on-dark reveal">Stay Informed</h2>
-    <p class="sub-on-dark reveal">Weekly insights on brain health — curated by a neurologist. Latest research, practical strategies, and evidence-based guidance.</p>
+    <h2 class="title-on-dark reveal">뇌건강 뉴스레터</h2>
+    <p class="sub-on-dark reveal">매주 최신 뇌과학 연구와 실천 가능한 인사이트를 신경과 전문의가 직접 큐레이션합니다.</p>
 
     <form id="nlForm" novalidate>
       <div class="newsletter-form reveal">
-        <label for="nlEmail" class="sr-only">Email address</label>
-        <input type="email" class="nl-input" id="nlEmail" placeholder="Enter your email address" autocomplete="email" />
-        <button type="submit" class="btn-on-dark" id="nlSubmit" aria-label="Subscribe to Brain Health Weekly">Subscribe to Brain Health Weekly</button>
+        <label for="nlEmail" class="sr-only">이메일 주소</label>
+        <input type="email" class="nl-input" id="nlEmail" placeholder="이메일 주소를 입력해주세요" autocomplete="email" />
+        <button type="submit" class="btn-on-dark" id="nlSubmit" aria-label="Brain Health Weekly 구독하기">Brain Health Weekly 구독하기</button>
       </div>
 
       <div class="consent-row reveal">
@@ -498,11 +511,11 @@
       <div class="cs-error2 on-dark" id="nlConsentError" role="alert" style="margin-bottom:12px;">개인정보 수집 및 이용에 동의해주세요.</div>
     </form>
     <p class="newsletter-notice reveal">
-      No spam. Unsubscribe anytime.<br>
-      Your information is collected and used in accordance with our Privacy Policy.
+      스팸 없음. 언제든지 구독 취소 가능.<br>
+      개인정보 처리방침에 따라 수집·이용됩니다.
       <a href="#">개인정보 처리방침 →</a>
     </p>
-    <p class="newsletter-success" id="nlSuccess">Thank you for subscribing — your first Brain Health Weekly issue is on its way. 🙏</p>
+    <p class="newsletter-success" id="nlSuccess">구독해주셔서 감사합니다 — 다음 주 Brain Health Weekly부터 받아보실 수 있습니다. 🙏</p>
   </div>
 </section>
 
@@ -571,30 +584,30 @@
       <div>
         <div class="footer-brand">Nerv<span>Lock</span> Lab</div>
         <p class="footer-desc">
-          Neurologist-designed Brain Health Platform<br><br>
-          NervLock connects clinical neurology expertise with the latest scientific evidence to build a Brain Health Ecosystem.
+          신경과 전문의가 설계한 Brain Health Platform<br><br>
+          NervLock는 임상 신경과 전문성과 최신 과학적 근거를 연결하여 Brain Health Ecosystem을 만들어갑니다.
         </p>
       </div>
       <div class="footer-col">
-        <h4>Explore</h4>
+        <h4>메뉴</h4>
         <ul>
-          <li><a href="#academy">Academy</a></li>
-          <li><a href="#research">Science &amp; Research</a></li>
-          <li><a href="#solutions">Products</a></li>
-          <li><a href="/blog/">Blog</a></li>
+          <li><a href="#academy">아카데미</a></li>
+          <li><a href="#research">연구 자료</a></li>
+          <li><a href="#solutions">제품</a></li>
+          <li><a href="/blog/">블로그</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Company</h4>
+        <h4>회사</h4>
         <ul>
-          <li><a href="#why-nervlock">About</a></li>
-          <li><a href="#newsletter">Newsletter</a></li>
+          <li><a href="#why-nervlock">소개</a></li>
+          <li><a href="#newsletter">뉴스레터</a></li>
           <li><a href="#">개인정보 처리방침</a></li>
           <li><a href="#">이용약관</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Connect</h4>
+        <h4>SNS</h4>
         <ul>
           <li><a href="#" target="_blank" rel="noopener noreferrer">Instagram (@neurologist_jh)</a></li>
           <li><a href="#" target="_blank" rel="noopener noreferrer">YouTube (@Dr.H-neuro)</a></li>
@@ -603,7 +616,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 NervLock Lab. All rights reserved.</p>
+      <p>© 2026 NervLock Lab. 모든 권리 보유.</p>
     </div>
   </div>
 </footer>
