@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Brain Health Blog — NervLock Lab | Evidence-Based Articles by a Neurologist</title>
+<meta name="description" content="Neurologist-written, evidence-based articles on Parkinson's disease, dementia, peripheral neuropathy, and functional neurology from NervLock Lab." />
+<link rel="canonical" href="https://nervlocklab.com/en/blog/" />
+<link rel="alternate" hreflang="ko-KR" href="https://nervlocklab.com/blog/" />
+<link rel="alternate" hreflang="en" href="https://nervlocklab.com/en/blog/" />
+<link rel="alternate" hreflang="x-default" href="https://nervlocklab.com/" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  * , *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  :root {
+    --navy-primary:   #0D1B2A;
+    --navy-secondary: #16324F;
+    --navy-accent:    #274C77;
+    --bg-light:       #F8FAFC;
+    --bg-warm:        #FCFCFA;
+    --bg-blue-gray:   #EEF2F5;
+    --white:          #ffffff;
+
+    --text-primary:   #1E293B;
+    --text-secondary: #64748B;
+    --text-white:     #F8FAFC;
+    --brand-blue:     #4fc3f7;
+    --accent:         #1565c0;
+
+    --divider-dark: rgba(255,255,255,0.08);
+    --divider-light: rgba(13,27,42,0.08);
+  }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--bg-light);
+    color: var(--text-primary);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+  a { text-decoration: none; color: inherit; }
+  ul { list-style: none; }
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+  /* ── Nav (identical to /en/ homepage) ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+    background: transparent; transition: background 0.35s ease, border-color 0.35s ease;
+    border-bottom: 1px solid transparent;
+  }
+  nav.scrolled { background: rgba(13,27,42,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--divider-dark); }
+  .nav-inner { max-width: 1180px; margin: 0 auto; padding: 20px 28px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .nav-logo { font-size: 19px; font-weight: 700; letter-spacing: -0.3px; color: #fff; }
+  .nav-logo span { color: var(--brand-blue); }
+  .nav-menu { display: flex; gap: 32px; }
+  .nav-menu a { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.75); transition: color 0.2s; }
+  .nav-menu a:hover { color: #fff; }
+  .nav-menu a.active { color: #fff; }
+  .nav-right { display: flex; align-items: center; gap: 18px; }
+  .nav-lang {
+    display: flex; align-items: center; gap: 2px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 20px;
+    padding: 3px;
+    backdrop-filter: blur(8px);
+  }
+  .nav-lang a { padding: 4px 12px; border-radius: 16px; font-size: 12px; font-weight: 500; color: rgba(248,250,252,0.5); letter-spacing: 0.05em; transition: background 0.2s, color 0.2s; }
+  .nav-lang a.active { background: rgba(255,255,255,0.15); color: #F8FAFC; }
+  .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 6px; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
+  .nav-toggle span { width: 22px; height: 2px; background: #fff; }
+  .nav-mobile-menu { display: none; flex-direction: column; gap: 2px; background: rgba(4,8,15,0.98); backdrop-filter: blur(14px); border-top: 1px solid var(--divider-dark); padding: 8px 28px 20px; }
+  .nav-mobile-menu.open { display: flex; }
+  .nav-mobile-menu a { padding: 14px 0; font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.8); border-bottom: 1px solid var(--divider-dark); min-height: 44px; display: flex; align-items: center; }
+  .nav-mobile-menu a:last-child { border-bottom: none; }
+
+  /* ── Page title band ── */
+  .blog-hero { background: linear-gradient(160deg, var(--navy-primary) 0%, var(--navy-secondary) 100%); padding: 160px 0 70px; text-align: center; }
+  .blog-hero h1 { font-size: clamp(32px, 4.5vw, 46px); font-weight: 700; color: var(--text-white); letter-spacing: -0.5px; margin-bottom: 16px; }
+  .blog-hero p { font-size: 17px; color: rgba(240,244,248,0.72); }
+
+  /* ── Category filter ── */
+  .filter-bar { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; padding: 40px 0 10px; background: var(--bg-light); }
+  .filter-btn { font-size: 14px; font-weight: 600; color: var(--text-secondary); background: #fff; border: 1px solid var(--divider-light); border-radius: 20px; padding: 9px 20px; cursor: pointer; transition: all 0.2s ease; }
+  .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .filter-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+  /* ── Blog card grid ── */
+  .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; padding: 40px 0 120px; background: var(--bg-light); }
+  .blog-card { display: flex; flex-direction: column; background: #ffffff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); overflow: hidden; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+  .blog-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(13,27,42,0.1); }
+  .blog-card-thumb { height: 120px; }
+  .thumb-neuro { background: linear-gradient(135deg, #0D1B2A, #16324F); }
+  .thumb-pain { background: linear-gradient(135deg, #1a237e, #283593); }
+  .thumb-functional { background: linear-gradient(135deg, #1b5e20, #2e7d32); }
+  .blog-card-body { padding: 24px 28px 28px; display: flex; flex-direction: column; flex-grow: 1; }
+  .blog-card-top { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+  .blog-card-badge { font-size: 11px; font-weight: 700; letter-spacing: 0.3px; color: var(--accent); background: rgba(21,101,192,0.08); border-radius: 6px; padding: 4px 9px; }
+  .blog-card-date { font-size: 12px; color: var(--text-secondary); }
+  .blog-card h2 { font-size: 17px; font-weight: 700; color: var(--text-primary); line-height: 1.45; margin-bottom: 10px; }
+  .blog-card-desc { font-size: 13.5px; color: var(--text-secondary); line-height: 1.7; flex-grow: 1; margin-bottom: 18px; }
+  .blog-card-bottom { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--divider-light); padding-top: 14px; }
+  .blog-card-author { font-size: 12.5px; font-weight: 600; color: var(--text-secondary); }
+  .blog-card-more { font-size: 13px; font-weight: 700; color: var(--accent); }
+
+  .empty-state { text-align: center; padding: 60px 0; color: var(--text-secondary); display: none; background: var(--bg-light); }
+
+  /* ── Footer (identical to /en/ homepage) ── */
+  footer { background: var(--navy-secondary); padding: 90px 0 36px; }
+  .footer-top { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 60px; }
+  .footer-brand { font-size: 20px; font-weight: 700; margin-bottom: 16px; color: var(--text-white); }
+  .footer-brand span { color: var(--brand-blue); }
+  .footer-desc { font-size: 14px; color: rgba(240,244,248,0.6); line-height: 1.9; }
+  .footer-col h4 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: rgba(240,244,248,0.4); margin-bottom: 18px; }
+  .footer-col ul { display: flex; flex-direction: column; gap: 12px; }
+  .footer-col a { font-size: 14px; color: rgba(240,244,248,0.7); transition: color 0.2s; }
+  .footer-col a:hover { color: var(--brand-blue); }
+  .footer-bottom { border-top: 1px solid var(--divider-dark); padding-top: 28px; font-size: 12px; color: rgba(240,244,248,0.4); }
+
+  @media (max-width: 900px) {
+    .nav-menu { display: none; }
+    .nav-toggle { display: flex; }
+    .nav-right .nav-lang { display: none; }
+    .blog-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+  }
+  @media (max-width: 560px) {
+    .footer-top { grid-template-columns: 1fr; }
+  }
+
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  :focus-visible { outline: 2px solid #4fc3f7; outline-offset: 2px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+    html { scroll-behavior: auto; }
+    .reveal { transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="/en/" class="nav-logo">Nerv<span>Lock</span></a>
+    <div class="nav-menu">
+      <a href="/en/#academy">Academy</a>
+      <a href="/en/#research">Science &amp; Research</a>
+      <a href="/en/#solutions">Products</a>
+      <a href="/en/#why-nervlock">About</a>
+      <a href="/en/blog/" class="active">Blog</a>
+      <a href="/en/#newsletter">Newsletter</a>
+    </div>
+    <div class="nav-right">
+      <div class="nav-lang">
+        <a href="/blog/">KR</a>
+        <a href="/en/blog/" class="active">EN</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="nav-mobile-menu" id="navMobileMenu">
+    <a href="/en/#academy">Academy</a>
+    <a href="/en/#research">Science &amp; Research</a>
+    <a href="/en/#solutions">Products</a>
+    <a href="/en/#why-nervlock">About</a>
+    <a href="/en/blog/" class="active">Blog</a>
+    <a href="/en/#newsletter">Newsletter</a>
+    <a href="/blog/">KR ↗</a>
+  </div>
+</nav>
+
+<div class="blog-hero">
+  <div class="container">
+    <h1 class="reveal">Brain Health Blog</h1>
+    <p class="reveal">Evidence-based articles written by a neurologist</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="filter-bar reveal">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="neuro">Neurological Disorders</button>
+    <button class="filter-btn" data-filter="pain">Pain</button>
+    <button class="filter-btn" data-filter="functional">Functional Medicine</button>
+  </div>
+
+  <div class="blog-grid" id="blogGrid">
+
+    <a href="/blog/homocysteine-dementia-b-vitamins/" class="blog-card reveal" data-category="neuro">
+      <div class="blog-card-thumb thumb-neuro"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-top"><span class="blog-card-badge">Neurological Disorders</span><span class="blog-card-date">Jul 5, 2026</span></div>
+        <h2>Homocysteine, Brain Atrophy, and B Vitamins: The Neurological Evidence</h2>
+        <p class="blog-card-desc">Elevated homocysteine is an independent, measurable risk factor for cognitive decline and brain atrophy. This article reviews the VITACOG trial evidence for targeted B vitamin supplementation.</p>
+        <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
+      </div>
+    </a>
+
+    <a href="/blog/dementia-modifiable-risk-factors/" class="blog-card reveal" data-category="neuro">
+      <div class="blog-card-thumb thumb-neuro"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-top"><span class="blog-card-badge">Neurological Disorders</span><span class="blog-card-date">Jul 3, 2026</span></div>
+        <h2>Modifiable Risk Factors for Dementia: What the Lancet Commission Evidence Tells Us</h2>
+        <p class="blog-card-desc">The Lancet Commission estimated that 12 modifiable risk factors account for approximately 40% of dementia cases worldwide. This article examines seven of the most clinically actionable factors.</p>
+        <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
+      </div>
+    </a>
+
+    <a href="/blog/dementia-preclinical-stage/" class="blog-card reveal" data-category="neuro">
+      <div class="blog-card-thumb thumb-neuro"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-top"><span class="blog-card-badge">Neurological Disorders</span><span class="blog-card-date">Jul 1, 2026</span></div>
+        <h2>Dementia Doesn't Arrive Suddenly: The Decade-Long Neurobiological Cascade Before Diagnosis</h2>
+        <p class="blog-card-desc">The clinical presentation of Alzheimer's disease is the endpoint of a process that begins silently, one to two decades before the first symptom. This article examines that preclinical trajectory.</p>
+        <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
+      </div>
+    </a>
+
+    <a href="/blog/rtg-omega3-bioavailability/" class="blog-card reveal" data-category="functional">
+      <div class="blog-card-thumb thumb-functional"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-top"><span class="blog-card-badge">Functional Medicine</span><span class="blog-card-date">Jun 28, 2026</span></div>
+        <h2>rTG Omega-3: Why Molecular Form Determines Bioavailability</h2>
+        <p class="blog-card-desc">Omega-3 fatty acids have one of the most extensive evidence bases in nutritional medicine, but molecular form determines whether EPA and DHA actually reach target tissues. This article compares three delivery forms.</p>
+        <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
+      </div>
+    </a>
+
+    <a href="/blog/phosphatidylserine-memory/" class="blog-card reveal" data-category="functional">
+      <div class="blog-card-thumb thumb-functional"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-top"><span class="blog-card-badge">Functional Medicine</span><span class="blog-card-date">Jun 20, 2026</span></div>
+        <h2>Phosphatidylserine and Memory: The Neurobiological Case</h2>
+        <p class="blog-card-desc">Phosphatidylserine is among the few non-pharmaceutical compounds with FDA-recognized qualified health claim language regarding cognitive function. This article examines its rationale and trial evidence.</p>
+        <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
+      </div>
+    </a>
+
+    <a href="/blog/autonomic-dysfunction-symptoms/" class="blog-card reveal" data-category="functional">
+      <div class="blog-card-thumb thumb-functional"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-top"><span class="blog-card-badge">Functional Medicine</span><span class="blog-card-date">Jun 15, 2026</span></div>
+        <h2>When the Autonomic Nervous System Fails: Dysautonomia Signs &amp; Symptoms</h2>
+        <p class="blog-card-desc">The autonomic nervous system governs involuntary processes essential to homeostasis. This article provides a clinical framework for recognizing dysautonomia and its evidence-based management.</p>
+        <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
+      </div>
+    </a>
+
+    <a href="/blog/brain-fog-neuroscience/" class="blog-card reveal" data-category="functional">
+      <div class="blog-card-thumb thumb-functional"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-top"><span class="blog-card-badge">Functional Medicine</span><span class="blog-card-date">Jun 10, 2026</span></div>
+        <h2>Brain Fog: Neurobiological Mechanisms and Evidence-Based Nutritional Support</h2>
+        <p class="blog-card-desc">Brain fog reflects measurable dysfunction across interconnected neural systems rather than a purely psychological state. This article examines four neurobiological mechanisms and relevant nutrients.</p>
+        <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
+      </div>
+    </a>
+
+    <a href="/blog/parkinson-medication-dosage/" class="blog-card reveal" data-category="neuro">
+      <div class="blog-card-thumb thumb-neuro"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-top"><span class="blog-card-badge">Neurological Disorders</span><span class="blog-card-date">Jun 3, 2026</span></div>
+        <h2>Why Levodopa Doses Increase Over Time in Parkinson's Disease: Disease Progression, Not Tolerance</h2>
+        <p class="blog-card-desc">Progressive increases in levodopa dosing are often mistaken for pharmacological tolerance. This article clarifies the three biological mechanisms actually responsible for rising dose requirements.</p>
+        <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
+      </div>
+    </a>
+
+    <a href="/blog/parkinson-plus-syndromes/" class="blog-card reveal" data-category="neuro">
+      <div class="blog-card-thumb thumb-neuro"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-top"><span class="blog-card-badge">Neurological Disorders</span><span class="blog-card-date">Jun 2, 2026</span></div>
+        <h2>Parkinson's Disease vs. Parkinson-Plus Syndromes: A Clinical Differential Diagnosis Guide</h2>
+        <p class="blog-card-desc">Atypical parkinsonian syndromes account for 15-25% of parkinsonism cases in specialist clinics. This article provides a framework for differentiating them from Parkinson's disease.</p>
+        <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
+      </div>
+    </a>
+
+    <a href="/blog/levodopa-long-term-misconceptions/" class="blog-card reveal" data-category="neuro">
+      <div class="blog-card-thumb thumb-neuro"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-top"><span class="blog-card-badge">Neurological Disorders</span><span class="blog-card-date">Jun 1, 2026</span></div>
+        <h2>Levodopa Long-Term Use in Parkinson's Disease: Separating Evidence from Misconception</h2>
+        <p class="blog-card-desc">Despite five decades as the most effective Parkinson's treatment, levodopa remains subject to persistent misconceptions. This article addresses common myths and reviews the evidence on treatment timing.</p>
+        <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
+      </div>
+    </a>
+
+    <a href="/blog/parkinson-genetics/" class="blog-card reveal" data-category="neuro">
+      <div class="blog-card-thumb thumb-neuro"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-top"><span class="blog-card-badge">Neurological Disorders</span><span class="blog-card-date">May 31, 2026</span></div>
+        <h2>The Genetics of Parkinson's Disease: Risk, Penetrance, and Clinical Implications</h2>
+        <p class="blog-card-desc">This article provides an evidence-based framework for the genetic architecture of Parkinson's disease — prevalence of monogenic forms, key genes, incomplete penetrance, and testing indications.</p>
+        <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
+      </div>
+    </a>
+
+    <a href="/blog/parkinsonism-differential-causes/" class="blog-card reveal" data-category="neuro">
+      <div class="blog-card-thumb thumb-neuro"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-top"><span class="blog-card-badge">Neurological Disorders</span><span class="blog-card-date">May 17, 2026</span></div>
+        <h2>Beyond Parkinson's Disease: Understanding the Differential Diagnosis of Parkinsonism</h2>
+        <p class="blog-card-desc">Parkinsonism describes a clinical syndrome that includes Parkinson's disease alongside a heterogeneous group of mimicking conditions. This article reviews four major non-PD categories and their features.</p>
+        <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
+      </div>
+    </a>
+
+    <a href="/blog/parkinson-constipation/" class="blog-card reveal" data-category="neuro">
+      <div class="blog-card-thumb thumb-neuro"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-top"><span class="blog-card-badge">Neurological Disorders</span><span class="blog-card-date">Apr 27, 2026</span></div>
+        <h2>Constipation in Parkinson's Disease</h2>
+        <p class="blog-card-desc">Gastrointestinal symptoms in Parkinson's disease reflect pathological involvement of the enteric nervous system, a network of roughly 500 million neurons vulnerable to alpha-synuclein pathology.</p>
+        <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
+      </div>
+    </a>
+
+    <a href="/blog/parkinson-dyskinesia/" class="blog-card reveal" data-category="neuro">
+      <div class="blog-card-thumb thumb-neuro"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-top"><span class="blog-card-badge">Neurological Disorders</span><span class="blog-card-date">Mar 24, 2026</span></div>
+        <h2>Levodopa-Induced Dyskinesia in Parkinson's Disease</h2>
+        <p class="blog-card-desc">In early Parkinson's disease, the nigrostriatal system buffers levodopa doses, producing a stable therapeutic response. This article explains how and why this changes with long-term treatment.</p>
+        <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
+      </div>
+    </a>
+
+    <a href="/blog/parkinson-caregiver-guide/" class="blog-card reveal" data-category="neuro">
+      <div class="blog-card-thumb thumb-neuro"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-top"><span class="blog-card-badge">Neurological Disorders</span><span class="blog-card-date">Mar 16, 2026</span></div>
+        <h2>Parkinson's Caregiver Guide</h2>
+        <p class="blog-card-desc">Parkinson's disease imposes one of the highest caregiver burdens among chronic neurological conditions, correlating more strongly with non-motor symptoms than motor severity.</p>
+        <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
+      </div>
+    </a>
+
+    <a href="/blog/parkinson-glutathione/" class="blog-card reveal" data-category="neuro">
+      <div class="blog-card-thumb thumb-neuro"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-top"><span class="blog-card-badge">Neurological Disorders</span><span class="blog-card-date">Mar 11, 2026</span></div>
+        <h2>Glutathione Depletion in Parkinson's Disease</h2>
+        <p class="blog-card-desc">Glutathione is an antioxidant tripeptide synthesized intracellularly, functioning as a free radical scavenger and detoxification cofactor relevant to Parkinson's disease pathophysiology.</p>
+        <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
+      </div>
+    </a>
+
+    <a href="/blog/parkinson-rem-sleep-disorder/" class="blog-card reveal" data-category="neuro">
+      <div class="blog-card-thumb thumb-neuro"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-top"><span class="blog-card-badge">Neurological Disorders</span><span class="blog-card-date">Mar 11, 2026</span></div>
+        <h2>REM Sleep Behavior Disorder in Parkinson's Disease</h2>
+        <p class="blog-card-desc">REM sleep behavior disorder disrupts the brainstem circuit that normally prevents the body from acting out dreams. This article examines its neurological mechanisms and link to Parkinson's disease.</p>
+        <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
+      </div>
+    </a>
+
+    <a href="/blog/parkinson-exercise-therapy/" class="blog-card reveal" data-category="neuro">
+      <div class="blog-card-thumb thumb-neuro"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-top"><span class="blog-card-badge">Neurological Disorders</span><span class="blog-card-date">Mar 8, 2026</span></div>
+        <h2>Exercise as Medicine in Parkinson's Disease: Neurobiological Mechanisms and Clinical Evidence</h2>
+        <p class="blog-card-desc">Structured exercise functions as a neurobiologically active intervention in Parkinson's disease, not merely an adjunct wellness activity. This article reviews its mechanisms and evidence base.</p>
+        <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
+      </div>
+    </a>
+
+    <a href="/blog/parkinson-pain-management/" class="blog-card reveal" data-category="pain">
+      <div class="blog-card-thumb thumb-pain"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-top"><span class="blog-card-badge">Pain</span><span class="blog-card-date">Mar 1, 2026</span></div>
+        <h2>Pain in Parkinson's Disease: Pathophysiology, Classification, and Clinical Management</h2>
+        <p class="blog-card-desc">Pain affects 40-85% of individuals with Parkinson's disease yet remains underrecognized relative to motor symptoms. This article reviews its neurobiological basis and management strategies.</p>
+        <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
+      </div>
+    </a>
+
+    <a href="/blog/parkinson-medication-management/" class="blog-card reveal" data-category="neuro">
+      <div class="blog-card-thumb thumb-neuro"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-top"><span class="blog-card-badge">Neurological Disorders</span><span class="blog-card-date">Feb 28, 2026</span></div>
+        <h2>Pharmacological Management of Parkinson's Disease: A Neurologist's Evidence-Based Overview</h2>
+        <p class="blog-card-desc">Parkinson's disease pharmacological management has evolved since levodopa's introduction in the 1960s. This article reviews the principal drug classes and the evidence informing prescribing decisions.</p>
+        <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
+      </div>
+    </a>
+
+    <a href="/blog/parkinson-dopamine-neuroinflammation/" class="blog-card reveal" data-category="neuro">
+      <div class="blog-card-thumb thumb-neuro"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-top"><span class="blog-card-badge">Neurological Disorders</span><span class="blog-card-date">Feb 27, 2026</span></div>
+        <h2>The Pathophysiology of Parkinson's Disease: Dopamine, Alpha-Synuclein, and Neuroinflammation</h2>
+        <p class="blog-card-desc">Parkinson's disease involves selective degeneration of dopaminergic neurons in the substantia nigra. This article examines alpha-synuclein aggregation and neuroinflammation in disease progression.</p>
+        <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
+      </div>
+    </a>
+
+    <a href="/blog/parkinson-early-signs/" class="blog-card reveal" data-category="neuro">
+      <div class="blog-card-thumb thumb-neuro"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-top"><span class="blog-card-badge">Neurological Disorders</span><span class="blog-card-date">Feb 27, 2026</span></div>
+        <h2>Early Signs of Parkinson's Disease: The Prodromal Signals That Precede Motor Symptoms</h2>
+        <p class="blog-card-desc">Parkinson's disease is widely recognized by tremor, bradykinesia, and rigidity, but non-motor prodromal symptoms may precede motor onset by a decade or more. This article examines five early signs.</p>
+        <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
+      </div>
+    </a>
+
+    <a href="/blog/postherpetic-neuralgia/" class="blog-card reveal" data-category="pain">
+      <div class="blog-card-thumb thumb-pain"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-top"><span class="blog-card-badge">Pain</span><span class="blog-card-date">Oct 28, 2024</span></div>
+        <h2>Postherpetic Neuralgia: Why Pain Persists Long After the Rash Has Healed</h2>
+        <p class="blog-card-desc">Postherpetic neuralgia — persistent neuropathic pain after herpes zoster — affects 10-15% of patients overall, up to 40% in those over 60. This article examines the neuroplastic mechanisms behind its chronicity.</p>
+        <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
+      </div>
+    </a>
+
+    <a href="/blog/vitamin-b12-methylcobalamin/" class="blog-card reveal" data-category="functional">
+      <div class="blog-card-thumb thumb-functional"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-top"><span class="blog-card-badge">Functional Medicine</span><span class="blog-card-date">Oct 8, 2024</span></div>
+        <h2>Vitamin B12 and Nerve Health: Why Form Matters — Methylcobalamin vs Cyanocobalamin</h2>
+        <p class="blog-card-desc">Vitamin B12 is indispensable for myelin synthesis and axonal maintenance. This article examines B12's neurological roles, deficiency consequences, and the difference between its two supplemental forms.</p>
+        <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
+      </div>
+    </a>
+
+    <a href="/blog/alpha-lipoic-acid-nerve/" class="blog-card reveal" data-category="functional">
+      <div class="blog-card-thumb thumb-functional"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-top"><span class="blog-card-badge">Functional Medicine</span><span class="blog-card-date">Sep 17, 2024</span></div>
+        <h2>Alpha-Lipoic Acid and Peripheral Nerve Health: Mechanisms, Evidence, and Clinical Application</h2>
+        <p class="blog-card-desc">Alpha-lipoic acid is both a mitochondrial cofactor and antioxidant relevant to peripheral nerve dysfunction. This article reviews its biochemical rationale and key clinical data.</p>
+        <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
+      </div>
+    </a>
+
+    <a href="/blog/nocturnal-nerve-discomfort/" class="blog-card reveal" data-category="pain">
+      <div class="blog-card-thumb thumb-pain"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-top"><span class="blog-card-badge">Pain</span><span class="blog-card-date">Sep 3, 2024</span></div>
+        <h2>Why Peripheral Nerve Symptoms Worsen at Night: Circadian Biology and Pain Amplification</h2>
+        <p class="blog-card-desc">Nerve symptoms that worsen at night reflect the intersection of circadian biology, attentional pain modulation, and postural changes in peripheral blood flow — not a psychological pattern.</p>
+        <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
+      </div>
+    </a>
+
+    <a href="/blog/foods-nerve-health/" class="blog-card reveal" data-category="functional">
+      <div class="blog-card-thumb thumb-functional"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-top"><span class="blog-card-badge">Functional Medicine</span><span class="blog-card-date">Aug 6, 2024</span></div>
+        <h2>Foods and Peripheral Nerve Health: What a Neurologist Looks at on Your Plate</h2>
+        <p class="blog-card-desc">Specific dietary patterns and food constituents exert measurable effects on peripheral nerve biology. This article reviews dietary risk factors and neuroprotective constituents relevant to nerve health.</p>
+        <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
+      </div>
+    </a>
+
+    <a href="/blog/peripheral-neuropathy/" class="blog-card reveal" data-category="pain">
+      <div class="blog-card-thumb thumb-pain"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-top"><span class="blog-card-badge">Pain</span><span class="blog-card-date">Nov 12, 2024</span></div>
+        <h2>What is Peripheral Neuropathy? Symptoms, Causes &amp; Neurologist's Perspective</h2>
+        <p class="blog-card-desc">Peripheral neuropathy arises from damage or dysfunction of the nerves outside the brain and spinal cord. This article reviews the pathophysiology, symptoms, causes, and nutritional considerations.</p>
+        <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
+      </div>
+    </a>
+
+  </div>
+
+  <p class="empty-state" id="emptyState">No articles in this category yet.</p>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">Nerv<span>Lock</span> Lab</div>
+        <p class="footer-desc">
+          An evidence-based brain health platform led by a neurologist.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/en/#academy">Academy</a></li>
+          <li><a href="/en/#research">Science &amp; Research</a></li>
+          <li><a href="/en/#solutions">Products</a></li>
+          <li><a href="/en/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/en/#why-nervlock">About</a></li>
+          <li><a href="/en/#newsletter">Newsletter</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#" target="_blank" rel="noopener noreferrer">Instagram (@neurologist_jh)</a></li>
+          <li><a href="#" target="_blank" rel="noopener noreferrer">YouTube (@Dr.H-neuro)</a></li>
+          <li><a href="#" target="_blank" rel="noopener noreferrer">Naver Blog</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 NervLock Lab. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── Nav scroll background ──
+  (function() {
+    var nav = document.getElementById('mainNav');
+    function onScroll() {
+      if (window.scrollY > 40) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+
+  // ── Mobile nav toggle ──
+  (function() {
+    var toggle = document.getElementById('navToggle');
+    var menu = document.getElementById('navMobileMenu');
+    toggle.addEventListener('click', function() {
+      var isOpen = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    menu.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 900) {
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  })();
+
+  // ── Reveal on scroll ──
+  (function() {
+    var els = document.querySelectorAll('.reveal');
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry, i) {
+        if (entry.isIntersecting) {
+          setTimeout(function() { entry.target.classList.add('is-visible'); }, i * 30);
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(function(el) { io.observe(el); });
+  })();
+
+  // ── Category filter (URL hash driven) ──
+  (function() {
+    var buttons = document.querySelectorAll('.filter-btn');
+    var cards = document.querySelectorAll('.blog-card');
+    var emptyState = document.getElementById('emptyState');
+    var validFilters = ['all', 'neuro', 'pain', 'functional'];
+
+    function applyFilter(filter) {
+      if (validFilters.indexOf(filter) === -1) filter = 'all';
+      var visibleCount = 0;
+      cards.forEach(function(card) {
+        var match = filter === 'all' || card.getAttribute('data-category') === filter;
+        card.style.display = match ? '' : 'none';
+        if (match) visibleCount++;
+      });
+      emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+      buttons.forEach(function(btn) {
+        btn.classList.toggle('active', btn.getAttribute('data-filter') === filter);
+      });
+    }
+
+    buttons.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var filter = btn.getAttribute('data-filter');
+        history.replaceState(null, '', filter === 'all' ? '#' : '#' + filter);
+        applyFilter(filter);
+      });
+    });
+
+    window.addEventListener('hashchange', function() {
+      applyFilter(location.hash.replace('#', '') || 'all');
+    });
+
+    applyFilter(location.hash.replace('#', '') || 'all');
+  })();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "name": "Brain Health Blog — NervLock Lab",
+      "url": "https://nervlocklab.com/en/blog/",
+      "description": "Neurologist-written, evidence-based articles on Parkinson's disease, dementia, peripheral neuropathy, and functional neurology from NervLock Lab.",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "NervLock Lab",
+        "url": "https://nervlocklab.com/en/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://nervlocklab.com/en/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://nervlocklab.com/en/blog/" }
+      ]
+    }
+  ]
+}
+</script>
+
+</body>
+</html>
