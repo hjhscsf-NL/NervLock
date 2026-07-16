@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dementia Doesn't Arrive Suddenly: The Decade-Long Neurobiological Cascade Before Diagnosis | NervLock</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; color: #1a1a2e; background: #fff; font-size: 17px; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    :root {
+      --navy: #0d2545; --navy2: #163561;
+      --teal: #1a7a6e; --teal2: #22a090;
+      --gold: #b8922a; --gold2: #d4a843;
+      --gray: #f4f6f9; --gray2: #e8ecf2;
+      --muted: #5a6278;
+    }
+
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(13,37,69,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-logo { font-size: 20px; font-weight: 900; color: #fff; white-space: nowrap; }
+    .nav-logo span { color: var(--gold2); }
+    .nav-back { font-size: 14px; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold2); }
+    .lang-toggle { display: flex; border: 1px solid rgba(255,255,255,0.22); border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+    .lang-btn { padding: 5px 12px; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); transition: all 0.18s; }
+    .lang-btn + .lang-btn { border-left: 1px solid rgba(255,255,255,0.22); }
+    .lang-btn.active { background: rgba(255,255,255,0.18); color: #fff; }
+
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 60px 24px 100px; }
+
+    .article-hero { background: linear-gradient(135deg, var(--navy) 0%, #0f4f6e 100%); border-radius: 24px; padding: 52px 48px; margin-bottom: 48px; position: relative; overflow: hidden; }
+    .article-hero::before { content: '🧠'; position: absolute; right: 32px; top: 32px; font-size: 80px; opacity: 0.15; }
+    .article-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(26,122,110,0.3); border: 1px solid rgba(26,122,110,0.5); border-radius: 50px; font-size: 12px; font-weight: 700; color: #6ee7da; padding: 4px 14px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+    .article-title { font-size: clamp(22px, 3.5vw, 34px); font-weight: 900; color: #fff; line-height: 1.3; margin-bottom: 20px; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 20px; }
+    .article-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.65); }
+    .article-meta-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+
+    .lang-switch-banner { background: var(--gray); border: 1px solid var(--gray2); border-radius: 14px; padding: 14px 20px; margin-bottom: 40px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .lang-switch-banner span { font-size: 14px; color: var(--muted); }
+    .lang-switch-link { font-size: 13px; font-weight: 700; color: var(--teal2); border: 1px solid var(--teal2); border-radius: 50px; padding: 6px 16px; transition: all 0.2s; white-space: nowrap; }
+    .lang-switch-link:hover { background: var(--teal2); color: #fff; }
+
+    .abstract { background: linear-gradient(135deg, rgba(26,122,110,0.06), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 16px 16px 0; padding: 24px 28px; margin-bottom: 48px; }
+    .abstract-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--teal2); margin-bottom: 10px; }
+    .abstract p { font-size: 15px; color: #2a3a4a; line-height: 1.85; margin: 0; font-style: italic; }
+
+    .article-body h2 { font-size: 24px; font-weight: 900; color: var(--navy); margin: 52px 0 16px; line-height: 1.35; padding-bottom: 12px; border-bottom: 2px solid var(--gray2); }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-size: 19px; font-weight: 800; color: var(--navy2); margin: 36px 0 12px; }
+    .article-body p { font-size: 16px; color: #2a2a3e; line-height: 1.95; margin-bottom: 20px; }
+    .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .article-body li { font-size: 15px; color: #3a3a50; line-height: 1.75; }
+    .article-body strong { color: var(--navy); }
+
+    .callout { background: linear-gradient(135deg, rgba(26,122,110,0.07), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: var(--navy); font-style: italic; line-height: 1.85; }
+    .callout strong { color: var(--teal); font-style: normal; }
+
+    .evidence-box { background: var(--gray); border-radius: 14px; padding: 20px 24px; margin: 28px 0; }
+    .evidence-box h4 { font-size: 12px; font-weight: 800; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .evidence-box ul { margin: 0; }
+    .evidence-box li { font-size: 13px; color: var(--muted); }
+
+    .symptom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+    .symptom-card { background: var(--gray); border-radius: 14px; padding: 18px 20px; border: 1px solid var(--gray2); }
+    .symptom-card h4 { font-size: 14px; font-weight: 800; color: var(--navy); margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+    .symptom-card p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+
+    .author-card { background: var(--gray); border-radius: 20px; padding: 28px 32px; margin-top: 64px; display: flex; align-items: flex-start; gap: 20px; }
+    .author-avatar { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--navy), var(--teal)); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+    .author-info h4 { font-size: 17px; font-weight: 900; color: var(--navy); margin-bottom: 4px; }
+    .author-info .creds { font-size: 13px; color: var(--teal); font-weight: 600; margin-bottom: 10px; }
+    .author-info p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+
+    .cta-banner { background: linear-gradient(135deg, var(--navy), #0f4f6e); border-radius: 20px; padding: 40px 36px; margin-top: 48px; text-align: center; }
+    .cta-banner h3 { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 10px; }
+    .cta-banner p { font-size: 15px; color: rgba(255,255,255,0.7); margin-bottom: 24px; line-height: 1.7; }
+    .cta-btn { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold2)); color: #fff; font-size: 16px; font-weight: 800; padding: 14px 36px; border-radius: 50px; box-shadow: 0 6px 20px rgba(184,146,42,0.4); transition: transform 0.2s; }
+    .cta-btn:hover { transform: translateY(-2px); }
+
+    .related { margin-top: 64px; }
+    .related h3 { font-size: 20px; font-weight: 900; color: var(--navy); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .related-card { background: var(--gray); border-radius: 16px; padding: 20px; border: 1px solid var(--gray2); }
+    .related-card .tag { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .related-card h4 { font-size: 15px; font-weight: 800; color: var(--navy); line-height: 1.4; }
+
+    footer { background: #0a1a32; color: rgba(255,255,255,0.5); padding: 32px 0; margin-top: 0; }
+    .footer-bottom { max-width: 900px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 12px; }
+
+    @media (max-width: 600px) {
+      .article-hero { padding: 36px 28px; }
+      .symptom-grid, .related-grid { grid-template-columns: 1fr; }
+      .author-card { flex-direction: column; }
+    }
+    /* Signature */
+    .sig-block { border-top: 2px solid var(--gray2); margin-top: 48px; padding-top: 24px; }
+    .sig-main { font-size: 14px; color: var(--navy); font-weight: 700; margin-bottom: 12px; line-height: 1.7; }
+    .sig-creds { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+    .sig-creds li { font-size: 13px; color: var(--muted); padding-left: 14px; position: relative; line-height: 1.6; }
+    .sig-creds li::before { content: "·"; position: absolute; left: 0; color: var(--teal2); font-weight: 900; }
+    .sig-notice { font-size: 12px; color: var(--muted); font-style: italic; line-height: 1.7; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/en/" class="nav-logo">Nerv<span>Lock</span></a>
+    <a href="/en/#blog" class="nav-back">← Medical Blog</a>
+    <div class="lang-toggle">
+      <a href="/blog/치매-10년전-신호/" class="lang-btn">KR</a>
+      <a href="/blog/dementia-preclinical-stage/" class="lang-btn active">EN</a>
+    </div>
+  </div>
+</nav>
+
+<div class="article-wrap">
+
+  <div class="article-hero">
+    <div class="article-tag">Neurological Disorders</div>
+    <h1 class="article-title">Dementia Doesn't Arrive Suddenly<br>The Decade-Long Neurobiological Cascade Before Diagnosis</h1>
+    <div class="article-meta">
+      <div class="article-meta-item">👩‍⚕️ <strong>Dr. Claire Ham</strong> — Neurologist, NervLock Founder</div>
+      <div class="article-meta-item">📅 July 1, 2026</div>
+      <div class="article-meta-item">⏱ 9 min read</div>
+    </div>
+  </div>
+
+  <div class="lang-switch-banner">
+    <span>🇰🇷 이 글의 한국어 버전을 보시겠습니까?</span>
+    <a href="/blog/치매-10년전-신호/" class="lang-switch-link">한국어로 읽기 →</a>
+  </div>
+
+  <div class="abstract">
+    <div class="abstract-label">Abstract</div>
+    <p>The clinical presentation of Alzheimer's disease — the gradual erosion of episodic memory, language, visuospatial function, and ultimately the capacity for independent living — represents the endpoint of a pathological process that begins silently, one to two decades before the first symptom. Understanding this extended preclinical trajectory is clinically essential: it reframes dementia from an inevitable consequence of aging to a condition with a long window in which risk factor modification and neuroprotective strategies may meaningfully influence the course of disease.</p>
+  </div>
+
+  <div class="article-body">
+
+    <h2>1. The Preclinical Stage: Disease Without Symptoms</h2>
+    <p>The amyloid cascade hypothesis — the dominant mechanistic framework for Alzheimer's disease pathogenesis — positions the aberrant accumulation of amyloid-beta (Aβ) peptides in the cerebral parenchyma as the initiating event. Aβ is derived from proteolytic processing of amyloid precursor protein (APP) by beta- and gamma-secretase enzymes; imbalance between Aβ production and clearance leads to the formation of soluble oligomers and ultimately insoluble fibrillar aggregates (neuritic plaques).</p>
+    <p>Critically, amyloid PET imaging studies and longitudinal biomarker analyses demonstrate that Aβ accumulation begins approximately 15–20 years before cognitive symptoms emerge. During this extended preclinical phase, individuals are neurobiologically diseased but cognitively indistinguishable from healthy controls — a period that represents both a diagnostic challenge and a therapeutic opportunity.</p>
+
+    <div class="callout">
+      <strong>Key concept:</strong> Alzheimer's disease is not a binary state but a continuous biological spectrum beginning long before any cognitive symptom is detectable. Recognizing this spectrum is the first step toward acting on early signals.
+    </div>
+
+    <h2>2. Tau Pathology and Neurodegeneration</h2>
+    <p>The second pathological hallmark of Alzheimer's disease — neurofibrillary tangles composed of hyperphosphorylated tau protein — appears later in the disease course but is more directly correlated with neuronal loss and cognitive decline than amyloid alone. Under pathological conditions, hyperphosphorylated tau dissociates from axonal microtubules, misfolds, and aggregates intraneuronally, disrupting axonal transport, impairing mitochondrial function, and ultimately causing neuronal death.</p>
+    <p>The Braak staging system for neurofibrillary pathology demonstrates a stereotyped progression: tau pathology begins in the transentorhinal cortex and hippocampus (Braak stages I–II), spreads to association cortices (stages III–IV), and eventually involves primary cortices (stages V–VI) — correlating with the characteristic pattern of functional decline from memory to language to motor function.</p>
+
+    <h2>3. Mild Cognitive Impairment: The Critical Transitional Stage</h2>
+    <p>Mild cognitive impairment (MCI) occupies the diagnostic space between normal cognitive aging and dementia: objective cognitive impairment on neuropsychological testing, preserved functional independence, and subjective awareness of cognitive change. Approximately 10–15% of individuals with MCI progress to dementia annually, compared to 1–2% of the general older adult population.</p>
+    <p>The distinction between MCI and normal aging is clinically significant and requires objective assessment. Age-related cognitive change produces gradual slowing of processing speed and mild word-finding difficulty; MCI involves disproportionate episodic memory impairment (particularly delayed recall), impaired navigational ability reflecting entorhinal-hippocampal dysfunction, and a progressive rather than stable course. Early neurological evaluation is warranted when patients or family members report consistent lapses beyond expected aging.</p>
+
+    <h2>4. The Glymphatic System: Why Sleep Is a Neurological Priority</h2>
+    <p>The glymphatic system — a perivascular waste clearance network dependent on aquaporin-4 (AQP4) water channels on astrocytic endfeet — provides the brain's primary mechanism for removing metabolic waste products accumulated during waking neural activity. Crucially, glymphatic function is dramatically upregulated during slow-wave sleep: CSF influx through the perivascular space increases two-fold, driving convective clearance of interstitial solutes including Aβ and tau.</p>
+    <p>Sleep deprivation experiments in humans demonstrate measurable increases in CSF Aβ concentrations following a single night of sleep restriction — a finding with immediate clinical implications. Chronic sleep insufficiency, obstructive sleep apnea (which fragments slow-wave sleep), and disrupted circadian rhythms all impair glymphatic efficiency, potentially accelerating amyloid accumulation over years to decades.</p>
+
+    <div class="callout">
+      <strong>Clinical insight:</strong> Sleep optimization is not merely a wellness recommendation but a neurologically grounded strategy for amyloid burden management — one of the few modifiable variables directly linked to a measurable clearance mechanism in the brain.
+    </div>
+
+    <h2>5. Early Warning Signals</h2>
+    <p>Several non-cognitive signals can precede the memory symptoms typically associated with dementia by years, reflecting the specific anatomical distribution of early pathology.</p>
+
+    <div class="symptom-grid">
+      <div class="symptom-card">
+        <h4>👃 Olfactory Dysfunction</h4>
+        <p>The olfactory bulb and transentorhinal cortex — among the earliest sites of Alzheimer pathology in Braak staging — produce hyposmia as an early, measurable clinical signal.</p>
+      </div>
+      <div class="symptom-card">
+        <h4>😴 REM Sleep Behavior Disorder</h4>
+        <p>Loss of REM atonia, producing dream enactment behavior, is a recognized prodromal marker for synucleinopathies and may signal broader neurodegenerative vulnerability.</p>
+      </div>
+      <div class="symptom-card">
+        <h4>😔 Apathy and Depression</h4>
+        <p>Neuropsychiatric symptoms — particularly apathy and loss of initiative — frequently precede cognitive decline, reflecting early involvement of prefrontal-limbic circuits.</p>
+      </div>
+      <div class="symptom-card">
+        <h4>🗺️ Spatial Disorientation</h4>
+        <p>Difficulty with novel route-finding, reflecting hippocampal and entorhinal dysfunction, is a sensitive early sign that may precede frank memory complaints.</p>
+      </div>
+    </div>
+
+    <div class="evidence-box">
+      <h4>📚 Key References</h4>
+      <ul>
+        <li>Jack CR Jr et al. (2018). NIA-AA Research Framework: toward a biological definition of Alzheimer's disease. <em>Alzheimer's &amp; Dementia</em> 14(4):535-562</li>
+        <li>Braak H &amp; Braak E (1991). Neuropathological stageing of Alzheimer-related changes. <em>Acta Neuropathologica</em> 82(4):239-259</li>
+        <li>Xie L et al. (2013). Sleep drives metabolite clearance from the adult brain. <em>Science</em> 342(6156):373-377</li>
+        <li>Petersen RC (2016). Mild cognitive impairment. <em>Continuum</em> 22(2):404-418</li>
+      </ul>
+    </div>
+
+    <div class="author-card">
+      <div class="author-avatar">👩‍⚕️</div>
+      <div class="author-info">
+        <h4>Dr. Claire Ham (Jeehyun Ham, M.D.)</h4>
+        <div class="creds">Claire Ham, M.D. — Neurologist · Yonsei University College of Medicine · Severance Hospital, Department of Neurology</div>
+        <p>Member, Korean Neurological Association · Member, Korean Parkinson's Disease and Movement Disorder Society · Member, Korean Society of Functional Medicine. This article is for informational purposes only and does not constitute medical advice or replace professional consultation.</p>
+      </div>
+    </div>
+
+    <div class="cta-banner">
+      <h3>Start Your Brain Health Routine with NervLock Brain Energy</h3>
+      <p>Formulated by a neurologist with phosphatidylserine + rTG Omega-3 — core ingredients your brain needs.<br>NervLock's first product is launching soon.</p>
+      <a href="/en/#coming-soon" class="cta-btn">Get Launch Notification</a>
+    </div>
+
+    <div class="related">
+      <h3>Related Articles</h3>
+      <div class="related-grid">
+        <div class="related-card">
+          <a href="/blog/dementia-modifiable-risk-factors/">
+            <div class="tag">Neurological Disorders</div>
+            <h4>Modifiable Risk Factors for Dementia: What the Lancet Commission Evidence Tells Us</h4>
+          </a>
+        </div>
+        <div class="related-card">
+          <a href="/blog/homocysteine-dementia-b-vitamins/">
+            <div class="tag">Neurological Disorders</div>
+            <h4>Homocysteine, Brain Atrophy, and B Vitamins: The Neurological Evidence</h4>
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="sig-block">
+      <p class="sig-main"><strong>Dr. Claire Ham (Jeehyun Ham, M.D.)</strong><br>Claire Ham, M.D. — Neurologist</p>
+      <ul class="sig-creds">
+        <li>Yonsei University College of Medicine</li>
+        <li>Severance Hospital Neurology</li>
+        <li>Member, Korean Neurological Association</li>
+        <li>Member, Korean Parkinson's Disease and Movement Disorder Society</li>
+        <li>Member, Korean Society of Functional Medicine</li>
+      </ul>
+      <p class="sig-notice">※ This content is for informational purposes only and does not constitute medical advice.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2026 NervLock. All rights reserved.</p>
+    <p>This article is for informational purposes only and does not constitute medical advice.</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Homocysteine, Brain Atrophy, and B Vitamins: The Neurological Evidence | NervLock</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; color: #1a1a2e; background: #fff; font-size: 17px; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    :root {
+      --navy: #0d2545; --navy2: #163561;
+      --teal: #1a7a6e; --teal2: #22a090;
+      --gold: #b8922a; --gold2: #d4a843;
+      --gray: #f4f6f9; --gray2: #e8ecf2;
+      --muted: #5a6278;
+    }
+
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(13,37,69,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-logo { font-size: 20px; font-weight: 900; color: #fff; white-space: nowrap; }
+    .nav-logo span { color: var(--gold2); }
+    .nav-back { font-size: 14px; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold2); }
+    .lang-toggle { display: flex; border: 1px solid rgba(255,255,255,0.22); border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+    .lang-btn { padding: 5px 12px; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); transition: all 0.18s; }
+    .lang-btn + .lang-btn { border-left: 1px solid rgba(255,255,255,0.22); }
+    .lang-btn.active { background: rgba(255,255,255,0.18); color: #fff; }
+
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 60px 24px 100px; }
+
+    .article-hero { background: linear-gradient(135deg, var(--navy) 0%, #0f4f6e 100%); border-radius: 24px; padding: 52px 48px; margin-bottom: 48px; position: relative; overflow: hidden; }
+    .article-hero::before { content: '🧪'; position: absolute; right: 32px; top: 32px; font-size: 80px; opacity: 0.15; }
+    .article-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(26,122,110,0.3); border: 1px solid rgba(26,122,110,0.5); border-radius: 50px; font-size: 12px; font-weight: 700; color: #6ee7da; padding: 4px 14px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+    .article-title { font-size: clamp(22px, 3.5vw, 34px); font-weight: 900; color: #fff; line-height: 1.3; margin-bottom: 20px; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 20px; }
+    .article-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.65); }
+    .article-meta-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+
+    .lang-switch-banner { background: var(--gray); border: 1px solid var(--gray2); border-radius: 14px; padding: 14px 20px; margin-bottom: 40px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .lang-switch-banner span { font-size: 14px; color: var(--muted); }
+    .lang-switch-link { font-size: 13px; font-weight: 700; color: var(--teal2); border: 1px solid var(--teal2); border-radius: 50px; padding: 6px 16px; transition: all 0.2s; white-space: nowrap; }
+    .lang-switch-link:hover { background: var(--teal2); color: #fff; }
+
+    .abstract { background: linear-gradient(135deg, rgba(26,122,110,0.06), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 16px 16px 0; padding: 24px 28px; margin-bottom: 48px; }
+    .abstract-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--teal2); margin-bottom: 10px; }
+    .abstract p { font-size: 15px; color: #2a3a4a; line-height: 1.85; margin: 0; font-style: italic; }
+
+    .article-body h2 { font-size: 24px; font-weight: 900; color: var(--navy); margin: 52px 0 16px; line-height: 1.35; padding-bottom: 12px; border-bottom: 2px solid var(--gray2); }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-size: 19px; font-weight: 800; color: var(--navy2); margin: 36px 0 12px; }
+    .article-body p { font-size: 16px; color: #2a2a3e; line-height: 1.95; margin-bottom: 20px; }
+    .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .article-body li { font-size: 15px; color: #3a3a50; line-height: 1.75; }
+    .article-body strong { color: var(--navy); }
+
+    .callout { background: linear-gradient(135deg, rgba(26,122,110,0.07), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: var(--navy); font-style: italic; line-height: 1.85; }
+    .callout strong { color: var(--teal); font-style: normal; }
+
+    .evidence-box { background: var(--gray); border-radius: 14px; padding: 20px 24px; margin: 28px 0; }
+    .evidence-box h4 { font-size: 12px; font-weight: 800; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .evidence-box ul { margin: 0; }
+    .evidence-box li { font-size: 13px; color: var(--muted); }
+
+    .symptom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+    .symptom-card { background: var(--gray); border-radius: 14px; padding: 18px 20px; border: 1px solid var(--gray2); }
+    .symptom-card h4 { font-size: 14px; font-weight: 800; color: var(--navy); margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+    .symptom-card p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+
+    .author-card { background: var(--gray); border-radius: 20px; padding: 28px 32px; margin-top: 64px; display: flex; align-items: flex-start; gap: 20px; }
+    .author-avatar { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--navy), var(--teal)); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+    .author-info h4 { font-size: 17px; font-weight: 900; color: var(--navy); margin-bottom: 4px; }
+    .author-info .creds { font-size: 13px; color: var(--teal); font-weight: 600; margin-bottom: 10px; }
+    .author-info p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+
+    .cta-banner { background: linear-gradient(135deg, var(--navy), #0f4f6e); border-radius: 20px; padding: 40px 36px; margin-top: 48px; text-align: center; }
+    .cta-banner h3 { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 10px; }
+    .cta-banner p { font-size: 15px; color: rgba(255,255,255,0.7); margin-bottom: 24px; line-height: 1.7; }
+    .cta-btn { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold2)); color: #fff; font-size: 16px; font-weight: 800; padding: 14px 36px; border-radius: 50px; box-shadow: 0 6px 20px rgba(184,146,42,0.4); transition: transform 0.2s; }
+    .cta-btn:hover { transform: translateY(-2px); }
+
+    .related { margin-top: 64px; }
+    .related h3 { font-size: 20px; font-weight: 900; color: var(--navy); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .related-card { background: var(--gray); border-radius: 16px; padding: 20px; border: 1px solid var(--gray2); }
+    .related-card .tag { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .related-card h4 { font-size: 15px; font-weight: 800; color: var(--navy); line-height: 1.4; }
+
+    footer { background: #0a1a32; color: rgba(255,255,255,0.5); padding: 32px 0; margin-top: 0; }
+    .footer-bottom { max-width: 900px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 12px; }
+
+    @media (max-width: 600px) {
+      .article-hero { padding: 36px 28px; }
+      .symptom-grid, .related-grid { grid-template-columns: 1fr; }
+      .author-card { flex-direction: column; }
+    }
+    /* Signature */
+    .sig-block { border-top: 2px solid var(--gray2); margin-top: 48px; padding-top: 24px; }
+    .sig-main { font-size: 14px; color: var(--navy); font-weight: 700; margin-bottom: 12px; line-height: 1.7; }
+    .sig-creds { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+    .sig-creds li { font-size: 13px; color: var(--muted); padding-left: 14px; position: relative; line-height: 1.6; }
+    .sig-creds li::before { content: "·"; position: absolute; left: 0; color: var(--teal2); font-weight: 900; }
+    .sig-notice { font-size: 12px; color: var(--muted); font-style: italic; line-height: 1.7; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/en/" class="nav-logo">Nerv<span>Lock</span></a>
+    <a href="/en/#blog" class="nav-back">← Medical Blog</a>
+    <div class="lang-toggle">
+      <a href="/blog/호모시스테인-치매-B비타민/" class="lang-btn">KR</a>
+      <a href="/blog/homocysteine-dementia-b-vitamins/" class="lang-btn active">EN</a>
+    </div>
+  </div>
+</nav>
+
+<div class="article-wrap">
+
+  <div class="article-hero">
+    <div class="article-tag">Neurological Disorders</div>
+    <h1 class="article-title">Homocysteine, Brain Atrophy, and B Vitamins<br>The Neurological Evidence</h1>
+    <div class="article-meta">
+      <div class="article-meta-item">👩‍⚕️ <strong>Dr. Claire Ham</strong> — Neurologist, NervLock Founder</div>
+      <div class="article-meta-item">📅 July 5, 2026</div>
+      <div class="article-meta-item">⏱ 8 min read</div>
+    </div>
+  </div>
+
+  <div class="lang-switch-banner">
+    <span>🇰🇷 이 글의 한국어 버전을 보시겠습니까?</span>
+    <a href="/blog/호모시스테인-치매-B비타민/" class="lang-switch-link">한국어로 읽기 →</a>
+  </div>
+
+  <div class="abstract">
+    <div class="abstract-label">Abstract</div>
+    <p>Elevated plasma homocysteine — hyperhomocysteinemia — is an independent risk factor for cognitive decline, accelerated brain atrophy, and dementia, with a dose-response relationship documented across multiple prospective cohort studies. Uniquely among dementia risk factors, hyperhomocysteinemia is biochemically measurable with a standard blood test, mechanistically understood, and addressable through targeted B vitamin supplementation. The VITACOG trial (Oxford, 2010) provided landmark clinical evidence that B12, folate, and B6 supplementation in individuals with elevated homocysteine produces a 53% reduction in the rate of brain atrophy — one of the strongest nutritional intervention effects on a neuroimaging endpoint in the literature.</p>
+  </div>
+
+  <div class="article-body">
+
+    <h2>1. Homocysteine Biochemistry and the Methionine Cycle</h2>
+    <p>Homocysteine is a sulfur-containing amino acid produced endogenously as an intermediate in the methionine cycle — the central one-carbon metabolic pathway governing methylation reactions throughout the body. Dietary methionine is converted to S-adenosylmethionine (SAM), which donates its methyl group to DNA, proteins, phospholipids, and neurotransmitters; the resulting S-adenosylhomocysteine (SAH) is hydrolyzed to homocysteine. Homocysteine is then either remethylated to methionine (requiring methylcobalamin/B12 and methyltetrahydrofolate/folate as cofactors, catalyzed by methionine synthase) or transsulfurated to cysteine (requiring pyridoxal phosphate/B6 as cofactor).</p>
+    <p>When these disposal pathways are impaired — by B vitamin deficiency, genetic polymorphisms in key enzymes (particularly MTHFR C677T, which reduces 5,10-methylenetetrahydrofolate reductase activity by 30–70%), impaired renal clearance, or high-protein dietary loads — homocysteine accumulates in plasma. Normal fasting plasma homocysteine is conventionally defined as 5–15 μmol/L; values of 15–30 μmol/L represent moderate hyperhomocysteinemia; &gt;30 μmol/L severe hyperhomocysteinemia.</p>
+
+    <h2>2. Mechanisms of Neurotoxicity</h2>
+
+    <h3>2.1 Vascular Endothelial Injury</h3>
+    <p>Homocysteine is directly cytotoxic to vascular endothelium through multiple mechanisms: generation of reactive oxygen species via auto-oxidation; inhibition of endothelial nitric oxide synthase (eNOS), reducing vasodilatory NO production; induction of endoplasmic reticulum stress; and promotion of a procoagulant endothelial phenotype. The cumulative effect is accelerated cerebrovascular disease — white matter hyperintensities, cerebral small vessel disease, and impaired cerebrovascular autoregulation.</p>
+
+    <h3>2.2 NMDA Receptor Excitotoxicity</h3>
+    <p>Homocysteine acts as a partial agonist at NMDA glutamate receptors, producing chronic low-level excitotoxic stimulation of neurons — particularly in the hippocampus, which is densely populated with NMDA receptors and critically dependent on precise glutamatergic tone for long-term potentiation and memory encoding.</p>
+
+    <h3>2.3 Direct Oxidative Damage</h3>
+    <p>Homocysteine auto-oxidation generates hydrogen peroxide and superoxide radicals, depleting neuronal antioxidant capacity (particularly glutathione) and producing mitochondrial oxidative damage in metabolically demanding hippocampal and cortical neurons.</p>
+
+    <h2>3. Epidemiological Evidence</h2>
+    <p>The Framingham Study (Seshadri et al., 2002) provided seminal epidemiological evidence: among 1,092 community-dwelling adults followed prospectively, each 1 standard deviation increase in plasma homocysteine was associated with a doubling of the risk of developing Alzheimer's disease. Individuals in the highest homocysteine quartile had an age- and sex-adjusted relative risk of 1.8 for dementia compared to the lowest quartile.</p>
+    <p>A comprehensive meta-analysis by Ford and Almeida (2012) confirmed that hyperhomocysteinemia is associated with a 30–35% increased risk of dementia across prospective cohort studies, with the relationship strongest for vascular dementia but present for Alzheimer's disease as well.</p>
+
+    <h2>4. The VITACOG Trial: Clinical Evidence for B Vitamin Intervention</h2>
+    <p>The Oxford Project to Investigate Memory and Ageing (OPTIMA) — specifically the VITACOG trial (Smith et al., 2010, <em>PLOS ONE</em>) — randomized 168 individuals with mild cognitive impairment and elevated homocysteine to daily supplementation with folic acid (0.8 mg), vitamin B12 (0.5 mg), and vitamin B6 (20 mg) or placebo for 24 months. The primary endpoint was the rate of brain atrophy measured by serial volumetric MRI.</p>
+    <p>The results were striking: the B vitamin group demonstrated a 53% reduction in the rate of whole-brain atrophy compared to placebo — an effect confined almost entirely to participants with baseline homocysteine above the median. Accelerated atrophy was concentrated in the regions most vulnerable to Alzheimer's pathology (medial temporal lobe, hippocampus, parahippocampal gyrus), and the degree of atrophy reduction correlated with the degree of homocysteine lowering achieved by supplementation.</p>
+
+    <div class="callout">
+      <strong>Key finding:</strong> A subsequent analysis (Douaud et al., 2013, <em>PNAS</em>) demonstrated that B vitamin treatment specifically attenuated atrophy in the gray matter regions most implicated in Alzheimer's disease, with atrophy rates 7-fold lower in these regions compared to placebo — and that this protection was associated with lower amyloid-related white matter damage.
+    </div>
+
+    <h2>5. B Vitamins: Mechanisms and Forms</h2>
+    <ul>
+      <li><strong>Methylcobalamin (B12):</strong> The neurologically active form of B12, directly utilized by methionine synthase without requiring hepatic biotransformation. Essential for remethylation of homocysteine to methionine and for myelin synthesis. Deficiency is prevalent in older adults, long-term metformin users, and those on chronic proton pump inhibitors.</li>
+      <li><strong>Folate (as methyltetrahydrofolate):</strong> Provides the methyl group for homocysteine remethylation. MTHFR C677T polymorphism — present in heterozygous form in approximately 40% of many populations — reduces folate metabolism efficiency, making adequate folate intake particularly important in genetically predisposed individuals.</li>
+      <li><strong>Pyridoxal-5-phosphate (B6):</strong> Essential cofactor for cystathionine beta-synthase, which initiates the transsulfuration pathway converting homocysteine to cysteine. Also required for synthesis of dopamine, serotonin, and GABA from their amino acid precursors.</li>
+    </ul>
+
+    <h2>6. Clinical Recommendations</h2>
+    <p><strong>Homocysteine measurement:</strong> Fasting plasma homocysteine is not included in standard metabolic panels and must be specifically requested. Testing is particularly indicated in adults over 50, individuals with cognitive complaints, those on medications affecting B12 absorption (metformin, PPIs, H2 blockers), strict vegetarians and vegans, and those with known MTHFR polymorphisms.</p>
+    <p><strong>B vitamin supplementation:</strong> For individuals with elevated homocysteine and low-normal B12 or folate, targeted B vitamin supplementation is a rational, evidence-based, and safe intervention. Korea's MFDS recognizes B6, B12, and folate for their role in normal homocysteine metabolism.</p>
+
+    <div class="evidence-box">
+      <h4>📚 Key References</h4>
+      <ul>
+        <li>Smith AD et al. (2010). Homocysteine-lowering by B vitamins slows the rate of accelerated brain atrophy. <em>PLOS ONE</em> 5(9):e12244</li>
+        <li>Douaud G et al. (2013). Preventing Alzheimer's disease-related gray matter atrophy by B-vitamin treatment. <em>PNAS</em> 110(23):9523-9528</li>
+        <li>Seshadri S et al. (2002). Plasma homocysteine as a risk factor for dementia and Alzheimer's disease. <em>NEJM</em> 346(7):476-483</li>
+        <li>Clarke R et al. (1998). Folate, vitamin B12, and serum total homocysteine levels in confirmed Alzheimer disease. <em>Archives of Neurology</em> 55(11):1449-1455</li>
+      </ul>
+    </div>
+
+    <div class="author-card">
+      <div class="author-avatar">👩‍⚕️</div>
+      <div class="author-info">
+        <h4>Dr. Claire Ham (Jeehyun Ham, M.D.)</h4>
+        <div class="creds">Claire Ham, M.D. — Neurologist · Yonsei University College of Medicine · Severance Hospital, Department of Neurology</div>
+        <p>Member, Korean Neurological Association · Member, Korean Parkinson's Disease and Movement Disorder Society · Member, Korean Society of Functional Medicine. This article is for informational purposes only and does not constitute medical advice or replace professional consultation.</p>
+      </div>
+    </div>
+
+    <div class="cta-banner">
+      <h3>Start Your Brain Health Routine with NervLock Brain Energy</h3>
+      <p>Includes B12, folate, and B6 to support homocysteine metabolism.<br>NervLock's first product is launching soon.</p>
+      <a href="/en/#coming-soon" class="cta-btn">Get Launch Notification</a>
+    </div>
+
+    <div class="related">
+      <h3>Related Articles</h3>
+      <div class="related-grid">
+        <div class="related-card">
+          <a href="/blog/dementia-preclinical-stage/">
+            <div class="tag">Neurological Disorders</div>
+            <h4>Dementia Doesn't Arrive Suddenly: The Decade-Long Neurobiological Cascade Before Diagnosis</h4>
+          </a>
+        </div>
+        <div class="related-card">
+          <a href="/blog/dementia-modifiable-risk-factors/">
+            <div class="tag">Neurological Disorders</div>
+            <h4>Modifiable Risk Factors for Dementia: What the Lancet Commission Evidence Tells Us</h4>
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="sig-block">
+      <p class="sig-main"><strong>Dr. Claire Ham (Jeehyun Ham, M.D.)</strong><br>Claire Ham, M.D. — Neurologist</p>
+      <ul class="sig-creds">
+        <li>Yonsei University College of Medicine</li>
+        <li>Severance Hospital Neurology</li>
+        <li>Member, Korean Neurological Association</li>
+        <li>Member, Korean Parkinson's Disease and Movement Disorder Society</li>
+        <li>Member, Korean Society of Functional Medicine</li>
+      </ul>
+      <p class="sig-notice">※ This content is for informational purposes only and does not constitute medical advice.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2026 NervLock. All rights reserved.</p>
+    <p>This article is for informational purposes only and does not constitute medical advice.</p>
+  </div>
+</footer>
+
+</body>
+</html>

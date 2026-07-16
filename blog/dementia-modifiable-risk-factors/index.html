@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Modifiable Risk Factors for Dementia: What the Lancet Commission Evidence Tells Us | NervLock</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; color: #1a1a2e; background: #fff; font-size: 17px; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    :root {
+      --navy: #0d2545; --navy2: #163561;
+      --teal: #1a7a6e; --teal2: #22a090;
+      --gold: #b8922a; --gold2: #d4a843;
+      --gray: #f4f6f9; --gray2: #e8ecf2;
+      --muted: #5a6278;
+    }
+
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(13,37,69,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-logo { font-size: 20px; font-weight: 900; color: #fff; white-space: nowrap; }
+    .nav-logo span { color: var(--gold2); }
+    .nav-back { font-size: 14px; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold2); }
+    .lang-toggle { display: flex; border: 1px solid rgba(255,255,255,0.22); border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+    .lang-btn { padding: 5px 12px; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); transition: all 0.18s; }
+    .lang-btn + .lang-btn { border-left: 1px solid rgba(255,255,255,0.22); }
+    .lang-btn.active { background: rgba(255,255,255,0.18); color: #fff; }
+
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 60px 24px 100px; }
+
+    .article-hero { background: linear-gradient(135deg, var(--navy) 0%, #0f4f6e 100%); border-radius: 24px; padding: 52px 48px; margin-bottom: 48px; position: relative; overflow: hidden; }
+    .article-hero::before { content: '🏃'; position: absolute; right: 32px; top: 32px; font-size: 80px; opacity: 0.15; }
+    .article-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(26,122,110,0.3); border: 1px solid rgba(26,122,110,0.5); border-radius: 50px; font-size: 12px; font-weight: 700; color: #6ee7da; padding: 4px 14px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+    .article-title { font-size: clamp(22px, 3.5vw, 34px); font-weight: 900; color: #fff; line-height: 1.3; margin-bottom: 20px; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 20px; }
+    .article-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.65); }
+    .article-meta-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+
+    .lang-switch-banner { background: var(--gray); border: 1px solid var(--gray2); border-radius: 14px; padding: 14px 20px; margin-bottom: 40px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .lang-switch-banner span { font-size: 14px; color: var(--muted); }
+    .lang-switch-link { font-size: 13px; font-weight: 700; color: var(--teal2); border: 1px solid var(--teal2); border-radius: 50px; padding: 6px 16px; transition: all 0.2s; white-space: nowrap; }
+    .lang-switch-link:hover { background: var(--teal2); color: #fff; }
+
+    .abstract { background: linear-gradient(135deg, rgba(26,122,110,0.06), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 16px 16px 0; padding: 24px 28px; margin-bottom: 48px; }
+    .abstract-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--teal2); margin-bottom: 10px; }
+    .abstract p { font-size: 15px; color: #2a3a4a; line-height: 1.85; margin: 0; font-style: italic; }
+
+    .article-body h2 { font-size: 24px; font-weight: 900; color: var(--navy); margin: 52px 0 16px; line-height: 1.35; padding-bottom: 12px; border-bottom: 2px solid var(--gray2); }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-size: 19px; font-weight: 800; color: var(--navy2); margin: 36px 0 12px; }
+    .article-body p { font-size: 16px; color: #2a2a3e; line-height: 1.95; margin-bottom: 20px; }
+    .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .article-body li { font-size: 15px; color: #3a3a50; line-height: 1.75; }
+    .article-body strong { color: var(--navy); }
+
+    .callout { background: linear-gradient(135deg, rgba(26,122,110,0.07), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: var(--navy); font-style: italic; line-height: 1.85; }
+    .callout strong { color: var(--teal); font-style: normal; }
+
+    .evidence-box { background: var(--gray); border-radius: 14px; padding: 20px 24px; margin: 28px 0; }
+    .evidence-box h4 { font-size: 12px; font-weight: 800; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .evidence-box ul { margin: 0; }
+    .evidence-box li { font-size: 13px; color: var(--muted); }
+
+    .symptom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+    .symptom-card { background: var(--gray); border-radius: 14px; padding: 18px 20px; border: 1px solid var(--gray2); }
+    .symptom-card h4 { font-size: 14px; font-weight: 800; color: var(--navy); margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+    .symptom-card p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+
+    .author-card { background: var(--gray); border-radius: 20px; padding: 28px 32px; margin-top: 64px; display: flex; align-items: flex-start; gap: 20px; }
+    .author-avatar { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--navy), var(--teal)); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+    .author-info h4 { font-size: 17px; font-weight: 900; color: var(--navy); margin-bottom: 4px; }
+    .author-info .creds { font-size: 13px; color: var(--teal); font-weight: 600; margin-bottom: 10px; }
+    .author-info p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+
+    .cta-banner { background: linear-gradient(135deg, var(--navy), #0f4f6e); border-radius: 20px; padding: 40px 36px; margin-top: 48px; text-align: center; }
+    .cta-banner h3 { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 10px; }
+    .cta-banner p { font-size: 15px; color: rgba(255,255,255,0.7); margin-bottom: 24px; line-height: 1.7; }
+    .cta-btn { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold2)); color: #fff; font-size: 16px; font-weight: 800; padding: 14px 36px; border-radius: 50px; box-shadow: 0 6px 20px rgba(184,146,42,0.4); transition: transform 0.2s; }
+    .cta-btn:hover { transform: translateY(-2px); }
+
+    .related { margin-top: 64px; }
+    .related h3 { font-size: 20px; font-weight: 900; color: var(--navy); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .related-card { background: var(--gray); border-radius: 16px; padding: 20px; border: 1px solid var(--gray2); }
+    .related-card .tag { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .related-card h4 { font-size: 15px; font-weight: 800; color: var(--navy); line-height: 1.4; }
+
+    footer { background: #0a1a32; color: rgba(255,255,255,0.5); padding: 32px 0; margin-top: 0; }
+    .footer-bottom { max-width: 900px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 12px; }
+
+    @media (max-width: 600px) {
+      .article-hero { padding: 36px 28px; }
+      .symptom-grid, .related-grid { grid-template-columns: 1fr; }
+      .author-card { flex-direction: column; }
+    }
+    /* Signature */
+    .sig-block { border-top: 2px solid var(--gray2); margin-top: 48px; padding-top: 24px; }
+    .sig-main { font-size: 14px; color: var(--navy); font-weight: 700; margin-bottom: 12px; line-height: 1.7; }
+    .sig-creds { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+    .sig-creds li { font-size: 13px; color: var(--muted); padding-left: 14px; position: relative; line-height: 1.6; }
+    .sig-creds li::before { content: "·"; position: absolute; left: 0; color: var(--teal2); font-weight: 900; }
+    .sig-notice { font-size: 12px; color: var(--muted); font-style: italic; line-height: 1.7; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/en/" class="nav-logo">Nerv<span>Lock</span></a>
+    <a href="/en/#blog" class="nav-back">← Medical Blog</a>
+    <div class="lang-toggle">
+      <a href="/blog/치매-위험-생활습관/" class="lang-btn">KR</a>
+      <a href="/blog/dementia-modifiable-risk-factors/" class="lang-btn active">EN</a>
+    </div>
+  </div>
+</nav>
+
+<div class="article-wrap">
+
+  <div class="article-hero">
+    <div class="article-tag">Neurological Disorders</div>
+    <h1 class="article-title">Modifiable Risk Factors for Dementia<br>What the Lancet Commission Evidence Tells Us</h1>
+    <div class="article-meta">
+      <div class="article-meta-item">👩‍⚕️ <strong>Dr. Claire Ham</strong> — Neurologist, NervLock Founder</div>
+      <div class="article-meta-item">📅 July 3, 2026</div>
+      <div class="article-meta-item">⏱ 8 min read</div>
+    </div>
+  </div>
+
+  <div class="lang-switch-banner">
+    <span>🇰🇷 이 글의 한국어 버전을 보시겠습니까?</span>
+    <a href="/blog/치매-위험-생활습관/" class="lang-switch-link">한국어로 읽기 →</a>
+  </div>
+
+  <div class="abstract">
+    <div class="abstract-label">Abstract</div>
+    <p>The 2020 Lancet Commission on Dementia Prevention, Intervention, and Care — representing the most comprehensive synthesis of dementia risk factor evidence to date — estimated that 12 potentially modifiable risk factors account for approximately 40% of dementia cases worldwide. This finding fundamentally repositions dementia from a condition of biological inevitability to one substantially influenced by exposures and behaviors that can be identified and addressed across the lifespan. This article examines seven of the most clinically actionable modifiable risk factors, the neurobiological mechanisms linking each to dementia risk, and the evidence base for their modification.</p>
+  </div>
+
+  <div class="article-body">
+
+    <h2>1. Reframing Dementia Risk</h2>
+    <p>The 2020 Lancet Commission on Dementia Prevention, Intervention, and Care synthesized decades of epidemiological and mechanistic evidence to identify twelve potentially modifiable risk factors accounting for approximately 40% of dementia cases globally. It is important to be precise about what this figure represents: it reflects population-attributable risk based on observed associations, not proof that eliminating a given exposure guarantees prevention of dementia in any individual.</p>
+    <p>Nonetheless, the magnitude of modifiable risk identified by the Commission is clinically significant. The following seven factors represent the most actionable targets for individuals and clinicians alike.</p>
+
+    <h2>2. The Seven Most Actionable Risk Factors</h2>
+
+    <h3>2.1 Sleep Insufficiency and Disruption</h3>
+    <p>The mechanistic link between sleep and dementia risk is now well-characterized through the glymphatic clearance system. Slow-wave sleep drives convective CSF flow through perivascular spaces, clearing interstitial amyloid-beta and tau — a process substantially impaired by chronic sleep restriction, obstructive sleep apnea, and circadian disruption.</p>
+    <p>Prospective epidemiological data demonstrate a consistent U-shaped relationship between habitual sleep duration and dementia risk, with both short (&lt;6 hours) and long (&gt;9 hours, which may reflect prodromal neurodegeneration) sleep durations associated with elevated risk. The FINGER trial and related multidomain intervention studies consistently find sleep optimization among the components with the greatest cognitive benefit-to-effort ratio.</p>
+
+    <h3>2.2 Midlife Hypertension</h3>
+    <p>Hypertension in midlife (ages 45–65) carries one of the highest population-attributable risks among the Lancet Commission factors, contributing an estimated 2% of dementia cases. The mechanistic pathways are multiple: cerebral small vessel disease producing white matter hyperintensities and lacunar infarcts; impaired cerebrovascular autoregulation; and accelerated arteriolosclerosis reducing cortical blood flow.</p>
+    <p>The Syst-Eur trial demonstrated that antihypertensive treatment reduced dementia incidence by 50% over two years — one of the strongest pharmacological effects on dementia risk in the literature. Systolic blood pressure targets of &lt;130 mmHg in midlife adults are supported by both cardiovascular and neurological outcome data.</p>
+
+    <h3>2.3 Physical Inactivity</h3>
+    <p>Regular aerobic exercise produces robust neurobiological effects relevant to dementia risk: upregulation of BDNF (brain-derived neurotrophic factor) promoting hippocampal neurogenesis and synaptic plasticity; enhanced cerebrovascular function; reduced neuroinflammatory cytokine burden; and improved insulin sensitivity reducing the cerebral insulin resistance implicated in Alzheimer's disease pathogenesis.</p>
+    <p>A meta-analysis by Hamer and Chida (2009) found that the highest physical activity levels were associated with a 28% reduction in dementia risk and 45% reduction in Alzheimer's disease risk compared to the lowest activity levels. Even modest activity increases produce measurable cognitive benefits, with diminishing returns at very high intensities.</p>
+
+    <h3>2.4 Smoking</h3>
+    <p>Tobacco smoking increases dementia risk through multiple convergent mechanisms: cerebrovascular injury via endothelial dysfunction and atherosclerosis; chronic systemic inflammation; oxidative stress-mediated neuronal damage; and potential direct neurotoxic effects of nicotine withdrawal on cholinergic neurons. A meta-analysis of prospective studies found that current smokers had a 59% higher risk of Alzheimer's disease compared to never-smokers, with risk declining progressively following cessation.</p>
+
+    <h3>2.5 Social Isolation</h3>
+    <p>Cognitive reserve — the brain's capacity to maintain function despite accumulating pathology — is substantially built through social engagement, intellectual stimulation, and emotional connection across the lifespan. Social isolation reduces cognitive reserve through decreased cognitive stimulation, reduced motivational drive for mental engagement, elevated cortisol from chronic loneliness, and disrupted sleep architecture.</p>
+    <p>The dementia risk associated with social isolation is comparable in magnitude to established risk factors such as hypertension and physical inactivity — a finding with important implications for retirement and post-retirement social engagement planning.</p>
+
+    <h3>2.6 Excessive Alcohol Consumption</h3>
+    <p>Heavy alcohol use (&gt;14 standard drinks/week) produces dementia risk through direct neurotoxicity, thiamine (B1) deficiency causing Wernicke-Korsakoff syndrome, accelerated cerebral atrophy, and cerebrovascular injury. The relationship between moderate alcohol consumption and dementia risk remains contested in the literature, with earlier apparent protective effects largely attributable to confounding by abstainer heterogeneity.</p>
+
+    <h3>2.7 Diabetes and Insulin Resistance</h3>
+    <p>The concept of "cerebral insulin resistance" — impaired neuronal insulin signaling producing reduced glucose utilization, increased Aβ production, and tau hyperphosphorylation — has been termed "Type 3 Diabetes" in the research literature. Individuals with type 2 diabetes have approximately 50–65% higher dementia risk, with the risk gradient beginning well within the prediabetic range of fasting glucose elevation. Glycemic management, dietary modification, and physical activity represent the primary modifiable levers.</p>
+
+    <div class="evidence-box">
+      <h4>📚 The Seven Modifiable Risk Factors</h4>
+      <ul>
+        <li>① Sleep insufficiency · ② Midlife hypertension · ③ Physical inactivity</li>
+        <li>④ Smoking · ⑤ Social isolation · ⑥ Excessive alcohol · ⑦ Diabetes / insulin resistance</li>
+      </ul>
+    </div>
+
+    <h2>3. Cognitive Reserve as a Buffer</h2>
+    <p>Education, intellectual engagement, and social connection across the lifespan build what neurologists term cognitive reserve — the brain's capacity to maintain function despite accumulating pathology. Notably, two individuals with equivalent amyloid and tau burden can present with markedly different clinical symptoms depending on their reserve, meaning symptom onset can be substantially delayed even when underlying pathology is present.</p>
+
+    <div class="callout">
+      <strong>Clinical insight:</strong> Attempting to fully eliminate a single risk factor is less effective than modestly addressing several simultaneously — a principle consistent with the multidomain design of the FINGER and related prevention trials.
+    </div>
+
+    <h2>4. A Neurologist's Perspective</h2>
+    <p>The brain health habits established in one's 40s and 50s substantially shape cognitive trajectory in the 60s and 70s — a pattern observed repeatedly in longitudinal neurological practice. The belief that dementia is an unavoidable consequence of aging may itself be the least modifiable risk factor of all. Reviewing the seven factors above and identifying which are within reach today is a reasonable starting point for any adult concerned about long-term brain health.</p>
+
+    <div class="author-card">
+      <div class="author-avatar">👩‍⚕️</div>
+      <div class="author-info">
+        <h4>Dr. Claire Ham (Jeehyun Ham, M.D.)</h4>
+        <div class="creds">Claire Ham, M.D. — Neurologist · Yonsei University College of Medicine · Severance Hospital, Department of Neurology</div>
+        <p>Member, Korean Neurological Association · Member, Korean Parkinson's Disease and Movement Disorder Society · Member, Korean Society of Functional Medicine. This article is for informational purposes only and does not constitute medical advice or replace professional consultation.</p>
+      </div>
+    </div>
+
+    <div class="cta-banner">
+      <h3>Start Your Brain Health Routine with NervLock Brain Energy</h3>
+      <p>Formulated by a neurologist with phosphatidylserine + rTG Omega-3 — core ingredients your brain needs.<br>NervLock's first product is launching soon.</p>
+      <a href="/en/#coming-soon" class="cta-btn">Get Launch Notification</a>
+    </div>
+
+    <div class="related">
+      <h3>Related Articles</h3>
+      <div class="related-grid">
+        <div class="related-card">
+          <a href="/blog/dementia-preclinical-stage/">
+            <div class="tag">Neurological Disorders</div>
+            <h4>Dementia Doesn't Arrive Suddenly: The Decade-Long Neurobiological Cascade Before Diagnosis</h4>
+          </a>
+        </div>
+        <div class="related-card">
+          <a href="/blog/homocysteine-dementia-b-vitamins/">
+            <div class="tag">Neurological Disorders</div>
+            <h4>Homocysteine, Brain Atrophy, and B Vitamins: The Neurological Evidence</h4>
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="sig-block">
+      <p class="sig-main"><strong>Dr. Claire Ham (Jeehyun Ham, M.D.)</strong><br>Claire Ham, M.D. — Neurologist</p>
+      <ul class="sig-creds">
+        <li>Yonsei University College of Medicine</li>
+        <li>Severance Hospital Neurology</li>
+        <li>Member, Korean Neurological Association</li>
+        <li>Member, Korean Parkinson's Disease and Movement Disorder Society</li>
+        <li>Member, Korean Society of Functional Medicine</li>
+      </ul>
+      <p class="sig-notice">※ This content is for informational purposes only and does not constitute medical advice.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2026 NervLock. All rights reserved.</p>
+    <p>This article is for informational purposes only and does not constitute medical advice.</p>
+  </div>
+</footer>
+
+</body>
+</html>
