@@ -12,19 +12,21 @@
   * , *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   :root {
-    --navy-900: #04080f;
-    --navy-800: #0a1628;
-    --navy-100: #eef2f7;
-    --ivory:    #f8f6f2;
-    --white:    #ffffff;
-    --blue-sci: #d4e9f7;
+    --navy-primary:   #0D1B2A;
+    --navy-secondary: #16324F;
+    --navy-accent:    #274C77;
+    --bg-light:       #F8FAFC;
+    --bg-warm:        #FCFCFA;
+    --bg-blue-gray:   #EEF2F5;
+    --white:          #ffffff;
 
-    --text-dark:  #0d1b2a;
-    --text-mid:   #3d5166;
-    --text-light: #f0f4f8;
-    --brand-blue: #4fc3f7;
-    --brand-green:#81c784;
-    --accent:     #1565c0;
+    --text-primary:   #1E293B;
+    --text-secondary: #64748B;
+    --text-white:     #F8FAFC;
+    --brand-blue:     #4fc3f7;
+    --brand-green:    #81c784;
+    --brand-green-on-light: #2e7d32;
+    --accent:         #1565c0;
 
     --divider-dark: rgba(255,255,255,0.08);
     --divider-light: rgba(13,27,42,0.08);
@@ -32,7 +34,7 @@
   body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     background: var(--white);
-    color: var(--text-dark);
+    color: var(--text-primary);
     line-height: 1.7;
     overflow-x: hidden;
   }
@@ -46,9 +48,9 @@
   .label-on-light { color: var(--accent); }
   .label-on-dark { color: var(--brand-blue); }
 
-  .title-on-light { font-size: clamp(28px, 4vw, 42px); font-weight: 700; line-height: 1.3; color: var(--text-dark); margin-bottom: 20px; letter-spacing: -0.5px; }
-  .title-on-dark  { font-size: clamp(28px, 4vw, 42px); font-weight: 700; line-height: 1.3; color: var(--text-light); margin-bottom: 20px; letter-spacing: -0.5px; }
-  .sub-on-light { font-size: 17px; color: var(--text-mid); max-width: 640px; line-height: 1.85; }
+  .title-on-light { font-size: clamp(28px, 4vw, 42px); font-weight: 700; line-height: 1.3; color: var(--text-primary); margin-bottom: 20px; letter-spacing: -0.5px; }
+  .title-on-dark  { font-size: clamp(28px, 4vw, 42px); font-weight: 700; line-height: 1.3; color: var(--text-white); margin-bottom: 20px; letter-spacing: -0.5px; }
+  .sub-on-light { font-size: 17px; color: var(--text-secondary); max-width: 640px; line-height: 1.85; }
   .sub-on-dark  { font-size: 17px; color: rgba(240,244,248,0.72); max-width: 640px; line-height: 1.85; }
 
   .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
@@ -56,9 +58,9 @@
 
   .btn-on-light { display: inline-block; background: var(--accent); color: #fff; font-weight: 600; font-size: 15px; padding: 15px 32px; border-radius: 8px; transition: transform 0.2s, box-shadow 0.2s; border: none; cursor: pointer; }
   .btn-on-light:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(21,101,192,0.28); }
-  .btn-on-dark { display: inline-block; background: var(--brand-blue); color: var(--navy-900); font-weight: 700; font-size: 15px; padding: 15px 32px; border-radius: 8px; transition: transform 0.2s, box-shadow 0.2s; border: none; cursor: pointer; }
+  .btn-on-dark { display: inline-block; background: var(--brand-blue); color: var(--navy-primary); font-weight: 700; font-size: 15px; padding: 15px 32px; border-radius: 8px; transition: transform 0.2s, box-shadow 0.2s; border: none; cursor: pointer; }
   .btn-on-dark:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(79,195,247,0.3); }
-  .btn-outline-dark { display: inline-block; background: transparent; color: var(--text-light); font-weight: 600; font-size: 15px; padding: 15px 32px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.25); transition: all 0.2s; }
+  .btn-outline-dark { display: inline-block; background: transparent; color: var(--text-white); font-weight: 600; font-size: 15px; padding: 15px 32px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.25); transition: all 0.2s; }
   .btn-outline-dark:hover { border-color: var(--brand-blue); color: var(--brand-blue); }
   .btn-outline-light { display: inline-block; background: transparent; color: var(--accent); font-weight: 600; font-size: 15px; padding: 15px 32px; border-radius: 8px; border: 1px solid rgba(21,101,192,0.3); transition: all 0.2s; }
   .btn-outline-light:hover { background: rgba(21,101,192,0.06); }
@@ -89,7 +91,7 @@
   .nav-mobile-menu a:last-child { border-bottom: none; }
 
   /* ── Hero ── */
-  #hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding: 160px 0 100px; overflow: hidden; background: var(--navy-900); }
+  #hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding: 160px 0 100px; overflow: hidden; background: linear-gradient(160deg, var(--navy-primary) 0%, var(--navy-secondary) 100%); }
   #heroCanvas { position: absolute; inset: 0; width: 100%; height: 100%; }
   .hero-inner { position: relative; z-index: 2; text-align: center; max-width: 760px; margin: 0 auto; }
   .hero-label { font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--brand-blue); margin-bottom: 26px; }
@@ -99,96 +101,101 @@
   .hero-actions { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
 
   /* ── Why Brain Health ── */
-  #why { background: var(--ivory); }
+  #why { background: var(--bg-warm); }
   .why-grid { display: grid; grid-template-columns: 1fr; gap: 20px; max-width: 780px; margin: 0 auto 56px; text-align: left; }
-  .why-grid p { font-size: 17px; color: var(--text-mid); line-height: 2; }
-  .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .why-grid p { font-size: 17px; color: var(--text-secondary); line-height: 2; }
+  .stat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; max-width: 780px; }
   .stat-card { background: var(--white); border-radius: 12px; padding: 30px 28px; box-shadow: 0 4px 20px rgba(13,27,42,0.06); }
-  .stat-card p { font-size: 15px; color: var(--text-dark); line-height: 1.75; margin-bottom: 14px; }
-  .stat-source { font-size: 12px; color: var(--text-mid); font-style: italic; }
+  .stat-card p { font-size: 15px; color: var(--text-primary); line-height: 1.75; margin-bottom: 14px; }
+  .stat-source { font-size: 12px; color: var(--text-secondary); font-style: italic; }
 
   /* ── Academy ── */
-  #academy { background: var(--navy-100); }
+  #academy { background: var(--bg-blue-gray); }
   .academy-cards { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; margin-top: 52px; }
   .academy-card { background: var(--white); border-radius: 12px; padding: 30px 22px; box-shadow: 0 4px 16px rgba(13,27,42,0.06); transition: transform 0.3s ease, box-shadow 0.3s ease; }
   .academy-card:hover { transform: translateY(-8px); box-shadow: 0 12px 30px rgba(13,27,42,0.12); }
   .academy-icon { font-size: 32px; margin-bottom: 18px; }
   .academy-tag { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
-  .academy-desc { font-size: 14px; color: var(--text-dark); line-height: 1.6; font-weight: 500; }
+  .academy-desc { font-size: 14px; color: var(--text-primary); line-height: 1.6; font-weight: 500; }
   .academy-more { text-align: center; margin-top: 48px; }
 
   /* ── Why NervLock ── */
   #why-nervlock { background: var(--white); }
   .manifesto { max-width: 720px; margin: 0 auto 48px; text-align: center; }
-  .manifesto-line { font-size: clamp(20px, 2.8vw, 28px); font-weight: 700; color: var(--text-dark); line-height: 1.6; margin-bottom: 4px; }
+  .manifesto-line { font-size: clamp(20px, 2.8vw, 28px); font-weight: 700; color: var(--text-primary); line-height: 1.6; margin-bottom: 4px; }
   .manifesto-divider { width: 60px; height: 2px; background: var(--divider-light); margin: 48px auto; }
-  .mission-text { max-width: 620px; margin: 0 auto 56px; text-align: center; font-size: 16px; color: var(--text-mid); line-height: 1.95; }
-  .founder-card { max-width: 460px; margin: 0 auto; background: var(--navy-100); border-radius: 12px; padding: 32px 36px; text-align: center; }
-  .founder-name { font-size: 17px; font-weight: 700; color: var(--text-dark); margin-bottom: 4px; }
+  .mission-text { max-width: 620px; margin: 0 auto 56px; text-align: center; font-size: 16px; color: var(--text-secondary); line-height: 1.95; }
+  .founder-card { max-width: 460px; margin: 0 auto; background: var(--bg-blue-gray); border-radius: 12px; padding: 32px 36px; text-align: center; }
+  .founder-name { font-size: 17px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
   .founder-role { font-size: 13px; color: var(--accent); font-weight: 600; margin-bottom: 10px; }
-  .founder-detail { font-size: 13px; color: var(--text-mid); line-height: 1.7; }
+  .founder-detail { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
+  .founder-detail-en { font-size: 11px; color: var(--text-secondary); line-height: 1.7; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--divider-light); opacity: 0.85; }
 
   /* ── Science ── */
-  #research { background: var(--blue-sci); }
+  #research { background: var(--bg-blue-gray); }
   .paper-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 52px; }
   .paper-card { background: var(--white); border-radius: 12px; padding: 28px 26px; display: flex; flex-direction: column; gap: 12px; min-height: 320px; position: relative; box-shadow: 0 4px 16px rgba(13,27,42,0.06); }
-  .paper-badge { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 1px; color: var(--text-mid); border: 1px solid var(--divider-light); border-radius: 50px; padding: 4px 12px; width: fit-content; }
-  .paper-field { font-size: 12px; color: var(--text-mid); text-transform: uppercase; letter-spacing: 1px; }
-  .paper-field strong { display: block; color: var(--text-dark); font-size: 13px; text-transform: none; letter-spacing: 0; margin-top: 3px; font-weight: 500; }
+  .paper-badge { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 1px; color: var(--text-secondary); border: 1px solid var(--divider-light); border-radius: 50px; padding: 4px 12px; width: fit-content; }
+  .paper-field { font-size: 12px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; }
+  .paper-field strong { display: block; color: var(--text-primary); font-size: 13px; text-transform: none; letter-spacing: 0; margin-top: 3px; font-weight: 500; }
   .paper-placeholder { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; text-align: center; padding: 30px; background: rgba(255,255,255,0.9); border-radius: 12px; }
-  .paper-placeholder p { font-size: 13px; color: var(--text-mid); line-height: 1.8; }
+  .paper-placeholder p { font-size: 13px; color: var(--text-secondary); line-height: 1.8; }
 
   /* ── Solutions ── */
   #solutions { background: var(--white); }
   .solutions-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 52px; }
   .solution-card { border-radius: 12px; padding: 40px; }
-  .solution-card.featured { background: var(--navy-800); color: var(--text-light); }
+  .solution-card.featured { background: var(--navy-secondary); color: var(--text-white); }
   .solution-card.placeholder { background: var(--white); border: 1px solid var(--divider-light); }
   .solution-tag { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--brand-green); margin-bottom: 16px; }
   .solution-card.placeholder .solution-tag { color: var(--accent); }
   .solution-title { font-size: 23px; font-weight: 700; margin-bottom: 12px; }
-  .solution-card.placeholder .solution-title { color: var(--text-dark); }
+  .solution-card.placeholder .solution-title { color: var(--text-primary); }
   .solution-desc { font-size: 15px; line-height: 1.8; margin-bottom: 18px; opacity: 0.85; }
-  .solution-card.placeholder .solution-desc { color: var(--text-mid); opacity: 1; }
+  .solution-card.placeholder .solution-desc { color: var(--text-secondary); opacity: 1; }
   .solution-specs { font-size: 13px; margin-bottom: 8px; opacity: 0.7; }
   .solution-date { font-size: 13px; color: var(--brand-blue); font-weight: 700; margin-bottom: 24px; }
 
   /* ── Newsletter ── */
-  #newsletter { background: var(--navy-800); }
+  #newsletter { background: var(--navy-primary); }
   .newsletter-form { display: flex; gap: 12px; max-width: 480px; margin: 36px 0 18px; flex-wrap: wrap; }
-  .nl-input { flex: 1; min-width: 220px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 15px 18px; color: var(--text-light); font-size: 15px; font-family: inherit; }
+  .nl-input { flex: 1; min-width: 220px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 15px 18px; color: var(--text-white); font-size: 15px; font-family: inherit; }
   .nl-input::placeholder { color: rgba(240,244,248,0.4); }
-  .nl-input:focus { outline: none; border-color: var(--brand-blue); }
+  .nl-input:focus { border-color: var(--brand-blue); }
+  .nl-input.on-light { background: var(--bg-blue-gray); border: 1px solid var(--divider-light); color: var(--text-primary); }
+  .nl-input.on-light::placeholder { color: var(--text-secondary); }
+  .nl-input.on-light:focus { border-color: var(--accent); }
   .newsletter-notice { font-size: 12px; color: rgba(240,244,248,0.5); line-height: 1.8; }
   .newsletter-notice a { color: var(--brand-blue); font-weight: 600; }
   .newsletter-success { display: none; font-size: 15px; color: var(--brand-green); font-weight: 600; margin-top: 20px; }
   .newsletter-success.show { display: block; }
 
-  /* ── Coming Soon ── */
-  #coming-soon { background: var(--navy-900); }
+  /* ── Coming Soon (light) ── */
+  #coming-soon { background: var(--bg-light); }
   .cs-inner2 { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
-  .cs-badge2 { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--brand-blue); background: rgba(79,195,247,0.1); border: 1px solid rgba(79,195,247,0.25); border-radius: 50px; padding: 6px 16px; margin-bottom: 24px; }
-  .cs-title2 { font-size: clamp(26px, 3.6vw, 36px); font-weight: 700; line-height: 1.4; margin-bottom: 20px; color: var(--text-light); }
-  .cs-title2 em { color: var(--brand-blue); font-style: normal; }
-  .cs-desc2 { font-size: 16px; color: rgba(240,244,248,0.75); line-height: 1.9; margin-bottom: 28px; }
+  .cs-badge2 { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); background: rgba(21,101,192,0.08); border: 1px solid rgba(21,101,192,0.25); border-radius: 50px; padding: 6px 16px; margin-bottom: 24px; }
+  .cs-title2 { font-size: clamp(26px, 3.6vw, 36px); font-weight: 700; line-height: 1.4; margin-bottom: 20px; color: var(--text-primary); }
+  .cs-title2 em { color: var(--accent); font-style: normal; }
+  .cs-desc2 { font-size: 16px; color: var(--text-secondary); line-height: 1.9; margin-bottom: 28px; }
   .cs-pills2 { display: flex; flex-wrap: wrap; gap: 10px; }
-  .cs-pill2 { font-size: 13px; color: rgba(240,244,248,0.8); background: rgba(255,255,255,0.05); border: 1px solid var(--divider-dark); border-radius: 50px; padding: 8px 16px; }
-  .cs-card2 { background: rgba(255,255,255,0.04); border: 1px solid var(--divider-dark); border-radius: 12px; padding: 40px; }
-  .cs-card-title2 { font-size: 20px; font-weight: 700; color: var(--text-light); margin-bottom: 8px; }
-  .cs-card-sub2 { font-size: 14px; color: rgba(240,244,248,0.65); line-height: 1.7; margin-bottom: 24px; }
-  .cs-error2 { display: none; font-size: 12px; color: #ff8a8a; margin-top: 8px; }
+  .cs-pill2 { font-size: 13px; color: var(--text-primary); background: var(--white); border: 1px solid var(--divider-light); border-radius: 50px; padding: 8px 16px; }
+  .cs-card2 { background: var(--white); border: 1px solid var(--divider-light); border-radius: 12px; padding: 40px; box-shadow: 0 4px 20px rgba(13,27,42,0.06); }
+  .cs-card-title2 { font-size: 20px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
+  .cs-card-sub2 { font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 24px; }
+  .cs-error2 { display: none; font-size: 12px; color: #c62828; margin-top: 8px; }
   .cs-error2.show { display: block; }
-  .cs-count2 { display: flex; gap: 32px; margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--divider-dark); }
-  .cs-count-num2 { display: block; font-size: 22px; font-weight: 700; color: var(--brand-green); }
-  .cs-count-label2 { font-size: 12px; color: rgba(240,244,248,0.5); }
+  .cs-error2.on-dark { color: #ff8a8a; }
+  .cs-count2 { display: flex; gap: 32px; margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--divider-light); }
+  .cs-count-num2 { display: block; font-size: 22px; font-weight: 700; color: var(--brand-green-on-light); }
+  .cs-count-label2 { font-size: 12px; color: var(--text-secondary); }
   .cs-success2 { display: none; text-align: center; }
   .cs-success2.show { display: block; }
-  .cs-success-icon2 { font-size: 40px; color: var(--brand-green); margin-bottom: 16px; }
+  .cs-success-icon2 { font-size: 40px; color: var(--brand-green-on-light); margin-bottom: 16px; }
 
   /* ── Footer ── */
-  footer { background: var(--navy-900); padding: 90px 0 36px; }
+  footer { background: var(--navy-secondary); padding: 90px 0 36px; }
   .footer-top { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 60px; }
-  .footer-brand { font-size: 20px; font-weight: 700; margin-bottom: 16px; color: var(--text-light); }
+  .footer-brand { font-size: 20px; font-weight: 700; margin-bottom: 16px; color: var(--text-white); }
   .footer-brand span { color: var(--brand-blue); }
   .footer-desc { font-size: 14px; color: rgba(240,244,248,0.6); line-height: 1.9; }
   .footer-col h4 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: rgba(240,244,248,0.4); margin-bottom: 18px; }
@@ -210,6 +217,28 @@
   @media (max-width: 560px) {
     .academy-cards { grid-template-columns: 1fr; }
     .footer-top { grid-template-columns: 1fr; }
+  }
+
+  /* ── Accessibility ── */
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+  :focus-visible { outline: 2px solid #4fc3f7; outline-offset: 2px; }
+  button:focus-visible, a:focus-visible { border-radius: 8px; }
+
+  .consent-row { display: flex; align-items: flex-start; gap: 10px; max-width: 480px; margin-bottom: 18px; }
+  .consent-row input[type="checkbox"] { width: 18px; height: 18px; margin-top: 2px; flex-shrink: 0; accent-color: var(--brand-blue); cursor: pointer; }
+  .consent-row label { font-size: 13px; line-height: 1.6; cursor: pointer; }
+  .consent-detail { list-style: none; padding: 0; margin: 8px 0 0; font-size: 12px; line-height: 1.9; }
+  .consent-detail li { padding-left: 12px; position: relative; }
+  .consent-detail li::before { content: "·"; position: absolute; left: 0; }
+  #newsletter .consent-row label { color: rgba(240,244,248,0.75); }
+  #newsletter .consent-detail { color: rgba(240,244,248,0.5); }
+  #newsletter .consent-detail a { color: var(--brand-blue); font-weight: 600; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+    html { scroll-behavior: auto; }
+    .reveal { transform: none; }
   }
 </style>
 </head>
@@ -276,16 +305,12 @@
     </div>
     <div class="stat-grid">
       <div class="stat-card reveal">
-        <p>Research suggests approximately 45% of dementia risk factors may be modifiable.</p>
-        <div class="stat-source">Source: Lancet Commission, 2024</div>
+        <p>치매 위험 요인의 약 45%는 수정 가능한 것으로 보고됩니다.</p>
+        <div class="stat-source">출처: Lancet Commission, 2024</div>
       </div>
       <div class="stat-card reveal">
-        <p>Pathological changes in some neurodegenerative diseases may begin years or even decades before noticeable symptoms appear.</p>
-        <div class="stat-source">Source: NIA-AA Research Framework, 2018</div>
-      </div>
-      <div class="stat-card reveal">
-        <p>Brain health is influenced by sleep, nutrition, stress, and physical activity — factors within our daily control.</p>
-        <div class="stat-source">&nbsp;</div>
+        <p>일부 신경퇴행성 질환의 병리적 변화는 증상이 나타나기 수년 또는 수십 년 전부터 시작될 수 있다는 연구가 있습니다.</p>
+        <div class="stat-source">출처: NIA-AA Research Framework, 2018</div>
       </div>
     </div>
   </div>
@@ -352,12 +377,15 @@
     </p>
 
     <div class="founder-card reveal">
-      <div class="founder-name">Dr. Ham Jeehyun</div>
-      <div class="founder-role">Neurologist</div>
+      <div class="founder-name">함지현 원장</div>
+      <div class="founder-role">신경과 전문의</div>
       <div class="founder-detail">
-        Former Assistant Professor of Clinical Research,<br>
-        Yonsei University College of Medicine<br>
-        Severance Hospital Alumnus
+        연세대학교 의과대학 전 임상연구조교수<br>
+        세브란스병원 출신
+      </div>
+      <div class="founder-detail-en">
+        Dr. Ham Jeehyun, M.D. — Neurologist<br>
+        Former Assistant Professor of Clinical Research, Yonsei University College of Medicine · Severance Hospital Alumnus
       </div>
     </div>
   </div>
@@ -440,9 +468,26 @@
     <h2 class="title-on-dark reveal">Stay Informed</h2>
     <p class="sub-on-dark reveal">Weekly insights on brain health — curated by a neurologist. Latest research, practical strategies, and evidence-based guidance.</p>
 
-    <form class="newsletter-form reveal" id="nlForm" novalidate>
-      <input type="email" class="nl-input" id="nlEmail" placeholder="Enter your email address" autocomplete="email" />
-      <button type="submit" class="btn-on-dark" id="nlSubmit">Subscribe to Brain Health Weekly</button>
+    <form id="nlForm" novalidate>
+      <div class="newsletter-form reveal">
+        <label for="nlEmail" class="sr-only">Email address</label>
+        <input type="email" class="nl-input" id="nlEmail" placeholder="Enter your email address" autocomplete="email" />
+        <button type="submit" class="btn-on-dark" id="nlSubmit" aria-label="Subscribe to Brain Health Weekly">Subscribe to Brain Health Weekly</button>
+      </div>
+
+      <div class="consent-row reveal">
+        <input type="checkbox" id="nlConsent" required />
+        <label for="nlConsent">
+          개인정보 수집 및 이용에 동의합니다.
+          <ul class="consent-detail">
+            <li>수집 항목: 이메일 주소</li>
+            <li>수집 목적: 뉴스레터 발송</li>
+            <li>보유 기간: 구독 취소 시까지</li>
+            <li><a href="#">개인정보처리방침 보기 →</a></li>
+          </ul>
+        </label>
+      </div>
+      <div class="cs-error2 on-dark" id="nlConsentError" role="alert" style="margin-bottom:12px;">개인정보 수집 및 이용에 동의해주세요.</div>
     </form>
     <p class="newsletter-notice reveal">
       No spam. Unsubscribe anytime.<br>
@@ -460,11 +505,11 @@
       <div class="cs-badge2 reveal">Coming Soon</div>
       <h2 class="cs-title2 reveal">NervLock,<br>곧 <em>여러분 곁에</em> 찾아갑니다</h2>
       <p class="cs-desc2 reveal">
-        NervLock 브랜드의 첫 번째 제품, 신경과 전문의가 직접 연구한 <strong style="color:var(--text-light)">NervLock Brain Energy</strong>가 런칭을 준비하고 있습니다.<br>
-        출시 소식을 가장 먼저 받아보고 <strong style="color:var(--brand-green)">얼리버드 혜택</strong>을 놓치지 마세요.
+        NervLock 브랜드의 첫 번째 제품, 신경과 전문의가 과학적 근거를 검토하여 설계한 <strong style="color:var(--text-primary)">NervLock Brain Energy</strong>가 런칭을 준비하고 있습니다.<br>
+        출시 소식을 가장 먼저 받아보고 <strong style="color:var(--brand-green-on-light)">얼리버드 혜택</strong>을 놓치지 마세요.
       </p>
       <div class="cs-pills2 reveal">
-        <div class="cs-pill2">🏥 신경과 전문의 직접 개발</div>
+        <div class="cs-pill2">🏥 신경과 전문의가 근거를 검토하여 설계</div>
         <div class="cs-pill2">🔬 임상 근거 기반 성분</div>
         <div class="cs-pill2">📦 출시 예정</div>
         <div class="cs-pill2">🎁 얼리버드 특별 혜택</div>
@@ -476,9 +521,10 @@
         <div class="cs-card-title2">출시 알림 신청</div>
         <p class="cs-card-sub2">이메일을 남겨주시면 NervLock 출시 소식과 얼리버드 전용 혜택을 가장 먼저 보내드립니다.</p>
         <form class="cs-form3" id="csForm3" novalidate>
-          <input type="email" class="nl-input" id="csEmail3" placeholder="이메일 주소를 입력해주세요" autocomplete="email" style="width:100%;" />
-          <div class="cs-error2" id="csEmailError3">올바른 이메일 주소를 입력해주세요.</div>
-          <button type="submit" class="btn-on-dark" id="csSubmit3" style="width:100%;margin-top:14px;">출시 알림 받기</button>
+          <label for="csEmail3" class="sr-only">이메일 주소</label>
+          <input type="email" class="nl-input on-light" id="csEmail3" placeholder="이메일 주소를 입력해주세요" autocomplete="email" style="width:100%;" />
+          <div class="cs-error2" id="csEmailError3" role="alert">올바른 이메일 주소를 입력해주세요.</div>
+          <button type="submit" class="btn-on-dark" id="csSubmit3" aria-label="출시 알림 받기" style="width:100%;margin-top:14px;">출시 알림 받기</button>
         </form>
         <div class="cs-count2">
           <div>
@@ -493,8 +539,8 @@
       </div>
       <div class="cs-success2" id="csSuccess3">
         <div class="cs-success-icon2">✓</div>
-        <h4 style="color:var(--text-light);">신청이 완료되었습니다!</h4>
-        <p style="color:rgba(240,244,248,0.7);margin-top:10px;">출시 소식과 얼리버드 혜택을 입력하신 이메일로 보내드리겠습니다.<br><br><span style="color:var(--brand-green);font-weight:700;">감사합니다 🙏</span></p>
+        <h4 style="color:var(--text-primary);">신청이 완료되었습니다!</h4>
+        <p style="color:var(--text-secondary);margin-top:10px;">출시 소식과 얼리버드 혜택을 입력하신 이메일로 보내드리겠습니다.<br><br><span style="color:var(--brand-green-on-light);font-weight:700;">감사합니다 🙏</span></p>
       </div>
     </div>
   </div>
@@ -619,14 +665,8 @@
       }
     }
 
-    function tick() {
+    function drawFrame() {
       ctx.clearRect(0, 0, W, H);
-      for (var i = 0; i < particles.length; i++) {
-        var p = particles[i];
-        p.x += p.vx; p.y += p.vy;
-        if (p.x < 0 || p.x > W) p.vx *= -1;
-        if (p.y < 0 || p.y > H) p.vy *= -1;
-      }
       for (var i = 0; i < particles.length; i++) {
         for (var j = i + 1; j < particles.length; j++) {
           var a = particles[i], b = particles[j];
@@ -649,12 +689,31 @@
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         ctx.fill();
       }
+    }
+
+    function tick() {
+      for (var i = 0; i < particles.length; i++) {
+        var p = particles[i];
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0 || p.x > W) p.vx *= -1;
+        if (p.y < 0 || p.y > H) p.vy *= -1;
+      }
+      drawFrame();
       requestAnimationFrame(tick);
     }
 
-    window.addEventListener('resize', resize, { passive: true });
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    window.addEventListener('resize', function() {
+      resize();
+      if (reduceMotion) drawFrame();
+    }, { passive: true });
     resize();
-    tick();
+    if (reduceMotion) {
+      drawFrame();
+    } else {
+      tick();
+    }
   })();
 
   // ── Shared Google Apps Script endpoint (extracted from index.html) ──
@@ -668,8 +727,14 @@
   (function() {
     var form = document.getElementById('nlForm');
     var input = document.getElementById('nlEmail');
+    var consent = document.getElementById('nlConsent');
+    var consentError = document.getElementById('nlConsentError');
     var btn = document.getElementById('nlSubmit');
     var success = document.getElementById('nlSuccess');
+
+    consent.addEventListener('change', function() {
+      if (this.checked) consentError.classList.remove('show');
+    });
 
     form.addEventListener('submit', function(e) {
       e.preventDefault();
@@ -677,6 +742,11 @@
       if (!isValidEmail(email)) {
         input.style.borderColor = '#ff7c7c';
         input.focus();
+        return;
+      }
+      if (!consent.checked) {
+        consentError.classList.add('show');
+        consent.focus();
         return;
       }
       btn.disabled = true;
