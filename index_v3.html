@@ -155,6 +155,7 @@
   .solution-card.placeholder .solution-desc { color: var(--text-secondary); opacity: 1; }
   .solution-specs { font-size: 13px; margin-bottom: 8px; opacity: 0.7; }
   .solution-date { font-size: 13px; color: var(--brand-blue); font-weight: 700; margin-bottom: 24px; }
+  .solution-footnote { font-size: 12px; color: var(--text-white); opacity: 0.55; line-height: 1.6; margin-top: 18px; }
 
   /* ── Newsletter ── */
   #newsletter { background: var(--navy-primary); }
@@ -234,6 +235,9 @@
   #newsletter .consent-row label { color: rgba(240,244,248,0.75); }
   #newsletter .consent-detail { color: rgba(240,244,248,0.5); }
   #newsletter .consent-detail a { color: var(--brand-blue); font-weight: 600; }
+  #coming-soon .consent-row label { color: var(--text-primary); }
+  #coming-soon .consent-detail { color: var(--text-secondary); }
+  #coming-soon .consent-detail a { color: var(--accent); font-weight: 600; }
 
   @media (prefers-reduced-motion: reduce) {
     * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
@@ -339,7 +343,7 @@
         <div class="academy-tag">Memory</div>
         <div class="academy-desc">기억력 저하의 신경과학</div>
       </a>
-      <a href="/blog/브레인포그-신경과학/" class="academy-card reveal">
+      <a href="/blog/" class="academy-card reveal">
         <div class="academy-icon">⚡</div>
         <div class="academy-tag">Focus</div>
         <div class="academy-desc">집중력과 도파민</div>
@@ -396,7 +400,10 @@
   <div class="container">
     <div class="label label-on-light reveal">SCIENCE &amp; RESEARCH</div>
     <h2 class="title-on-light reveal">Grounded in Evidence</h2>
-    <p class="sub-on-light reveal">Every piece of content and every product at NervLock is informed by peer-reviewed medical literature.</p>
+    <p class="sub-on-light reveal">
+      NervLock prioritizes peer-reviewed medical literature and authoritative clinical guidelines when developing its content and products.<br>
+      NervLock는 콘텐츠와 제품을 기획할 때 동료 심사를 거친 의학 문헌과 공신력 있는 가이드라인을 우선 검토합니다.
+    </p>
 
     <div class="paper-grid">
       <div class="paper-card reveal">
@@ -451,6 +458,7 @@
         <div class="solution-specs">포스파티딜세린(PS) · rTG 오메가3 · B군 · 비타민 D3</div>
         <div class="solution-date">2026년 하반기 출시 예정</div>
         <a href="#coming-soon" class="btn-on-dark">출시 알림 신청 →</a>
+        <p class="solution-footnote">제품의 원료 구성과 출시 일정은 개발 과정에서 변경될 수 있습니다.</p>
       </div>
       <div class="solution-card placeholder reveal">
         <div class="solution-tag">Coming Soon</div>
@@ -506,31 +514,41 @@
       <h2 class="cs-title2 reveal">NervLock,<br>곧 <em>여러분 곁에</em> 찾아갑니다</h2>
       <p class="cs-desc2 reveal">
         NervLock 브랜드의 첫 번째 제품, 신경과 전문의가 과학적 근거를 검토하여 설계한 <strong style="color:var(--text-primary)">NervLock Brain Energy</strong>가 런칭을 준비하고 있습니다.<br>
-        출시 소식을 가장 먼저 받아보고 <strong style="color:var(--brand-green-on-light)">얼리버드 혜택</strong>을 놓치지 마세요.
+        출시 소식을 가장 먼저 받아보세요.
       </p>
       <div class="cs-pills2 reveal">
         <div class="cs-pill2">🏥 신경과 전문의가 근거를 검토하여 설계</div>
-        <div class="cs-pill2">🔬 임상 근거 기반 성분</div>
+        <div class="cs-pill2">🔬 과학적 문헌을 검토한 원료 구성</div>
         <div class="cs-pill2">📦 출시 예정</div>
-        <div class="cs-pill2">🎁 얼리버드 특별 혜택</div>
       </div>
     </div>
 
     <div class="cs-card2 reveal">
       <div id="csFormWrap3">
         <div class="cs-card-title2">출시 알림 신청</div>
-        <p class="cs-card-sub2">이메일을 남겨주시면 NervLock 출시 소식과 얼리버드 전용 혜택을 가장 먼저 보내드립니다.</p>
+        <p class="cs-card-sub2">이메일을 남겨주시면 NervLock 출시 소식을 보내드립니다.</p>
         <form class="cs-form3" id="csForm3" novalidate>
           <label for="csEmail3" class="sr-only">이메일 주소</label>
           <input type="email" class="nl-input on-light" id="csEmail3" placeholder="이메일 주소를 입력해주세요" autocomplete="email" style="width:100%;" />
           <div class="cs-error2" id="csEmailError3" role="alert">올바른 이메일 주소를 입력해주세요.</div>
+
+          <div class="consent-row" style="margin-top:16px;">
+            <input type="checkbox" id="csConsent3" required />
+            <label for="csConsent3">
+              개인정보 수집 및 이용에 동의합니다. (필수)
+              <ul class="consent-detail">
+                <li>수집 항목: 이메일 주소</li>
+                <li>수집 목적: 출시 알림 발송</li>
+                <li>보유 기간: 동의 철회 시까지</li>
+                <li><a href="#">개인정보처리방침 보기 →</a></li>
+              </ul>
+            </label>
+          </div>
+          <div class="cs-error2" id="csConsentError3" role="alert">개인정보 수집 및 이용에 동의해주세요.</div>
+
           <button type="submit" class="btn-on-dark" id="csSubmit3" aria-label="출시 알림 받기" style="width:100%;margin-top:14px;">출시 알림 받기</button>
         </form>
         <div class="cs-count2">
-          <div>
-            <span class="cs-count-num2" id="csCounter3">1,247</span>
-            <span class="cs-count-label2">알림 신청 완료</span>
-          </div>
           <div>
             <span class="cs-count-num2">출시 예정</span>
             <span class="cs-count-label2">런칭 준비 중</span>
@@ -540,7 +558,7 @@
       <div class="cs-success2" id="csSuccess3">
         <div class="cs-success-icon2">✓</div>
         <h4 style="color:var(--text-primary);">신청이 완료되었습니다!</h4>
-        <p style="color:var(--text-secondary);margin-top:10px;">출시 소식과 얼리버드 혜택을 입력하신 이메일로 보내드리겠습니다.<br><br><span style="color:var(--brand-green-on-light);font-weight:700;">감사합니다 🙏</span></p>
+        <p style="color:var(--text-secondary);margin-top:10px;">출시 소식을 입력하신 이메일로 보내드리겠습니다.<br><br><span style="color:var(--brand-green-on-light);font-weight:700;">감사합니다 🙏</span></p>
       </div>
     </div>
   </div>
@@ -770,6 +788,8 @@
     var form = document.getElementById('csForm3');
     var input = document.getElementById('csEmail3');
     var errMsg = document.getElementById('csEmailError3');
+    var consent = document.getElementById('csConsent3');
+    var consentError = document.getElementById('csConsentError3');
     var btn = document.getElementById('csSubmit3');
     var wrap = document.getElementById('csFormWrap3');
     var success = document.getElementById('csSuccess3');
@@ -781,6 +801,10 @@
       }
     });
 
+    consent.addEventListener('change', function() {
+      if (this.checked) consentError.classList.remove('show');
+    });
+
     form.addEventListener('submit', function(e) {
       e.preventDefault();
       var email = input.value.trim();
@@ -788,6 +812,11 @@
         errMsg.classList.add('show');
         input.style.borderColor = '#ff7c7c';
         input.focus();
+        return;
+      }
+      if (!consent.checked) {
+        consentError.classList.add('show');
+        consent.focus();
         return;
       }
       btn.disabled = true;
