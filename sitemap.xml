@@ -43,6 +43,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://nervlocklab.com/blog/%EA%B8%B0%EC%96%B5%EB%A0%A5-%EC%B9%98%EB%A7%A4-%EC%B0%A8%EC%9D%B4/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://nervlocklab.com/blog/why-cant-i-focus/</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
@@ -255,6 +261,12 @@
   <url>
     <loc>https://nervlocklab.com/blog/dementia-preclinical-stage/</loc>
     <lastmod>2026-07-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nervlocklab.com/blog/memory-loss-and-dementia/</loc>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
