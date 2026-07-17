@@ -37,6 +37,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://nervlocklab.com/blog/%EB%B8%8C%EB%A0%88%EC%9D%B8%ED%8F%AC%EA%B7%B8-%EC%9B%90%EC%9D%B8/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://nervlocklab.com/blog/why-cant-i-focus/</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
@@ -231,6 +237,12 @@
   <url>
     <loc>https://nervlocklab.com/blog/brain-fog-neuroscience/</loc>
     <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nervlocklab.com/blog/brain-fog-causes/</loc>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
