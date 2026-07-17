@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="robots" content="index, follow"/>
+  <title>Why Can't I Focus? Dopamine, Sleep &amp; Adult ADHD | NervLock</title>
+  <meta name="description" content="Difficulty concentrating is not always a dopamine problem. Learn how sleep, stress, smartphones, mood, pain, medications, and adult ADHD can affect focus—and when to seek care."/>
+  <link rel="canonical" href="https://nervlocklab.com/blog/why-cant-i-focus/" />
+  <link rel="alternate" hreflang="ko" href="https://nervlocklab.com/blog/why-concentration-declines-dopamine-sleep-adhd/" />
+  <link rel="alternate" hreflang="en" href="https://nervlocklab.com/blog/why-cant-i-focus/" />
+  <link rel="alternate" hreflang="x-default" href="https://nervlocklab.com/blog/why-concentration-declines-dopamine-sleep-adhd/" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://nervlocklab.com/blog/why-cant-i-focus/" />
+  <meta property="og:title" content="Why Can't I Focus? It's Not Just Dopamine" />
+  <meta property="og:description" content="Poor focus can be influenced by sleep, stress, mood, pain, medications, digital interruptions, and ADHD—not dopamine alone." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Why Can't I Focus? Dopamine, Sleep &amp; Adult ADHD | NervLock" />
+  <meta name="twitter:description" content="Difficulty concentrating is not always a dopamine problem. Learn how sleep, stress, smartphones, mood, pain, medications, and adult ADHD can affect focus—and when to seek care." />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; color: #1a1a2e; background: #fff; font-size: 17px; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    :root {
+      --navy: #0d2545; --navy2: #163561;
+      --teal: #1a7a6e; --teal2: #22a090;
+      --gold: #b8922a; --gold2: #d4a843;
+      --gray: #f4f6f9; --gray2: #e8ecf2;
+      --muted: #5a6278;
+    }
+
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(13,37,69,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-logo { font-size: 20px; font-weight: 900; color: #fff; white-space: nowrap; }
+    .nav-logo span { color: var(--gold2); }
+    .nav-back { font-size: 14px; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold2); }
+    .lang-toggle { display: flex; border: 1px solid rgba(255,255,255,0.22); border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+    .lang-btn { padding: 5px 12px; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); transition: all 0.18s; }
+    .lang-btn + .lang-btn { border-left: 1px solid rgba(255,255,255,0.22); }
+    .lang-btn.active { background: rgba(255,255,255,0.18); color: #fff; }
+
+    .lang-switch-banner { background: var(--gray); border: 1px solid var(--gray2); border-radius: 14px; padding: 14px 20px; margin-bottom: 40px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .lang-switch-banner span { font-size: 14px; color: var(--muted); }
+    .lang-switch-link { font-size: 13px; font-weight: 700; color: var(--teal2); border: 1px solid var(--teal2); border-radius: 50px; padding: 6px 16px; transition: all 0.2s; white-space: nowrap; }
+    .lang-switch-link:hover { background: var(--teal2); color: #fff; }
+
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 60px 24px 100px; }
+
+    /* Breadcrumb — reuses existing color tokens only */
+    .breadcrumb { margin-bottom: 24px; position: static; top: auto; z-index: auto; background: none; backdrop-filter: none; border-bottom: none; }
+    .breadcrumb ol { display: flex; flex-wrap: wrap; align-items: center; list-style: none; padding: 0; margin: 0; font-size: 13px; color: var(--muted); }
+    .breadcrumb li { display: flex; align-items: center; }
+    .breadcrumb li:not(:last-child)::after { content: "→"; margin: 0 8px; color: var(--gray2); }
+    .breadcrumb a { color: var(--teal2); font-weight: 600; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb li[aria-current="page"] { color: var(--navy); font-weight: 600; }
+
+    .article-hero { background: linear-gradient(135deg, var(--navy) 0%, #0f4f6e 100%); border-radius: 24px; padding: 52px 48px; margin-bottom: 48px; position: relative; overflow: hidden; }
+    .article-hero::before { content: '⚡'; position: absolute; right: 32px; top: 32px; font-size: 80px; opacity: 0.15; }
+    .article-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(26,122,110,0.3); border: 1px solid rgba(26,122,110,0.5); border-radius: 50px; font-size: 12px; font-weight: 700; color: #6ee7da; padding: 4px 14px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+    .article-title { font-size: clamp(22px, 3.5vw, 34px); font-weight: 900; color: #fff; line-height: 1.3; margin-bottom: 20px; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 12px 20px; }
+    .article-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.65); }
+    .article-meta-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+
+    .abstract { background: linear-gradient(135deg, rgba(26,122,110,0.06), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 16px 16px 0; padding: 24px 28px; margin-bottom: 48px; }
+    .abstract-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--teal2); margin-bottom: 10px; }
+    .abstract p { font-size: 15px; color: #2a3a4a; line-height: 1.85; margin: 0; font-style: italic; }
+
+    .article-body h2 { font-size: 24px; font-weight: 900; color: var(--navy); margin: 52px 0 16px; line-height: 1.35; padding-bottom: 12px; border-bottom: 2px solid var(--gray2); }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-size: 19px; font-weight: 800; color: var(--navy2); margin: 36px 0 12px; }
+    .article-body p { font-size: 16px; color: #2a2a3e; line-height: 1.95; margin-bottom: 20px; }
+    .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .article-body li { font-size: 15px; color: #3a3a50; line-height: 1.75; }
+    .article-body strong { color: var(--navy); }
+
+    .evidence-box { background: var(--gray); border-radius: 14px; padding: 20px 24px; margin: 28px 0; }
+    .evidence-box h4 { font-size: 12px; font-weight: 800; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .evidence-box ul { margin: 0; gap: 8px; }
+    .evidence-box li { font-size: 13px; color: var(--muted); line-height: 1.7; overflow-wrap: break-word; word-break: break-word; }
+    .evidence-box li a { color: var(--teal2); font-weight: 600; overflow-wrap: break-word; word-break: break-all; }
+
+    .author-card { background: var(--gray); border-radius: 20px; padding: 28px 32px; margin-top: 64px; display: flex; align-items: flex-start; gap: 20px; }
+    .author-avatar { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--navy), var(--teal)); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+    .author-info h4 { font-size: 17px; font-weight: 900; color: var(--navy); margin-bottom: 4px; }
+    .author-info .creds { font-size: 13px; color: var(--teal); font-weight: 600; margin-bottom: 10px; }
+    .author-info p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+
+    .related { margin-top: 64px; }
+    .related h3 { font-size: 20px; font-weight: 900; color: var(--navy); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .related-card { background: var(--gray); border-radius: 16px; padding: 20px; border: 1px solid var(--gray2); }
+    .related-card .tag { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .related-card h4 { font-size: 15px; font-weight: 800; color: var(--navy); line-height: 1.4; }
+
+    footer { background: #0a1a32; color: rgba(255,255,255,0.5); padding: 32px 0; }
+    .footer-bottom { max-width: 900px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 12px; }
+
+    @media (max-width: 600px) {
+      .article-hero { padding: 36px 28px; }
+      .related-grid { grid-template-columns: 1fr; }
+      .author-card { flex-direction: column; }
+    }
+    /* Signature */
+    .sig-block { border-top: 2px solid var(--gray2); margin-top: 48px; padding-top: 24px; }
+    .sig-main { font-size: 14px; color: var(--navy); font-weight: 700; margin-bottom: 12px; line-height: 1.7; }
+    .sig-creds { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+    .sig-creds li { font-size: 13px; color: var(--muted); padding-left: 14px; position: relative; line-height: 1.6; }
+    .sig-creds li::before { content: "·"; position: absolute; left: 0; color: var(--teal2); font-weight: 900; }
+    .sig-notice { font-size: 12px; color: var(--muted); font-style: italic; line-height: 1.7; }
+
+    :focus-visible { outline: 2px solid var(--teal2); outline-offset: 2px; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/en/" class="nav-logo">Nerv<span>Lock</span></a>
+    <a href="/en/blog/" class="nav-back">← Medical Blog</a>
+    <div class="lang-toggle">
+      <a href="/blog/why-concentration-declines-dopamine-sleep-adhd/" class="lang-btn">KR</a>
+      <a href="/blog/why-cant-i-focus/" class="lang-btn active">EN</a>
+    </div>
+  </div>
+</nav>
+
+<div class="article-wrap">
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/en/">Home</a></li>
+      <li><a href="/en/#academy">Brain Health Academy</a></li>
+      <li>Focus</li>
+      <li aria-current="page">Why Can't I Focus? It's Not Just Dopamine</li>
+    </ol>
+  </nav>
+
+  <div class="article-hero">
+    <div class="article-tag">Brain Health &amp; Lifestyle</div>
+    <h1 class="article-title">Why Can't I Focus?<br>It's Not Just Dopamine</h1>
+    <div class="article-meta">
+      <div class="article-meta-item">👤 Author: <strong>Jeehyun Ham, M.D.</strong></div>
+      <div class="article-meta-item">🩺 Specialty: <strong>Neurologist</strong></div>
+      <div class="article-meta-item">✅ Medical Reviewer: <strong>Jeehyun Ham, M.D.</strong></div>
+      <div class="article-meta-item">📅 Published: <strong>2026-07-17</strong></div>
+      <div class="article-meta-item">🔎 Medically Reviewed: <strong>2026-07-17</strong></div>
+      <div class="article-meta-item">📚 Evidence Review Date: <strong>2026-07-17</strong></div>
+    </div>
+  </div>
+
+  <div class="lang-switch-banner">
+    <span>🇰🇷 이 글의 한국어 버전을 보시겠습니까?</span>
+    <a href="/blog/why-concentration-declines-dopamine-sleep-adhd/" class="lang-switch-link">한국어로 읽기 →</a>
+  </div>
+
+  <div class="abstract">
+    <div class="abstract-label">Abstract</div>
+    <p>Difficulty concentrating is not always a dopamine problem. Sleep, stress, mood, pain, medications, digital interruptions, and adult ADHD can all affect attention.</p>
+  </div>
+
+  <div class="article-body">
+
+    <p><strong>Written and medically reviewed by Jeehyun Ham, M.D.</strong></p>
+
+    <p>When concentration becomes difficult, it is common to assume that the brain is "low on dopamine."</p>
+    <p>Dopamine is an important neurotransmitter involved in motivation, reward learning, working memory, and cognitive control. But attention is not controlled by dopamine alone.</p>
+    <p>Sleep loss, stress, anxiety, depression, pain, fatigue, frequent task switching, medications, alcohol use, sleep disorders, and attention-deficit/hyperactivity disorder, or ADHD, can all affect the ability to focus. Medical conditions such as anemia or thyroid disease, post-illness fatigue, head injury, and neurological disorders may also contribute.</p>
+    <p>Difficulty concentrating is therefore a symptom, not a diagnosis.</p>
+    <p>Instead of starting with the question, "How can I raise my dopamine?" it is more useful to ask:</p>
+    <ul>
+      <li>In which situations is it hardest to focus?</li>
+      <li>Did the problem begin suddenly, or has it been present for years?</li>
+      <li>Am I getting enough sleep?</li>
+      <li>Is severe stress, anxiety, or low mood present?</li>
+      <li>Am I dealing with persistent pain or fatigue?</li>
+      <li>Did the problem begin after a medication change or increased alcohol use?</li>
+      <li>Have memory, language, judgment, or other cognitive abilities also changed?</li>
+      <li>Is the problem affecting school, work, driving, relationships, or daily life?</li>
+    </ul>
+    <p>The evidence suggests that poor concentration is usually influenced by several interacting factors rather than one neurotransmitter or one simple cause.</p>
+
+    <h2>Key Takeaways</h2>
+    <ul>
+      <li>Focus is not a single mental ability. Sustained attention, selective attention, working memory, inhibitory control, and cognitive flexibility work together.</li>
+      <li>Dopamine contributes to motivation and attention, but difficulty concentrating does not prove that a person has "low dopamine."</li>
+      <li>Sleep loss is a relatively consistent contributor to next-day sleepiness and impaired sustained attention.</li>
+      <li>Stress, anxiety, depression, pain, and fatigue can make concentration more difficult.</li>
+      <li>Evidence that the mere presence of a smartphone reduces cognitive performance in everyone is inconsistent. Notifications, habitual checking, actual interruptions, and reduced sleep may be more direct problems.</li>
+      <li>Adult ADHD is not diagnosed simply because concentration has recently declined. Clinicians assess whether symptoms were present before age 12, persisted over time, appeared in more than one setting, and caused meaningful impairment.</li>
+      <li>Regular sleep, fewer interruptions, clearly defined tasks, structured work periods, and regular physical activity are reasonable first steps.</li>
+      <li>Sudden difficulty concentrating accompanied by confusion, speech difficulty, one-sided weakness, vision changes, a severe headache, a seizure, or reduced consciousness requires urgent medical evaluation.</li>
+    </ul>
+
+    <h2>1. Focus Is Not a Single Skill</h2>
+    <p>The word "focus" is used as though it describes one ability. In reality, concentration depends on several cognitive systems working together.</p>
+
+    <h3>Sustained Attention</h3>
+    <p>Sustained attention is the ability to remain engaged with one task over time.</p>
+    <p>Examples include:</p>
+    <ul>
+      <li>Listening throughout a long meeting</li>
+      <li>Driving for an extended period</li>
+      <li>Monitoring repetitive numbers or images</li>
+      <li>Reviewing a document from beginning to end</li>
+    </ul>
+    <p>This ability may be particularly vulnerable to sleep loss and significant fatigue.</p>
+
+    <h3>Selective Attention</h3>
+    <p>Selective attention allows the brain to prioritize relevant information while filtering out competing stimuli.</p>
+    <p>It is needed when:</p>
+    <ul>
+      <li>Following a conversation in a busy café</li>
+      <li>Reading while background noise is present</li>
+      <li>Working while messages and notifications appear</li>
+      <li>Listening to one speaker in a crowded room</li>
+    </ul>
+
+    <h3>Working Memory</h3>
+    <p>Working memory temporarily holds information while it is being used.</p>
+    <p>It contributes to tasks such as:</p>
+    <ul>
+      <li>Remembering a phone number long enough to enter it</li>
+      <li>Keeping the beginning of a sentence in mind while reading the rest</li>
+      <li>Following multistep instructions</li>
+      <li>Performing mental calculations</li>
+      <li>Comparing several pieces of information</li>
+    </ul>
+
+    <h3>Inhibitory Control</h3>
+    <p>Inhibitory control is the ability to suppress an immediate response or resist an irrelevant impulse.</p>
+    <p>Examples include:</p>
+    <ul>
+      <li>Delaying the urge to check a smartphone</li>
+      <li>Waiting for another person to finish speaking</li>
+      <li>Ignoring an unrelated thought while completing a task</li>
+      <li>Avoiding an impulsive response during a discussion</li>
+    </ul>
+
+    <h3>Cognitive Flexibility</h3>
+    <p>Cognitive flexibility is the ability to adjust strategies or shift between tasks when circumstances change.</p>
+    <p>Poor concentration may involve difficulty in one of these areas or several of them at the same time.</p>
+
+    <h2>2. What Does Dopamine Have to Do With Focus?</h2>
+    <p>Dopamine helps regulate different functions across several brain circuits.</p>
+    <p>It is involved in:</p>
+    <ul>
+      <li>Motivation and goal-directed behavior</li>
+      <li>Reward prediction and learning</li>
+      <li>Working memory</li>
+      <li>Behavioral selection</li>
+      <li>Cognitive control</li>
+      <li>Attention regulation</li>
+    </ul>
+    <p>However, difficulty concentrating does not mean that dopamine is globally deficient throughout the brain.</p>
+    <p>Dopamine's effects depend on factors such as:</p>
+    <ul>
+      <li>Which brain circuit is involved</li>
+      <li>Which dopamine receptors are active</li>
+      <li>The type and difficulty of the task</li>
+      <li>A person's baseline state</li>
+      <li>Interactions with other neurotransmitter systems</li>
+      <li>Stress and arousal levels</li>
+    </ul>
+    <p>Dopamine activity in the prefrontal cortex cannot be described as simply "the more, the better."</p>
+    <p>An influential model proposes that both relatively low and relatively high dopamine activity may interfere with working memory and cognitive control. This is often described as an inverted-U relationship.<sup>[8]</sup></p>
+    <p>However, this model is a framework used to interpret group-level research. A person cannot determine where they fall on an inverted-U curve simply because they feel distracted.</p>
+    <p>The following claims are therefore overly simplistic or extend beyond the evidence:</p>
+    <ul>
+      <li>"I cannot focus because my dopamine is low."</li>
+      <li>"Short-form videos deplete dopamine."</li>
+      <li>"A particular food or supplement will raise dopamine and restore focus."</li>
+      <li>"A dopamine detox resets the brain."</li>
+      <li>"Avoiding enjoyable activities normalizes attention."</li>
+    </ul>
+    <p>A "dopamine detox" is not a recognized medical diagnosis or standard treatment.</p>
+    <p>Reducing repetitive digital stimulation or reward-driven habits may help some people reorganize their routines. But this should not be described as removing dopamine from the brain or resetting the dopamine system.</p>
+
+    <h2>3. Common Reasons Concentration May Decline</h2>
+    <p>Difficulty concentrating is a nonspecific symptom.</p>
+    <p>Evaluation should consider not only attention itself but also sleep, mood, pain, fatigue, medications, alcohol use, the work environment, and when the problem began.</p>
+
+    <h3>Sleep Loss</h3>
+    <p>Insufficient sleep can increase sleepiness and impair sustained attention.</p>
+    <p>A 2024 systematic review and meta-analysis found that restricting sleep for one night increased subjective sleepiness and reduced performance on sustained-attention tasks.<sup>[3]</sup></p>
+    <p>However, not every cognitive domain was affected consistently. Working memory, inhibitory control, and choice reaction time did not show the same degree of impairment across all studies.</p>
+    <p>Sleep should be considered when poor focus occurs together with:</p>
+    <ul>
+      <li>Regularly insufficient sleep on workdays</li>
+      <li>Sleeping substantially longer on weekends</li>
+      <li>Waking without feeling refreshed</li>
+      <li>Sleepiness during meetings, reading, or driving</li>
+      <li>Loud snoring</li>
+      <li>Observed pauses in breathing during sleep</li>
+      <li>Difficulty falling asleep</li>
+      <li>Frequent nighttime awakenings</li>
+      <li>Shift work or an irregular sleep schedule</li>
+    </ul>
+    <p>Severe daytime sleepiness or witnessed breathing pauses may indicate a sleep disorder rather than a simple sleep-habit problem.</p>
+
+    <h3>Stress and Anxiety</h3>
+    <p>During periods of high stress, attention may repeatedly shift toward worries, possible threats, or uncomfortable physical sensations.</p>
+    <p>A person may be sitting at a desk while mentally monitoring:</p>
+    <ul>
+      <li>An unresolved problem</li>
+      <li>Fear of making a mistake</li>
+      <li>Uncertainty about the future</li>
+      <li>Other people's reactions</li>
+      <li>Physical symptoms</li>
+      <li>Repetitive negative thoughts</li>
+    </ul>
+    <p>Difficulty concentrating can occur in anxiety disorders together with fatigue and sleep problems.<sup>[10]</sup></p>
+    <p>However, concentration difficulty alone does not establish an anxiety disorder. Duration, difficulty controlling worry, associated symptoms, and functional impact all matter.</p>
+
+    <h3>Depression and Loss of Motivation</h3>
+    <p>Depression may affect concentration, decision-making, processing speed, and the ability to begin or complete tasks.<sup>[9]</sup></p>
+    <p>Associated symptoms may include:</p>
+    <ul>
+      <li>Reduced interest or motivation</li>
+      <li>Fatigue</li>
+      <li>A sense that thinking has slowed</li>
+      <li>Changes in sleep or appetite</li>
+      <li>Excessive self-criticism</li>
+      <li>Difficulty starting or finishing work</li>
+      <li>Difficulty making decisions</li>
+    </ul>
+    <p>In this setting, poor concentration should not be treated only as a productivity or willpower problem.</p>
+    <p>Persistent low mood or loss of interest that affects daily functioning warrants discussion with a healthcare professional or mental health professional.</p>
+
+    <h3>Pain and Physical Discomfort</h3>
+    <p>Persistent pain can repeatedly pull attention away from the task at hand.</p>
+    <p>People with chronic pain may report difficulty with attention, memory, or executive function. Research findings vary according to the cause and severity of pain, sleep quality, mood, and medication use.</p>
+    <p>Concentration may also be affected by:</p>
+    <ul>
+      <li>Sleep disruption caused by pain</li>
+      <li>Reduced physical activity</li>
+      <li>Anxiety about pain</li>
+      <li>Sedating medications</li>
+      <li>Chronic fatigue</li>
+      <li>Low mood</li>
+    </ul>
+    <p>Difficulty focusing while experiencing significant pain should not be dismissed as a lack of effort.</p>
+
+    <h3>Medications, Alcohol, and Medical Conditions</h3>
+    <p>Some medications may cause sleepiness, slower reaction time, or difficulty concentrating.</p>
+    <p>Depending on the individual medication, dose, and person, potentially relevant categories may include:</p>
+    <ul>
+      <li>Sleep medications and sedatives</li>
+      <li>Some antihistamines</li>
+      <li>Some pain medications</li>
+      <li>Some anti-anxiety medications</li>
+      <li>Antiseizure medications</li>
+      <li>Combinations of several medications</li>
+    </ul>
+    <p>Alcohol may also disrupt sleep continuity and next-day alertness.</p>
+    <p>Concentration problems can occur with conditions such as:</p>
+    <ul>
+      <li>Anemia</li>
+      <li>Thyroid disease</li>
+      <li>Post-infectious or post-illness fatigue</li>
+      <li>Metabolic abnormalities</li>
+      <li>Sleep disorders</li>
+      <li>Neurological conditions</li>
+    </ul>
+    <p>Do not stop a prescribed medication without medical guidance.</p>
+    <p>When sleepiness or concentration changes begin after a medication is started or its dose is changed, discuss the timing and symptoms with the prescribing clinician or a pharmacist.</p>
+
+    <h3>Environmental Distractions and Repeated Task Switching</h3>
+    <p>Maintaining focus requires the brain to suppress competing stimuli.</p>
+    <p>Concentration may require more effort in environments with:</p>
+    <ul>
+      <li>Frequent smartphone notifications</li>
+      <li>Multiple messaging platforms and email alerts</li>
+      <li>Numerous open browser tabs</li>
+      <li>Background noise</li>
+      <li>Frequent questions or interruptions</li>
+      <li>Several tasks being handled at once</li>
+    </ul>
+    <p>People generally do not perform two complex cognitive tasks simultaneously. Instead, attention often shifts rapidly between them.</p>
+    <p>Each switch requires the brain to disengage from one goal and reload the rules and context of another. This can add time and mental effort.</p>
+
+    <h2>4. Do Smartphones Damage Attention?</h2>
+    <p>Smartphones are frequently blamed for poor concentration.</p>
+    <p>The evidence is more nuanced.</p>
+    <p>Studies examining the "brain drain" hypothesis—the idea that simply having a smartphone nearby reduces cognitive performance—have produced mixed findings.</p>
+    <p>One 2024 meta-analysis found a possible small negative effect of smartphone presence on working memory, but did not find consistent effects on sustained attention, inhibitory control, or several other cognitive domains.<sup>[7]</sup></p>
+    <p>Another 2024 meta-analysis did not identify a significant overall average effect of smartphone presence on cognitive functioning.<sup>[6]</sup></p>
+    <p>The studies differed in:</p>
+    <ul>
+      <li>Where the phone was placed</li>
+      <li>How strongly participants relied on their phones</li>
+      <li>Which cognitive tasks were used</li>
+      <li>Whether the phone was visible</li>
+      <li>How interruptions were controlled</li>
+      <li>How outcomes were measured</li>
+    </ul>
+    <p>A useful distinction is therefore needed.</p>
+
+    <h3>More Plausible and Direct Concerns</h3>
+    <ul>
+      <li>Notifications interrupt an active task.</li>
+      <li>A person habitually checks messages or apps.</li>
+      <li>Work is repeatedly interrupted by self-initiated phone use.</li>
+      <li>Attention shifts between tasks at short intervals.</li>
+      <li>Smartphone use delays bedtime.</li>
+      <li>Sleep time is reduced.</li>
+      <li>Use feels difficult to control and interferes with mood, sleep, work, or relationships.</li>
+    </ul>
+
+    <h3>Claims That Current Evidence Does Not Clearly Establish</h3>
+    <ul>
+      <li>Merely having a smartphone nearby impairs everyone's concentration.</li>
+      <li>Short-form videos permanently train the brain to process only brief stimuli.</li>
+      <li>Smartphone use causes new-onset adult ADHD.</li>
+      <li>Digital devices cause irreversible brain damage.</li>
+      <li>Placing a phone in another room improves performance for every person.</li>
+    </ul>
+    <p>Screen time alone does not describe how a device is being used.</p>
+    <p>Using a smartphone intentionally as a work tool is not the same as repeatedly checking it in a way that interrupts tasks and reduces sleep.</p>
+
+    <h2>5. Is Poor Focus the Same as Adult ADHD?</h2>
+    <p>Not everyone who has difficulty concentrating has ADHD.</p>
+    <p>ADHD is a neurodevelopmental disorder characterized by persistent patterns of inattention, hyperactivity, and/or impulsivity.<sup>[1,2]</sup></p>
+    <p>An adult ADHD assessment considers more than current concentration problems.</p>
+    <p>Clinicians evaluate whether:</p>
+    <ul>
+      <li>Several relevant symptoms were present before age 12</li>
+      <li>Symptoms have persisted for at least six months</li>
+      <li>Symptoms occur in two or more settings</li>
+      <li>Symptoms interfere with school, work, relationships, or daily functioning</li>
+      <li>The severity is inconsistent with the person's developmental level</li>
+      <li>Another condition provides a better explanation</li>
+    </ul>
+    <p>Possible alternative or contributing explanations include:</p>
+    <ul>
+      <li>Insufficient sleep</li>
+      <li>Sleep disorders</li>
+      <li>Anxiety</li>
+      <li>Depression</li>
+      <li>Medication effects</li>
+      <li>Substance use</li>
+      <li>Medical illness</li>
+      <li>Other neurodevelopmental or psychiatric conditions</li>
+    </ul>
+    <p>An adult may be diagnosed with ADHD even without having received the diagnosis in childhood. However, the assessment still looks for evidence that relevant symptoms were present during childhood.</p>
+    <p>Information may come from:</p>
+    <ul>
+      <li>School experiences</li>
+      <li>Family observations</li>
+      <li>Old report cards or records</li>
+      <li>Long-term patterns of organization and time management</li>
+      <li>Developmental and occupational history</li>
+    </ul>
+    <p>A recent decline in focus after increased workload, severe stress, or prolonged sleep loss may require evaluation for causes other than ADHD.</p>
+    <p>Professional assessment may be reasonable when the following patterns were already present before age 12:</p>
+    <ul>
+      <li>Frequent careless mistakes</li>
+      <li>Regularly forgetting homework or supplies</li>
+      <li>Difficulty completing long assignments</li>
+      <li>Frequently losing belongings</li>
+      <li>Persistent time-management problems</li>
+      <li>Distractibility across different settings</li>
+      <li>Long-standing difficulty with planning and organization</li>
+      <li>Repeated impulsive speech or behavior</li>
+    </ul>
+    <p>Online questionnaires can identify symptoms that deserve further discussion. They cannot confirm an ADHD diagnosis.</p>
+    <p>Diagnosis requires a broader assessment of developmental history, impairment, coexisting conditions, and other possible explanations.</p>
+
+    <h2>6. Why Poor Focus Can Feel Like Memory Loss</h2>
+    <p>Attention problems may feel like memory problems.</p>
+    <p>Information must first receive adequate attention before it can be encoded into memory.</p>
+    <p>For example, when a person is thinking about something else during a conversation, the later inability to remember the discussion may not mean that a stored memory was lost. The information may never have been encoded clearly in the first place.</p>
+    <p>This can occur when:</p>
+    <ul>
+      <li>Having a conversation while multitasking</li>
+      <li>Reading while checking messages</li>
+      <li>Listening to a lecture while exhausted</li>
+      <li>Working while preoccupied by anxiety</li>
+      <li>Trying to remember information while in pain</li>
+      <li>Taking a medication that causes drowsiness</li>
+    </ul>
+    <p>The statement "I cannot remember" does not, by itself, distinguish between a problem with attention, encoding, storage, or retrieval.</p>
+    <p>Separate cognitive evaluation may be warranted when the following changes are repeated or progressively worsen:</p>
+    <ul>
+      <li>Asking the same questions repeatedly</li>
+      <li>Difficulty performing familiar tasks</li>
+      <li>Repeatedly forgetting important appointments or responsibilities</li>
+      <li>Becoming lost in familiar places</li>
+      <li>Clear difficulty expressing or understanding language</li>
+      <li>Reduced judgment</li>
+      <li>Difficulty managing money</li>
+      <li>Difficulty managing medications or routine daily activities</li>
+    </ul>
+
+    <h2>7. Practical Steps That May Support Better Focus</h2>
+    <p>There is no single technique that reliably fixes every concentration problem.</p>
+    <p>A more realistic approach is to identify possible causes while reducing unnecessary cognitive demands and interruptions.</p>
+
+    <h3>Start With Sleep</h3>
+    <p>Reducing sleep in order to create more working hours may be counterproductive when attention is needed the next day.</p>
+    <p>Consider:</p>
+    <ul>
+      <li>Whether you allow enough time for sleep</li>
+      <li>Whether your wake time is highly irregular</li>
+      <li>Whether you snore loudly</li>
+      <li>Whether breathing pauses have been observed</li>
+      <li>Whether daytime sleepiness is severe</li>
+      <li>Whether caffeine or alcohol interferes with sleep</li>
+      <li>Whether difficulty falling asleep or frequent awakenings persist</li>
+    </ul>
+
+    <h3>Define One Main Task at a Time</h3>
+    <p>Instead of trying to manage several goals simultaneously, define one visible outcome for a specific work period.</p>
+    <p>Examples:</p>
+    <ul>
+      <li>Write one paragraph</li>
+      <li>Answer three emails</li>
+      <li>Review the data section of a report</li>
+      <li>Complete five practice questions</li>
+      <li>Draft the outline for a presentation</li>
+    </ul>
+    <p>"Focus harder" is vague. A task with a clear completion point is easier to begin and monitor.</p>
+
+    <h3>Reduce Interruptions Deliberately</h3>
+    <p>Changing the environment may be more effective than relying only on willpower.</p>
+    <p>Possible steps include:</p>
+    <ul>
+      <li>Turning off nonessential notifications</li>
+      <li>Closing messaging apps during focused work</li>
+      <li>Moving the smartphone out of reach when checking is repetitive</li>
+      <li>Closing unused browser tabs</li>
+      <li>Setting specific times to check email</li>
+      <li>Choosing a quieter workspace</li>
+    </ul>
+    <p>Evidence does not show that everyone must place a smartphone in another room to concentrate.</p>
+    <p>However, lowering access may help people who repeatedly interrupt their own work to check the device.</p>
+
+    <h3>Break Large Projects Into Smaller Actions</h3>
+    <p>Large goals such as "write the paper" or "study for the exam" can be difficult to start.</p>
+    <p>More concrete actions include:</p>
+    <ul>
+      <li>Review three references</li>
+      <li>Write the first paragraph of the introduction</li>
+      <li>Read through page 20</li>
+      <li>Analyze five incorrect answers</li>
+      <li>Create the presentation outline</li>
+    </ul>
+    <p>Smaller tasks provide a clearer starting point and completion point.</p>
+
+    <h3>Plan Brief Breaks</h3>
+    <p>Sustained attention has limits.</p>
+    <p>Planning work periods and breaks may be more realistic than continuing until mental exhaustion.</p>
+    <p>There is no single ideal work-to-break ratio that applies to everyone.</p>
+    <p>The appropriate interval depends on:</p>
+    <ul>
+      <li>Task difficulty</li>
+      <li>Sleepiness</li>
+      <li>Pain</li>
+      <li>The work environment</li>
+      <li>Individual tolerance</li>
+      <li>The need for safety and accuracy</li>
+    </ul>
+
+    <h3>Move Regularly</h3>
+    <p>A 2025 umbrella review and meta-meta-analysis found that exercise was associated, on average, with small to small-to-moderate improvements in overall cognition, memory, and executive function.<sup>[5]</sup></p>
+    <p>The included studies varied in population, exercise type, study size, and outcome measurement. Small-study bias was also possible.</p>
+    <p>Exercise is not a stand-alone treatment for every concentration problem and does not guarantee immediate improvement in productivity.</p>
+    <p>It remains a reasonable component of general health, sleep, mood, and long-term brain-health support.</p>
+
+    <h3>Review Mood, Pain, Fatigue, and Medications</h3>
+    <p>Consider whether poor concentration began around the same time as:</p>
+    <ul>
+      <li>Increased anxiety</li>
+      <li>Persistent low mood</li>
+      <li>Severe stress</li>
+      <li>Chronic pain</li>
+      <li>A sleep medication or another sedating medication</li>
+      <li>Increased alcohol use</li>
+      <li>Heavy caffeine use</li>
+      <li>New physical symptoms</li>
+      <li>Fatigue after an infection or illness</li>
+      <li>A head injury</li>
+    </ul>
+    <p>Do not stop medication on your own.</p>
+    <p>Discuss possible medication-related sleepiness or cognitive changes with the prescribing clinician or a pharmacist.</p>
+
+    <h2>8. Can Caffeine or Supplements Improve Focus?</h2>
+    <p>Caffeine can temporarily increase alertness and reduce sleepiness in some people.</p>
+    <p>However, relying on caffeine without addressing insufficient sleep may delay bedtime or disrupt nighttime sleep, creating a cycle of daytime fatigue and further caffeine use.</p>
+    <p>Depending on the individual, caffeine may also cause:</p>
+    <ul>
+      <li>Anxiety</li>
+      <li>Palpitations</li>
+      <li>Tremor</li>
+      <li>Gastrointestinal discomfort</li>
+      <li>Sleep disruption</li>
+      <li>Headache</li>
+    </ul>
+    <p>Terms such as "dopamine booster" and "focus supplement" should be interpreted cautiously.</p>
+    <p>Correcting a confirmed nutrient deficiency may be clinically important. That is different from claiming that a supplement reliably improves concentration in adults who do not have a deficiency.</p>
+    <p>The following claims may exceed the evidence or create a misleading impression:</p>
+    <ul>
+      <li>"Instantly raises dopamine"</li>
+      <li>"Improves ADHD-like concentration problems"</li>
+      <li>"Activates the brain and increases work performance"</li>
+      <li>"Guaranteed focus"</li>
+      <li>"Restores brain function within weeks"</li>
+      <li>"Reverses attention loss caused by smartphone use"</li>
+    </ul>
+    <p>When concentration problems persist, evaluating sleep, mood, pain, medications, alcohol use, and medical causes should generally come before selecting a product.</p>
+    <p>Never take a prescription stimulant that was not prescribed for you, including another person's ADHD medication.</p>
+
+    <h2>9. When Difficulty Concentrating Needs Medical Attention</h2>
+    <p>Concentration can fluctuate with sleep, stress, and workload.</p>
+    <p>Some patterns require medical evaluation.</p>
+
+    <h3>Sudden Onset or Neurological Symptoms</h3>
+    <p>Call 911 in the United States—or your local emergency number—when sudden confusion or difficulty concentrating occurs with symptoms such as:<sup>[11]</sup></p>
+    <ul>
+      <li>Weakness or numbness of the face, arm, or leg, especially on one side</li>
+      <li>Difficulty speaking</li>
+      <li>Slurred speech</li>
+      <li>Difficulty understanding speech</li>
+      <li>Sudden vision changes</li>
+      <li>Sudden difficulty walking</li>
+      <li>Loss of balance or coordination</li>
+      <li>A sudden, severe headache without a known cause</li>
+      <li>Severe sudden confusion</li>
+      <li>Reduced consciousness or difficulty waking</li>
+      <li>A seizure</li>
+    </ul>
+    <p>These symptoms may indicate a stroke, seizure-related condition, or another acute neurological emergency.</p>
+    <p>Do not wait and assume that the symptoms are caused by stress or sleep loss.</p>
+
+    <h3>After a Head Injury</h3>
+    <p>A head injury may be followed by difficulty with concentration or memory.</p>
+    <p>Seek immediate emergency evaluation when symptoms include:<sup>[12]</sup></p>
+    <ul>
+      <li>A headache that continues to worsen</li>
+      <li>Repeated vomiting</li>
+      <li>Severe drowsiness or difficulty waking</li>
+      <li>Confusion or unusual behavior</li>
+      <li>Slurred speech</li>
+      <li>A seizure</li>
+      <li>Weakness in an arm or leg</li>
+      <li>Unequal pupil size</li>
+      <li>Loss of consciousness</li>
+      <li>Rapidly worsening symptoms</li>
+    </ul>
+    <p>When symptoms persist for days or weeks after a head injury—or worsen after returning to usual activities—consult a healthcare professional.</p>
+
+    <h3>Gradual and Progressive Change</h3>
+    <p>Cognitive evaluation may be appropriate when the following changes progress over several months:</p>
+    <ul>
+      <li>Repeated questions</li>
+      <li>Increasing difficulty with familiar work</li>
+      <li>Repeatedly missing important appointments or responsibilities</li>
+      <li>Becoming lost or confused in familiar places</li>
+      <li>Increasing difficulty with language</li>
+      <li>Changes in judgment or personality</li>
+      <li>Difficulty managing money or medications</li>
+    </ul>
+
+    <h3>Meaningful Effects on Daily Function</h3>
+    <p>Evaluation may also be warranted when concentration problems:</p>
+    <ul>
+      <li>Cause persistent decline in work performance</li>
+      <li>Make it difficult to continue school</li>
+      <li>Lead to repeated mistakes or accidents</li>
+      <li>Cause significant relationship problems</li>
+      <li>Affect driving or safety</li>
+      <li>Occur with severe anxiety, depression, or sleep problems</li>
+      <li>Cause sleep episodes during routine daytime activities</li>
+      <li>Suggest a long-standing pattern of ADHD symptoms beginning before age 12</li>
+      <li>Appear related to medication or alcohol use</li>
+    </ul>
+
+    <h2>10. What This Article Does Not Mean</h2>
+    <p>This article does not mean that:</p>
+    <ul>
+      <li>Poor concentration is always a matter of willpower.</li>
+      <li>Everyone with poor focus has ADHD.</li>
+      <li>Dopamine is irrelevant to attention.</li>
+      <li>A person can determine their dopamine status from how focused they feel.</li>
+      <li>Smartphones have no effect on concentration.</li>
+      <li>Sleep and exercise resolve every attention problem.</li>
+      <li>A particular food or supplement treats concentration difficulties.</li>
+      <li>An online screening questionnaire can diagnose ADHD.</li>
+      <li>An online article can determine the cause of an individual's cognitive symptoms.</li>
+    </ul>
+    <p>Focus reflects the combined effects of brain function, sleep, mood, pain, medications, the environment, and the demands of the task.</p>
+
+    <h2>Conclusion</h2>
+    <p>When concentration declines, focusing on dopamine alone may cause important clues to be missed.</p>
+    <p>Dopamine contributes to motivation, reward learning, working memory, and cognitive control. But attention emerges from several interacting brain networks and cognitive processes.</p>
+    <p>Sleep loss, stress, anxiety, depression, pain, digital interruptions, frequent task switching, medications, alcohol use, ADHD, medical conditions, and neurological conditions may all contribute.</p>
+    <p>The most useful first step is usually not to search for a way to artificially raise dopamine.</p>
+    <p>Instead, consider:</p>
+    <ul>
+      <li>Am I getting enough sleep?</li>
+      <li>Are notifications or other distractions repeatedly interrupting me?</li>
+      <li>Have I defined one clear task?</li>
+      <li>Have mood, pain, or fatigue changed?</li>
+      <li>Did the problem begin after a medication change or increased alcohol use?</li>
+      <li>Were related symptoms already present before age 12?</li>
+      <li>Are there sudden neurological symptoms?</li>
+      <li>Is the problem affecting daily functioning?</li>
+    </ul>
+    <p>When difficulty concentrating persists, worsens, or interferes with school, work, driving, or daily life, medical evaluation may help distinguish among the possible causes.</p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>Does poor concentration mean I have low dopamine?</h3>
+    <p>No conclusion about dopamine levels can be made from concentration symptoms alone.</p>
+    <p>Dopamine contributes to attention, motivation, and working memory, but focus is also influenced by sleep, mood, pain, medications, other neurotransmitters, and the environment.</p>
+
+    <h3>Do short-form videos permanently shorten attention span?</h3>
+    <p>Current evidence does not establish that short-form video use permanently changes every person's ability to focus.</p>
+    <p>Notifications, habitual checking, frequent task switching, sleep loss, and difficulty controlling use may interfere with current activities. These factors are more direct and measurable than claims of permanent brain damage.</p>
+
+    <h3>Will putting my smartphone in another room improve focus?</h3>
+    <p>It may help people who repeatedly check their phones during work.</p>
+    <p>However, evidence that the mere presence of a smartphone consistently impairs cognition in everyone is mixed.</p>
+    <p>Reducing access and disabling nonessential notifications may be useful when actual checking behavior is interrupting tasks.</p>
+
+    <h3>Could recent concentration problems be adult ADHD?</h3>
+    <p>Recent difficulty concentrating alone is not enough to diagnose ADHD.</p>
+    <p>An ADHD evaluation considers whether several symptoms were present before age 12, persisted for at least six months, occurred in more than one setting, caused meaningful impairment, and were not better explained by sleep, mood, medication, substance use, or another medical condition.</p>
+
+    <h3>Could poor attention make my memory seem worse?</h3>
+    <p>Yes.</p>
+    <p>Information must receive adequate attention before it can be encoded into memory. When attention is divided, information may not be stored clearly, making it seem as though memory has been lost.</p>
+    <p>Repeated questions, navigation problems, language changes, impaired judgment, or progressive loss of daily skills require separate evaluation.</p>
+
+    <h3>Does exercise improve concentration?</h3>
+    <p>Exercise may provide small average benefits for overall cognition, memory, and executive function.</p>
+    <p>It does not treat every concentration problem or guarantee an immediate increase in productivity.</p>
+    <p>Regular physical activity is best considered one component of long-term health, together with sleep, mood, pain management, and medical care when needed.</p>
+
+    <h3>Should I take a focus supplement?</h3>
+    <p>Correcting a confirmed nutrient deficiency may be important.</p>
+    <p>However, evidence does not support assuming that a particular supplement will treat nonspecific concentration problems in every adult.</p>
+    <p>Possible causes, current medications, health conditions, duplicate ingredients, and interactions should be reviewed before choosing a product.</p>
+
+    <div class="evidence-box">
+      <h4>📚 References</h4>
+      <ul>
+        <li>1. National Institute for Health and Care Excellence. Attention deficit hyperactivity disorder: diagnosis and management. NICE Guideline NG87. Published March 14, 2018. Last updated September 13, 2019. Accessed July 17, 2026. <a href="https://www.nice.org.uk/guidance/ng87" target="_blank" rel="noopener noreferrer nofollow">https://www.nice.org.uk/guidance/ng87</a></li>
+        <li>2. National Institute of Mental Health. Attention-Deficit/Hyperactivity Disorder: What You Need to Know. Accessed July 17, 2026. <a href="https://www.nimh.nih.gov/health/publications/attention-deficit-hyperactivity-disorder-what-you-need-to-know" target="_blank" rel="noopener noreferrer nofollow">https://www.nimh.nih.gov/health/publications/attention-deficit-hyperactivity-disorder-what-you-need-to-know</a></li>
+        <li>3. Wüst LN, Capdevila NC, Lane LT, Reichert CF, Lasauskaite R. Impact of one night of sleep restriction on sleepiness and cognitive function: A systematic review and meta-analysis. Sleep Med Rev. 2024;76:101940. <a href="https://doi.org/10.1016/j.smrv.2024.101940" target="_blank" rel="noopener noreferrer nofollow">https://doi.org/10.1016/j.smrv.2024.101940</a></li>
+        <li>4. Cao Y, Xie T, Ma N. The impairments of sleep loss on core executive functions: General and task-specific effects. Sleep Med Rev. 2025;84:102163. <a href="https://doi.org/10.1016/j.smrv.2025.102163" target="_blank" rel="noopener noreferrer nofollow">https://doi.org/10.1016/j.smrv.2025.102163</a></li>
+        <li>5. Singh B, Bennett H, Miatke A, et al. Effectiveness of exercise for improving cognition, memory and executive function: a systematic umbrella review and meta-meta-analysis. Br J Sports Med. 2025;59(12):866-876. <a href="https://doi.org/10.1136/bjsports-2024-108589" target="_blank" rel="noopener noreferrer nofollow">https://doi.org/10.1136/bjsports-2024-108589</a></li>
+        <li>6. Hartanto A, Lua VYQ, Kasturiratna KTAS, et al. The effect of mere presence of smartphone on cognitive functions: A four-level meta-analysis. Technology, Mind, and Behavior. 2024;5(1):1-14. <a href="https://doi.org/10.1037/tmb0000123" target="_blank" rel="noopener noreferrer nofollow">https://doi.org/10.1037/tmb0000123</a></li>
+        <li>7. Parry DA. Does the Mere Presence of a Smartphone Impact Cognitive Performance? A Meta-Analysis of the "Brain Drain Effect." Media Psychology. 2024;27(5):737-762. <a href="https://doi.org/10.1080/15213269.2023.2286647" target="_blank" rel="noopener noreferrer nofollow">https://doi.org/10.1080/15213269.2023.2286647</a></li>
+        <li>8. Cools R, D'Esposito M. Inverted-U-shaped dopamine actions on human working memory and cognitive control. Biol Psychiatry. 2011;69(12):e113-e125. <a href="https://doi.org/10.1016/j.biopsych.2011.03.028" target="_blank" rel="noopener noreferrer nofollow">https://doi.org/10.1016/j.biopsych.2011.03.028</a></li>
+        <li>9. National Institute of Mental Health. Depression. Accessed July 17, 2026. <a href="https://www.nimh.nih.gov/health/publications/depression" target="_blank" rel="noopener noreferrer nofollow">https://www.nimh.nih.gov/health/publications/depression</a></li>
+        <li>10. National Institute of Mental Health. Generalized Anxiety Disorder: What You Need to Know. Accessed July 17, 2026. <a href="https://www.nimh.nih.gov/health/publications/generalized-anxiety-disorder-gad" target="_blank" rel="noopener noreferrer nofollow">https://www.nimh.nih.gov/health/publications/generalized-anxiety-disorder-gad</a></li>
+        <li>11. Centers for Disease Control and Prevention. Signs and Symptoms of Stroke. Updated May 19, 2026. Accessed July 17, 2026. <a href="https://www.cdc.gov/stroke/signs-symptoms/index.html" target="_blank" rel="noopener noreferrer nofollow">https://www.cdc.gov/stroke/signs-symptoms/index.html</a></li>
+        <li>12. Centers for Disease Control and Prevention. Symptoms of Mild TBI and Concussion. Updated September 15, 2025. Accessed July 17, 2026. <a href="https://www.cdc.gov/traumatic-brain-injury/signs-symptoms/index.html" target="_blank" rel="noopener noreferrer nofollow">https://www.cdc.gov/traumatic-brain-injury/signs-symptoms/index.html</a></li>
+      </ul>
+    </div>
+
+    <div class="author-card">
+      <div class="author-avatar">👨‍⚕️</div>
+      <div class="author-info">
+        <h4>Jeehyun Ham, M.D.</h4>
+        <div class="creds">Neurologist · Graduate of Yonsei University College of Medicine · Former Assistant Professor of Clinical Research, Severance Hospital</div>
+        <p>Member, Korean Neurological Association · Member, Korean Parkinson's Disease and Movement Disorder Society · Member, Korean Society of Functional Medicine. This article is for informational purposes only and does not constitute medical advice or replace professional consultation.</p>
+      </div>
+    </div>
+
+    <div class="related">
+      <h3>Related Articles</h3>
+      <div class="related-grid">
+        <div class="related-card">
+          <a href="/blog/sleep-memory-focus/">
+            <div class="tag">Brain Health &amp; Lifestyle</div>
+            <h4>Sleep and Brain Health: How Rest Shapes Memory and Focus</h4>
+          </a>
+        </div>
+        <div class="related-card">
+          <a href="/blog/brain-fog-neuroscience/">
+            <div class="tag">Brain Health &amp; Lifestyle</div>
+            <h4>Brain Fog: Neurobiological Mechanisms and Evidence-Based Nutritional Support</h4>
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="sig-block">
+      <p class="sig-main"><strong>Jeehyun Ham, M.D.</strong><br>Neurologist</p>
+      <ul class="sig-creds">
+        <li>Graduate of Yonsei University College of Medicine</li>
+        <li>Former Assistant Professor of Clinical Research, Severance Hospital</li>
+        <li>Member, Korean Neurological Association</li>
+        <li>Member, Korean Parkinson's Disease and Movement Disorder Society</li>
+        <li>Member, Korean Society of Functional Medicine</li>
+      </ul>
+      <p class="sig-notice">This article is intended for general health and medical education. It does not provide an individual diagnosis, treatment plan, or substitute for care from a qualified healthcare professional. Consider medical evaluation when concentration problems persist, worsen, or interfere with school, work, driving, or daily life. Call 911 in the United States—or your local emergency number—if sudden confusion, difficulty speaking, one-sided weakness or numbness, vision changes, difficulty walking, a seizure, reduced consciousness, or a sudden severe headache occurs.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2026 NervLock. All rights reserved.</p>
+    <p>This article is for informational purposes only and does not constitute medical advice.</p>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Why Can't I Focus? It's Not Just Dopamine",
+  "description": "Difficulty concentrating is not always a dopamine problem. Learn how sleep, stress, smartphones, mood, pain, medications, and adult ADHD can affect focus—and when to seek care.",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://nervlocklab.com/blog/why-cant-i-focus/"
+  },
+  "url": "https://nervlocklab.com/blog/why-cant-i-focus/",
+  "datePublished": "2026-07-17",
+  "dateModified": "2026-07-17",
+  "inLanguage": "en-US",
+  "articleSection": "Brain Health & Lifestyle",
+  "author": {
+    "@type": "Person",
+    "name": "Jeehyun Ham",
+    "jobTitle": "Neurologist"
+  },
+  "reviewedBy": {
+    "@type": "Person",
+    "name": "Jeehyun Ham",
+    "jobTitle": "Neurologist"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "NervLock Lab",
+    "url": "https://nervlocklab.com/en/"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://nervlocklab.com/en/" },
+    { "@type": "ListItem", "position": 2, "name": "Brain Health Academy", "item": "https://nervlocklab.com/en/#academy" },
+    { "@type": "ListItem", "position": 3, "name": "Focus", "item": "https://nervlocklab.com/en/#academy" },
+    { "@type": "ListItem", "position": 4, "name": "Why Can't I Focus? It's Not Just Dopamine", "item": "https://nervlocklab.com/blog/why-cant-i-focus/" }
+  ]
+}
+</script>
+
+</body>
+</html>
