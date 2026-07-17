@@ -97,6 +97,8 @@
   .thumb-neuro { background: linear-gradient(135deg, #0D1B2A, #16324F); }
   .thumb-pain { background: linear-gradient(135deg, #1a237e, #283593); }
   .thumb-functional { background: linear-gradient(135deg, #1b5e20, #2e7d32); }
+  .thumb-lifestyle { background: linear-gradient(135deg, #0d47a1, #1565c0); }
+  .blog-card-type-badge { font-size: 10px; font-weight: 600; color: var(--text-secondary); border: 1px solid var(--divider-light); border-radius: 6px; padding: 3px 8px; background: transparent; }
   .blog-card-body { padding: 24px 28px 28px; display: flex; flex-direction: column; flex-grow: 1; }
   .blog-card-top { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
   .blog-card-badge { font-size: 11px; font-weight: 700; letter-spacing: 0.3px; color: var(--accent); background: rgba(21,101,192,0.08); border-radius: 6px; padding: 4px 9px; }
@@ -185,288 +187,289 @@
 
 <div class="container">
   <div class="filter-bar reveal">
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="neuro">Neurological Disorders</button>
-    <button class="filter-btn" data-filter="pain">Pain</button>
-    <button class="filter-btn" data-filter="functional">Functional Medicine</button>
+    <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+    <button class="filter-btn" data-filter="brain-health-lifestyle" aria-pressed="false">Brain Health &amp; Lifestyle</button>
+    <button class="filter-btn" data-filter="neurological-symptoms-conditions" aria-pressed="false">Neurological Symptoms &amp; Conditions</button>
+    <button class="filter-btn" data-filter="pain-autonomic" aria-pressed="false">Pain &amp; Autonomic Health</button>
+    <button class="filter-btn" data-filter="nutrition-metabolism" aria-pressed="false">Nutrition &amp; Metabolism</button>
   </div>
 
   <div class="blog-grid" id="blogGrid">
 
-    <a href="/blog/homocysteine-dementia-b-vitamins/" class="blog-card reveal" data-category="neuro">
+    <a href="/blog/homocysteine-dementia-b-vitamins/" class="blog-card reveal" data-category="neurological-symptoms-conditions">
       <div class="blog-card-thumb thumb-neuro"></div>
       <div class="blog-card-body">
-        <div class="blog-card-top"><span class="blog-card-badge">Neurological Disorders</span><span class="blog-card-date">Jul 5, 2026</span></div>
+        <div class="blog-card-top"><span class="blog-card-badge">Neurological Symptoms &amp; Conditions</span><span class="blog-card-type-badge">Evidence Review</span><span class="blog-card-date">Jul 5, 2026</span></div>
         <h2>Homocysteine, Brain Atrophy, and B Vitamins: The Neurological Evidence</h2>
         <p class="blog-card-desc">Elevated homocysteine is an independent, measurable risk factor for cognitive decline and brain atrophy. This article reviews the VITACOG trial evidence for targeted B vitamin supplementation.</p>
         <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
       </div>
     </a>
 
-    <a href="/blog/dementia-modifiable-risk-factors/" class="blog-card reveal" data-category="neuro">
+    <a href="/blog/dementia-modifiable-risk-factors/" class="blog-card reveal" data-category="neurological-symptoms-conditions">
       <div class="blog-card-thumb thumb-neuro"></div>
       <div class="blog-card-body">
-        <div class="blog-card-top"><span class="blog-card-badge">Neurological Disorders</span><span class="blog-card-date">Jul 3, 2026</span></div>
+        <div class="blog-card-top"><span class="blog-card-badge">Neurological Symptoms &amp; Conditions</span><span class="blog-card-type-badge">Evidence Review</span><span class="blog-card-date">Jul 3, 2026</span></div>
         <h2>Modifiable Risk Factors for Dementia: What the Lancet Commission Evidence Tells Us</h2>
         <p class="blog-card-desc">The Lancet Commission estimated that 12 modifiable risk factors account for approximately 40% of dementia cases worldwide. This article examines seven of the most clinically actionable factors.</p>
         <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
       </div>
     </a>
 
-    <a href="/blog/dementia-preclinical-stage/" class="blog-card reveal" data-category="neuro">
+    <a href="/blog/dementia-preclinical-stage/" class="blog-card reveal" data-category="neurological-symptoms-conditions">
       <div class="blog-card-thumb thumb-neuro"></div>
       <div class="blog-card-body">
-        <div class="blog-card-top"><span class="blog-card-badge">Neurological Disorders</span><span class="blog-card-date">Jul 1, 2026</span></div>
+        <div class="blog-card-top"><span class="blog-card-badge">Neurological Symptoms &amp; Conditions</span><span class="blog-card-date">Jul 1, 2026</span></div>
         <h2>Dementia Doesn't Arrive Suddenly: The Decade-Long Neurobiological Cascade Before Diagnosis</h2>
         <p class="blog-card-desc">The clinical presentation of Alzheimer's disease is the endpoint of a process that begins silently, one to two decades before the first symptom. This article examines that preclinical trajectory.</p>
         <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
       </div>
     </a>
 
-    <a href="/blog/rtg-omega3-bioavailability/" class="blog-card reveal" data-category="functional">
+    <a href="/blog/rtg-omega3-bioavailability/" class="blog-card reveal" data-category="nutrition-metabolism">
       <div class="blog-card-thumb thumb-functional"></div>
       <div class="blog-card-body">
-        <div class="blog-card-top"><span class="blog-card-badge">Functional Medicine</span><span class="blog-card-date">Jun 28, 2026</span></div>
+        <div class="blog-card-top"><span class="blog-card-badge">Nutrition &amp; Metabolism</span><span class="blog-card-date">Jun 28, 2026</span></div>
         <h2>rTG Omega-3: Why Molecular Form Determines Bioavailability</h2>
         <p class="blog-card-desc">Omega-3 fatty acids have one of the most extensive evidence bases in nutritional medicine, but molecular form determines whether EPA and DHA actually reach target tissues. This article compares three delivery forms.</p>
         <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
       </div>
     </a>
 
-    <a href="/blog/phosphatidylserine-memory/" class="blog-card reveal" data-category="functional">
+    <a href="/blog/phosphatidylserine-memory/" class="blog-card reveal" data-category="nutrition-metabolism">
       <div class="blog-card-thumb thumb-functional"></div>
       <div class="blog-card-body">
-        <div class="blog-card-top"><span class="blog-card-badge">Functional Medicine</span><span class="blog-card-date">Jun 20, 2026</span></div>
+        <div class="blog-card-top"><span class="blog-card-badge">Nutrition &amp; Metabolism</span><span class="blog-card-date">Jun 20, 2026</span></div>
         <h2>Phosphatidylserine and Memory: The Neurobiological Case</h2>
         <p class="blog-card-desc">Phosphatidylserine is among the few non-pharmaceutical compounds with FDA-recognized qualified health claim language regarding cognitive function. This article examines its rationale and trial evidence.</p>
         <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
       </div>
     </a>
 
-    <a href="/blog/autonomic-dysfunction-symptoms/" class="blog-card reveal" data-category="functional">
-      <div class="blog-card-thumb thumb-functional"></div>
+    <a href="/blog/autonomic-dysfunction-symptoms/" class="blog-card reveal" data-category="pain-autonomic">
+      <div class="blog-card-thumb thumb-pain"></div>
       <div class="blog-card-body">
-        <div class="blog-card-top"><span class="blog-card-badge">Functional Medicine</span><span class="blog-card-date">Jun 15, 2026</span></div>
+        <div class="blog-card-top"><span class="blog-card-badge">Pain &amp; Autonomic Health</span><span class="blog-card-date">Jun 15, 2026</span></div>
         <h2>When the Autonomic Nervous System Fails: Dysautonomia Signs &amp; Symptoms</h2>
         <p class="blog-card-desc">The autonomic nervous system governs involuntary processes essential to homeostasis. This article provides a clinical framework for recognizing dysautonomia and its evidence-based management.</p>
         <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
       </div>
     </a>
 
-    <a href="/blog/brain-fog-neuroscience/" class="blog-card reveal" data-category="functional">
-      <div class="blog-card-thumb thumb-functional"></div>
+    <a href="/blog/brain-fog-neuroscience/" class="blog-card reveal" data-category="brain-health-lifestyle">
+      <div class="blog-card-thumb thumb-lifestyle"></div>
       <div class="blog-card-body">
-        <div class="blog-card-top"><span class="blog-card-badge">Functional Medicine</span><span class="blog-card-date">Jun 10, 2026</span></div>
+        <div class="blog-card-top"><span class="blog-card-badge">Brain Health &amp; Lifestyle</span><span class="blog-card-date">Jun 10, 2026</span></div>
         <h2>Brain Fog: Neurobiological Mechanisms and Evidence-Based Nutritional Support</h2>
         <p class="blog-card-desc">Brain fog reflects measurable dysfunction across interconnected neural systems rather than a purely psychological state. This article examines four neurobiological mechanisms and relevant nutrients.</p>
         <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
       </div>
     </a>
 
-    <a href="/blog/parkinson-medication-dosage/" class="blog-card reveal" data-category="neuro">
+    <a href="/blog/parkinson-medication-dosage/" class="blog-card reveal" data-category="neurological-symptoms-conditions">
       <div class="blog-card-thumb thumb-neuro"></div>
       <div class="blog-card-body">
-        <div class="blog-card-top"><span class="blog-card-badge">Neurological Disorders</span><span class="blog-card-date">Jun 3, 2026</span></div>
+        <div class="blog-card-top"><span class="blog-card-badge">Neurological Symptoms &amp; Conditions</span><span class="blog-card-date">Jun 3, 2026</span></div>
         <h2>Why Levodopa Doses Increase Over Time in Parkinson's Disease: Disease Progression, Not Tolerance</h2>
         <p class="blog-card-desc">Progressive increases in levodopa dosing are often mistaken for pharmacological tolerance. This article clarifies the three biological mechanisms actually responsible for rising dose requirements.</p>
         <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
       </div>
     </a>
 
-    <a href="/blog/parkinson-plus-syndromes/" class="blog-card reveal" data-category="neuro">
+    <a href="/blog/parkinson-plus-syndromes/" class="blog-card reveal" data-category="neurological-symptoms-conditions">
       <div class="blog-card-thumb thumb-neuro"></div>
       <div class="blog-card-body">
-        <div class="blog-card-top"><span class="blog-card-badge">Neurological Disorders</span><span class="blog-card-date">Jun 2, 2026</span></div>
+        <div class="blog-card-top"><span class="blog-card-badge">Neurological Symptoms &amp; Conditions</span><span class="blog-card-date">Jun 2, 2026</span></div>
         <h2>Parkinson's Disease vs. Parkinson-Plus Syndromes: A Clinical Differential Diagnosis Guide</h2>
         <p class="blog-card-desc">Atypical parkinsonian syndromes account for 15-25% of parkinsonism cases in specialist clinics. This article provides a framework for differentiating them from Parkinson's disease.</p>
         <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
       </div>
     </a>
 
-    <a href="/blog/levodopa-long-term-misconceptions/" class="blog-card reveal" data-category="neuro">
+    <a href="/blog/levodopa-long-term-misconceptions/" class="blog-card reveal" data-category="neurological-symptoms-conditions">
       <div class="blog-card-thumb thumb-neuro"></div>
       <div class="blog-card-body">
-        <div class="blog-card-top"><span class="blog-card-badge">Neurological Disorders</span><span class="blog-card-date">Jun 1, 2026</span></div>
+        <div class="blog-card-top"><span class="blog-card-badge">Neurological Symptoms &amp; Conditions</span><span class="blog-card-date">Jun 1, 2026</span></div>
         <h2>Levodopa Long-Term Use in Parkinson's Disease: Separating Evidence from Misconception</h2>
         <p class="blog-card-desc">Despite five decades as the most effective Parkinson's treatment, levodopa remains subject to persistent misconceptions. This article addresses common myths and reviews the evidence on treatment timing.</p>
         <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
       </div>
     </a>
 
-    <a href="/blog/parkinson-genetics/" class="blog-card reveal" data-category="neuro">
+    <a href="/blog/parkinson-genetics/" class="blog-card reveal" data-category="neurological-symptoms-conditions">
       <div class="blog-card-thumb thumb-neuro"></div>
       <div class="blog-card-body">
-        <div class="blog-card-top"><span class="blog-card-badge">Neurological Disorders</span><span class="blog-card-date">May 31, 2026</span></div>
+        <div class="blog-card-top"><span class="blog-card-badge">Neurological Symptoms &amp; Conditions</span><span class="blog-card-date">May 31, 2026</span></div>
         <h2>The Genetics of Parkinson's Disease: Risk, Penetrance, and Clinical Implications</h2>
         <p class="blog-card-desc">This article provides an evidence-based framework for the genetic architecture of Parkinson's disease — prevalence of monogenic forms, key genes, incomplete penetrance, and testing indications.</p>
         <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
       </div>
     </a>
 
-    <a href="/blog/parkinsonism-differential-causes/" class="blog-card reveal" data-category="neuro">
+    <a href="/blog/parkinsonism-differential-causes/" class="blog-card reveal" data-category="neurological-symptoms-conditions">
       <div class="blog-card-thumb thumb-neuro"></div>
       <div class="blog-card-body">
-        <div class="blog-card-top"><span class="blog-card-badge">Neurological Disorders</span><span class="blog-card-date">May 17, 2026</span></div>
+        <div class="blog-card-top"><span class="blog-card-badge">Neurological Symptoms &amp; Conditions</span><span class="blog-card-date">May 17, 2026</span></div>
         <h2>Beyond Parkinson's Disease: Understanding the Differential Diagnosis of Parkinsonism</h2>
         <p class="blog-card-desc">Parkinsonism describes a clinical syndrome that includes Parkinson's disease alongside a heterogeneous group of mimicking conditions. This article reviews four major non-PD categories and their features.</p>
         <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
       </div>
     </a>
 
-    <a href="/blog/parkinson-constipation/" class="blog-card reveal" data-category="neuro">
+    <a href="/blog/parkinson-constipation/" class="blog-card reveal" data-category="neurological-symptoms-conditions">
       <div class="blog-card-thumb thumb-neuro"></div>
       <div class="blog-card-body">
-        <div class="blog-card-top"><span class="blog-card-badge">Neurological Disorders</span><span class="blog-card-date">Apr 27, 2026</span></div>
+        <div class="blog-card-top"><span class="blog-card-badge">Neurological Symptoms &amp; Conditions</span><span class="blog-card-date">Apr 27, 2026</span></div>
         <h2>Constipation in Parkinson's Disease</h2>
         <p class="blog-card-desc">Gastrointestinal symptoms in Parkinson's disease reflect pathological involvement of the enteric nervous system, a network of roughly 500 million neurons vulnerable to alpha-synuclein pathology.</p>
         <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
       </div>
     </a>
 
-    <a href="/blog/parkinson-dyskinesia/" class="blog-card reveal" data-category="neuro">
+    <a href="/blog/parkinson-dyskinesia/" class="blog-card reveal" data-category="neurological-symptoms-conditions">
       <div class="blog-card-thumb thumb-neuro"></div>
       <div class="blog-card-body">
-        <div class="blog-card-top"><span class="blog-card-badge">Neurological Disorders</span><span class="blog-card-date">Mar 24, 2026</span></div>
+        <div class="blog-card-top"><span class="blog-card-badge">Neurological Symptoms &amp; Conditions</span><span class="blog-card-date">Mar 24, 2026</span></div>
         <h2>Levodopa-Induced Dyskinesia in Parkinson's Disease</h2>
         <p class="blog-card-desc">In early Parkinson's disease, the nigrostriatal system buffers levodopa doses, producing a stable therapeutic response. This article explains how and why this changes with long-term treatment.</p>
         <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
       </div>
     </a>
 
-    <a href="/blog/parkinson-caregiver-guide/" class="blog-card reveal" data-category="neuro">
+    <a href="/blog/parkinson-caregiver-guide/" class="blog-card reveal" data-category="neurological-symptoms-conditions">
       <div class="blog-card-thumb thumb-neuro"></div>
       <div class="blog-card-body">
-        <div class="blog-card-top"><span class="blog-card-badge">Neurological Disorders</span><span class="blog-card-date">Mar 16, 2026</span></div>
+        <div class="blog-card-top"><span class="blog-card-badge">Neurological Symptoms &amp; Conditions</span><span class="blog-card-date">Mar 16, 2026</span></div>
         <h2>Parkinson's Caregiver Guide</h2>
         <p class="blog-card-desc">Parkinson's disease imposes one of the highest caregiver burdens among chronic neurological conditions, correlating more strongly with non-motor symptoms than motor severity.</p>
         <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
       </div>
     </a>
 
-    <a href="/blog/parkinson-glutathione/" class="blog-card reveal" data-category="neuro">
+    <a href="/blog/parkinson-glutathione/" class="blog-card reveal" data-category="neurological-symptoms-conditions">
       <div class="blog-card-thumb thumb-neuro"></div>
       <div class="blog-card-body">
-        <div class="blog-card-top"><span class="blog-card-badge">Neurological Disorders</span><span class="blog-card-date">Mar 11, 2026</span></div>
+        <div class="blog-card-top"><span class="blog-card-badge">Neurological Symptoms &amp; Conditions</span><span class="blog-card-date">Mar 11, 2026</span></div>
         <h2>Glutathione Depletion in Parkinson's Disease</h2>
         <p class="blog-card-desc">Glutathione is an antioxidant tripeptide synthesized intracellularly, functioning as a free radical scavenger and detoxification cofactor relevant to Parkinson's disease pathophysiology.</p>
         <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
       </div>
     </a>
 
-    <a href="/blog/parkinson-rem-sleep-disorder/" class="blog-card reveal" data-category="neuro">
+    <a href="/blog/parkinson-rem-sleep-disorder/" class="blog-card reveal" data-category="neurological-symptoms-conditions">
       <div class="blog-card-thumb thumb-neuro"></div>
       <div class="blog-card-body">
-        <div class="blog-card-top"><span class="blog-card-badge">Neurological Disorders</span><span class="blog-card-date">Mar 11, 2026</span></div>
+        <div class="blog-card-top"><span class="blog-card-badge">Neurological Symptoms &amp; Conditions</span><span class="blog-card-date">Mar 11, 2026</span></div>
         <h2>REM Sleep Behavior Disorder in Parkinson's Disease</h2>
         <p class="blog-card-desc">REM sleep behavior disorder disrupts the brainstem circuit that normally prevents the body from acting out dreams. This article examines its neurological mechanisms and link to Parkinson's disease.</p>
         <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
       </div>
     </a>
 
-    <a href="/blog/parkinson-exercise-therapy/" class="blog-card reveal" data-category="neuro">
+    <a href="/blog/parkinson-exercise-therapy/" class="blog-card reveal" data-category="neurological-symptoms-conditions">
       <div class="blog-card-thumb thumb-neuro"></div>
       <div class="blog-card-body">
-        <div class="blog-card-top"><span class="blog-card-badge">Neurological Disorders</span><span class="blog-card-date">Mar 8, 2026</span></div>
+        <div class="blog-card-top"><span class="blog-card-badge">Neurological Symptoms &amp; Conditions</span><span class="blog-card-date">Mar 8, 2026</span></div>
         <h2>Exercise as Medicine in Parkinson's Disease: Neurobiological Mechanisms and Clinical Evidence</h2>
         <p class="blog-card-desc">Structured exercise functions as a neurobiologically active intervention in Parkinson's disease, not merely an adjunct wellness activity. This article reviews its mechanisms and evidence base.</p>
         <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
       </div>
     </a>
 
-    <a href="/blog/parkinson-pain-management/" class="blog-card reveal" data-category="pain">
+    <a href="/blog/parkinson-pain-management/" class="blog-card reveal" data-category="pain-autonomic">
       <div class="blog-card-thumb thumb-pain"></div>
       <div class="blog-card-body">
-        <div class="blog-card-top"><span class="blog-card-badge">Pain</span><span class="blog-card-date">Mar 1, 2026</span></div>
+        <div class="blog-card-top"><span class="blog-card-badge">Pain &amp; Autonomic Health</span><span class="blog-card-date">Mar 1, 2026</span></div>
         <h2>Pain in Parkinson's Disease: Pathophysiology, Classification, and Clinical Management</h2>
         <p class="blog-card-desc">Pain affects 40-85% of individuals with Parkinson's disease yet remains underrecognized relative to motor symptoms. This article reviews its neurobiological basis and management strategies.</p>
         <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
       </div>
     </a>
 
-    <a href="/blog/parkinson-medication-management/" class="blog-card reveal" data-category="neuro">
+    <a href="/blog/parkinson-medication-management/" class="blog-card reveal" data-category="neurological-symptoms-conditions">
       <div class="blog-card-thumb thumb-neuro"></div>
       <div class="blog-card-body">
-        <div class="blog-card-top"><span class="blog-card-badge">Neurological Disorders</span><span class="blog-card-date">Feb 28, 2026</span></div>
+        <div class="blog-card-top"><span class="blog-card-badge">Neurological Symptoms &amp; Conditions</span><span class="blog-card-date">Feb 28, 2026</span></div>
         <h2>Pharmacological Management of Parkinson's Disease: A Neurologist's Evidence-Based Overview</h2>
         <p class="blog-card-desc">Parkinson's disease pharmacological management has evolved since levodopa's introduction in the 1960s. This article reviews the principal drug classes and the evidence informing prescribing decisions.</p>
         <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
       </div>
     </a>
 
-    <a href="/blog/parkinson-dopamine-neuroinflammation/" class="blog-card reveal" data-category="neuro">
+    <a href="/blog/parkinson-dopamine-neuroinflammation/" class="blog-card reveal" data-category="neurological-symptoms-conditions">
       <div class="blog-card-thumb thumb-neuro"></div>
       <div class="blog-card-body">
-        <div class="blog-card-top"><span class="blog-card-badge">Neurological Disorders</span><span class="blog-card-date">Feb 27, 2026</span></div>
+        <div class="blog-card-top"><span class="blog-card-badge">Neurological Symptoms &amp; Conditions</span><span class="blog-card-date">Feb 27, 2026</span></div>
         <h2>The Pathophysiology of Parkinson's Disease: Dopamine, Alpha-Synuclein, and Neuroinflammation</h2>
         <p class="blog-card-desc">Parkinson's disease involves selective degeneration of dopaminergic neurons in the substantia nigra. This article examines alpha-synuclein aggregation and neuroinflammation in disease progression.</p>
         <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
       </div>
     </a>
 
-    <a href="/blog/parkinson-early-signs/" class="blog-card reveal" data-category="neuro">
+    <a href="/blog/parkinson-early-signs/" class="blog-card reveal" data-category="neurological-symptoms-conditions">
       <div class="blog-card-thumb thumb-neuro"></div>
       <div class="blog-card-body">
-        <div class="blog-card-top"><span class="blog-card-badge">Neurological Disorders</span><span class="blog-card-date">Feb 27, 2026</span></div>
+        <div class="blog-card-top"><span class="blog-card-badge">Neurological Symptoms &amp; Conditions</span><span class="blog-card-date">Feb 27, 2026</span></div>
         <h2>Early Signs of Parkinson's Disease: The Prodromal Signals That Precede Motor Symptoms</h2>
         <p class="blog-card-desc">Parkinson's disease is widely recognized by tremor, bradykinesia, and rigidity, but non-motor prodromal symptoms may precede motor onset by a decade or more. This article examines five early signs.</p>
         <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
       </div>
     </a>
 
-    <a href="/blog/postherpetic-neuralgia/" class="blog-card reveal" data-category="pain">
+    <a href="/blog/postherpetic-neuralgia/" class="blog-card reveal" data-category="pain-autonomic">
       <div class="blog-card-thumb thumb-pain"></div>
       <div class="blog-card-body">
-        <div class="blog-card-top"><span class="blog-card-badge">Pain</span><span class="blog-card-date">Oct 28, 2024</span></div>
+        <div class="blog-card-top"><span class="blog-card-badge">Pain &amp; Autonomic Health</span><span class="blog-card-date">Oct 28, 2024</span></div>
         <h2>Postherpetic Neuralgia: Why Pain Persists Long After the Rash Has Healed</h2>
         <p class="blog-card-desc">Postherpetic neuralgia — persistent neuropathic pain after herpes zoster — affects 10-15% of patients overall, up to 40% in those over 60. This article examines the neuroplastic mechanisms behind its chronicity.</p>
         <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
       </div>
     </a>
 
-    <a href="/blog/vitamin-b12-methylcobalamin/" class="blog-card reveal" data-category="functional">
+    <a href="/blog/vitamin-b12-methylcobalamin/" class="blog-card reveal" data-category="nutrition-metabolism">
       <div class="blog-card-thumb thumb-functional"></div>
       <div class="blog-card-body">
-        <div class="blog-card-top"><span class="blog-card-badge">Functional Medicine</span><span class="blog-card-date">Oct 8, 2024</span></div>
+        <div class="blog-card-top"><span class="blog-card-badge">Nutrition &amp; Metabolism</span><span class="blog-card-date">Oct 8, 2024</span></div>
         <h2>Vitamin B12 and Nerve Health: Why Form Matters — Methylcobalamin vs Cyanocobalamin</h2>
         <p class="blog-card-desc">Vitamin B12 is indispensable for myelin synthesis and axonal maintenance. This article examines B12's neurological roles, deficiency consequences, and the difference between its two supplemental forms.</p>
         <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
       </div>
     </a>
 
-    <a href="/blog/alpha-lipoic-acid-nerve/" class="blog-card reveal" data-category="functional">
+    <a href="/blog/alpha-lipoic-acid-nerve/" class="blog-card reveal" data-category="nutrition-metabolism">
       <div class="blog-card-thumb thumb-functional"></div>
       <div class="blog-card-body">
-        <div class="blog-card-top"><span class="blog-card-badge">Functional Medicine</span><span class="blog-card-date">Sep 17, 2024</span></div>
+        <div class="blog-card-top"><span class="blog-card-badge">Nutrition &amp; Metabolism</span><span class="blog-card-date">Sep 17, 2024</span></div>
         <h2>Alpha-Lipoic Acid and Peripheral Nerve Health: Mechanisms, Evidence, and Clinical Application</h2>
         <p class="blog-card-desc">Alpha-lipoic acid is both a mitochondrial cofactor and antioxidant relevant to peripheral nerve dysfunction. This article reviews its biochemical rationale and key clinical data.</p>
         <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
       </div>
     </a>
 
-    <a href="/blog/nocturnal-nerve-discomfort/" class="blog-card reveal" data-category="pain">
+    <a href="/blog/nocturnal-nerve-discomfort/" class="blog-card reveal" data-category="pain-autonomic">
       <div class="blog-card-thumb thumb-pain"></div>
       <div class="blog-card-body">
-        <div class="blog-card-top"><span class="blog-card-badge">Pain</span><span class="blog-card-date">Sep 3, 2024</span></div>
+        <div class="blog-card-top"><span class="blog-card-badge">Pain &amp; Autonomic Health</span><span class="blog-card-date">Sep 3, 2024</span></div>
         <h2>Why Peripheral Nerve Symptoms Worsen at Night: Circadian Biology and Pain Amplification</h2>
         <p class="blog-card-desc">Nerve symptoms that worsen at night reflect the intersection of circadian biology, attentional pain modulation, and postural changes in peripheral blood flow — not a psychological pattern.</p>
         <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
       </div>
     </a>
 
-    <a href="/blog/foods-nerve-health/" class="blog-card reveal" data-category="functional">
+    <a href="/blog/foods-nerve-health/" class="blog-card reveal" data-category="nutrition-metabolism">
       <div class="blog-card-thumb thumb-functional"></div>
       <div class="blog-card-body">
-        <div class="blog-card-top"><span class="blog-card-badge">Functional Medicine</span><span class="blog-card-date">Aug 6, 2024</span></div>
+        <div class="blog-card-top"><span class="blog-card-badge">Nutrition &amp; Metabolism</span><span class="blog-card-date">Aug 6, 2024</span></div>
         <h2>Foods and Peripheral Nerve Health: What a Neurologist Looks at on Your Plate</h2>
         <p class="blog-card-desc">Specific dietary patterns and food constituents exert measurable effects on peripheral nerve biology. This article reviews dietary risk factors and neuroprotective constituents relevant to nerve health.</p>
         <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
       </div>
     </a>
 
-    <a href="/blog/peripheral-neuropathy/" class="blog-card reveal" data-category="pain">
+    <a href="/blog/peripheral-neuropathy/" class="blog-card reveal" data-category="pain-autonomic">
       <div class="blog-card-thumb thumb-pain"></div>
       <div class="blog-card-body">
-        <div class="blog-card-top"><span class="blog-card-badge">Pain</span><span class="blog-card-date">Nov 12, 2024</span></div>
+        <div class="blog-card-top"><span class="blog-card-badge">Pain &amp; Autonomic Health</span><span class="blog-card-date">Nov 12, 2024</span></div>
         <h2>What is Peripheral Neuropathy? Symptoms, Causes &amp; Neurologist's Perspective</h2>
         <p class="blog-card-desc">Peripheral neuropathy arises from damage or dysfunction of the nerves outside the brain and spinal cord. This article reviews the pathophysiology, symptoms, causes, and nutritional considerations.</p>
         <div class="blog-card-bottom"><span class="blog-card-author">Dr. Ham Jeehyun, M.D.</span><span class="blog-card-more">Read Article →</span></div>
@@ -573,7 +576,7 @@
     var buttons = document.querySelectorAll('.filter-btn');
     var cards = document.querySelectorAll('.blog-card');
     var emptyState = document.getElementById('emptyState');
-    var validFilters = ['all', 'neuro', 'pain', 'functional'];
+    var validFilters = ['all', 'brain-health-lifestyle', 'neurological-symptoms-conditions', 'pain-autonomic', 'nutrition-metabolism'];
 
     function applyFilter(filter) {
       if (validFilters.indexOf(filter) === -1) filter = 'all';
@@ -585,7 +588,9 @@
       });
       emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
       buttons.forEach(function(btn) {
-        btn.classList.toggle('active', btn.getAttribute('data-filter') === filter);
+        var isActive = btn.getAttribute('data-filter') === filter;
+        btn.classList.toggle('active', isActive);
+        btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
       });
     }
 
