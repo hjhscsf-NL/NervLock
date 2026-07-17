@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="robots" content="index, follow"/>
+  <title>Nutrition for Brain Health: Diet, Omega-3s and Vitamins | NervLock</title>
+  <meta name="description" content="Learn what the evidence says about diet and brain health, including omega-3s, vitamin B12, B vitamins, vitamin D, iron, thiamine, choline, multivitamins, nutrient deficiencies, and supplement limitations."/>
+  <link rel="canonical" href="https://nervlocklab.com/blog/brain-nutrition/" />
+  <link rel="alternate" hreflang="ko" href="https://nervlocklab.com/blog/뇌-영양/" />
+  <link rel="alternate" hreflang="en" href="https://nervlocklab.com/blog/brain-nutrition/" />
+  <link rel="alternate" hreflang="x-default" href="https://nervlocklab.com/blog/뇌-영양/" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://nervlocklab.com/blog/brain-nutrition/" />
+  <meta property="og:title" content="Nutrition for Brain Health: What Is Supported by Evidence?" />
+  <meta property="og:description" content="Brain health depends on adequate nutrition, but a nutrient's biological role does not prove that a supplement improves memory or prevents dementia." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Nutrition for Brain Health: Diet, Omega-3s and Vitamins | NervLock" />
+  <meta name="twitter:description" content="Learn what the evidence says about diet and brain health, including omega-3s, vitamin B12, B vitamins, vitamin D, iron, thiamine, choline, multivitamins, nutrient deficiencies, and supplement limitations." />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; color: #1a1a2e; background: #fff; font-size: 17px; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    :root {
+      --navy: #0d2545; --navy2: #163561;
+      --teal: #1a7a6e; --teal2: #22a090;
+      --gold: #b8922a; --gold2: #d4a843;
+      --gray: #f4f6f9; --gray2: #e8ecf2;
+      --muted: #5a6278;
+    }
+
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(13,37,69,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-logo { font-size: 20px; font-weight: 900; color: #fff; white-space: nowrap; }
+    .nav-logo span { color: var(--gold2); }
+    .nav-back { font-size: 14px; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold2); }
+    .lang-toggle { display: flex; border: 1px solid rgba(255,255,255,0.22); border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+    .lang-btn { padding: 5px 12px; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); transition: all 0.18s; }
+    .lang-btn + .lang-btn { border-left: 1px solid rgba(255,255,255,0.22); }
+    .lang-btn.active { background: rgba(255,255,255,0.18); color: #fff; }
+
+    .lang-switch-banner { background: var(--gray); border: 1px solid var(--gray2); border-radius: 14px; padding: 14px 20px; margin-bottom: 40px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .lang-switch-banner span { font-size: 14px; color: var(--muted); }
+    .lang-switch-link { font-size: 13px; font-weight: 700; color: var(--teal2); border: 1px solid var(--teal2); border-radius: 50px; padding: 6px 16px; transition: all 0.2s; white-space: nowrap; }
+    .lang-switch-link:hover { background: var(--teal2); color: #fff; }
+
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 60px 24px 100px; }
+
+    .breadcrumb { margin-bottom: 24px; position: static; top: auto; z-index: auto; background: none; backdrop-filter: none; border-bottom: none; }
+    .breadcrumb ol { display: flex; flex-wrap: wrap; align-items: center; list-style: none; padding: 0; margin: 0; font-size: 13px; color: var(--muted); }
+    .breadcrumb li { display: flex; align-items: center; }
+    .breadcrumb li:not(:last-child)::after { content: "→"; margin: 0 8px; color: var(--gray2); }
+    .breadcrumb a { color: var(--teal2); font-weight: 600; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb li[aria-current="page"] { color: var(--navy); font-weight: 600; }
+
+    .article-hero { background: linear-gradient(135deg, var(--navy) 0%, #0f4f6e 100%); border-radius: 24px; padding: 52px 48px; margin-bottom: 48px; position: relative; overflow: hidden; }
+    .article-hero::before { content: '🌿'; position: absolute; right: 32px; top: 32px; font-size: 80px; opacity: 0.15; }
+    .article-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(26,122,110,0.3); border: 1px solid rgba(26,122,110,0.5); border-radius: 50px; font-size: 12px; font-weight: 700; color: #6ee7da; padding: 4px 14px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+    .article-title { font-size: clamp(22px, 3.5vw, 34px); font-weight: 900; color: #fff; line-height: 1.3; margin-bottom: 20px; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 12px 20px; }
+    .article-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.65); }
+    .article-meta-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+
+    .abstract { background: linear-gradient(135deg, rgba(26,122,110,0.06), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 16px 16px 0; padding: 24px 28px; margin-bottom: 48px; }
+    .abstract-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--teal2); margin-bottom: 10px; }
+    .abstract p { font-size: 15px; color: #2a3a4a; line-height: 1.85; margin: 0; font-style: italic; }
+
+    .article-body h2 { font-size: 24px; font-weight: 900; color: var(--navy); margin: 52px 0 16px; line-height: 1.35; padding-bottom: 12px; border-bottom: 2px solid var(--gray2); }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-size: 19px; font-weight: 800; color: var(--navy2); margin: 36px 0 12px; }
+    .article-body p { font-size: 16px; color: #2a2a3e; line-height: 1.95; margin-bottom: 20px; }
+    .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .article-body li { font-size: 15px; color: #3a3a50; line-height: 1.75; }
+    .article-body strong { color: var(--navy); }
+    .article-body sup { font-size: 12px; color: var(--teal); font-weight: 700; }
+    .article-body blockquote { border-left: 4px solid var(--gold2); background: var(--gray); padding: 14px 20px; margin: 20px 0; font-style: italic; color: var(--navy2); border-radius: 0 10px 10px 0; }
+
+    .evidence-box { background: var(--gray); border-radius: 14px; padding: 20px 24px; margin: 28px 0; }
+    .evidence-box h4 { font-size: 12px; font-weight: 800; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .evidence-box ul { margin: 0; gap: 10px; }
+    .evidence-box li { font-size: 13px; color: var(--muted); line-height: 1.7; overflow-wrap: break-word; word-break: break-word; }
+    .evidence-box li a { color: var(--teal2); font-weight: 600; overflow-wrap: break-word; word-break: break-all; }
+    .evidence-box li em { font-style: italic; }
+
+    .author-card { background: var(--gray); border-radius: 20px; padding: 28px 32px; margin-top: 64px; display: flex; align-items: flex-start; gap: 20px; }
+    .author-avatar { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--navy), var(--teal)); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+    .author-info h4 { font-size: 17px; font-weight: 900; color: var(--navy); margin-bottom: 4px; }
+    .author-info .creds { font-size: 13px; color: var(--teal); font-weight: 600; margin-bottom: 10px; }
+    .author-info p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+
+    .related { margin-top: 64px; }
+    .related h3 { font-size: 20px; font-weight: 900; color: var(--navy); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .related-card { background: var(--gray); border-radius: 16px; padding: 20px; border: 1px solid var(--gray2); }
+    .related-card .tag { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .related-card h4 { font-size: 15px; font-weight: 800; color: var(--navy); line-height: 1.4; }
+
+    footer { background: #0a1a32; color: rgba(255,255,255,0.5); padding: 32px 0; margin-top: 0; }
+    .footer-bottom { max-width: 900px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 12px; }
+
+    @media (max-width: 600px) {
+      .article-hero { padding: 36px 28px; }
+      .related-grid { grid-template-columns: 1fr; }
+      .author-card { flex-direction: column; }
+    }
+    .sig-block { border-top: 2px solid var(--gray2); margin-top: 48px; padding-top: 24px; }
+    .sig-main { font-size: 14px; color: var(--navy); font-weight: 700; margin-bottom: 12px; line-height: 1.7; }
+    .sig-creds { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+    .sig-creds li { font-size: 13px; color: var(--muted); padding-left: 14px; position: relative; line-height: 1.6; }
+    .sig-creds li::before { content: "·"; position: absolute; left: 0; color: var(--teal2); font-weight: 900; }
+    .sig-notice { font-size: 12px; color: var(--muted); font-style: italic; line-height: 1.7; margin-bottom: 10px; }
+
+    :focus-visible { outline: 2px solid var(--teal2); outline-offset: 2px; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/en/" class="nav-logo">Nerv<span>Lock</span></a>
+    <a href="/en/blog/" class="nav-back">← Medical Blog</a>
+    <div class="lang-toggle">
+      <a href="/blog/뇌-영양/" class="lang-btn">KR</a>
+      <a href="/blog/brain-nutrition/" class="lang-btn active">EN</a>
+    </div>
+  </div>
+</nav>
+
+<div class="article-wrap">
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/en/">Home</a></li>
+      <li><a href="/en/#academy">Brain Health Academy</a></li>
+      <li>Nutrition</li>
+      <li aria-current="page">Nutrition for Brain Health: What the Evidence Supports—and What Remains Uncertain</li>
+    </ol>
+  </nav>
+
+  <div class="article-hero">
+    <div class="article-tag">Nutrition &amp; Metabolic Health</div>
+    <h1 class="article-title">Nutrition for Brain Health:<br>What the Evidence Supports—and What Remains Uncertain</h1>
+    <div class="article-meta">
+      <div class="article-meta-item">👤 Author: <strong>Jeehyun Ham, M.D.</strong></div>
+      <div class="article-meta-item">🩺 Specialty: <strong>Neurologist</strong></div>
+      <div class="article-meta-item">✅ Medical Reviewer: <strong>Jeehyun Ham, M.D.</strong></div>
+      <div class="article-meta-item">📅 Published: <strong>2026-07-18</strong></div>
+      <div class="article-meta-item">🔎 Medically Reviewed: <strong>2026-07-18</strong></div>
+      <div class="article-meta-item">📚 Evidence Review Date: <strong>2026-07-18</strong></div>
+    </div>
+  </div>
+
+  <div class="lang-switch-banner">
+    <span>🇰🇷 이 글의 한국어 버전을 보시겠습니까?</span>
+    <a href="/blog/뇌-영양/" class="lang-switch-link">한국어로 읽기 →</a>
+  </div>
+
+  <div class="abstract">
+    <div class="abstract-label">Abstract</div>
+    <p>Brain health depends on many nutrients, but nutritional necessity, deficiency treatment, and cognitive-enhancement claims are different questions. Learn what current evidence says about dietary patterns, omega-3s, vitamins, iron, thiamine, choline, and supplements.</p>
+  </div>
+
+  <div class="article-body">
+
+    <p><strong>Written and medically reviewed by Jeehyun Ham, M.D.</strong></p>
+
+    <p>Searches for "brain foods" or "brain supplements" quickly lead to omega-3 fatty acids, B vitamins, vitamin D, choline, antioxidants, and multivitamins.</p>
+    <p>These nutrients are genuinely involved in human physiology. They contribute to cell membranes, energy metabolism, blood formation, nerve function, and other essential biological processes.</p>
+    <p>But three separate questions are often blended together:</p>
+    <ol>
+      <li>Is the nutrient required for normal physical and neurological function?</li>
+      <li>Can deficiency cause neurological or systemic problems?</li>
+      <li>Does taking more of the nutrient improve cognition or reduce dementia risk in someone who is not deficient?</li>
+    </ol>
+    <p>For many nutrients, the first two questions have relatively clear answers.</p>
+    <p>The third is usually more difficult. Evidence may be limited, inconsistent, specific to certain populations, or based on changes in laboratory markers rather than meaningful improvements in memory or everyday functioning.</p>
+    <p>Brain nutrition should therefore not begin with one "super nutrient."</p>
+    <p>A more complete assessment considers:</p>
+    <ul>
+      <li>Overall dietary pattern</li>
+      <li>Adequate energy and protein intake</li>
+      <li>Actual nutrient deficiency or deficiency risk</li>
+      <li>Blood pressure, glucose, lipids, and vascular health</li>
+      <li>Sleep and physical activity</li>
+      <li>Smoking and alcohol use</li>
+      <li>Medications</li>
+      <li>Gastrointestinal disease and nutrient absorption</li>
+      <li>Age, pregnancy, and other life-stage needs</li>
+    </ul>
+
+    <h2>Quick Answer</h2>
+    <p>The brain requires many nutrients, but nutritional necessity is not the same as proven cognitive benefit from supplementation.</p>
+    <p>Healthy dietary patterns are associated with better cognitive outcomes in observational research. However, randomized dietary trials—including studies of the MIND and Mediterranean-style diets—have generally found small or inconsistent cognitive effects.</p>
+    <p>DHA is an important component of neuronal cell membranes. But increasing blood or cerebrospinal fluid DHA does not automatically improve memory or reduce dementia risk.</p>
+    <p>Deficiencies of nutrients such as vitamin B12, iron, and thiamine can cause neurological or systemic problems. Identifying and correcting a true deficiency may be important.</p>
+    <p>That is different from routinely recommending vitamins, omega-3 supplements, or multivitamins to improve memory or prevent dementia in people without a diagnosed deficiency.</p>
+
+    <h2>Key Takeaways</h2>
+    <ul>
+      <li>Brain health cannot be explained by one food or nutrient.</li>
+      <li>A nutrient's physiological role, treatment of deficiency, and additional supplementation in a nondeficient person are different clinical questions.</li>
+      <li>Healthy dietary patterns are associated with better cognitive health in observational studies, but randomized dietary trials have shown small or inconsistent cognitive effects.</li>
+      <li>MIND and Mediterranean-style eating patterns may be reasonable healthy dietary frameworks, but they do not guarantee dementia prevention.</li>
+      <li>DHA is an important structural component of neuronal membranes, but omega-3 supplements have not been shown to improve memory or prevent dementia consistently in everyone.</li>
+      <li>In a 2026 trial, high-dose DHA increased cerebrospinal fluid DHA-related measures but did not improve cognition or brain structure over 24 months.</li>
+      <li>That single trial does not prove that all dietary omega-3 intake or all omega-3 products are ineffective in every population or for every medical purpose.</li>
+      <li>Vitamin B12 deficiency may cause sensory, gait, or neurological symptoms even without anemia.</li>
+      <li>B vitamins can lower homocysteine, but this does not consistently translate into improved cognition.</li>
+      <li>Vitamin D is important for bone, muscle, and other physiological functions, but general memory-enhancement benefits are not established.</li>
+      <li>Iron-deficiency anemia may cause fatigue and difficulty concentrating, but iron should not be taken without appropriate assessment.</li>
+      <li>Acute confusion, gait difficulty, and abnormal eye movements in a person at risk for thiamine deficiency may represent a medical emergency.</li>
+      <li>Choline is an essential nutrient, but choline supplementation has not been shown clearly to improve cognition in healthy adults.</li>
+      <li>Correcting deficiency may be important. High-dose supplementation in a nondeficient person requires separate evidence of benefit and safety.</li>
+      <li>Supplements do not replace an adequate diet or appropriate medical evaluation.</li>
+    </ul>
+
+    <h2>1. What Does "Nutrition for Brain Health" Actually Mean?</h2>
+    <p>The brain and nervous system require energy, fatty acids, amino acids, vitamins, and minerals to maintain normal structure and function.</p>
+    <p>Nutrients contribute to processes such as:</p>
+    <ul>
+      <li>Cell-membrane formation and maintenance</li>
+      <li>Neurotransmitter synthesis</li>
+      <li>Glucose and energy metabolism</li>
+      <li>DNA synthesis and cell division</li>
+      <li>Red blood cell production and oxygen transport</li>
+      <li>Myelin maintenance and peripheral nerve function</li>
+      <li>Antioxidant defense</li>
+      <li>Vascular and metabolic health</li>
+    </ul>
+    <p>These roles are biologically important.</p>
+    <p>However, biological importance alone cannot establish that taking more of a nutrient as a supplement will improve cognition.</p>
+    <p>For example, even if a nutrient is used to produce a neurotransmitter or cell-membrane component, additional intake does not necessarily increase the desired function in a specific brain region or improve memory.</p>
+    <p>Clinical benefit requires a sequence of evidence:</p>
+    <ul>
+      <li>Is the nutrient absorbed adequately?</li>
+      <li>Does it reach the intended tissue?</li>
+      <li>Does it correct a deficiency or abnormal biomarker?</li>
+      <li>Does it improve performance on cognitive testing?</li>
+      <li>Does it improve meaningful everyday functioning?</li>
+      <li>Is the effect large enough to matter clinically?</li>
+      <li>Is long-term use safe?</li>
+      <li>Does benefit occur only in a particular population or deficiency state?</li>
+      <li>Is the studied ingredient, dose, and formulation the same as the product being used?</li>
+    </ul>
+    <p>Biological plausibility, biomarker change, and patient-important clinical outcomes must be evaluated separately.</p>
+
+    <h2>2. Why Dietary Patterns Matter More Than One Nutrient</h2>
+    <p>People do not eat omega-3s, vitamin B12, or vitamin D in complete isolation.</p>
+    <p>A dietary pattern includes many interacting components:</p>
+    <ul>
+      <li>Vegetables and fruits</li>
+      <li>Whole grains</li>
+      <li>Legumes and plant proteins</li>
+      <li>Fish and seafood</li>
+      <li>Meat and eggs</li>
+      <li>Dairy products</li>
+      <li>Nuts and seeds</li>
+      <li>Types of dietary fat</li>
+      <li>Protein quantity and quality</li>
+      <li>Sodium</li>
+      <li>Added sugars</li>
+      <li>Ultra-processed foods</li>
+      <li>Total energy intake</li>
+    </ul>
+    <p>Dietary patterns may also influence:</p>
+    <ul>
+      <li>Blood pressure</li>
+      <li>Blood glucose</li>
+      <li>Lipids</li>
+      <li>Body weight</li>
+      <li>Long-term vascular health</li>
+      <li>Muscle mass and physical function</li>
+      <li>Risk of nutrient deficiency</li>
+    </ul>
+    <p>Observational studies have often found lower rates of cognitive decline or dementia among people who follow Mediterranean-style or MIND dietary patterns more closely.</p>
+    <p>However, many of these studies are observational.</p>
+    <p>People who maintain healthier diets may also be more likely to:</p>
+    <ul>
+      <li>Exercise regularly</li>
+      <li>Avoid smoking</li>
+      <li>Have better access to healthcare</li>
+      <li>Manage blood pressure and diabetes more effectively</li>
+      <li>Differ in education or socioeconomic circumstances</li>
+      <li>Remain more socially and cognitively active</li>
+      <li>Follow other beneficial health behaviors</li>
+    </ul>
+    <p>Statistical adjustment can reduce some of these differences, but it cannot completely isolate the effect of diet.</p>
+
+    <h3>What Did the MIND Diet Trial Show?</h3>
+    <p>A 2023 randomized clinical trial included 604 adults aged 65 to 84 who had a family history of dementia, were overweight, and did not already follow an optimal diet.<sup>[1]</sup></p>
+    <p>Participants were assigned to either:</p>
+    <ul>
+      <li>A MIND dietary intervention</li>
+      <li>A control diet focused on calorie reduction and healthy eating</li>
+    </ul>
+    <p>Over three years, cognitive scores improved in both groups.</p>
+    <p>However, the study did not find a significant difference between groups in overall cognitive change or measured brain-imaging outcomes.</p>
+    <p>Both groups received calorie-reduction guidance and healthy-diet counseling, which is important when interpreting the results.</p>
+    <p>The findings suggest that:</p>
+    <ul>
+      <li>Associations in observational research do not prove causation.</li>
+      <li>A healthy comparison diet may reduce the apparent added effect of one named dietary pattern.</li>
+      <li>Repeated cognitive testing may produce learning effects.</li>
+      <li>Three years may be too short to capture some long-term cognitive outcomes.</li>
+      <li>Dietary effects may be difficult to separate from exercise, sleep, and vascular-risk management.</li>
+      <li>The result does not mean that the MIND diet has no nutritional value.</li>
+      <li>It also does not prove that the MIND diet prevents dementia.</li>
+    </ul>
+    <p>A 2024 systematic review of whole-diet interventions in cognitively healthy older adults also found that effects on memory and cognition were generally small and inconsistent.<sup>[2]</sup></p>
+    <p>A healthy dietary pattern remains a reasonable strategy for overall health. It should not be presented as a treatment that guarantees dementia prevention.</p>
+
+    <h2>3. Omega-3 Fatty Acids: Physiological Importance Is Not the Same as Proven Cognitive Benefit</h2>
+    <p>The major omega-3 fatty acids include:</p>
+    <ul>
+      <li>Alpha-linolenic acid, or ALA</li>
+      <li>Eicosapentaenoic acid, or EPA</li>
+      <li>Docosahexaenoic acid, or DHA</li>
+    </ul>
+    <p>ALA is an essential fatty acid that must be obtained from food.</p>
+    <p>DHA is found in phospholipids in the brain and other tissues and contributes to neuronal membrane structure and function.<sup>[3,4]</sup></p>
+    <p>Fish and seafood are major dietary sources of EPA and DHA.</p>
+    <p>ALA is found in some nuts, seeds, and plant oils.</p>
+
+    <h3>Omega-3s From Food</h3>
+    <p>A dietary pattern that includes fish may provide:</p>
+    <ul>
+      <li>Protein</li>
+      <li>EPA and DHA</li>
+      <li>Other micronutrients</li>
+      <li>Replacement of some foods high in saturated fat</li>
+      <li>An overall improvement in dietary quality</li>
+    </ul>
+    <p>Observational studies of fish consumption and cognitive health have often been favorable.</p>
+    <p>That does not prove that omega-3 alone explains the association.</p>
+    <p>Eating fish and taking an omega-3 capsule are not equivalent exposures.</p>
+
+    <h3>Omega-3 Supplements</h3>
+    <p>Clinical trials of omega-3 supplements and cognition have produced inconsistent results.</p>
+    <p>The following groups should not be treated as interchangeable:</p>
+    <ul>
+      <li>Cognitively healthy adults</li>
+      <li>People with low dietary intake</li>
+      <li>People with mild cognitive impairment</li>
+      <li>People with Alzheimer's disease or another dementia</li>
+      <li>People using omega-3s for cardiovascular or lipid-related indications</li>
+      <li>Pregnant or breastfeeding individuals</li>
+    </ul>
+    <p>Studies also differ in:</p>
+    <ul>
+      <li>EPA-to-DHA ratio</li>
+      <li>Chemical form and source</li>
+      <li>Dose</li>
+      <li>Duration</li>
+      <li>Age at treatment initiation</li>
+      <li>Baseline fish and omega-3 intake</li>
+      <li>Cognitive status</li>
+      <li>Vascular and metabolic risk</li>
+      <li>Genetic factors, including APOE</li>
+      <li>Cognitive outcomes measured</li>
+      <li>Missing data and dropout rates</li>
+    </ul>
+    <p>Overall, long-chain omega-3 supplementation has not shown consistently meaningful cognitive benefit in cognitively healthy older adults or in people with Alzheimer's disease.<sup>[4]</sup></p>
+    <p>Some studies have suggested possible benefits in selected cognitive domains among people with mild cognitive impairment. The evidence is not sufficient to establish a general recommendation.</p>
+
+    <h3>What Did the 2026 High-Dose DHA Trial Show?</h3>
+    <p>A 2026 phase 2a randomized, double-blind, placebo-controlled trial included 365 adults aged 55 to 80 who did not have dementia, had relatively low DHA intake, and had risk factors for dementia.<sup>[3]</sup></p>
+    <p>Participants received:</p>
+    <ul>
+      <li>DHA 2 grams per day</li>
+      <li>Placebo</li>
+    </ul>
+    <p>The treatment period was 24 months.</p>
+    <p>A primary purpose of the trial was to determine whether high-dose DHA reached the central nervous system.</p>
+    <p>After six months, cerebrospinal fluid DHA-related measures increased in the DHA group compared with placebo. This occurred regardless of APOE ε4 status.</p>
+    <p>However, after 24 months, there was no significant difference between DHA and placebo in:</p>
+    <ul>
+      <li>Overall cognitive performance</li>
+      <li>Cognitive tests including memory measures</li>
+      <li>Hippocampal volume</li>
+      <li>Other assessed structural brain outcomes</li>
+    </ul>
+    <p>The trial illustrates an important distinction:</p>
+    <blockquote>Reaching the target tissue and changing a biomarker does not automatically produce meaningful cognitive benefit.</blockquote>
+    <p>The trial also had limitations:</p>
+    <ul>
+      <li>It was one clinical trial.</li>
+      <li>Participants were generally cognitively preserved.</li>
+      <li>Follow-up lasted 24 months.</li>
+      <li>Approximately 38% of participants discontinued, and the COVID-19 pandemic affected study conduct.</li>
+      <li>It was not a large, long-term dementia-prevention trial.</li>
+      <li>It studied high-dose DHA alone rather than fish intake or every possible omega-3 formulation.</li>
+    </ul>
+    <p>The appropriate interpretation is that, in this population and under these conditions, DHA reached the central nervous system but did not demonstrate cognitive or structural brain benefit.</p>
+    <p>The trial does not establish that:</p>
+    <ul>
+      <li>Omega-3 fatty acids have no physiological role.</li>
+      <li>Eating fish has no value.</li>
+      <li>Every omega-3 product is ineffective for every medical purpose.</li>
+      <li>Results would necessarily be identical in every population or duration.</li>
+    </ul>
+    <p>The evidence also does not justify claims that:</p>
+    <ul>
+      <li>Omega-3 supplements reliably improve memory.</li>
+      <li>DHA prevents Alzheimer's disease or dementia.</li>
+      <li>Higher doses are always better for the brain.</li>
+      <li>Raising blood or cerebrospinal fluid DHA necessarily improves cognition.</li>
+      <li>Every middle-aged or older adult should take omega-3 supplements for brain health.</li>
+    </ul>
+    <p>Omega-3 products may be used for medical purposes unrelated to cognition, including selected lipid disorders.</p>
+    <p>The purpose of treatment, formulation, dose, medical history, and current medications must be considered separately.</p>
+
+    <h2>4. Vitamin B12: Deficiency Status Matters</h2>
+    <p>Vitamin B12 contributes to:</p>
+    <ul>
+      <li>Red blood cell production</li>
+      <li>DNA synthesis</li>
+      <li>Neurological function</li>
+      <li>Myelin maintenance</li>
+      <li>Homocysteine metabolism</li>
+    </ul>
+    <p>Vitamin B12 deficiency may cause:<sup>[5]</sup></p>
+    <ul>
+      <li>Fatigue</li>
+      <li>Megaloblastic anemia</li>
+      <li>Tongue soreness or inflammation</li>
+      <li>Numbness or tingling</li>
+      <li>Sensory loss</li>
+      <li>Balance and gait difficulty</li>
+      <li>Weakness</li>
+      <li>Concentration or cognitive changes</li>
+      <li>Confusion or other neurological impairment in severe cases</li>
+    </ul>
+    <p>An important clinical point is that neurological symptoms may occur without anemia.</p>
+    <p>A normal blood count does not fully exclude vitamin B12 deficiency when risk factors and neurological symptoms are present.</p>
+    <p>Prolonged neurological symptoms may not recover completely. Earlier assessment may be important in people at risk.</p>
+
+    <h3>Who May Be at Higher Risk of Vitamin B12 Deficiency?</h3>
+    <p>Risk may be increased in people with:</p>
+    <ul>
+      <li>Pernicious anemia or intrinsic-factor deficiency</li>
+      <li>Older age and reduced absorption of food-bound B12</li>
+      <li>A strict vegan diet</li>
+      <li>Very limited intake of animal-source foods</li>
+      <li>Gastric surgery or bariatric surgery</li>
+      <li>Small-intestinal surgery</li>
+      <li>Crohn's disease, celiac disease, or another malabsorption disorder</li>
+      <li>Long-term metformin use</li>
+      <li>Long-term acid-suppressing medication use</li>
+      <li>Severe malnutrition</li>
+      <li>Repeated nitrous oxide exposure</li>
+    </ul>
+    <p>A risk factor does not prove that deficiency is present.</p>
+    <p>Symptoms, diet, medication use, surgical history, and laboratory findings must be considered together.</p>
+    <p>When serum B12 is borderline or clinical suspicion remains high, a clinician may consider additional metabolic markers.</p>
+
+    <h3>Does Taking More B12 Improve Memory?</h3>
+    <p>Correcting a true B12 deficiency is important.</p>
+    <p>However, evidence does not show that high-dose B12 consistently improves memory or concentration in people whose B12 status is already adequate.</p>
+    <p>Three separate situations should be distinguished:</p>
+    <ul>
+      <li>Diagnosis and treatment of B12 deficiency</li>
+      <li>Preventive management in a high-risk population</li>
+      <li>Use for general cognitive enhancement in a nondeficient person</li>
+    </ul>
+    <p>Terms such as "energy vitamin" or "brain vitamin" should not determine whether supplementation is medically appropriate.</p>
+
+    <h2>5. Folate, Vitamin B6, and Homocysteine</h2>
+    <p>Folate, vitamin B12, and vitamin B6 contribute to homocysteine metabolism.</p>
+    <p>Elevated homocysteine has been associated with increased risk of cerebrovascular disease and cognitive decline.</p>
+    <p>Homocysteine levels may also be influenced by:</p>
+    <ul>
+      <li>Vitamin B12, folate, and B6 status</li>
+      <li>Age</li>
+      <li>Kidney function</li>
+      <li>Thyroid function</li>
+      <li>Genetic factors</li>
+      <li>Smoking and other health behaviors</li>
+      <li>Medications</li>
+      <li>General health status</li>
+    </ul>
+    <p>A homocysteine result alone cannot identify the cause of cognitive decline.</p>
+
+    <h3>Does Lowering Homocysteine Improve Cognition?</h3>
+    <p>B-vitamin supplementation can lower homocysteine.</p>
+    <p>However, randomized trials and systematic reviews have not shown consistent average improvement in:<sup>[6,7]</sup></p>
+    <ul>
+      <li>Global cognition</li>
+      <li>Memory</li>
+      <li>Processing speed</li>
+      <li>Executive function</li>
+      <li>Cognitive aging</li>
+      <li>Dementia incidence</li>
+    </ul>
+    <p>Some studies have reported possible benefits in selected subgroups, such as people with higher homocysteine or particular nutrient profiles.</p>
+    <p>The evidence is not sufficiently consistent to establish a broad cognitive recommendation.</p>
+    <p>The following statements are not equivalent:</p>
+    <ul>
+      <li>B vitamins may lower homocysteine.</li>
+      <li>B vitamins improve memory or prevent dementia.</li>
+    </ul>
+    <p>The first describes a relatively established biomarker effect.</p>
+    <p>The second is a clinical-outcome claim that cannot be generalized.</p>
+
+    <h3>Is More Folate Always Better?</h3>
+    <p>No.</p>
+    <p>High folate intake may correct the anemia caused by vitamin B12 deficiency without correcting the neurological damage caused by B12 deficiency.<sup>[7]</sup></p>
+    <p>This may reduce an important diagnostic clue and delay recognition.</p>
+    <p>Researchers have also examined whether excessive folate exposure may worsen some hematological or cognitive outcomes in people with low B12 status. This relationship is not established across all populations and doses.</p>
+    <p>Long-term high-dose folate use should take into account:</p>
+    <ul>
+      <li>Vitamin B12 status</li>
+      <li>Dietary and fortified-food intake</li>
+      <li>Overlap with multivitamins or other supplements</li>
+      <li>A clear purpose, such as pregnancy planning</li>
+      <li>Malabsorption</li>
+      <li>Medications and medical conditions</li>
+    </ul>
+    <p>Folic acid around conception has an established role in reducing fetal neural-tube-defect risk.</p>
+    <p>That evidence should not be extended to claims of memory enhancement or dementia prevention in the general adult population.</p>
+
+    <h3>Vitamin B6 Can Also Be Excessive</h3>
+    <p>Vitamin B6 contributes to neurotransmitter and amino-acid metabolism.</p>
+    <p>Long-term excessive supplemental intake may cause sensory neuropathy and gait instability.<sup>[8]</sup></p>
+    <p>People taking multiple multivitamins, energy products, or "nerve health" supplements should review their total daily intake.</p>
+
+    <h2>6. Vitamin D: Important, but Not an Established Cognitive-Enhancement Supplement</h2>
+    <p>Well-established clinical roles of vitamin D include:<sup>[9]</sup></p>
+    <ul>
+      <li>Calcium and phosphorus metabolism</li>
+      <li>Bone formation and maintenance</li>
+      <li>Muscle and neuromuscular function</li>
+      <li>Immune function</li>
+    </ul>
+    <p>Observational studies have reported associations between low vitamin D levels and cognitive decline, depression, and several chronic conditions.</p>
+    <p>However, people with lower vitamin D levels may also be more likely to have:</p>
+    <ul>
+      <li>Less outdoor activity</li>
+      <li>Lower physical activity</li>
+      <li>Chronic illness</li>
+      <li>Poor nutritional status</li>
+      <li>Obesity or malabsorption</li>
+      <li>Worse overall health</li>
+    </ul>
+    <p>Observational studies cannot determine whether low vitamin D is a direct cause, a consequence, or a marker of other health problems.</p>
+    <p>Assessment and supplementation may be appropriate when a person has:</p>
+    <ul>
+      <li>Vitamin D deficiency</li>
+      <li>Osteoporosis risk</li>
+      <li>Malabsorption</li>
+      <li>Another clear medical indication</li>
+    </ul>
+    <p>It cannot be generalized that vitamin D supplementation improves:</p>
+    <ul>
+      <li>Memory</li>
+      <li>Concentration</li>
+      <li>Dementia prevention</li>
+      <li>Depression treatment</li>
+      <li>Prevention of neurological disease</li>
+    </ul>
+    <p>Increasing serum 25-hydroxyvitamin D is not the same outcome as improving cognition.</p>
+    <p>Not every healthy person requires routine vitamin D testing.</p>
+    <p>Testing decisions may consider age, bone health, sunlight exposure, diet, malabsorption, and medical conditions.</p>
+    <p>Vitamin D is fat-soluble. Excess intake may cause hypercalcemia, kidney problems, and other harms.</p>
+    <p>Total intake should be reviewed when several products are used together.</p>
+
+    <h2>7. Iron: Do Not Take It Simply Because You Feel Tired or Unfocused</h2>
+    <p>Iron is needed for hemoglobin production and oxygen transport.</p>
+    <p>People with iron-deficiency anemia may experience:<sup>[10]</sup></p>
+    <ul>
+      <li>Fatigue and weakness</li>
+      <li>Reduced exercise capacity</li>
+      <li>Difficulty concentrating</li>
+      <li>Palpitations</li>
+      <li>Shortness of breath</li>
+      <li>Pale skin</li>
+      <li>Headache</li>
+      <li>Increased sensitivity to cold</li>
+    </ul>
+    <p>When iron-deficiency anemia is confirmed, identifying the cause and correcting the deficiency is important.</p>
+    <p>Fatigue and poor concentration alone are not sufficient reasons to begin iron supplementation.</p>
+    <p>These symptoms are nonspecific and may also be related to:</p>
+    <ul>
+      <li>Insufficient sleep</li>
+      <li>Anxiety or depression</li>
+      <li>Thyroid disease</li>
+      <li>Infection</li>
+      <li>Chronic inflammatory or systemic illness</li>
+      <li>Medication effects</li>
+      <li>Vitamin B12 or folate deficiency</li>
+      <li>Pain</li>
+      <li>Excessive workload</li>
+    </ul>
+    <p>Iron deficiency can occur before anemia develops.</p>
+    <p>However, the relationship between nonanemic iron deficiency and cognition varies by age, sex, and underlying health status. Iron deficiency should not be assumed to explain every cognitive complaint.</p>
+
+    <h3>Who May Be at Risk of Iron Deficiency?</h3>
+    <p>Risk may be higher with:</p>
+    <ul>
+      <li>Heavy menstrual bleeding</li>
+      <li>Pregnancy</li>
+      <li>Frequent blood donation</li>
+      <li>Possible gastrointestinal bleeding</li>
+      <li>Gastrointestinal disease or malabsorption</li>
+      <li>Gastrointestinal surgery</li>
+      <li>A severely iron-restricted diet</li>
+      <li>Unexplained anemia</li>
+      <li>Weight loss or gastrointestinal symptoms</li>
+      <li>Restrictive diets in growing children or adolescents</li>
+    </ul>
+    <p>Too much iron can also be harmful.</p>
+    <p>Unnecessary iron supplementation in hereditary hemochromatosis or another iron-overload condition may contribute to organ damage.</p>
+    <p>Iron should not be used routinely as a general brain-health supplement.</p>
+    <p>When deficiency is identified, the source—such as bleeding, inadequate intake, or malabsorption—should also be evaluated.</p>
+
+    <h2>8. Thiamine: A Deficiency That Must Not Be Missed in High-Risk Patients</h2>
+    <p>Thiamine, or vitamin B1, is required for carbohydrate metabolism, energy production, and neurological function.</p>
+    <p>Severe thiamine deficiency may cause serious neurological conditions, including Wernicke encephalopathy and Korsakoff syndrome.<sup>[11]</sup></p>
+    <p>Possible symptoms in high-risk situations include:</p>
+    <ul>
+      <li>Acute or subacute confusion</li>
+      <li>Attention and memory problems</li>
+      <li>Gait instability or ataxia</li>
+      <li>Abnormal eye movements or double vision</li>
+      <li>Peripheral nerve symptoms</li>
+      <li>Severe weakness</li>
+      <li>Low body temperature or low blood pressure</li>
+      <li>Cardiovascular problems</li>
+    </ul>
+    <p>The classic combination of confusion, gait difficulty, and abnormal eye movements is not always present.</p>
+    <p>The absence of all three findings does not exclude Wernicke encephalopathy.</p>
+
+    <h3>Who May Be at Higher Risk?</h3>
+    <p>Risk may be increased with:</p>
+    <ul>
+      <li>Alcohol use disorder or chronic heavy alcohol consumption</li>
+      <li>Severe malnutrition</li>
+      <li>Persistent or severe vomiting</li>
+      <li>Extremely restricted food intake</li>
+      <li>Gastrectomy or bariatric surgery</li>
+      <li>Severe malabsorption</li>
+      <li>Some serious systemic illnesses</li>
+      <li>Prolonged nutritional-support problems</li>
+    </ul>
+    <p>When a high-risk person develops confusion, gait difficulty, or abnormal eye movements, the situation may not be appropriate for routine oral supplementation and observation.</p>
+    <p>Wernicke encephalopathy can be life-threatening and may require immediate medical assessment and parenteral thiamine treatment.</p>
+    <p>In contrast, evidence does not show that taking additional thiamine improves memory or concentration in a well-nourished person with low deficiency risk.</p>
+
+    <h2>9. Choline: Essential Nutrient, Uncertain Memory-Supplement Benefit</h2>
+    <p>The body produces some choline but not enough to meet all physiological needs. Choline must also be obtained from food.<sup>[12]</sup></p>
+    <p>Choline contributes to:</p>
+    <ul>
+      <li>Phospholipid synthesis for cell membranes</li>
+      <li>Fat transport and metabolism</li>
+      <li>Methyl-group metabolism</li>
+      <li>Acetylcholine synthesis</li>
+      <li>Fetal and early neurological development</li>
+    </ul>
+    <p>These roles have led to claims that choline or lecithin supplements improve memory.</p>
+    <p>However, choline being a precursor to acetylcholine does not prove that supplementation increases brain acetylcholine in a clinically useful way or improves cognition.</p>
+    <p>Current clinical research has not established clear cognitive benefit from choline supplementation in:</p>
+    <ul>
+      <li>Cognitively healthy adults</li>
+      <li>People with Alzheimer's disease</li>
+      <li>People with Parkinson's disease dementia</li>
+      <li>People with nonspecific memory concerns</li>
+    </ul>
+    <p>Choline needs during pregnancy and fetal development are a separate question from choline supplementation for adult memory enhancement.</p>
+    <p>High-dose choline may cause:</p>
+    <ul>
+      <li>A fishy body odor</li>
+      <li>Vomiting</li>
+      <li>Excessive sweating or salivation</li>
+      <li>Low blood pressure</li>
+      <li>Liver toxicity</li>
+    </ul>
+    <p>More is not necessarily better.</p>
+
+    <h2>10. How Should We Interpret Antioxidants and "Brain Inflammation" Supplements?</h2>
+    <p>Oxidative stress and inflammation are frequently discussed in research on aging and neurological disease.</p>
+    <p>This has led to marketing of substances such as:</p>
+    <ul>
+      <li>Vitamin C</li>
+      <li>Vitamin E</li>
+      <li>Selenium</li>
+      <li>Polyphenols</li>
+      <li>Curcumin</li>
+      <li>Berry extracts</li>
+      <li>Coenzyme Q10</li>
+      <li>Concentrated plant antioxidants</li>
+    </ul>
+    <p>Some of these substances are required for normal physiology or may be valuable as components of food.</p>
+    <p>The following reasoning is not valid:</p>
+    <blockquote>Oxidative stress is associated with disease — therefore high-dose antioxidant supplements prevent disease.</blockquote>
+    <p>Similarly:</p>
+    <blockquote>Inflammation is associated with cognitive decline — therefore an "anti-inflammatory" supplement removes brain inflammation and restores memory.</blockquote>
+    <p>Inflammation is not one substance or one uniform state.</p>
+    <p>A peripheral blood marker is not the same as pathology in brain tissue.</p>
+    <p>Antioxidant or anti-inflammatory activity in a test tube or animal model does not establish improvement in human memory, daily functioning, or dementia incidence.</p>
+    <p>High-dose antioxidant supplements may interact with medications or create harms, including bleeding or toxicity.</p>
+    <p>Eating vegetables, fruits, legumes, nuts, and whole grains is not the same exposure as taking a concentrated extract.</p>
+
+    <h2>11. What Does a Brain-Healthy Eating Pattern Look Like?</h2>
+    <p>Current evidence supports prioritizing a nutritionally adequate and sustainable overall diet rather than concentrating on one ingredient.</p>
+
+    <h3>Include a Variety of Plant Foods</h3>
+    <p>Examples include:</p>
+    <ul>
+      <li>Vegetables</li>
+      <li>Fruits</li>
+      <li>Legumes</li>
+      <li>Whole grains</li>
+      <li>Nuts</li>
+      <li>Seeds</li>
+    </ul>
+    <p>These foods provide fiber, vitamins, minerals, and numerous bioactive compounds.</p>
+    <p>No single fruit or vegetable is a uniquely necessary "brain food."</p>
+
+    <h3>Ensure Adequate Energy and Protein</h3>
+    <p>Possible protein sources include:</p>
+    <ul>
+      <li>Fish and seafood</li>
+      <li>Legumes and tofu</li>
+      <li>Eggs</li>
+      <li>Poultry</li>
+      <li>Dairy products</li>
+      <li>Meat appropriate to the individual's needs</li>
+    </ul>
+    <p>In older adults, people losing weight, or those with low food intake, inadequate total energy and protein may be more important than a specific marketed "brain nutrient."</p>
+    <p>Protein intake may need individual adjustment in people with kidney disease or other medical conditions.</p>
+
+    <h3>Consider the Type of Fat</h3>
+    <p>Rather than relying heavily on saturated-fat-rich or ultra-processed foods, a balanced diet may include:</p>
+    <ul>
+      <li>Fish</li>
+      <li>Nuts</li>
+      <li>Seeds</li>
+      <li>Olive oil and other foods rich in unsaturated fat</li>
+    </ul>
+    <p>This does not mean that eating more fat in general is better for the brain.</p>
+    <p>Overall energy balance and dietary quality still matter.</p>
+
+    <h3>Support Vascular and Metabolic Health</h3>
+    <p>Brain health is connected to the health of the entire body.</p>
+    <p>Relevant factors include:</p>
+    <ul>
+      <li>Blood pressure</li>
+      <li>Blood glucose</li>
+      <li>Cholesterol and triglycerides</li>
+      <li>Smoking</li>
+      <li>Weight and waist circumference</li>
+      <li>Physical activity</li>
+      <li>Excessive alcohol use</li>
+    </ul>
+    <p>Diet should support management of these factors.</p>
+    <p>It does not replace indicated medication or medical treatment.</p>
+
+    <h3>Avoid Letting Ultra-Processed Foods Dominate the Diet</h3>
+    <p>No food needs to be described as a toxin.</p>
+    <p>It is nevertheless reasonable to avoid making the following foods the foundation of the diet:</p>
+    <ul>
+      <li>Sugar-sweetened beverages</li>
+      <li>Candy, pastries, and desserts</li>
+      <li>Refined-carbohydrate convenience foods</li>
+      <li>High-sodium processed foods</li>
+      <li>Nutrient-poor ultra-processed products</li>
+    </ul>
+    <p>A sustainable eating pattern is more useful than an unrealistic "perfect diet."</p>
+
+    <h2>12. When Should Nutritional Evaluation Be Considered?</h2>
+    <p>Not everyone needs a broad nutritional laboratory panel.</p>
+    <p>Selective assessment may be appropriate based on history and clinical findings when there is:</p>
+    <ul>
+      <li>Unexplained anemia</li>
+      <li>Persistent fatigue with unintended weight loss</li>
+      <li>Numbness or sensory changes</li>
+      <li>Balance or gait difficulty</li>
+      <li>A strict vegan diet</li>
+      <li>A diet that excludes multiple food groups</li>
+      <li>Gastrointestinal or bariatric surgery</li>
+      <li>Chronic diarrhea or malabsorption</li>
+      <li>Inflammatory bowel disease or celiac disease</li>
+      <li>Long-term metformin or acid-suppressing medication use</li>
+      <li>Heavy menstrual bleeding</li>
+      <li>Frequent blood donation</li>
+      <li>Chronic heavy alcohol use</li>
+      <li>Very limited food intake</li>
+      <li>Persistent vomiting</li>
+      <li>Long-term use of several overlapping supplements</li>
+      <li>Progressive memory or cognitive change</li>
+    </ul>
+    <p>Testing should be selected to answer a defined clinical question.</p>
+    <p>An out-of-range result on a broad, nonstandard panel does not prove that the result caused a symptom.</p>
+    <p>Laboratory results should be interpreted alongside:</p>
+    <ul>
+      <li>Symptom pattern</li>
+      <li>Deficiency risk</li>
+      <li>Test accuracy and reproducibility</li>
+      <li>Other laboratory findings</li>
+      <li>Medications and medical conditions</li>
+      <li>Whether the result changes an appropriate clinical decision</li>
+    </ul>
+    <p>Using multiple high-dose supplements to move laboratory values toward an unvalidated "optimal range" requires evidence of benefit and safety.</p>
+
+    <h2>13. What Should You Check Before Choosing a Supplement?</h2>
+
+    <h3>1. Is the Purpose Clear?</h3>
+    <p>A clear purpose might include:</p>
+    <ul>
+      <li>Correcting a confirmed deficiency</li>
+      <li>Preventing deficiency in a high-risk situation</li>
+      <li>Meeting a need during pregnancy or another life stage</li>
+      <li>Managing nutrition after surgery or with malabsorption</li>
+      <li>Supplementing a nutrient that cannot be obtained adequately through diet</li>
+      <li>Treating a medical indication identified by a clinician</li>
+    </ul>
+    <p>Purposes such as "brain boosting," "focus enhancement," or "dementia prevention" are vague and may create misleading expectations.</p>
+
+    <h3>2. Who Was Studied?</h3>
+    <p>Evidence may apply to:</p>
+    <ul>
+      <li>Cognitively healthy adults</li>
+      <li>Older adults</li>
+      <li>People with a nutrient deficiency</li>
+      <li>People with mild cognitive impairment</li>
+      <li>People with a specific disease</li>
+      <li>Pregnant or breastfeeding individuals</li>
+      <li>People taking a particular medication</li>
+    </ul>
+    <p>Results in one group cannot automatically be applied to everyone.</p>
+
+    <h3>3. Is the Studied Ingredient the Same as the Product?</h3>
+    <p>Results may differ according to:</p>
+    <ul>
+      <li>Chemical form</li>
+      <li>Source material</li>
+      <li>Dose</li>
+      <li>Ingredient ratio</li>
+      <li>Combination with other ingredients</li>
+      <li>Duration of use</li>
+      <li>Manufacturing quality</li>
+      <li>Oxidation and stability</li>
+      <li>Finished-product composition</li>
+    </ul>
+    <p>Evidence for one ingredient cannot automatically be transferred to a multicomponent product.</p>
+    <p>Evidence for several individual ingredients also does not prove synergy or effectiveness of the combination.</p>
+
+    <h3>4. Are Ingredients Being Duplicated?</h3>
+    <p>Using a multivitamin, energy product, sleep product, and brain-health product together may duplicate ingredients.</p>
+    <p>Particular attention may be needed for:</p>
+    <ul>
+      <li>Vitamin B6</li>
+      <li>Folate</li>
+      <li>Vitamin D</li>
+      <li>Iron</li>
+      <li>Zinc</li>
+      <li>Selenium</li>
+      <li>Vitamin A</li>
+      <li>Vitamin E</li>
+      <li>Choline</li>
+    </ul>
+    <p>Review the total daily intake, not only the amount per serving.</p>
+
+    <h3>5. Could the Supplement Interact With a Medication or Condition?</h3>
+    <p>Supplements may affect:</p>
+    <ul>
+      <li>Bleeding risk</li>
+      <li>Blood pressure or glucose</li>
+      <li>Liver or kidney function</li>
+      <li>Perioperative management</li>
+      <li>Laboratory results</li>
+      <li>Absorption of other nutrients</li>
+      <li>Medication absorption or metabolism</li>
+    </ul>
+    <p>Tell a clinician or pharmacist about all prescription medications, over-the-counter products, and dietary supplements being used.</p>
+
+    <h3>6. Could Supplement Use Delay Appropriate Evaluation?</h3>
+    <p>Relying only on supplements may delay diagnosis when symptoms include:</p>
+    <ul>
+      <li>Progressive memory decline</li>
+      <li>Numbness or sensory loss</li>
+      <li>Gait change</li>
+      <li>Severe fatigue with weight loss</li>
+      <li>Symptoms of anemia</li>
+      <li>Persistent gastrointestinal symptoms</li>
+      <li>Acute confusion</li>
+    </ul>
+    <p>Supplements do not replace diagnosis.</p>
+
+    <h2>14. How Should Multivitamin Research Be Interpreted?</h2>
+    <p>Research on multivitamin and mineral supplementation is not uniform.</p>
+    <p>A 2018 Cochrane review found that evidence supporting vitamin or mineral supplementation for maintaining cognition in cognitively healthy middle-aged and older adults was generally of low or moderate certainty, with limited evidence of clear long-term benefit.<sup>[13]</sup></p>
+    <p>In contrast, a 2024 integrated analysis of three cognitive substudies within COSMOS reported a small average benefit in global cognition and episodic memory among older U.S. adults taking one specific multivitamin-mineral product.<sup>[14]</sup></p>
+    <p>Important limitations include:</p>
+    <ul>
+      <li>The average effect was small.</li>
+      <li>One specific product was studied.</li>
+      <li>Participants were primarily relatively healthy older adults in the United States.</li>
+      <li>Some assessments were conducted by telephone or online.</li>
+      <li>The study did not establish prevention of dementia.</li>
+      <li>It could not identify which ingredient produced the observed effect.</li>
+      <li>Results may not apply to products with different formulations or doses.</li>
+    </ul>
+    <p>The COSMOS results should not be ignored.</p>
+    <p>They also should not be advertised as proving that:</p>
+    <ul>
+      <li>Multivitamins reverse brain aging.</li>
+      <li>Every older adult will experience memory improvement.</li>
+      <li>Multivitamins prevent dementia.</li>
+      <li>The benefit is large or clinically certain.</li>
+      <li>Every multivitamin produces the same effect.</li>
+    </ul>
+    <p>The 2026 World Health Organization guideline does not recommend routine use of B vitamins, vitamin E, omega-3 supplements, or multivitamin-mineral supplements for reducing cognitive decline or dementia risk in people without a diagnosed deficiency.<sup>[15]</sup></p>
+    <p>This does not necessarily contradict the existence of small cognitive-test effects in selected studies.</p>
+    <p>Guidelines consider the total evidence, effect size, potential harms, and generalizability.</p>
+
+    <h2>15. When Medical Evaluation Should Come Before Supplements</h2>
+    <p>Medical assessment should generally come before supplement selection when there is:</p>
+    <ul>
+      <li>Progressive memory or judgment change</li>
+      <li>Repeated questioning</li>
+      <li>Difficulty managing medication or finances</li>
+      <li>Persistent numbness or sensory loss</li>
+      <li>Gait instability</li>
+      <li>New muscle weakness</li>
+      <li>Possible severe anemia</li>
+      <li>Unintended weight loss</li>
+      <li>Persistent vomiting or diarrhea</li>
+      <li>Possible gastrointestinal bleeding</li>
+      <li>Chronic heavy alcohol use with malnutrition</li>
+      <li>Recurrent vomiting after bariatric surgery</li>
+      <li>Sudden confusion</li>
+      <li>One-sided weakness, speech difficulty, vision change, or severe headache</li>
+    </ul>
+
+    <h3>Situations That May Require Emergency Evaluation</h3>
+    <p>Do not assume that sudden neurological symptoms are caused by nutritional deficiency.</p>
+    <p>Seek urgent emergency care for:</p>
+    <ul>
+      <li>Sudden severe confusion</li>
+      <li>Slurred speech or difficulty understanding speech</li>
+      <li>Weakness of the face, arm, or leg, particularly on one side</li>
+      <li>Sudden vision changes</li>
+      <li>Sudden difficulty walking or loss of balance</li>
+      <li>Reduced consciousness or difficulty waking</li>
+      <li>A seizure</li>
+      <li>A sudden severe headache without a known cause</li>
+    </ul>
+    <p>A person with alcohol use disorder, severe malnutrition, or persistent vomiting who develops confusion, gait difficulty, or abnormal eye movements also requires prompt evaluation for possible Wernicke encephalopathy.</p>
+
+    <h2>16. What This Article Does Not Mean</h2>
+    <p>This article does not mean that:</p>
+    <ul>
+      <li>Nutrition is unimportant for brain health.</li>
+      <li>Every supplement is unnecessary.</li>
+      <li>A diagnosed deficiency should always be corrected through food alone.</li>
+      <li>Omega-3 fatty acids are unrelated to the brain.</li>
+      <li>Vitamin B12, folate, vitamin D, iron, and thiamine are unimportant.</li>
+      <li>MIND or Mediterranean-style eating patterns have no health value.</li>
+      <li>A specific diet guarantees dementia prevention.</li>
+      <li>One 2026 DHA trial disproves every possible benefit of dietary omega-3 intake or every omega-3 product.</li>
+      <li>One blood test fully describes nutritional status.</li>
+      <li>Every out-of-range laboratory result is the cause of symptoms.</li>
+      <li>More supplements are always better for the brain.</li>
+      <li>A small cognitive-test effect from a multivitamin proves dementia prevention.</li>
+      <li>A supplement can replace medical evaluation or prescribed treatment.</li>
+      <li>Research on individual ingredients proves the effectiveness of a finished multicomponent product.</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>The brain and nervous system require many nutrients to function normally.</p>
+    <p>However, three different questions must remain separate:</p>
+    <ul>
+      <li>What the body requires for normal physiology</li>
+      <li>What is needed to treat a deficiency</li>
+      <li>Whether additional supplementation improves cognition in a nondeficient person</li>
+    </ul>
+    <p>Current evidence supports several practical principles:</p>
+    <ul>
+      <li>Begin with overall dietary quality and nutritional adequacy rather than one nutrient.</li>
+      <li>Distinguish observational dietary research from randomized clinical trials.</li>
+      <li>Evaluate and correct true deficiencies or high-risk states appropriately.</li>
+      <li>Do not assume that high-dose supplementation improves memory or prevents dementia in people without a deficiency.</li>
+      <li>Distinguish biological mechanisms and biomarker changes from meaningful cognitive outcomes.</li>
+      <li>Do not treat food research and supplement research as equivalent.</li>
+      <li>Do not extend evidence for one ingredient to an entire finished product.</li>
+      <li>Review total intake and safety when several supplements are used together.</li>
+      <li>Prioritize medical evaluation when cognitive or neurological symptoms persist or progress.</li>
+      <li>Manage blood pressure, glucose, lipids, sleep, activity, smoking, and alcohol use as part of overall brain health.</li>
+    </ul>
+    <p>Nutrition for brain health is not a secret contained in one capsule.</p>
+    <p>It is a long-term process involving an adequate and balanced diet, appropriate identification and treatment of deficiency, vascular and metabolic health, and sustainable health behaviors.</p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>What is the best nutrient for the brain?</h3>
+    <p>There is no single nutrient that can be identified as "the best" for the brain.</p>
+    <p>The brain and nervous system require fatty acids, amino acids, vitamins, minerals, and adequate energy.</p>
+    <p>Overall dietary quality, sufficient protein and energy, and identification of true deficiencies are more important than one marketed ingredient.</p>
+
+    <h3>Can the MIND or Mediterranean diet prevent dementia?</h3>
+    <p>Observational studies have associated these dietary patterns with lower rates of cognitive decline and dementia.</p>
+    <p>However, observational studies cannot fully separate diet from exercise, healthcare access, education, and other health behaviors.</p>
+    <p>A major randomized MIND trial did not find a significant difference in cognitive change over three years compared with a calorie-reduction control diet.</p>
+    <p>These patterns may be used as healthy dietary frameworks, but they do not guarantee dementia prevention.</p>
+
+    <h3>Do omega-3 supplements improve memory?</h3>
+    <p>DHA is an important component of neuronal cell membranes.</p>
+    <p>However, omega-3 supplements have not been shown consistently to improve memory or prevent dementia in all cognitively healthy adults.</p>
+    <p>In a 2026 trial, DHA 2 grams per day increased cerebrospinal fluid DHA-related measures but did not improve cognition or brain structure over 24 months.</p>
+    <p>That result applies to the studied population and conditions. It does not invalidate every dietary or medical use of omega-3 fatty acids.</p>
+
+    <h3>Does taking more vitamin B12 improve energy and concentration?</h3>
+    <p>Correcting vitamin B12 deficiency is important.</p>
+    <p>However, evidence is limited that high-dose B12 improves energy or cognition in people whose B12 status is already adequate.</p>
+    <p>Risk may be higher with a vegan diet, pernicious anemia, gastrointestinal surgery, malabsorption, or long-term metformin or acid-suppressing medication use.</p>
+
+    <h3>Can I have vitamin B12 deficiency without anemia?</h3>
+    <p>Yes.</p>
+    <p>Neurological manifestations such as numbness, sensory loss, and gait difficulty may occur without anemia.</p>
+    <p>When risk factors and neurological symptoms are present, a normal blood count does not fully exclude B12 deficiency.</p>
+
+    <h3>Should I take B vitamins if my homocysteine is high?</h3>
+    <p>B vitamins can lower homocysteine.</p>
+    <p>Lowering the laboratory value does not consistently improve memory or prevent cognitive decline.</p>
+    <p>Kidney function, B12 and folate status, medications, and other vascular risk factors should be assessed.</p>
+    <p>Long-term high-dose folate use should also take B12 status into account.</p>
+
+    <h3>Does low vitamin D cause memory problems?</h3>
+    <p>Observational studies have reported an association between low vitamin D levels and cognitive decline.</p>
+    <p>These studies cannot establish direct causation.</p>
+    <p>A deficiency may require treatment for appropriate medical reasons, but vitamin D supplementation has not been shown to improve memory consistently in people who are not deficient.</p>
+
+    <h3>Will iron improve fatigue and concentration?</h3>
+    <p>Iron-deficiency anemia can cause fatigue and difficulty concentrating.</p>
+    <p>Iron should not be taken without assessment because excessive iron may cause harm.</p>
+    <p>If deficiency is confirmed, the cause—such as bleeding, inadequate intake, or malabsorption—should also be investigated.</p>
+
+    <h3>Should a confused heavy drinker simply take thiamine?</h3>
+    <p>No.</p>
+    <p>Confusion, gait difficulty, or abnormal eye movements in a person with chronic heavy alcohol use or severe malnutrition may indicate Wernicke encephalopathy.</p>
+    <p>This may require immediate medical assessment and parenteral thiamine treatment rather than routine oral supplementation.</p>
+
+    <h3>Do choline or lecithin supplements improve memory?</h3>
+    <p>Choline is an essential nutrient involved in cell membranes and acetylcholine synthesis.</p>
+    <p>However, clinical evidence has not established clear cognitive benefit from choline or lecithin supplementation in healthy adults or people with dementia.</p>
+    <p>High-dose intake may also cause adverse effects.</p>
+
+    <h3>Are multivitamins good for brain health?</h3>
+    <p>Some COSMOS studies reported small average cognitive benefits from one specific multivitamin-mineral product in older U.S. adults.</p>
+    <p>The effect was small and did not prove dementia prevention.</p>
+    <p>The result cannot automatically be applied to every product or population.</p>
+    <p>The 2026 WHO guideline does not recommend routine multivitamin-mineral supplementation for dementia risk reduction in people without a diagnosed deficiency.</p>
+
+    <h3>Should everyone get nutritional testing for brain health?</h3>
+    <p>No.</p>
+    <p>Broad nutritional testing is not necessary for everyone.</p>
+    <p>Selective testing may be appropriate when there is anemia, sensory loss, gait difficulty, restrictive eating, gastrointestinal surgery, malabsorption, medication-related risk, weight loss, persistent vomiting, or progressive cognitive change.</p>
+    <p>Test results must be interpreted in the context of symptoms, risk factors, and test validity.</p>
+
+    <h3>Can supplements prevent dementia?</h3>
+    <p>No specific supplement has been shown to reliably prevent dementia in the general population without a diagnosed deficiency.</p>
+    <p>The 2026 WHO guideline does not recommend routine B vitamins, vitamin E, omega-3 supplements, or multivitamin-mineral supplements for dementia risk reduction in nondeficient people.</p>
+    <p>A broader approach includes healthy eating, physical activity, management of blood pressure, glucose and lipids, smoking cessation, reduced excessive alcohol use, and meaningful social and cognitive activity.</p>
+
+    <div class="evidence-box">
+      <h4>📚 References</h4>
+      <ul>
+        <li>1. Barnes LL, Dhana K, Liu X, et al. Trial of the MIND Diet for Prevention of Cognitive Decline in Older Persons. N Engl J Med. 2023;389(7):602-611. doi:10.1056/NEJMoa2302368. <a href="https://doi.org/10.1056/NEJMoa2302368" target="_blank" rel="noopener noreferrer nofollow">https://doi.org/10.1056/NEJMoa2302368</a></li>
+        <li>2. Tingö L, Bergh C, Rode J, et al. The Effect of Whole-Diet Interventions on Memory and Cognitive Function in Healthy Older Adults: A Systematic Review. Adv Nutr. 2024;15(9):100291. doi:10.1016/j.advnut.2024.100291. <a href="https://doi.org/10.1016/j.advnut.2024.100291" target="_blank" rel="noopener noreferrer nofollow">https://doi.org/10.1016/j.advnut.2024.100291</a></li>
+        <li>3. Yassine HN, Ghasem Pour S, Juarez M, et al. CNS target engagement of high-dose DHA supplementation in older adults at risk for dementia: a randomised, double-blind, placebo-controlled trial. EBioMedicine. Published online June 18, 2026:106316. doi:10.1016/j.ebiom.2026.106316. <a href="https://doi.org/10.1016/j.ebiom.2026.106316" target="_blank" rel="noopener noreferrer nofollow">https://doi.org/10.1016/j.ebiom.2026.106316</a></li>
+        <li>4. National Institutes of Health, Office of Dietary Supplements. Omega-3 Fatty Acids: Fact Sheet for Health Professionals. Accessed July 18, 2026. <a href="https://ods.od.nih.gov/factsheets/Omega3FattyAcids-HealthProfessional/" target="_blank" rel="noopener noreferrer nofollow">https://ods.od.nih.gov/factsheets/Omega3FattyAcids-HealthProfessional/</a></li>
+        <li>5. National Institutes of Health, Office of Dietary Supplements. Vitamin B12: Fact Sheet for Health Professionals. Updated July 2, 2025. Accessed July 18, 2026. <a href="https://ods.od.nih.gov/factsheets/VitaminB12-HealthProfessional/" target="_blank" rel="noopener noreferrer nofollow">https://ods.od.nih.gov/factsheets/VitaminB12-HealthProfessional/</a></li>
+        <li>6. Ford AH, Almeida OP. Effect of Vitamin B Supplementation on Cognitive Function in the Elderly: A Systematic Review and Meta-Analysis. Drugs Aging. 2019;36(5):419-434. doi:10.1007/s40266-019-00649-w. <a href="https://doi.org/10.1007/s40266-019-00649-w" target="_blank" rel="noopener noreferrer nofollow">https://doi.org/10.1007/s40266-019-00649-w</a></li>
+        <li>7. National Institutes of Health, Office of Dietary Supplements. Folate: Fact Sheet for Health Professionals. Updated November 30, 2022. Accessed July 18, 2026. <a href="https://ods.od.nih.gov/factsheets/Folate-HealthProfessional/" target="_blank" rel="noopener noreferrer nofollow">https://ods.od.nih.gov/factsheets/Folate-HealthProfessional/</a></li>
+        <li>8. National Institutes of Health, Office of Dietary Supplements. Vitamin B6: Fact Sheet for Health Professionals. Updated June 16, 2023. Accessed July 18, 2026. <a href="https://ods.od.nih.gov/factsheets/VitaminB6-HealthProfessional/" target="_blank" rel="noopener noreferrer nofollow">https://ods.od.nih.gov/factsheets/VitaminB6-HealthProfessional/</a></li>
+        <li>9. National Institutes of Health, Office of Dietary Supplements. Vitamin D: Fact Sheet for Health Professionals. Accessed July 18, 2026. <a href="https://ods.od.nih.gov/factsheets/VitaminD-HealthProfessional/" target="_blank" rel="noopener noreferrer nofollow">https://ods.od.nih.gov/factsheets/VitaminD-HealthProfessional/</a></li>
+        <li>10. National Institutes of Health, Office of Dietary Supplements. Iron: Fact Sheet for Health Professionals. Accessed July 18, 2026. <a href="https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/" target="_blank" rel="noopener noreferrer nofollow">https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/</a></li>
+        <li>11. National Institutes of Health, Office of Dietary Supplements. Thiamin: Fact Sheet for Health Professionals. Accessed July 18, 2026. <a href="https://ods.od.nih.gov/factsheets/Thiamin-HealthProfessional/" target="_blank" rel="noopener noreferrer nofollow">https://ods.od.nih.gov/factsheets/Thiamin-HealthProfessional/</a></li>
+        <li>12. National Institutes of Health, Office of Dietary Supplements. Choline: Fact Sheet for Health Professionals. Updated June 2, 2022. Accessed July 18, 2026. <a href="https://ods.od.nih.gov/factsheets/Choline-HealthProfessional/" target="_blank" rel="noopener noreferrer nofollow">https://ods.od.nih.gov/factsheets/Choline-HealthProfessional/</a></li>
+        <li>13. Rutjes AWS, Denton DA, Di Nisio M, et al. Vitamin and mineral supplementation for maintaining cognitive function in cognitively healthy people in mid and late life. Cochrane Database Syst Rev. 2018;12(12):CD011906. doi:10.1002/14651858.CD011906.pub2. <a href="https://doi.org/10.1002/14651858.CD011906.pub2" target="_blank" rel="noopener noreferrer nofollow">https://doi.org/10.1002/14651858.CD011906.pub2</a></li>
+        <li>14. Vyas CM, Manson JE, Sesso HD, et al. Effect of multivitamin-mineral supplementation versus placebo on cognitive function: results from the clinic subcohort of the COcoa Supplement and Multivitamin Outcomes Study randomized clinical trial and meta-analysis of 3 cognitive studies within COSMOS. Am J Clin Nutr. 2024;119(3):692-701. doi:10.1016/j.ajcnut.2023.12.011. <a href="https://doi.org/10.1016/j.ajcnut.2023.12.011" target="_blank" rel="noopener noreferrer nofollow">https://doi.org/10.1016/j.ajcnut.2023.12.011</a></li>
+        <li>15. World Health Organization. Risk reduction of cognitive decline and dementia: WHO guidelines. Second edition. Published July 15, 2026. Accessed July 18, 2026. ISBN 978-92-4-012355-7. <a href="https://www.who.int/publications/i/item/9789240123557" target="_blank" rel="noopener noreferrer nofollow">https://www.who.int/publications/i/item/9789240123557</a></li>
+        <li>16. McCleery J, Abraham RP, Denton DA, et al. Vitamin and mineral supplementation for preventing dementia or delaying cognitive decline in people with mild cognitive impairment. Cochrane Database Syst Rev. 2018;11(11):CD011905. doi:10.1002/14651858.CD011905.pub2. <a href="https://doi.org/10.1002/14651858.CD011905.pub2" target="_blank" rel="noopener noreferrer nofollow">https://doi.org/10.1002/14651858.CD011905.pub2</a></li>
+      </ul>
+    </div>
+
+    <div class="author-card">
+      <div class="author-avatar">👨‍⚕️</div>
+      <div class="author-info">
+        <h4>Jeehyun Ham, M.D.</h4>
+        <div class="creds">Neurologist · Graduate of Yonsei University College of Medicine · Former Assistant Professor of Clinical Research, Severance Hospital</div>
+        <p>Member, Korean Neurological Association · Member, Korean Parkinson's Disease and Movement Disorder Society · Member, Korean Society of Functional Medicine. This article is for informational purposes only and does not constitute medical advice or replace professional consultation.</p>
+      </div>
+    </div>
+
+    <div class="related">
+      <h3>Related Articles</h3>
+      <div class="related-grid">
+        <div class="related-card">
+          <a href="/blog/brain-fog-causes/">
+            <div class="tag">Brain Health &amp; Lifestyle</div>
+            <h4>What Is Brain Fog? Possible Causes and When to Seek Medical Care</h4>
+          </a>
+        </div>
+        <div class="related-card">
+          <a href="/blog/memory-loss-and-dementia/">
+            <div class="tag">Brain Health &amp; Lifestyle</div>
+            <h4>Is Memory Loss Always Dementia? Normal Aging, MCI, and Warning Signs</h4>
+          </a>
+        </div>
+        <div class="related-card">
+          <a href="/blog/why-cant-i-focus/">
+            <div class="tag">Brain Health &amp; Lifestyle</div>
+            <h4>Why Can't I Focus? It's Not Just Dopamine</h4>
+          </a>
+        </div>
+        <div class="related-card">
+          <a href="/blog/sleep-memory-focus/">
+            <div class="tag">Brain Health &amp; Lifestyle</div>
+            <h4>Sleep and Brain Health: How Rest Shapes Memory and Focus</h4>
+          </a>
+        </div>
+        <div class="related-card">
+          <a href="/blog/phosphatidylserine-memory/">
+            <div class="tag">Nutrition &amp; Metabolic Health</div>
+            <h4>Phosphatidylserine and Memory: The Neurobiological Case</h4>
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="sig-block">
+      <p class="sig-main"><strong>Jeehyun Ham, M.D.</strong><br>Neurologist</p>
+      <ul class="sig-creds">
+        <li>Graduate of Yonsei University College of Medicine</li>
+        <li>Former Assistant Professor of Clinical Research, Severance Hospital</li>
+        <li>Member, Korean Neurological Association</li>
+        <li>Member, Korean Parkinson's Disease and Movement Disorder Society</li>
+        <li>Member, Korean Society of Functional Medicine</li>
+      </ul>
+      <p class="sig-notice">This article is intended for general health and medical education. It does not provide an individual nutritional assessment, diagnosis, or treatment plan and does not replace care from a qualified healthcare professional.</p>
+      <p class="sig-notice">A nutrient's biological role or evidence involving an individual ingredient does not establish that a finished supplement improves memory, enhances cognition, or prevents dementia.</p>
+      <p class="sig-notice">Consider medical evaluation when memory or judgment changes progressively worsen or when there is persistent numbness, sensory loss, gait change, unexplained anemia, unintended weight loss, or another concerning symptom.</p>
+      <p class="sig-notice">Call 911 in the United States—or your local emergency number—if sudden confusion, difficulty speaking, one-sided weakness, vision changes, difficulty walking, reduced consciousness, a seizure, or a sudden severe unexplained headache occurs.</p>
+      <p class="sig-notice">Before taking a supplement, review current medical conditions, medications, duplicate ingredients, total daily intake, and possible interactions with a qualified healthcare professional or pharmacist.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2026 NervLock. All rights reserved.</p>
+    <p>This article is for informational purposes only and does not constitute medical advice.</p>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Nutrition for Brain Health: What the Evidence Supports—and What Remains Uncertain",
+  "description": "Learn what the evidence says about diet and brain health, including omega-3s, vitamin B12, B vitamins, vitamin D, iron, thiamine, choline, multivitamins, nutrient deficiencies, and supplement limitations.",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://nervlocklab.com/blog/brain-nutrition/"
+  },
+  "url": "https://nervlocklab.com/blog/brain-nutrition/",
+  "datePublished": "2026-07-18",
+  "dateModified": "2026-07-18",
+  "inLanguage": "en-US",
+  "articleSection": "Nutrition & Metabolic Health",
+  "author": {
+    "@type": "Person",
+    "name": "Jeehyun Ham",
+    "jobTitle": "Neurologist"
+  },
+  "reviewedBy": {
+    "@type": "Person",
+    "name": "Jeehyun Ham",
+    "jobTitle": "Neurologist"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "NervLock Lab",
+    "url": "https://nervlocklab.com/en/"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://nervlocklab.com/en/" },
+    { "@type": "ListItem", "position": 2, "name": "Brain Health Academy", "item": "https://nervlocklab.com/en/#academy" },
+    { "@type": "ListItem", "position": 3, "name": "Nutrition", "item": "https://nervlocklab.com/en/#academy" },
+    { "@type": "ListItem", "position": 4, "name": "Nutrition for Brain Health: What the Evidence Supports—and What Remains Uncertain", "item": "https://nervlocklab.com/blog/brain-nutrition/" }
+  ]
+}
+</script>
+
+</body>
+</html>
