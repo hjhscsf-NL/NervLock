@@ -49,6 +49,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://nervlocklab.com/blog/what-does-the-autonomic-nervous-system-control/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://nervlocklab.com/blog/%EA%B8%B0%EC%96%B5%EB%A0%A5-%EC%B9%98%EB%A7%A4-%EC%B0%A8%EC%9D%B4/</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
@@ -459,6 +465,18 @@
   <url>
     <loc>https://nervlocklab.com/blog/palpitations-dizziness-digestive-symptoms-autonomic-nervous-system/</loc>
     <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nervlocklab.com/blog/dizziness-and-palpitations-when-standing/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nervlocklab.com/blog/dizziness-and-fast-heartbeat-when-standing/</loc>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
