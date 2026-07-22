@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="robots" content="index, follow"/>
+  <title>What Happens to the Brain and Body During Stress? | NervLock</title>
+  <meta name="description" content="Learn how the brain evaluates stress and how the sympathetic nervous system and HPA axis influence heart rate, breathing, and cortisol, along with possible effects on sleep, digestion, and concentration and signs that may warrant medical evaluation."/>
+  <link rel="canonical" href="https://nervlocklab.com/blog/how-stress-affects-the-brain-and-body/" />
+  <link rel="alternate" hreflang="ko" href="https://nervlocklab.com/blog/what-happens-to-brain-and-body-during-stress/" />
+  <link rel="alternate" hreflang="en" href="https://nervlocklab.com/blog/how-stress-affects-the-brain-and-body/" />
+  <link rel="alternate" hreflang="x-default" href="https://nervlocklab.com/blog/what-happens-to-brain-and-body-during-stress/" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://nervlocklab.com/blog/how-stress-affects-the-brain-and-body/" />
+  <meta property="og:title" content="What Happens to the Brain and Body During Stress? | NervLock" />
+  <meta property="og:description" content="Learn how the brain evaluates stress and how the sympathetic nervous system and HPA axis influence heart rate, breathing, and cortisol, along with possible effects on sleep, digestion, and concentration and signs that may warrant medical evaluation." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="What Happens to the Brain and Body During Stress? | NervLock" />
+  <meta name="twitter:description" content="Learn how the brain evaluates stress and how the sympathetic nervous system and HPA axis influence heart rate, breathing, and cortisol, along with possible effects on sleep, digestion, and concentration and signs that may warrant medical evaluation." />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; color: #1a1a2e; background: #fff; font-size: 17px; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    :root {
+      --navy: #0d2545; --navy2: #163561;
+      --teal: #1a7a6e; --teal2: #22a090;
+      --gold: #b8922a; --gold2: #d4a843;
+      --gray: #f4f6f9; --gray2: #e8ecf2;
+      --muted: #5a6278;
+    }
+
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(13,37,69,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-logo { font-size: 20px; font-weight: 900; color: #fff; white-space: nowrap; }
+    .nav-logo span { color: var(--gold2); }
+    .nav-back { font-size: 14px; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold2); }
+    .lang-toggle { display: flex; border: 1px solid rgba(255,255,255,0.22); border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+    .lang-btn { padding: 5px 12px; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); transition: all 0.18s; }
+    .lang-btn + .lang-btn { border-left: 1px solid rgba(255,255,255,0.22); }
+    .lang-btn.active { background: rgba(255,255,255,0.18); color: #fff; }
+
+    .lang-switch-banner { background: var(--gray); border: 1px solid var(--gray2); border-radius: 14px; padding: 14px 20px; margin-bottom: 40px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .lang-switch-banner span { font-size: 14px; color: var(--muted); }
+    .lang-switch-link { font-size: 13px; font-weight: 700; color: var(--teal2); border: 1px solid var(--teal2); border-radius: 50px; padding: 6px 16px; transition: all 0.2s; white-space: nowrap; }
+    .lang-switch-link:hover { background: var(--teal2); color: #fff; }
+
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 60px 24px 100px; }
+
+    .breadcrumb { margin-bottom: 24px; position: static; top: auto; z-index: auto; background: none; backdrop-filter: none; border-bottom: none; }
+    .breadcrumb ol { display: flex; flex-wrap: wrap; align-items: center; list-style: none; padding: 0; margin: 0; font-size: 13px; color: var(--muted); }
+    .breadcrumb li { display: flex; align-items: center; }
+    .breadcrumb li:not(:last-child)::after { content: "→"; margin: 0 8px; color: var(--gray2); }
+    .breadcrumb a { color: var(--teal2); font-weight: 600; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb li[aria-current="page"] { color: var(--navy); font-weight: 600; }
+
+    .article-hero { background: linear-gradient(135deg, #1a0a3d 0%, #6e2a4a 100%); border-radius: 24px; padding: 52px 48px; margin-bottom: 48px; position: relative; overflow: hidden; }
+    .article-hero::before { content: '🧠'; position: absolute; right: 32px; top: 32px; font-size: 80px; opacity: 0.15; }
+    .article-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(26,122,110,0.3); border: 1px solid rgba(26,122,110,0.5); border-radius: 50px; font-size: 12px; font-weight: 700; color: #6ee7da; padding: 4px 14px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+    .content-type-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.85); padding: 4px 14px; letter-spacing: 0.5px; margin-bottom: 20px; margin-left: 8px; }
+    .article-title { font-size: clamp(22px, 3.5vw, 34px); font-weight: 900; color: #fff; line-height: 1.3; margin-bottom: 20px; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 12px 20px; }
+    .article-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.65); }
+    .article-meta-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+
+    .abstract { background: linear-gradient(135deg, rgba(26,122,110,0.06), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 16px 16px 0; padding: 24px 28px; margin-bottom: 48px; }
+    .abstract-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--teal2); margin-bottom: 10px; }
+    .abstract p { font-size: 15px; color: #2a3a4a; line-height: 1.85; margin: 0; font-style: italic; }
+
+    .article-body h2 { font-size: 24px; font-weight: 900; color: var(--navy); margin: 52px 0 16px; line-height: 1.35; padding-bottom: 12px; border-bottom: 2px solid var(--gray2); }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-size: 19px; font-weight: 800; color: var(--navy2); margin: 36px 0 12px; }
+    .article-body p { font-size: 16px; color: #2a2a3e; line-height: 1.95; margin-bottom: 20px; }
+    .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .article-body li { font-size: 15px; color: #3a3a50; line-height: 1.75; }
+    .article-body strong { color: var(--navy); }
+
+    .evidence-box { background: var(--gray); border-radius: 14px; padding: 20px 24px; margin: 28px 0; }
+    .evidence-box h4 { font-size: 12px; font-weight: 800; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .evidence-box ul { margin: 0; gap: 10px; }
+    .evidence-box li { font-size: 13px; color: var(--muted); line-height: 1.7; overflow-wrap: break-word; word-break: break-word; }
+    .evidence-box li a { color: var(--teal2); font-weight: 600; overflow-wrap: break-word; word-break: break-all; }
+
+    .related { margin-top: 64px; }
+    .related h3 { font-size: 20px; font-weight: 900; color: var(--navy); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .related-card { background: var(--gray); border-radius: 16px; padding: 20px; border: 1px solid var(--gray2); }
+    .related-card .tag { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .related-card h4 { font-size: 15px; font-weight: 800; color: var(--navy); line-height: 1.4; }
+
+    footer { background: #0a1a32; color: rgba(255,255,255,0.5); padding: 32px 0; }
+    .footer-bottom { max-width: 900px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 12px; }
+
+    @media (max-width: 600px) {
+      .article-hero { padding: 36px 28px; }
+      .related-grid { grid-template-columns: 1fr; }
+    }
+    .sig-block { border-top: 2px solid var(--gray2); margin-top: 48px; padding-top: 24px; }
+    .sig-main { font-size: 14px; color: var(--navy); font-weight: 700; margin-bottom: 12px; line-height: 1.7; }
+    .sig-creds { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+    .sig-creds li { font-size: 13px; color: var(--muted); padding-left: 14px; position: relative; line-height: 1.6; }
+    .sig-creds li::before { content: "·"; position: absolute; left: 0; color: var(--teal2); font-weight: 900; }
+    .sig-notice { font-size: 12px; color: var(--muted); font-style: italic; line-height: 1.7; }
+
+    :focus-visible { outline: 2px solid var(--teal2); outline-offset: 2px; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/en/" class="nav-logo">Nerv<span>Lock</span></a>
+    <a href="/en/blog/" class="nav-back">← Medical Blog</a>
+    <div class="lang-toggle">
+      <a href="/blog/what-happens-to-brain-and-body-during-stress/" class="lang-btn">KR</a>
+      <a href="/blog/how-stress-affects-the-brain-and-body/" class="lang-btn active">EN</a>
+    </div>
+  </div>
+</nav>
+
+<div class="article-wrap">
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/en/">Home</a></li>
+      <li><a href="/en/blog/">Blog</a></li>
+      <li aria-current="page">What Happens to the Brain and Body During Stress?</li>
+    </ol>
+  </nav>
+
+  <div class="article-hero">
+    <div class="article-tag">Pain &amp; Autonomic Health</div>
+    <span class="content-type-tag">Stress &amp; Autonomic Education</span>
+    <h1 class="article-title">What Happens to the Brain and Body During Stress?</h1>
+    <div class="article-meta">
+      <div class="article-meta-item">👤 Author: <strong>Jeehyun Ham, M.D.</strong></div>
+      <div class="article-meta-item">🩺 Specialty: <strong>Neurologist</strong></div>
+      <div class="article-meta-item">✅ Medical Reviewer: <strong>Jeehyun Ham, M.D.</strong></div>
+      <div class="article-meta-item">📅 Published: <strong>2026-07-22</strong></div>
+      <div class="article-meta-item">🔎 Medically Reviewed: <strong>2026-07-22</strong></div>
+      <div class="article-meta-item">📚 Evidence Review Date: <strong>2026-07-22</strong></div>
+    </div>
+  </div>
+
+  <div class="lang-switch-banner">
+    <span>🇰🇷 이 글의 한국어 버전을 보시겠습니까?</span>
+    <a href="/blog/what-happens-to-brain-and-body-during-stress/" class="lang-switch-link">한국어로 읽기 →</a>
+  </div>
+
+  <div class="abstract">
+    <div class="abstract-label">Abstract</div>
+    <p>Stress is not only an emotion. It is a psychological and physiological response that occurs when the brain and body perceive a situation as difficult or threatening.</p>
+  </div>
+
+  <div class="article-body">
+
+    <p><strong>Written and medically reviewed by Jeehyun Ham, M.D.</strong></p>
+
+    <p>Before an important presentation, you may notice that your heart feels as though it is beating faster or that your hands become sweaty. When worry continues, you may also have trouble sleeping, experience digestive discomfort, or feel mentally foggy.</p>
+    <p>These changes do not occur simply because someone is “not mentally strong enough.”</p>
+    <p>Stress includes psychological and physiological responses to situations perceived as difficult, demanding, or threatening. The brain and body adjust activity across the autonomic nervous system, hormonal systems, and multiple organs to respond.</p>
+    <p>A short-lived and appropriately scaled response may help a person respond to danger or complete an important task. Problems may arise when the response is unusually intense, does not settle after the situation has passed, or is repeatedly activated without enough recovery.</p>
+
+    <h2>The Short Answer</h2>
+    <p>During stress, several brain regions and body systems work together to interpret what is happening and prepare a response.</p>
+    <p>The sympathetic nervous system and adrenal medulla contribute to the faster response. Heart rate, blood vessel activity, breathing, sweating, alertness, and muscle tension may change.</p>
+    <p>The hypothalamic-pituitary-adrenal axis, or <strong>HPA axis</strong>, contributes on a slower timescale by regulating cortisol release.</p>
+    <p>These are normal physiological systems. Sympathetic activity and cortisol are not inherently harmful. What matters is the intensity and duration of the response, whether the body settles afterward, and whether symptoms interfere with daily life.</p>
+
+    <h2>How the Brain and Body Respond</h2>
+    <p>The stress response does not come from a single brain area.</p>
+    <p>The amygdala contributes to processing emotional importance and possible threat. The hippocampus helps connect current events with memory and context. The prefrontal cortex contributes to attention, judgment, and behavioral control. The hypothalamus and brainstem help coordinate autonomic and hormonal responses.</p>
+    <p>It would be inaccurate to say that the amygdala alone creates stress or that one hormone causes every stress-related symptom.</p>
+    <p>When an immediate response is needed, sympathetic nerve signals and hormones released from the adrenal medulla may contribute to:</p>
+    <ul>
+      <li>A faster or more forceful heartbeat</li>
+      <li>Changes in blood vessel activity and blood pressure responses</li>
+      <li>Faster or shallower breathing</li>
+      <li>Sweaty hands or a dry mouth</li>
+      <li>Increased muscle tension</li>
+      <li>Changes in gastrointestinal movement or sensation</li>
+      <li>Greater alertness</li>
+    </ul>
+    <p>These reactions may occur during danger, but also before a presentation, examination, or athletic event. When the situation ends and the response gradually settles, they may be part of a normal adaptive process.</p>
+
+    <h2>The HPA Axis and Cortisol</h2>
+    <p>The HPA axis operates over a relatively slower timescale. Signals from the hypothalamus and pituitary gland lead to cortisol release from the adrenal cortex.</p>
+    <p>Cortisol is often called a “stress hormone,” but it is not inherently toxic or always harmful. It follows a normal daily rhythm and contributes to:</p>
+    <ul>
+      <li>Energy use and blood glucose regulation</li>
+      <li>Maintenance of blood pressure and cardiovascular function</li>
+      <li>Regulation of immune and inflammatory responses</li>
+      <li>Adaptation to demanding situations</li>
+    </ul>
+    <p>Persistent or repeated stress may affect HPA-axis responses and cortisol rhythms in some people.</p>
+    <p>This does not mean that chronic stress always causes cortisol to remain continuously elevated. Fatigue also does not mean that cortisol has been “depleted.”</p>
+    <p>Cortisol varies with time of day, sleep, illness, medications, and testing conditions. A single cortisol measurement cannot determine a person’s everyday stress level or provide a complete assessment of HPA-axis function.</p>
+
+    <h2>How Ongoing Stress May Affect the Body</h2>
+
+    <h3>Sleep and Concentration</h3>
+    <p>When alertness and tension remain high, it may become harder to fall asleep or stay asleep. Ongoing sleep loss can contribute to fatigue, difficulty concentrating, and a sense that memory is not working as well.</p>
+    <p>Temporary concentration problems do not by themselves indicate brain damage or dementia. Conversely, progressively worsening changes in memory or concentration should not automatically be attributed to stress.</p>
+
+    <h3>Palpitations and Breathing Changes</h3>
+    <p>During stress, a person may notice a racing or forceful heartbeat, faster breathing, or chest tightness.</p>
+    <p>Similar symptoms may also occur with abnormal heart rhythms, anemia, thyroid conditions, medications, caffeine, dehydration, or heart and lung conditions.</p>
+    <p>Chest pain or severe shortness of breath should not be dismissed as stress.</p>
+
+    <h3>Digestive Discomfort</h3>
+    <p>Stress may affect gastrointestinal movement, secretion, and sensation. Some people may experience heartburn, nausea, abdominal discomfort, diarrhea or constipation, appetite changes, or bloating.</p>
+    <p>Food, medications, infections, and gastrointestinal conditions can produce similar symptoms. Digestive symptoms should not automatically be attributed to stress or excessive sympathetic activity.</p>
+
+    <h3>Muscle Tension and Pain</h3>
+    <p>Stress may increase tension in the neck, shoulders, jaw, and lower back. People with existing pain may also perceive it as more intense during stressful periods.</p>
+    <p>Stress is not the cause of all pain. It is one of several factors that may influence pain intensity, attention, sleep, and recovery.</p>
+
+    <h2>Can Every Symptom Be Explained by Stress?</h2>
+    <p>No.</p>
+    <p>Palpitations, dizziness or lightheadedness, digestive discomfort, sweating, fatigue, sleep problems, and difficulty concentrating may occur during stress. However, symptoms alone cannot diagnose a stress-related condition, autonomic dysfunction, or another specific disorder.</p>
+    <p>Similar symptoms may occur with:</p>
+    <ul>
+      <li>Dehydration or anemia</li>
+      <li>Thyroid abnormalities</li>
+      <li>Abnormal heart rhythms</li>
+      <li>Infection</li>
+      <li>Excessive caffeine or alcohol use</li>
+      <li>Medications</li>
+      <li>Anxiety or depressive symptoms</li>
+      <li>Endocrine, neurological, or cardiovascular conditions</li>
+    </ul>
+    <p>It is also inappropriate to conclude that “all tests were normal, so every symptom must be caused by stress,” or that one cortisol result proves that the HPA axis is damaged.</p>
+    <p>The onset, duration, triggers, accompanying symptoms, medications, sleep, and other health factors all need to be considered.</p>
+
+    <h2>Supporting Recovery</h2>
+    <p>The goal of stress management is not to eliminate every stress response. A more realistic goal is to prevent sustained tension and allow enough time for the mind and body to settle.</p>
+    <p>General health measures may include:</p>
+    <ul>
+      <li>Keeping a reasonably consistent wake time</li>
+      <li>Allowing enough opportunity for sleep</li>
+      <li>Reducing caffeine and alcohol late in the day</li>
+      <li>Maintaining physical activity such as walking, within individual health limits</li>
+      <li>Scheduling brief breaks and quiet activities</li>
+      <li>Staying connected with trusted family members or friends</li>
+      <li>Gently slowing unusually rapid breathing within a comfortable range</li>
+    </ul>
+    <p>These measures may support general stress management and health. They are not proven methods for treating a specific disorder or “normalizing” the HPA axis or autonomic nervous system.</p>
+    <p>Stop the activity and seek evaluation if breathing exercises or physical activity provoke significant dizziness, chest pain, severe shortness of breath, or worsening discomfort.</p>
+
+    <h2>When to Consider Medical Evaluation</h2>
+    <p>Consider medical evaluation when:</p>
+    <ul>
+      <li>Symptoms persist or progressively worsen</li>
+      <li>Sleep, work, school, or daily activities are clearly affected</li>
+      <li>Severe palpitations recur</li>
+      <li>Unexplained fainting occurs</li>
+      <li>Digestive symptoms persist or there is unexplained weight change</li>
+      <li>Anxiety, low mood, or panic symptoms persist</li>
+      <li>Memory or concentration changes progressively worsen</li>
+      <li>Symptoms begin after starting or changing a medication</li>
+      <li>The symptoms feel difficult to manage without help</li>
+    </ul>
+    <p>The fact that symptoms become worse during stress does not rule out another medical cause.</p>
+
+    <h2>When to Seek Emergency Medical Care</h2>
+    <p>Call emergency services or seek emergency medical care immediately for:</p>
+    <ul>
+      <li>Sudden or persistent chest pain</li>
+      <li>Severe shortness of breath</li>
+      <li>Loss of consciousness or delayed recovery after fainting</li>
+      <li>Sudden difficulty speaking or understanding speech</li>
+      <li>Weakness or numbness affecting one side of the face, arm, or leg</li>
+      <li>Sudden vision changes</li>
+      <li>Sudden difficulty walking or loss of balance</li>
+      <li>A seizure</li>
+      <li>A rapid change in consciousness or behavior</li>
+      <li>A sudden, severe headache without a known cause</li>
+    </ul>
+    <p>Seek emergency evaluation even if sudden neurological symptoms improve after a few minutes.</p>
+
+    <h2>Key Takeaways</h2>
+    <p>Stress includes psychological and physiological responses that help the brain and body respond to situations perceived as difficult or threatening.</p>
+    <p>The sympathetic nervous system and adrenal medulla contribute to faster physical responses, while the HPA axis contributes to a slower hormonal response involving cortisol.</p>
+    <p>Cortisol and sympathetic activity are not inherently harmful. However, an intense response or one that is repeatedly activated without adequate recovery may affect sleep, digestion, concentration, pain, and sensations such as palpitations.</p>
+    <p>These symptoms may also arise from other medical causes. Symptoms or a single test result cannot establish a diagnosis involving stress, the autonomic nervous system, or the HPA axis.</p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>Does stress always cause high cortisol?</h3>
+    <p>No. Cortisol may increase during an acute stress response, but the size and timing of the response vary. Ongoing stress does not mean that cortisol remains elevated throughout the day or becomes depleted.</p>
+
+    <h3>Can a cortisol test measure how stressed I am?</h3>
+    <p>A single cortisol measurement cannot determine a person’s everyday stress level or provide a complete assessment of HPA-axis function. Cortisol varies with time of day, sleep, illness, medications, and testing conditions.</p>
+
+    <h3>Can chest pain or shortness of breath be caused by stress?</h3>
+    <p>Chest tightness and breathing changes can occur during stress. However, sudden or severe chest pain, severe shortness of breath, fainting, or changes in consciousness require emergency medical evaluation.</p>
+
+    <div class="evidence-box">
+      <h4>📚 References</h4>
+      <ul>
+        <li>1. Chu B, Marwaha K, Sanvictores T, Awosika AO, Ayers D. Physiology, Stress Reaction. Updated May 7, 2024. In: StatPearls [Internet]. Treasure Island (FL): StatPearls Publishing; 2026. <a href="https://www.ncbi.nlm.nih.gov/books/NBK541120/" target="_blank" rel="noopener noreferrer nofollow">https://www.ncbi.nlm.nih.gov/books/NBK541120/</a></li>
+        <li>2. Tsigos C, Kyrou I, Kassi E, et al. Stress: Endocrine Physiology and Pathophysiology. Updated October 17, 2020. In: Endotext [Internet]. South Dartmouth (MA): MDText.com, Inc. <a href="https://www.ncbi.nlm.nih.gov/books/NBK278995/" target="_blank" rel="noopener noreferrer nofollow">https://www.ncbi.nlm.nih.gov/books/NBK278995/</a></li>
+        <li>3. Herman JP, McKlveen JM, Ghosal S, et al. Regulation of the Hypothalamic-Pituitary-Adrenocortical Stress Response. Compr Physiol. 2016;6(2):603-621. doi:10.1002/cphy.c150015. <a href="https://pubmed.ncbi.nlm.nih.gov/27065163/" target="_blank" rel="noopener noreferrer nofollow">https://pubmed.ncbi.nlm.nih.gov/27065163/</a></li>
+        <li>4. Shields GS, Sazma MA, Yonelinas AP. The effects of acute stress on core executive functions: A meta-analysis and comparison with cortisol. Neurosci Biobehav Rev. 2016;68:651-668. doi:10.1016/j.neubiorev.2016.06.038. <a href="https://pubmed.ncbi.nlm.nih.gov/27371161/" target="_blank" rel="noopener noreferrer nofollow">https://pubmed.ncbi.nlm.nih.gov/27371161/</a></li>
+        <li>5. World Health Organization. Stress. Questions and answers. Updated March 30, 2026. Accessed July 22, 2026. <a href="https://www.who.int/news-room/questions-and-answers/item/stress" target="_blank" rel="noopener noreferrer nofollow">https://www.who.int/news-room/questions-and-answers/item/stress</a></li>
+        <li>6. Centers for Disease Control and Prevention. Managing Stress. Updated May 12, 2026. Accessed July 22, 2026. <a href="https://www.cdc.gov/mental-health/living-with/index.html" target="_blank" rel="noopener noreferrer nofollow">https://www.cdc.gov/mental-health/living-with/index.html</a></li>
+        <li>7. Centers for Disease Control and Prevention. Signs and Symptoms of Stroke. Updated May 19, 2026. Accessed July 22, 2026. <a href="https://www.cdc.gov/stroke/signs-symptoms/index.html" target="_blank" rel="noopener noreferrer nofollow">https://www.cdc.gov/stroke/signs-symptoms/index.html</a></li>
+        <li>8. MedlinePlus Medical Encyclopedia. Recognizing Medical Emergencies. Reviewed January 8, 2025. Accessed July 22, 2026. <a href="https://medlineplus.gov/ency/article/001927.htm" target="_blank" rel="noopener noreferrer nofollow">https://medlineplus.gov/ency/article/001927.htm</a></li>
+      </ul>
+    </div>
+
+    <div class="related">
+      <h3>Related Articles</h3>
+      <div class="related-grid">
+        <a href="/blog/palpitations-dizziness-digestive-symptoms-autonomic-nervous-system/" class="related-card">
+          <div class="tag">Pain &amp; Autonomic Health</div>
+          <h4>Do Palpitations, Dizziness, and Indigestion Together Mean an Autonomic Problem?</h4>
+        </a>
+        <a href="/blog/autonomic-dysfunction-symptoms/" class="related-card">
+          <div class="tag">Pain &amp; Autonomic Health</div>
+          <h4>When the Autonomic Nervous System Fails: Recognizing the Clinical Spectrum of Dysautonomia</h4>
+        </a>
+      </div>
+    </div>
+
+    <div class="sig-block">
+      <p class="sig-main"><strong>Jeehyun Ham, M.D.</strong><br>Neurologist</p>
+      <ul class="sig-creds">
+        <li>Graduate of Yonsei University College of Medicine</li>
+        <li>Former Clinical Research Professor, Severance Hospital, Dept. of Neurology</li>
+        <li>Member, Korean Neurological Association</li>
+        <li>Member, Korean Parkinson's Disease and Movement Disorder Society</li>
+        <li>Member, Korean Society of Functional Medicine</li>
+      </ul>
+      <p class="sig-notice">This article is intended for general medical and health education. It is not a substitute for an individual diagnosis, medical advice, or treatment. Stress-related symptoms, cortisol levels, or a single test result cannot diagnose autonomic dysfunction, determine the overall status of the HPA axis, or establish the cause of a person’s symptoms. Consider medical evaluation if symptoms persist, worsen, or interfere with daily activities. Call emergency services or seek emergency medical care immediately for sudden or persistent chest pain, severe shortness of breath, loss of consciousness, delayed recovery after fainting, sudden difficulty speaking, one-sided weakness or numbness, sudden vision or walking changes, a seizure, a rapid change in consciousness, or a sudden severe headache without a known cause.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2026 NervLock. All rights reserved.</p>
+    <p>This article is for informational purposes only and does not constitute medical advice.</p>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What Happens to the Brain and Body During Stress?",
+  "description": "Learn how the brain evaluates stress and how the sympathetic nervous system and HPA axis influence heart rate, breathing, and cortisol, along with possible effects on sleep, digestion, and concentration and signs that may warrant medical evaluation.",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://nervlocklab.com/blog/how-stress-affects-the-brain-and-body/"
+  },
+  "url": "https://nervlocklab.com/blog/how-stress-affects-the-brain-and-body/",
+  "datePublished": "2026-07-22",
+  "dateModified": "2026-07-22",
+  "inLanguage": "en-US",
+  "articleSection": "Pain & Autonomic Health",
+  "author": {
+    "@type": "Person",
+    "name": "Jeehyun Ham",
+    "jobTitle": "Neurologist"
+  },
+  "reviewedBy": {
+    "@type": "Person",
+    "name": "Jeehyun Ham",
+    "jobTitle": "Neurologist"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "NervLock Lab",
+    "url": "https://nervlocklab.com/en/"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://nervlocklab.com/en/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://nervlocklab.com/en/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "What Happens to the Brain and Body During Stress?", "item": "https://nervlocklab.com/blog/how-stress-affects-the-brain-and-body/" }
+  ]
+}
+</script>
+
+</body>
+</html>

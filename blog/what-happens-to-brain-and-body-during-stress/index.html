@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="robots" content="index, follow"/>
+  <title>스트레스를 받으면 뇌와 몸에서는 어떤 일이 일어날까요? | NervLock</title>
+  <meta name="description" content="스트레스를 받을 때 뇌와 신경계가 상황을 평가하고 교감신경계와 HPA축이 심박수·호흡·코르티솔 반응에 관여하는 과정을 설명합니다. 수면·소화·집중력에 미칠 수 있는 영향과 진료가 필요한 신호도 정리합니다."/>
+  <link rel="canonical" href="https://nervlocklab.com/blog/what-happens-to-brain-and-body-during-stress/" />
+  <link rel="alternate" hreflang="ko" href="https://nervlocklab.com/blog/what-happens-to-brain-and-body-during-stress/" />
+  <link rel="alternate" hreflang="en" href="https://nervlocklab.com/blog/how-stress-affects-the-brain-and-body/" />
+  <link rel="alternate" hreflang="x-default" href="https://nervlocklab.com/blog/what-happens-to-brain-and-body-during-stress/" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://nervlocklab.com/blog/what-happens-to-brain-and-body-during-stress/" />
+  <meta property="og:title" content="스트레스를 받으면 뇌와 몸에서는 어떤 일이 일어날까요? | NervLock" />
+  <meta property="og:description" content="스트레스를 받을 때 뇌와 신경계가 상황을 평가하고 교감신경계와 HPA축이 심박수·호흡·코르티솔 반응에 관여하는 과정을 설명합니다. 수면·소화·집중력에 미칠 수 있는 영향과 진료가 필요한 신호도 정리합니다." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="스트레스를 받으면 뇌와 몸에서는 어떤 일이 일어날까요? | NervLock" />
+  <meta name="twitter:description" content="스트레스를 받을 때 뇌와 신경계가 상황을 평가하고 교감신경계와 HPA축이 심박수·호흡·코르티솔 반응에 관여하는 과정을 설명합니다. 수면·소화·집중력에 미칠 수 있는 영향과 진료가 필요한 신호도 정리합니다." />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Apple SD Gothic Neo','Noto Sans KR','맑은 고딕',sans-serif; color: #1a1a2e; background: #fff; font-size: 17px; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    :root {
+      --navy: #0d2545; --navy2: #163561;
+      --teal: #1a7a6e; --teal2: #22a090;
+      --gold: #b8922a; --gold2: #d4a843;
+      --gray: #f4f6f9; --gray2: #e8ecf2;
+      --muted: #5a6278;
+    }
+
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(13,37,69,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-logo { font-size: 20px; font-weight: 900; color: #fff; white-space: nowrap; }
+    .nav-logo span { color: var(--gold2); }
+    .nav-back { font-size: 14px; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold2); }
+    .lang-toggle { display: flex; border: 1px solid rgba(255,255,255,0.22); border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+    .lang-btn { padding: 5px 12px; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); transition: all 0.18s; }
+    .lang-btn + .lang-btn { border-left: 1px solid rgba(255,255,255,0.22); }
+    .lang-btn.active { background: rgba(255,255,255,0.18); color: #fff; }
+
+    .lang-switch-banner { background: var(--gray); border: 1px solid var(--gray2); border-radius: 14px; padding: 14px 20px; margin-bottom: 40px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .lang-switch-banner span { font-size: 14px; color: var(--muted); }
+    .lang-switch-link { font-size: 13px; font-weight: 700; color: var(--teal2); border: 1px solid var(--teal2); border-radius: 50px; padding: 6px 16px; transition: all 0.2s; white-space: nowrap; }
+    .lang-switch-link:hover { background: var(--teal2); color: #fff; }
+
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 60px 24px 100px; }
+
+    .breadcrumb { margin-bottom: 24px; position: static; top: auto; z-index: auto; background: none; backdrop-filter: none; border-bottom: none; }
+    .breadcrumb ol { display: flex; flex-wrap: wrap; align-items: center; list-style: none; padding: 0; margin: 0; font-size: 13px; color: var(--muted); }
+    .breadcrumb li { display: flex; align-items: center; }
+    .breadcrumb li:not(:last-child)::after { content: "→"; margin: 0 8px; color: var(--gray2); }
+    .breadcrumb a { color: var(--teal2); font-weight: 600; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb li[aria-current="page"] { color: var(--navy); font-weight: 600; }
+
+    .article-hero { background: linear-gradient(135deg, #1a0a3d 0%, #6e2a4a 100%); border-radius: 24px; padding: 52px 48px; margin-bottom: 48px; position: relative; overflow: hidden; }
+    .article-hero::before { content: '🧠'; position: absolute; right: 32px; top: 32px; font-size: 80px; opacity: 0.15; }
+    .article-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(26,122,110,0.3); border: 1px solid rgba(26,122,110,0.5); border-radius: 50px; font-size: 12px; font-weight: 700; color: #6ee7da; padding: 4px 14px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+    .content-type-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.85); padding: 4px 14px; letter-spacing: 0.5px; margin-bottom: 20px; margin-left: 8px; }
+    .article-title { font-size: clamp(22px, 3.5vw, 34px); font-weight: 900; color: #fff; line-height: 1.3; margin-bottom: 20px; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 12px 20px; }
+    .article-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.65); }
+    .article-meta-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+
+    .abstract { background: linear-gradient(135deg, rgba(26,122,110,0.06), rgba(26,122,110,0.02)); border-left: 4px solid var(--teal2); border-radius: 0 16px 16px 0; padding: 24px 28px; margin-bottom: 48px; }
+    .abstract-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--teal2); margin-bottom: 10px; }
+    .abstract p { font-size: 15px; color: #2a3a4a; line-height: 1.85; margin: 0; font-style: italic; }
+
+    .article-body h2 { font-size: 24px; font-weight: 900; color: var(--navy); margin: 52px 0 16px; line-height: 1.35; padding-bottom: 12px; border-bottom: 2px solid var(--gray2); }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-size: 19px; font-weight: 800; color: var(--navy2); margin: 36px 0 12px; }
+    .article-body p { font-size: 16px; color: #2a2a3e; line-height: 1.95; margin-bottom: 20px; }
+    .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .article-body li { font-size: 15px; color: #3a3a50; line-height: 1.75; }
+    .article-body strong { color: var(--navy); }
+
+    .evidence-box { background: var(--gray); border-radius: 14px; padding: 20px 24px; margin: 28px 0; }
+    .evidence-box h4 { font-size: 12px; font-weight: 800; color: var(--teal2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .evidence-box ul { margin: 0; gap: 10px; }
+    .evidence-box li { font-size: 13px; color: var(--muted); line-height: 1.7; overflow-wrap: break-word; word-break: break-word; }
+    .evidence-box li a { color: var(--teal2); font-weight: 600; overflow-wrap: break-word; word-break: break-all; }
+
+    .related { margin-top: 64px; }
+    .related h3 { font-size: 20px; font-weight: 900; color: var(--navy); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .related-card { background: var(--gray); border-radius: 16px; padding: 20px; border: 1px solid var(--gray2); }
+    .related-card .tag { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .related-card h4 { font-size: 15px; font-weight: 800; color: var(--navy); line-height: 1.4; }
+
+    footer { background: #0a1a32; color: rgba(255,255,255,0.5); padding: 32px 0; }
+    .footer-bottom { max-width: 900px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 12px; }
+
+    @media (max-width: 600px) {
+      .article-hero { padding: 36px 28px; }
+      .related-grid { grid-template-columns: 1fr; }
+    }
+    .sig-block { border-top: 2px solid var(--gray2); margin-top: 48px; padding-top: 24px; }
+    .sig-main { font-size: 14px; color: var(--navy); font-weight: 700; margin-bottom: 12px; line-height: 1.7; }
+    .sig-creds { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+    .sig-creds li { font-size: 13px; color: var(--muted); padding-left: 14px; position: relative; line-height: 1.6; }
+    .sig-creds li::before { content: "·"; position: absolute; left: 0; color: var(--teal2); font-weight: 900; }
+    .sig-notice { font-size: 12px; color: var(--muted); font-style: italic; line-height: 1.7; }
+
+    :focus-visible { outline: 2px solid var(--teal2); outline-offset: 2px; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Nerv<span>Lock</span></a>
+    <a href="/blog/" class="nav-back">← 의학 칼럼</a>
+    <div class="lang-toggle">
+      <a href="/blog/what-happens-to-brain-and-body-during-stress/" class="lang-btn active">KR</a>
+      <a href="/blog/how-stress-affects-the-brain-and-body/" class="lang-btn">EN</a>
+    </div>
+  </div>
+</nav>
+
+<div class="article-wrap">
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">홈</a></li>
+      <li><a href="/blog/">블로그</a></li>
+      <li aria-current="page">스트레스를 받으면 뇌와 몸에서는 어떤 일이 일어날까요?</li>
+    </ol>
+  </nav>
+
+  <div class="article-hero">
+    <div class="article-tag">통증·자율신경</div>
+    <span class="content-type-tag">스트레스·자율신경 교육</span>
+    <h1 class="article-title">스트레스를 받으면 뇌와 몸에서는 어떤 일이 일어날까요?</h1>
+    <div class="article-meta">
+      <div class="article-meta-item">👤 작성자: <strong>함지현</strong></div>
+      <div class="article-meta-item">🩺 전문 분야: <strong>신경과 전문의</strong></div>
+      <div class="article-meta-item">✅ 의학 검토: <strong>함지현</strong></div>
+      <div class="article-meta-item">📅 게시일: <strong>2026-07-22</strong></div>
+      <div class="article-meta-item">🔎 검토일: <strong>2026-07-22</strong></div>
+      <div class="article-meta-item">📚 근거 검토일: <strong>2026-07-22</strong></div>
+    </div>
+  </div>
+
+  <div class="lang-switch-banner">
+    <span>🇺🇸 Read this article in English?</span>
+    <a href="/blog/how-stress-affects-the-brain-and-body/" class="lang-switch-link">Read in English →</a>
+  </div>
+
+  <div class="abstract">
+    <div class="abstract-label">요약</div>
+    <p>스트레스는 단순한 감정만이 아니라 뇌와 몸이 어려움이나 위협으로 인식된 상황에 대응하는 심리적·생리적 반응입니다.</p>
+  </div>
+
+  <div class="article-body">
+
+    <p>중요한 발표를 앞두면 심장이 빨리 뛰는 것처럼 느껴지고 손에 땀이 날 수 있습니다. 걱정이 이어지면 잠들기 어렵거나 소화가 불편하고 머리가 멍한 느낌이 들기도 합니다.</p>
+    <p>이러한 변화는 단순히 ‘마음이 약해서’ 생기는 것이 아닙니다.</p>
+    <p>스트레스는 어려움이나 위협으로 인식된 상황에 대응하는 심리적·생리적 반응입니다. 뇌와 몸은 자율신경계, 호르몬계와 여러 장기의 기능을 조정해 현재 상황에 대응합니다.</p>
+    <p>짧고 적절한 수준의 반응은 위험을 피하거나 중요한 과제에 집중하는 데 도움이 될 수 있습니다. 그러나 반응이 지나치게 강하거나 회복할 시간 없이 반복되면 수면·소화·집중력·통증과 여러 신체 증상에 영향을 줄 수 있습니다.</p>
+
+    <h2>핵심 답변</h2>
+    <p>스트레스 상황에서는 뇌의 여러 영역이 감각정보, 기억, 맥락과 현재의 신체상태를 종합해 상황을 평가합니다.</p>
+    <p>빠른 대응에는 <strong>교감신경-부신수질계</strong>가 관여합니다. 심박수, 혈관 반응, 호흡, 땀과 근육 긴장 등이 달라질 수 있습니다.</p>
+    <p>조금 더 느린 반응에는 <strong>시상하부–뇌하수체–부신축(HPA축)</strong>이 관여하며 코르티솔 분비를 조절합니다.</p>
+    <p>교감신경 반응과 코르티솔 자체가 나쁜 것은 아닙니다. 중요한 것은 반응의 강도와 지속시간, 상황이 끝난 뒤 다시 안정되는지, 일상생활에 어떤 영향을 주는지입니다.</p>
+
+    <h2>뇌와 몸은 어떻게 반응할까요?</h2>
+    <p>스트레스 반응에는 하나의 뇌 부위만 관여하지 않습니다.</p>
+    <p>편도체는 위협과 정서적 중요성의 처리에, 해마는 기억과 맥락의 연결에, 전전두엽은 판단과 주의 조절에 관여합니다. 시상하부와 뇌간은 자율신경과 호르몬 반응을 조율합니다.</p>
+    <p>따라서 “편도체가 스트레스를 만든다”거나 “한 가지 호르몬이 모든 증상을 만든다”고 단순화하는 것은 정확하지 않습니다.</p>
+    <p>교감신경계가 활성화되면 다음과 같은 변화가 나타날 수 있습니다.</p>
+    <ul>
+      <li>심장이 빠르거나 강하게 뛰는 느낌</li>
+      <li>혈압과 혈관 반응의 변화</li>
+      <li>호흡이 빨라지거나 얕아지는 느낌</li>
+      <li>땀, 입 마름과 근육 긴장</li>
+      <li>위장관 운동과 감각의 변화</li>
+      <li>주변 자극에 대한 경계 증가</li>
+    </ul>
+    <p>이러한 반응은 위험 상황뿐 아니라 발표, 시험이나 운동 경기에서도 나타날 수 있습니다. 상황이 끝난 뒤 반응이 줄고 다시 안정된다면 정상적인 적응 반응의 일부일 수 있습니다.</p>
+
+    <h2>HPA축과 코르티솔</h2>
+    <p>HPA축은 교감신경계보다 상대적으로 느리게 작동합니다. 시상하부와 뇌하수체의 신호를 거쳐 부신피질에서 코르티솔이 분비됩니다.</p>
+    <p>코르티솔은 흔히 ‘스트레스 호르몬’이라고 불리지만 항상 해로운 물질은 아닙니다. 정상적인 일주기 리듬을 가지며 에너지 이용, 혈압 유지, 면역·염증 반응 조절과 스트레스 상황에 대한 적응에 관여합니다.</p>
+    <p>지속적이거나 반복되는 스트레스는 일부 사람에서 HPA축 반응과 코르티솔 리듬에 영향을 줄 수 있습니다.</p>
+    <p>그러나 만성 스트레스가 있다고 코르티솔이 항상 높아지는 것은 아니며, 피로하다고 코르티솔이 ‘고갈된 것’도 아닙니다. 코르티솔은 시간대, 수면, 질환, 약물과 검사 조건의 영향을 받기 때문에 한 번의 검사로 스트레스 정도나 HPA축의 전체 상태를 판단할 수 없습니다.</p>
+
+    <h2>스트레스가 지속되면 어떤 변화가 나타날 수 있을까요?</h2>
+
+    <h3>수면과 집중력</h3>
+    <p>긴장과 각성이 높으면 잠들기 어렵거나 자주 깰 수 있습니다. 수면 부족과 피로가 이어지면 집중이 어렵거나 기억이 잘 나지 않는 느낌이 더 뚜렷해질 수 있습니다.</p>
+    <p>일시적인 집중력 저하가 곧 뇌 손상이나 치매를 의미하지는 않습니다. 반대로 기억이나 집중 변화가 점차 진행한다면 모두 스트레스로 돌려서도 안 됩니다.</p>
+
+    <h3>두근거림과 호흡 변화</h3>
+    <p>스트레스 상황에서는 심장이 빠르거나 강하게 뛰는 느낌, 가슴 답답함과 호흡 변화가 나타날 수 있습니다.</p>
+    <p>그러나 부정맥, 빈혈, 갑상선질환, 약물, 카페인, 탈수와 심장·폐질환도 비슷한 증상을 만들 수 있습니다. 흉통이나 심한 호흡곤란을 스트레스라고 생각하며 기다려서는 안 됩니다.</p>
+
+    <h3>소화불편</h3>
+    <p>스트레스는 위장관 운동, 분비와 감각에 영향을 줄 수 있습니다. 속쓰림, 메스꺼움, 복부 불편감, 설사·변비나 식욕 변화가 나타날 수 있습니다.</p>
+    <p>다만 음식, 약물, 감염과 위장관질환도 같은 증상을 일으킬 수 있습니다.</p>
+
+    <h3>근육 긴장과 통증</h3>
+    <p>스트레스 상황에서는 목, 어깨, 턱과 허리 주변의 근육 긴장이 증가할 수 있습니다. 기존 통증이 더 크게 느껴질 수도 있습니다.</p>
+    <p>스트레스는 모든 통증의 원인이 아니라 통증의 강도, 주의, 수면과 회복에 영향을 주는 여러 요인 중 하나입니다.</p>
+
+    <h2>모든 증상을 스트레스나 자율신경 문제로 설명할 수 있을까요?</h2>
+    <p>그렇지 않습니다.</p>
+    <p>두근거림, 어지럼, 소화불편, 발한, 피로, 수면장애와 집중 곤란은 스트레스 상황에서 나타날 수 있지만, 증상만으로 스트레스 반응, 자율신경 기능 이상이나 특정 질환을 진단할 수는 없습니다.</p>
+    <p>비슷한 증상은 탈수·빈혈, 갑상선 기능 이상, 부정맥, 감염, 카페인·음주, 약물, 불안·우울 증상과 내분비·신경계·심혈관계 질환에서도 나타날 수 있습니다.</p>
+    <p>“검사에서 큰 이상이 없으니 모두 스트레스 때문이다”거나 “코르티솔 수치가 달라졌으니 HPA축이 망가졌다”고 단정하는 것도 적절하지 않습니다.</p>
+
+    <h2>회복을 위해 무엇을 할 수 있을까요?</h2>
+    <p>스트레스 관리의 목표는 모든 스트레스를 없애는 것이 아니라 긴장 상태가 지속되지 않도록 하고, 몸과 마음이 다시 안정될 시간을 확보하는 것입니다.</p>
+    <ul>
+      <li>가능한 범위에서 기상 시간을 일정하게 유지합니다.</li>
+      <li>충분한 수면 기회를 확보합니다.</li>
+      <li>늦은 시간의 카페인과 음주를 줄입니다.</li>
+      <li>건강 상태에 맞는 걷기나 신체활동을 지속합니다.</li>
+      <li>짧은 휴식과 조용한 활동을 일정에 포함합니다.</li>
+      <li>신뢰할 수 있는 사람과 연결을 유지합니다.</li>
+      <li>호흡이 지나치게 빨라졌다면 불편하지 않은 범위에서 천천히 정돈합니다.</li>
+    </ul>
+    <p>이러한 방법이 특정 질환을 치료하거나 HPA축 또는 자율신경을 정상화한다고 보장하는 것은 아닙니다.</p>
+    <p>호흡이나 운동 중 어지럼, 흉통, 심한 호흡곤란이 나타나면 중단하고 필요한 평가를 받아야 합니다.</p>
+
+    <h2>언제 의료진의 평가가 필요할까요?</h2>
+    <p>다음과 같은 경우에는 모든 증상을 스트레스 때문이라고 넘기지 말고 의료진의 평가를 고려해야 합니다.</p>
+    <ul>
+      <li>증상이 지속되거나 점차 심해짐</li>
+      <li>수면, 업무, 학업 또는 일상생활에 뚜렷한 영향을 줌</li>
+      <li>반복되는 심한 두근거림이나 원인을 알 수 없는 실신이 있음</li>
+      <li>지속적인 소화기 증상이나 설명하기 어려운 체중 변화가 있음</li>
+      <li>우울감, 불안 또는 공황 증상이 지속됨</li>
+      <li>기억이나 집중의 변화가 점차 악화됨</li>
+      <li>증상이 새로운 약물 복용 이후 시작됨</li>
+      <li>스스로 감당하기 어렵다고 느껴짐</li>
+    </ul>
+
+    <h2>즉시 응급평가가 필요한 경우</h2>
+    <p>다음 증상이 나타나면 스트레스나 자율신경 문제로 생각하며 기다리지 말고 즉시 119에 연락하거나 응급의료기관의 평가를 받아야 합니다.</p>
+    <ul>
+      <li>갑작스럽거나 지속되는 흉통</li>
+      <li>심한 호흡곤란</li>
+      <li>의식 소실 또는 실신 후 회복 지연</li>
+      <li>갑작스러운 언어장애</li>
+      <li>한쪽 얼굴·팔·다리의 힘 저하 또는 감각 이상</li>
+      <li>갑작스러운 시야 변화</li>
+      <li>갑자기 걷기 어렵거나 균형을 잃음</li>
+      <li>경련</li>
+      <li>급격한 의식 또는 행동 변화</li>
+      <li>원인을 알 수 없는 갑작스럽고 심한 두통</li>
+    </ul>
+    <p>갑작스러운 신경학적 증상이 잠시 후 좋아졌더라도 응급평가를 미루지 말아야 합니다.</p>
+
+    <h2>핵심 정리</h2>
+    <p>스트레스는 단순한 감정만이 아니라 뇌와 몸이 어려움이나 위협으로 인식된 상황에 대응하는 심리적·생리적 반응입니다.</p>
+    <p>교감신경-부신수질계는 상대적으로 빠른 신체 반응에, HPA축은 코르티솔을 포함한 상대적으로 느린 호르몬 반응에 관여합니다.</p>
+    <p>교감신경 반응과 코르티솔 자체가 나쁜 것은 아닙니다. 다만 반응이 지나치게 강하거나 회복되지 않은 상태가 반복되면 수면, 소화, 집중, 통증과 두근거림에 영향을 줄 수 있습니다.</p>
+    <p>이러한 증상은 다른 의학적 원인으로도 나타날 수 있으므로, 증상이나 검사 결과 하나만으로 스트레스, 자율신경 이상 또는 HPA축 문제를 진단해서는 안 됩니다.</p>
+
+    <h2>자주 묻는 질문</h2>
+
+    <h3>스트레스를 받으면 코르티솔이 항상 높아지나요?</h3>
+    <p>아닙니다. 급성 스트레스에서 코르티솔이 증가할 수 있지만 반응은 사람과 상황에 따라 다릅니다. 지속적인 스트레스가 있다고 코르티솔이 하루 종일 항상 높거나 모두 고갈되는 것은 아닙니다.</p>
+
+    <h3>코르티솔 검사로 스트레스 정도를 알 수 있나요?</h3>
+    <p>한 번의 코르티솔 수치로 일상적인 스트레스 정도나 HPA축의 전체 상태를 판단할 수 없습니다. 코르티솔은 시간대, 수면, 질환, 약물과 검사 조건의 영향을 받습니다.</p>
+
+    <h3>흉통이나 호흡곤란도 스트레스 때문일 수 있나요?</h3>
+    <p>스트레스 상황에서 가슴 답답함이나 호흡 변화가 나타날 수는 있습니다. 그러나 갑작스럽거나 심한 흉통, 심한 호흡곤란, 실신 또는 의식 변화는 즉시 평가가 필요합니다.</p>
+
+    <div class="evidence-box">
+      <h4>📚 참고 자료</h4>
+      <ul>
+        <li>1. Chu B, Marwaha K, Sanvictores T, Awosika AO, Ayers D. Physiology, Stress Reaction. Updated May 7, 2024. In: StatPearls [Internet]. Treasure Island (FL): StatPearls Publishing; 2026. <a href="https://www.ncbi.nlm.nih.gov/books/NBK541120/" target="_blank" rel="noopener noreferrer nofollow">https://www.ncbi.nlm.nih.gov/books/NBK541120/</a></li>
+        <li>2. Tsigos C, Kyrou I, Kassi E, et al. Stress: Endocrine Physiology and Pathophysiology. Updated October 17, 2020. In: Endotext [Internet]. South Dartmouth (MA): MDText.com, Inc. <a href="https://www.ncbi.nlm.nih.gov/books/NBK278995/" target="_blank" rel="noopener noreferrer nofollow">https://www.ncbi.nlm.nih.gov/books/NBK278995/</a></li>
+        <li>3. Herman JP, McKlveen JM, Ghosal S, et al. Regulation of the Hypothalamic-Pituitary-Adrenocortical Stress Response. Compr Physiol. 2016;6(2):603-621. doi:10.1002/cphy.c150015. <a href="https://pubmed.ncbi.nlm.nih.gov/27065163/" target="_blank" rel="noopener noreferrer nofollow">https://pubmed.ncbi.nlm.nih.gov/27065163/</a></li>
+        <li>4. Shields GS, Sazma MA, Yonelinas AP. The effects of acute stress on core executive functions: A meta-analysis and comparison with cortisol. Neurosci Biobehav Rev. 2016;68:651-668. doi:10.1016/j.neubiorev.2016.06.038. <a href="https://pubmed.ncbi.nlm.nih.gov/27371161/" target="_blank" rel="noopener noreferrer nofollow">https://pubmed.ncbi.nlm.nih.gov/27371161/</a></li>
+        <li>5. World Health Organization. Stress. Questions and answers. Updated March 30, 2026. Accessed July 22, 2026. <a href="https://www.who.int/news-room/questions-and-answers/item/stress" target="_blank" rel="noopener noreferrer nofollow">https://www.who.int/news-room/questions-and-answers/item/stress</a></li>
+        <li>6. Centers for Disease Control and Prevention. Managing Stress. Updated May 12, 2026. Accessed July 22, 2026. <a href="https://www.cdc.gov/mental-health/living-with/index.html" target="_blank" rel="noopener noreferrer nofollow">https://www.cdc.gov/mental-health/living-with/index.html</a></li>
+        <li>7. Centers for Disease Control and Prevention. Signs and Symptoms of Stroke. Updated May 19, 2026. Accessed July 22, 2026. <a href="https://www.cdc.gov/stroke/signs-symptoms/index.html" target="_blank" rel="noopener noreferrer nofollow">https://www.cdc.gov/stroke/signs-symptoms/index.html</a></li>
+        <li>8. MedlinePlus Medical Encyclopedia. Recognizing Medical Emergencies. Reviewed January 8, 2025. Accessed July 22, 2026. <a href="https://medlineplus.gov/ency/article/001927.htm" target="_blank" rel="noopener noreferrer nofollow">https://medlineplus.gov/ency/article/001927.htm</a></li>
+      </ul>
+    </div>
+
+    <div class="related">
+      <h3>관련 칼럼</h3>
+      <div class="related-grid">
+        <a href="/blog/두근거림-어지럼-소화불편-자율신경/" class="related-card">
+          <div class="tag">통증·자율신경</div>
+          <h4>두근거림·어지럼·소화불편이 함께 있다면 자율신경 문제일까요?</h4>
+        </a>
+        <a href="/blog/자율신경-무너졌을때/" class="related-card">
+          <div class="tag">통증·자율신경</div>
+          <h4>자율신경이 무너졌을 때 — 몸이 보내는 신호들</h4>
+        </a>
+      </div>
+    </div>
+
+    <div class="sig-block">
+      <p class="sig-main"><strong>함지현</strong><br>신경과 전문의</p>
+      <ul class="sig-creds">
+        <li>연세대학교 의과대학 졸업</li>
+        <li>세브란스병원 신경과 출신</li>
+        <li>대한신경과학회 정회원</li>
+        <li>대한파킨슨병 및 이상운동질환 학회 정회원</li>
+        <li>대한기능의학회 정회원</li>
+      </ul>
+      <p class="sig-notice">※ 이 글은 일반적인 건강·의학 교육을 위한 자료이며 개인의 증상이나 질환을 진단하거나 치료하기 위한 의료상담을 대신하지 않습니다. 스트레스 관련 증상, 코르티솔 수치 또는 단일 검사 결과만으로 자율신경 기능 이상, HPA축의 상태나 특정 질환을 진단할 수 없습니다. 증상이 지속되거나 악화되고 일상생활에 영향을 준다면 의료진의 평가가 필요할 수 있습니다. 갑작스럽거나 지속되는 흉통, 심한 호흡곤란, 의식 소실, 회복이 늦는 실신, 갑작스러운 언어장애, 한쪽 마비나 감각 이상, 시야·보행 변화, 경련, 급격한 의식 변화 또는 원인을 알 수 없는 갑작스럽고 심한 두통이 나타나면 즉시 119에 연락하거나 응급의료기관의 평가를 받아야 합니다.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2026 NervLock. All rights reserved.</p>
+    <p>본 칼럼은 의학적 정보 제공을 목적으로 하며 개인 진료를 대체하지 않습니다.</p>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "스트레스를 받으면 뇌와 몸에서는 어떤 일이 일어날까요?",
+  "description": "스트레스를 받을 때 뇌와 신경계가 상황을 평가하고 교감신경계와 HPA축이 심박수·호흡·코르티솔 반응에 관여하는 과정을 설명합니다. 수면·소화·집중력에 미칠 수 있는 영향과 진료가 필요한 신호도 정리합니다.",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://nervlocklab.com/blog/what-happens-to-brain-and-body-during-stress/"
+  },
+  "url": "https://nervlocklab.com/blog/what-happens-to-brain-and-body-during-stress/",
+  "datePublished": "2026-07-22",
+  "dateModified": "2026-07-22",
+  "inLanguage": "ko-KR",
+  "articleSection": "통증·자율신경",
+  "author": {
+    "@type": "Person",
+    "name": "Jeehyun Ham",
+    "jobTitle": "Neurologist"
+  },
+  "reviewedBy": {
+    "@type": "Person",
+    "name": "Jeehyun Ham",
+    "jobTitle": "Neurologist"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "NervLock Lab",
+    "url": "https://nervlocklab.com/"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "홈", "item": "https://nervlocklab.com/" },
+    { "@type": "ListItem", "position": 2, "name": "블로그", "item": "https://nervlocklab.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "스트레스를 받으면 뇌와 몸에서는 어떤 일이 일어날까요?", "item": "https://nervlocklab.com/blog/what-happens-to-brain-and-body-during-stress/" }
+  ]
+}
+</script>
+
+</body>
+</html>
