@@ -112,6 +112,8 @@
     transition: background 0.2s, color 0.2s;
   }
   .nav-lang a.active { background: rgba(255,255,255,0.15); color: #F8FAFC; }
+  .nav-contact { font-size: 13px; font-weight: 600; color: var(--text-white); border: 1px solid var(--brand-blue); border-radius: 20px; padding: 7px 16px; transition: background 0.2s, color 0.2s; }
+  .nav-contact:hover { background: var(--brand-blue); color: var(--navy-primary); }
   .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 6px; }
   .nav-toggle span { width: 22px; height: 2px; background: #fff; }
   .nav-mobile-menu { display: none; flex-direction: column; gap: 2px; background: rgba(4,8,15,0.98); backdrop-filter: blur(14px); border-top: 1px solid var(--divider-dark); padding: 8px 28px 20px; }
@@ -245,7 +247,7 @@
   @media (max-width: 900px) {
     .nav-menu { display: none; }
     .nav-toggle { display: flex; }
-    .nav-right .nav-lang { display: none; }
+    .nav-right .nav-lang, .nav-right .nav-contact { display: none; }
     .stat-grid, .paper-grid, .solutions-grid { grid-template-columns: 1fr; }
     .academy-cards { grid-template-columns: repeat(2, 1fr); }
     .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
@@ -297,6 +299,7 @@
       <a href="#newsletter">Newsletter</a>
     </div>
     <div class="nav-right">
+      <a href="mailto:neuroh12@gmail.com" class="nav-contact">문의하기</a>
       <div class="nav-lang">
         <a href="/" class="active">KR</a>
         <a href="/en/">EN</a>
@@ -313,6 +316,7 @@
     <a href="#why-nervlock">About</a>
     <a href="/blog/">Blog</a>
     <a href="#newsletter">Newsletter</a>
+    <a href="mailto:neuroh12@gmail.com">문의하기</a>
     <a href="/en/">EN ↗</a>
   </div>
 </nav>
@@ -639,7 +643,7 @@
       <div class="footer-col">
         <h4>SNS</h4>
         <ul>
-          <li><a href="#" target="_blank" rel="noopener noreferrer">Instagram (@neurologist_jh)</a></li>
+          <li><a href="https://www.instagram.com/dr.h_neuro" target="_blank" rel="noopener noreferrer">Instagram (@dr.h_neuro)</a></li>
           <li><a href="#" target="_blank" rel="noopener noreferrer">YouTube (@Dr.H-neuro)</a></li>
           <li><a href="#" target="_blank" rel="noopener noreferrer">Naver Blog (neurology-balance)</a></li>
         </ul>
@@ -888,7 +892,7 @@
   "logo": "https://nervlocklab.com/assets/logo.png",
   "description": "신경과 전문의가 설계한 근거 중심의 뇌 건강 플랫폼",
   "sameAs": [
-    "https://www.instagram.com/neurologist_jh",
+    "https://www.instagram.com/dr.h_neuro",
     "https://www.youtube.com/@Dr.H-neuro"
   ],
   "founder": {
