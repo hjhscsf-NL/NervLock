@@ -201,6 +201,12 @@
   .solution-specs { font-size: 13px; margin-bottom: 8px; opacity: 0.7; }
   .solution-date { font-size: 13px; color: var(--brand-blue); font-weight: 700; margin-bottom: 24px; }
   .solution-footnote { font-size: 12px; color: var(--text-white); opacity: 0.55; line-height: 1.6; margin-top: 18px; }
+  .dev-principles { margin-top: 40px; padding: 32px 40px; border-radius: 12px; background: var(--white); border: 1px solid var(--divider-light); }
+  .dev-principles-title { font-size: 17px; font-weight: 700; color: var(--text-primary); margin-bottom: 18px; }
+  .dev-principles-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .dev-principles-list li { font-size: 14px; line-height: 1.8; color: var(--text-secondary); }
+  .dev-principles-list strong { color: var(--brand-green); margin-right: 4px; }
+  .solutions-disclaimer { font-size: 12px; color: var(--text-secondary); opacity: 0.6; margin-top: 16px; text-align: center; }
 
   /* ── Newsletter ── */
   #newsletter { background: var(--navy-primary); }
@@ -467,7 +473,7 @@
         <div class="solution-title">NervLock Brain Energy</div>
         <p class="solution-desc">A brain health formulation being developed with attention to scientific rationale, ingredient quality, and safety.</p>
         <div class="solution-specs">Phosphatidylserine (PS) · rTG Omega-3 · B vitamins · Vitamin D3</div>
-        <div class="solution-date">Launching in late 2026</div>
+        <div class="solution-date">We'll share the launch timeline once clinical care begins.</div>
         <a href="#newsletter" class="btn-on-dark">Notify me when available →</a>
         <p class="solution-footnote">Product formulation and launch timing may change during development.</p>
       </div>
@@ -477,21 +483,32 @@
         <p class="solution-desc">More evidence-informed brain health solutions are being developed.</p>
       </div>
     </div>
+
+    <div class="dev-principles reveal">
+      <h3 class="dev-principles-title">NervLock's Development Principles</h3>
+      <ol class="dev-principles-list">
+        <li><strong>First.</strong> We don't add trending ingredients backed by weak evidence.</li>
+        <li><strong>Second.</strong> We use the doses shown effective in research — never token amounts listed just for the label.</li>
+        <li><strong>Third.</strong> We disclose every ingredient, every dose, and why it's there.</li>
+        <li><strong>Fourth.</strong> If you don't need it, we'll tell you so.</li>
+      </ol>
+    </div>
+    <p class="solutions-disclaimer reveal">This product is a health functional food and is not intended to prevent or treat disease.</p>
   </div>
 </section>
 
 <!-- SECTION 7 — Newsletter -->
 <section class="section" id="newsletter">
   <div class="container">
-    <div class="label label-on-dark reveal">BRAIN HEALTH WEEKLY</div>
+    <div class="label label-on-dark reveal">BRAIN HEALTH MONTHLY</div>
     <h2 class="title-on-dark reveal">Stay Informed</h2>
-    <p class="sub-on-dark reveal">Weekly brain health insights, curated by a neurologist.<br>Evidence-based updates, practical guidance, and responsible science communication.</p>
+    <p class="sub-on-dark reveal">Once a month, we share Parkinson's, dementia, and brain health updates written for caregivers. You'll also be the first to hear when our clinic opens in late 2026.</p>
 
     <form id="nlForm" novalidate>
       <div class="newsletter-form reveal">
         <label for="nlEmail" class="sr-only">Email address</label>
         <input type="email" class="nl-input" id="nlEmail" placeholder="Enter your email address" autocomplete="email" />
-        <button type="submit" class="btn-on-dark" id="nlSubmit" aria-label="Subscribe to Brain Health Weekly">Subscribe to Brain Health Weekly</button>
+        <button type="submit" class="btn-on-dark" id="nlSubmit" aria-label="Subscribe to Brain Health Monthly">Subscribe to Brain Health Monthly</button>
       </div>
 
       <div class="consent-row reveal">
@@ -511,7 +528,7 @@
     <p class="newsletter-notice reveal">
       No spam. Unsubscribe anytime.
     </p>
-    <p class="newsletter-success" id="nlSuccess">Thank you for subscribing — your first issue of Brain Health Weekly is on its way. 🙏</p>
+    <p class="newsletter-success" id="nlSuccess">Thank you for subscribing — your first issue of Brain Health Monthly is on its way. 🙏</p>
   </div>
 </section>
 
@@ -522,7 +539,8 @@
       <div>
         <div class="footer-brand">Nerv<span>Lock</span> Lab</div>
         <p class="footer-desc">
-          An evidence-based brain health platform led by a neurologist.
+          An evidence-based brain health platform led by a neurologist.<br><br>
+          The content on this site is general medical information and is not a substitute for diagnosis or treatment.
         </p>
       </div>
       <div class="footer-col">
@@ -553,7 +571,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 NervLock Lab. All rights reserved.</p>
+      <p>© 2026 NervLock Lab. CEO: Jeehyun Ham. All rights reserved.</p>
     </div>
   </div>
 </footer>
@@ -691,7 +709,7 @@
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
   }
 
-  // ── Newsletter form (Brain Health Weekly) ──
+  // ── Newsletter form (Brain Health Monthly) ──
   (function() {
     var form = document.getElementById('nlForm');
     var input = document.getElementById('nlEmail');

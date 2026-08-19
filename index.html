@@ -204,6 +204,12 @@
   .solution-specs { font-size: 13px; margin-bottom: 8px; opacity: 0.7; }
   .solution-date { font-size: 13px; color: var(--brand-blue); font-weight: 700; margin-bottom: 24px; }
   .solution-footnote { font-size: 12px; color: var(--text-white); opacity: 0.55; line-height: 1.6; margin-top: 18px; }
+  .dev-principles { margin-top: 40px; padding: 32px 40px; border-radius: 12px; background: var(--white); border: 1px solid var(--divider-light); }
+  .dev-principles-title { font-size: 17px; font-weight: 700; color: var(--text-primary); margin-bottom: 18px; }
+  .dev-principles-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .dev-principles-list li { font-size: 14px; line-height: 1.8; color: var(--text-secondary); }
+  .dev-principles-list strong { color: var(--brand-green); margin-right: 4px; }
+  .solutions-disclaimer { font-size: 12px; color: var(--text-secondary); opacity: 0.6; margin-top: 16px; text-align: center; }
 
   /* ── Newsletter ── */
   #newsletter { background: var(--navy-primary); }
@@ -512,7 +518,7 @@
         <div class="solution-title">NervLock Brain Energy</div>
         <p class="solution-desc">신경과 전문의가 설계한 첫 번째 브레인 케어 포뮬러</p>
         <div class="solution-specs">포스파티딜세린(PS) · rTG 오메가3 · B군 · 비타민 D3</div>
-        <div class="solution-date">2026년 하반기 출시 예정</div>
+        <div class="solution-date">출시 시기는 진료 시작 후 알려드립니다</div>
         <a href="#coming-soon" class="btn-on-dark">출시 알림 신청 →</a>
         <p class="solution-footnote">제품의 원료 구성과 출시 일정은 개발 과정에서 변경될 수 있습니다.</p>
       </div>
@@ -522,21 +528,32 @@
         <p class="solution-desc">더 다양한 뇌 건강 솔루션을 준비하고 있습니다.</p>
       </div>
     </div>
+
+    <div class="dev-principles reveal">
+      <h3 class="dev-principles-title">NervLock의 개발 원칙</h3>
+      <ol class="dev-principles-list">
+        <li><strong>하나.</strong> 근거가 약한 성분은 유행해도 넣지 않습니다.</li>
+        <li><strong>둘.</strong> 연구에서 효과를 본 용량을 지킵니다. 이름만 올리는 함량은 없습니다.</li>
+        <li><strong>셋.</strong> 성분·함량과 '왜 이 성분인가'를 전부 공개합니다.</li>
+        <li><strong>넷.</strong> 필요 없는 분께는 필요 없다고 말씀드립니다.</li>
+      </ol>
+    </div>
+    <p class="solutions-disclaimer reveal">본 제품은 건강기능식품으로, 질병의 예방·치료를 위한 것이 아닙니다.</p>
   </div>
 </section>
 
 <!-- SECTION 7 — Newsletter -->
 <section class="section" id="newsletter">
   <div class="container">
-    <div class="label label-on-dark reveal">BRAIN HEALTH WEEKLY</div>
+    <div class="label label-on-dark reveal">BRAIN HEALTH MONTHLY</div>
     <h2 class="title-on-dark reveal">뇌건강 뉴스레터</h2>
-    <p class="sub-on-dark reveal">매주 최신 뇌과학 연구와 실천 가능한 인사이트를 신경과 전문의가 직접 큐레이션합니다.</p>
+    <p class="sub-on-dark reveal">월 1회, 파킨슨·치매·뇌 건강 이야기를 보호자 눈높이로 정리해 보내드립니다. 2026년 하반기 개원 소식도 가장 먼저 알려드립니다.</p>
 
     <form id="nlForm" novalidate>
       <div class="newsletter-form reveal">
         <label for="nlEmail" class="sr-only">이메일 주소</label>
         <input type="email" class="nl-input" id="nlEmail" placeholder="이메일 주소를 입력해주세요" autocomplete="email" />
-        <button type="submit" class="btn-on-dark" id="nlSubmit" aria-label="Brain Health Weekly 구독하기">Brain Health Weekly 구독하기</button>
+        <button type="submit" class="btn-on-dark" id="nlSubmit" aria-label="Brain Health Monthly 구독하기">Brain Health Monthly 구독하기</button>
       </div>
 
       <div class="consent-row reveal">
@@ -558,7 +575,7 @@
       개인정보 처리방침에 따라 수집·이용됩니다.
       <a href="#">개인정보 처리방침 →</a>
     </p>
-    <p class="newsletter-success" id="nlSuccess">구독해주셔서 감사합니다 — 다음 주 Brain Health Weekly부터 받아보실 수 있습니다. 🙏</p>
+    <p class="newsletter-success" id="nlSuccess">구독해주셔서 감사합니다 — 다음 달 Brain Health Monthly부터 받아보실 수 있습니다. 🙏</p>
   </div>
 </section>
 
@@ -628,7 +645,8 @@
         <div class="footer-brand">Nerv<span>Lock</span> Lab</div>
         <p class="footer-desc">
           신경과 전문의가 설계한 Brain Health Platform<br><br>
-          NervLock는 임상 신경과 전문성과 최신 과학적 근거를 연결하여 Brain Health Ecosystem을 만들어갑니다.
+          NervLock는 임상 신경과 전문성과 최신 과학적 근거를 연결하여 Brain Health Ecosystem을 만들어갑니다.<br><br>
+          본 사이트의 글은 일반적인 의학 정보이며, 진단과 치료를 대신하지 않습니다.
         </p>
       </div>
       <div class="footer-col">
@@ -659,7 +677,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 NervLock Lab. 모든 권리 보유.</p>
+      <p>© 2026 NervLock Lab. 대표: 함지현. 모든 권리 보유.</p>
     </div>
   </div>
 </footer>
@@ -797,7 +815,7 @@
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
   }
 
-  // ── Newsletter form (Brain Health Weekly) ──
+  // ── Newsletter form (Brain Health Monthly) ──
   (function() {
     var form = document.getElementById('nlForm');
     var input = document.getElementById('nlEmail');
