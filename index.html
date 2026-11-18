@@ -210,6 +210,7 @@
   .dev-principles-list li { font-size: 14px; line-height: 1.8; color: var(--text-secondary); }
   .dev-principles-list strong { color: var(--brand-green); margin-right: 4px; }
   .solutions-disclaimer { font-size: 12px; color: var(--text-secondary); opacity: 0.6; margin-top: 16px; text-align: center; }
+  .approach-tags { font-size: 13px; font-weight: 600; letter-spacing: 0.5px; color: var(--text-secondary); text-align: center; margin-top: 28px; }
 
   /* ── Newsletter ── */
   #newsletter { background: var(--navy-primary); }
@@ -225,27 +226,9 @@
   .newsletter-success { display: none; font-size: 15px; color: var(--brand-green); font-weight: 600; margin-top: 20px; }
   .newsletter-success.show { display: block; }
 
-  /* ── Coming Soon (light) ── */
-  #coming-soon { background: var(--bg-light); }
-  .cs-inner2 { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
-  .cs-badge2 { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); background: rgba(21,101,192,0.08); border: 1px solid rgba(21,101,192,0.25); border-radius: 50px; padding: 6px 16px; margin-bottom: 24px; }
-  .cs-title2 { font-size: clamp(26px, 3.6vw, 36px); font-weight: 700; line-height: 1.4; margin-bottom: 20px; color: var(--text-primary); }
-  .cs-title2 em { color: var(--accent); font-style: normal; }
-  .cs-desc2 { font-size: 16px; color: var(--text-secondary); line-height: 1.9; margin-bottom: 28px; }
-  .cs-pills2 { display: flex; flex-wrap: wrap; gap: 10px; }
-  .cs-pill2 { font-size: 13px; color: var(--text-primary); background: var(--white); border: 1px solid var(--divider-light); border-radius: 50px; padding: 8px 16px; }
-  .cs-card2 { background: var(--white); border: 1px solid var(--divider-light); border-radius: 12px; padding: 40px; box-shadow: 0 4px 20px rgba(13,27,42,0.06); }
-  .cs-card-title2 { font-size: 20px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
-  .cs-card-sub2 { font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 24px; }
   .cs-error2 { display: none; font-size: 12px; color: #c62828; margin-top: 8px; }
   .cs-error2.show { display: block; }
   .cs-error2.on-dark { color: #ff8a8a; }
-  .cs-count2 { display: flex; gap: 32px; margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--divider-light); }
-  .cs-count-num2 { display: block; font-size: 22px; font-weight: 700; color: var(--brand-green-on-light); }
-  .cs-count-label2 { font-size: 12px; color: var(--text-secondary); }
-  .cs-success2 { display: none; text-align: center; }
-  .cs-success2.show { display: block; }
-  .cs-success-icon2 { font-size: 40px; color: var(--brand-green-on-light); margin-bottom: 16px; }
 
   /* ── Footer ── */
   footer { background: var(--navy-secondary); padding: 90px 0 36px; }
@@ -266,7 +249,6 @@
     .stat-grid, .paper-grid, .solutions-grid { grid-template-columns: 1fr; }
     .academy-cards { grid-template-columns: repeat(2, 1fr); }
     .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
-    .cs-inner2 { grid-template-columns: 1fr; gap: 40px; }
     .section { padding: 84px 0; }
   }
   @media (max-width: 560px) {
@@ -289,9 +271,6 @@
   #newsletter .consent-row label { color: rgba(240,244,248,0.75); }
   #newsletter .consent-detail { color: rgba(240,244,248,0.5); }
   #newsletter .consent-detail a { color: var(--brand-blue); font-weight: 600; }
-  #coming-soon .consent-row label { color: var(--text-primary); }
-  #coming-soon .consent-detail { color: var(--text-secondary); }
-  #coming-soon .consent-detail a { color: var(--accent); font-weight: 600; }
 
   @media (prefers-reduced-motion: reduce) {
     * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
@@ -508,26 +487,29 @@
 <!-- SECTION 6 — Brain Health Solutions -->
 <section class="section" id="solutions">
   <div class="container">
-    <div class="label label-on-light reveal">OUR SOLUTIONS</div>
-    <h2 class="title-on-light reveal">브레인 케어 솔루션</h2>
-    <p class="sub-on-light reveal">신경과 전문의가 설계한 과학적 근거 기반 브레인 케어</p>
+    <div class="label label-on-light reveal">OUR APPROACH</div>
+    <h2 class="title-on-light reveal">뇌 건강, NervLock이 접근하는 방식</h2>
+    <p class="sub-on-light reveal">Evidence before intervention.<br>NervLock은 교육, 과학적 근거, 생활습관 관리를 통해 뇌 건강에 접근합니다.</p>
 
     <div class="solutions-grid">
-      <div class="solution-card featured reveal">
-        <div class="solution-tag">Brain Energy</div>
-        <div class="solution-title">NervLock Brain Energy</div>
-        <p class="solution-desc">신경과 전문의가 설계한 첫 번째 브레인 케어 포뮬러</p>
-        <div class="solution-specs">포스파티딜세린(PS) · rTG 오메가3 · B군 · 비타민 D3</div>
-        <div class="solution-date">출시 시기는 진료 시작 후 알려드립니다</div>
-        <a href="#coming-soon" class="btn-on-dark">출시 알림 신청 →</a>
-        <p class="solution-footnote">제품의 원료 구성과 출시 일정은 개발 과정에서 변경될 수 있습니다.</p>
+      <div class="solution-card placeholder reveal">
+        <div class="solution-tag">🔍 Understand</div>
+        <p class="solution-desc">기억력, 수면, 집중력, 통증, 스트레스처럼 실제로 느끼는 문제를 정확히 이해합니다.</p>
       </div>
       <div class="solution-card placeholder reveal">
-        <div class="solution-tag">출시 예정</div>
-        <div class="solution-title">더 다양한 브레인 케어 솔루션</div>
-        <p class="solution-desc">더 다양한 뇌 건강 솔루션을 준비하고 있습니다.</p>
+        <div class="solution-tag">📊 Evaluate</div>
+        <p class="solution-desc">생활습관, 수면, 운동, 영양, 위험요인을 근거 중심으로 평가합니다.</p>
+      </div>
+      <div class="solution-card placeholder reveal">
+        <div class="solution-tag">📈 Improve</div>
+        <p class="solution-desc">검증된 생활습관과 의학적 근거를 바탕으로 실천 가능한 방법을 제안합니다.</p>
+      </div>
+      <div class="solution-card placeholder reveal">
+        <div class="solution-tag">🤝 Support</div>
+        <p class="solution-desc">필요한 경우 의료 서비스나 전문 콘텐츠로 연결됩니다.</p>
       </div>
     </div>
+    <p class="approach-tags reveal">Sleep · Memory · Focus · Nutrition · Pain</p>
 
     <div class="dev-principles reveal">
       <h3 class="dev-principles-title">NervLock의 개발 원칙</h3>
@@ -547,7 +529,7 @@
   <div class="container">
     <div class="label label-on-dark reveal">BRAIN HEALTH MONTHLY</div>
     <h2 class="title-on-dark reveal">뇌건강 뉴스레터</h2>
-    <p class="sub-on-dark reveal">월 1회, 파킨슨·치매·뇌 건강 이야기를 보호자 눈높이로 정리해 보내드립니다. 2026년 하반기 개원 소식도 가장 먼저 알려드립니다.</p>
+    <p class="sub-on-dark reveal">월 1회, 신경과 전문의가 직접 정리한 뇌 건강 콘텐츠를 보내드립니다. 최신 연구, 생활습관 가이드, NervLock 업데이트 소식을 받아보세요.</p>
 
     <form id="nlForm" novalidate>
       <div class="newsletter-form reveal">
@@ -579,64 +561,6 @@
   </div>
 </section>
 
-<!-- SECTION 8 — Coming Soon -->
-<section id="coming-soon" class="section">
-  <div class="container cs-inner2">
-    <div>
-      <div class="cs-badge2 reveal">Coming Soon</div>
-      <h2 class="cs-title2 reveal">NervLock,<br>곧 <em>여러분 곁에</em> 찾아갑니다</h2>
-      <p class="cs-desc2 reveal">
-        NervLock 브랜드의 첫 번째 제품, 신경과 전문의가 과학적 근거를 검토하여 설계한 <strong style="color:var(--text-primary)">NervLock Brain Energy</strong>가 런칭을 준비하고 있습니다.<br>
-        출시 소식을 가장 먼저 받아보세요.
-      </p>
-      <div class="cs-pills2 reveal">
-        <div class="cs-pill2">🏥 신경과 전문의가 근거를 검토하여 설계</div>
-        <div class="cs-pill2">🔬 과학적 문헌을 검토한 원료 구성</div>
-        <div class="cs-pill2">📦 출시 예정</div>
-      </div>
-    </div>
-
-    <div class="cs-card2 reveal">
-      <div id="csFormWrap3">
-        <div class="cs-card-title2">출시 알림 신청</div>
-        <p class="cs-card-sub2">이메일을 남겨주시면 NervLock 출시 소식을 보내드립니다.</p>
-        <form class="cs-form3" id="csForm3" novalidate>
-          <label for="csEmail3" class="sr-only">이메일 주소</label>
-          <input type="email" class="nl-input on-light" id="csEmail3" placeholder="이메일 주소를 입력해주세요" autocomplete="email" style="width:100%;" />
-          <div class="cs-error2" id="csEmailError3" role="alert">올바른 이메일 주소를 입력해주세요.</div>
-
-          <div class="consent-row" style="margin-top:16px;">
-            <input type="checkbox" id="csConsent3" required />
-            <label for="csConsent3">
-              개인정보 수집 및 이용에 동의합니다. (필수)
-              <ul class="consent-detail">
-                <li>수집 항목: 이메일 주소</li>
-                <li>수집 목적: 출시 알림 발송</li>
-                <li>보유 기간: 동의 철회 시까지</li>
-                <li><a href="#">개인정보처리방침 보기 →</a></li>
-              </ul>
-            </label>
-          </div>
-          <div class="cs-error2" id="csConsentError3" role="alert">개인정보 수집 및 이용에 동의해주세요.</div>
-
-          <button type="submit" class="btn-on-dark" id="csSubmit3" aria-label="출시 알림 받기" style="width:100%;margin-top:14px;">출시 알림 받기</button>
-        </form>
-        <div class="cs-count2">
-          <div>
-            <span class="cs-count-num2">출시 예정</span>
-            <span class="cs-count-label2">런칭 준비 중</span>
-          </div>
-        </div>
-      </div>
-      <div class="cs-success2" id="csSuccess3">
-        <div class="cs-success-icon2">✓</div>
-        <h4 style="color:var(--text-primary);">신청이 완료되었습니다!</h4>
-        <p style="color:var(--text-secondary);margin-top:10px;">출시 소식을 입력하신 이메일로 보내드리겠습니다.<br><br><span style="color:var(--brand-green-on-light);font-weight:700;">감사합니다 🙏</span></p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- SECTION 9 — Footer -->
 <footer>
   <div class="container">
@@ -654,7 +578,7 @@
         <ul>
           <li><a href="#academy">아카데미</a></li>
           <li><a href="#research">연구 자료</a></li>
-          <li><a href="#solutions">제품</a></li>
+          <li><a href="#solutions">Our Approach</a></li>
           <li><a href="/blog/">블로그</a></li>
         </ul>
       </div>
@@ -857,57 +781,6 @@
     });
   })();
 
-  // ── Coming Soon form ──
-  (function() {
-    var form = document.getElementById('csForm3');
-    var input = document.getElementById('csEmail3');
-    var errMsg = document.getElementById('csEmailError3');
-    var consent = document.getElementById('csConsent3');
-    var consentError = document.getElementById('csConsentError3');
-    var btn = document.getElementById('csSubmit3');
-    var wrap = document.getElementById('csFormWrap3');
-    var success = document.getElementById('csSuccess3');
-
-    input.addEventListener('input', function() {
-      if (errMsg.classList.contains('show') && isValidEmail(this.value)) {
-        errMsg.classList.remove('show');
-        input.style.borderColor = '';
-      }
-    });
-
-    consent.addEventListener('change', function() {
-      if (this.checked) consentError.classList.remove('show');
-    });
-
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      var email = input.value.trim();
-      if (!isValidEmail(email)) {
-        errMsg.classList.add('show');
-        input.style.borderColor = '#ff7c7c';
-        input.focus();
-        return;
-      }
-      if (!consent.checked) {
-        consentError.classList.add('show');
-        consent.focus();
-        return;
-      }
-      btn.disabled = true;
-      btn.textContent = '처리 중...';
-      fetch(SHEET_ENDPOINT, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'text/plain' },
-        body: JSON.stringify({ email: email, source: 'landing_page_v3' })
-      }).then(finish).catch(finish);
-
-      function finish() {
-        wrap.style.display = 'none';
-        success.classList.add('show');
-      }
-    });
-  })();
 </script>
 
 <script type="application/ld+json">
