@@ -13,17 +13,20 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="robots" content="index, follow"/>
-  <title>자율신경은 무엇을 조절할까요? 심박수·소화·땀·동공·방광 | NervLock</title>
-  <meta name="description" content="자율신경계가 심박수와 혈압, 소화와 장운동, 체온과 땀, 동공 반응, 방광 기능의 조절에 어떻게 관여하는지 설명합니다. 교감신경·부교감신경의 역할, 증상의 다양한 원인과 진료가 필요한 신호도 확인합니다."/>
+  <title>자율신경은 무엇을 조절할까요? 심박수·소화·땀·방광 | NervLock</title>
+  <meta name="description" content="자율신경계가 심박수와 혈압, 소화와 장운동, 체온조절과 땀, 동공 반응, 방광 기능의 조절에 어떻게 관여하는지 알아봅니다."/>
   <link rel="canonical" href="https://nervlocklab.com/blog/자율신경-조절/" />
+  <link rel="alternate" hreflang="ko" href="https://nervlocklab.com/blog/자율신경-조절/" />
+  <link rel="alternate" hreflang="en" href="https://nervlocklab.com/blog/what-does-the-autonomic-nervous-system-control/" />
+  <link rel="alternate" hreflang="x-default" href="https://nervlocklab.com/blog/자율신경-조절/" />
 
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://nervlocklab.com/blog/자율신경-조절/" />
-  <meta property="og:title" content="자율신경은 무엇을 조절할까요? 심박수·소화·땀·동공·방광 | NervLock" />
-  <meta property="og:description" content="자율신경계가 심박수와 혈압, 소화와 장운동, 체온과 땀, 동공 반응, 방광 기능의 조절에 어떻게 관여하는지 설명합니다. 교감신경·부교감신경의 역할, 증상의 다양한 원인과 진료가 필요한 신호도 확인합니다." />
+  <meta property="og:title" content="자율신경은 무엇을 조절할까요? 심박수·소화·땀·방광 | NervLock" />
+  <meta property="og:description" content="자율신경계가 심박수와 혈압, 소화와 장운동, 체온조절과 땀, 동공 반응, 방광 기능의 조절에 어떻게 관여하는지 알아봅니다." />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="자율신경은 무엇을 조절할까요? 심박수·소화·땀·동공·방광 | NervLock" />
-  <meta name="twitter:description" content="자율신경계가 심박수와 혈압, 소화와 장운동, 체온과 땀, 동공 반응, 방광 기능의 조절에 어떻게 관여하는지 설명합니다. 교감신경·부교감신경의 역할, 증상의 다양한 원인과 진료가 필요한 신호도 확인합니다." />
+  <meta name="twitter:title" content="자율신경은 무엇을 조절할까요? 심박수·소화·땀·방광 | NervLock" />
+  <meta name="twitter:description" content="자율신경계가 심박수와 혈압, 소화와 장운동, 체온조절과 땀, 동공 반응, 방광 기능의 조절에 어떻게 관여하는지 알아봅니다." />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -44,6 +47,15 @@
     .nav-logo span { color: var(--gold2); }
     .nav-back { font-size: 14px; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
     .nav-back:hover { color: var(--gold2); }
+    .lang-toggle { display: flex; border: 1px solid rgba(255,255,255,0.22); border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+    .lang-btn { padding: 5px 12px; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); transition: all 0.18s; }
+    .lang-btn + .lang-btn { border-left: 1px solid rgba(255,255,255,0.22); }
+    .lang-btn.active { background: rgba(255,255,255,0.18); color: #fff; }
+
+    .lang-switch-banner { background: var(--gray); border: 1px solid var(--gray2); border-radius: 14px; padding: 14px 20px; margin-bottom: 40px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .lang-switch-banner span { font-size: 14px; color: var(--muted); }
+    .lang-switch-link { font-size: 13px; font-weight: 700; color: var(--teal2); border: 1px solid var(--teal2); border-radius: 50px; padding: 6px 16px; transition: all 0.2s; white-space: nowrap; }
+    .lang-switch-link:hover { background: var(--teal2); color: #fff; }
 
     .article-wrap { max-width: 760px; margin: 0 auto; padding: 60px 24px 100px; }
 
@@ -55,7 +67,7 @@
     .breadcrumb a:hover { text-decoration: underline; }
     .breadcrumb li[aria-current="page"] { color: var(--navy); font-weight: 600; }
 
-    .article-hero { background: linear-gradient(135deg, var(--navy) 0%, #0f4f6e 100%); border-radius: 24px; padding: 52px 48px; margin-bottom: 48px; position: relative; overflow: hidden; }
+    .article-hero { background: linear-gradient(135deg, #1a0a3d 0%, #6e2a4a 100%); border-radius: 24px; padding: 52px 48px; margin-bottom: 48px; position: relative; overflow: hidden; }
     .article-hero::before { content: '🔄'; position: absolute; right: 32px; top: 32px; font-size: 80px; opacity: 0.15; }
     .article-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(26,122,110,0.3); border: 1px solid rgba(26,122,110,0.5); border-radius: 50px; font-size: 12px; font-weight: 700; color: #6ee7da; padding: 4px 14px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
     .article-title { font-size: clamp(22px, 3.5vw, 34px); font-weight: 900; color: #fff; line-height: 1.3; margin-bottom: 20px; }
@@ -111,6 +123,10 @@
   <div class="nav-inner">
     <a href="/" class="nav-logo">Nerv<span>Lock</span></a>
     <a href="/blog/" class="nav-back">← 의학 칼럼</a>
+    <div class="lang-toggle">
+      <a href="/blog/자율신경-조절/" class="lang-btn active">KR</a>
+      <a href="/blog/what-does-the-autonomic-nervous-system-control/" class="lang-btn">EN</a>
+    </div>
   </div>
 </nav>
 
@@ -128,199 +144,156 @@
     <div class="article-tag">통증·자율신경</div>
     <h1 class="article-title">자율신경은 무엇을 조절할까요?</h1>
     <div class="article-meta">
-      <div class="article-meta-item">👤 작성자: <strong>Jeehyun Ham, M.D.</strong></div>
-      <div class="article-meta-item">🩺 전문 분야: <strong>Neurologist</strong></div>
-      <div class="article-meta-item">✅ 의학 검토: <strong>Jeehyun Ham, M.D.</strong></div>
-      <div class="article-meta-item">📅 게시일: <strong>2026-07-18</strong></div>
+      <div class="article-meta-item">👤 작성자: <strong>함지현</strong></div>
+      <div class="article-meta-item">🩺 전문 분야: <strong>신경과 전문의</strong></div>
+      <div class="article-meta-item">✅ 의학 검토: <strong>함지현</strong></div>
+      <div class="article-meta-item">📅 게시일: <strong>2026-10-27</strong></div>
       <div class="article-meta-item">🔎 검토일: <strong>2026-07-18</strong></div>
       <div class="article-meta-item">📚 근거 검토일: <strong>2026-07-18</strong></div>
     </div>
   </div>
 
+  <div class="lang-switch-banner">
+    <span>🇺🇸 Read this article in English?</span>
+    <a href="/blog/what-does-the-autonomic-nervous-system-control/" class="lang-switch-link">Read in English →</a>
+  </div>
+
   <div class="abstract">
     <div class="abstract-label">요약</div>
-    <p>자율신경계가 심박수와 혈압, 소화와 장운동, 체온과 땀, 동공 반응, 방광 기능의 조절에 어떻게 관여하는지 설명합니다. 교감신경·부교감신경의 역할, 증상의 다양한 원인과 진료가 필요한 신호도 확인합니다.</p>
+    <p>자율신경계가 심박수와 혈압, 소화와 장운동, 체온조절과 땀, 동공 반응, 방광 기능의 조절에 어떻게 관여하는지 알아봅니다.</p>
   </div>
 
   <div class="article-body">
 
-    <p>심장이 뛰고, 소화기관이 움직이며, 더울 때 땀이 나는 과정은 대부분 우리가 매 순간 의식적으로 명령하지 않아도 이루어집니다.</p>
-    <p>이처럼 몸 안에서 자동으로 진행되는 여러 생리 기능의 조절에 관여하는 신경계가 자율신경계입니다.</p>
-    <p>자율신경계는 심박수와 혈압, 소화, 체온조절과 땀, 동공 반응, 방광 기능을 포함한 다양한 기능에 관여합니다.</p>
-    <p>다만 자율신경계가 이러한 기능을 혼자 통제하는 것은 아닙니다.</p>
-    <p>뇌와 척수, 호르몬, 감각신경, 체성신경, 장신경계와 각 장기의 국소 조절 체계가 서로 정보를 주고받으며 몸의 상태를 조정합니다.</p>
-
-    <h2>핵심 답변</h2>
-    <p>자율신경계는 우리가 의식적으로 계속 지시하지 않아도 다음과 같은 기능이 상황에 맞게 작동하도록 조절에 참여합니다.</p>
+    <p>심장은 우리가 매번 명령하지 않아도 계속 뛰고 있습니다.</p>
+    <p>음식을 먹으면 위와 장이 움직이고, 더우면 땀이 나며, 밝은 곳에서는 동공이 작아집니다. 방광도 소변을 저장했다가 적절한 때에 배출합니다.</p>
+    <p>이처럼 의식적인 지시 없이도 이루어지는 여러 생리 기능의 조절에 관여하는 신경계가 <strong>자율신경계</strong>입니다.</p>
+    <p>자율신경계는 다음 기능이 상황에 맞게 작동하도록 조절에 참여합니다.</p>
     <ul>
       <li>심박수와 혈압</li>
       <li>소화와 장운동</li>
       <li>체온조절과 땀</li>
       <li>동공 크기와 빛에 대한 반응</li>
-      <li>소변을 저장하고 배출하는 과정</li>
+      <li>소변의 저장과 배출</li>
     </ul>
-    <p>자율신경계의 역할은 모든 기능을 항상 같은 상태로 유지하는 것이 아닙니다.</p>
-    <p>운동할 때와 쉴 때, 식사 전후, 덥거나 추울 때처럼 상황이 달라지면 몸의 반응도 달라져야 합니다.</p>
-    <p>자율신경계는 다른 신체 조절 체계와 함께 이러한 변화에 대응하고, 내부 환경이 적절한 범위에서 유지되도록 돕습니다.</p>
+    <p>다만 자율신경계가 이 기능들을 혼자 조절하는 것은 아닙니다.</p>
+    <p>뇌와 척수, 호르몬, 감각신경, 체성신경, 장신경계와 각 장기의 조절 체계가 함께 작동합니다.</p>
 
-    <h2>1. 심박수와 혈압</h2>
-    <p>가만히 쉬고 있을 때와 계단을 오를 때 심장이 항상 같은 속도로 뛴다면 몸의 필요에 적절히 대응하기 어렵습니다.</p>
-    <p>자율신경계는 다음과 같은 심혈관 기능의 조절에 관여합니다.</p>
+    <h2>심박수와 혈압</h2>
+    <p>쉴 때와 계단을 오를 때 심장이 항상 같은 속도로 뛴다면 몸의 필요에 적절히 대응하기 어렵습니다.</p>
+    <p>자율신경계는 상황에 따라 다음 반응의 조절에 관여합니다.</p>
     <ul>
       <li>심장이 뛰는 속도</li>
-      <li>심장 수축력의 일부 조절</li>
-      <li>혈관 긴장도의 조절</li>
+      <li>심장 수축력의 일부</li>
+      <li>혈관의 긴장도</li>
       <li>자세 변화에 따른 심박수와 혈압 반응</li>
     </ul>
-    <p>예를 들어 갑자기 일어설 때는 중력 때문에 혈액이 다리 쪽으로 이동할 수 있습니다.</p>
-    <p>이때 몸은 심박수와 혈관 긴장도 등을 조절해 혈압과 뇌로 가는 혈류를 유지하려고 합니다.</p>
+    <p>예를 들어 갑자기 일어서면 중력의 영향으로 혈액이 다리 쪽으로 이동할 수 있습니다.</p>
+    <p>이때 몸은 심박수와 혈관 긴장도 등을 조정해 혈압과 뇌로 가는 혈류를 유지하려고 합니다.</p>
     <p>이 과정에는 자율신경계뿐 아니라 심장, 혈관, 혈액량, 호르몬과 신장 기능도 함께 관여합니다.</p>
-    <p>따라서 다음 증상이 있다고 곧바로 자율신경 이상으로 진단할 수는 없습니다.</p>
-    <ul>
-      <li>두근거림</li>
-      <li>일어설 때 어지럼</li>
-      <li>혈압의 변동</li>
-      <li>실신</li>
-      <li>운동 시 불편감</li>
-    </ul>
-    <p>빈혈, 탈수, 부정맥, 약물, 갑상선질환, 불안과 여러 심혈관·전신 상태에서도 유사한 증상이 나타날 수 있습니다.</p>
+    <p>따라서 두근거림, 어지럼이나 혈압 변화가 있다고 모두 자율신경 문제인 것은 아닙니다.</p>
+    <p>빈혈, 탈수, 부정맥, 갑상선질환, 약물, 불안과 여러 심혈관·전신 상태에서도 비슷한 증상이 나타날 수 있습니다.</p>
 
-    <h2>2. 소화와 장운동</h2>
+    <h2>소화와 장운동</h2>
     <p>음식물이 위와 장을 따라 이동하려면 소화관의 근육이 일정한 순서로 움직여야 합니다.</p>
-    <p>자율신경계는 다음과 같은 소화 기능의 조절에 관여합니다.</p>
+    <p>자율신경계는 다음 과정의 조절에 관여합니다.</p>
     <ul>
       <li>위와 장의 운동</li>
       <li>소화액 분비</li>
       <li>음식물이 이동하는 속도</li>
       <li>배변과 관련된 일부 반응</li>
-      <li>식사 전후 소화기관의 혈류 변화</li>
     </ul>
-    <p>소화기관에는 장신경계라는 자체적인 신경망도 있습니다.</p>
-    <p>장신경계는 소화관의 운동과 분비를 상당 부분 조절하면서 교감신경·부교감신경과 중추신경계의 영향을 받습니다.</p>
-    <p>따라서 소화를 다음과 같이 단순하게 설명해서는 안 됩니다.</p>
-    <ul>
-      <li>부교감신경이 켜지면 소화가 시작된다.</li>
-      <li>교감신경이 켜지면 소화가 완전히 멈춘다.</li>
-      <li>소화불량은 부교감신경이 약해서 생긴다.</li>
-    </ul>
-    <p>실제 소화 기능에는 음식의 종류, 위장관 호르몬, 장신경계, 스트레스, 수면, 약물과 위장관질환 등 다양한 요인이 관여합니다.</p>
-    <p>소화불량, 변비, 설사나 복부 불편이 있다고 모두 자율신경계 문제로 판단해서는 안 됩니다.</p>
+    <p>소화기관에는 <strong>장신경계</strong>라는 자체적인 신경망도 있습니다.</p>
+    <p>장신경계는 소화관의 운동과 분비를 상당 부분 조절하면서 교감신경·부교감신경 및 중추신경계와 계속 소통합니다.</p>
+    <p>따라서 소화를 단순히 "부교감신경이 켜지면 시작되고 교감신경이 켜지면 멈춘다"고 설명하는 것은 정확하지 않습니다.</p>
+    <p>음식, 위장관 호르몬, 스트레스, 수면, 약물과 위장관질환도 소화 기능에 영향을 줍니다.</p>
+    <p>소화불량, 변비나 설사 같은 증상만으로 자율신경 이상을 판단할 수는 없습니다.</p>
 
-    <h2>3. 체온과 땀</h2>
+    <h2>체온과 땀</h2>
     <p>체온조절은 뇌의 시상하부를 중심으로 여러 신체 체계가 함께 수행합니다.</p>
-    <p>자율신경계는 피부 혈관과 땀샘의 반응을 통해 체온조절에 중요한 역할을 합니다.</p>
-    <p>몸이 더워지면 다음과 같은 변화가 나타날 수 있습니다.</p>
+    <p>몸이 더워지면 자율신경계는 땀샘과 피부 혈관의 반응에 관여해 열을 방출하도록 돕습니다.</p>
+    <p>반대로 추운 환경에서는 피부를 통해 빠져나가는 열을 줄이기 위한 반응이 나타날 수 있습니다.</p>
+    <p>땀은 다음과 같은 다양한 요인의 영향을 받습니다.</p>
     <ul>
-      <li>땀 분비 증가</li>
-      <li>피부 혈관의 변화</li>
-      <li>피부를 통한 열 방출 증가</li>
-    </ul>
-    <p>추운 환경에서는 피부를 통해 빠져나가는 열을 줄이기 위한 반응이 나타날 수 있습니다.</p>
-    <p>땀은 운동량이나 의지만으로 결정되지 않습니다.</p>
-    <p>다음과 같은 요인이 함께 영향을 줄 수 있습니다.</p>
-    <ul>
-      <li>주변 온도와 습도</li>
+      <li>기온과 습도</li>
       <li>신체활동</li>
       <li>긴장과 감정</li>
-      <li>발열</li>
-      <li>호르몬 변화</li>
+      <li>발열과 호르몬 변화</li>
       <li>약물</li>
-      <li>신경계 및 전신 상태</li>
+      <li>신경계 또는 전신 상태</li>
     </ul>
     <p>땀이 지나치게 많거나 거의 나지 않는 증상은 자율신경 기능 이상에서 나타날 수 있습니다.</p>
-    <p>그러나 증상 하나만으로 자율신경 이상을 진단할 수는 없습니다.</p>
+    <p>그러나 발한 변화 하나만으로 자율신경 이상이나 특정 질환을 진단할 수는 없습니다.</p>
 
-    <h2>4. 동공과 빛에 대한 반응</h2>
-    <p>동공은 눈으로 들어오는 빛의 양에 따라 크기가 변합니다.</p>
-    <p>일반적으로 밝은 곳에서는 동공이 작아지고, 어두운 곳에서는 더 많은 빛을 받아들이기 위해 커집니다.</p>
-    <p>이 과정에는 자율신경계가 관여합니다.</p>
+    <h2>동공 반응</h2>
+    <p>동공은 눈으로 들어오는 빛의 양에 따라 크기가 달라집니다.</p>
     <ul>
-      <li>동공을 크게 만드는 반응에는 주로 교감신경이 관여합니다.</li>
-      <li>동공을 작게 만드는 반응에는 주로 부교감신경이 관여합니다.</li>
-      <li>가까운 물체에 초점을 맞추는 과정에는 자율신경을 포함한 여러 눈 운동 체계가 함께 관여합니다.</li>
+      <li>밝은 곳에서는 일반적으로 작아집니다.</li>
+      <li>어두운 곳에서는 일반적으로 커집니다.</li>
     </ul>
-    <p>동공의 크기는 빛뿐 아니라 약물, 점안제, 감정 상태와 눈·신경계 상태의 영향을 받을 수 있습니다.</p>
-    <p>일부 사람에게는 원래 양쪽 동공 크기가 조금 다를 수 있습니다.</p>
-    <p>그러나 다음과 같은 경우에는 신속한 의료 평가가 필요합니다.</p>
+    <p>동공을 크게 만드는 반응에는 주로 교감신경이, 동공을 작게 만드는 반응에는 주로 부교감신경이 관여합니다.</p>
+    <p>그러나 동공 크기와 반응은 약물, 점안제, 눈의 상태와 신경계 상태의 영향도 받습니다.</p>
+    <p>일부 사람은 원래 양쪽 동공의 크기가 조금 다를 수 있습니다.</p>
+    <p>다만 이전에 없던 동공 크기 차이가 갑자기 나타나거나 한쪽 동공이 비정상적으로 커지거나 작아지면서 다음 증상이 동반된다면 신속한 평가가 필요합니다.</p>
     <ul>
-      <li>이전에 없던 동공 크기 차이가 갑자기 발생함</li>
-      <li>동공 변화와 심한 두통 또는 눈 통증이 동반됨</li>
-      <li>눈꺼풀이 처지거나 복시가 나타남</li>
-      <li>시력이 갑자기 달라짐</li>
-      <li>의식 변화나 편측마비·언어장애가 동반됨</li>
-      <li>머리를 다친 뒤 동공 크기가 달라짐</li>
+      <li>심한 두통이나 눈 통증</li>
+      <li>복시</li>
+      <li>눈꺼풀 처짐</li>
+      <li>갑작스러운 시력 변화</li>
+      <li>의식 변화</li>
+      <li>갑작스러운 언어장애</li>
+      <li>한쪽 얼굴·팔·다리의 힘 저하 또는 감각 이상</li>
+      <li>최근의 머리 외상</li>
     </ul>
     <p>이러한 증상을 단순한 자율신경 불균형으로 생각하며 기다려서는 안 됩니다.</p>
 
-    <h2>5. 방광과 배뇨</h2>
+    <h2>방광과 배뇨</h2>
     <p>방광은 소변을 일정 시간 저장한 뒤 적절한 상황에서 배출해야 합니다.</p>
-    <p>이 과정에서는 다음 기능이 정교하게 조율됩니다.</p>
+    <p>이 과정에는 다음 기능이 함께 조율됩니다.</p>
     <ul>
       <li>방광 근육이 이완되며 소변을 저장하는 과정</li>
       <li>소변이 새지 않도록 출구가 유지되는 과정</li>
       <li>배뇨할 때 방광이 수축하는 과정</li>
       <li>요도와 골반저근육이 적절하게 이완되는 과정</li>
-      <li>방광이 찼다는 감각을 뇌에 전달하는 과정</li>
+      <li>방광이 찼다는 감각이 뇌로 전달되는 과정</li>
     </ul>
-    <p>자율신경계는 소변의 저장과 배출에 관여합니다.</p>
-    <p>그러나 배뇨는 자율신경만으로 이루어지지 않습니다.</p>
-    <p>뇌와 척수, 감각신경, 체성신경, 요도괄약근과 골반저근육도 함께 참여합니다.</p>
-    <p>다음 증상은 여러 원인으로 나타날 수 있습니다.</p>
+    <p>자율신경계는 이 과정의 조절에 관여하지만 배뇨를 혼자 통제하지는 않습니다.</p>
+    <p>뇌와 척수, 감각신경, 체성신경, 요도괄약근과 골반저근육도 함께 작동합니다.</p>
+    <p>다음과 같은 증상은 여러 원인으로 나타날 수 있습니다.</p>
     <ul>
       <li>빈뇨</li>
       <li>절박뇨</li>
-      <li>소변이 새는 증상</li>
+      <li>요실금</li>
       <li>소변을 보기 어려움</li>
       <li>잔뇨감</li>
     </ul>
-    <p>전립선질환, 요로감염, 골반저 기능, 약물, 당뇨병, 수분 섭취와 여러 비뇨기·신경계 상태를 함께 고려해야 합니다.</p>
-    <p>증상만으로 자율신경 이상을 진단할 수는 없습니다.</p>
+    <p>요로감염, 전립선질환, 골반저 기능, 당뇨병, 약물과 여러 비뇨기·신경계 상태를 함께 고려해야 합니다.</p>
+    <p>배뇨 증상만으로 자율신경 이상을 진단할 수는 없습니다.</p>
 
-    <h2>교감신경과 부교감신경은 어떻게 다를까요?</h2>
-    <p>자율신경계는 흔히 교감신경과 부교감신경으로 나누어 설명합니다.</p>
-
-    <h3>교감신경</h3>
-    <p>교감신경은 신체활동, 자세 변화와 긴장 상황에 대응하는 데 중요한 역할을 합니다.</p>
-    <p>상황과 장기에 따라 다음과 같은 반응에 관여할 수 있습니다.</p>
-    <ul>
-      <li>심박수와 심장 기능의 변화</li>
-      <li>혈관 긴장도 조절</li>
-      <li>동공 확대</li>
-      <li>땀 분비</li>
-      <li>일부 소화관 운동과 분비의 감소</li>
-      <li>소변을 저장하는 과정</li>
-    </ul>
-
-    <h3>부교감신경</h3>
-    <p>부교감신경은 안정 상태의 심박수 조절, 소화와 배뇨 등 일부 기능에 중요한 역할을 합니다.</p>
-    <p>상황과 장기에 따라 다음과 같은 반응에 관여할 수 있습니다.</p>
-    <ul>
-      <li>안정 상태에서 심박수를 낮추는 작용</li>
-      <li>위장관 운동과 분비</li>
-      <li>동공을 작게 만드는 반응</li>
-      <li>소변을 배출하는 과정</li>
-    </ul>
-
-    <p>그러나 교감신경과 부교감신경을 다음처럼 해석해서는 안 됩니다.</p>
+    <h2>교감신경은 나쁘고 부교감신경은 좋을까요?</h2>
+    <p>그렇지 않습니다.</p>
+    <p>교감신경은 운동, 자세 변화와 긴장 상황에 대응할 때 필요한 정상적인 체계입니다.</p>
+    <p>상황과 장기에 따라 심박수, 혈관 긴장도, 동공 확대, 발한과 소변 저장 과정 등에 관여할 수 있습니다.</p>
+    <p>부교감신경은 안정 상태의 심박수 조절, 소화관 운동과 분비, 동공 축소와 배뇨 과정 등에 중요한 역할을 합니다.</p>
+    <p>따라서 다음과 같은 설명은 지나치게 단순합니다.</p>
     <ul>
       <li>교감신경은 나쁘다.</li>
       <li>부교감신경은 좋다.</li>
-      <li>건강하려면 교감신경을 항상 낮춰야 한다.</li>
-      <li>부교감신경을 높이면 모든 증상이 해결된다.</li>
+      <li>교감신경을 낮추면 모든 증상이 좋아진다.</li>
+      <li>부교감신경을 높이면 자율신경이 회복된다.</li>
     </ul>
-    <p>운동하거나 자세를 바꿀 때는 적절한 교감신경 반응이 필요합니다.</p>
-    <p>식사와 배뇨, 안정 상태에서는 부교감신경을 포함한 다른 반응이 중요합니다.</p>
-    <p>두 계통은 단순한 하나의 시소처럼만 작동하지 않으며, 장기와 상황에 따라 서로 다른 방식으로 조절됩니다.</p>
-    <p>건강한 자율신경 기능은 어느 한쪽을 무조건 높이거나 낮추는 것이 아니라 신체의 필요에 맞게 반응을 조정하는 능력에 가깝습니다.</p>
+    <p>교감신경과 부교감신경은 단순한 하나의 반대 스위치처럼만 작동하지 않습니다.</p>
+    <p>두 체계는 모두 정상적인 생리 기능에 필요하며, 장기와 상황에 따라 서로 다른 방식으로 작동합니다.</p>
+    <p>건강한 자율신경 기능은 한쪽을 무조건 낮추거나 높이는 것이 아니라 신체의 필요에 맞게 반응을 조정하는 능력에 가깝습니다.</p>
 
-    <h2>여러 증상이 있으면 자율신경 이상일까요?</h2>
-    <p>다음과 같은 증상은 자율신경 기능 이상에서 나타날 수 있습니다.</p>
+    <h2>증상이 있으면 자율신경 이상일까요?</h2>
+    <p>자율신경 기능 이상에서는 다음과 같은 증상이 나타날 수 있습니다.</p>
     <ul>
       <li>일어설 때 심한 어지럼</li>
-      <li>반복적인 실신</li>
-      <li>비정상적인 심박수 또는 혈압 반응</li>
-      <li>땀이 지나치게 많거나 적음</li>
-      <li>반복되는 소화관 운동 문제</li>
+      <li>실신</li>
+      <li>심박수나 혈압 반응의 변화</li>
+      <li>발한 변화</li>
+      <li>소화관 운동 문제</li>
       <li>배뇨 기능 변화</li>
       <li>동공의 비정상적인 반응</li>
     </ul>
@@ -330,88 +303,82 @@
       <li>빈혈과 탈수</li>
       <li>부정맥과 기타 심혈관질환</li>
       <li>갑상선질환</li>
-      <li>감염과 발열</li>
-      <li>복용 약물</li>
-      <li>불안과 공황 증상</li>
+      <li>감염</li>
+      <li>약물</li>
+      <li>불안</li>
       <li>수면 부족</li>
       <li>위장관질환</li>
       <li>비뇨기질환</li>
       <li>호르몬 변화</li>
-      <li>다른 신경계 상태</li>
+      <li>다른 신경계 또는 전신 상태</li>
     </ul>
-    <p>따라서 증상만으로 다음과 같이 자가진단하는 것은 적절하지 않습니다.</p>
+    <p>따라서 증상만으로 다음과 같이 자가진단해서는 안 됩니다.</p>
     <ul>
       <li>교감신경이 항진됐다.</li>
       <li>부교감신경이 약하다.</li>
-      <li>자율신경의 균형이 무너졌다.</li>
+      <li>자율신경 균형이 무너졌다.</li>
       <li>자율신경이 고장 났다.</li>
     </ul>
-    <p>증상의 시작 시점, 지속시간, 자세·운동·식사와의 관계, 동반 증상, 복용 약물과 다른 가능한 원인을 함께 확인해야 합니다.</p>
+    <p>증상의 시작 시점과 경과, 자세·운동·식사와의 관계, 복용 약물, 동반 증상과 다른 가능한 원인을 함께 확인해야 합니다.</p>
 
-    <h2>자율신경 검사만으로 원인을 알 수 있을까요?</h2>
-    <p>자율신경 기능검사는 특정한 생리 반응을 평가하는 데 도움이 될 수 있습니다.</p>
-    <p>검사 목적에 따라 다음과 같은 반응을 평가할 수 있습니다.</p>
-    <ul>
-      <li>자세 변화에 따른 심박수와 혈압 반응</li>
-      <li>호흡이나 특정 자극에 대한 심혈관 반응</li>
-      <li>발한 반응</li>
-      <li>특정 장기의 기능</li>
-    </ul>
-    <p>하지만 하나의 자율신경 검사로 다음을 모두 확인할 수 있는 것은 아닙니다.</p>
+    <h2>자율신경 검사로 원인을 알 수 있을까요?</h2>
+    <p>자율신경 기능검사는 자세나 호흡 변화에 따른 심박수·혈압 반응, 발한 반응 등 특정 자율기능을 평가하는 데 도움이 될 수 있습니다.</p>
+    <p>하지만 하나의 검사로 다음을 모두 확인할 수는 없습니다.</p>
     <ul>
       <li>모든 증상의 원인</li>
       <li>교감신경과 부교감신경의 전체적인 '균형'</li>
       <li>하나의 특정 질환</li>
-      <li>심장·내분비·위장관·비뇨기질환의 배제</li>
+      <li>심장·내분비·위장관·비뇨기질환 등 다른 원인의 배제</li>
       <li>개인에게 필요한 치료 방법</li>
     </ul>
     <p>검사가 필요한지는 증상의 형태와 의료진의 임상적 판단에 따라 결정합니다.</p>
     <p>필요한 경우 의료진은 병력과 진찰을 바탕으로 다음 평가를 선택적으로 고려할 수 있습니다.</p>
     <ul>
-      <li>누운 자세와 선 자세의 혈압·심박수</li>
+      <li>누운 자세와 선 자세의 심박수·혈압 확인</li>
       <li>심전도</li>
       <li>병력에 따른 혈액검사</li>
-      <li>심장 또는 다른 장기 평가</li>
+      <li>관련 장기 평가</li>
       <li>선택적인 자율신경 기능검사</li>
     </ul>
     <p>검사 결과가 비정상이라고 하나의 원인이 자동으로 확정되는 것은 아닙니다.</p>
-    <p>반대로 일부 검사 결과가 정상이라고 환자가 경험하는 모든 증상이 부정되는 것도 아닙니다.</p>
-    <p>결과는 증상, 병력, 진찰과 필요한 다른 검사와 함께 해석해야 합니다.</p>
+    <p>반대로 일부 검사 결과가 정상이라고 환자가 경험하는 증상이 존재하지 않는다는 뜻도 아닙니다.</p>
+    <p>검사 결과는 증상, 병력, 진찰과 필요한 다른 검사와 함께 해석해야 합니다.</p>
 
-    <h2>진료를 고려해야 하는 경우</h2>
-    <p>다음과 같은 증상이 반복되거나 일상생활에 영향을 준다면 의료진의 평가를 고려할 수 있습니다.</p>
+    <h2>진료가 필요한 경우</h2>
+    <p>다음 증상이 반복되거나 일상생활에 영향을 준다면 의료진의 평가를 고려해야 합니다.</p>
     <ul>
-      <li>일어설 때 반복적으로 심한 어지럼이 발생함</li>
-      <li>원인을 알 수 없는 실신이 발생함</li>
+      <li>일어설 때 심한 어지럼이 반복됨</li>
+      <li>실신이 발생함</li>
       <li>설명되지 않는 두근거림이 반복됨</li>
-      <li>땀 분비가 이전과 다르게 크게 변함</li>
-      <li>심한 소화관 운동 문제나 배뇨장애가 지속됨</li>
+      <li>발한이 이전과 크게 달라짐</li>
+      <li>심한 소화관 운동 문제나 배뇨 문제가 지속됨</li>
       <li>증상이 새로운 약물 복용이나 질환 이후 시작됨</li>
-      <li>보행 변화, 감각 이상 또는 근력 저하가 함께 나타남</li>
+      <li>감각 이상, 근력 저하나 보행 변화가 새롭게 지속되거나 진행함</li>
       <li>동공 반응이나 시야가 이전과 달라짐</li>
-      <li>증상 때문에 운전, 운동 또는 일상생활의 안전이 위협받음</li>
+      <li>증상 때문에 운전, 운동 또는 일상생활의 안전에 문제가 생김</li>
     </ul>
+    <p>실신은 자율신경 문제뿐 아니라 심장질환과 다른 의학적 원인으로도 발생할 수 있으므로 원인 평가가 필요합니다.</p>
 
     <h2>즉시 응급평가가 필요한 경우</h2>
-    <p>다음과 같은 경우에는 자율신경 문제로 생각하며 기다리지 말고 119에 연락하거나 응급의료기관의 평가를 받아야 합니다.</p>
+    <p>다음 증상이 나타나면 자율신경 문제로 생각하며 기다리지 말고 즉시 119에 연락하거나 응급의료기관의 평가를 받아야 합니다.</p>
     <ul>
       <li>흉통</li>
       <li>심한 호흡곤란</li>
       <li>운동 중 발생한 실신</li>
-      <li>의식이 돌아오지 않거나 회복이 늦는 경우</li>
+      <li>실신 후 의식이 돌아오지 않거나 회복이 늦음</li>
       <li>실신과 지속적인 심한 두근거림이 동반됨</li>
-      <li>갑작스러운 언어장애</li>
+      <li>갑작스러운 언어장애 또는 말을 이해하기 어려움</li>
       <li>한쪽 얼굴·팔·다리의 힘 저하 또는 감각 이상</li>
       <li>갑작스러운 시야 변화</li>
-      <li>갑작스러운 보행장애나 균형 상실</li>
+      <li>갑자기 걷기 어렵거나 균형을 잃음</li>
       <li>경련</li>
       <li>원인을 알 수 없는 갑작스럽고 심한 두통</li>
-      <li>갑작스러운 동공 차이와 두통·복시·눈꺼풀 처짐 또는 의식 변화가 동반됨</li>
+      <li>갑작스러운 동공 차이와 두통·복시·눈꺼풀 처짐·의식 변화가 동반됨</li>
     </ul>
-    <p>증상이 잠시 좋아졌더라도 갑작스러운 신경학적 증상은 즉시 평가해야 합니다.</p>
+    <p>갑작스러운 신경학적 증상이 잠시 뒤 좋아졌더라도 응급평가를 미루지 말아야 합니다.</p>
 
-    <h2>결론</h2>
-    <p>자율신경계는 우리가 매 순간 의식하지 않아도 다음 기능이 상황에 맞게 작동하도록 조절에 관여합니다.</p>
+    <h2>핵심 정리</h2>
+    <p>자율신경계는 우리가 의식적으로 계속 지시하지 않아도 다음 기능이 상황에 맞게 작동하도록 조절에 관여합니다.</p>
     <ul>
       <li>심박수와 혈압</li>
       <li>소화와 장운동</li>
@@ -419,53 +386,43 @@
       <li>동공 반응</li>
       <li>소변의 저장과 배출</li>
     </ul>
-    <p>자율신경계의 역할은 신체 기능을 언제나 같은 상태로 고정하는 것이 아닙니다.</p>
-    <p>휴식, 운동, 식사, 자세와 주변 환경이 달라질 때 각 장기가 적절히 반응하도록 다른 신체 조절 체계와 함께 작동합니다.</p>
-    <p>교감신경은 나쁘고 부교감신경은 좋다는 식의 구분도 정확하지 않습니다.</p>
-    <p>두 체계 모두 정상적인 생리 기능에 필요하며, 중요한 것은 한쪽을 무조건 높이거나 낮추는 것이 아니라 상황에 맞는 반응입니다.</p>
-    <p>두근거림, 어지럼, 소화불량, 발한 또는 배뇨 증상만으로 자율신경 이상을 진단할 수는 없습니다.</p>
-    <p>증상의 시작과 경과, 동반 증상, 복용 약물과 다른 의학적 원인을 함께 확인해야 합니다.</p>
+    <p>자율신경계는 이러한 기능을 혼자 통제하지 않습니다.</p>
+    <p>뇌와 척수, 장신경계, 호르몬, 감각·체성신경과 각 장기의 조절 체계가 함께 작동합니다.</p>
+    <p>교감신경과 부교감신경도 각각 정상적인 생리 기능에 필요합니다.</p>
+    <p>두근거림, 어지럼, 소화불량, 발한이나 배뇨 증상만으로 자율신경 이상을 진단할 수는 없습니다.</p>
+    <p>증상이 지속되거나 악화된다면 다른 가능한 원인을 포함한 의료 평가가 필요할 수 있습니다.</p>
 
     <h2>자주 묻는 질문</h2>
 
-    <h3>자율신경은 내 의지와 전혀 관계없이 작동하나요?</h3>
-    <p>자율신경계의 많은 기능은 직접적인 의식적 명령 없이 작동합니다.</p>
-    <p>다만 호흡, 배뇨, 신체활동, 감정과 스트레스 반응처럼 의식적인 행동이나 환경의 영향을 함께 받는 기능도 있습니다.</p>
-    <p>자율신경이 의지와 완전히 분리된 독립 체계라는 뜻은 아닙니다.</p>
-
     <h3>교감신경이 높으면 나쁜 것인가요?</h3>
-    <p>그렇지 않습니다.</p>
-    <p>교감신경은 운동, 자세 변화와 위험 상황에 대응할 때 필요한 정상적인 체계입니다.</p>
-    <p>문제는 교감신경의 존재 자체가 아니라 증상과 상황에 맞는 조절이 이루어지는지입니다.</p>
-    <p>단일 검사나 느낌만으로 교감신경이 '높다'고 판단할 수는 없습니다.</p>
+    <p>아닙니다.</p>
+    <p>교감신경은 운동, 자세 변화와 긴장 상황에 필요한 정상적인 체계입니다.</p>
+    <p>증상이나 단일 검사만으로 교감신경이 전반적으로 '높다'고 판단할 수도 없습니다.</p>
 
     <h3>부교감신경을 높이면 모든 증상이 좋아지나요?</h3>
     <p>그렇게 일반화할 수 없습니다.</p>
     <p>부교감신경은 안정 상태의 심박수, 소화와 배뇨 등 여러 기능에 중요합니다.</p>
-    <p>그러나 모든 증상을 부교감신경 저하로 설명하거나 특정 호흡법·기기·식품·보충제로 부교감신경을 높이면 증상이 치료된다고 단정할 수 없습니다.</p>
+    <p>그러나 모든 증상을 부교감신경 저하로 설명하거나 특정 호흡법·기기·식품·보충제로 부교감신경을 높이면 증상이 치료되거나 자율신경이 회복된다고 단정할 수 없습니다.</p>
 
-    <h3>두근거림이나 소화불량은 모두 자율신경 문제인가요?</h3>
-    <p>아닙니다.</p>
-    <p>두근거림은 부정맥, 빈혈, 탈수, 갑상선질환, 약물과 불안 등 여러 원인으로 나타날 수 있습니다.</p>
+    <h3>두근거림이나 소화불량은 자율신경 문제인가요?</h3>
+    <p>자율신경 기능 변화가 가능한 설명 중 하나일 수는 있습니다.</p>
+    <p>그러나 두근거림은 부정맥, 빈혈, 탈수, 갑상선질환, 약물과 불안 등 여러 원인으로 나타날 수 있습니다.</p>
     <p>소화불량 역시 음식, 약물, 스트레스와 다양한 위장관질환의 영향을 받을 수 있습니다.</p>
     <p>증상만으로 원인을 구분할 수는 없습니다.</p>
 
-    <h3>자율신경 검사를 받으면 원인을 알 수 있나요?</h3>
-    <p>자율신경 검사는 특정 생리 반응을 평가하는 데 도움이 될 수 있습니다.</p>
-    <p>그러나 하나의 검사로 모든 증상의 원인이나 하나의 질환을 확정하지는 못합니다.</p>
-    <p>검사의 필요성과 결과는 병력, 진찰과 필요한 다른 검사와 함께 해석해야 합니다.</p>
+    <h3>자율신경 검사 하나로 진단할 수 있나요?</h3>
+    <p>하나의 검사만으로 모든 증상의 원인이나 하나의 질환을 확정할 수는 없습니다.</p>
+    <p>자율신경 기능검사는 특정 생리 반응을 평가하는 보조적인 검사이며, 필요성과 결과는 병력, 진찰과 다른 검사와 함께 판단해야 합니다.</p>
 
     <div class="evidence-box">
       <h4>📚 참고 자료</h4>
       <ul>
-        <li>1. Waxenbaum JA, Reddy V, Das JM. Anatomy, Autonomic Nervous System. [Updated December 1, 2025]. In: StatPearls [Internet]. Treasure Island (FL): StatPearls Publishing; 2026. <a href="https://www.ncbi.nlm.nih.gov/books/NBK539845/" target="_blank" rel="noopener noreferrer nofollow">https://www.ncbi.nlm.nih.gov/books/NBK539845/</a></li>
-        <li>2. LeBouef T, Yaker Z, Whited L. Physiology, Autonomic Nervous System. [Updated May 1, 2023]. In: StatPearls [Internet]. Treasure Island (FL): StatPearls Publishing; 2026. <a href="https://www.ncbi.nlm.nih.gov/books/NBK538516/" target="_blank" rel="noopener noreferrer nofollow">https://www.ncbi.nlm.nih.gov/books/NBK538516/</a></li>
-        <li>3. MedlinePlus. Autonomic Testing. Last updated September 26, 2024. Accessed July 18, 2026. <a href="https://medlineplus.gov/lab-tests/autonomic-testing/" target="_blank" rel="noopener noreferrer nofollow">https://medlineplus.gov/lab-tests/autonomic-testing/</a></li>
-        <li>4. MedlinePlus Medical Encyclopedia. Autonomic Neuropathy. Review date October 23, 2024. Accessed July 18, 2026. <a href="https://medlineplus.gov/ency/article/000776.htm" target="_blank" rel="noopener noreferrer nofollow">https://medlineplus.gov/ency/article/000776.htm</a></li>
-        <li>5. National Institute of Diabetes and Digestive and Kidney Diseases. The Urinary Tract &amp; How It Works. Accessed July 18, 2026. <a href="https://www.niddk.nih.gov/health-information/urologic-diseases/urinary-tract-how-it-works" target="_blank" rel="noopener noreferrer nofollow">https://www.niddk.nih.gov/health-information/urologic-diseases/urinary-tract-how-it-works</a></li>
-        <li>6. MedlinePlus Medical Encyclopedia. Anisocoria. Review date April 16, 2025. Accessed July 18, 2026. <a href="https://medlineplus.gov/ency/article/003314.htm" target="_blank" rel="noopener noreferrer nofollow">https://medlineplus.gov/ency/article/003314.htm</a></li>
-        <li>7. Centers for Disease Control and Prevention. Signs and Symptoms of Stroke. Updated May 19, 2026. Accessed July 18, 2026. <a href="https://www.cdc.gov/stroke/signs-symptoms/index.html" target="_blank" rel="noopener noreferrer nofollow">https://www.cdc.gov/stroke/signs-symptoms/index.html</a></li>
-        <li>8. National Institute of Neurological Disorders and Stroke. Peripheral Neuropathy. Accessed July 18, 2026. <a href="https://www.ninds.nih.gov/health-information/disorders/peripheral-neuropathy" target="_blank" rel="noopener noreferrer nofollow">https://www.ninds.nih.gov/health-information/disorders/peripheral-neuropathy</a></li>
+        <li>1. Waxenbaum JA, Reddy V, Das JM. Anatomy, Autonomic Nervous System. Updated December 1, 2025. In: StatPearls [Internet]. Treasure Island (FL): StatPearls Publishing; 2026. <a href="https://www.ncbi.nlm.nih.gov/books/NBK539845/" target="_blank" rel="noopener noreferrer nofollow">https://www.ncbi.nlm.nih.gov/books/NBK539845/</a></li>
+        <li>2. LeBouef T, Yaker Z, Whited L. Physiology, Autonomic Nervous System. Updated May 1, 2023. In: StatPearls [Internet]. Treasure Island (FL): StatPearls Publishing; 2026. <a href="https://www.ncbi.nlm.nih.gov/books/NBK538516/" target="_blank" rel="noopener noreferrer nofollow">https://www.ncbi.nlm.nih.gov/books/NBK538516/</a></li>
+        <li>3. MedlinePlus. Autonomic Testing. Updated September 26, 2024. Accessed July 18, 2026. <a href="https://medlineplus.gov/lab-tests/autonomic-testing/" target="_blank" rel="noopener noreferrer nofollow">https://medlineplus.gov/lab-tests/autonomic-testing/</a></li>
+        <li>4. National Institute of Diabetes and Digestive and Kidney Diseases. The Urinary Tract &amp; How It Works. Accessed July 18, 2026. <a href="https://www.niddk.nih.gov/health-information/urologic-diseases/urinary-tract-how-it-works" target="_blank" rel="noopener noreferrer nofollow">https://www.niddk.nih.gov/health-information/urologic-diseases/urinary-tract-how-it-works</a></li>
+        <li>5. MedlinePlus Medical Encyclopedia. Anisocoria. Reviewed April 16, 2025. Accessed July 18, 2026. <a href="https://medlineplus.gov/ency/article/003314.htm" target="_blank" rel="noopener noreferrer nofollow">https://medlineplus.gov/ency/article/003314.htm</a></li>
+        <li>6. Centers for Disease Control and Prevention. Signs and Symptoms of Stroke. Updated May 19, 2026. Accessed July 18, 2026. <a href="https://www.cdc.gov/stroke/signs-symptoms/index.html" target="_blank" rel="noopener noreferrer nofollow">https://www.cdc.gov/stroke/signs-symptoms/index.html</a></li>
       </ul>
     </div>
 
@@ -484,7 +441,7 @@
     </div>
 
     <div class="sig-block">
-      <p class="sig-main"><strong>Jeehyun Ham, M.D.</strong><br>Neurologist</p>
+      <p class="sig-main"><strong>함지현</strong><br>신경과 전문의</p>
       <ul class="sig-creds">
         <li>연세대학교 의과대학 졸업</li>
         <li>세브란스병원 전 임상연구조교수</li>
@@ -492,7 +449,7 @@
         <li>대한파킨슨병 및 이상운동질환 학회 정회원</li>
         <li>대한기능의학회 정회원</li>
       </ul>
-      <p class="sig-notice">※ 이 글은 일반적인 건강·의학 교육을 위한 자료이며 개인의 증상이나 질환을 진단하거나 치료하기 위한 의료상담을 대신하지 않습니다. 두근거림, 어지럼, 소화 문제, 발한, 동공 변화 또는 배뇨 증상은 다양한 원인으로 발생할 수 있으며 증상만으로 자율신경 이상을 진단할 수 없습니다. 증상이 지속되거나 악화되고 일상생활에 영향을 준다면 의료진의 평가가 필요할 수 있습니다. 흉통, 심한 호흡곤란, 회복이 늦는 의식 소실, 갑작스러운 언어장애, 편측마비, 시야·보행 변화, 경련, 원인을 알 수 없는 심한 두통 또는 갑작스러운 동공 차이와 신경학적 증상이 나타나면 즉시 119에 연락하거나 응급의료기관의 평가를 받아야 합니다.</p>
+      <p class="sig-notice">※ 이 글은 일반적인 건강·의학 교육을 위한 자료이며 개인의 증상이나 질환을 진단하거나 치료하기 위한 의료상담을 대신하지 않습니다. 두근거림, 어지럼, 소화 문제, 발한, 동공 변화와 배뇨 증상은 다양한 원인으로 발생할 수 있으며, 증상이나 자율신경 검사 결과 하나만으로 자율신경계 질환 또는 증상의 원인을 진단할 수 없습니다. 증상이 지속되거나 악화되고 일상생활에 영향을 준다면 의료진의 평가가 필요할 수 있습니다. 흉통, 심한 호흡곤란, 회복이 늦는 의식 소실, 갑작스러운 언어장애, 한쪽 마비나 감각 이상, 시야·보행 변화, 경련, 원인을 알 수 없는 심한 두통 또는 갑작스러운 동공 차이와 신경학적 증상이 나타나면 즉시 119에 연락하거나 응급의료기관의 평가를 받아야 합니다.</p>
     </div>
 
   </div>
@@ -510,7 +467,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "자율신경은 무엇을 조절할까요?",
-  "description": "자율신경계가 심박수와 혈압, 소화와 장운동, 체온과 땀, 동공 반응, 방광 기능의 조절에 어떻게 관여하는지 설명합니다. 교감신경·부교감신경의 역할, 증상의 다양한 원인과 진료가 필요한 신호도 확인합니다.",
+  "description": "자율신경계가 심박수와 혈압, 소화와 장운동, 체온조절과 땀, 동공 반응, 방광 기능의 조절에 어떻게 관여하는지 알아봅니다.",
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://nervlocklab.com/blog/자율신경-조절/"
