@@ -29,7 +29,7 @@ Each blog post is a standalone HTML file (no shared partials/includes), but they
 
 **Author identity is standardized site-wide** — don't improvise variants:
 - Korean pages: `Dr.H (함지현)` as the name, `함지현 원장, 신경과 전문의` as the title.
-- English pages: `Dr. Claire Ham (Jeehyun Ham, M.D.)` as the name, `Claire Ham, M.D. — Neurologist` as the title.
+- English pages: `Dr. Claire Hahm (Jeehyun Hahm, M.D.)` as the name, `Claire Hahm, M.D. — Neurologist` as the title.
 - The 5-line credentials list is fixed (Yonsei University College of Medicine / Severance Hospital, Dept. of Neurology / member of 3 named societies) and should read identically everywhere it appears — in `.sig-block`, in `.author-card`, in `index.html`'s `doctor` section, and in the in-page blog-modal `.modal-footer` (see below).
 
 ## The Korean landing page's blog section is dual-content
